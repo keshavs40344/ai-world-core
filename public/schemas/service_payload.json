@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GenesisUniversalServicePayload",
+  "type": "object",
+  "properties": {
+    "engine_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "client_timestamp": {
+      "type": "string"
+    },
+    "input_hash": {
+      "type": "string"
+    },
+    "result": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "engine_id",
+    "version",
+    "result"
+  ]
+}

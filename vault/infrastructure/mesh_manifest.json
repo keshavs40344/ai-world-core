@@ -1,0 +1,16 @@
+{
+  "infrastructure_name": "Genesis Autonomous Mesh",
+  "protocol_version": "2.0.0",
+  "mesh_capabilities": [
+    "localStorage_persistent_workspaces",
+    "zero_leak_client_telemetry",
+    "air_gapped_json_csv_exporters",
+    "hardcoded_npci_prefilled_payments",
+    "cross_tool_event_bus"
+  ],
+  "gateway": {
+    "vpa": "keshavthakur07@ptyes",
+    "payee": "Keshav",
+    "default_lock_amount": "299.00"
+  }
+}
