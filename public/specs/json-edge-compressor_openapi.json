@@ -1,0 +1,20 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Genesis Service: json-edge-compressor",
+    "version": "1.0.0",
+    "description": "Reduces payload size by 40% for constrained IoT devices via schema-aware JSON compression."
+  },
+  "paths": {
+    "/run": {
+      "post": {
+        "summary": "Execute service payload",
+        "responses": {
+          "200": {
+            "description": "Execution Successful"
+          }
+        }
+      }
+    }
+  }
+}
