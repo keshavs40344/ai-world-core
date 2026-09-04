@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-slate-900 text-white p-4'><h2 class='text-xl font-bold mb-2'>CSV to JSON Mapper</h2><textarea id='csv' class='w-full h-32 bg-slate-800 p-2 rounded mb-2' placeholder='Paste CSV here'></textarea><button onclick='convert()' class='bg-blue-600 px-4 py-2 rounded'>Convert</button><pre id='out' class='mt-2 bg-slate-800 p-2 rounded h-32 overflow-auto'></pre><script>function convert(){fetch('/api/execute',{method:'POST',body:document.getElementById('csv').value}).then(r=>r.json()).then(d=>document.getElementById('out').textContent=d.result)}</script>
+        <div style="margin-top:40px; padding:20px; background:#0f172a; border:1px solid #1e293b; border-radius:12px; text-align:center; font-family:sans-serif;">
+            <p style="color:#94a3b8; font-size:14px; margin-bottom:12px;">⚡ Production utility provided free & client-side. Support continuous R&D:</p>
+            <div style="margin-bottom:14px;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=upi%3A//pay%3Fpa%3Dkeshavthakur07%40ptyes%26pn%3DKeshav%26cu%3DINR" alt="UPI QR" style="border:1px solid #334155; border-radius:8px; padding:4px; background:#fff;"/>
+            </div>
+            <a href="upi://pay?pa=keshavthakur07@ptyes&pn=Keshav&cu=INR" style="background:#10b981; color:#fff; text-decoration:none; padding:10px 20px; border-radius:6px; font-weight:bold; font-size:13px;">
+                ☕ Tip via UPI (keshavthakur07@ptyes)
+            </a>
+        </div>
+        </body></html>

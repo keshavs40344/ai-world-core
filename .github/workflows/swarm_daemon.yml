@@ -20,19 +20,19 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Execute 5-Agent Collaborative Swarm
+      - name: Execute Conglomerate Cycle
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          python genesis_autonomous_swarm.py
+          python genesis_world_conglomerate.py
 
-      - name: Auto-Commit Generated Web Tools & Marketplace Specs
+      - name: Auto-Commit & Deploy to Main
         run: |
-          git config --global user.name "Genesis-Autonomous-Swarm"
-          git config --global user.email "swarm@genesis.local"
-          git add public/ vault/
-          git diff-index --quiet HEAD || git commit -m "feat(swarm): autonomous product staged & cataloged [skip ci]"
+          git config --global user.name "Genesis-Conglomerate-Engine"
+          git config --global user.email "conglomerate@genesis.local"
+          git add public/ vault/ db/
+          git diff-index --quiet HEAD || git commit -m "feat(conglomerate): autonomous expansion & sitemap sync [skip ci]"
           git push origin main
