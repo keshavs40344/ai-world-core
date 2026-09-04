@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-09-04T13:55:44.133378+00:00",
+  "last_updated": "2026-09-04T17:19:22.469920+00:00",
   "system_health": "HEALTHY",
   "summary": {
-    "total_cycles_completed": 15,
-    "active_projects_in_vault": 25,
-    "success_rate_percent": 86.7,
-    "last_execution_timestamp": "2026-09-04T13:55:44.133378+00:00",
-    "last_cycle_id": "fb719b2d",
-    "last_run_duration_sec": 1.281
+    "total_cycles_completed": 16,
+    "active_projects_in_vault": 26,
+    "success_rate_percent": 87.5,
+    "last_execution_timestamp": "2026-09-04T17:19:22.469920+00:00",
+    "last_cycle_id": "88ffae70",
+    "last_run_duration_sec": 1.293
   },
   "latest_cycle": {
-    "cycle_id": "fb719b2d",
-    "timestamp": "2026-09-04T13:55:44.133378+00:00",
-    "duration_sec": 1.281,
+    "cycle_id": "88ffae70",
+    "timestamp": "2026-09-04T17:19:22.469920+00:00",
+    "duration_sec": 1.293,
     "project_name": "rate-limited-task-queue",
     "file_count": 11,
     "test_status": "PASSED",
@@ -40,6 +40,7 @@
     "secure-signed-url-guard",
     "skills",
     "specialists",
+    "sub_agents",
     "tests",
     "unified-rebac-policy-engine",
     "unnamed_project",
@@ -48,6 +49,17 @@
     "zero-knowledge-id-hasher-api"
   ],
   "history": [
+    {
+      "cycle_id": "88ffae70",
+      "timestamp": "2026-09-04T17:19:22.469920+00:00",
+      "duration_sec": 1.293,
+      "project_name": "rate-limited-task-queue",
+      "file_count": 11,
+      "test_status": "PASSED",
+      "test_summary": "......                                                                   [100%]",
+      "path": "vault/rate-limited-task-queue",
+      "system_health": "HEALTHY"
+    },
     {
       "cycle_id": "fb719b2d",
       "timestamp": "2026-09-04T13:55:44.133378+00:00",
