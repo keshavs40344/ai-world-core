@@ -22,9 +22,15 @@ jobs:
           python-version: '3.11'
 
       - name: Run Complete Production Pipeline
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GENESIS_SYSTEM_PROMPT: ${{ secrets.GENESIS_SYSTEM_PROMPT }}
         run: |
-          # 1. Main Revenue Engine runs
-          python genesis_revenue_core.py
+          # 1. Master Brain: Market Recon, Tech Foundry & Telegram Dispatch
+          python genesis_master_brain.py
 
           # 2. Deploy tool straight to public/ directory for live visitors
           python genesis/deployer.py

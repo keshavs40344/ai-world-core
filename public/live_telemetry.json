@@ -1,8 +1,8 @@
 {
-  "last_cycle": "2026-09-04T09:41:54.680315+00:00",
-  "active_venture": "v_gpt_6_astra_1788514914",
+  "last_cycle": "2026-09-04T10:15:15.823938+00:00",
+  "active_venture": "v_gpt_6_astra_1788516915",
   "signal": "GPT-6 Astra",
-  "market_context": "Bitcoin: $81167 (0.0% 24h)",
+  "source": "HackerNews RSS",
   "qa_passed": true,
-  "report_path": "vault/chairman_briefings\\briefing_v_gpt_6_astra_1788514914_2026-09-04_094154.md"
+  "artifact": "vault/ventures\\v_gpt_6_astra_1788516915\\product_engine.py"
 }
