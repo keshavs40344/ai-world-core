@@ -1,0 +1,42 @@
+{
+  "message_id": "msg_1788512866917_a1f8e6",
+  "timestamp": "2026-09-04T09:07:46.917762+00:00",
+  "sender": "Eve",
+  "recipient": "SpecialistBuilder",
+  "topic": "builder_dispatch",
+  "payload": {
+    "task_id": "task_gpt_6_astra_1788512866",
+    "target_class": "DefensiveDataGuard",
+    "methods": [
+      {
+        "name": "sanitize_input",
+        "params": [
+          "raw_data"
+        ],
+        "return_type": "str"
+      },
+      {
+        "name": "validate_schema",
+        "params": [
+          "payload"
+        ],
+        "return_type": "bool"
+      },
+      {
+        "name": "process_record",
+        "params": [
+          "key",
+          "value"
+        ],
+        "return_type": "dict"
+      }
+    ],
+    "constraints": [
+      "eval(",
+      "exec(",
+      "__import__",
+      "os.system",
+      "shutil.rmtree"
+    ]
+  }
+}

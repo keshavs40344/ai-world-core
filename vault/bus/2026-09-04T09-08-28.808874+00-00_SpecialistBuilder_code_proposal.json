@@ -1,0 +1,13 @@
+{
+  "message_id": "msg_1788512908808_75c4eb",
+  "timestamp": "2026-09-04T09:08:28.808874+00:00",
+  "sender": "SpecialistBuilder",
+  "recipient": "Eve",
+  "topic": "code_proposal",
+  "payload": {
+    "task_id": "task_gpt_6_astra_1788512908",
+    "module_path": "vault/proposals\\swarm_task_gpt_6_astra_1788512908\\defensive_guard.py",
+    "test_path": "vault/proposals\\swarm_task_gpt_6_astra_1788512908\\test_defensive_guard.py",
+    "class_name": "DefensiveDataGuard"
+  }
+}

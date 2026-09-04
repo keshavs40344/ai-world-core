@@ -1,0 +1,23 @@
+{
+  "message_id": "msg_1788512908801_b8bdfa",
+  "timestamp": "2026-09-04T09:08:28.801397+00:00",
+  "sender": "Eve",
+  "recipient": "DefensiveAuditor",
+  "topic": "auditor_dispatch",
+  "payload": {
+    "task_id": "task_gpt_6_astra_1788512908",
+    "owasp_rules": [
+      "A03:2021-Injection",
+      "A01:2021-Broken Access Control",
+      "A02:2021-Cryptographic Failures"
+    ],
+    "banned_tokens": [
+      "eval(",
+      "exec(",
+      "__import__",
+      "os.system",
+      "shutil.rmtree"
+    ],
+    "required_mitigations": "Strict parameter typing, input sanitization regex, AST static audit before execution"
+  }
+}

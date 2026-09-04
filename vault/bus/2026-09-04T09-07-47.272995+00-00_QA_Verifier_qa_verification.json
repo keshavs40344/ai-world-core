@@ -1,0 +1,15 @@
+{
+  "message_id": "msg_1788512867272_b72ebc",
+  "timestamp": "2026-09-04T09:07:47.272995+00:00",
+  "sender": "QA_Verifier",
+  "recipient": "Eve",
+  "topic": "qa_verification",
+  "payload": {
+    "task_id": "task_gpt_6_astra_1788512866",
+    "test_path": "vault/proposals\\swarm_task_gpt_6_astra_1788512866\\test_defensive_guard.py",
+    "passed": false,
+    "return_code": 1,
+    "stdout": "",
+    "stderr": "File \"C:\\Users\\HP\\Desktop\\VASTUDA\\vault\\proposals\\swarm_task_gpt_6_astra_1788512866\\test_defensive_guard.py\", line 5\n    sys.path.insert(0, \"C:\\Users\\HP\\Desktop\\VASTUDA\\vault\\proposals\\swarm_task_gpt_6_astra_1788512866\")\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \\UXXXXXXXX escape"
+  }
+}

@@ -1,27 +1,59 @@
 <!DOCTYPE html>
-
 <html>
-
-<head><title>Genesis Real Engine</title><meta charset='utf-8'></head>
-
-<body style='background:#0f172a;color:#f8fafc;font-family:sans-serif;padding:2rem;'>
-
-    <h2>⚡ Genesis Live Swarm Dashboard</h2>
-
-    <p>Last Sync: 2026-09-04T09:00:54.374252+00:00 UTC</p>
-
-    <div style='background:#1e293b;padding:1rem;border-radius:8px;'>
-
-        <p><strong>Active Signal:</strong> GPT-6 Astra</p>
-
-        <p><strong>QA Status:</strong> <span style='color:#4ade80;'>PASSED</span></p>
-
-        <p><strong>Sec Audit:</strong> <span style='color:#38bdf8;'>Security Check Passed</span></p>
-
-        <p><strong>Artifact:</strong> <code>vault/proposals/run_gpt_6_astra_1788512454\utility.py</code></p>
-
+<head>
+    <title>Genesis GEN-9 Multi-Agent Swarm Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { background: #0b0f19; color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 2rem; margin: 0; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 1rem; margin-bottom: 2rem; }
+        .badge { background: #10b981; color: #022c22; padding: 0.35rem 0.8rem; border-radius: 9999px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 1.5rem; }
+        .card h3 { margin-top: 0; color: #38bdf8; font-size: 1.1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+        .val { font-size: 1.25rem; font-weight: bold; color: #f8fafc; margin: 0.5rem 0; }
+        .sub { font-size: 0.85rem; color: #94a3b8; }
+        .bus-log { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 1rem; font-family: monospace; font-size: 0.85rem; max-height: 250px; overflow-y: auto; }
+        .bus-item { margin-bottom: 0.5rem; border-bottom: 1px solid #1e293b; padding-bottom: 0.4rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1 style="margin: 0; font-size: 1.75rem;">⚡ GENESIS-PRIME: COLLABORATIVE SWARM (GEN-9)</h1>
+            <p style="margin: 0.35rem 0 0 0; color: #94a3b8;">Multi-Agent Consensus Network & White-Hat Defensive Foundry</p>
+        </div>
+        <span class="badge">Swarm Operational</span>
     </div>
 
-</body>
+    <div class="grid">
+        <div class="card">
+            <h3>Adam (Planner & Scout)</h3>
+            <div class="val">GPT-6 Astra</div>
+            <div class="sub">Threat Model: OWASP Top 10 + Input Hardening</div>
+        </div>
+        <div class="card">
+            <h3>Eve (Assembler & Bus)</h3>
+            <div class="val">task_gpt_6_astra_1788512908</div>
+            <div class="sub">Structured Inter-Agent Messaging: vault/bus/</div>
+        </div>
+        <div class="card">
+            <h3>Defensive SAST Audit</h3>
+            <div class="val" style="color: #4ade80;">APPROVED</div>
+            <div class="sub">Zero Injection | AST Cleared | Zero Leaks</div>
+        </div>
+        <div class="card">
+            <h3>Self-Healing QA Engine</h3>
+            <div class="val" style="color: #38bdf8;">PASSED (Code 0)</div>
+            <div class="sub">Isolated Sandbox Subprocess Verified</div>
+        </div>
+    </div>
 
+    <div class="card">
+        <h3>Operator Censor Board Milestone</h3>
+        <p><strong>Artifact Staged:</strong> <code>vault/proposals\swarm_task_gpt_6_astra_1788512908\defensive_guard.py</code></p>
+        <p><strong>Authority Mode:</strong> [APPROVE & MERGE] or [REJECT & PURGE]</p>
+        <p><strong>Sync Timestamp:</strong> 2026-09-04T09:08:29.115954+00:00 UTC</p>
+    </div>
+</body>
 </html>
