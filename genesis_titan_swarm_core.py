@@ -151,26 +151,31 @@ You are building an industrial, zero-latency client-side standalone software app
 '{target['mission']}'.
 Target Real-World Friction: {target['friction']}
 
-ENGINEERING STANDARDS (ZERO COMPROMISE):
-1. Complete Standalone Single-Page Application (HTML5 + Tailwind CDN + Vanilla JS). Zero backend server dependencies.
-2. 100% In-Browser Execution (Zero data leakage to any cloud).
-3. Industrial Architecture:
-   - High-contrast Cyberpunk / Dark Slate-950 UI with modern typography.
-   - Dynamic inputs, interactive visual result nodes or breakdowns.
-   - localStorage caching to persist work across reloads.
-   - Instant copy/export capabilities.
-4. Hard Paywall Hook:
-   - Limit to 3 executions on the free sandbox.
-   - Trigger a modal offering Pro Lifetime Unlock for INR {AMOUNT} via UPI ({UPI_ID}).
+MANDATORY GENESIS CORE INTEGRATION SPECIFICATION:
+Your generated HTML MUST natively link and utilize the conglomerate shared infrastructure:
+1. HEAD IMPORTS (Strict Requirement):
+   <link rel="stylesheet" href="../assets/genesis_ui.css">
+   <script src="../assets/genesis_engine.js"></script>
 
-Output strictly raw JSON without markdown syntax:
+2. MANDATORY PRIMITIVE USAGE (Do NOT write duplicate vanilla helper functions):
+   - State Persistence: Use `Genesis.State.save('{target['slug']}_state', data)` and `Genesis.State.load('{target['slug']}_state', defaultVal)` to auto-save and restore user workspaces.
+   - File Exporting: Use `Genesis.IO.download('filename.json', content, 'application/json')` for data export buttons.
+   - Clipboard Operations: Use `Genesis.IO.copy(text, buttonElement)` for instant copy with visual feedback.
+   - Hard Paywall / Monetization: Use `Genesis.Payments.invokeUPI("{AMOUNT}", "{target['slug']}")` when user triggers Pro actions.
+
+3. ARCHITECTURAL CONSTRAINTS:
+   - Modern slate-950/dark-mode theme with `genesis-card` utility classes from genesis_ui.css.
+   - 100% In-Browser execution: Zero cloud dependencies, zero external fetch calls.
+   - Live inputs, real-time calculations, and rich responsive preview containers.
+
+Return strictly raw JSON without markdown syntax:
 {{
   "agent_id": "{agent_id}",
   "slug": "{target['slug']}",
   "title": "{target['mission']}",
   "guild": "{target['guild']}",
   "origin": "{target['origin']}",
-  "breakthrough": "Architectural breakdown of how this solves enterprise friction client-side",
+  "breakthrough": "Architectural breakdown of how this solves enterprise friction client-side using Genesis Infrastructure primitives",
   "html_application": "<!DOCTYPE html>...complete application code..."
 }}
 """
@@ -212,8 +217,9 @@ Output strictly raw JSON without markdown syntax:
 <html lang="en" class="dark">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{target['mission']} — Genesis Titan Guild</title>
+    <link rel="stylesheet" href="../assets/genesis_ui.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/genesis_engine.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {{ font-family: 'Plus Jakarta Sans', sans-serif; }}
