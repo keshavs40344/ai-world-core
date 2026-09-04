@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><h3>Grid Reconciler</h3><input id='p' placeholder='{"meter_id":"M1","bill_kwh":100,"meter_kwh":100}'><button onclick="fetch('/api/reconcile',{method:'POST',body:document.getElementById('p').value}).then(r=>r.json()).then(d=>alert(JSON.stringify(d)))">Check</button></body></html>
