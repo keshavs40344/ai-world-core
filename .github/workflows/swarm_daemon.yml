@@ -40,6 +40,22 @@ jobs:
         run: |
           python genesis_titan_swarm_core.py || echo "Titan factory soft fallback triggered"
 
+      - name: Run Cross-Sector Hyper-Evolution Engine
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python genesis_hyper_evolution_engine.py || echo "Hyper-evolution soft fallback triggered"
+
+      - name: Execute Agent Prime Sub-Agent Factory
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python agent_prime_orchestrator.py || echo "Agent Prime soft fallback triggered"
+
       - name: Post-Flight Self-Healing & Verification
         run: |
           python sentinel_self_healing_watchdog.py
