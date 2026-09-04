@@ -1,170 +1,766 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Genesis Cloud — Autonomous Developer Utilities Portal</title>
-  <meta name="description" content="Free, zero-latency, client-side developer micro-utilities. 100% privacy-safe data transformers, validators, and formatters.">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENESIS WORLD — Autonomous AI Conglomerate & Sovereign SaaS Hub</title>
+    <meta name="description" content="Autonomous ecosystem of client-side developer utilities, tax engines, and security suites. Zero latency, 100% private.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-mesh {
+            background-image: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.16) 0px, transparent 50%),
+                              radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.12) 0px, transparent 50%),
+                              radial-gradient(at 50% 100%, rgba(139, 92, 246, 0.14) 0px, transparent 50%);
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col antialiased glow-mesh selection:bg-indigo-500 selection:text-white">
 
-  <!-- Header -->
-  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <span class="text-2xl">⚡</span>
-        <span class="font-bold text-lg tracking-tight text-white">Genesis Cloud Hub</span>
-      </div>
-      <div>
-        <a href="sitemap.xml" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold px-3 py-2 rounded transition">Sitemap</a>
-      </div>
-    </div>
-  </header>
+    <!-- Header Navigation -->
+    <header class="border-b border-slate-800/80 bg-slate-950/70 backdrop-blur-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-black text-white shadow-lg shadow-indigo-500/25">
+                    Ω
+                </div>
+                <div>
+                    <span class="font-extrabold text-sm tracking-tight text-white block">GENESIS WORLD</span>
+                    <span class="text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Autonomous Swarm Active
+                    </span>
+                </div>
+            </div>
 
-  <!-- Hero -->
-  <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
-    <div class="text-center max-w-3xl mx-auto mb-10">
-      <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold bg-emerald-950/60 border border-emerald-800/50 px-3 py-1 rounded-full">100% Client-Side & Zero-Cost</span>
-      <h1 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 tracking-tight">Autonomous Developer Utilities</h1>
-      <p class="text-slate-400 mt-3 text-sm sm:text-base">Production micro-services synthesized by the Genesis Autonomous Swarm. No data leaves your browser.</p>
-    </div>
+            <!-- Live Stats Badges (Desktop) -->
+            <div class="hidden md:flex items-center gap-6 text-xs font-mono text-slate-400">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>Engine: <b class="text-white">Autonomous</b></span>
+                </div>
+                <div>Inference: <b class="text-emerald-400">100% Client-Side</b></div>
+                <div>Latency: <b class="text-indigo-400">&lt;10ms</b></div>
+            </div>
 
-    <!-- Dynamic Cards Injected Here -->
-    <div id="hub">
+            <div class="flex items-center gap-3">
+                <a href="sitemap.xml" target="_blank" 
+                   class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-800 px-3.5 py-2 rounded-xl transition">
+                    Sitemap
+                </a>
+                <a href="upi://pay?pa=keshavthakur07@ptyes&pn=Keshav&cu=INR" 
+                   class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-4 py-2 rounded-xl transition shadow-lg shadow-indigo-600/20">
+                    Sponsor Sovereign R&D
+                </a>
+            </div>
+        </div>
+    </header>
 
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-indigo-500/60 transition shadow-xl flex flex-col justify-between">
+    <!-- Hero Section -->
+    <section class="pt-14 pb-10 px-4 sm:px-6 text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-800/60 text-indigo-300 text-xs font-medium mb-6">
+            <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+            <span>Self-Evolving Autonomous Software Swarm</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
+            Client-Side Software. <br/>
+            <span class="bg-gradient-to-r from-indigo-400 via-violet-300 to-emerald-400 bg-clip-text text-transparent">
+                Zero Cloud Leakage.
+            </span>
+        </h1>
+        <p class="text-slate-400 text-sm sm:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
+            Enterprise micro-SaaS applications, regulatory tax models, and security engines engineered autonomously to run entirely in your browser at 0ms latency.
+        </p>
+
+        <!-- Live Search & Filter Bar -->
+        <div class="mt-8 max-w-xl mx-auto space-y-4">
+            <div class="relative">
+                <input id="searchInput" type="text" onkeyup="filterTools()" placeholder="Search utilities by name, category, or keyword..." 
+                       class="w-full bg-slate-900/90 border border-slate-800 rounded-2xl py-3.5 pl-11 pr-4 text-xs sm:text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition shadow-xl">
+                <svg class="w-4 h-4 text-slate-500 absolute left-4 top-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+
+            <!-- Category Pills -->
+            <div class="flex flex-wrap justify-center gap-2 text-xs font-medium">
+                <button onclick="setCategory('all')" class="cat-pill active px-3.5 py-1.5 rounded-full bg-indigo-600 text-white border border-indigo-500 transition shadow">All Assets</button>
+                <button onclick="setCategory('fintech-tax')" class="cat-pill px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition">FinTech & Tax</button>
+                <button onclick="setCategory('devsecops-privacy')" class="cat-pill px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition">DevSecOps</button>
+                <button onclick="setCategory('ai-llm-infra')" class="cat-pill px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition">AI & LLM Infra</button>
+                <button onclick="setCategory('data-cloudops')" class="cat-pill px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition">Data & CloudOps</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dynamic Catalog Grid -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 pb-20 w-full">
+        <div class="flex justify-between items-center mb-6 border-b border-slate-800/80 pb-4">
+            <div class="flex items-center gap-2">
+                <h2 class="text-sm font-bold text-slate-300 uppercase tracking-wider">Production Deployments</h2>
+                <span id="activeCountBadge" class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded-full font-mono">Live</span>
+            </div>
+            <p class="text-xs text-slate-500">Autonomous updates every 3 hours</p>
+        </div>
+
+        <!-- The Swarm injects new cards directly into #hub -->
+        <div id="hub" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- FLAGSHIP PRODUCT HERO (InvoiceForge Pro) -->
+            <div class="col-span-full bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950/50 border border-slate-800 hover:border-indigo-500/50 rounded-3xl p-6 sm:p-8 shadow-2xl transition duration-300 group" data-category="fintech-tax">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="max-w-2xl">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-[11px] font-bold uppercase tracking-wider bg-indigo-600 text-white px-2.5 py-0.5 rounded-full">Flagship Enterprise SaaS</span>
+                            <span class="text-[11px] text-emerald-400 font-semibold bg-emerald-950 border border-emerald-800 px-2.5 py-0.5 rounded-full">₹299.00 Lifetime Lock</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">InvoiceForge Pro Studio</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
+                            Industrial client-side billing and tax suite. Design compliant invoices, calculate complex Indian GST & itemized deductions, and print publication-grade vector PDFs directly from your browser with zero server data storage.
+                        </p>
+                    </div>
+                    <a href="saas/invoice_forge_pro.html" target="_blank" 
+                       class="whitespace-nowrap bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl transition shadow-lg shadow-indigo-600/25 flex items-center gap-2">
+                        Launch Studio ↗
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dynamic Assets Injected Here -->
+
+        <!-- Card: api_mock_studio_1788535809 -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="utilities">
             <div>
                 <div class="flex justify-between items-center mb-3">
-                    <span class="text-xs bg-indigo-950 text-indigo-400 border border-indigo-800 font-mono px-2 py-0.5 rounded">AI-Infrastructure</span>
-                    <span class="text-xs text-emerald-400 font-bold">Gen 1 Active</span>
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-emerald-400 bg-emerald-950/80 border-emerald-800">Utilities</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Pro Studio
+                    </span>
                 </div>
-                <h3 class="text-lg font-bold text-white mb-2">LLM Token Cost & Inference Arbitrage Studio</h3>
-                <p class="text-slate-400 text-xs mb-4 leading-relaxed">AI developers overpay 50-80% using wrong models. This utility compares token pricing across Groq, OpenAI, Anthropic, and Llama-3 in real time with prompt token counters.</p>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">API Mock Studio Pro</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Simulate REST API responses, test payload schemas, and mock endpoints 100% in your browser. Zero cloud leak.</p>
             </div>
-            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                <a href="saas/llm_token_arbitrage_studio.html" target="_blank" class="text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-xl transition">
-                    Open Standalone App ↗
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="saas/api_mock_studio_1788535809.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
                 </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
             </div>
         </div>
-        >
+        
 
-        <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-indigo-900/50 rounded-2xl p-6 hover:border-indigo-500 transition flex flex-col justify-between shadow-xl">
+        <!-- Card: llm_token_arbitrage_studio -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="ai-llm-infra">
             <div>
                 <div class="flex justify-between items-center mb-3">
-                    <span class="text-xs bg-indigo-950 text-indigo-300 border border-indigo-800 font-mono px-2 py-0.5 rounded">Gen 1 Sovereign</span>
-                    <span class="text-xs text-emerald-400 font-bold">100% In-Browser</span>
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-emerald-400 bg-emerald-950/80 border-emerald-800">AI & LLM Infra</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Pro Studio
+                    </span>
                 </div>
-                <h3 class="text-lg font-bold text-white mb-2">TaxShield — Freelancer Advance Tax, 44ADA & TDS Reconciliation Engine</h3>
-                <p class="text-slate-400 text-xs mb-4 leading-relaxed">Autonomous client-side computation for FinTech / Indian Taxation</p>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">LLM Token Cost & Inference Arbitrage St...</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
             </div>
-            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                <a href="saas/taxshield_freelance_engine.html" target="_blank" class="text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-xl transition">
-                    Launch Application ↗
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="saas/llm_token_arbitrage_studio.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
                 </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
             </div>
         </div>
-         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
 
-        <div class="card bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition flex flex-col justify-between">
+        <!-- Card: taxshield_freelance_engine -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="fintech-tax">
             <div>
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs bg-emerald-950 text-emerald-400 font-mono px-2 py-0.5 rounded border border-emerald-800 font-semibold">API Development</span>
-                    <span class="text-xs text-slate-400 font-mono">Vs. Postman / Insomnia Mock Server</span>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-emerald-400 bg-emerald-950/80 border-emerald-800">FinTech & Tax</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Pro Studio
+                    </span>
                 </div>
-                <h3 class="text-lg font-bold text-white mt-1 mb-1">API Mock Studio Pro — Zero-Leak Mock Server</h3>
-                <p class="text-slate-400 text-sm mb-4 line-clamp-2">Simulates REST API responses and tests payloads in-browser with zero third-party cloud data risks.</p>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">TaxShield</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
             </div>
-            <div class="flex items-center space-x-2 mt-2">
-                <a href="saas/api_mock_studio_1788551790.html" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-3 py-2 rounded transition">
-                    Launch SaaS App →
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="saas/taxshield_freelance_engine.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
                 </a>
-                
-            </div>
-        </div>
-
-        <div class="card bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-blue-500/50 transition">
-            <span class="text-xs bg-blue-600/30 text-blue-400 border border-blue-500/30 px-2 py-1 rounded font-mono font-semibold">Agent StructuredLogSanitizer</span>
-            <h3 class="text-white font-bold text-lg mt-3 mb-1">Enterprise Structured Log Sanitizer</h3>
-            <p class="text-slate-400 text-sm mb-4 line-clamp-2">Sanitizes sensitive PII, emails, and credentials from structured logs locally in your browser with zero latency.</p>
-            <div class="flex items-center space-x-2">
-                <a href="tools/structured_log_sanitizer_1788551783.html" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-3 py-2 rounded transition">Launch Tool</a>
-                <a href="outreach/structured_log_sanitizer_1788551783_pitch.txt" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-3 py-2 rounded transition">Outreach Pitch</a>
-                <a href="specs/structured_log_sanitizer_1788551783_openapi.json" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3 py-2 rounded transition">API Spec</a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
             </div>
         </div>
         
 
-        <div class="card bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition flex flex-col justify-between">
+        <!-- Card: csv-mongo-schema-normalizer -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="data-cloudops">
             <div>
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs bg-emerald-950 text-emerald-400 font-mono px-2 py-0.5 rounded border border-emerald-800 font-semibold">API Development</span>
-                    <span class="text-xs text-slate-400 font-mono">Vs. Postman / Insomnia Mock Server</span>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Data & CloudOps</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
                 </div>
-                <h3 class="text-lg font-bold text-white mt-1 mb-1">API Mock Studio Pro — Zero-Leak Mock Server</h3>
-                <p class="text-slate-400 text-sm mb-4 line-clamp-2">Simulates REST API responses and tests payloads in-browser with zero third-party cloud data risks.</p>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">CSV to MongoDB Schema Normalizer</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
             </div>
-            <div class="flex items-center space-x-2 mt-2">
-                <a href="saas/api_mock_studio_1788535809.html" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-3 py-2 rounded transition">
-                    Launch SaaS App →
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/csv-mongo-schema-normalizer.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
                 </a>
-                
-            </div>
-        </div>
-
-        <!-- MAJOR SAAS HERO FLAGSHIP -->
-        <div class="col-span-full bg-gradient-to-r from-indigo-950 via-slate-900 to-slate-900 border-2 border-indigo-600/50 rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-6">
-            <div class="max-w-2xl">
-                <span class="text-xs bg-indigo-600 text-white font-bold px-3 py-1 rounded-full uppercase tracking-wider">Flagship SaaS Active</span>
-                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 tracking-tight">InvoiceForge Pro — Enterprise Billing Studio</h2>
-                <p class="text-slate-300 text-sm mt-2 leading-relaxed">High-performance browser-native invoicing engine. Generate itemized invoices, calculate complex tax models, and print publication-grade PDF documents client-side.</p>
-            </div>
-            <a href="saas/invoice_forge_pro.html" target="_blank" class="whitespace-nowrap bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition shadow-lg shadow-indigo-600/30">
-                Launch SaaS Workspace ↗
-            </a>
-        </div>
-        
-                
-                <a href="specs/csv_to_json_mapper_openapi.json" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3 py-2 rounded transition">API Spec</a>
-            </div>
-        </div>
-
-        <div class="card bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-blue-500/50 transition">
-            <span class="text-xs bg-blue-600/30 text-blue-400 border border-blue-500/30 px-2 py-1 rounded font-mono font-semibold">Agent Gamma</span>
-            <h3 class="text-white font-bold text-lg mt-3 mb-1">MCP Payload Sanitizer & Validator</h3>
-            <p class="text-slate-400 text-sm mb-4 line-clamp-2">Eliminates security risks and parsing errors in Model Context Protocol (MCP) JSON-RPC payloads by sanitizing inputs and validating schema compliance before execution.</p>
-            <div class="flex items-center space-x-2">
-                <a href="tools/mcp_payload_sanitizer.html" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-3 py-2 rounded transition">Launch Tool</a>
-                <a href="outreach/mcp_payload_sanitizer_pitch.txt" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-3 py-2 rounded transition">Outreach Pitch</a>
-                <a href="specs/mcp_payload_sanitizer_openapi.json" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3 py-2 rounded transition">API Spec</a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
             </div>
         </div>
         
-      <!-- Auto-generated tools land here -->
-    </div>
-  </main>
 
-  <!-- Safe UPI Footer -->
-  <footer class="border-t border-slate-800 bg-slate-900/80 py-8 text-center text-slate-500 text-xs">
-    <p>Powered by Genesis Autonomous Conglomerate. Completely free-tier infrastructure.</p>
-    <div class="mt-2">
-      <a href="upi://pay?pa=keshavthakur07@ptyes&pn=Keshav&cu=INR" class="text-emerald-400 hover:underline">☕ Sponsor Infrastructure via UPI (keshavthakur07@ptyes)</a>
-    </div>
-  </footer>
+        <!-- Card: csv_to_json -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="data-cloudops">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Data & CloudOps</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">CSV to JSON Mapper</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Converts raw CSV data into structured JSON objects with precise control over column-to-key mapping and field exclusion.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/csv_to_json.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
 
+        <!-- Card: csv_to_json_mapper -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="data-cloudops">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Data & CloudOps</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">CSV to JSON Mapper</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Converts raw CSV data into structured JSON objects with precise control over column-to-key mapping and field exclusion.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/csv_to_json_mapper.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: docker_craft -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="data-cloudops">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Data & CloudOps</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Docker Run to Compose</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/docker_craft.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: edge-json-shield -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="devsecops-privacy">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">DevSecOps & Privacy</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Edge JSON Shield</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/edge-json-shield.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: github-issue-friction-miner -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="data-cloudops">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Data & CloudOps</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">GitHub Friction Miner</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/github-issue-friction-miner.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: grid-billing-reconciler -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="fintech-tax">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">FinTech & Tax</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Grid-Billing-Reconciler</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/grid-billing-reconciler.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: json-edge-compressor -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="data-cloudops">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Data & CloudOps</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">JSON Edge Compressor</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/json-edge-compressor.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: local-rate-limit-simulator -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="data-cloudops">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Data & CloudOps</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Rate Limit Sim</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/local-rate-limit-simulator.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: maze_prototype_feedback_engine -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="utilities">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Utilities</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Maze Prototype Feedback Engine</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/maze_prototype_feedback_engine.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: mcp_payload_sanitizer -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="devsecops-privacy">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">DevSecOps & Privacy</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">MCP Sanitizer</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/mcp_payload_sanitizer.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: meter-bill-reconciler -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="fintech-tax">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">FinTech & Tax</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Meter-Bill-Reconciler</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/meter-bill-reconciler.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: regex_architect -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="data-cloudops">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Data & CloudOps</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Regex Architect</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/regex_architect.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: schema_smith_1788534578 -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="data-cloudops">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Data & CloudOps</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">SchemaSmith</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/schema_smith_1788534578.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: secure_data_parser_1788522308 -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="devsecops-privacy">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">DevSecOps & Privacy</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Secure Data Parser 1788522308</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/secure_data_parser_1788522308.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: smart_data_sanitizer_1788517808 -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="devsecops-privacy">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">DevSecOps & Privacy</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Smart Data Sanitizer 1788517808</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/smart_data_sanitizer_1788517808.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: smart_payload_optimizer_1788520219 -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="utilities">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Utilities</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Smart Payload Optimizer 1788520219</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/smart_payload_optimizer_1788520219.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: sql_forge -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="data-cloudops">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">Data & CloudOps</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">SQL Query Forge</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/sql_forge.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: structured_log_sanitizer_1788534727 -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="devsecops-privacy">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">DevSecOps & Privacy</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Enterprise Structured Log Sanitizer</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Free client-side structured log and tabular data sanitizer. Masks API keys, emails, and credit cards locally in your browser wi...</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/structured_log_sanitizer_1788534727.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: token_ledger -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="ai-llm-infra">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">AI & LLM Infra</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">LLM Token Ledger</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/token_ledger.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: v_gpt_6_astra_1788514891 -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="ai-llm-infra">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">AI & LLM Infra</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Genesis Tool: v_gpt_6_astra_1788514891</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/v_gpt_6_astra_1788514891.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        <!-- Card: webhook_sentinel -->
+        <div class="tool-card group bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between" data-category="devsecops-privacy">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border text-indigo-400 bg-indigo-950/80 border-indigo-800">DevSecOps & Privacy</span>
+                    <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Client Tool
+                    </span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors mb-2 leading-snug">Webhook Signature Sentinel</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Zero-latency browser-native sovereign application with 100% data privacy.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/webhook_sentinel.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition">
+                    <span>Launch Application</span>
+                    <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500 font-mono">0ms Latency</span>
+            </div>
+        </div>
+        
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <p>© 2026 Genesis Autonomous Conglomerate. Governed by Sovereign AI Swarms.</p>
+            <div class="flex items-center gap-4">
+                <a href="upi://pay?pa=keshavthakur07@ptyes&pn=Keshav&cu=INR" class="text-emerald-400 hover:underline">☕ Sponsor R&D via UPI</a>
+                <span>&bull;</span>
+                <a href="sitemap.xml" target="_blank" class="hover:text-slate-300">XML Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Filter JS Script -->
+    <script>
+        let currentCategory = 'all';
+
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-pill').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white', 'border-indigo-500', 'shadow');
+                btn.classList.add('bg-slate-900', 'text-slate-300', 'border-slate-800');
+            });
+            event.target.classList.remove('bg-slate-900', 'text-slate-300', 'border-slate-800');
+            event.target.classList.add('bg-indigo-600', 'text-white', 'border-indigo-500', 'shadow');
+            filterTools();
+        }
+
+        function filterTools() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('#hub .tool-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                const cardCat = card.getAttribute('data-category') || '';
+                const matchesCat = (currentCategory === 'all' || cardCat === currentCategory);
+                const matchesQuery = (!query || text.includes(query));
+
+                if (matchesCat && matchesQuery) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const badge = document.getElementById('activeCountBadge');
+            if (badge) badge.innerText = visibleCount + ' Visible';
+        }
+
+        // Keyboard shortcut: press '/' to focus search
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                document.getElementById('searchInput').focus();
+            }
+        });
+    </script>
 </body>
 </html>
-
-        <!-- MAJOR SAAS HERO FLAGSHIP -->
-        <div class="col-span-full bg-gradient-to-r from-indigo-950 via-slate-900 to-slate-900 border-2 border-indigo-600/50 rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-6">
-            <div class="max-w-2xl">
-                <span class="text-xs bg-indigo-600 text-white font-bold px-3 py-1 rounded-full uppercase tracking-wider">Flagship SaaS Active</span>
-                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 tracking-tight">InvoiceForge Pro — Enterprise Billing Studio</h2>
-                <p class="text-slate-300 text-sm mt-2 leading-relaxed">High-performance browser-native invoicing engine. Generate itemized invoices, calculate complex tax models, and print publication-grade PDF documents client-side.</p>
-            </div>
-            <a href="saas/invoice_forge_pro.html" target="_blank" class="whitespace-nowrap bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition shadow-lg shadow-indigo-600/30">
-                Launch SaaS Workspace ↗
-            </a>
-        </div>
-        
