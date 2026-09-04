@@ -1,23 +1,23 @@
 {
-  "last_updated": "2026-09-04T08:22:45.189059+00:00",
+  "last_updated": "2026-09-04T08:38:22.016156+00:00",
   "system_health": "HEALTHY",
   "summary": {
-    "total_cycles_completed": 9,
-    "active_projects_in_vault": 9,
+    "total_cycles_completed": 11,
+    "active_projects_in_vault": 14,
     "success_rate_percent": 100.0,
-    "last_execution_timestamp": "2026-09-04T08:22:45.189059+00:00",
-    "last_cycle_id": "011a7f93",
-    "last_run_duration_sec": 1.121
+    "last_execution_timestamp": "2026-09-04T08:38:22.016156+00:00",
+    "last_cycle_id": "c7a209bc",
+    "last_run_duration_sec": 7.9
   },
   "latest_cycle": {
-    "cycle_id": "011a7f93",
-    "timestamp": "2026-09-04T08:22:45.189059+00:00",
-    "duration_sec": 1.121,
-    "project_name": "rate-limited-task-queue",
-    "file_count": 11,
-    "test_status": "PASSED",
-    "test_summary": "......                                                                   [100%]",
-    "path": "vault/rate-limited-task-queue",
+    "cycle_id": "c7a209bc",
+    "timestamp": "2026-09-04T08:38:22.016156+00:00",
+    "duration_sec": 7.9,
+    "project_name": "unified-rebac-policy-engine",
+    "file_count": 5,
+    "test_status": "RELEASED",
+    "test_summary": "Operator Approved & Promoted to Production Core",
+    "path": "vault/unified-rebac-policy-engine",
     "system_health": "HEALTHY"
   },
   "active_projects": [
@@ -25,14 +25,40 @@
     "aws_s3_local_gateway",
     "local-first-tools",
     "localai",
+    "market-volatility-monitor-api",
     "proposals",
     "rate-limited-task-queue",
     "resilient-token-bucket-limiter",
+    "secure-signed-url-guard",
+    "skills",
     "tests",
+    "unified-rebac-policy-engine",
     "unnamed_project",
     "zero-knowledge-id-hasher-api"
   ],
   "history": [
+    {
+      "cycle_id": "c7a209bc",
+      "timestamp": "2026-09-04T08:38:22.016156+00:00",
+      "duration_sec": 7.9,
+      "project_name": "unified-rebac-policy-engine",
+      "file_count": 5,
+      "test_status": "PASSED",
+      "test_summary": "Operator Approved & Promoted to Production Core",
+      "path": "vault/unified-rebac-policy-engine",
+      "system_health": "HEALTHY"
+    },
+    {
+      "cycle_id": "c7a209bc",
+      "timestamp": "2026-09-04T08:37:26.192343+00:00",
+      "duration_sec": 7.9,
+      "project_name": "unified-rebac-policy-engine",
+      "file_count": 5,
+      "test_status": "PENDING_RELEASE",
+      "test_summary": "5 passed in 0.13s (100% exit code 0)",
+      "path": "vault/unified-rebac-policy-engine",
+      "system_health": "DEGRADED"
+    },
     {
       "cycle_id": "011a7f93",
       "timestamp": "2026-09-04T08:22:45.189059+00:00",
