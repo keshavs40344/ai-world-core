@@ -1,19 +1,22 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "CSV-to-MongoDB Schema Normalizer",
+    "title": "CSV to MongoDB Schema Normalizer",
     "version": "1.0.0",
-    "description": "Prevents production data corruption by automatically detecting and normalizing inconsistent field types (e.g., '123' vs 123) in CSV data before MongoDB ingestion, ensuring schema consistency without manual ETL scripting. Includes 50 free monthly tier with hard lock for B2B paywall."
+    "description": "Prevents inconsistent field types in MongoDB collections by automatically inferring and normalizing CSV data into strict JSON schemas before ingestion. Includes 50 free monthly tier with hard lock for B2B paywall."
   },
-  "x-rapidapi-subscription-tiers": {
-    "Basic": {
-      "monthly_quota": 50,
-      "price_usd": 0.0
-    },
-    "Pro": {
-      "monthly_quota": 10000,
-      "price_usd": 9.99,
-      "overage_per_call": 0.005
+  "x-monetization": {
+    "direct_upi_settlement": "keshavthakur07@ptyes",
+    "rapidapi_subscription_tiers": {
+      "Basic": {
+        "monthly_quota": 50,
+        "price_usd": 0.0
+      },
+      "Pro": {
+        "monthly_quota": 10000,
+        "price_usd": 9.99,
+        "overage_per_call": 0.005
+      }
     }
   },
   "paths": {

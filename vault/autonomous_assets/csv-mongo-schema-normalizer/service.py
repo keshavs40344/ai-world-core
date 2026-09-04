@@ -3,25 +3,20 @@ import json, csv, io
 class EngineService:
     def execute(self, payload: str) -> dict:
         try:
-            data = json.loads(payload)
-            csv_text = data.get('csv_data', '')
-            reader = csv.DictReader(io.StringIO(csv_text))
-            type_map = {}
-            normalized = []
+            reader = csv.DictReader(io.StringIO(payload))
+            schema = {}
+            docs = []
             for row in reader:
-                norm_row = {}
+                doc = {}
                 for k, v in row.items():
-                    if v == '': v = None
-                    elif v.lower() in ['true', 'false']: v = v.lower() == 'true'
-                    else:
-                        try: v = int(v)
-                        except: 
-                            try: v = float(v)
-                            except: pass
-                    norm_row[k] = v
-                    if k not in type_map: type_map[k] = type(v).__name__
-                    elif type_map[k] != type(v).__name__: type_map[k] = 'mixed'
-                normalized.append(norm_row)
-            return {'status': 'success', 'documents': normalized, 'schema': type_map}
+                    if v == '': continue
+                    if v.lower() in ['true', 'false']: t = 'bool'
+                    elif v.replace('.', '', 1).isdigit(): t = 'int' if '.' not in v else 'float'
+                    else: t = 'str'
+                    schema.setdefault(k, set()).add(t)
+                    doc[k] = json.loads(v) if t in ['bool', 'int', 'float'] else v
+                docs.append(doc)
+            final_schema = {k: list(v)[0] if len(v) == 1 else 'mixed' for k, v in schema.items()}
+            return {'status': 'success', 'schema': final_schema, 'documents': docs, 'count': len(docs)}
         except Exception as e:
             return {'status': 'error', 'message': str(e)}
