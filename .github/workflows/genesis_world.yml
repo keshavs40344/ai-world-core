@@ -1,0 +1,38 @@
+﻿name: Genesis World Self-Evolution Daemon
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+jobs:
+  evolve-world:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout World Core
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Execute Self-Evolving Swarm
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python genesis_world_engine.py
+
+      - name: Commit World State & Neural Memory
+        run: |
+          git config --global user.name "Genesis-World-Core"
+          git config --global user.email "core@genesis-world.local"
+          git add db/ vault/ public/
+          git diff-index --quiet HEAD || git commit -m "chore(world): self-evolved new asset & updated memory [skip ci]"
+          git push
