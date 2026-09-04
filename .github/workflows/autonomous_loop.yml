@@ -1,0 +1,63 @@
+name: Project Genesis Autonomous Daemon
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-genesis:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    services:
+      redis:
+        image: redis:alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install --upgrade redis slowapi requests
+
+      - name: Execute Genesis Controller Loop
+        env:
+          PYTHONUTF8: "1"
+          PYTHONPATH: "."
+          REDIS_HOST: "localhost"
+          REDIS_PORT: "6379"
+          OLLAMA_BASE_URL: ${{ secrets.REMOTE_OLLAMA_URL }}
+        run: |
+          python main.py
+
+      - name: Auto-Commit Generated Projects to Vault
+        run: |
+          git config --global user.name "Genesis Autonomous Bot"
+          git config --global user.email "bot@project-genesis.ai"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Koi naya artifact generate nahi hua."
+          else
+            git commit -m "Auto: Autonomous cycle execution completed [skip ci]"
+            git push
+          fi
