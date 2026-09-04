@@ -44,7 +44,115 @@
       "source": "AUTONOMOUS RADAR",
       "created_at": "2026-09-04T07:54:59.835477+00:00",
       "status": "ACTIVE"
+    },
+    {
+      "agent_id": "appsecspecialist_20260904_080305",
+      "role": "AppSecSpecialist",
+      "filename": "agent_appsecspecialist_20260904_080305.py",
+      "purpose": "Detects unauthenticated endpoints, exposed presigned URLs, and leaky metadata tokens",
+      "source": "AUTONOMOUS RADAR",
+      "created_at": "2026-09-04T08:03:05.310678+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "systemsspecialist_20260904_080305",
+      "role": "SystemsSpecialist",
+      "filename": "agent_systemsspecialist_20260904_080305.py",
+      "purpose": "Develops high-throughput URL signing and authentication boundary validator",
+      "source": "AUTONOMOUS RADAR",
+      "created_at": "2026-09-04T08:03:05.335037+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "qaspecialist_20260904_080305",
+      "role": "QASpecialist",
+      "filename": "agent_qaspecialist_20260904_080305.py",
+      "purpose": "Tests boundary edge-cases, expired signature rejections, and HMAC token tampering",
+      "source": "AUTONOMOUS RADAR",
+      "created_at": "2026-09-04T08:03:05.362392+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "saasbuilderagent_20260904_082320",
+      "role": "SaaSBuilderAgent",
+      "filename": "agent_saasbuilderagent_20260904_082320.py",
+      "purpose": "Converts modular utilities into self-contained FastAPI microservices with token tiers and docs",
+      "source": "GEN-5 UPGRADE",
+      "created_at": "2026-09-04T08:23:20.813543+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "inteldossieragent_20260904_082320",
+      "role": "IntelDossierAgent",
+      "filename": "agent_inteldossieragent_20260904_082320.py",
+      "purpose": "Scrapes public RSS feeds to produce neutral, structured 360-degree investigative dossiers",
+      "source": "GEN-5 UPGRADE",
+      "created_at": "2026-09-04T08:23:20.840779+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "findatascout_20260904_082320",
+      "role": "FinDataScout",
+      "filename": "agent_findatascout_20260904_082320.py",
+      "purpose": "Harvests unauthenticated public financial/crypto metrics, volume anomalies, and macro indicators",
+      "source": "GEN-5 UPGRADE",
+      "created_at": "2026-09-04T08:23:20.880331+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "autonomousauditor_20260904_082320",
+      "role": "AutonomousAuditor",
+      "filename": "agent_autonomousauditor_20260904_082320.py",
+      "purpose": "Enforces strict SAST static analysis, credential sanitization, and exhaustive pytest coverage",
+      "source": "GEN-5 UPGRADE",
+      "created_at": "2026-09-04T08:23:20.913104+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "adamscanner_20260904_083001",
+      "role": "AdamScanner",
+      "filename": "agent_adamscanner_20260904_083001.py",
+      "purpose": "Continuous listener across HackerNews, GitHub, and RSS stream feeds",
+      "source": "GEN-6 UPGRADE",
+      "created_at": "2026-09-04T08:30:01.914459+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "evearchitect_20260904_083001",
+      "role": "EveArchitect",
+      "filename": "agent_evearchitect_20260904_083001.py",
+      "purpose": "Central asynchronous foundry and modular assembler engine",
+      "source": "GEN-6 UPGRADE",
+      "created_at": "2026-09-04T08:30:01.952062+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "fastapibuilder_20260904_083001",
+      "role": "FastAPIBuilder",
+      "filename": "agent_fastapibuilder_20260904_083001.py",
+      "purpose": "Wraps Python utilities into deployable FastAPI/Uvicorn REST microservices with OpenAPI docs",
+      "source": "GEN-6 UPGRADE",
+      "created_at": "2026-09-04T08:30:01.985919+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "datastreamharvester_20260904_083001",
+      "role": "DataStreamHarvester",
+      "filename": "agent_datastreamharvester_20260904_083001.py",
+      "purpose": "High-throughput resilient stream pipeline harvester with backoff and jitter",
+      "source": "GEN-6 UPGRADE",
+      "created_at": "2026-09-04T08:30:02.015224+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "secopsauditor_20260904_083002",
+      "role": "SecOpsAuditor",
+      "filename": "agent_secopsauditor_20260904_083002.py",
+      "purpose": "Self-healing SAST and pytest quality gatekeeper with automated patch loop",
+      "source": "GEN-6 UPGRADE",
+      "created_at": "2026-09-04T08:30:02.044620+00:00",
+      "status": "ACTIVE"
     }
   ],
-  "last_updated": "2026-09-04T07:54:59.835513+00:00"
+  "last_updated": "2026-09-04T08:30:02.044651+00:00"
 }

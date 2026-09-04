@@ -29,7 +29,8 @@
     "rate-limited-task-queue",
     "resilient-token-bucket-limiter",
     "tests",
-    "unnamed_project"
+    "unnamed_project",
+    "zero-knowledge-id-hasher-api"
   ],
   "history": [
     {
