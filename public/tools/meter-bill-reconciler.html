@@ -1,1 +1,1 @@
-<html><body><input id='p' placeholder='{"meter":100,"billed":105}'><button onclick="fetch('/api/reconcile',{method:'POST',body:document.getElementById('p').value}).then(r=>r.json()).then(d=>alert(JSON.stringify(d)))">Check</button></body></html>
+<!DOCTYPE html><html><body><h3>Reconciler</h3><input id='p' placeholder='{"meter_read":100,"billed_amount":95,"rate_per_unit":1}'><button onclick="fetch('/api/execute',{method:'POST',body:document.getElementById('p').value}).then(r=>r.json()).then(d=>alert(JSON.stringify(d)))">Run</button></body></html>

@@ -1,13 +1,13 @@
 # 🏛️ EXECUTIVE ASSET DOSSIER: meter-bill-reconciler
-**Sub-Agent Type:** Utility-Data-Engineer
-**Generated At:** 2026-09-04T11:12:46.393462+00:00
-**Monetization Vector:** SaaS API per-reconciliation call for utility providers
+**Sub-Agent Type:** utility_engineer
+**Generated At:** 2026-09-04T20:19:47.587168+00:00
+**Monetization Vector:** SaaS API per reconciliation call or enterprise license for utility billing departments.
 
 ## Commercial Intent
-Automates cross-referencing of meter telemetry and billing records to resolve disputes in seconds instead of 11 days.
+Automates cross-referencing of meter telemetry and billing records to resolve disputes in seconds instead of days.
 
 ## Self-Evolved Operational Learning
-Decoupling data sources via a unified reconciliation API eliminates manual cross-referencing bottlenecks.
+Decoupling data sources via a standardized JSON payload eliminates manual cross-referencing bottlenecks.
 
 ## Production Artifacts
 - Service Module: `vault/world_assets/meter-bill-reconciler/service.py`

@@ -3,7 +3,7 @@
   "info": {
     "title": "meter-bill-reconciler",
     "version": "1.0.0",
-    "description": "Automates cross-referencing of meter telemetry and billing records to resolve disputes in seconds instead of 11 days."
+    "description": "Automates cross-referencing of meter telemetry and billing records to resolve disputes in seconds instead of days."
   },
   "paths": {
     "/process": {
