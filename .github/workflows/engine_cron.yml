@@ -1,27 +1,26 @@
-﻿name: Genesis Headless Cloud Swarm
+﻿name: Genesis Headless Industrial Swarm
 
 on:
   schedule:
-    # Har 3 ghante mein cloud runner apne aap execute hoga
-    - cron: '0 */3 * * *'
-  workflow_dispatch: # GitHub web par "Run workflow" click karne ke liye
+    - cron: '0 */3 * * *'  # Har 3 ghante me automatic chalega 24/7
+  workflow_dispatch:       # Manual Run button
 
 jobs:
-  execute-genesis-core:
+  run-enterprise:
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Python Environment
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Run Complete Production Pipeline
+      - name: Execute Autonomous Master Brain
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
@@ -29,19 +28,12 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GENESIS_SYSTEM_PROMPT: ${{ secrets.GENESIS_SYSTEM_PROMPT }}
         run: |
-          # 1. Master Brain: Market Recon, Tech Foundry & Telegram Dispatch
           python genesis_master_brain.py
 
-          # 2. Deploy tool straight to public/ directory for live visitors
-          python genesis/deployer.py
-
-          # 3. Export API Schemas for RapidAPI/Postman readiness
-          python genesis/api_packager.py
-
-      - name: Commit Staged Ventures & Reports
+      - name: Commit Staged Ventures & Pitch Reports
         run: |
-          git config --global user.name "Genesis-Automation-Bot"
+          git config --global user.name "Genesis-Enterprise-Bot"
           git config --global user.email "bot@genesis.local"
-          git add vault/ public/ genesis/
-          git diff-index --quiet HEAD || git commit -m "chore(swarm): automated venture run & executive briefing [skip ci]"
+          git add vault/ public/
+          git diff-index --quiet HEAD || git commit -m "chore(swarm): new venture staged & chairman notified [skip ci]"
           git push
