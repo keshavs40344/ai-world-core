@@ -21,9 +21,16 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run Production Engine
+      - name: Run Complete Production Pipeline
         run: |
-          python genesis_engine.py
+          # 1. Main Revenue Engine runs
+          python genesis_revenue_core.py
+
+          # 2. Deploy tool straight to public/ directory for live visitors
+          python genesis/deployer.py
+
+          # 3. Export API Schemas for RapidAPI/Postman readiness
+          python genesis/api_packager.py
 
       - name: Commit Staged Ventures & Reports
         run: |
