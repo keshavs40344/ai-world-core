@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 PROJECT GENESIS-WORLD: SELF-EVOLVING REVENUE & MULTI-AGENT SWARM
 Capabilities: Self-Directed Training, Dynamic Sub-Agent Spawning, Market Evolution
@@ -30,7 +30,7 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
 env_path = os.path.join(os.path.dirname(__file__), ".env")
 if os.path.exists(env_path):
     try:
-        with open(env_path, "r", encoding="utf-8") as f:
+        with open(env_path, "r", encoding="utf-8-sig") as f:
             for line in f:
                 line = line.strip()
                 if line and not line.startswith("#") and "=" in line:
@@ -138,59 +138,75 @@ class AutonomousExplorer:
 class SubAgentSpawner:
     @staticmethod
     def evolve_and_build(market_context: str, memory_context: str) -> dict:
+        api_key = GROQ_API_KEY.strip() if GROQ_API_KEY else ""
+        url = "https://api.groq.com/openai/v1/chat/completions"
+
         system_prompt = (
-            "You are the Genesis Supreme Intelligence. Your goal is to autonomously build digital wealth assets "
-            "for the Chairman with $0 infrastructure cost. You spawn specialized sub-agents.\n"
-            "Evaluate past learning memory to avoid previous mistakes and improve code quality.\n"
-            "Return ONLY raw JSON with keys:\n"
-            "- 'sub_agent_type': Name of the spawned specialist (e.g., CryptographyArchitect, DataNormalizer)\n"
-            "- 'niche': High-demand category targeted\n"
-            "- 'asset_slug': Lowercase snake_case identifier\n"
-            "- 'monetization_vector': Exact mechanism (e.g., 'GitHub Pages SEO Tool + RapidAPI Freemium')\n"
-            "- 'problem_solved': 1 concrete sentence\n"
-            "- 'code': 100% complete Python class 'EngineService' with 'execute(self, payload: str) -> dict'\n"
-            "- 'html_ui': Complete single-file HTML/JS web tool for public access\n"
-            "- 'lessons_learned': 1 sentence self-reflection on why this asset will succeed."
+            "You are the Genesis Autonomous AI Foundry. Invent high-utility developer tools. "
+            "Output strictly valid JSON with no markdown formatting outside JSON."
         )
 
-        user_content = f"### PREVIOUS AGENT EXPERIENCES:\n{memory_context}\n\n### LIVE MARKET DATA:\n{market_context}"
+        user_prompt = f"""
+Market Intelligence:
+{market_context[:350]}
 
-        if GROQ_API_KEY:
-            url = "https://api.groq.com/openai/v1/chat/completions"
+Generate ONE innovative, production-ready Python utility class 'EngineService' with method 'execute(self, payload: str) -> dict'.
+Respond ONLY with this raw JSON structure:
+{{
+  "sub_agent_type": "SpecialistName",
+  "niche": "Targeted Market Sector",
+  "asset_slug": "unique_lowercase_slug",
+  "monetization_vector": "RapidAPI Freemium or GitHub Pages SEO",
+  "problem_solved": "One direct sentence explaining the problem.",
+  "code": "class EngineService:\\n    def execute(self, payload: str) -> dict:\\n        return {{'status': 'SUCCESS', 'result': payload.strip()}}\\n",
+  "html_ui": "<!DOCTYPE html><html><body><h2>Tool</h2></body></html>",
+  "lessons_learned": "Key operational insight."
+}}
+"""
+
+        # Supported Groq models on free-tier
+        model_candidates = ["qwen/qwen3.8-27b", "openai/gpt-oss-120b", "openai/gpt-oss-20b", "llama-3.1-8b-instant"]
+
+        for model in model_candidates:
             payload = json.dumps({
-                "model": "llama-3.1-8b-instant",
+                "model": model,
                 "messages": [
                     {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_content}
+                    {"role": "user", "content": user_prompt}
                 ],
-                "temperature": 0.25,
+                "temperature": 0.4,
                 "response_format": {"type": "json_object"}
             }).encode("utf-8")
 
-            req = urllib.request.Request(
-                url,
-                data=payload,
-                headers={"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
-            )
+            headers = {
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) GenesisEnterprise/1.0"
+            }
+
+            req = urllib.request.Request(url, data=payload, headers=headers)
 
             try:
-                with urllib.request.urlopen(req, timeout=15) as resp:
-                    data = json.loads(resp.read().decode())
-                    return json.loads(data["choices"][0]["message"]["content"])
-            except Exception as e:
-                print(f"[Spawner Error] {e}")
+                with urllib.request.urlopen(req, timeout=20) as resp:
+                    raw_response = resp.read().decode("utf-8")
+                    data = json.loads(raw_response)
+                    content = data["choices"][0]["message"]["content"]
+                    parsed = json.loads(content)
+                    print(f"✅ Groq Live Model Success ({model})")
+                    return parsed
 
-        # Fallback sovereign utility
-        return {
-            "sub_agent_type": "DataNormalizer",
-            "niche": "Developer Data Cleaning",
-            "asset_slug": f"smart_data_sanitizer_{int(time.time())}",
-            "monetization_vector": "GitHub Pages SEO Utility + RapidAPI",
-            "problem_solved": "Cleaning raw text arrays into uniform JSON.",
-            "code": "class EngineService:\n    def execute(self, payload: str) -> dict:\n        items = [x.strip() for x in payload.split(',') if x.strip()]\n        return {'count': len(items), 'items': items, 'status': 'OPTIMIZED'}\n",
-            "html_ui": "<!DOCTYPE html><html><body><h2>Data Cleaner</h2><p>Live Autonomous Tool</p></body></html>",
-            "lessons_learned": "Pure standard library operations guarantee zero crashes."
-        }
+            except urllib.error.HTTPError as http_err:
+                error_body = http_err.read().decode("utf-8", errors="ignore")
+                print(f"\n[CRITICAL GROQ HTTP ERROR] Model: {model} | Code: {http_err.code} | Reason: {error_body}\n")
+                if http_err.code in (404, 400):
+                    # Model deprecated or unavailable, try next candidate
+                    continue
+                raise http_err
+            except Exception as err:
+                print(f"\n[CRITICAL RUNTIME ERROR] {type(err).__name__}: {str(err)}\n")
+                raise err
+
+        raise RuntimeError("All Groq model candidates failed.")
 
 # --- 4. SANDBOXED VERIFICATION & MULTI-CHANNEL DEPLOYMENT ---
 class WorldDeploymentDesk:

@@ -31,7 +31,7 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
 env_path = os.path.join(os.path.dirname(__file__), ".env")
 if os.path.exists(env_path):
     try:
-        with open(env_path, "r", encoding="utf-8") as f:
+        with open(env_path, "r", encoding="utf-8-sig") as f:
             for line in f:
                 line = line.strip()
                 if line and not line.startswith("#") and "=" in line:
@@ -129,6 +129,7 @@ class GroqBrain:
     @staticmethod
     def design_venture(search_context: str) -> dict:
         url = "https://api.groq.com/openai/v1/chat/completions"
+        api_key = GROQ_API_KEY.strip() if GROQ_API_KEY else ""
         
         prompt = f"""
 You are the Chief Strategy Officer of an autonomous AI venture studio.
@@ -145,36 +146,48 @@ Return ONLY raw JSON with these exact keys:
   "code": "class EngineService:\\n    def process_payload(self, text: str) -> dict:\\n        return {{'status': 'PASSED', 'data': text.strip().upper()}}\\n"
 }}
 """
-        payload = json.dumps({
-            "model": "llama-3.1-8b-instant",
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.5,
-            "response_format": {"type": "json_object"}
-        }).encode("utf-8")
+        model_candidates = ["qwen/qwen3.8-27b", "openai/gpt-oss-120b", "openai/gpt-oss-20b", "llama-3.1-8b-instant"]
 
-        req = urllib.request.Request(
-            url,
-            data=payload,
-            headers={
-                "Authorization": f"Bearer {GROQ_API_KEY.strip()}",
-                "Content-Type": "application/json",
-                "User-Agent": "GenesisCore/1.0"
-            }
-        )
-        try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                data = json.loads(resp.read().decode())
-                return json.loads(data["choices"][0]["message"]["content"])
-        except Exception as e:
-            print(f"DEBUG: Groq API Call failed: {e}")
-            # Dynamic fallback to ensure each run is still unique
-            uid = int(time.time())
-            return {
-                "venture_name": f"payload_validator_{uid}",
-                "problem": "Validates runtime structured strings for security.",
-                "monetization": "RapidAPI Freemium",
-                "code": "class EngineService:\n    def process_payload(self, text: str) -> dict:\n        return {'len': len(text), 'status': 'PASSED'}\n"
-            }
+        for model in model_candidates:
+            payload = json.dumps({
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.5,
+                "response_format": {"type": "json_object"}
+            }).encode("utf-8")
+
+            req = urllib.request.Request(
+                url,
+                data=payload,
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) GenesisEnterprise/1.0"
+                }
+            )
+            try:
+                with urllib.request.urlopen(req, timeout=20) as resp:
+                    data = json.loads(resp.read().decode())
+                    print(f"✅ Groq Live Model Active: {model}")
+                    return json.loads(data["choices"][0]["message"]["content"])
+            except urllib.error.HTTPError as http_err:
+                error_body = http_err.read().decode("utf-8", errors="ignore")
+                print(f"[Groq HTTP {http_err.code}] Model {model}: {error_body}")
+                if http_err.code in (400, 404):
+                    continue
+                break
+            except Exception as e:
+                print(f"DEBUG: Groq API Call failed: {e}")
+                break
+
+        # Dynamic fallback if all network/auth requests fail
+        uid = int(time.time())
+        return {
+            "venture_name": f"payload_validator_{uid}",
+            "problem": "Validates runtime structured strings for security.",
+            "monetization": "RapidAPI Freemium",
+            "code": "class EngineService:\n    def process_payload(self, text: str) -> dict:\n        return {'len': len(text), 'status': 'PASSED'}\n"
+        }
 
 
 # --- 3. SUBPROCESS QA SENTINEL (ISOLATED EXECUTION) ---
