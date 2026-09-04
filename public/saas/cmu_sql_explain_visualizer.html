@@ -2,8 +2,9 @@
 <html lang="en" class="dark">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wasm-driven In-Memory SQL Query Plan Visualizer & EXPLAIN Analyzer — Genesis Titan Guild</title>
+    <link rel="stylesheet" href="../assets/genesis_ui.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/genesis_engine.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -11,31 +12,31 @@
     </style>
 
     <!-- DYNAMIC SEO & SOCIAL GRAPH (Auto-Injected) -->
-    <meta name="title" content="Wasm-driven In-Memory SQL Query Plan Visualizer & EXPLAIN Analyzer — Genesis Titan Guild">
-    <meta name="description" content="100% Client-side utility for Wasm-driven In-Memory SQL Query Plan Visualizer & EXPLAIN Analyzer — Genesis Titan Guild. High-speed, private, zero-server data leakage.">
+    <meta name="title" content="Cmu Sql Explain Visualizer — Genesis Autonomous Suite">
+    <meta name="description" content="100% Client-side utility for Cmu Sql Explain Visualizer — Genesis Autonomous Suite. High-speed, private, zero-server data leakage.">
 
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/saas/cmu_sql_explain_visualizer.html">
-    <meta property="og:title" content="Wasm-driven In-Memory SQL Query Plan Visualizer & EXPLAIN Analyzer — Genesis Titan Guild">
-    <meta property="og:description" content="100% Client-side utility for Wasm-driven In-Memory SQL Query Plan Visualizer & EXPLAIN Analyzer — Genesis Titan Guild. High-speed, private, zero-server data leakage.">
-    <meta property="og:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=Wasm-driven%20In-Memory%20SQL%20Query%20Plan%20Vis+Studio&font=montserrat">
+    <meta property="og:title" content="Cmu Sql Explain Visualizer — Genesis Autonomous Suite">
+    <meta property="og:description" content="100% Client-side utility for Cmu Sql Explain Visualizer — Genesis Autonomous Suite. High-speed, private, zero-server data leakage.">
+    <meta property="og:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=Cmu%20Sql%20Explain%20Visualizer%20%E2%80%94%20Genesis%20Aut+Studio&font=montserrat">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/saas/cmu_sql_explain_visualizer.html">
-    <meta name="twitter:title" content="Wasm-driven In-Memory SQL Query Plan Visualizer & EXPLAIN Analyzer — Genesis Titan Guild">
-    <meta name="twitter:description" content="100% Client-side utility for Wasm-driven In-Memory SQL Query Plan Visualizer & EXPLAIN Analyzer — Genesis Titan Guild. High-speed, private, zero-server data leakage.">
-    <meta name="twitter:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=Wasm-driven%20In-Memory%20SQL%20Query%20Plan%20Vis+Studio&font=montserrat">
+    <meta name="twitter:title" content="Cmu Sql Explain Visualizer — Genesis Autonomous Suite">
+    <meta name="twitter:description" content="100% Client-side utility for Cmu Sql Explain Visualizer — Genesis Autonomous Suite. High-speed, private, zero-server data leakage.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=Cmu%20Sql%20Explain%20Visualizer%20%E2%80%94%20Genesis%20Aut+Studio&font=montserrat">
 
     <!-- JSON-LD Structured Data for Googlebot -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Wasm-driven In-Memory SQL Query Plan Visualizer & EXPLAIN Analyzer — Genesis Titan Guild",
+      "name": "Cmu Sql Explain Visualizer — Genesis Autonomous Suite",
       "url": "https://keshavs40344.github.io/ai-world-core/saas/cmu_sql_explain_visualizer.html",
-      "description": "100% Client-side utility for Wasm-driven In-Memory SQL Query Plan Visualizer & EXPLAIN Analyzer — Genesis Titan Guild. High-speed, private, zero-server data leakage.",
+      "description": "100% Client-side utility for Cmu Sql Explain Visualizer — Genesis Autonomous Suite. High-speed, private, zero-server data leakage.",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "All modern browsers",
       "offers": {
@@ -55,7 +56,7 @@
             <div>
                 <div class="flex items-center gap-2 mb-2">
                     <span class="text-[11px] font-mono font-bold text-indigo-400 bg-indigo-950/80 border border-indigo-800/80 px-3 py-1 rounded-full">MIT CSAIL / CMU Systems Labs</span>
-                    <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-3 py-1 rounded-full">ENG-TITAN-0001</span>
+                    <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-3 py-1 rounded-full">ENG-TITAN-0005</span>
                 </div>
                 <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Wasm-driven In-Memory SQL Query Plan Visualizer & EXPLAIN Analyzer</h1>
                 <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">Engineers commit unindexed PostgreSQL/MySQL queries causing DB bottlenecks. Existing SaaS charges $50/mo and stores query schemas on cloud servers.</p>
