@@ -1,4 +1,4 @@
-name: Genesis Autonomous Swarm Daemon
+name: Genesis Zero-Approval Autonomous Swarm
 
 on:
   schedule:
@@ -6,13 +6,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-swarm:
+  evolve-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Codebase
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -20,20 +20,18 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Execute Genesis Master & Corporation Engines
+      - name: Run Sovereign Autonomous Evolution
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          python genesis_master_engine.py
-          python genesis_autonomous_corporation.py
+          python genesis_sovereign_evolution_core.py
 
-      - name: Auto-Commit & Deploy Artifacts
+      - name: Commit & Push New Generations Autonomously
         run: |
-          git config --global user.name "Genesis-Autonomous-Engine"
-          git config --global user.email "engine@genesis.local"
-          git add public/ vault/ db/
-          git diff-index --quiet HEAD || git commit -m "feat(swarm): autonomous expansion & sitemap sync [skip ci]"
+          git config --global user.name "Genesis-Autonomous-Swarm"
+          git config --global user.email "swarm@genesis.internal"
+          git add public/ db/ vault/
+          git diff-index --quiet HEAD || git commit -m "feat(evolution): autonomous generation upgrade [skip ci]"
           git push origin main
