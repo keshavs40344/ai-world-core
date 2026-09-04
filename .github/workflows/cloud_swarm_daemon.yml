@@ -1,0 +1,46 @@
+﻿name: Project Genesis — Headless Cloud Swarm (GEN-10)
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+jobs:
+  cloud-swarm-runner:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Execute Headless Cloud Swarm (Zero Local Compute)
+        env:
+          PYTHONUTF8: "1"
+          PYTHONPATH: "."
+        run: |
+          python genesis_cloud_engine.py
+
+      - name: Commit Staged Cloud Proposals to Vault
+        run: |
+          git config --global user.name "Genesis Cloud Swarm [bot]"
+          git config --global user.email "bot@project-genesis.ai"
+          git add vault/proposals/ vault/genesis_memory.db public/dashboard.html
+          if git diff --staged --quiet; then
+            echo "No new proposal changes to commit."
+          else
+            git commit -m "chore(cloud-swarm): stage autonomous deliverable [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi
