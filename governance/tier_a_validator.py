@@ -22,11 +22,20 @@ from foundry.sandbox_runner import SandboxRunner
 
 log = logging.getLogger("governance.tier_a")
 
-_VALIDATE_COMMAND = (
-    "pip install -q -r requirements.txt 2>&1 "
-    "&& ruff check . --fix --quiet 2>&1 "
-    "&& pytest --tb=short -q --no-header 2>&1"
-)
+import platform
+
+if platform.system() == "Windows":
+    _VALIDATE_COMMAND = (
+        "python -m pip install -q -r requirements.txt "
+        "&& ruff check . --fix --quiet "
+        "&& pytest --tb=short -q --no-header"
+    )
+else:
+    _VALIDATE_COMMAND = (
+        "pip install -q -r requirements.txt 2>&1 "
+        "&& ruff check . --fix --quiet 2>&1 "
+        "&& pytest --tb=short -q --no-header 2>&1"
+    )
 
 
 class TierAValidator:

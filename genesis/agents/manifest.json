@@ -1,0 +1,50 @@
+{
+  "registered_agents": [
+    {
+      "agent_id": "cloudemulationarchitect_20260904_075250",
+      "role": "CloudEmulationArchitect",
+      "filename": "agent_cloudemulationarchitect_20260904_075250.py",
+      "purpose": "Designs local-first cloud emulator and S3 gateway primitives",
+      "source": "AUTONOMOUS RADAR",
+      "created_at": "2026-09-04T07:52:50.927730+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "dataspecialist_20260904_075459",
+      "role": "DataSpecialist",
+      "filename": "agent_dataspecialist_20260904_075459.py",
+      "purpose": "Resilient polite HTTP extractor with jitter and user-agent rotation",
+      "source": "AUTONOMOUS RADAR",
+      "created_at": "2026-09-04T07:54:59.753731+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "systemsspecialist_20260904_075459",
+      "role": "SystemsSpecialist",
+      "filename": "agent_systemsspecialist_20260904_075459.py",
+      "purpose": "High-throughput thread-safe resilient streaming rate limiter engine",
+      "source": "AUTONOMOUS RADAR",
+      "created_at": "2026-09-04T07:54:59.783426+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "appsecspecialist_20260904_075459",
+      "role": "AppSecSpecialist",
+      "filename": "agent_appsecspecialist_20260904_075459.py",
+      "purpose": "Automated SAST & OWASP vulnerability screening for incoming payloads",
+      "source": "AUTONOMOUS RADAR",
+      "created_at": "2026-09-04T07:54:59.810255+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "agent_id": "qaspecialist_20260904_075459",
+      "role": "QASpecialist",
+      "filename": "agent_qaspecialist_20260904_075459.py",
+      "purpose": "Exhaustive boundary condition, idempotency, and concurrency pytest suite",
+      "source": "AUTONOMOUS RADAR",
+      "created_at": "2026-09-04T07:54:59.835477+00:00",
+      "status": "ACTIVE"
+    }
+  ],
+  "last_updated": "2026-09-04T07:54:59.835513+00:00"
+}

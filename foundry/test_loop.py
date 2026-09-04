@@ -35,11 +35,20 @@ from foundry.sandbox_runner import SandboxRunner, RunResult
 
 log = logging.getLogger("foundry.testloop")
 
-_TEST_COMMAND = (
-    "pip install -q -r requirements.txt 2>&1 "
-    "&& ruff check . --fix --quiet 2>&1 "
-    "&& pytest --tb=short -q 2>&1"
-)
+import platform
+
+if platform.system() == "Windows":
+    _TEST_COMMAND = (
+        "python -m pip install -q -r requirements.txt "
+        "&& ruff check . --fix --quiet "
+        "&& pytest --tb=short -q"
+    )
+else:
+    _TEST_COMMAND = (
+        "pip install -q -r requirements.txt 2>&1 "
+        "&& ruff check . --fix --quiet 2>&1 "
+        "&& pytest --tb=short -q 2>&1"
+    )
 
 _PATCH_SYSTEM_PROMPT = """\
 You are an expert Python debugging assistant for an autonomous software foundry.
