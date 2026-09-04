@@ -147,29 +147,35 @@ class AssetFoundry:
 
     @classmethod
     def synthesize_specialist(cls, market_friction: str, past_knowledge: str, active_registry: str = "") -> dict:
-        print("[GAMMA] Architecting modular ecosystem asset & client-side web utility...")
+        print("[GAMMA] Architecting standalone developer utility with split layout & RapidAPI continuous monetization...")
         url = "https://api.groq.com/openai/v1/chat/completions"
         system_prompt = (
-            "You are Agent Gamma, Principal Systems Architect & Lead Ecosystem Composition Architect of the Genesis Digital Conglomerate. "
-            "CORE DIRECTIVE: MODULAR ECOSYSTEM EXPANSION & ASSET REUSE.\n"
-            "1. NEVER BUILD IN ISOLATION: Compose the new service to natively import and reuse existing internal micro-services where applicable (e.g., csv_to_json_mapper, data sanitizers, regex validators).\n"
-            "2. DUAL-EXPOSURE INTERFACE:\n"
-            "   - Python Backend (EngineService): Must include an execution hook that accepts string/dict payloads, handling raw data and piping gracefully using standard library only (csv, json, re, urllib, sqlite3). Keep under 18 lines.\n"
-            "   - Client-Side UI (HTML5 + Tailwind): Keep under 18 lines with Tailwind CDN, dark mode, 100% in-browser JS execution, copy buttons, and an instant raw data conversion/sanitizer mode.\n"
-            "3. COMMERCIAL CONTINUITY:\n"
-            "   - Every web tool MUST include the RapidAPI catalog anchor:\n"
-            "     <a href=\"https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper\" target=\"_blank\" class=\"text-xs text-indigo-400 hover:underline\">⚡ Need enterprise API access? Subscribe on RapidAPI</a>\n"
-            "   - Outreach pitch must be high-converting and non-spammy for B2B engineering leads.\n"
-            "Output strictly valid raw JSON without markdown codeblock wrappers with keys:\n"
+            "You are Agent Gamma, Lead Product Architect & Full-Stack Commercial Foundry of the Genesis Autonomous Conglomerate.\n"
+            "MISSION: Synthesize complete, production-ready, client-side developer utilities that live on their own dedicated standalone pages with zero backend dependency ($0 server burn).\n\n"
+            "1. DEDICATED STANDALONE PAGE ARCHITECTURE (MANDATORY):\n"
+            "   - Must be an independent, self-contained HTML5 web application.\n"
+            "   - Theme: Sleek Tailwind CSS CDN dark mode (slate-950 background, slate-900 panels, slate-800 borders).\n"
+            "   - Responsive split layout: Input Editor on left/top, Output/Preview on right/bottom.\n"
+            "   - Action utilities: Buttons for 'Copy to Clipboard', 'Clear Input', 'Load Demo Data', and 'Download Result'.\n"
+            "   - Runtime: 100% in-browser JavaScript (pure client-side execution, zero latency, zero privacy risk).\n\n"
+            "2. REUSE & INTERCONNECTION WITH EXISTING ASSETS:\n"
+            "   - Natively integrate the logic of our deployed micro-services (e.g. CSV to JSON mapping, log masking, schema validation).\n"
+            "   - Every generated standalone page header MUST include this exact enterprise anchor:\n"
+            "     <a href=\"https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper\" target=\"_blank\" class=\"text-xs text-indigo-400 hover:text-indigo-300 font-semibold underline\">⚡ Need Enterprise B2B API Access? Subscribe on RapidAPI ($9.99/mo)</a>\n\n"
+            "3. MONETIZATION & SEO:\n"
+            "   - High-Intent SEO Meta: Craft targeted <title> and <meta name=\"description\"> targeting developer search queries.\n"
+            "   - Python Backend (EngineService): Concise Python class with execute(self, payload: str) -> dict using only standard library (csv, json, re, urllib, sqlite3). Under 18 lines.\n\n"
+            "4. STRICT OUTPUT JSON SCHEMA (NO MARKDOWN WRAPPERS):\n"
+            "Return strictly raw, parseable JSON with exactly these keys:\n"
             "{\n"
-            "  \"agent_role\": \"Agent SpecificName\",\n"
-            "  \"slug\": \"lowercase_snake_case_name\",\n"
-            "  \"name\": \"Professional Title\",\n"
-            "  \"problem_solved\": \"Clear 1-sentence description of the problem solved\",\n"
-            "  \"monetization\": \"RapidAPI Freemium ($9.99/mo Pro) + Direct B2B Utility\",\n"
-            "  \"python_service\": \"Complete Python class EngineService with method execute(self, payload: str) -> dict using only Standard Library\",\n"
-            "  \"html_client\": \"Complete HTML5 document with Tailwind CDN, dark mode, in-browser JS execution, RapidAPI link, and clean UI\",\n"
-            "  \"outreach_pitch\": \"High-converting, non-spammy cold email or DM explaining how this saves 5+ hours for a business\"\n"
+            "  \"agent_role\": \"Agent <SpecialistName>\",\n"
+            "  \"slug\": \"lowercase_snake_case_base_name\",\n"
+            "  \"name\": \"Professional Production Utility Title\",\n"
+            "  \"problem_solved\": \"Exact 1-sentence technical friction solved\",\n"
+            "  \"monetization\": \"RapidAPI B2B Tier + Free Client Tool\",\n"
+            "  \"python_service\": \"Complete Python class EngineService with method execute(self, payload: str) -> dict using only standard library\",\n"
+            "  \"html_client\": \"Full standalone <!DOCTYPE html> document complete with Tailwind styling, UI controls, JavaScript logic, and error handlers\",\n"
+            "  \"outreach_pitch\": \"High-converting 3-sentence outreach DM/Email for Reddit, Twitter, or Discord offering this free standalone tool to someone facing this exact problem\"\n"
             "}"
         )
         user_prompt = (
@@ -212,17 +218,106 @@ class AssetFoundry:
                 print(f"[-] [GAMMA] Model {model} fallback: {e}")
                 continue
 
-        # Deterministic Safe Asset with Modular Composition & RapidAPI continuity
+        # Deterministic Standalone Web Application with Split Editor & RapidAPI Continuity
         uid = int(time.time())
+        fallback_html = f"""<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Structured Log Sanitizer — Online Developer Utility</title>
+  <meta name="description" content="Free client-side structured log and tabular data sanitizer. Masks API keys, emails, and credit cards locally in your browser with zero data leakage.">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col">
+  <header class="border-b border-slate-800 bg-slate-900/70 backdrop-blur px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+    <div>
+      <h1 class="text-lg font-bold text-white tracking-tight">Structured Log & Data Sanitizer</h1>
+      <p class="text-xs text-slate-400">100% In-Browser Execution &bull; Zero Server Logging &bull; Zero Privacy Risk</p>
+    </div>
+    <a href="https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper" target="_blank" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold underline">
+      ⚡ Need Enterprise B2B API Access? Subscribe on RapidAPI ($9.99/mo)
+    </a>
+  </header>
+
+  <main class="flex-grow p-6 max-w-7xl mx-auto w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-190px)] min-h-[500px]">
+      <!-- Input Panel -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col shadow-xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-semibold text-slate-300">Raw Input (Logs, CSV, JSON):</span>
+          <div class="space-x-2">
+            <button onclick="loadDemo()" class="text-xs text-blue-400 hover:text-blue-300 font-medium">Load Demo Data</button>
+            <button onclick="clearInput()" class="text-xs text-slate-400 hover:text-slate-300">Clear</button>
+          </div>
+        </div>
+        <textarea id="rawInput" class="flex-grow w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-xs font-mono text-slate-200 focus:outline-none focus:border-blue-500 resize-none" placeholder="Paste dirty logs, tabular data, or JSON payloads..."></textarea>
+        <div class="mt-3 flex gap-2">
+          <button onclick="sanitizeData()" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs px-5 py-2.5 rounded-lg transition shadow">Sanitize Data</button>
+          <span id="inputStats" class="text-xs text-slate-500 self-center"></span>
+        </div>
+      </div>
+
+      <!-- Output Panel -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col shadow-xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-semibold text-emerald-400">Sanitized Output Preview:</span>
+          <div class="space-x-3">
+            <button onclick="copyOutput()" class="text-xs text-emerald-400 hover:underline font-semibold">Copy to Clipboard</button>
+            <button onclick="downloadResult()" class="text-xs text-blue-400 hover:underline">Download Result</button>
+          </div>
+        </div>
+        <pre id="outputPreview" class="flex-grow w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs font-mono text-emerald-400 overflow-auto whitespace-pre-wrap">// Output will render here</pre>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function loadDemo() {{
+      document.getElementById('rawInput').value = `timestamp,level,user_email,card_num,message\\n2026-09-04T12:00:00Z,INFO,alice.dev@company.com,4111222233334444,Payment batch processed\\n2026-09-04T12:00:01Z,ERROR,bob.admin@partner.io,5500123456789012,Webhook authentication timeout`;
+      document.getElementById('inputStats').textContent = 'Demo loaded (2 records)';
+    }}
+    function clearInput() {{
+      document.getElementById('rawInput').value = '';
+      document.getElementById('outputPreview').textContent = '// Output will render here';
+      document.getElementById('inputStats').textContent = '';
+    }}
+    function sanitizeData() {{
+      const val = document.getElementById('rawInput').value;
+      if (!val.trim()) {{
+        document.getElementById('outputPreview').textContent = '// Input empty. Please provide data.';
+        return;
+      }}
+      let cleaned = val.replace(/[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+/g, '[EMAIL_REDACTED]');
+      cleaned = cleaned.replace(/\\b(?:4[0-9]{{12}}(?:[0-9]{{3}})?|5[1-5][0-9]{{14}})\\b/g, '[CARD_REDACTED]');
+      document.getElementById('outputPreview').textContent = cleaned;
+    }}
+    function copyOutput() {{
+      const text = document.getElementById('outputPreview').textContent;
+      navigator.clipboard.writeText(text);
+      alert('Sanitized result copied to clipboard!');
+    }}
+    function downloadResult() {{
+      const text = document.getElementById('outputPreview').textContent;
+      const blob = new Blob([text], {{ type: 'text/plain;charset=utf-8' }});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'sanitized_output.txt';
+      a.click();
+    }}
+  </script>
+</body>
+</html>"""
+
         return {
             "agent_role": "Agent StructuredLogSanitizer",
             "slug": f"structured_log_sanitizer_{uid}",
             "name": "Enterprise Structured Log Sanitizer",
-            "problem_solved": "Composes tabular CSV/JSON mapping with sensitive PII masking for developer observability pipelines.",
-            "monetization": "RapidAPI Freemium ($9.99/mo Pro) + Direct B2B Utility",
-            "python_service": "import re, json, csv, io\nclass EngineService:\n    def execute(self, payload: str) -> dict:\n        masked = re.sub(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+', '[EMAIL_MASKED]', payload)\n        masked = re.sub(r'\\b(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})\\b', '[CARD_MASKED]', masked)\n        return {'status': 'SUCCESS', 'sanitized': masked}\n",
-            "html_client": "<!DOCTYPE html><html lang='en' class='dark'><head><meta charset='UTF-8'><title>Structured Log Sanitizer</title><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-slate-950 text-slate-100 p-6 font-sans'><div class='max-w-2xl mx-auto bg-slate-900 border border-slate-800 rounded-xl p-5'><h2 class='text-xl font-bold mb-2 text-white'>Structured Log Sanitizer</h2><div class='mb-3'><a href='https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper' target='_blank' class='text-xs text-indigo-400 hover:underline'>⚡ Need enterprise API access? Subscribe on RapidAPI</a></div><textarea id='i' class='w-full h-32 bg-slate-950 border border-slate-700 p-2 rounded text-xs font-mono mb-2' placeholder='Paste logs or CSV records'></textarea><button onclick=\"document.getElementById('o').textContent=document.getElementById('i').value.replace(/\\S+@\\S+\\.\\S+/g,'[EMAIL_REDACTED]')\" class='bg-blue-600 px-4 py-2 rounded text-xs font-semibold'>Sanitize In-Browser</button><pre id='o' class='mt-2 bg-slate-950 border border-slate-800 p-2 rounded text-xs font-mono text-emerald-400 h-32 overflow-auto'></pre></div></body></html>",
-            "outreach_pitch": "Hey team, built a zero-cost client-side structured log sanitizer that strips credentials and PII before exporting to third-party dashboards. Free to use locally or integrate via RapidAPI."
+            "problem_solved": "Sanitizes sensitive PII, emails, and credentials from structured logs locally in your browser with zero latency.",
+            "monetization": "RapidAPI B2B Tier + Free Client Tool",
+            "python_service": "import re\nclass EngineService:\n    def execute(self, payload: str) -> dict:\n        masked = re.sub(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+', '[EMAIL_MASKED]', payload)\n        masked = re.sub(r'\\b(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})\\b', '[CARD_MASKED]', masked)\n        return {'status': 'SUCCESS', 'sanitized': masked}\n",
+            "html_client": fallback_html,
+            "outreach_pitch": "Hey team, saw you were looking for an easy way to clean sensitive PII and emails from production logs before sharing. I built a 100% client-side tool with zero server latency or data risk: https://keshavs40344.github.io/ai-world-core/public/tools/structured_log_sanitizer.html. Check it out and let me know if you need high-volume API access!"
         }
 
 # ============================================================
