@@ -1,0 +1,16 @@
+﻿{
+  "mission_id": "mission-multi-model-consensus-orchestrator",
+  "name": "multi-model-consensus-orchestrator",
+  "domain": "Systems & Distributed Intelligence",
+  "origin_signal": "K2 Horizon: A connected fleet of open models / Tool usage variance across models",
+  "objective": "Zero-dependency asynchronous consensus orchestrator that coordinates parallel model outputs, detects hallucination drift, and resolves quorum voting.",
+  "performance_targets": {
+    "evaluation_latency_ms": 10,
+    "memory_overhead_mb": 5,
+    "zero_external_dependencies": true
+  },
+  "io_contract": {
+    "inputs": ["candidate_responses (list of strings)", "consensus_threshold (float)"],
+    "outputs": ["chosen_response", "confidence_score", "quorum_reached", "drift_metrics"]
+  }
+}
