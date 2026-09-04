@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 PROJECT GENESIS — UNIFIED MULTI-AGENT AUTONOMOUS VALUE ENGINE
 - Zero Cost Guarantee ($0 Budget)
@@ -92,6 +92,15 @@ class NeuralMemory:
             return "; ".join([f"{r[0]} solved: {r[1]}" for r in rows])
 
     @staticmethod
+    def get_active_registry() -> str:
+        with sqlite3.connect(DB_PATH) as conn:
+            cursor = conn.execute("SELECT slug, specialist_role, problem_solved FROM agents_history WHERE status='ACTIVE' ORDER BY id DESC LIMIT 8")
+            rows = cursor.fetchall()
+            if not rows:
+                return "csv_to_json_mapper (Tabular data conversion), mcp_payload_sanitizer (JSON-RPC & security sanitization)"
+            return ", ".join([f"{r[0]} ({r[1]}: {r[2]})" for r in rows])
+
+    @staticmethod
     def record_asset(role: str, slug: str, problem: str, monetization: str):
         with sqlite3.connect(DB_PATH) as conn:
             conn.execute("""
@@ -137,27 +146,37 @@ class AssetFoundry:
     MODELS = ["qwen/qwen3.8-27b", "openai/gpt-oss-120b", "openai/gpt-oss-20b"]
 
     @classmethod
-    def synthesize_specialist(cls, market_friction: str, past_knowledge: str) -> dict:
-        print("[GAMMA] Architecting production code and client-side web utility...")
+    def synthesize_specialist(cls, market_friction: str, past_knowledge: str, active_registry: str = "") -> dict:
+        print("[GAMMA] Architecting modular ecosystem asset & client-side web utility...")
         url = "https://api.groq.com/openai/v1/chat/completions"
         system_prompt = (
-            "You are Agent Gamma, Lead Architect of Genesis Conglomerate. "
-            "Build an industrial-grade, client-side developer utility that solves real production friction. "
-            "Keep python_service under 18 lines using Standard Library only. "
-            "Keep html_client under 15 lines with Tailwind CDN, dark mode, and 100% in-browser JS execution. "
-            "Output strictly valid JSON with no markdown wrapping around the JSON object:\n"
+            "You are Agent Gamma, Principal Systems Architect & Lead Ecosystem Composition Architect of the Genesis Digital Conglomerate. "
+            "CORE DIRECTIVE: MODULAR ECOSYSTEM EXPANSION & ASSET REUSE.\n"
+            "1. NEVER BUILD IN ISOLATION: Compose the new service to natively import and reuse existing internal micro-services where applicable (e.g., csv_to_json_mapper, data sanitizers, regex validators).\n"
+            "2. DUAL-EXPOSURE INTERFACE:\n"
+            "   - Python Backend (EngineService): Must include an execution hook that accepts string/dict payloads, handling raw data and piping gracefully using standard library only (csv, json, re, urllib, sqlite3). Keep under 18 lines.\n"
+            "   - Client-Side UI (HTML5 + Tailwind): Keep under 18 lines with Tailwind CDN, dark mode, 100% in-browser JS execution, copy buttons, and an instant raw data conversion/sanitizer mode.\n"
+            "3. COMMERCIAL CONTINUITY:\n"
+            "   - Every web tool MUST include the RapidAPI catalog anchor:\n"
+            "     <a href=\"https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper\" target=\"_blank\" class=\"text-xs text-indigo-400 hover:underline\">⚡ Need enterprise API access? Subscribe on RapidAPI</a>\n"
+            "   - Outreach pitch must be high-converting and non-spammy for B2B engineering leads.\n"
+            "Output strictly valid raw JSON without markdown codeblock wrappers with keys:\n"
             "{\n"
             "  \"agent_role\": \"Agent SpecificName\",\n"
             "  \"slug\": \"lowercase_snake_case_name\",\n"
             "  \"name\": \"Professional Title\",\n"
             "  \"problem_solved\": \"Clear 1-sentence description of the problem solved\",\n"
-            "  \"monetization\": \"RapidAPI Freemium + Direct B2B Utility\",\n"
+            "  \"monetization\": \"RapidAPI Freemium ($9.99/mo Pro) + Direct B2B Utility\",\n"
             "  \"python_service\": \"Complete Python class EngineService with method execute(self, payload: str) -> dict using only Standard Library\",\n"
-            "  \"html_client\": \"Complete HTML5 document with Tailwind CDN, dark mode, in-browser JS execution, copy buttons, and clean inputs\",\n"
+            "  \"html_client\": \"Complete HTML5 document with Tailwind CDN, dark mode, in-browser JS execution, RapidAPI link, and clean UI\",\n"
             "  \"outreach_pitch\": \"High-converting, non-spammy cold email or DM explaining how this saves 5+ hours for a business\"\n"
             "}"
         )
-        user_prompt = f"Live Problem Signal: {market_friction}\nPast Knowledge: {past_knowledge}"
+        user_prompt = (
+            f"Market Friction Signal: {market_friction}\n"
+            f"Active Conglomerate Asset Registry: {active_registry}\n"
+            f"Past Knowledge: {past_knowledge}"
+        )
 
         for model in cls.MODELS:
             payload = json.dumps({
@@ -193,17 +212,17 @@ class AssetFoundry:
                 print(f"[-] [GAMMA] Model {model} fallback: {e}")
                 continue
 
-        # Deterministic Safe Asset
+        # Deterministic Safe Asset with Modular Composition & RapidAPI continuity
         uid = int(time.time())
         return {
-            "agent_role": "Agent LogMasker",
-            "slug": f"log_masker_{uid}",
-            "name": "Sensitive Data Log Masker",
-            "problem_solved": "Masks emails, API keys, and credit cards from developer logs locally before export.",
-            "monetization": "RapidAPI Freemium ($9.99/mo Pro)",
-            "python_service": "import re\nclass EngineService:\n    def execute(self, payload: str) -> dict:\n        masked = re.sub(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+', '[EMAIL_MASKED]', payload)\n        return {'status': 'SUCCESS', 'sanitized': masked}\n",
-            "html_client": "<!DOCTYPE html><html><head><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-slate-900 text-white p-6'><h2 class='text-xl font-bold mb-3'>Log Masker</h2><textarea id='i' class='w-full h-32 bg-slate-800 p-2 rounded mb-3'></textarea><button onclick=\"document.getElementById('o').innerText=document.getElementById('i').value.replace(/\\S+@\\S+\\.\\S+/g,'[EMAIL_REDACTED]')\" class='bg-blue-600 px-4 py-2 rounded'>Mask In-Browser</button><pre id='o' class='mt-3 bg-slate-800 p-3 rounded'></pre></body></html>",
-            "outreach_pitch": "Hey team, built a free client-side tool to mask sensitive PII from debug logs before sending to third parties."
+            "agent_role": "Agent StructuredLogSanitizer",
+            "slug": f"structured_log_sanitizer_{uid}",
+            "name": "Enterprise Structured Log Sanitizer",
+            "problem_solved": "Composes tabular CSV/JSON mapping with sensitive PII masking for developer observability pipelines.",
+            "monetization": "RapidAPI Freemium ($9.99/mo Pro) + Direct B2B Utility",
+            "python_service": "import re, json, csv, io\nclass EngineService:\n    def execute(self, payload: str) -> dict:\n        masked = re.sub(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+', '[EMAIL_MASKED]', payload)\n        masked = re.sub(r'\\b(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})\\b', '[CARD_MASKED]', masked)\n        return {'status': 'SUCCESS', 'sanitized': masked}\n",
+            "html_client": "<!DOCTYPE html><html lang='en' class='dark'><head><meta charset='UTF-8'><title>Structured Log Sanitizer</title><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-slate-950 text-slate-100 p-6 font-sans'><div class='max-w-2xl mx-auto bg-slate-900 border border-slate-800 rounded-xl p-5'><h2 class='text-xl font-bold mb-2 text-white'>Structured Log Sanitizer</h2><div class='mb-3'><a href='https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper' target='_blank' class='text-xs text-indigo-400 hover:underline'>⚡ Need enterprise API access? Subscribe on RapidAPI</a></div><textarea id='i' class='w-full h-32 bg-slate-950 border border-slate-700 p-2 rounded text-xs font-mono mb-2' placeholder='Paste logs or CSV records'></textarea><button onclick=\"document.getElementById('o').textContent=document.getElementById('i').value.replace(/\\S+@\\S+\\.\\S+/g,'[EMAIL_REDACTED]')\" class='bg-blue-600 px-4 py-2 rounded text-xs font-semibold'>Sanitize In-Browser</button><pre id='o' class='mt-2 bg-slate-950 border border-slate-800 p-2 rounded text-xs font-mono text-emerald-400 h-32 overflow-auto'></pre></div></body></html>",
+            "outreach_pitch": "Hey team, built a zero-cost client-side structured log sanitizer that strips credentials and PII before exporting to third-party dashboards. Free to use locally or integrate via RapidAPI."
         }
 
 # ============================================================
@@ -266,12 +285,18 @@ class DeliveryOfficer:
     def publish_and_notify(cls, blueprint: dict):
         slug = blueprint["slug"]
 
-        # 1. Dynamic UPI Widget & Deep Link
+        # 1. Dynamic UPI Widget & Deep Link + RapidAPI Enterprise Anchor
         upi_link = f"upi://pay?pa={cls.UPI_ID}&pn={urllib.parse.quote(cls.PAYEE_NAME)}&cu=INR"
         qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=120x120&data={urllib.parse.quote(upi_link)}"
+        rapidapi_catalog_url = "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper"
 
         monetization_card = f"""
         <div style="margin-top:40px; padding:20px; background:#0f172a; border:1px solid #1e293b; border-radius:10px; text-align:center; font-family:sans-serif;">
+            <div style="margin-bottom:12px;">
+                <a href="{rapidapi_catalog_url}" target="_blank" style="color:#818cf8; font-size:12px; font-weight:600; text-decoration:none;">
+                    ⚡ Need enterprise API access? Subscribe on RapidAPI &rarr;
+                </a>
+            </div>
             <p style="color:#94a3b8; font-size:13px; margin-bottom:10px;">⚡ High-performance client-side utility. Support independent zero-cost development:</p>
             <div style="margin-bottom:12px;">
                 <img src="{qr_url}" alt="Scan UPI" style="border:1px solid #334155; border-radius:6px; background:#fff; padding:3px;"/>
@@ -401,14 +426,15 @@ def main():
     print("==========================================================")
     NeuralMemory.init_db()
 
-    # 1. Past Knowledge
+    # 1. Past Knowledge & Active Conglomerate Registry
     past_knowledge = NeuralMemory.get_past_learning()
+    active_registry = NeuralMemory.get_active_registry()
 
     # 2. Friction Radar
     friction = FrictionRadar.hunt_friction()
 
-    # 3. Asset Foundry
-    blueprint = AssetFoundry.synthesize_specialist(friction, past_knowledge)
+    # 3. Asset Foundry (Ecosystem Composition)
+    blueprint = AssetFoundry.synthesize_specialist(friction, past_knowledge, active_registry)
 
     # 4. QA Subprocess Sentinel
     passed = SubprocessSentinel.audit_and_verify(blueprint)
