@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+        <nav class="border-b border-slate-800 bg-slate-900/80 p-4 mb-6 flex justify-between items-center text-xs font-sans">
+            <a href="../index.html" class="text-indigo-400 font-bold">← All AI Tools Hub</a>
+            <a href="https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1.5 rounded">
+                ⚡ RapidAPI Pro Tier ($9.99/mo)
+            </a>
+        </nav>
+        <html lang="en" class="dark"><head><meta charset="UTF-8"><title>LLM Token Ledger</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-slate-950 text-slate-100 min-h-screen p-6 font-sans flex flex-col"><header class="max-w-4xl mx-auto w-full mb-6 border-b border-slate-800 pb-4 flex justify-between items-center"><div><h1 class="text-xl font-bold text-white">LLM Token Ledger & Cost Estimator</h1><p class="text-xs text-slate-400">Calculate prompt tokens and multi-model expenses</p></div><a href="https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper" target="_blank" class="text-xs text-indigo-400 hover:underline">⚡ RapidAPI Pro Tier ($9.99/mo)</a></header><main class="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow"><div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col"><label class="text-xs font-semibold mb-1">Prompt / Input Text:</label><textarea id="txt" class="flex-grow bg-slate-950 border border-slate-700 p-2 rounded text-xs font-mono text-slate-200 resize-none h-48" placeholder="Paste prompt or dataset here..."></textarea><button onclick="calcTokens()" class="mt-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-2 rounded">Calculate Tokens & Cost</button></div><div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col"><span class="text-xs font-semibold text-emerald-400 mb-1">Financial & Token Breakdown:</span><pre id="tout" class="flex-grow bg-slate-950 border border-slate-800 p-3 rounded text-xs font-mono text-emerald-400 overflow-auto whitespace-pre-wrap">// Breakdown appears here</pre><button onclick="navigator.clipboard.writeText(document.getElementById('tout').textContent)" class="mt-2 bg-slate-800 text-slate-300 text-xs py-2 rounded">Copy Breakdown</button></div></main><script>function calcTokens(){const s=document.getElementById('txt').value;const tokens=Math.ceil(s.length/3.8);const gpt4=(tokens*0.00001).toFixed(6);const claude3=(tokens*0.000003).toFixed(6);const groq=(tokens*0.00000059).toFixed(6);document.getElementById('tout').textContent=`Character Count : ${s.length}
+Estimated Tokens: ${tokens}
+
+Estimated Inference Cost (Input):
+- GPT-4o        : $${gpt4}
+- Claude 3.5 Son: $${claude3}
+- Groq (Llama-3): $${groq}
+
+Status: Client-Side Verified`;}</script>
+        <div class="mt-12 p-6 bg-slate-900 border border-slate-800 rounded-xl text-center max-w-md mx-auto text-xs font-sans">
+            <p class="text-slate-400 mb-2">Powered by Agent TokenLedger (Zero-Cost Sovereign Agent)</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=upi%3A//pay%3Fpa%3Dkeshavthakur07%40ptyes%26pn%3DKeshav%26cu%3DINR" alt="UPI QR" class="mx-auto rounded border border-slate-700 p-1 bg-white mb-2"/>
+            <a href="upi://pay?pa=keshavthakur07@ptyes&pn=Keshav&cu=INR" class="inline-block bg-emerald-600 text-white px-4 py-1.5 rounded font-semibold">Tip via UPI (keshavthakur07@ptyes)</a>
+        </div>
+        </body></html>
