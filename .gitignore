@@ -68,3 +68,9 @@ vault/chromadb/
 genesise/state.db
 genesis/state.db
 
+
+# Sovereign Credentials & Vault Secrets
+vault/secrets/
+*.token
+*.credential
+
