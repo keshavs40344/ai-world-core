@@ -1,0 +1,34 @@
+﻿name: Genesis Headless Cloud Swarm
+
+on:
+  schedule:
+    # Har 3 ghante mein cloud runner apne aap execute hoga
+    - cron: '0 */3 * * *'
+  workflow_dispatch: # GitHub web par "Run workflow" click karne ke liye
+
+jobs:
+  execute-genesis-core:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Production Engine
+        run: |
+          python genesis_engine.py
+
+      - name: Commit Staged Ventures & Reports
+        run: |
+          git config --global user.name "Genesis-Automation-Bot"
+          git config --global user.email "bot@genesis.local"
+          git add vault/ public/ genesis/
+          git diff-index --quiet HEAD || git commit -m "chore(swarm): automated venture run & executive briefing [skip ci]"
+          git push
