@@ -223,7 +223,7 @@ if __name__ == "__main__":
         return proc.returncode == 0, code_file
 
 
-# --- 4. TELEGRAM CHAIRMAN MOBILE DESK ---
+# --- 4. TELEGRAM CHAIRMAN MOBILE DESK (NATIVE 1-TAP COCKPIT) ---
 class TelegramNotifier:
     @staticmethod
     def alert_chairman(venture_name: str, monetization: str, problem: str):
@@ -238,35 +238,32 @@ class TelegramNotifier:
             f"💰 *Monetization:* {monetization}\n"
             f"⚙️ *QA:* 100% Subprocess Verified (Exit Code 0)\n"
             f"💻 *Hosting Cost:* $0.00 / month (Cloud Runner)\n\n"
-            f"👇 *CHAIRMAN EXECUTIVE VERDICT:*"
+            f"👇 *TAP BELOW TO EXECUTE DECISION:*"
         )
 
-        inline_keyboard = {
-            "inline_keyboard": [
-                [
-                    {"text": "✅ APPROVE & LAUNCH", "url": "https://github.com/keshavs40344/ai-world-core/actions"},
-                    {"text": "📂 VIEW ASSET", "url": f"https://github.com/keshavs40344/ai-world-core/tree/main/vault/ventures/{venture_name}"}
-                ]
-            ]
-        }
-
         url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+
+        # Native Keyboard (Har notification ke neeche pop-up button aayega)
         payload = json.dumps({
             "chat_id": TELEGRAM_CHAT_ID,
             "text": message,
             "parse_mode": "Markdown",
-            "reply_markup": inline_keyboard
+            "reply_markup": {
+                "keyboard": [
+                    [{"text": f"✅ APPROVE {venture_name}"}],
+                    [{"text": f"❌ DISCARD {venture_name}"}]
+                ],
+                "resize_keyboard": True,
+                "one_time_keyboard": True
+            }
         }).encode("utf-8")
 
-        req = urllib.request.Request(
-            url,
-            data=payload,
-            headers={"Content-Type": "application/json"}
-        )
+        headers = {"Content-Type": "application/json"}
+        req = urllib.request.Request(url, data=payload, headers=headers)
 
         try:
             with urllib.request.urlopen(req, timeout=10) as resp:
-                print("📲 Telegram Memorandum with Decision Buttons Successfully Delivered to Chairman.")
+                print("📲 Telegram Memorandum with Native 1-Tap Buttons Delivered.")
         except Exception as e:
             print(f"[Telegram Alert Error] {e}")
 
