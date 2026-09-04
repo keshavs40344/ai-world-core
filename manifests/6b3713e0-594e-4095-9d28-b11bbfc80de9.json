@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "project_id": "6b3713e0-594e-4095-9d28-b11bbfc80de9",
+  "name": "MiniMax-H3 Turbo LoRA",
+  "category": "Developer Tools",
+  "subcategory": "AI-Agents",
+  "description": "Describe the problem this tool solves and how it addresses that need",
+  "rationale": "This gap exists because current AI agents struggle to generate high-quality video content. This tool fills a missing local-first alternative by providing a simple, efficient way to generate videos using existing tools.",
+  "goals": [
+    "Generate high-quality video content",
+    "Local-first approach"
+  ],
+  "estimated_complexity": "low",
+  "priority_score": 0.5,
+  "source_signals": [
+    "affaan-m/ECC",
+    "google-gemini/gemini-cli"
+  ],
+  "io_schema": {
+    "inputs": [],
+    "outputs": []
+  },
+  "benchmarks": {
+    "max_latency_ms": null,
+    "max_memory_mb": null,
+    "min_throughput_rps": null
+  },
+  "test_criteria": [
+    "All unit tests must pass (pytest exit 0)",
+    "Lint must pass (ruff exit 0)",
+    "No hardcoded secrets or credentials in source",
+    "README.md must be present"
+  ],
+  "license": "MIT",
+  "created_at": "2026-09-03T21:16:32.068364+00:00",
+  "status": "PENDING"
+}

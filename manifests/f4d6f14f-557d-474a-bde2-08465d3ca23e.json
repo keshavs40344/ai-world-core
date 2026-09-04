@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "project_id": "f4d6f14f-557d-474a-bde2-08465d3ca23e",
+  "name": "local-first-tools",
+  "category": "Developer Tools",
+  "subcategory": "Performance Monitoring",
+  "description": "Local-first alternatives to popular tools for monitoring performance and optimizing code.",
+  "rationale": "Many developers struggle with setting up and managing remote tools, leading to inefficiencies and missed opportunities for optimization. Building a local-first alternative can help bridge this gap.",
+  "goals": [
+    "Optimize Code",
+    "Improve Performance"
+  ],
+  "estimated_complexity": "low",
+  "priority_score": 0.8,
+  "source_signals": [
+    "affaan-m/ECC",
+    "google-gemini/gemini-cli"
+  ],
+  "io_schema": {
+    "inputs": [],
+    "outputs": []
+  },
+  "benchmarks": {
+    "max_latency_ms": null,
+    "max_memory_mb": null,
+    "min_throughput_rps": null
+  },
+  "test_criteria": [
+    "All unit tests must pass (pytest exit 0)",
+    "Lint must pass (ruff exit 0)",
+    "No hardcoded secrets or credentials in source",
+    "README.md must be present"
+  ],
+  "license": "MIT",
+  "created_at": "2026-09-03T21:19:22.026995+00:00",
+  "status": "PENDING"
+}

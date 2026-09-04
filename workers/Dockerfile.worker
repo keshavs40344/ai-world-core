@@ -1,0 +1,25 @@
+FROM python:3.11-slim
+
+LABEL maintainer="Genesis Foundry Bot <bot@genesis.local>"
+LABEL description="Sandboxed worker container for Project Genesis code generation and testing"
+
+# ── System deps ────────────────────────────────────────────────────────────
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        git \
+        curl \
+        build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# ── Python base tools ───────────────────────────────────────────────────────
+RUN pip install --no-cache-dir \
+        pip --upgrade \
+        ruff \
+        pytest \
+        pytest-cov
+
+# ── Working directory ────────────────────────────────────────────────────────
+WORKDIR /project
+
+# Entrypoint: bash so we can run arbitrary commands via docker exec
+ENTRYPOINT ["bash", "-c"]
+CMD ["echo 'Genesis worker ready'"]

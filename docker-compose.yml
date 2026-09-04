@@ -1,0 +1,41 @@
+version: "3.9"
+
+# ============================================================
+# Project Genesis — Docker Compose
+#
+# Services:
+#   chroma   : Persistent ChromaDB vector store (port 8000)
+#
+# Worker containers are spawned dynamically by the Python Docker
+# SDK and are NOT defined here — they share the genesis_net network.
+# ============================================================
+
+services:
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: genesis-chroma
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+    networks:
+      - genesis_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/heartbeat"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  chroma_data:
+    driver: local
+
+networks:
+  genesis_net:
+    driver: bridge
+    name: genesis_net

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "project_id": "bf68a57c-c7b4-4610-bd9e-2ec38643656f",
+  "name": "localai",
+  "category": "Developer Tools",
+  "subcategory": "AI Agents",
+  "description": "A lightweight, local-first AI agent for performance optimization and automation.",
+  "rationale": "The current landscape lacks a dedicated, local-first AI agent that can be used for performance optimization and automation without mandatory cloud dependencies. The 'affaan-m/ECC' project shows interest in AI agents but lacks a local-first approach. Building 'localai' can fill this gap and provide developers with a powerful tool for optimizing and automating their workflows locally.",
+  "goals": [
+    "Provide a lightweight, local-first AI agent for performance optimization and automation.",
+    "Enable developers to use AI agents for performance monitoring and automation without mandatory cloud dependencies.",
+    "Offer a CLI utility for easy integration and use of AI agents in local development environments."
+  ],
+  "estimated_complexity": "medium",
+  "priority_score": 0.8,
+  "source_signals": [
+    "affaan-m/ECC"
+  ],
+  "io_schema": {
+    "inputs": [],
+    "outputs": []
+  },
+  "benchmarks": {
+    "max_latency_ms": null,
+    "max_memory_mb": null,
+    "min_throughput_rps": null
+  },
+  "test_criteria": [
+    "All unit tests must pass (pytest exit 0)",
+    "Lint must pass (ruff exit 0)",
+    "No hardcoded secrets or credentials in source",
+    "README.md must be present"
+  ],
+  "license": "MIT",
+  "created_at": "2026-09-03T22:56:07.711080+00:00",
+  "status": "PENDING"
+}

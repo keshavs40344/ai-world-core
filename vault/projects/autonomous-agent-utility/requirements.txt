@@ -1,0 +1,3 @@
+# Core dependencies (Pure Python Standard Library used for core logic)
+pytest>=7.4.0
+ruff>=0.1.0

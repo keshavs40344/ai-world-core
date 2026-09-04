@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "project_id": "2c1ccc70-0fe6-4eb4-b92f-3403a12586d7",
+  "name": "local-first-tools",
+  "category": "Developer Tools",
+  "subcategory": "Performance Monitoring",
+  "description": "A set of lightweight, open-source tools for building fast and efficient local-first applications.",
+  "rationale": "The current market lacks a comprehensive suite of local-first tools that can handle complex performance monitoring tasks. Building such a tool now is valuable due to the growing demand for fast and efficient development workflows.",
+  "goals": [
+    "Build a simple, easy-to-use performance monitoring tool",
+    "Improve the overall developer experience with local-first applications"
+  ],
+  "estimated_complexity": "low",
+  "priority_score": 0.8,
+  "source_signals": [],
+  "io_schema": {
+    "inputs": [],
+    "outputs": []
+  },
+  "benchmarks": {
+    "max_latency_ms": null,
+    "max_memory_mb": null,
+    "min_throughput_rps": null
+  },
+  "test_criteria": [
+    "All unit tests must pass (pytest exit 0)",
+    "Lint must pass (ruff exit 0)",
+    "No hardcoded secrets or credentials in source",
+    "README.md must be present"
+  ],
+  "license": "MIT",
+  "created_at": "2026-09-03T21:59:09.320214+00:00",
+  "status": "PENDING"
+}

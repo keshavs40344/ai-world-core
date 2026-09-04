@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "project_id": "576d8a32-5b5e-4583-ad6b-6db7e0273680",
+  "name": "localai",
+  "category": "Developer Tools",
+  "subcategory": "AI Model Serving",
+  "description": "A lightweight, local-first AI model serving platform for deploying and managing machine learning models.",
+  "rationale": "The current landscape lacks a simple, efficient, and local-first solution for serving AI models. This tool would fill that gap, making it easier for developers to deploy and use AI models without relying on cloud services.",
+  "goals": [
+    "Provide a lightweight, local-first AI model serving platform",
+    "Enable easy deployment and management of machine learning models",
+    "Reduce dependency on cloud services"
+  ],
+  "estimated_complexity": "medium",
+  "priority_score": 0.8,
+  "source_signals": [
+    "boto3",
+    "affaan-m/ECC"
+  ],
+  "io_schema": {
+    "inputs": [],
+    "outputs": []
+  },
+  "benchmarks": {
+    "max_latency_ms": null,
+    "max_memory_mb": null,
+    "min_throughput_rps": null
+  },
+  "test_criteria": [
+    "All unit tests must pass (pytest exit 0)",
+    "Lint must pass (ruff exit 0)",
+    "No hardcoded secrets or credentials in source",
+    "README.md must be present"
+  ],
+  "license": "MIT",
+  "created_at": "2026-09-03T22:28:53.028620+00:00",
+  "status": "PENDING"
+}

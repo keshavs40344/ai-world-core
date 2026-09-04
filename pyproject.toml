@@ -1,0 +1,19 @@
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]  # line length handled by formatter
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pytest.ini_options]
+testpaths = ["genesis/tests", "radar/tests", "foundry/tests", "vault/tests", "governance/tests"]
+addopts = "--tb=short -q"
+python_files = "test_*.py"
+python_functions = "test_*"
+
+[tool.coverage.run]
+source = ["genesis", "radar", "foundry", "vault", "governance"]
+omit = ["*/tests/*", "*/__init__.py"]

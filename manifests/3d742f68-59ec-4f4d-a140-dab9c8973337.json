@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project_id": "3d742f68-59ec-4f4d-a140-dab9c8973337",
+  "name": "unnamed_project",
+  "category": "Uncategorized",
+  "subcategory": "General",
+  "description": "Identifies top software opportunities in the landscape.",
+  "rationale": "",
+  "goals": [],
+  "estimated_complexity": "medium",
+  "priority_score": 0.5,
+  "source_signals": [],
+  "io_schema": {
+    "inputs": [],
+    "outputs": []
+  },
+  "benchmarks": {
+    "max_latency_ms": null,
+    "max_memory_mb": null,
+    "min_throughput_rps": null
+  },
+  "test_criteria": [
+    "All unit tests must pass (pytest exit 0)",
+    "Lint must pass (ruff exit 0)",
+    "No hardcoded secrets or credentials in source",
+    "README.md must be present"
+  ],
+  "license": "MIT",
+  "created_at": "2026-09-03T21:31:25.515584+00:00",
+  "status": "PENDING"
+}

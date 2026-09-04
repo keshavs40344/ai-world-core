@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "project_id": "9d9863a2-df34-4416-ad11-ff6fd8e3304c",
+  "name": "local-first-tools",
+  "category": "Developer Tools",
+  "subcategory": "Performance Monitoring",
+  "description": "Local-first alternatives to popular tools for performance monitoring and optimization.",
+  "rationale": "Building a local-first alternative to popular tools like New Relic or Prometheus can help reduce the burden of migrating to cloud-based solutions, while still providing valuable insights into application performance.",
+  "goals": [
+    "Optimize application performance",
+    "Reduce reliance on cloud services"
+  ],
+  "estimated_complexity": "low",
+  "priority_score": 0.8,
+  "source_signals": [],
+  "io_schema": {
+    "inputs": [],
+    "outputs": []
+  },
+  "benchmarks": {
+    "max_latency_ms": null,
+    "max_memory_mb": null,
+    "min_throughput_rps": null
+  },
+  "test_criteria": [
+    "All unit tests must pass (pytest exit 0)",
+    "Lint must pass (ruff exit 0)",
+    "No hardcoded secrets or credentials in source",
+    "README.md must be present"
+  ],
+  "license": "MIT",
+  "created_at": "2026-09-03T21:29:10.279115+00:00",
+  "status": "PENDING"
+}
