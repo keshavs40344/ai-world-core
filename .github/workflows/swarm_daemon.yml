@@ -55,6 +55,18 @@ jobs:
         run: |
           python agent_dr_aegis.py
 
+      - name: Run Agent Mercury Outbound Broadcasts
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          python agent_mercury_broadcaster.py
+
+      - name: Recompile Chairman Executive Dashboard
+        run: |
+          python build_chairman_dashboard.py
+
       - name: Autonomous Git Commit & Push
         run: |
           git config --global user.name "Genesis-Sentinel-Daemon"
