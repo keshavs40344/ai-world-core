@@ -48,6 +48,13 @@ jobs:
         run: |
           python seo_metatag_engine.py
 
+      - name: Run Dr. Aegis Clinical Examination
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python agent_dr_aegis.py
+
       - name: Autonomous Git Commit & Push
         run: |
           git config --global user.name "Genesis-Sentinel-Daemon"
