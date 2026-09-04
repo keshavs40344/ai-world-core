@@ -2,6 +2,6 @@
 
 **Problem:** Developers lack a quick metric to identify files with high churn and low cohesion that are prone to merge conflicts.
 
-**Monetization:** RapidAPI Pay-Per-Call
+**Monetization:** Direct API Pay-Per-Call
 
 **Subprocess QA:** Verified

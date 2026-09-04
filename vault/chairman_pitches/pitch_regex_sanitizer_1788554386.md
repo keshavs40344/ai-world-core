@@ -2,6 +2,6 @@
 
 **Problem:** Developers frequently introduce catastrophic backtracking vulnerabilities when writing dynamic regular expressions.
 
-**Monetization:** RapidAPI Pay-Per-Call
+**Monetization:** Direct API Pay-Per-Call
 
 **Subprocess QA:** Verified
