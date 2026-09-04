@@ -44,6 +44,10 @@ jobs:
         run: |
           python sentinel_self_healing_watchdog.py
 
+      - name: Inject SEO & OpenGraph Social Meta Tags
+        run: |
+          python seo_metatag_engine.py
+
       - name: Autonomous Git Commit & Push
         run: |
           git config --global user.name "Genesis-Sentinel-Daemon"
