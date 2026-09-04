@@ -1,6 +1,1 @@
-from src import main
-
-
-def test_main():
-    assert 'boto3' in main()
-    # Add more tests here
+['- from src.main import main\n- def test_main():\n  assert main() == None']

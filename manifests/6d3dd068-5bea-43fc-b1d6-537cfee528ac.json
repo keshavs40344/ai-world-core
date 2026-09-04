@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "project_id": "6d3dd068-5bea-43fc-b1d6-537cfee528ac",
+  "name": "boto3",
+  "category": "Developer Tools",
+  "subcategory": "Performance Monitoring",
+  "description": "Boto3 is a Python library for interacting with AWS services. It provides a local-first alternative to the AWS SDKs, allowing developers to build efficient and scalable applications without relying on cloud infrastructure.",
+  "rationale": "The lack of a lightweight, open-source, and easy-to-use AWS client library in Python makes Boto3 an attractive gap in the market for developers who want to build performance monitoring tools locally.",
+  "goals": [
+    "build a local-first AWS client library",
+    "reduce reliance on cloud infrastructure"
+  ],
+  "estimated_complexity": "low",
+  "priority_score": 0.5,
+  "source_signals": [],
+  "io_schema": {
+    "inputs": [],
+    "outputs": []
+  },
+  "benchmarks": {
+    "max_latency_ms": null,
+    "max_memory_mb": null,
+    "min_throughput_rps": null
+  },
+  "test_criteria": [
+    "All unit tests must pass (pytest exit 0)",
+    "Lint must pass (ruff exit 0)",
+    "No hardcoded secrets or credentials in source",
+    "README.md must be present"
+  ],
+  "license": "MIT",
+  "created_at": "2026-09-04T09:10:45.230676+00:00",
+  "status": "PENDING"
+}
