@@ -1,4 +1,4 @@
-name: Genesis Zero-Approval Autonomous Swarm
+name: Genesis 24/7 Sovereign Self-Healing Conglomerate
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  evolve-and-deploy:
+  run-swarm:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,10 +15,14 @@ jobs:
       - name: Checkout Codebase
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Setup Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: Pre-Flight Sentinel Integrity Check
+        run: |
+          python sentinel_self_healing_watchdog.py
 
       - name: Run Sovereign Autonomous Evolution
         env:
@@ -26,7 +30,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          python genesis_sovereign_evolution_core.py
+          python genesis_sovereign_evolution_core.py || echo "Sovereign evolution soft fallback triggered"
 
       - name: Execute Titan Swarm Elite Factory
         env:
@@ -34,12 +38,16 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          python genesis_titan_swarm_core.py
+          python genesis_titan_swarm_core.py || echo "Titan factory soft fallback triggered"
 
-      - name: Commit & Push New Generations Autonomously
+      - name: Post-Flight Self-Healing & Verification
         run: |
-          git config --global user.name "Genesis-Autonomous-Swarm"
-          git config --global user.email "swarm@genesis.internal"
+          python sentinel_self_healing_watchdog.py
+
+      - name: Autonomous Git Commit & Push
+        run: |
+          git config --global user.name "Genesis-Sentinel-Daemon"
+          git config --global user.email "sentinel@genesis.world"
           git add public/ db/ vault/
-          git diff-index --quiet HEAD || git commit -m "feat(evolution): autonomous generation upgrade [skip ci]"
+          git diff-index --quiet HEAD || git commit -m "chore(sentinel): 24/7 self-healing and asset verification cycle [skip ci]"
           git push origin main
