@@ -30,5 +30,15 @@
         }
       }
     }
+  },
+  "servers": [
+    {
+      "url": "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper",
+      "description": "RapidAPI Marketplace Production Gateway"
+    }
+  ],
+  "x-rapidapi": {
+    "marketplace_url": "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper",
+    "registered_at": "2026-09-04T14:55:33.588815+00:00"
   }
 }
