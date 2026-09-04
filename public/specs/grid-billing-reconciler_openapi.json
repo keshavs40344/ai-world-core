@@ -3,7 +3,7 @@
   "info": {
     "title": "grid-billing-reconciler",
     "version": "1.0.0",
-    "description": "Automates cross-referencing of meter telemetry and billing records to reduce dispute resolution time from 11 days to seconds."
+    "description": "Automates cross-referencing of meter telemetry and billing records to resolve disputes in seconds instead of days."
   },
   "paths": {
     "/process": {
