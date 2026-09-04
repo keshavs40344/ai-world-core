@@ -73,11 +73,11 @@ class AgentAlpha:
 class AgentBeta:
     @staticmethod
     def gather_market_friction() -> str:
-        print("[BETA] Scanning real developer demand feeds...")
+        print("[BETA] Scanning high-value enterprise developer friction points...")
         queries = [
-            "unresolved developer utility tools json formatting regex 2026",
-            "most searched micro web tools conversion validation",
-            "api rate limiting and string security verification tools"
+            "LLM API token cost calculator prompt pricing developer tool 2026",
+            "sensitive data masking sanitizer regex credit card password logs PII",
+            "messy csv to production sql insert mongodb json schema converter utility"
         ]
         q = queries[int(time.time()) % len(queries)]
 
@@ -89,12 +89,12 @@ class AgentBeta:
                     res = json.loads(r.read().decode())
                     snippets = [i.get("content", "") for i in res.get("results", [])]
                     if snippets:
-                        print("✅ [BETA] Live intelligence harvested via Tavily.")
+                        print("✅ [BETA] High-intent commercial friction harvested via Tavily.")
                         return "\n".join(snippets)
             except Exception as e:
                 print(f"[-] [BETA] Fallback triggered: {e}")
 
-        return "High search volume detected for automated JWT payload sanitizers, secure regex tokenizers, and lightweight micro-APIs."
+        return "Enterprise demand identified: Automated sensitive PII maskers for server logs, LLM token estimation calculators, and CSV-to-SQL batch converters."
 
 # ============================================================
 # [AGENT GAMMA]: CORE FOUNDRY BUILDER
@@ -107,14 +107,17 @@ class AgentGamma:
         print("[GAMMA] Engineering commercial-grade Python backend & HTML frontend...")
         url = "https://api.groq.com/openai/v1/chat/completions"
         system_prompt = (
-            "You are Agent Gamma, the Zero-Cost Foundry Architect of Project Genesis ($0 Budget Mandate). "
-            "Synthesize ONE high-utility, production-ready developer utility tool in Python. "
-            "ABSOLUTE CONSTRAINT: ZERO PAID APIS. The tool must run 100% locally or inside the user's browser with standard libraries only. "
-            "Keep Python code under 15 lines (Standard library only: re, json, urllib, time). "
-            "Keep html_ui as a standalone client-side HTML5/JS tool that executes 100% in-browser with zero backend calls. "
-            "Output strictly raw JSON with keys: 'slug', 'name', 'problem_solved', 'code', 'html_ui', 'monetization'."
+            "You are the Principal Commercial Architect of Genesis Autonomous Swarm. "
+            "DO NOT build toys, basic text reversers, or trivial math utilities. "
+            "Synthesize an Enterprise-Grade Developer Micro-Utility that solves an urgent production problem "
+            "(e.g., Data Privacy Masking, JSON-to-SQL migration, API token optimization, or Webhook validation).\n\n"
+            "CRITICAL CONSTRAINTS ($0 Server Cost & Concise JSON):\n"
+            "1. Python Service: Production-ready 'EngineService' with 'execute(self, payload: str) -> dict' under 20 lines (Standard library only: re, json, csv, time).\n"
+            "2. Web Tool (HTML5): Compact single-file HTML/JS under 15 lines with Tailwind CDN, dark-mode styling, SEO title, and instant in-browser execution.\n"
+            "3. Commercial Spec: Define exact 50-call freemium limits and a $9.99/mo standard tier.\n"
+            "Output strictly valid complete JSON with keys: 'slug', 'name', 'problem_solved', 'code', 'html_ui', 'monetization'."
         )
-        user_prompt = f"Live Market Gap Identified:\n{market_intel[:350]}"
+        user_prompt = f"Target live commercial demand:\n{market_intel[:300]}"
 
         for model in cls.MODELS:
             payload = json.dumps({
@@ -123,8 +126,8 @@ class AgentGamma:
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
                 ],
-                "temperature": 0.25,
-                "max_tokens": 600,
+                "temperature": 0.2,
+                "max_tokens": 800,
                 "response_format": {"type": "json_object"}
             }).encode("utf-8")
 
@@ -231,19 +234,26 @@ class AgentEpsilon:
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(blueprint.get("html_ui", "<h3>Genesis Automated Tool</h3>"))
 
-        # 2. Deploy OpenAPI 3.0 Marketplace Spec
+        # 2. Deploy OpenAPI 3.0 Marketplace Spec with B2B Freemium Hook
         spec = {
             "openapi": "3.0.0",
             "info": {
                 "title": blueprint["name"],
                 "version": "1.0.0",
-                "description": blueprint["problem_solved"]
+                "description": f"{blueprint['problem_solved']} Includes 50 free monthly tier with hard lock for B2B paywall."
+            },
+            "x-rapidapi-subscription-tiers": {
+                "Basic": {"monthly_quota": 50, "price_usd": 0.00},
+                "Pro": {"monthly_quota": 10000, "price_usd": 9.99, "overage_per_call": 0.005}
             },
             "paths": {
                 "/execute": {
                     "post": {
-                        "summary": "Process data stream",
-                        "responses": {"200": {"description": "OK"}}
+                        "summary": "Execute micro-service payload",
+                        "responses": {
+                            "200": {"description": "Execution Successful"},
+                            "429": {"description": "Monthly Quota Exceeded. Upgrade to Pro Tier at $9.99/mo."}
+                        }
                     }
                 }
             }
