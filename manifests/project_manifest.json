@@ -1,18 +1,25 @@
 {
   "schema_version": "1.0",
-  "project_id": "ec2d1d94-30a7-4377-9acf-27771d3aa23d",
-  "name": "boto3",
+  "project_id": "e5c41b28-2b7a-4445-acf0-baa60eb83083",
+  "name": "csv_to_json_cli",
   "category": "Developer Tools",
-  "subcategory": "Performance Monitoring",
-  "description": "Boto3 is a Python library for interacting with AWS services. It provides a simple and efficient way to manage resources and retrieve data.",
-  "rationale": "Boto3 fills the gap in local-first tools by providing a lightweight, open-source alternative to AWS SDKs. By building this tool, developers can focus on their core tasks rather than learning proprietary APIs.",
+  "subcategory": "Data Conversion",
+  "description": "A zero-dependency CLI tool that converts CSV files to JSON with type inference.",
+  "rationale": "Existing tools require heavy dependencies or lack streaming support for large files.",
   "goals": [
-    "Manage AWS resources",
-    "Retrieve data from AWS services"
+    "Accept CSV via stdin or file path",
+    "Auto-infer column types (int, float, bool, string, date)",
+    "Output newline-delimited JSON (NDJSON) or pretty-printed JSON",
+    "Stream large files without loading all into memory",
+    "100% stdlib Python \u2014 no pip install required"
   ],
   "estimated_complexity": "low",
-  "priority_score": 0.5,
-  "source_signals": [],
+  "priority_score": 0.85,
+  "source_signals": [
+    "pycsv",
+    "pandas",
+    "csvkit"
+  ],
   "io_schema": {
     "inputs": [],
     "outputs": []
@@ -29,6 +36,6 @@
     "README.md must be present"
   ],
   "license": "MIT",
-  "created_at": "2026-09-04T15:10:53.184731+00:00",
+  "created_at": "2026-09-04T20:56:40.014538+00:00",
   "status": "PENDING"
 }

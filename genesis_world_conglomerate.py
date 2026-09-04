@@ -272,74 +272,7 @@ class CommercialDistribution:
             <div style="margin-bottom:14px;">
                 <img src="{qr_url}" alt="UPI QR" style="border:1px solid #334155; border-radius:8px; padding:4px; background:#fff;"/>
             </div>
-            <a href="{upi_link}" style="background:#10b981; color:#fff; text-decoration:none; padding:10px 20px; border-radius:6px; font-weight:bold; font-size:13px;">
-                ☕ Tip via UPI ({cls.UPI_ID})
-            </a>
-        </div>
-        """
-        
-        raw_html = blueprint["html_client"]
-        final_html = raw_html.replace("</body>", f"{footer_widget}</body>") if "</body>" in raw_html else raw_html + footer_widget
-        with open(os.path.join("public/tools", f"{slug}.html"), "w", encoding="utf-8") as f:
-            f.write(final_html)
-
-        # 2. Deploy OpenAPI 3.0 Marketplace Spec with B2B Freemium Tiers
-        spec = {
-            "openapi": "3.0.0",
-            "info": {"title": blueprint["name"], "version": "1.0.0", "description": blueprint["problem_solved"]},
-            "x-rapidapi-subscription-tiers": {
-                "Basic": {"monthly_quota": 50, "price_usd": 0.00},
-                "Pro": {"monthly_quota": 10000, "price_usd": 9.99, "overage_per_call": 0.005}
-            },
-            "paths": {
-                "/execute": {
-                    "post": {
-                        "summary": "Execution Endpoint",
-                        "responses": {
-                            "200": {"description": "OK"},
-                            "429": {"description": "Monthly Quota Exceeded. Upgrade to Pro Tier at $9.99/mo."}
-                        }
-                    }
-                }
-            }
-        }
-        with open(os.path.join("public/specs", f"{slug}_openapi.json"), "w", encoding="utf-8") as f:
-            json.dump(spec, f, indent=2)
-
-        # 3. Dynamic Sitemap.xml Auto-Generation (For Google Search Console)
-        cls.rebuild_sitemap()
-
-        # 4. Update Storefront Hub
-        cls.append_storefront(blueprint)
-
-    @staticmethod
-    def rebuild_sitemap():
-        tools = [f for f in os.listdir("public/tools") if f.endswith(".html")]
-        sitemap_entries = [
-            f"<url><loc>https://keshavs40344.github.io/ai-world-core/public/tools/{tool}</loc><priority>0.8</priority></url>"
-            for tool in tools
-        ]
-        sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url><loc>https://keshavs40344.github.io/ai-world-core/public/index.html</loc><priority>1.0</priority></url>
-    {''.join(sitemap_entries)}
-</urlset>"""
-        with open("public/sitemap.xml", "w", encoding="utf-8") as f:
-            f.write(sitemap_xml)
-
-    @staticmethod
-    def append_storefront(bp: dict):
-        hub_path = "public/index.html"
-        slug = bp["slug"]
-        card = f"""
-        <div style="background:#1e293b; border:1px solid #334155; border-radius:10px; padding:20px; margin-bottom:16px; font-family:sans-serif;">
-            <h3 style="color:#f8fafc; margin:0 0 6px 0; font-size:18px;">{bp['name']}</h3>
-            <p style="color:#94a3b8; font-size:14px; margin:0 0 14px 0;">{bp['problem_solved']}</p>
-            <div style="margin-bottom:12px;">
-                <span style="font-size:12px; font-weight:600; color:#10b981; background:#064e3b; padding:4px 8px; border-radius:4px;">50 Free/mo &bull; $9.99 Pro</span>
-                <span style="font-size:12px; font-weight:600; color:#60a5fa; background:#1e3a8a; padding:4px 8px; border-radius:4px; margin-left:6px;">UPI: {CommercialDistribution.UPI_ID}</span>
-            </div>
-            <a href="tools/{slug}.html" style="background:#3b82f6; color:#fff; text-decoration:none; padding:8px 16px; border-radius:6px; font-weight:600; font-size:13px;">Launch In-Browser Tool</a>
+            
             <a href="specs/{slug}_openapi.json" style="background:#10b981; color:#fff; text-decoration:none; padding:8px 16px; border-radius:6px; font-weight:600; font-size:13px; margin-left:8px;">OpenAPI Spec</a>
         </div>
         """
@@ -375,7 +308,7 @@ class ChairmanTelegramDesk:
             f"📦 *Asset Name:* `{bp['name']}`\n"
             f"🎯 *Demand Solved:* {bp['problem_solved']}\n"
             f"🗺️ *SEO:* Indexed into `sitemap.xml`\n"
-            f"💳 *Monetization:* RapidAPI + Instant UPI (`{CommercialDistribution.UPI_ID}`)\n"
+            f"💳 *Monetization:* Direct Cloud Native + Instant UPI (`{CommercialDistribution.UPI_ID}`)\n"
             f"⚙️ *QA Sentinel:* Subprocess Exit Code 0 (Passed)\n\n"
             f"👇 *CHAIRMAN 1-TAP VERDICT:*"
         )

@@ -65,13 +65,35 @@ class TierAValidator:
             command=_VALIDATE_COMMAND,
         )
 
+        from foundry.feedback_store import record_feedback
+        from foundry.failure_classifier import classify_failure
+
         if result.success:
             log.info(f"[TierA] ✅ '{project_name}' passed lint + tests.")
+            record_feedback(
+                project_name=project_name,
+                category=manifest.get("category", "general"),
+                tier="TIER_A",
+                status="PASS",
+                project_id=manifest.get("project_id"),
+            )
             return True
         else:
             log.warning(
                 f"[TierA] ❌ '{project_name}' failed validation "
                 f"(exit {result.exit_code}).\n"
                 f"{result.stdout[-1000:]}"
+            )
+            classification = classify_failure(result.stdout)
+            record_feedback(
+                project_name=project_name,
+                category=manifest.get("category", "general"),
+                tier="TIER_A",
+                status="FAIL",
+                project_id=manifest.get("project_id"),
+                failure_type=classification.category,
+                error_summary=classification.summary,
+                error_details=result.stdout,
+                ruff_rules=classification.ruff_rules,
             )
             return False

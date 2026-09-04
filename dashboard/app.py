@@ -106,10 +106,11 @@ with st.sidebar:
 
 init_db()
 
-tab_tasks, tab_tier_b, tab_digest, tab_config = st.tabs([
+tab_tasks, tab_tier_b, tab_digest, tab_evolution, tab_config = st.tabs([
     "📋 Task Queue",
     "🔒 Release Gate",
     "📊 Daily Digest",
+    "🧠 Self-Evolution",
     "⚙️ Config",
 ])
 
@@ -210,7 +211,79 @@ with tab_digest:
         st.info("No recent events.")
 
 
-# ── Tab 4: Config ──────────────────────────────────────────────────────────
+# ── Tab 4: Self-Evolution & Intelligence ───────────────────────────
+with tab_evolution:
+    st.header("🧠 Self-Evolution & Failure Intelligence")
+    st.caption("Continuous learning from test errors, linter rules, and operator gates.")
+
+    try:
+        from foundry.feedback_store import get_category_performance_stats, get_recent_failures
+        from foundry.prompt_registry import list_prompt_versions
+        from genesis.dynamic_config import DynamicConfigManager
+
+        tuned_params = DynamicConfigManager().tune()
+
+        # Dynamic config status card
+        st.subheader("⚡ Dynamic Self-Tuning State")
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Active Model", tuned_params.active_model)
+        c2.metric("Circuit Breaker Limit", tuned_params.circuit_breaker_limit)
+        c3.metric("Max Concurrent Workers", tuned_params.max_concurrent_workers)
+        c4.metric("Window Pass Rate", f"{tuned_params.pass_rate_window:.1%}")
+        st.info(f"**Tuning Rationale:** {tuned_params.tuning_rationale}")
+
+        st.divider()
+
+        # Failure Taxonomy & Category Breakdown
+        st.subheader("📊 Category Performance & Failure Modes")
+        cat_stats = get_category_performance_stats()
+        if cat_stats:
+            cols = st.columns(len(cat_stats))
+            for idx, (cat, s) in enumerate(cat_stats.items()):
+                with cols[idx % len(cols)]:
+                    st.metric(
+                        label=f"{cat.title()}",
+                        value=f"{s['pass_rate']:.1%}",
+                        delta=f"{s['passes']} pass / {s['failures']} fail",
+                    )
+        else:
+            st.info("No categorical generation data recorded yet.")
+
+        # Prompt Version Leaderboard
+        st.divider()
+        st.subheader("🏆 Prompt & Strategy Version Leaderboard")
+        prompts = list_prompt_versions()
+        if prompts:
+            for p in prompts:
+                active_badge = "🌟 **[ACTIVE]**" if p["is_active"] else "💤 [Candidate]"
+                with st.expander(f"{active_badge} {p['role']} — `{p['version_tag']}` ({p['category']})"):
+                    col_a, col_b, col_c, col_d = st.columns(4)
+                    col_a.metric("Total Runs", p["total_runs"])
+                    col_b.metric("First-Try Passes", p["first_try_passes"])
+                    col_c.metric("Retries Needed", p["retries_needed"])
+                    col_d.metric("Tier B Approvals", p["tier_b_approvals"])
+                    st.code(p["template_text"], language="markdown")
+        else:
+            st.info("Prompt versions initializing...")
+
+        # Recent Failures & Injected Anti-Patterns
+        st.divider()
+        st.subheader("🛑 Recent Classified Failures")
+        recent_fails = get_recent_failures(limit=10)
+        if recent_fails:
+            for rf in recent_fails:
+                st.warning(
+                    f"**[{rf.get('failure_type', 'UNKNOWN')}]** in `{rf['project_name']}` ({rf['category']}): "
+                    f"{rf.get('error_summary', 'No summary')}"
+                )
+        else:
+            st.success("No recent failures recorded.")
+
+    except Exception as exc:
+        st.error(f"Error loading self-evolution metrics: {exc}")
+
+
+# ── Tab 5: Config ──────────────────────────────────────────────────────────
 with tab_config:
     st.header("⚙️ Active Configuration")
     cfg_data = {

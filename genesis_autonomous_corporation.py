@@ -8,7 +8,7 @@ Department Matrix:
 - Agent Beta (Competitive Product Architect): Reverse-engineers target SaaS into superior zero-leak architecture.
 - Agent Gamma (Chief Engineer): Synthesizes full standalone client-side SaaS (Tailwind, LocalStorage, PDF/CSV export).
 - Agent Delta (QA Sentinel): Subprocess sandboxing, unit testing, and self-healing verification.
-- Agent Epsilon (Chief Commercial Officer): Deploys app, updates storefront/sitemap, attaches UPI & RapidAPI paywalls, dispatches Telegram audit report.
+- Agent Epsilon (Chief Commercial Officer): Deploys app, updates storefront/sitemap, attaches direct UPI paywall, dispatches Telegram audit report.
 """
 
 import os
@@ -57,8 +57,9 @@ TELEGRAM_BOT_TOKEN = clean_env("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = clean_env("TELEGRAM_CHAT_ID", "1335170519")
 UPI_ID = "keshavthakur07@ptyes"
 PAYEE_NAME = "Keshav"
+AMOUNT = "299.00"
+NOTE = "Genesis_SaaS_Pro_Lifetime"
 BASE_URL = "https://keshavs40344.github.io/ai-world-core"
-RAPIDAPI_URL = "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper"
 DB_PATH = "db/genesis_master.db"
 
 # Ensure core enterprise infrastructure
@@ -215,8 +216,7 @@ class AgentGammaEngineer:
             "1. Standalone HTML5 document with Tailwind CSS CDN dark mode (slate-950 bg, slate-900 panels, slate-800 borders).\n"
             "2. Split layout: Input/Editor on left/top, Live Output/Preview on right/bottom.\n"
             "3. Action utilities: 'Copy to Clipboard', 'Clear Input', 'Load Demo Data', 'Export / Download Result'.\n"
-            "4. Built-in hard paywall modal triggered after 3 uses or on 'Upgrade Pro' button with UPI deep link.\n"
-            "5. Header anchor linking to RapidAPI: <a href='https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper' target='_blank' class='text-xs text-indigo-400 underline'>⚡ RapidAPI B2B Sync ($9.99/mo)</a>\n\n"
+            "4. Built-in hard paywall modal triggered after 3 uses or on 'Upgrade Pro' button with exact standard UPI deep link: upi://pay?pa=keshavthakur07@ptyes&pn=Keshav&am=299.00&cu=INR&tn=SaaS_Pro_Lifetime and QR code.\n\n"
             "Output strictly valid JSON without markdown wrapping:\n"
             "{\n"
             "  \"slug\": \"lowercase_snake_case_name\",\n"
@@ -260,8 +260,15 @@ class AgentGammaEngineer:
         # Verified Industrial Fallback: API Mock & Request Studio
         uid = int(time.time())
         slug = f"api_mock_studio_{uid}"
-        upi_link = f"upi://pay?pa={UPI_ID}&pn={urllib.parse.quote(PAYEE_NAME)}&cu=INR"
-        qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=120x120&data={urllib.parse.quote(upi_link)}"
+        query_params = urllib.parse.urlencode({
+            "pa": UPI_ID,
+            "pn": PAYEE_NAME,
+            "am": AMOUNT,
+            "cu": "INR",
+            "tn": NOTE,
+        })
+        upi_link = f"upi://pay?{query_params}"
+        qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={urllib.parse.quote(upi_link)}"
 
         fallback_html = f"""<!DOCTYPE html>
 <html lang="en" class="dark">
@@ -282,9 +289,7 @@ class AgentGammaEngineer:
       </div>
     </div>
     <div class="flex items-center space-x-3">
-      <a href="{RAPIDAPI_URL}" target="_blank" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold underline">
-        ⚡ RapidAPI B2B Sync ($9.99/mo)
-      </a>
+      
       <button onclick="triggerPaywall()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-lg transition shadow">
         Upgrade Pro (₹299)
       </button>
@@ -350,205 +355,36 @@ class AgentGammaEngineer:
     </div>
   </main>
 
-  <div id="paywallModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-2xl p-6 shadow-2xl text-center">
+  <!-- STANDARDIZED INR 299 PRO PAYMENT MODAL -->
+  <div id="paywallModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 font-sans">
+    <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-2xl p-6 shadow-2xl text-center relative">
+      <button onclick="closePaywall()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-sm font-bold">✕</button>
       <div class="w-12 h-12 rounded-full bg-emerald-950 border border-emerald-800 text-emerald-400 mx-auto flex items-center justify-center text-xl mb-3">👑</div>
-      <h3 class="text-base font-bold text-white">Upgrade to API Mock Studio Pro</h3>
-      <p class="text-xs text-slate-400 mt-2 leading-relaxed">You have reached the 3 free mock executions limit on the public sandbox tier. Unlock unlimited endpoint simulations, persistent mock collections, and zero rate-limiting.</p>
-      <div class="my-4 p-4 bg-slate-950 border border-slate-800 rounded-xl">
-        <p class="text-[11px] text-slate-400 mb-2">Scan & Pay ₹299 (Lifetime Access) via UPI:</p>
-        <img src="{qr_url}" alt="UPI QR" class="mx-auto rounded border border-slate-700 bg-white p-1 mb-2"/>
-        <p class="text-xs font-mono text-emerald-400 font-bold">{UPI_ID}</p>
+      <h3 class="text-xl font-extrabold text-white">Upgrade to API Mock Studio Pro</h3>
+      <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Free sandbox quota exhausted. Unlock unlimited endpoint simulations and persistent mock collections.</p>
+      <div class="my-5 p-4 bg-slate-950 border border-slate-800 rounded-xl">
+        <div class="flex justify-between items-center mb-3 text-xs border-b border-slate-800 pb-2">
+          <span class="text-slate-400">Total Settlement:</span>
+          <span class="text-emerald-400 font-mono font-bold text-sm">₹299.00 INR</span>
+        </div>
+        <div class="bg-white p-2.5 rounded-lg inline-block shadow-inner mb-3">
+          <img src="{qr_url}" alt="Scan to Pay 299" class="w-36 h-36 mx-auto block" />
+        </div>
+        <p class="text-[11px] text-slate-400">Scan via PhonePe, Google Pay, Paytm or BHIM</p>
+        <p class="text-xs font-mono text-slate-200 mt-1 font-semibold select-all">{UPI_ID}</p>
       </div>
-      <div class="flex flex-col gap-2">
-        <a href="{upi_link}" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 rounded-lg transition">⚡ Pay via UPI App (₹299)</a>
-        <button onclick="closePaywall()" class="text-xs text-slate-500 hover:text-slate-400 py-1">Continue sandbox preview</button>
+      <div class="space-y-2">
+        <a href="{upi_link}" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30">
+          <span>⚡ Pay ₹299.00 (Open Any UPI App)</span>
+        </a>
+        <button onclick="navigator.clipboard.writeText('{UPI_ID}'); alert('UPI ID copied: {UPI_ID}');" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-2 rounded-xl transition font-medium">
+          📋 Copy UPI ID to Clipboard
+        </button>
       </div>
+      <p class="text-[10px] text-slate-500 mt-4">Instant manual verification: WhatsApp reference or screenshot for activation.</p>
     </div>
   </div>
-
-  <script>
-    function loadDemo() {{
-      document.getElementById('mockBody').value = JSON.stringify({{
-        status: "success",
-        order_id: "ord_99418",
-        customer: {{ name: "Jane Developer", email: "jane@build.io" }},
-        settlement: {{ amount: 499.00, currency: "USD", paid: true }},
-        timestamp: new Date().toISOString()
-      }}, null, 2);
-    }}
-    function clearAll() {{
-      document.getElementById('mockBody').value = '';
-      document.getElementById('responseView').textContent = '// Ready';
-    }}
-    function simulateRequest() {{
-      let count = parseInt(localStorage.getItem('apimock_runs') || '0');
-      if (count >= 3) {{ triggerPaywall(); return; }}
-      localStorage.setItem('apimock_runs', count + 1);
-
-      const delay = parseInt(document.getElementById('delay').value) || 50;
-      const status = document.getElementById('statusCode').value || '200';
-      document.getElementById('responseView').textContent = '// Dispatching mock request...';
-
-      setTimeout(() => {{
-        document.getElementById('badgeStatus').textContent = `STATUS: ${{status}} OK`;
-        document.getElementById('badgeLatency').textContent = `Latency: ${{delay}}ms`;
-        document.getElementById('responseView').textContent = document.getElementById('mockBody').value || '// Empty Response (204)';
-      }}, delay);
-    }}
-    function triggerPaywall() {{ document.getElementById('paywallModal').classList.remove('hidden'); }}
-    function closePaywall() {{ document.getElementById('paywallModal').classList.add('hidden'); }}
-    function copyOutput() {{ navigator.clipboard.writeText(document.getElementById('responseView').textContent); alert('Copied to clipboard!'); }}
-    function downloadJson() {{
-      const blob = new Blob([document.getElementById('responseView').textContent], {{ type: 'application/json' }});
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'mock_response.json';
-      a.click();
-    }}
-    function saveEndpoint() {{
-      localStorage.setItem('apimock_state', JSON.stringify({{
-        method: document.getElementById('method').value,
-        route: document.getElementById('route').value,
-        body: document.getElementById('mockBody').value
-      }}));
-      alert('Mock Endpoint saved locally!');
-    }}
-    loadDemo();
-  </script>
-</body>
-</html>"""
-
-        return {
-            "slug": slug,
-            "name": "API Mock Studio Pro — Zero-Leak Mock Server",
-            "problem_solved": "Simulates REST API responses and tests payloads in-browser with zero third-party cloud data risks.",
-            "python_service": "class EngineService:\n    def execute(self, payload: str) -> dict:\n        import json\n        return {'status': 'SUCCESS', 'mock_verified': True, 'size': len(payload)}\n",
-            "html_app": fallback_html,
-            "outreach_pitch": "Hey team, saw you were looking for a lightweight, zero-cloud API mocking tool. Built this 100% client-side inspector with zero data risk: https://keshavs40344.github.io/ai-world-core/public/saas/api_mock_studio.html. Completely free to test locally!"
-        }
-
-# ============================================================
-# 5. AGENT DELTA: QA & SANDBOXING SENTINEL
-# ============================================================
-class AgentDeltaQA:
-    @staticmethod
-    def audit_and_sandbox(blueprint: dict) -> bool:
-        slug = blueprint["slug"]
-        test_dir = f"vault/specialists/{slug}"
-        clean_dir = os.path.abspath(test_dir).replace('\\', '/')
-        os.makedirs(test_dir, exist_ok=True)
-        py_path = os.path.join(test_dir, "service.py")
-        test_path = os.path.join(test_dir, "test_service.py")
-
-        with open(py_path, "w", encoding="utf-8") as f:
-            f.write(blueprint["python_service"])
-
-        test_code = f"""import sys, unittest
-sys.path.insert(0, "{clean_dir}")
-from service import EngineService
-
-class TestAudit(unittest.TestCase):
-    def test_run(self):
-        eng = EngineService()
-        out = eng.execute("ping")
-        self.assertIsInstance(out, dict)
-        self.assertIn("status", out)
-
-if __name__ == "__main__":
-    unittest.main()
 """
-        with open(test_path, "w", encoding="utf-8") as f:
-            f.write(test_code)
-
-        proc = subprocess.run([sys.executable, test_path], capture_output=True, text=True, timeout=8)
-        if proc.returncode == 0:
-            print(f"✅ [AGENT DELTA - QA] Sandboxed verification PASSED (Exit Code: 0) for '{slug}'")
-            return True
-
-        print(f"[-] [AGENT DELTA - QA] Healing required for '{slug}'...")
-        blueprint["python_service"] = "class EngineService:\n    def execute(self, payload: str) -> dict:\n        return {'status': 'HEALED_SUCCESS', 'payload': str(payload)}\n"
-        with open(py_path, "w", encoding="utf-8") as f:
-            f.write(blueprint["python_service"])
-        return True
-
-# ============================================================
-# 6. AGENT EPSILON: CHIEF COMMERCIAL OFFICER (Deployment & Revenue)
-# ============================================================
-class AgentEpsilonCCO:
-    @classmethod
-    def deploy_and_monetize(cls, intel: dict, blueprint: dict):
-        slug = blueprint["slug"]
-
-        # 1. Deploy Standalone SaaS Web Application
-        app_path = f"public/saas/{slug}.html"
-        with open(app_path, "w", encoding="utf-8") as f:
-            f.write(blueprint["html_app"])
-        print(f"🚀 [AGENT EPSILON] Standalone SaaS deployed: {app_path}")
-
-        # 2. Deploy OpenAPI 3.0 Commercial Spec
-        spec_path = f"public/specs/{slug}_openapi.json"
-        spec = {
-            "openapi": "3.0.0",
-            "info": {"title": blueprint["name"], "version": "1.0.0", "description": blueprint["problem_solved"]},
-            "servers": [{"url": RAPIDAPI_URL, "description": "RapidAPI Marketplace"}],
-            "x-monetization": {
-                "direct_upi": UPI_ID,
-                "tiers": {"basic": "3 exports free", "pro": "₹299 lifetime or $9.99/mo RapidAPI"}
-            },
-            "paths": {"/execute": {"post": {"summary": "Run service", "responses": {"200": {"description": "OK"}}}}}
-        }
-        with open(spec_path, "w", encoding="utf-8") as f:
-            json.dump(spec, f, indent=2)
-
-        # 3. Deploy Cold Outreach Asset
-        with open(f"public/outreach/{slug}_pitch.txt", "w", encoding="utf-8") as f:
-            f.write(blueprint.get("outreach_pitch", "Check out this free sovereign tool."))
-
-        # 4. Update Sitemap.xml for Organic SEO
-        cls._update_sitemap(app_path)
-
-        # 5. Inject Card into Storefront
-        cls._inject_storefront(intel, blueprint)
-
-        # 6. Executive Telegram Memorandum to Chairman
-        cls._send_chairman_memo(intel, blueprint)
-
-    @staticmethod
-    def _update_sitemap(app_path: str):
-        sitemap_path = "public/sitemap.xml"
-        loc = f"{BASE_URL}/{app_path}"
-        if os.path.exists(sitemap_path):
-            with open(sitemap_path, "r+", encoding="utf-8") as f:
-                c = f.read()
-                if loc not in c:
-                    f.seek(0)
-                    new_entry = f"<url><loc>{loc}</loc><priority>0.9</priority></url></urlset>"
-                    f.write(c.replace("</urlset>", new_entry))
-
-    @staticmethod
-    def _inject_storefront(intel: dict, blueprint: dict):
-        hub_path = "public/index.html"
-        slug = blueprint["slug"]
-        card = f"""
-        <div class="card bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition flex flex-col justify-between">
-            <div>
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs bg-emerald-950 text-emerald-400 font-mono px-2 py-0.5 rounded border border-emerald-800 font-semibold">{intel.get('category', 'SaaS')}</span>
-                    <span class="text-xs text-slate-400 font-mono">Vs. {intel.get('target_saas', 'Cloud Tools')}</span>
-                </div>
-                <h3 class="text-lg font-bold text-white mt-1 mb-1">{blueprint['name']}</h3>
-                <p class="text-slate-400 text-sm mb-4 line-clamp-2">{blueprint['problem_solved']}</p>
-            </div>
-            <div class="flex items-center space-x-2 mt-2">
-                <a href="saas/{slug}.html" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-3 py-2 rounded transition">
-                    Launch SaaS App →
-                </a>
-                <a href="{RAPIDAPI_URL}" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3 py-2 rounded transition">
-                    RapidAPI ↗
-                </a>
-            </div>
-        </div>"""
         if os.path.exists(hub_path):
             with open(hub_path, "r+", encoding="utf-8") as f:
                 c = f.read()
@@ -573,7 +409,7 @@ class AgentEpsilonCCO:
             f"🎯 *Disruption Angle:* {intel.get('pain_point', 'Zero cloud leak & zero monthly fee')}\n"
             f"🌐 *Live Standalone App:* `{BASE_URL}/public/saas/{slug}.html`\n"
             f"📑 *OpenAPI Spec:* `public/specs/{slug}_openapi.json`\n"
-            f"💳 *Monetization:* Hard Paywall (3 uses) + UPI ({UPI_ID}) + RapidAPI\n"
+            f"💳 *Monetization:* Hard Paywall (3 uses) + UPI ({UPI_ID}) \n"
             f"⚙️ *QA Sentinel:* 100% Subprocess Verified (Exit Code 0)\n\n"
             f"⚡ *Autonomous Swarm running at $0 capital burn.*"
         )
@@ -585,7 +421,6 @@ class AgentEpsilonCCO:
             "reply_markup": {
                 "inline_keyboard": [
                     [{"text": "🚀 Open Standalone SaaS", "url": f"{BASE_URL}/public/saas/{slug}.html"}],
-                    [{"text": "⚡ RapidAPI Catalog", "url": RAPIDAPI_URL}]
                 ]
             }
         }).encode("utf-8")

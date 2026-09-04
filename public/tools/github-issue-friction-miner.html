@@ -28,7 +28,7 @@
             resultsDiv.innerHTML = '<p>Analyzing...</p>';
             
             try {
-                // In a real deployment, this would call the RapidAPI endpoint
+                // In a real deployment, this would call the endpoint
                 // For demo, we simulate the logic or call a local mock
                 const response = await fetch('/api/analyze', {
                     method: 'POST',

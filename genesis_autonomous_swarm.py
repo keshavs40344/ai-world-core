@@ -68,7 +68,7 @@ class Division01Executive:
             "epoch": int(time.time()),
             "priority": "HIGH_VALUE_B2B_DEV_TOOL",
             "capital_burn_limit_usd": 0.00,
-            "target_revenue_vectors": ["RAPIDAPI_FREEMIUM", "DIRECT_UPI_DONATION", "GITHUB_PAGES_SEO"]
+            "target_revenue_vectors": ["DIRECT_UPI_DONATION", "GITHUB_PAGES_SEO"]
         }
 
 # ============================================================
@@ -165,7 +165,7 @@ class Division03Foundry:
             "problem_solved": "Automatically scrubs credit cards, emails, and API keys from server logs in real-time.",
             "code": "class EngineService:\n    def execute(self, payload: str) -> dict:\n        import re\n        clean = re.sub(r'\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b', '[REDACTED_EMAIL]', payload)\n        clean = re.sub(r'\\b(?:\\d[ -]*?){13,16}\\b', '[REDACTED_CC]', clean)\n        return {'status': 'SUCCESS', 'sanitized_log': clean}\n",
             "html_ui": "<!DOCTYPE html><html><head><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-gray-900 text-white p-6'><h2 class='text-xl font-bold mb-3'>PII Log Sanitizer</h2><textarea id='i' class='w-full h-32 bg-gray-800 p-2 rounded mb-3'></textarea><button onclick=\"document.getElementById('o').innerText=document.getElementById('i').value.replace(/\\S+@\\S+\\.\\S+/g,'[REDACTED]')\" class='bg-blue-600 px-4 py-2 rounded'>Sanitize In-Browser</button><pre id='o' class='mt-3 bg-gray-800 p-3 rounded'></pre></body></html>",
-            "monetization": "RapidAPI Pay-Per-Call ($0.005/call) + Direct UPI"
+            "monetization": "Direct UPI"
         }
 
 # ============================================================
@@ -249,7 +249,7 @@ class Division05Commercial:
             },
             "x-monetization": {
                 "direct_upi_settlement": UPI_PAYMENT_ID,
-                "rapidapi_subscription_tiers": {
+                "api_subscription_tiers": {
                     "Basic": {"monthly_quota": 50, "price_usd": 0.00},
                     "Pro": {"monthly_quota": 10000, "price_usd": 9.99, "overage_per_call": 0.005}
                 }

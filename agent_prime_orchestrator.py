@@ -64,7 +64,7 @@ When you spawn a Sub-Agent:
 2. HARD PROBLEM TARGETING: Force the Sub-Agent to solve a high-frequency real developer headache (API formatting, authentication debug, token cost calculation, schema generation).
 3. SYSTEM PROMPT SYNTHESIS: Write an exhaustive, hyper-strict system instruction prompt for this newly born sub-agent.
 4. STANDALONE PRODUCTION UTILITY: Synthesize a full, self-contained HTML5 single-page tool (Tailwind dark mode) that executes 100% in-browser with zero backend cost.
-5. INTEGRATION & UPSELL: Connect it to our RapidAPI suite and direct UPI payment link (keshavthakur07@ptyes).
+5. INTEGRATION & UPSELL: Connect it to our direct UPI payment link (keshavthakur07@ptyes).
 
 Return strictly raw, valid JSON:
 {
@@ -73,7 +73,7 @@ Return strictly raw, valid JSON:
   "target_friction": "Exact real-world problem solved",
   "sub_agent_system_prompt": "Complete, strict system prompt used to govern this child sub-agent",
   "slug": "lowercase_snake_case_name",
-  "html_app": "Complete <!DOCTYPE html> document with dark UI, client-side JS logic, copy/download buttons, and RapidAPI banner"
+  "html_app": "Complete <!DOCTYPE html> document with dark UI, client-side JS logic, copy/download buttons"
 }
 """
 
@@ -137,9 +137,7 @@ Return strictly raw, valid JSON:
       <h1 class="text-lg font-bold text-white tracking-tight">Agent SchemaSmith &bull; JSON Schema Normalizer</h1>
       <p class="text-xs text-slate-400">100% In-Browser Execution &bull; Zero Server Logging &bull; $0 Cost</p>
     </div>
-    <a href="https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper" target="_blank" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold underline">
-      ⚡ Need Enterprise B2B API Access? Subscribe on RapidAPI ($9.99/mo)
-    </a>
+    
   </header>
 
   <main class="flex-grow p-6 max-w-7xl mx-auto w-full">
@@ -292,7 +290,7 @@ Return strictly raw, valid JSON:
             <p class="text-slate-400 text-sm mb-4 line-clamp-2">{spec['target_friction']}</p>
             <div class="flex items-center space-x-2">
                 <a href="tools/{slug}.html" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-3 py-2 rounded transition">Launch Tool</a>
-                <a href="https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper" target="_blank" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-2 rounded transition">RapidAPI ↗</a>
+                
             </div>
         </div>"""
         if os.path.exists(hub_path):
@@ -341,7 +339,6 @@ Return strictly raw, valid JSON:
             "reply_markup": {
                 "inline_keyboard": [
                     [{"text": "🌐 Launch Standalone Tool", "url": f"{BASE_URL}/public/tools/{spec['slug']}.html"}],
-                    [{"text": "⚡ RapidAPI Catalog", "url": "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper"}]
                 ]
             }
         }).encode("utf-8")

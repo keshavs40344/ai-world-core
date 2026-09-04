@@ -52,7 +52,7 @@ class GenesisHoldingBoard:
         # DIVISION 3: CRO
         print("\n[DIVISION 3: CRO] Modeling zero-cost monetization & assembling Executive Memorandum...")
         monetization = self.cro.package_monetization(brief, venture_dir)
-        print(f"      Monetization Package: RapidAPI Freemium + GitHub Pages Static Tool")
+        print(f"      Monetization Package: Direct Web & API Suite")
         
         cto_results = {
             "module_path": module_path,
@@ -127,7 +127,7 @@ class GenesisHoldingBoard:
         <div class="card">
             <h3>Division 3: CRO</h3>
             <div class="val" style="color: #38bdf8;">Freemium API + Static SEO</div>
-            <div class="sub">RapidAPI Ready ($0 Burn / 100% Margin)</div>
+            <div class="sub">Zero Cloud Burn / 100% Margin</div>
         </div>
         <div class="card">
             <h3>Chairman Authority</h3>

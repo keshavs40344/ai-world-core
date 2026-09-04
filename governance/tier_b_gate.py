@@ -140,6 +140,16 @@ class TierBGate:
         project_name = manifest["name"]
         log.info(f"[TierB] ✅ AUTHORIZED: {project_name}")
 
+        # Record Tier B approval in feedback store
+        from foundry.feedback_store import record_feedback
+        record_feedback(
+            project_name=project_name,
+            category=manifest.get("category", "general"),
+            tier="TIER_B",
+            status="PASS",
+            project_id=project_id,
+        )
+
         # Tag the release in Git
         try:
             from vault.git_manager import GitManager
@@ -169,6 +179,27 @@ class TierBGate:
         project_id = manifest["project_id"]
         project_name = manifest["name"]
         log.warning(f"[TierB] ❌ REJECTED & PURGED: {project_name}")
+
+        # Read optional reject reason from reject file
+        reason = "Operator manual rejection"
+        try:
+            content = reject_path.read_text(encoding="utf-8").strip()
+            if content:
+                reason = content
+        except Exception:
+            pass
+
+        # Record Tier B rejection in feedback store
+        from foundry.feedback_store import record_feedback
+        record_feedback(
+            project_name=project_name,
+            category=manifest.get("category", "general"),
+            tier="TIER_B",
+            status="FAIL",
+            project_id=project_id,
+            failure_type="OPERATOR_REJECT",
+            error_summary=reason,
+        )
 
         # Purge the project directory
         import shutil

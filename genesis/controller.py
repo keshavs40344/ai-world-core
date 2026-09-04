@@ -131,6 +131,20 @@ def _run_cycle(dry_run: bool) -> None:
         log.info(f"[cyan]━━━ Cycle {cycle_id[:8]} started ━━━[/cyan]",
                  extra={"markup": True})
 
+        # ── DYNAMIC SELF-TUNING & PROMPT PROMOTION ────────────────────────
+        from genesis.dynamic_config import DynamicConfigManager
+        from foundry.prompt_registry import auto_promote_best_version
+        tuned = DynamicConfigManager().tune()
+        log.info(f"  [Self-Tuning] {tuned.tuning_rationale}")
+        config.CIRCUIT_BREAKER_LIMIT = tuned.circuit_breaker_limit
+        config.MAX_CONCURRENT_WORKERS = tuned.max_concurrent_workers
+
+        # Auto-promote top prompt versions if sample sizes are met
+        promoted_core = auto_promote_best_version("core_engineer", min_sample=3)
+        promoted_test = auto_promote_best_version("test_engineer", min_sample=3)
+        if promoted_core or promoted_test:
+            log.info(f"  [Prompt Registry] Auto-promoted versions: core={promoted_core}, test={promoted_test}")
+
         # ── STEP 1: RADAR ──────────────────────────────────────────────────
         log.info("  [STEP 1] RADAR: scanning for opportunities …")
         if not dry_run:
@@ -138,7 +152,7 @@ def _run_cycle(dry_run: bool) -> None:
             from radar.gap_auditor import GapAuditor
             from radar.manifest_writer import ManifestWriter
 
-            model = _active_model()
+            model = tuned.active_model
             scanner = RadarScanner()
             raw_trends = scanner.scan()
 

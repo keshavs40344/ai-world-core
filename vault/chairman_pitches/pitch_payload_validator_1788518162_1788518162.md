@@ -2,6 +2,6 @@
 
 **Problem:** Validates runtime structured strings for security.
 
-**Monetization:** RapidAPI Freemium
+**Monetization:** Direct API Freemium
 
 **Subprocess QA:** Verified

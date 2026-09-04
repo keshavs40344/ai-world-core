@@ -142,7 +142,7 @@ Return ONLY raw JSON with these exact keys:
 {{
   "venture_name": "unique_snake_case_name",
   "problem": "One short sentence describing the problem solved.",
-  "monetization": "RapidAPI Pay-Per-Call or GitHub Pages AdSense",
+  "monetization": "Direct Web Tool & Organic Traffic",
   "code": "class EngineService:\\n    def process_payload(self, text: str) -> dict:\\n        return {{'status': 'PASSED', 'data': text.strip().upper()}}\\n"
 }}
 """
@@ -186,7 +186,7 @@ Return ONLY raw JSON with these exact keys:
         return {
             "venture_name": f"payload_validator_{uid}",
             "problem": "Validates runtime structured strings for security.",
-            "monetization": "RapidAPI Freemium",
+            "monetization": "Direct API",
             "code": "class EngineService:\n    def process_payload(self, text: str) -> dict:\n        return {'len': len(text), 'status': 'PASSED'}\n"
         }
 

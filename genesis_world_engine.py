@@ -138,7 +138,7 @@ class UltraFoundry:
             "sub_agent_type": "DataOptimizer",
             "asset_slug": f"smart_payload_optimizer_{uid}",
             "problem_solved": "Minifies and cleans JSON payloads for reduced API transmission latency.",
-            "monetization_vector": "RapidAPI Pay-Per-Call ($0.005/call)",
+            "monetization_vector": "Direct Cloud Native Pay-Per-Call ($0.005/call)",
             "code": "class EngineService:\n    def execute(self, payload: str) -> dict:\n        return {'status': 'SUCCESS', 'data': payload.strip().lower(), 'size': len(payload)}\n",
             "html_ui": "<!DOCTYPE html><html><body><h2>Payload Optimizer</h2></body></html>",
             "lessons_learned": "Static parsing guarantees minimal overhead."

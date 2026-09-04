@@ -28,6 +28,8 @@ import requests
 
 from genesis import config
 from genesis.state_db import enqueue_task, log_event
+from foundry.prompt_registry import get_active_prompt, record_prompt_outcome
+from foundry.feedback_store import get_failure_patterns_for_category
 
 log = logging.getLogger("foundry.factory")
 
@@ -235,12 +237,34 @@ class AgentFactory:
         manifest_json = json.dumps(manifest, indent=2)
         vault_ctx = _fetch_vault_context(manifest)
 
+        category = manifest.get("category", namespace or "general")
+        failure_patterns = get_failure_patterns_for_category(category, limit=5)
+        if failure_patterns:
+            guidance_lines = "\n".join(f"- {p}" for p in failure_patterns)
+            failure_guidance = (
+                f"KNOWN FAILURE PATTERNS TO AVOID (LEARNED FROM RECENT RUNS IN '{category}'):\n"
+                f"{guidance_lines}\n"
+                "Strictly avoid these pitfalls and write robust, type-checked Python 3.11+ code."
+            )
+        else:
+            failure_guidance = ""
+
+        # Fetch active versioned prompts
+        core_pv = get_active_prompt("core_engineer", category)
+        test_pv = get_active_prompt("test_engineer", category)
+
         # ── Step A: Core Engineer ───────────────────────────────────────────
-        log.info("  [CoreEngineer] Generating main source …")
-        core_prompt = _ROLE_PROMPTS["core_engineer"].format(
-            manifest_json=manifest_json,
-            vault_context=vault_ctx,
-        )
+        log.info(f"  [CoreEngineer] Generating main source using prompt {core_pv.version_tag} …")
+        try:
+            core_prompt = core_pv.template_text.format(
+                manifest_json=manifest_json,
+                vault_context=vault_ctx,
+                failure_guidance=failure_guidance,
+            )
+        except KeyError:
+            core_prompt = core_pv.template_text.format(
+                manifest_json=manifest_json,
+            )
         try:
             core_raw = _call_ollama(self.model, system="", user=core_prompt)
             core_files = _parse_file_map(core_raw)
@@ -254,13 +278,20 @@ class AgentFactory:
             _write_minimal_skeleton(project_dir, manifest)
 
         # ── Step B: Test Engineer ───────────────────────────────────────────
-        log.info("  [TestEngineer] Generating test suite …")
+        log.info(f"  [TestEngineer] Generating test suite using prompt {test_pv.version_tag} …")
         # Summarise source code (cap at 8 KB to stay in context)
         source_summary = _summarise_project(project_dir, max_chars=8000)
-        test_prompt = _ROLE_PROMPTS["test_engineer"].format(
-            manifest_json=manifest_json,
-            source_code=source_summary,
-        )
+        try:
+            test_prompt = test_pv.template_text.format(
+                manifest_json=manifest_json,
+                source_code=source_summary,
+                failure_guidance=failure_guidance,
+            )
+        except KeyError:
+            test_prompt = test_pv.template_text.format(
+                manifest_json=manifest_json,
+                source_code=source_summary,
+            )
         try:
             test_raw = _call_ollama(self.model, system="", user=test_prompt)
             test_files = _parse_file_map(test_raw)

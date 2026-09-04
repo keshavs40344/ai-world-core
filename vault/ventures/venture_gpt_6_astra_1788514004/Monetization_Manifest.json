@@ -2,7 +2,7 @@
   "venture_slug": "venture_gpt_6_astra_1788514004",
   "product_name": "Enterprise Data Sentinel: GPT-6 Astra",
   "distribution_channels": {
-    "channel_1_rapidapi": {
+    "channel_1_Direct API": {
       "type": "Freemium Micro-API Marketplace",
       "tiers": {
         "Free": "$0 / month (10,000 requests/mo, rate limited at 5 req/sec)",

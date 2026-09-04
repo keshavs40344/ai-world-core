@@ -6,7 +6,7 @@ A fully functional, standalone, client-side Enterprise B2B SaaS Application:
 - Client & Business Profile persistence via localStorage
 - Print / Export to PDF Engine (native print stylesheet)
 - Usage Counter & Hard Paywall Modal (UPI: keshavthakur07@ptyes)
-- RapidAPI Enterprise API Upsell Hook
+- Direct Client-Side Pro Utility
 """
 
 import os
@@ -31,10 +31,18 @@ os.makedirs("public/specs", exist_ok=True)
 
 UPI_ID = "keshavthakur07@ptyes"
 PAYEE = "Keshav"
-RAPIDAPI_URL = "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper"
+AMOUNT = "299.00"
+NOTE = "InvoiceForge_Pro_Lifetime"
 
-upi_link = f"upi://pay?pa={UPI_ID}&pn={urllib.parse.quote(PAYEE)}&cu=INR"
-qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=140x140&data={urllib.parse.quote(upi_link)}"
+query_params = urllib.parse.urlencode({
+    "pa": UPI_ID,
+    "pn": PAYEE,
+    "am": AMOUNT,
+    "cu": "INR",
+    "tn": NOTE,
+})
+upi_link = f"upi://pay?{query_params}"
+qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={urllib.parse.quote(upi_link)}"
 
 SAAS_HTML = f"""<!DOCTYPE html>
 <html lang="en">
@@ -66,9 +74,6 @@ SAAS_HTML = f"""<!DOCTYPE html>
                 </div>
             </div>
             <div class="flex items-center space-x-3">
-                <a href="{RAPIDAPI_URL}" target="_blank" class="hidden sm:inline-flex items-center text-xs font-semibold bg-indigo-950 text-indigo-300 border border-indigo-800 hover:bg-indigo-900 px-3 py-1.5 rounded-lg transition">
-                    ⚡ RapidAPI B2B Sync ($9.99)
-                </a>
                 <button onclick="triggerPaywall()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-lg transition shadow-md shadow-emerald-900/30">
                     Upgrade Pro (₹299)
                 </button>
@@ -76,158 +81,171 @@ SAAS_HTML = f"""<!DOCTYPE html>
         </div>
     </header>
 
-    <!-- Workspace Grid -->
-    <main class="flex-grow max-w-7xl mx-auto p-4 sm:p-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <!-- Main Workspace -->
+    <main class="flex-grow max-w-7xl mx-auto w-full p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
         
-        <!-- Left Editor Panel (no-print) -->
-        <div class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl flex flex-col justify-between no-print overflow-y-auto max-h-[85vh]">
-            <div class="space-y-4">
-                <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                    <h2 class="text-sm font-bold text-slate-200 uppercase tracking-wider">Invoice Details</h2>
-                    <button onclick="resetTemplate()" class="text-xs text-rose-400 hover:text-rose-300">Reset Defaults</button>
-                </div>
-
-                <!-- Issuer & Client -->
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="text-[11px] text-slate-400 uppercase font-semibold">Your Business / Name</label>
-                        <input id="sellerName" type="text" class="w-full bg-slate-950 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-indigo-500 focus:outline-none" value="Apex Digital Studio">
+        <!-- Left: Configuration & Line Items Builder (no-print) -->
+        <div class="lg:col-span-5 space-y-4 no-print">
+            
+            <!-- Seller & Client Card -->
+            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow-sm">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Merchant & Client Details</h2>
+                <div class="space-y-2">
+                    <input id="sellerName" type="text" class="w-full bg-slate-950 border border-slate-800 rounded px-3 py-1.5 text-xs text-white" placeholder="Your Business / Freelancer Name" value="Apex Autonomous Systems Ltd.">
+                    <input id="clientName" type="text" class="w-full bg-slate-950 border border-slate-800 rounded px-3 py-1.5 text-xs text-white" placeholder="Client Name & Address" value="Acme Global Corporation">
+                    <div class="grid grid-cols-2 gap-2">
+                        <input id="invoiceId" type="text" class="bg-slate-950 border border-slate-800 rounded px-3 py-1.5 text-xs font-mono text-white" placeholder="Invoice #" value="INV-2026-0042">
+                        <input id="taxRate" type="number" class="bg-slate-950 border border-slate-800 rounded px-3 py-1.5 text-xs text-white" placeholder="Tax %" value="18">
                     </div>
-                    <div>
-                        <label class="text-[11px] text-slate-400 uppercase font-semibold">Client Name</label>
-                        <input id="clientName" type="text" class="w-full bg-slate-950 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-indigo-500 focus:outline-none" value="Acme Corp Solutions">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="text-[11px] text-slate-400 uppercase font-semibold">Invoice ID</label>
-                        <input id="invoiceId" type="text" class="w-full bg-slate-950 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-indigo-500 focus:outline-none" value="INV-2026-0042">
-                    </div>
-                    <div>
-                        <label class="text-[11px] text-slate-400 uppercase font-semibold">Tax Rate (%)</label>
-                        <input id="taxRate" type="number" class="w-full bg-slate-950 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-indigo-500 focus:outline-none" value="18">
-                    </div>
-                </div>
-
-                <!-- Line Items Sub-editor -->
-                <div>
-                    <div class="flex justify-between items-center mb-2">
-                        <label class="text-[11px] text-slate-400 uppercase font-semibold">Line Items</label>
-                        <button onclick="addItem()" class="text-xs bg-indigo-900 text-indigo-200 border border-indigo-700 px-2 py-0.5 rounded hover:bg-indigo-800">+ Add Item</button>
-                    </div>
-                    <div id="itemsContainer" class="space-y-2">
-                        <!-- Dynamic Input Rows -->
-                    </div>
-                </div>
-
-                <!-- Notes / UPI Details -->
-                <div>
-                    <label class="text-[11px] text-slate-400 uppercase font-semibold">Bank / UPI Settlement Note</label>
-                    <textarea id="settlementNote" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded p-2 text-xs text-white mt-1 focus:border-indigo-500 focus:outline-none">Payment terms: Net 15 days. Pay directly via UPI to: keshavthakur07@ptyes</textarea>
                 </div>
             </div>
 
-            <!-- Actions -->
-            <div class="pt-5 border-t border-slate-800 flex items-center gap-3">
-                <button onclick="executeExportPDF()" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 rounded-xl text-xs flex items-center justify-center gap-2 transition">
-                    <span>🖨️ Export / Print PDF</span>
-                </button>
-                <button onclick="saveToLocalStorage()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold py-2.5 px-4 rounded-xl text-xs transition">
-                    💾 Save State
-                </button>
+            <!-- Line Items Editor -->
+            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow-sm">
+                <div class="flex justify-between items-center mb-3">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Line Items & Deliverables</h2>
+                    <button onclick="addItem()" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold">+ Add Row</button>
+                </div>
+                <div id="itemsContainer" class="space-y-2">
+                    <!-- Dynamic items rendered by JS -->
+                </div>
+            </div>
+
+            <!-- Settlement Note & Actions -->
+            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow-sm space-y-3">
+                <textarea id="settlementNote" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded p-2 text-xs text-slate-300 resize-none" placeholder="Bank details, UPI ID, or payment terms...">Payment terms: Due within 15 days via Wire Transfer or UPI.</textarea>
+                
+                <div class="flex gap-2">
+                    <button onclick="executeExportPDF()" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-2.5 rounded-lg transition shadow flex items-center justify-center space-x-1.5">
+                        <span>🖨️ Print / Download PDF</span>
+                    </button>
+                    <button onclick="saveToLocalStorage()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-3 py-2.5 rounded-lg transition">
+                        💾 Save State
+                    </button>
+                </div>
             </div>
         </div>
 
-        <!-- Right Live Document Canvas -->
-        <div class="lg:col-span-7 flex flex-col">
-            <div id="printableInvoice" class="bg-white text-slate-900 rounded-2xl p-8 sm:p-10 shadow-2xl border border-slate-200 flex-grow flex flex-col justify-between">
-                <div>
-                    <!-- Invoice Header -->
-                    <div class="flex justify-between items-start border-b border-slate-200 pb-6 mb-6">
-                        <div>
-                            <span class="text-xs font-bold tracking-widest text-indigo-600 uppercase">Commercial Invoice</span>
-                            <h3 id="prevSeller" class="text-2xl font-black text-slate-900 tracking-tight mt-1">Apex Digital Studio</h3>
-                            <p class="text-xs text-slate-500 mt-1">Status: <span class="text-amber-600 font-semibold">Payment Pending</span></p>
-                        </div>
-                        <div class="text-right">
-                            <p id="prevInvId" class="text-sm font-mono font-bold text-slate-800">INV-2026-0042</p>
-                            <p id="prevDate" class="text-xs text-slate-500 mt-1 font-mono"></p>
-                        </div>
-                    </div>
-
-                    <!-- Client Info -->
-                    <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                        <p class="text-[10px] text-slate-400 uppercase font-black">Billed To:</p>
-                        <p id="prevClient" class="text-base font-bold text-slate-800 mt-0.5">Acme Corp Solutions</p>
-                    </div>
-
-                    <!-- Rendered Table -->
-                    <table class="w-full text-left border-collapse text-xs mb-6">
-                        <thead>
-                            <tr class="border-b-2 border-slate-200 text-slate-500 uppercase text-[10px]">
-                                <th class="py-2 font-bold">Item Description</th>
-                                <th class="py-2 text-center font-bold">Qty</th>
-                                <th class="py-2 text-right font-bold">Rate</th>
-                                <th class="py-2 text-right font-bold">Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody id="invoiceTableBody" class="divide-y divide-slate-100">
-                            <!-- Items Injected -->
-                        </tbody>
-                    </table>
+        <!-- Right: Print-Ready Live Document Preview -->
+        <div class="lg:col-span-7">
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 sm:p-6 shadow-xl sticky top-20">
+                <div class="flex justify-between items-center pb-3 mb-4 border-b border-slate-800 no-print">
+                    <span class="text-xs font-semibold text-slate-400">Live Paper Preview (A4 Scaled)</span>
+                    <span class="text-[11px] bg-slate-800 text-emerald-400 px-2 py-0.5 rounded font-mono">100% Client-Side Engine</span>
                 </div>
 
-                <!-- Financial Calculation Summary -->
-                <div class="border-t border-slate-200 pt-4">
-                    <div class="w-full sm:w-64 ml-auto space-y-1.5 text-xs text-slate-600">
-                        <div class="flex justify-between">
-                            <span>Subtotal:</span>
-                            <span id="prevSubtotal" class="font-mono font-semibold">₹0.00</span>
+                <!-- Printable Document Target -->
+                <div id="printableInvoice" class="bg-white text-slate-900 p-6 sm:p-10 rounded-lg shadow-inner min-h-[580px] flex flex-col justify-between">
+                    <div>
+                        <!-- Header -->
+                        <div class="flex justify-between items-start border-b border-slate-200 pb-6 mb-6">
+                            <div>
+                                <h3 id="prevSeller" class="text-xl font-extrabold text-slate-900 tracking-tight">Apex Autonomous Systems</h3>
+                                <p class="text-xs text-slate-500 mt-1">Official Tax Invoice & Commercial Settlement</p>
+                            </div>
+                            <div class="text-right">
+                                <p id="prevInvId" class="text-sm font-mono font-bold text-slate-800">INV-2026-0042</p>
+                                <p id="prevDate" class="text-xs text-slate-500 mt-1 font-mono"></p>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span>Tax (<span id="prevTaxPct">18</span>%):</span>
-                            <span id="prevTaxVal" class="font-mono font-semibold">₹0.00</span>
+
+                        <!-- Client Info -->
+                        <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <p class="text-[10px] text-slate-400 uppercase font-black">Billed To:</p>
+                            <p id="prevClient" class="text-base font-bold text-slate-800 mt-0.5">Acme Corp Solutions</p>
                         </div>
-                        <div class="flex justify-between text-sm font-black text-slate-900 border-t border-slate-300 pt-2">
-                            <span>Total Due:</span>
-                            <span id="prevTotal" class="font-mono text-indigo-600">₹0.00</span>
-                        </div>
+
+                        <!-- Rendered Table -->
+                        <table class="w-full text-left border-collapse text-xs mb-6">
+                            <thead>
+                                <tr class="border-b-2 border-slate-200 text-slate-500 uppercase text-[10px]">
+                                    <th class="py-2 font-bold">Item Description</th>
+                                    <th class="py-2 text-center font-bold">Qty</th>
+                                    <th class="py-2 text-right font-bold">Rate</th>
+                                    <th class="py-2 text-right font-bold">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="invoiceTableBody" class="divide-y divide-slate-100">
+                                <!-- Items Injected -->
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] text-slate-500 italic">
-                        <p id="prevSettlement"></p>
+
+                    <!-- Financial Calculation Summary -->
+                    <div class="border-t border-slate-200 pt-4">
+                        <div class="w-full sm:w-64 ml-auto space-y-1.5 text-xs text-slate-600">
+                            <div class="flex justify-between">
+                                <span>Subtotal:</span>
+                                <span id="prevSubtotal" class="font-mono font-semibold">₹0.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Tax (<span id="prevTaxPct">18</span>%):</span>
+                                <span id="prevTaxVal" class="font-mono font-semibold">₹0.00</span>
+                            </div>
+                            <div class="flex justify-between text-sm font-black text-slate-900 border-t border-slate-300 pt-2">
+                                <span>Total Due:</span>
+                                <span id="prevTotal" class="font-mono text-indigo-600">₹0.00</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] text-slate-500 italic">
+                            <p id="prevSettlement"></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- PAYWALL / LIMIT MODAL -->
-    <div id="paywallModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-2xl p-6 shadow-2xl text-center">
-            <div class="w-12 h-12 rounded-full bg-emerald-950 border border-emerald-800 text-emerald-400 mx-auto flex items-center justify-center text-xl mb-4">👑</div>
-            <h3 class="text-lg font-bold text-white">Upgrade to InvoiceForge Studio Pro</h3>
-            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                You've hit the 3 free document quota on the public sandbox tier. Unlock unlimited PDF downloads, cloud backups, and remove watermark branding forever.
+    <!-- STANDARDIZED INR 299 PRO PAYMENT MODAL -->
+    <div id="paywallModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 font-sans">
+        <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-2xl p-6 shadow-2xl text-center relative">
+            <button onclick="closePaywall()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-sm font-bold">✕</button>
+            
+            <div class="w-12 h-12 rounded-full bg-emerald-950 border border-emerald-800 text-emerald-400 mx-auto flex items-center justify-center text-xl mb-3">👑</div>
+            <h3 class="text-xl font-extrabold text-white">Upgrade to InvoiceForge Studio Pro</h3>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                Free sandbox quota exhausted. Unlock unlimited PDF downloads and remove watermarks.
             </p>
+
+            <!-- Payment Box with Exact 299 Lock -->
             <div class="my-5 p-4 bg-slate-950 border border-slate-800 rounded-xl">
-                <p class="text-[11px] text-slate-400 mb-2">Scan & Pay ₹299 (Lifetime Access) via UPI:</p>
-                <img src="{qr_url}" alt="UPI QR" class="mx-auto rounded border border-slate-700 bg-white p-1 mb-2"/>
-                <p class="text-xs font-mono text-emerald-400 font-bold">{UPI_ID}</p>
+                <div class="flex justify-between items-center mb-3 text-xs border-b border-slate-800 pb-2">
+                    <span class="text-slate-400">Total Settlement:</span>
+                    <span class="text-emerald-400 font-mono font-bold text-sm">₹299.00 INR</span>
+                </div>
+
+                <!-- Dynamic QR with Exact Amount Parameter -->
+                <div class="bg-white p-2.5 rounded-lg inline-block shadow-inner mb-3">
+                    <img id="upiQrImage" 
+                         src="{qr_url}" 
+                         alt="Scan to Pay 299" 
+                         class="w-36 h-36 mx-auto block" />
+                </div>
+                <p class="text-[11px] text-slate-400">Scan via PhonePe, Google Pay, Paytm or BHIM</p>
+                <p class="text-xs font-mono text-slate-200 mt-1 font-semibold select-all">{UPI_ID}</p>
             </div>
-            <div class="flex flex-col gap-2">
-                <a href="{upi_link}" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 rounded-lg transition">
-                    ⚡ Pay Directly via UPI App (₹299)
+
+            <!-- Direct App Handlers for Mobile -->
+            <div class="space-y-2">
+                <a href="{upi_link}" 
+                   class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30">
+                    <span>⚡ Pay ₹299.00 (Open Any UPI App)</span>
                 </a>
-                <button onclick="closePaywall()" class="text-xs text-slate-500 hover:text-slate-400 py-1">Continue with sandbox draft</button>
+                
+                <button onclick="navigator.clipboard.writeText('{UPI_ID}'); alert('UPI ID copied: {UPI_ID}');" 
+                        class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-2 rounded-xl transition font-medium">
+                    📋 Copy UPI ID to Clipboard
+                </button>
             </div>
+
+            <p class="text-[10px] text-slate-500 mt-4">Instant manual verification: WhatsApp reference or screenshot for activation.</p>
         </div>
     </div>
 
     <script>
         let lineItems = [
             {{ desc: "Custom Micro-SaaS Architecture & UI", qty: 1, rate: 12000 }},
-            {{ desc: "REST API Integration & RapidAPI Hooks", qty: 1, rate: 4500 }}
+            {{ desc: "REST API Integration & Webhook Sync", qty: 1, rate: 4500 }}
         ];
 
         document.getElementById('prevDate').innerText = new Date().toLocaleDateString('en-GB');

@@ -7,15 +7,15 @@
   },
   "servers": [
     {
-      "url": "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper",
-      "description": "RapidAPI Marketplace"
+      "url": "",
+      "description": "Direct API Marketplace"
     }
   ],
   "x-monetization": {
     "direct_upi": "keshavthakur07@ptyes",
     "tiers": {
       "basic": "3 exports free",
-      "pro": "\u20b9299 lifetime or $9.99/mo RapidAPI"
+      "pro": "\u20b9299 lifetime or $9.99/mo Direct API"
     }
   },
   "paths": {

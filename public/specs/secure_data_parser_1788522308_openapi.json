@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "description": "Sanitizes raw string payloads and extracts uniform token parameters. Includes 50 free monthly tier with hard lock for B2B paywall."
   },
-  "x-rapidapi-subscription-tiers": {
+  "x-Direct API-subscription-tiers": {
     "Basic": {
       "monthly_quota": 50,
       "price_usd": 0.0

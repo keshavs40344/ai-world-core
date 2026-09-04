@@ -2,6 +2,6 @@
 
 **Problem:** Parses unstructured market intelligence text to extract regional utility rankings and key contacts for rapid competitive analysis.
 
-**Monetization:** RapidAPI Pay-Per-Call
+**Monetization:** Direct API Pay-Per-Call
 
 **Subprocess QA:** Verified

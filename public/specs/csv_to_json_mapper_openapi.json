@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "description": "Converts raw CSV data into structured JSON objects with precise control over column-to-key mapping and field exclusion."
   },
-  "x-rapidapi-subscription-tiers": {
+  "x-Direct API-subscription-tiers": {
     "Basic": {
       "monthly_quota": 50,
       "price_usd": 0.0
@@ -33,12 +33,12 @@
   },
   "servers": [
     {
-      "url": "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper",
-      "description": "RapidAPI Marketplace Production Gateway"
+      "url": "",
+      "description": "Direct API Marketplace Production Gateway"
     }
   ],
-  "x-rapidapi": {
-    "marketplace_url": "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper",
+  "x-Direct API": {
+    "marketplace_url": "",
     "registered_at": "2026-09-04T14:55:33.588815+00:00"
   }
 }

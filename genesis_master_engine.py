@@ -147,7 +147,7 @@ class AssetFoundry:
 
     @classmethod
     def synthesize_specialist(cls, market_friction: str, past_knowledge: str, active_registry: str = "") -> dict:
-        print("[GAMMA] Architecting standalone developer utility with split layout & RapidAPI continuous monetization...")
+        print("[GAMMA] Architecting standalone developer utility with split layout & continuous zero-leak monetization...")
         url = "https://api.groq.com/openai/v1/chat/completions"
         system_prompt = (
             "You are Agent Gamma, Lead Product Architect & Full-Stack Commercial Foundry of the Genesis Autonomous Conglomerate.\n"
@@ -161,7 +161,7 @@ class AssetFoundry:
             "2. REUSE & INTERCONNECTION WITH EXISTING ASSETS:\n"
             "   - Natively integrate the logic of our deployed micro-services (e.g. CSV to JSON mapping, log masking, schema validation).\n"
             "   - Every generated standalone page header MUST include this exact enterprise anchor:\n"
-            "     <a href=\"https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper\" target=\"_blank\" class=\"text-xs text-indigo-400 hover:text-indigo-300 font-semibold underline\">⚡ Need Enterprise B2B API Access? Subscribe on RapidAPI ($9.99/mo)</a>\n\n"
+            "     \n\n"
             "3. MONETIZATION & SEO:\n"
             "   - High-Intent SEO Meta: Craft targeted <title> and <meta name=\"description\"> targeting developer search queries.\n"
             "   - Python Backend (EngineService): Concise Python class with execute(self, payload: str) -> dict using only standard library (csv, json, re, urllib, sqlite3). Under 18 lines.\n\n"
@@ -172,7 +172,7 @@ class AssetFoundry:
             "  \"slug\": \"lowercase_snake_case_base_name\",\n"
             "  \"name\": \"Professional Production Utility Title\",\n"
             "  \"problem_solved\": \"Exact 1-sentence technical friction solved\",\n"
-            "  \"monetization\": \"RapidAPI B2B Tier + Free Client Tool\",\n"
+            "  \"monetization\": \"Direct Client Tool & Web Export\",\n"
             "  \"python_service\": \"Complete Python class EngineService with method execute(self, payload: str) -> dict using only standard library\",\n"
             "  \"html_client\": \"Full standalone <!DOCTYPE html> document complete with Tailwind styling, UI controls, JavaScript logic, and error handlers\",\n"
             "  \"outreach_pitch\": \"High-converting 3-sentence outreach DM/Email for Reddit, Twitter, or Discord offering this free standalone tool to someone facing this exact problem\"\n"
@@ -218,7 +218,7 @@ class AssetFoundry:
                 print(f"[-] [GAMMA] Model {model} fallback: {e}")
                 continue
 
-        # Deterministic Standalone Web Application with Split Editor & RapidAPI Continuity
+        # Deterministic Standalone Web Application with Split Editor & Continuous Execution
         uid = int(time.time())
         fallback_html = f"""<!DOCTYPE html>
 <html lang="en" class="dark">
@@ -235,9 +235,7 @@ class AssetFoundry:
       <h1 class="text-lg font-bold text-white tracking-tight">Structured Log & Data Sanitizer</h1>
       <p class="text-xs text-slate-400">100% In-Browser Execution &bull; Zero Server Logging &bull; Zero Privacy Risk</p>
     </div>
-    <a href="https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper" target="_blank" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold underline">
-      ⚡ Need Enterprise B2B API Access? Subscribe on RapidAPI ($9.99/mo)
-    </a>
+    
   </header>
 
   <main class="flex-grow p-6 max-w-7xl mx-auto w-full">
@@ -314,7 +312,7 @@ class AssetFoundry:
             "slug": f"structured_log_sanitizer_{uid}",
             "name": "Enterprise Structured Log Sanitizer",
             "problem_solved": "Sanitizes sensitive PII, emails, and credentials from structured logs locally in your browser with zero latency.",
-            "monetization": "RapidAPI B2B Tier + Free Client Tool",
+            "monetization": "Direct Client Tool & Web Export",
             "python_service": "import re\nclass EngineService:\n    def execute(self, payload: str) -> dict:\n        masked = re.sub(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+', '[EMAIL_MASKED]', payload)\n        masked = re.sub(r'\\b(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})\\b', '[CARD_MASKED]', masked)\n        return {'status': 'SUCCESS', 'sanitized': masked}\n",
             "html_client": fallback_html,
             "outreach_pitch": "Hey team, saw you were looking for an easy way to clean sensitive PII and emails from production logs before sharing. I built a 100% client-side tool with zero server latency or data risk: https://keshavs40344.github.io/ai-world-core/public/tools/structured_log_sanitizer.html. Check it out and let me know if you need high-volume API access!"
@@ -380,68 +378,21 @@ class DeliveryOfficer:
     def publish_and_notify(cls, blueprint: dict):
         slug = blueprint["slug"]
 
-        # 1. Dynamic UPI Widget & Deep Link + RapidAPI Enterprise Anchor
+        # 1. Dynamic UPI Widget & Deep Link  Enterprise Anchor
         upi_link = f"upi://pay?pa={cls.UPI_ID}&pn={urllib.parse.quote(cls.PAYEE_NAME)}&cu=INR"
         qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=120x120&data={urllib.parse.quote(upi_link)}"
-        rapidapi_catalog_url = "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper"
+        
 
         monetization_card = f"""
         <div style="margin-top:40px; padding:20px; background:#0f172a; border:1px solid #1e293b; border-radius:10px; text-align:center; font-family:sans-serif;">
             <div style="margin-bottom:12px;">
-                <a href="{rapidapi_catalog_url}" target="_blank" style="color:#818cf8; font-size:12px; font-weight:600; text-decoration:none;">
-                    ⚡ Need enterprise API access? Subscribe on RapidAPI &rarr;
-                </a>
+                
             </div>
             <p style="color:#94a3b8; font-size:13px; margin-bottom:10px;">⚡ High-performance client-side utility. Support independent zero-cost development:</p>
             <div style="margin-bottom:12px;">
                 <img src="{qr_url}" alt="Scan UPI" style="border:1px solid #334155; border-radius:6px; background:#fff; padding:3px;"/>
             </div>
-            <a href="{upi_link}" style="background:#16a34a; color:#fff; text-decoration:none; padding:8px 16px; border-radius:6px; font-weight:600; font-size:12px;">
-                ☕ Tip via UPI ({cls.UPI_ID})
-            </a>
-        </div>
-        """
-
-        raw_html = blueprint.get("html_client", "<h3>Genesis Tool</h3>")
-        final_html = raw_html.replace("</body>", f"{monetization_card}</body>") if "</body>" in raw_html else raw_html + monetization_card
-        with open(os.path.join("public/tools", f"{slug}.html"), "w", encoding="utf-8") as f:
-            f.write(final_html)
-
-        # 2. Save OpenAPI 3.0 Spec for RapidAPI
-        spec = {
-            "openapi": "3.0.0",
-            "info": {"title": blueprint["name"], "version": "1.0.0", "description": blueprint["problem_solved"]},
-            "x-monetization": {
-                "direct_upi": cls.UPI_ID,
-                "tiers": {"basic": "50 calls free/mo", "pro": "$9.99/mo for 10k calls"}
-            },
-            "paths": {"/execute": {"post": {"summary": "Run service", "responses": {"200": {"description": "OK"}}}}}
-        }
-        with open(os.path.join("public/specs", f"{slug}_openapi.json"), "w", encoding="utf-8") as f:
-            json.dump(spec, f, indent=2)
-
-        # 3. Save Ready-Made Outreach Pitch
-        with open(os.path.join("public/outreach", f"{slug}_pitch.txt"), "w", encoding="utf-8") as f:
-            f.write(blueprint.get("outreach_pitch", "Check out this free tool."))
-
-        # 4. Update Portal & Auto-Generate Sitemap
-        cls._append_portal(blueprint)
-        cls._rebuild_sitemap()
-
-        # 5. Native Telegram Approval Desk
-        cls._send_chairman_memorandum(blueprint)
-
-    @staticmethod
-    def _append_portal(bp: dict):
-        hub_path = "public/index.html"
-        slug = bp["slug"]
-        card = f"""
-        <div class="card bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-blue-500/50 transition">
-            <span class="text-xs bg-blue-600/30 text-blue-400 border border-blue-500/30 px-2 py-1 rounded font-mono font-semibold">{bp['agent_role']}</span>
-            <h3 class="text-white font-bold text-lg mt-3 mb-1">{bp['name']}</h3>
-            <p class="text-slate-400 text-sm mb-4 line-clamp-2">{bp['problem_solved']}</p>
-            <div class="flex items-center space-x-2">
-                <a href="tools/{slug}.html" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-3 py-2 rounded transition">Launch Tool</a>
+            
                 <a href="outreach/{slug}_pitch.txt" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-3 py-2 rounded transition">Outreach Pitch</a>
                 <a href="specs/{slug}_openapi.json" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3 py-2 rounded transition">API Spec</a>
             </div>

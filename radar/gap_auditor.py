@@ -181,6 +181,27 @@ class GapAuditor:
         raw = _call_ollama(self.model, messages)
 
         opportunities = self._parse_response(raw, signals)
+
+        # Meta-RADAR: Adjust opportunity priority scores with historical category multiplier
+        try:
+            from foundry.feedback_store import get_category_performance_stats
+            cat_stats = get_category_performance_stats()
+            for opp in opportunities:
+                clean_cat = opp.category.strip().lower()
+                stats = cat_stats.get(clean_cat) or cat_stats.get("general")
+                if stats and stats["total_runs"] >= 2:
+                    rate = stats["pass_rate"]
+                    # Multiplier: 0.7x for low pass rate, up to 1.3x for high pass rate
+                    multiplier = 0.7 + (rate * 0.6)
+                    old_score = opp.priority_score
+                    opp.priority_score = round(min(1.0, opp.priority_score * multiplier), 3)
+                    log.info(
+                        f"[Meta-RADAR] Adjusted '{opp.name}' ({opp.category}) score: "
+                        f"{old_score} -> {opp.priority_score} (pass rate: {rate:.1%}, mult: {multiplier:.2f})"
+                    )
+        except Exception as e:
+            log.debug(f"[Meta-RADAR] Score adjustment skipped: {e}")
+
         opportunities.sort(key=lambda o: o.priority_score, reverse=True)
         log.info(f"[GapAuditor] {len(opportunities)} opportunities identified.")
         return opportunities[:top_k]

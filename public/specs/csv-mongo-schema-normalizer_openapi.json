@@ -7,7 +7,7 @@
   },
   "x-monetization": {
     "direct_upi_settlement": "keshavthakur07@ptyes",
-    "rapidapi_subscription_tiers": {
+    "Direct API_subscription_tiers": {
       "Basic": {
         "monthly_quota": 50,
         "price_usd": 0.0

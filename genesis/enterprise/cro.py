@@ -16,7 +16,7 @@ class ChiefRevenueOfficer:
             "venture_slug": venture_slug,
             "product_name": f"Enterprise Data Sentinel: {title}",
             "distribution_channels": {
-                "channel_1_rapidapi": {
+                "direct_api": {
                     "type": "Freemium Micro-API Marketplace",
                     "tiers": {
                         "Free": "$0 / month (10,000 requests/mo, rate limited at 5 req/sec)",
@@ -55,7 +55,7 @@ class ChiefRevenueOfficer:
         title = brief["origin_signal"]["title"]
         sec_status = "CLEARED" if cto_results.get("security_cleared") else "FLAGGED"
         qa_status = "PASSED" if cto_results.get("qa_passed") else "FAILED"
-        projections = monetization["distribution_channels"]["channel_1_rapidapi"]["projected_monthly_mrr_at_scale"]
+        projections = monetization["distribution_channels"]["direct_api"]["projected_monthly_mrr_at_scale"]
 
         memo = f"""============================================================
 👔 EXECUTIVE BOARD MEMORANDUM PRESENTED TO THE CHAIRMAN
@@ -67,7 +67,7 @@ class ChiefRevenueOfficer:
 5. TECH ASSET      : Fully Manufactured Python Data Engine & Test Matrix
 6. SECURITY AUDIT  : {sec_status} (Zero AST Vulnerabilities)
 7. QA VERIFICATION : {qa_status} (100% Unit Tests Passed, Exit Code: 0)
-8. MONETIZATION    : RapidAPI Micro-Tiers + GitHub Pages Static Tool
+8. MONETIZATION    : Direct UPI + Free Client Tool
 9. REVENUE TARGET  : {projections}
 10. CHAIRMAN GATE  : 👉 [AUTHORIZE EXPANSION] or [VETO PROJECT]
 ============================================================"""
