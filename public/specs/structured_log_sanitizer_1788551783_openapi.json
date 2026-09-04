@@ -1,0 +1,27 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Enterprise Structured Log Sanitizer",
+    "version": "1.0.0",
+    "description": "Sanitizes sensitive PII, emails, and credentials from structured logs locally in your browser with zero latency."
+  },
+  "x-monetization": {
+    "direct_upi": "keshavthakur07@ptyes",
+    "tiers": {
+      "basic": "50 calls free/mo",
+      "pro": "$9.99/mo for 10k calls"
+    }
+  },
+  "paths": {
+    "/execute": {
+      "post": {
+        "summary": "Run service",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
