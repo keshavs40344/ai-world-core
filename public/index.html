@@ -1,55 +1,60 @@
-<!DOCTYPE html><html><body style='max-width:820px; margin:auto; padding:24px; background:#f1f5f9;'><h1>Genesis Cloud Enterprise Storefront</h1><div id='hub'>
-        <div style="background:#1e293b; border:1px solid #334155; border-radius:10px; padding:20px; margin-bottom:16px; font-family:sans-serif;">
-            <h3 style="color:#f8fafc; margin:0 0 6px 0; font-size:18px;">CSV to JSON Mapper</h3>
-            <p style="color:#94a3b8; font-size:14px; margin:0 0 14px 0;">Converts raw CSV data into structured JSON objects with precise control over column-to-key mapping and field exclusion.</p>
-            <div style="margin-bottom:12px;">
-                <span style="font-size:12px; font-weight:600; color:#10b981; background:#064e3b; padding:4px 8px; border-radius:4px;">50 Free/mo &bull; $9.99 Pro</span>
-                <span style="font-size:12px; font-weight:600; color:#60a5fa; background:#1e3a8a; padding:4px 8px; border-radius:4px; margin-left:6px;">UPI: keshavthakur07@ptyes</span>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genesis Cloud — Autonomous Developer Utilities Portal</title>
+  <meta name="description" content="Free, zero-latency, client-side developer micro-utilities. 100% privacy-safe data transformers, validators, and formatters.">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <span class="text-2xl">⚡</span>
+        <span class="font-bold text-lg tracking-tight text-white">Genesis Cloud Hub</span>
+      </div>
+      <div>
+        <a href="sitemap.xml" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold px-3 py-2 rounded transition">Sitemap</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold bg-emerald-950/60 border border-emerald-800/50 px-3 py-1 rounded-full">100% Client-Side & Zero-Cost</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 tracking-tight">Autonomous Developer Utilities</h1>
+      <p class="text-slate-400 mt-3 text-sm sm:text-base">Production micro-services synthesized by the Genesis Autonomous Swarm. No data leaves your browser.</p>
+    </div>
+
+    <!-- Dynamic Cards Injected Here -->
+    <div id="hub" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="card bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-blue-500/50 transition">
+            <span class="text-xs bg-blue-600/30 text-blue-400 border border-blue-500/30 px-2 py-1 rounded font-mono font-semibold">Agent Gamma</span>
+            <h3 class="text-white font-bold text-lg mt-3 mb-1">MCP Payload Sanitizer & Validator</h3>
+            <p class="text-slate-400 text-sm mb-4 line-clamp-2">Eliminates security risks and parsing errors in Model Context Protocol (MCP) JSON-RPC payloads by sanitizing inputs and validating schema compliance before execution.</p>
+            <div class="flex items-center space-x-2">
+                <a href="tools/mcp_payload_sanitizer.html" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-3 py-2 rounded transition">Launch Tool</a>
+                <a href="outreach/mcp_payload_sanitizer_pitch.txt" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-3 py-2 rounded transition">Outreach Pitch</a>
+                <a href="specs/mcp_payload_sanitizer_openapi.json" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3 py-2 rounded transition">API Spec</a>
             </div>
-            <a href="tools/csv_to_json_mapper.html" style="background:#3b82f6; color:#fff; text-decoration:none; padding:8px 16px; border-radius:6px; font-weight:600; font-size:13px;">Launch In-Browser Tool</a>
-            <a href="specs/csv_to_json_mapper_openapi.json" style="background:#10b981; color:#fff; text-decoration:none; padding:8px 16px; border-radius:6px; font-weight:600; font-size:13px; margin-left:8px;">OpenAPI Spec</a>
         </div>
         
-        <div style="border:1px solid #cbd5e1; border-radius:8px; padding:16px; margin-bottom:14px; background:#fff; font-family:sans-serif;">
-            <h3 style="margin:0 0 6px 0; color:#0f172a;">CSV to MongoDB Schema Normalizer</h3>
-            <p style="margin:0 0 10px 0; color:#475569; font-size:14px;">Prevents inconsistent field types in MongoDB collections by automatically inferring and normalizing CSV data into strict JSON schemas before ingestion.</p>
-            <div style="display:flex; gap:8px; align-items:center; margin-bottom:12px; flex-wrap:wrap;">
-                <span style="font-size:12px; font-weight:600; color:#059669; background:#ecfdf5; padding:4px 8px; border-radius:4px;">B2B: 50 Free/mo &bull; $9.99 Pro</span>
-                <span style="font-size:12px; font-weight:600; color:#2563eb; background:#eff6ff; padding:4px 8px; border-radius:4px;">UPI: keshavthakur07@ptyes</span>
-            </div>
-            <a href="tools/csv-mongo-schema-normalizer.html" style="background:#2563eb; color:#fff; text-decoration:none; padding:8px 14px; border-radius:5px; font-size:13px; font-weight:600;">Open Free In-Browser Tool</a>
-            <a href="specs/csv-mongo-schema-normalizer_openapi.json" style="background:#059669; color:#fff; text-decoration:none; padding:8px 14px; border-radius:5px; font-size:13px; font-weight:600; margin-left:8px;">OpenAPI Spec</a>
-        </div>
-        
-        <div style="border:1px solid #cbd5e1; border-radius:8px; padding:16px; margin-bottom:14px; background:#fff; font-family:sans-serif;">
-            <h3 style="margin:0 0 6px 0; color:#0f172a;">CSV-to-MongoDB Schema Normalizer</h3>
-            <p style="margin:0 0 10px 0; color:#475569; font-size:14px;">Prevents production data corruption by automatically detecting and normalizing inconsistent field types (e.g., '123' vs 123) in CSV data before MongoDB ingestion, ensuring schema consistency without manual ETL scripting.</p>
-            <span style="display:inline-block; margin-bottom:10px; font-size:12px; font-weight:600; color:#059669; background:#ecfdf5; padding:4px 8px; border-radius:4px;">Monetization: {'freemium': {'limit': 50, 'unit': 'calls/month', 'features': ['Basic type detection', 'Up to 100 rows per file', 'No schema validation']}, 'standard': {'price': 9.99, 'currency': 'USD', 'period': 'month', 'features': ['Unlimited calls', 'Up to 10,000 rows per file', 'Advanced schema validation', 'Priority support', 'API access']}}</span><br/>
-            <a href="tools/csv-mongo-schema-normalizer.html" style="background:#2563eb; color:#fff; text-decoration:none; padding:8px 14px; border-radius:5px; font-size:13px; font-weight:600;">Open Free Web Tool</a>
-            <a href="specs/csv-mongo-schema-normalizer_openapi.json" style="background:#059669; color:#fff; text-decoration:none; padding:8px 14px; border-radius:5px; font-size:13px; font-weight:600; margin-left:8px;">OpenAPI Spec</a>
-        </div>
-        
-        <div style="border:1px solid #cbd5e1; border-radius:8px; padding:16px; margin-bottom:14px; background:#fff; font-family:sans-serif;">
-            <h3 style="margin:0 0 6px 0; color:#0f172a;">Secure Data Tokenizer</h3>
-            <p style="margin:0 0 10px 0; color:#475569; font-size:14px;">Sanitizes raw string payloads and extracts uniform token parameters.</p>
-            <span style="display:inline-block; margin-bottom:10px; font-size:12px; font-weight:600; color:#059669; background:#ecfdf5; padding:4px 8px; border-radius:4px;">Monetization: RapidAPI Freemium ($9.99/mo Pro)</span><br/>
-            <a href="tools/secure_data_parser_1788522308.html" style="background:#2563eb; color:#fff; text-decoration:none; padding:8px 14px; border-radius:5px; font-size:13px; font-weight:600;">Open Free Web Tool</a>
-            <a href="specs/secure_data_parser_1788522308_openapi.json" style="background:#059669; color:#fff; text-decoration:none; padding:8px 14px; border-radius:5px; font-size:13px; font-weight:600; margin-left:8px;">OpenAPI Spec</a>
-        </div>
-        
-        <div style="border:1px solid #cbd5e1; border-radius:8px; padding:16px; margin-bottom:14px; background:#fff; font-family:sans-serif;">
-            <h3 style="margin:0 0 6px 0; color:#0f172a;">Local Rate Limit Simulator</h3>
-            <p style="margin:0 0 10px 0; color:#475569; font-size:14px;">Developers need to test API rate limiting logic (token bucket/leaky bucket) locally without paid APIs or external services to verify security configurations before deployment.</p>
-            <span style="display:inline-block; margin-bottom:10px; font-size:12px; font-weight:600; color:#059669; background:#ecfdf5; padding:4px 8px; border-radius:4px;">Monetization: Freemium: Free for basic simulation. Paid tier offers exportable load-test scripts, advanced algorithms (sliding window), and CI/CD integration templates for enterprise security teams.</span><br/>
-            <a href="tools/local-rate-limit-simulator.html" style="background:#2563eb; color:#fff; text-decoration:none; padding:8px 14px; border-radius:5px; font-size:13px; font-weight:600;">Open Free Web Tool</a>
-            <a href="specs/local-rate-limit-simulator_openapi.json" style="background:#059669; color:#fff; text-decoration:none; padding:8px 14px; border-radius:5px; font-size:13px; font-weight:600; margin-left:8px;">OpenAPI Spec</a>
-        </div>
-        
-        <div style="border:1px solid #cbd5e1; border-radius:8px; padding:16px; margin-bottom:14px; background:#fff; font-family:sans-serif;">
-            <h3 style="margin:0 0 6px 0; color:#0f172a;">Maze Prototype Feedback Aggregator</h3>
-            <p style="margin:0 0 10px 0; color:#475569; font-size:14px;">Aggregates and scores usability test feedback from Maze prototypes to identify critical UX friction points before launch.</p>
-            <span style="display:inline-block; margin-bottom:10px; font-size:12px; font-weight:600; color:#059669; background:#ecfdf5; padding:4px 8px; border-radius:4px;">Monetization: Pro Tier: $49/month for unlimited prototype analysis and API access</span><br/>
-            <a href="tools/maze_prototype_feedback_engine.html" style="background:#2563eb; color:#fff; text-decoration:none; padding:8px 14px; border-radius:5px; font-size:13px; font-weight:600;">Open Free Web Tool</a>
-            <a href="specs/maze_prototype_feedback_engine_openapi.json" style="background:#059669; color:#fff; text-decoration:none; padding:8px 14px; border-radius:5px; font-size:13px; font-weight:600; margin-left:8px;">OpenAPI Spec</a>
-        </div>
-        </div></body></html>
+      <!-- Auto-generated tools land here -->
+    </div>
+  </main>
+
+  <!-- Safe UPI Footer -->
+  <footer class="border-t border-slate-800 bg-slate-900/80 py-8 text-center text-slate-500 text-xs">
+    <p>Powered by Genesis Autonomous Conglomerate. Completely free-tier infrastructure.</p>
+    <div class="mt-2">
+      <a href="upi://pay?pa=keshavthakur07@ptyes&pn=Keshav&cu=INR" class="text-emerald-400 hover:underline">☕ Sponsor Infrastructure via UPI (keshavthakur07@ptyes)</a>
+    </div>
+  </footer>
+
+</body>
+</html>

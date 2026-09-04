@@ -1,3 +1,3 @@
 # boto3
 
-Automatically monitor and optimize AWS resources with boto3.
+A lightweight Python library for interacting with AWS services.
