@@ -278,6 +278,14 @@
       "source": "GEN-8 ReAct STAGE 3",
       "created_at": "2026-09-04T08:40:47.263108+00:00",
       "status": "ACTIVE"
+    },
+    {
+      "agent_id": "telemetrycleaner_20260904_085448",
+      "role": "TelemetryCleanerSpecialist",
+      "filename": "agent_telemetrycleanerspecialist_20260904_085448.py",
+      "purpose": "Sanitize raw telemetry dumps and prune corrupted records",
+      "created_at": "2026-09-04T08:54:48.002057+00:00",
+      "status": "ACTIVE"
     }
   ],
   "last_updated": "2026-09-04T08:40:47.263144+00:00"
