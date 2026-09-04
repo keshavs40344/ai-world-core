@@ -153,6 +153,7 @@ Return ONLY raw JSON with these exact keys:
                 "model": model,
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.5,
+                "max_tokens": 600,
                 "response_format": {"type": "json_object"}
             }).encode("utf-8")
 
@@ -173,12 +174,12 @@ Return ONLY raw JSON with these exact keys:
             except urllib.error.HTTPError as http_err:
                 error_body = http_err.read().decode("utf-8", errors="ignore")
                 print(f"[Groq HTTP {http_err.code}] Model {model}: {error_body}")
-                if http_err.code in (400, 404):
+                if http_err.code in (400, 404, 429):
                     continue
                 break
             except Exception as e:
                 print(f"DEBUG: Groq API Call failed: {e}")
-                break
+                continue
 
         # Dynamic fallback if all network/auth requests fail
         uid = int(time.time())
@@ -226,6 +227,10 @@ if __name__ == "__main__":
 class TelegramNotifier:
     @staticmethod
     def alert_chairman(venture_name: str, monetization: str, problem: str):
+        if not TELEGRAM_BOT_TOKEN:
+            print("[*] Telegram token not set in environment; alert logged to terminal.")
+            return
+
         message = (
             f"👔 *GENESIS CONGLOMERATE: NEW VENTURE READY*\n\n"
             f"🔹 *Asset:* `{venture_name}`\n"
@@ -233,23 +238,35 @@ class TelegramNotifier:
             f"💰 *Monetization:* {monetization}\n"
             f"⚙️ *QA:* 100% Subprocess Verified (Exit Code 0)\n"
             f"💻 *Hosting Cost:* $0.00 / month (Cloud Runner)\n\n"
-            f"👉 [DECISION: REVIEW IN VAULT & APPROVE]"
+            f"👇 *CHAIRMAN EXECUTIVE VERDICT:*"
         )
+
+        inline_keyboard = {
+            "inline_keyboard": [
+                [
+                    {"text": "✅ APPROVE & LAUNCH", "url": "https://github.com/keshavs40344/ai-world-core/actions"},
+                    {"text": "📂 VIEW ASSET", "url": f"https://github.com/keshavs40344/ai-world-core/tree/main/vault/ventures/{venture_name}"}
+                ]
+            ]
+        }
+
         url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-        payload = urllib.parse.urlencode({
+        payload = json.dumps({
             "chat_id": TELEGRAM_CHAT_ID,
             "text": message,
-            "parse_mode": "Markdown"
+            "parse_mode": "Markdown",
+            "reply_markup": inline_keyboard
         }).encode("utf-8")
 
-        if not TELEGRAM_BOT_TOKEN:
-            print("[*] Telegram token not set in environment; alert logged to terminal.")
-            return
+        req = urllib.request.Request(
+            url,
+            data=payload,
+            headers={"Content-Type": "application/json"}
+        )
 
         try:
-            req = urllib.request.Request(url, data=payload)
             with urllib.request.urlopen(req, timeout=10) as resp:
-                print("📲 Telegram Memorandum Successfully Delivered to Chairman.")
+                print("📲 Telegram Memorandum with Decision Buttons Successfully Delivered to Chairman.")
         except Exception as e:
             print(f"[Telegram Alert Error] {e}")
 

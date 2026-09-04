@@ -280,28 +280,44 @@ class ChairmanMessenger:
             print("[*] Telegram token not configured; dispatch logged to terminal.")
             return
 
+        slug = blueprint["asset_slug"]
         message = (
             f"👑 *GENESIS-WORLD: AUTONOMOUS EXPANSION*\n\n"
-            f"🤖 *Sub-Agent Spawned:* `{blueprint['sub_agent_type']}`\n"
-            f"📦 *Asset Slug:* `{blueprint['asset_slug']}`\n"
+            f"🤖 *Sub-Agent:* `{blueprint['sub_agent_type']}`\n"
+            f"📦 *Asset Slug:* `{slug}`\n"
             f"🎯 *Demand Solved:* {blueprint['problem_solved']}\n"
             f"💰 *Monetization Vector:* {blueprint['monetization_vector']}\n"
             f"⚙️ *Sandbox QA:* {'100% PASSED (Exit Code: 0)' if passed else 'QUARANTINED'}\n"
-            f"🧠 *Self-Evolved Insight:* _{blueprint.get('lessons_learned', 'System optimized.')}_\n\n"
-            f"👉 [DECISION: 1-TAP REVIEW & APPROVAL]"
+            f"🧠 *Self-Evolved Insight:* _{blueprint.get('lessons_learned', 'Optimized.')}_\n\n"
+            f"👇 *CHAIRMAN EXECUTIVE VERDICT:*"
         )
 
+        # Telegram Inline Keyboard for 1-Tap Action
+        inline_keyboard = {
+            "inline_keyboard": [
+                [
+                    {"text": "✅ APPROVE & LAUNCH", "url": "https://github.com/keshavs40344/ai-world-core/actions"},
+                    {"text": "📂 VIEW ASSET", "url": f"https://github.com/keshavs40344/ai-world-core/tree/main/vault/world_assets/{slug}"}
+                ]
+            ]
+        }
+
         url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-        payload = urllib.parse.urlencode({
+        payload = json.dumps({
             "chat_id": TELEGRAM_CHAT_ID,
             "text": message,
-            "parse_mode": "Markdown"
+            "parse_mode": "Markdown",
+            "reply_markup": inline_keyboard
         }).encode("utf-8")
 
+        req = urllib.request.Request(
+            url, 
+            data=payload, 
+            headers={"Content-Type": "application/json"}
+        )
         try:
-            req = urllib.request.Request(url, data=payload)
             with urllib.request.urlopen(req, timeout=10) as resp:
-                print("📲 Real-Time Alert Dispatched to Chairman's Telegram.")
+                print("📲 Real-Time Alert with Decision Buttons Dispatched.")
         except Exception as e:
             print(f"[Telegram Alert Error] {e}")
 

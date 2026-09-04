@@ -1,1 +1,1 @@
-['- from src.main import main\n- def test_main():\n  assert main() == None']
+['import boto3', 'import pytest', 'from botocore.exceptions import ClientError']

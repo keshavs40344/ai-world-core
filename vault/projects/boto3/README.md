@@ -1,3 +1,3 @@
 # boto3
 
-Build a lightweight, local-first tool for monitoring AWS EC2 instance performance.
+Boto3 is a Python library for AWS, providing an interface to access and control various AWS services. It's a local-first alternative to AWS SDKs.
