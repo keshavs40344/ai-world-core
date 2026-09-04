@@ -272,8 +272,25 @@ if __name__ == "__main__":
 
         return passed, asset_dir
 
-# --- 5. TELEGRAM CHAIRMAN DISPATCH ---
+# --- 5. TELEGRAM CHAIRMAN DISPATCH & APPROVAL LISTENER ---
 class ChairmanMessenger:
+    @staticmethod
+    def send_plain_text(text: str):
+        if not TELEGRAM_BOT_TOKEN:
+            return
+        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+        payload = json.dumps({
+            "chat_id": TELEGRAM_CHAT_ID,
+            "text": text,
+            "parse_mode": "Markdown"
+        }).encode("utf-8")
+        req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=10):
+                pass
+        except Exception as e:
+            print(f"[Telegram Notice Error] {e}")
+
     @staticmethod
     def dispatch(blueprint: dict, passed: bool):
         if not TELEGRAM_BOT_TOKEN:
@@ -289,17 +306,17 @@ class ChairmanMessenger:
             f"💰 *Monetization Vector:* {blueprint['monetization_vector']}\n"
             f"⚙️ *Sandbox QA:* {'100% PASSED (Exit Code: 0)' if passed else 'QUARANTINED'}\n"
             f"🧠 *Self-Evolved Insight:* _{blueprint.get('lessons_learned', 'Optimized.')}_\n\n"
-            f"👇 *CHAIRMAN EXECUTIVE VERDICT:*"
+            f"👇 *CHAIRMAN VERDICT REQUIRED:*\n"
+            f"Tap button below or reply *APPROVE* / *REJECT* in chat."
         )
 
-        # Telegram Inline Keyboard for 1-Tap Action
-        inline_keyboard = {
-            "inline_keyboard": [
-                [
-                    {"text": "✅ APPROVE & LAUNCH", "url": "https://github.com/keshavs40344/ai-world-core/actions"},
-                    {"text": "📂 VIEW ASSET", "url": f"https://github.com/keshavs40344/ai-world-core/tree/main/vault/world_assets/{slug}"}
-                ]
-            ]
+        # Native Reply Keyboard (0 typing, sends text directly in chat, no external browser)
+        custom_keyboard = {
+            "keyboard": [
+                [{"text": "✅ APPROVE & DEPLOY"}, {"text": "❌ REJECT / DISCARD"}]
+            ],
+            "resize_keyboard": True,
+            "one_time_keyboard": True
         }
 
         url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
@@ -307,7 +324,7 @@ class ChairmanMessenger:
             "chat_id": TELEGRAM_CHAT_ID,
             "text": message,
             "parse_mode": "Markdown",
-            "reply_markup": inline_keyboard
+            "reply_markup": custom_keyboard
         }).encode("utf-8")
 
         req = urllib.request.Request(
@@ -317,9 +334,68 @@ class ChairmanMessenger:
         )
         try:
             with urllib.request.urlopen(req, timeout=10) as resp:
-                print("📲 Real-Time Alert with Decision Buttons Dispatched.")
+                print("📲 Real-Time Alert with Quick-Reply Buttons Dispatched.")
         except Exception as e:
             print(f"[Telegram Alert Error] {e}")
+
+
+class TelegramApprovalListener:
+    @staticmethod
+    def wait_for_chairman_verdict(asset_slug: str, timeout_sec: int = 45) -> bool:
+        """
+        Polls Telegram to see if the Chairman taps 'APPROVE & DEPLOY' or types 'APPROVE' / 'YES'.
+        Zero browser opening required. Pure mobile 1-tap control.
+        """
+        if not TELEGRAM_BOT_TOKEN:
+            return False
+
+        print(f"[*] Awaiting Chairman verdict on Telegram for {asset_slug} ({timeout_sec}s window)...")
+        base_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
+
+        # Get baseline offset
+        try:
+            req = urllib.request.urlopen(f"{base_url}/getUpdates?offset=-1", timeout=10)
+            updates = json.loads(req.read().decode())["result"]
+            last_id = updates[-1]["update_id"] if updates else 0
+        except Exception:
+            last_id = 0
+
+        start_time = time.time()
+        while time.time() - start_time < timeout_sec:
+            time.sleep(3)
+            try:
+                poll_url = f"{base_url}/getUpdates?offset={last_id + 1}&timeout=3"
+                with urllib.request.urlopen(poll_url, timeout=10) as resp:
+                    data = json.loads(resp.read().decode())
+                    for update in data.get("result", []):
+                        last_id = update["update_id"]
+                        msg = update.get("message", {})
+                        raw_text = msg.get("text", "").strip()
+                        upper_text = raw_text.upper()
+                        chat_id = str(msg.get("chat", {}).get("id", ""))
+
+                        if chat_id == str(TELEGRAM_CHAT_ID):
+                            if any(cmd in upper_text for cmd in ["APPROVE", "YES", "OK", "LAUNCH", "DEPLOY"]):
+                                ChairmanMessenger.send_plain_text(
+                                    f"🚀 *CHAIRMAN VERDICT RECEIVED:* `{asset_slug}` Approved!\n"
+                                    f"Deployed into `public/approved/` & Production Distribution."
+                                )
+                                return True
+                            elif any(cmd in upper_text for cmd in ["REJECT", "NO", "VETO", "DISCARD"]):
+                                ChairmanMessenger.send_plain_text(
+                                    f"🛑 *CHAIRMAN VERDICT RECEIVED:* `{asset_slug}` Vetoed.\n"
+                                    f"Asset removed from live deployment."
+                                )
+                                return False
+            except Exception as e:
+                print(f"[Polling Notice] {e}")
+
+        ChairmanMessenger.send_plain_text(
+            f"⏳ *WINDOW CLOSED:* No manual verdict received for `{asset_slug}`.\n"
+            f"Staging in cold storage for future review."
+        )
+        return False
+
 
 # --- MASTER CONTROLLER ---
 def main():
@@ -352,9 +428,22 @@ def main():
         blueprint.get("lessons_learned", "OK")
     )
 
-    # Step F: Alert Chairman on Telegram
+    # Step F: Alert Chairman on Telegram with Quick-Reply Keyboard
     ChairmanMessenger.dispatch(blueprint, passed)
-    print("\n>>> [CYCLE COMPLETE: AGENT HAS SELF-EVOLVED & STAGED PRODUCT] <<<\n")
+
+    # Step G: Listen for Chairman's 1-Tap Mobile Verdict
+    approved = TelegramApprovalListener.wait_for_chairman_verdict(blueprint["asset_slug"], timeout_sec=40)
+    if approved:
+        approved_dir = os.path.join("public/approved", blueprint["asset_slug"])
+        os.makedirs(approved_dir, exist_ok=True)
+        # Copy to approved production directory
+        import shutil
+        shutil.copytree(asset_dir, approved_dir, dirs_exist_ok=True)
+        print(f"✅ Asset {blueprint['asset_slug']} successfully graduated to production.")
+    else:
+        print(f"⚠️ Asset {blueprint['asset_slug']} quarantined / retained in staging.")
+
+    print("\n>>> [CYCLE COMPLETE: AGENT HAS SELF-EVOLVED & PROCESSED VERDICT] <<<\n")
 
 if __name__ == "__main__":
     main()
