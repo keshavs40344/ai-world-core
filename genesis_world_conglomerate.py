@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 PROJECT GENESIS WORLD CONGLOMERATE
 Fully Self-Evolving, Multi-Department Digital Enterprise Engine ($0 Cost Guaranteed)
@@ -276,20 +276,39 @@ class CommercialDistribution:
             <a href="specs/{slug}_openapi.json" style="background:#10b981; color:#fff; text-decoration:none; padding:8px 16px; border-radius:6px; font-weight:600; font-size:13px; margin-left:8px;">OpenAPI Spec</a>
         </div>
         """
+        html_content = blueprint["html_client"]
+        if "</body>" in html_content:
+            html_content = html_content.replace("</body>", f"{footer_widget}</body>")
+        else:
+            html_content += footer_widget
+
+        tool_path = f"public/tools/{slug}.html"
+        with open(tool_path, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        print(f"🚀 [COMMERCIAL] Published standalone tool: {tool_path}")
+
+        hub_path = "public/index.html"
+        card = f"""
+        <div class="tool-card bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:-translate-y-1 transition flex flex-col justify-between" data-category="data-cloudops">
+            <div>
+                <span class="text-[10px] font-mono text-indigo-400 bg-indigo-950 px-2 py-0.5 rounded border border-indigo-800">{blueprint.get('department', 'Utility')}</span>
+                <h4 class="text-base font-bold text-white mt-2 mb-2">{blueprint['name']}</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">{blueprint['problem_solved']}</p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center">
+                <a href="tools/{slug}.html" target="_blank" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300">Open Page →</a>
+            </div>
+        </div>"""
+
         if not os.path.exists(hub_path):
             with open(hub_path, "w", encoding="utf-8") as f:
                 f.write(f"<!DOCTYPE html><html><body style='max-width:820px; margin:auto; padding:24px; background:#0f172a; color:#f8fafc;'><h1>Genesis Cloud Enterprise Storefront</h1><div id='hub'>{card}</div></body></html>")
         else:
             with open(hub_path, "r+", encoding="utf-8") as f:
                 c = f.read()
-                if card not in c:
-                    f.seek(0)
-                    if "<div id='hub'>" in c:
-                        f.write(c.replace("<div id='hub'>", f"<div id='hub'>{card}"))
-                    elif "<div class=\"grid\">" in c:
-                        f.write(c.replace("<div class=\"grid\">", f"<div class=\"grid\">{card}"))
-                    else:
-                        f.write(c + card)
+                if slug not in c and '<div id="hub"' in c:
+                    f.write(c.replace('<div id="hub"', f'<div id="hub">\n{card}'))
+
 
 # ============================================================
 # 6. DEPARTMENT 05: CHAIRMAN EXECUTIVE DESK (Mobile Telegram)
