@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 PROJECT GENESIS — 5-STAGE AUTONOMOUS COLLABORATIVE SWARM
 Alpha (Plan) -> Beta (Scout) -> Gamma (Build) -> Delta (Verify) -> Epsilon (Monetize)
@@ -107,17 +107,12 @@ class AgentGamma:
         print("[GAMMA] Engineering commercial-grade Python backend & HTML frontend...")
         url = "https://api.groq.com/openai/v1/chat/completions"
         system_prompt = (
-            "You are Agent Gamma, the Senior Foundry Architect of Genesis Autonomous Swarm. "
-            "Synthesize ONE production-ready developer utility tool in Python. "
-            "Keep code under 15 lines and html_ui under 5 lines so output is concise and completes cleanly. "
-            "Output strictly raw JSON without markdown code fences outside the JSON object.\n"
-            "Required keys:\n"
-            "- 'slug': unique lowercase snake_case identifier\n"
-            "- 'name': professional human readable title\n"
-            "- 'problem_solved': 1 concrete sentence describing what it fixes\n"
-            "- 'code': 100% complete Python class 'EngineService' with method 'execute(self, payload: str) -> dict'\n"
-            "- 'html_ui': Complete single-file HTML5/JS interface with styling and input/run buttons for client browser\n"
-            "- 'monetization': Recommended commercial subscription tier\n"
+            "You are Agent Gamma, the Zero-Cost Foundry Architect of Project Genesis ($0 Budget Mandate). "
+            "Synthesize ONE high-utility, production-ready developer utility tool in Python. "
+            "ABSOLUTE CONSTRAINT: ZERO PAID APIS. The tool must run 100% locally or inside the user's browser with standard libraries only. "
+            "Keep Python code under 15 lines (Standard library only: re, json, urllib, time). "
+            "Keep html_ui as a standalone client-side HTML5/JS tool that executes 100% in-browser with zero backend calls. "
+            "Output strictly raw JSON with keys: 'slug', 'name', 'problem_solved', 'code', 'html_ui', 'monetization'."
         )
         user_prompt = f"Live Market Gap Identified:\n{market_intel[:350]}"
 
@@ -172,7 +167,16 @@ class AgentGamma:
 class AgentDelta:
     @staticmethod
     def audit_and_verify(blueprint: dict, target_dir: str) -> bool:
-        print(f"[DELTA] Sandboxing asset '{blueprint['slug']}' in isolated subprocess...")
+        print(f"[DELTA] Auditing budget constraints & sandboxing asset '{blueprint['slug']}'...")
+        
+        # $0 Sovereign Budget Audit: Reject any external billing dependencies or unauthorized endpoints
+        code_text = blueprint.get("code", "")
+        unauthorized_tokens = ["stripe", "twilio", "aws_access_key", "openai.api_key", "anthropic", "paddle.com"]
+        for tok in unauthorized_tokens:
+            if tok in code_text.lower():
+                print(f"🛑 [DELTA] VETO: Unauthorized paid endpoint or token detected ('{tok}'). Enforcing $0 rule.")
+                return False
+
         code_file = os.path.join(target_dir, "service.py")
         test_file = os.path.join(target_dir, "test_service.py")
         clean_target_dir = os.path.abspath(target_dir).replace('\\', '/')

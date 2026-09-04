@@ -1,0 +1,20 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Local Rate Limit Simulator",
+    "version": "1.0.0",
+    "description": "Developers need to test API rate limiting logic (token bucket/leaky bucket) locally without paid APIs or external services to verify security configurations before deployment."
+  },
+  "paths": {
+    "/execute": {
+      "post": {
+        "summary": "Process data stream",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
