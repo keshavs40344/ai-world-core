@@ -1,0 +1,20 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Maze Prototype Feedback Aggregator",
+    "version": "1.0.0",
+    "description": "Aggregates and scores usability test feedback from Maze prototypes to identify critical UX friction points before launch."
+  },
+  "paths": {
+    "/execute": {
+      "post": {
+        "summary": "Process data stream",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
