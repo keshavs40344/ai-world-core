@@ -1,0 +1,1 @@
+Hey team, saw you were looking for a lightweight, zero-cloud API mocking tool. Built this 100% client-side inspector with zero data risk: https://keshavs40344.github.io/ai-world-core/public/saas/api_mock_studio.html. Completely free to test locally!

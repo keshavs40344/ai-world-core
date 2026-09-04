@@ -1,5 +1,5 @@
 import sys, unittest
-sys.path.insert(0, "/home/runner/work/ai-world-core/ai-world-core/vault/world_assets/meter-bill-reconciler")
+sys.path.insert(0, "/home/runner/work/ai-world-core/ai-world-core/vault/world_assets/grid-billing-reconciler")
 from service import EngineService
 
 class TestEngine(unittest.TestCase):

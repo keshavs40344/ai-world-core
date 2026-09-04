@@ -1,0 +1,33 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Mock Studio Pro \u2014 Zero-Leak Mock Server",
+    "version": "1.0.0",
+    "description": "Simulates REST API responses and tests payloads in-browser with zero third-party cloud data risks."
+  },
+  "servers": [
+    {
+      "url": "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper",
+      "description": "RapidAPI Marketplace"
+    }
+  ],
+  "x-monetization": {
+    "direct_upi": "keshavthakur07@ptyes",
+    "tiers": {
+      "basic": "3 exports free",
+      "pro": "\u20b9299 lifetime or $9.99/mo RapidAPI"
+    }
+  },
+  "paths": {
+    "/execute": {
+      "post": {
+        "summary": "Run service",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
