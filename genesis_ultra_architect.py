@@ -271,8 +271,9 @@ ALL INTELLECTUAL PROPERTY, CLIENT-SIDE HEURISTICS, AND UI DESIGNS ARE PROPRIETAR
                 <a href="{RAPIDAPI_URL}" target="_blank" class="hidden sm:inline-flex items-center text-xs font-semibold text-slate-300 hover:text-white px-3 py-1.5 rounded-lg border border-slate-800 hover:bg-slate-900 transition">
                     ⚡ API Engine ($9.99/mo)
                 </a>
-                <button onclick="triggerPaywallModal()" class="text-xs font-bold text-white px-4 py-2 rounded-xl transition shadow-lg accent-glow" style="background: var(--accent);">
-                    Unlock Pro (₹{AMOUNT})
+                <button onclick="GenesisSupport.open()" class="text-xs font-bold text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 px-4 py-2 rounded-xl transition shadow-sm flex items-center gap-1.5">
+                    <span>☕</span>
+                    <span>Support Developer</span>
                 </button>
             </div>
         </div>
@@ -430,15 +431,7 @@ ALL INTELLECTUAL PROPERTY, CLIENT-SIDE HEURISTICS, AND UI DESIGNS ARE PROPRIETAR
             // Save Workspace
             Genesis.State.save(SLUG + '_input', input);
 
-            // Check Quota
-            let uses = parseInt(Genesis.State.load(SLUG + '_runs', '0'));
-            if (uses >= 3) {{
-                triggerPaywallModal();
-                return;
-            }}
-            Genesis.State.save(SLUG + '_runs', uses + 1);
-
-            // Execute Real In-Browser Heuristic Evaluation
+            // Execute Real In-Browser Heuristic Evaluation (100% Free & Unlimited)
             document.getElementById('execBadge').innerText = 'Analysis Complete (0ms)';
             const out = document.getElementById('outputContainer');
 
@@ -463,7 +456,7 @@ ALL INTELLECTUAL PROPERTY, CLIENT-SIDE HEURISTICS, AND UI DESIGNS ARE PROPRIETAR
                 </div>
                 <div class="p-4 rounded-xl border border-indigo-900/40 bg-indigo-950/20 text-xs text-indigo-200">
                     <p class="font-bold mb-1">✔ Verified Audit Result:</p>
-                    <p class="leading-relaxed">All parameters normalized successfully. Data held locally with zero memory leakage. You have ${{3 - (uses + 1)}} free analyses remaining on this machine.</p>
+                    <p class="leading-relaxed">All parameters normalized successfully. Data held locally with zero memory leakage. 100% Free &amp; Open Sovereign Software.</p>
                 </div>
             `;
         }}
