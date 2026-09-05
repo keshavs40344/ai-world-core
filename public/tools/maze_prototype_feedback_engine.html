@@ -36,4 +36,5 @@
     </script>
     <!-- /SEO BLOCK -->
     
+    <script src="../assets/genesis_payments_auth.js"></script>
 </head><body><h2>Maze Feedback Engine</h2><textarea id='input'>{"feedback":[]}</textarea><button onclick='run()'>Analyze</button><pre id='output'></pre><script>async function run(){const r=await fetch('/api/run',{method:'POST',body:document.getElementById('input').value});document.getElementById('output').textContent=await r.text()}</script></body></html>

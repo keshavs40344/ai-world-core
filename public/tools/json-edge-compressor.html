@@ -36,4 +36,5 @@
     </script>
     <!-- /SEO BLOCK -->
     
+    <script src="../assets/genesis_payments_auth.js"></script>
 </head><body><h2>JSON Edge Compressor</h2><textarea id="input" rows="10" cols="50">{}</textarea><button onclick="process()">Compress</button><pre id="output"></pre><script>function process(){fetch('https://api..com/json-edge-compressor',{method:'POST',headers:{'Content-Type':'application/json','x--key':'YOUR_KEY'},body:JSON.stringify({payload:document.getElementById('input').value})}).then(r=>r.json()).then(d=>document.getElementById('output').textContent=JSON.stringify(d,null,2));}</script></body></html>

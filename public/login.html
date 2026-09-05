@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Vault Login — Genesis Conglomerate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/genesis_ui.css">
+    <script src="assets/genesis_engine.js"></script>
+    <script src="assets/genesis_payments_auth.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between font-sans antialiased">
+    <header class="p-6">
+        <a href="index.html" class="flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-white transition">
+            ← Back to Conglomerate Hub
+        </a>
+    </header>
+
+    <main class="w-full max-w-md mx-auto p-6">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl text-center">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-black text-white text-xl mx-auto mb-4 shadow-lg shadow-indigo-500/30">
+                Ω
+            </div>
+            <h1 class="text-2xl font-black text-white tracking-tight">Sovereign Account</h1>
+            <p class="text-xs text-slate-400 mt-1 mb-6">Manage Pro Licences & Client-Side Workspace Memory</p>
+
+            <div class="space-y-4 text-left">
+                <div>
+                    <label class="text-[11px] font-bold uppercase tracking-wider text-slate-400 font-mono">Account Email</label>
+                    <input id="portalEmail" type="email" placeholder="name@domain.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-white mt-1 focus:outline-none focus:border-indigo-500">
+                </div>
+                <div>
+                    <label class="text-[11px] font-bold uppercase tracking-wider text-slate-400 font-mono">Password / Secret Key</label>
+                    <input id="portalPass" type="password" placeholder="••••••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-white mt-1 focus:outline-none focus:border-indigo-500">
+                </div>
+                <button onclick="executePortalLogin()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-3.5 rounded-xl transition shadow-lg shadow-indigo-600/30 mt-2">
+                    Enter Sovereign Workspace
+                </button>
+            </div>
+
+            <div class="border-t border-slate-800/80 pt-5 mt-6 text-center">
+                <p class="text-xs text-slate-400 mb-2">Need Lifetime Unlimited Pro Access?</p>
+                <button onclick="GenesisCheckout.open({ amount: '299.00', item: 'Pro_Lifetime_Pass' })" class="text-xs font-bold text-emerald-400 hover:text-emerald-300">
+                    ⚡ Upgrade Pro for ₹299 (Instant UPI)
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="p-6 text-center text-xs text-slate-600">
+        © 2026 Genesis Sovereign Conglomerate. Direct Settlement to keshavthakur07@ptyes.
+    </footer>
+
+    <script>
+        function executePortalLogin() {
+            const e = document.getElementById('portalEmail').value;
+            const p = document.getElementById('portalPass').value;
+            const res = GenesisAuth.login(e, p);
+            if (res.success) {
+                alert(`Welcome ${res.user.email}! Redirecting to Workspace...`);
+                window.location.href = "index.html";
+            } else {
+                alert(res.msg);
+            }
+        }
+    </script>
+</body>
+</html>
