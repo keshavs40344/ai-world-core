@@ -361,7 +361,29 @@
       "source": "mass_subagent_spawner",
       "status": "ACTIVE_DEPLOYED",
       "registered_at": "2026-09-05T14:41:37.216846+00:00"
+    },
+    {
+      "agent_id": "agent_forexrisksentinel_20260905_144540",
+      "designation": "Cross-Border FX Liquidity & Slippage Auditor",
+      "category": "FINTECH_TREASURY",
+      "worker_file": "genesis\\agents\\agent_forexrisksentinel_20260905_144540.py",
+      "saas_root": "saas\\agent_forexrisksentinel_20260905_144540.html",
+      "saas_public": "public\\saas\\agent_forexrisksentinel_20260905_144540.html",
+      "source": "hourly_agent_crucible",
+      "status": "ACTIVE_DEPLOYED",
+      "created_at": "2026-09-05T14:45:40.769469+00:00"
+    },
+    {
+      "agent_id": "agent_k8spodoptimizer_20260905_144548",
+      "designation": "Kubernetes Resource & Pod OOMKilled Predictor",
+      "category": "INFRA_DEVOPS",
+      "worker_file": "genesis\\agents\\agent_k8spodoptimizer_20260905_144548.py",
+      "saas_root": "saas\\agent_k8spodoptimizer_20260905_144548.html",
+      "saas_public": "public\\saas\\agent_k8spodoptimizer_20260905_144548.html",
+      "source": "hourly_agent_crucible",
+      "status": "ACTIVE_DEPLOYED",
+      "created_at": "2026-09-05T14:45:48.558476+00:00"
     }
   ],
-  "last_updated": "2026-09-05T14:41:37.217333+00:00"
+  "last_updated": "2026-09-05T14:45:48.558491+00:00"
 }

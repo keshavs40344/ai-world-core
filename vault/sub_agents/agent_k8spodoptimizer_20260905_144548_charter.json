@@ -1,0 +1,8 @@
+{
+  "agent_id": "agent_k8spodoptimizer_20260905_144548",
+  "designation": "Kubernetes Resource & Pod OOMKilled Predictor",
+  "category": "INFRA_DEVOPS",
+  "metric": "Memory Request-to-Usage Saturation Ratio",
+  "hourly_gate_passed": true,
+  "created_at": 1788619548.5405731
+}

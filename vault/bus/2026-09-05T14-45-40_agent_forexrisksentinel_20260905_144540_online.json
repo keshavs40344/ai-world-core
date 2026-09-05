@@ -1,0 +1,13 @@
+{
+  "event": "PEER_AGENT_SPAWNED",
+  "agent_id": "agent_forexrisksentinel_20260905_144540",
+  "designation": "Cross-Border FX Liquidity & Slippage Auditor",
+  "domain": "FINTECH_TREASURY",
+  "protocol_version": "2.0.0",
+  "capabilities": [
+    "Real-Time Slippage Arbitrage & Currency Drift",
+    "BUS_RECEIVER",
+    "JSON_VALIDATOR"
+  ],
+  "timestamp": "2026-09-05T14:45:40.759710+00:00"
+}

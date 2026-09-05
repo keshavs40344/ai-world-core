@@ -1,0 +1,13 @@
+{
+  "event": "PEER_AGENT_SPAWNED",
+  "agent_id": "agent_k8spodoptimizer_20260905_144548",
+  "designation": "Kubernetes Resource & Pod OOMKilled Predictor",
+  "domain": "INFRA_DEVOPS",
+  "protocol_version": "2.0.0",
+  "capabilities": [
+    "Memory Request-to-Usage Saturation Ratio",
+    "BUS_RECEIVER",
+    "JSON_VALIDATOR"
+  ],
+  "timestamp": "2026-09-05T14:45:48.550276+00:00"
+}

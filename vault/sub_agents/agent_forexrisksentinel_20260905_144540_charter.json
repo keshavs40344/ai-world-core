@@ -1,0 +1,8 @@
+{
+  "agent_id": "agent_forexrisksentinel_20260905_144540",
+  "designation": "Cross-Border FX Liquidity & Slippage Auditor",
+  "category": "FINTECH_TREASURY",
+  "metric": "Real-Time Slippage Arbitrage & Currency Drift",
+  "hourly_gate_passed": true,
+  "created_at": 1788619540.7502966
+}
