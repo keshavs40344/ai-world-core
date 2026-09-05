@@ -1,7 +1,7 @@
+/*
+!public
+!vercel.json
 vault/
 *.py
-**/*.py
 requirements.txt
 main.py
-venv/
-__pycache__/
