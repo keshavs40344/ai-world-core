@@ -1,0 +1,37 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CSV to MongoDB Schema Normalizer",
+    "version": "1.0.0",
+    "description": "Prevents inconsistent field types in MongoDB collections by automatically inferring and normalizing CSV data into strict JSON schemas before ingestion. Includes 50 free monthly tier with hard lock for B2B paywall."
+  },
+  "x-monetization": {
+    "direct_upi_settlement": "keshavthakur07@ptyes",
+    "Direct API_subscription_tiers": {
+      "Basic": {
+        "monthly_quota": 50,
+        "price_usd": 0.0
+      },
+      "Pro": {
+        "monthly_quota": 10000,
+        "price_usd": 9.99,
+        "overage_per_call": 0.005
+      }
+    }
+  },
+  "paths": {
+    "/execute": {
+      "post": {
+        "summary": "Execute micro-service payload",
+        "responses": {
+          "200": {
+            "description": "Execution Successful"
+          },
+          "429": {
+            "description": "Monthly Quota Exceeded. Upgrade to Pro Tier at $9.99/mo."
+          }
+        }
+      }
+    }
+  }
+}

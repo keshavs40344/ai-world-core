@@ -1,0 +1,44 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CSV to JSON Mapper",
+    "version": "1.0.0",
+    "description": "Converts raw CSV data into structured JSON objects with precise control over column-to-key mapping and field exclusion."
+  },
+  "x-Direct API-subscription-tiers": {
+    "Basic": {
+      "monthly_quota": 50,
+      "price_usd": 0.0
+    },
+    "Pro": {
+      "monthly_quota": 10000,
+      "price_usd": 9.99,
+      "overage_per_call": 0.005
+    }
+  },
+  "paths": {
+    "/execute": {
+      "post": {
+        "summary": "Execution Endpoint",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "429": {
+            "description": "Monthly Quota Exceeded. Upgrade to Pro Tier at $9.99/mo."
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "",
+      "description": "Direct API Marketplace Production Gateway"
+    }
+  ],
+  "x-Direct API": {
+    "marketplace_url": "",
+    "registered_at": "2026-09-04T14:55:33.588815+00:00"
+  }
+}

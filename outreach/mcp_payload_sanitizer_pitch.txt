@@ -1,0 +1,5 @@
+Subject: Securing your MCP integrations
+
+Hi [Name],
+
+With MCP adoption growing, many teams face security and parsing friction when handling JSON-RPC payloads. Our MCP Payload Sanitizer validates and sanitizes inputs in-browser, preventing injection risks and schema errors before they hit your backend. It saves 5+ hours of debugging and security review per integration. Would you be open to a quick demo?

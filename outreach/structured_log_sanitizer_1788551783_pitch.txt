@@ -1,0 +1,1 @@
+Hey team, saw you were looking for an easy way to clean sensitive PII and emails from production logs before sharing. I built a 100% client-side tool with zero server latency or data risk: https://keshavs40344.github.io/ai-world-core/public/tools/structured_log_sanitizer.html. Check it out and let me know if you need high-volume API access!

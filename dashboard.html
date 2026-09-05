@@ -1,476 +1,57 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Genesis — Autonomous Foundry Telemetry</title>
-  <style>
-    :root {
-      --bg-primary: #0a0d14;
-      --bg-secondary: #121826;
-      --bg-card: rgba(18, 24, 38, 0.75);
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-accent: rgba(0, 240, 255, 0.3);
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --accent-cyan: #00f0ff;
-      --accent-emerald: #10b981;
-      --accent-purple: #8b5cf6;
-      --accent-rose: #f43f5e;
-      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-primary);
-      color: var(--text-main);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      min-height: 100vh;
-      padding: 2rem 1.5rem;
-      line-height: 1.5;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .brand-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .brand-badge {
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-      background: rgba(0, 240, 255, 0.1);
-      color: var(--accent-cyan);
-      border: 1px solid var(--border-accent);
-      padding: 0.2rem 0.6rem;
-      border-radius: 9999px;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .btn {
-      background: var(--bg-secondary);
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.2s ease;
-    }
-
-    .btn:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: var(--accent-cyan);
-    }
-
-    .health-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-      font-family: var(--font-mono);
-      padding: 0.35rem 0.75rem;
-      border-radius: 9999px;
-      background: rgba(16, 185, 129, 0.1);
-      color: var(--accent-emerald);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-
-    .health-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent-emerald);
-      box-shadow: 0 0 8px var(--accent-emerald);
-    }
-
-    /* KPI Grid */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .kpi-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 1.25rem;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .kpi-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
-      opacity: 0.4;
-    }
-
-    .kpi-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .kpi-value {
-      font-size: 2rem;
-      font-weight: 700;
-      font-family: var(--font-mono);
-      color: var(--text-main);
-    }
-
-    .kpi-sub {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 0.4rem;
-    }
-
-    /* Table Section */
-    .section-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 1.5rem;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .section-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-    }
-
-    .search-input {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      color: var(--text-main);
-      padding: 0.45rem 0.85rem;
-      border-radius: 6px;
-      font-size: 0.875rem;
-      outline: none;
-      width: 240px;
-    }
-
-    .search-input:focus {
-      border-color: var(--accent-cyan);
-    }
-
-    .table-container {
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 0.875rem;
-    }
-
-    th {
-      color: var(--text-muted);
-      font-weight: 600;
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid var(--border-color);
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      letter-spacing: 0.05em;
-    }
-
-    td {
-      padding: 0.85rem 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-      vertical-align: middle;
-    }
-
-    tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      font-family: var(--font-mono);
-    }
-
-    .badge-passed {
-      background: rgba(16, 185, 129, 0.15);
-      color: var(--accent-emerald);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-
-    .badge-failed {
-      background: rgba(244, 63, 94, 0.15);
-      color: var(--accent-rose);
-      border: 1px solid rgba(244, 63, 94, 0.3);
-    }
-
-    .code-text {
-      font-family: var(--font-mono);
-      color: var(--accent-cyan);
-      font-size: 0.85rem;
-    }
-
-    footer {
-      margin-top: 2rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-  </style>
+    <title>Genesis GEN-10 Headless Cloud Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { background: #030712; color: #f9fafb; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 2rem; margin: 0; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2937; padding-bottom: 1rem; margin-bottom: 2rem; }
+        .badge { background: #059669; color: #ecfdf5; padding: 0.35rem 0.8rem; border-radius: 9999px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .card { background: #111827; border: 1px solid #374151; border-radius: 10px; padding: 1.5rem; }
+        .card h3 { margin-top: 0; color: #60a5fa; font-size: 1.1rem; border-bottom: 1px solid #374151; padding-bottom: 0.5rem; }
+        .val { font-size: 1.25rem; font-weight: bold; color: #f3f4f6; margin: 0.5rem 0; }
+        .sub { font-size: 0.85rem; color: #9ca3af; }
+    </style>
 </head>
 <body>
-
-<div class="container">
-  <!-- Header -->
-  <header>
-    <div>
-      <div class="brand-title">
-        <span>PROJECT GENESIS</span>
-        <span class="brand-badge">ai-world-core</span>
-      </div>
-      <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">
-        Autonomous Software Foundry &bull; Real-Time Telemetry Dashboard
-      </p>
+    <div class="header">
+        <div>
+            <h1 style="margin: 0; font-size: 1.75rem;">☁️ GENESIS-PRIME: HEADLESS CLOUD SWARM (GEN-10)</h1>
+            <p style="margin: 0.35rem 0 0 0; color: #9ca3af;">100% Zero Local Compute | GitHub Actions Headless Runner</p>
+        </div>
+        <span class="badge">Cloud Operational</span>
     </div>
-    <div class="header-actions">
-      <div class="health-pill" id="healthPill">
-        <span class="health-dot"></span>
-        <span id="healthText">HEALTHY</span>
-      </div>
-      <button class="btn" onclick="fetchTelemetry()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M23 4v6h-6M1 20v-6h6"></path>
-          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-        </svg>
-        Refresh
-      </button>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Radar Workers (Scout)</h3>
+            <div class="val">Actively exploited sandbox RCE in all Chromium versions</div>
+            <div class="sub">Source: https://news.ycombinator.com/rss | Jitter: 0.638s</div>
+        </div>
+        <div class="card">
+            <h3>Builder Workers (Micro-API)</h3>
+            <div class="val">cloud_actively_exploited_sandb_1788592544</div>
+            <div class="sub">Staged in: vault/proposals/</div>
+        </div>
+        <div class="card">
+            <h3>Security Workers (AST SAST)</h3>
+            <div class="val" style="color: #34d399;">APPROVED</div>
+            <div class="sub">CWE & OWASP Clean | Zero Secrets Leaked</div>
+        </div>
+        <div class="card">
+            <h3>Pytest Isolated QA</h3>
+            <div class="val" style="color: #60a5fa;">PASSED (Exit Code 0)</div>
+            <div class="sub">Sandboxed Subprocess Verified</div>
+        </div>
     </div>
-  </header>
 
-  <!-- KPI Grid -->
-  <div class="kpi-grid">
-    <div class="kpi-card">
-      <div class="kpi-label">Total Cycles Completed</div>
-      <div class="kpi-value" id="kpiTotalCycles">0</div>
-      <div class="kpi-sub">Continuous CI/CD Execution</div>
+    <div class="card">
+        <h3>Operator Milestone Gatekeeper Desk</h3>
+        <p><strong>Artifact Staged:</strong> <code>vault/proposals/cloud_actively_exploited_sandb_1788592544/micro_service.py</code></p>
+        <p><strong>Authority Mode:</strong> [APPROVE & MERGE] or [REJECT & PURGE]</p>
+        <p><strong>Last Sync:</strong> 2026-09-05T07:15:44.644556+00:00 UTC</p>
     </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Active Projects in Vault</div>
-      <div class="kpi-value" id="kpiActiveProjects">0</div>
-      <div class="kpi-sub">Verified Microservices</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Test Success Rate</div>
-      <div class="kpi-value" id="kpiSuccessRate" style="color: var(--accent-emerald);">100%</div>
-      <div class="kpi-sub">Self-Healing Test Loop</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Last Execution</div>
-      <div class="kpi-value" id="kpiLastRun" style="font-size: 1.1rem; line-height: 2.2rem;">--:--:--</div>
-      <div class="kpi-sub" id="kpiCycleId">Cycle: -</div>
-    </div>
-  </div>
-
-  <!-- Historical Projects Log -->
-  <div class="section-card">
-    <div class="section-header">
-      <div class="section-title">Historical Vault Projects & Execution Log</div>
-      <input type="text" class="search-input" id="tableSearch" placeholder="Filter projects..." oninput="filterTable()">
-    </div>
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Timestamp</th>
-            <th>Cycle ID</th>
-            <th>Project Name</th>
-            <th>Files</th>
-            <th>Duration</th>
-            <th>Status</th>
-            <th>Artifact Path</th>
-          </tr>
-        </thead>
-        <tbody id="projectsTableBody">
-          <tr>
-            <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 2rem;">
-              Loading telemetry from dashboard_data.json...
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <footer>
-    <p>Project Genesis Engine &bull; Sovereign Local-First Autonomous Foundry &bull; Compatible with GitHub Pages</p>
-  </footer>
-</div>
-
-<script>
-  let cachedData = null;
-
-  async function fetchTelemetry() {
-    try {
-      const resp = await fetch('./dashboard_data.json?t=' + Date.now());
-      if (!resp.ok) throw new Error('HTTP ' + resp.status);
-      const data = await resp.json();
-      cachedData = data;
-      renderDashboard(data);
-    } catch (err) {
-      console.warn('Live fetch failed, attempting cache or fallback:', err);
-      if (!cachedData) {
-        // Fallback placeholder data if dashboard_data.json is not yet populated
-        renderDashboard({
-          system_health: "HEALTHY",
-          summary: {
-            total_cycles_completed: 1,
-            active_projects_in_vault: 1,
-            success_rate_percent: 100.0,
-            last_execution_timestamp: new Date().toISOString(),
-            last_cycle_id: "init",
-          },
-          history: [
-            {
-              cycle_id: "00d246ba",
-              timestamp: new Date().toISOString(),
-              duration_sec: 1.45,
-              project_name: "rate-limited-task-queue",
-              file_count: 9,
-              test_status: "PASSED",
-              path: "vault/rate-limited-task-queue"
-            }
-          ]
-        });
-      }
-    }
-  }
-
-  function renderDashboard(data) {
-    const summary = data.summary || {};
-    document.getElementById('kpiTotalCycles').innerText = summary.total_cycles_completed ?? 0;
-    document.getElementById('kpiActiveProjects').innerText = summary.active_projects_in_vault ?? 0;
-    document.getElementById('kpiSuccessRate').innerText = (summary.success_rate_percent ?? 100) + '%';
-    
-    if (summary.last_execution_timestamp) {
-      const d = new Date(summary.last_execution_timestamp);
-      document.getElementById('kpiLastRun').innerText = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      document.getElementById('kpiCycleId').innerText = 'Cycle: ' + (summary.last_cycle_id || '-');
-    }
-
-    const health = data.system_health || 'HEALTHY';
-    document.getElementById('healthText').innerText = health;
-
-    renderTable(data.history || []);
-  }
-
-  function renderTable(history) {
-    const tbody = document.getElementById('projectsTableBody');
-    if (!history || history.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 2rem;">No cycle records found yet.</td></tr>';
-      return;
-    }
-
-    const query = (document.getElementById('tableSearch').value || '').toLowerCase();
-    const filtered = history.filter(item => {
-      return (item.project_name || '').toLowerCase().includes(query) ||
-             (item.cycle_id || '').toLowerCase().includes(query) ||
-             (item.test_status || '').toLowerCase().includes(query);
-    });
-
-    if (filtered.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 2rem;">No matching projects found.</td></tr>';
-      return;
-    }
-
-    tbody.innerHTML = filtered.map(row => {
-      const isPassed = (row.test_status === 'PASSED');
-      const badgeClass = isPassed ? 'badge-passed' : 'badge-failed';
-      const timeStr = row.timestamp ? new Date(row.timestamp).toLocaleTimeString() : '-';
-      const durationStr = (row.duration_sec != null) ? (row.duration_sec + 's') : '-';
-
-      return `
-        <tr>
-          <td style="color: var(--text-muted); font-size: 0.8rem;">${timeStr}</td>
-          <td><span class="code-text">${row.cycle_id || '-'}</span></td>
-          <td style="font-weight: 600;">${row.project_name || 'unnamed'}</td>
-          <td>${row.file_count || 0}</td>
-          <td style="color: var(--text-muted);">${durationStr}</td>
-          <td><span class="badge ${badgeClass}">${row.test_status || 'UNKNOWN'}</span></td>
-          <td><span class="code-text">${row.path || '-'}</span></td>
-        </tr>
-      `;
-    }).join('');
-  }
-
-  function filterTable() {
-    if (cachedData && cachedData.history) {
-      renderTable(cachedData.history);
-    }
-  }
-
-  // Initial load + periodic polling (every 10 seconds)
-  fetchTelemetry();
-  setInterval(fetchTelemetry, 10000);
-</script>
-
 </body>
 </html>

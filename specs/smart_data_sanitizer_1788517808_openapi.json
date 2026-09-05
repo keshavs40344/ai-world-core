@@ -1,0 +1,20 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Genesis Service: smart_data_sanitizer_1788517808",
+    "version": "1.0.0",
+    "description": "Cleaning raw text arrays into uniform JSON."
+  },
+  "paths": {
+    "/run": {
+      "post": {
+        "summary": "Execute service payload",
+        "responses": {
+          "200": {
+            "description": "Execution Successful"
+          }
+        }
+      }
+    }
+  }
+}

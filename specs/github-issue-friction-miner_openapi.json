@@ -1,0 +1,20 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Genesis Service: github-issue-friction-miner",
+    "version": "1.0.0",
+    "description": "Automatically extracts and categorizes recurring technical and socio-technical pain points from raw GitHub issue discussions to prioritize engineering efforts."
+  },
+  "paths": {
+    "/run": {
+      "post": {
+        "summary": "Execute service payload",
+        "responses": {
+          "200": {
+            "description": "Execution Successful"
+          }
+        }
+      }
+    }
+  }
+}

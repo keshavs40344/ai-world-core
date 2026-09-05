@@ -1,0 +1,20 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Genesis Service: edge-json-shield",
+    "version": "1.0.0",
+    "description": "Prevents expensive downstream processing failures by validating and sanitizing lightweight JSON payloads at the edge before they reach core microservices."
+  },
+  "paths": {
+    "/run": {
+      "post": {
+        "summary": "Execute service payload",
+        "responses": {
+          "200": {
+            "description": "Execution Successful"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Secure Data Tokenizer",
+    "version": "1.0.0",
+    "description": "Sanitizes raw string payloads and extracts uniform token parameters. Includes 50 free monthly tier with hard lock for B2B paywall."
+  },
+  "x-Direct API-subscription-tiers": {
+    "Basic": {
+      "monthly_quota": 50,
+      "price_usd": 0.0
+    },
+    "Pro": {
+      "monthly_quota": 10000,
+      "price_usd": 9.99,
+      "overage_per_call": 0.005
+    }
+  },
+  "paths": {
+    "/execute": {
+      "post": {
+        "summary": "Execute micro-service payload",
+        "responses": {
+          "200": {
+            "description": "Execution Successful"
+          },
+          "429": {
+            "description": "Monthly Quota Exceeded. Upgrade to Pro Tier at $9.99/mo."
+          }
+        }
+      }
+    }
+  }
+}

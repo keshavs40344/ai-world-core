@@ -1,0 +1,27 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "MCP Payload Sanitizer & Validator",
+    "version": "1.0.0",
+    "description": "Eliminates security risks and parsing errors in Model Context Protocol (MCP) JSON-RPC payloads by sanitizing inputs and validating schema compliance before execution."
+  },
+  "x-monetization": {
+    "direct_upi": "keshavthakur07@ptyes",
+    "tiers": {
+      "basic": "50 calls free/mo",
+      "pro": "$9.99/mo for 10k calls"
+    }
+  },
+  "paths": {
+    "/execute": {
+      "post": {
+        "summary": "Run service",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

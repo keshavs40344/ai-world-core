@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head><title>CSV to MongoDB Schema Normalizer</title><script src="https://cdn.tailwindcss.com"></script>
+    <!-- DYNAMIC SEO & SOCIAL GRAPH (Auto-Injected) -->
+    <meta name="title" content="CSV to MongoDB Schema Normalizer">
+    <meta name="description" content="100% Client-side utility for CSV to MongoDB Schema Normalizer. High-speed, private, zero-server data leakage.">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/tools/csv-mongo-schema-normalizer.html">
+    <meta property="og:title" content="CSV to MongoDB Schema Normalizer">
+    <meta property="og:description" content="100% Client-side utility for CSV to MongoDB Schema Normalizer. High-speed, private, zero-server data leakage.">
+    <meta property="og:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=CSV%20to%20MongoDB%20Schema%20Normalizer+Studio&font=montserrat">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/tools/csv-mongo-schema-normalizer.html">
+    <meta name="twitter:title" content="CSV to MongoDB Schema Normalizer">
+    <meta name="twitter:description" content="100% Client-side utility for CSV to MongoDB Schema Normalizer. High-speed, private, zero-server data leakage.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=CSV%20to%20MongoDB%20Schema%20Normalizer+Studio&font=montserrat">
+
+    <!-- JSON-LD Structured Data for Googlebot -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CSV to MongoDB Schema Normalizer",
+      "url": "https://keshavs40344.github.io/ai-world-core/tools/csv-mongo-schema-normalizer.html",
+      "description": "100% Client-side utility for CSV to MongoDB Schema Normalizer. High-speed, private, zero-server data leakage.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <!-- /SEO BLOCK -->
+    
+    <script src="../assets/genesis_payments_auth.js"></script>
+</head><body class="bg-gray-900 text-white p-4"><h1 class="text-2xl font-bold mb-4">CSV to MongoDB Schema Normalizer</h1><textarea id="csv" class="w-full h-32 bg-gray-800 p-2 rounded mb-2" placeholder="Paste CSV data here..."></textarea><button onclick="run()" class="bg-blue-600 px-4 py-2 rounded">Normalize</button><pre id="out" class="mt-4 bg-gray-800 p-2 rounded overflow-auto h-64"></pre><script>function run(){const r=new FileReader();const t=document.getElementById('csv').value;const rows=t.split('\n').map(l=>l.split(','));const h=rows[0];const s={};const d=[];rows.slice(1).forEach(r=>{const o={};h.forEach((k,i)=>{const v=r[i];if(!v)return;const t=v==='true'||v==='false'?'bool':v.replace('.','',1).match(/^-?\d+$/)?'int':v.match(/^-?\d+\.\d+$/)?'float':'str';s[k]=s[k]||new Set();s[k].add(t);o[k]=t==='bool'?v==='true':t==='int'?parseInt(v):t==='float'?parseFloat(v):v});d.push(o)});document.getElementById('out').textContent=JSON.stringify({schema:Object.fromEntries(Object.entries(s).map(([k,v])=>[k,v.size===1?[...v][0]:'mixed'])),documents:d},null,2)}</script></body></html>

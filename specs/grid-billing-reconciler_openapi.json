@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "grid-billing-reconciler",
+    "version": "1.0.0",
+    "description": "Automates cross-referencing of meter telemetry and billing records to resolve disputes in seconds instead of days."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

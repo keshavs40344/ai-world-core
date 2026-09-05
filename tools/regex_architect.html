@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+        <nav class="border-b border-slate-800 bg-slate-900/80 p-4 mb-6 flex justify-between items-center text-xs font-sans">
+            <a href="../index.html" class="text-indigo-400 font-bold">← All AI Tools Hub</a>
+            
+        </nav>
+        <html lang="en" class="dark"><head><meta charset="UTF-8"><title>Regex Architect</title><script src="https://cdn.tailwindcss.com"></script>
+    <!-- DYNAMIC SEO & SOCIAL GRAPH (Auto-Injected) -->
+    <meta name="title" content="Regex Architect">
+    <meta name="description" content="100% Client-side utility for Regex Architect. High-speed, private, zero-server data leakage.">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/tools/regex_architect.html">
+    <meta property="og:title" content="Regex Architect">
+    <meta property="og:description" content="100% Client-side utility for Regex Architect. High-speed, private, zero-server data leakage.">
+    <meta property="og:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=Regex%20Architect+Studio&font=montserrat">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/tools/regex_architect.html">
+    <meta name="twitter:title" content="Regex Architect">
+    <meta name="twitter:description" content="100% Client-side utility for Regex Architect. High-speed, private, zero-server data leakage.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=Regex%20Architect+Studio&font=montserrat">
+
+    <!-- JSON-LD Structured Data for Googlebot -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Regex Architect",
+      "url": "https://keshavs40344.github.io/ai-world-core/tools/regex_architect.html",
+      "description": "100% Client-side utility for Regex Architect. High-speed, private, zero-server data leakage.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <!-- /SEO BLOCK -->
+    
+    <script src="../assets/genesis_payments_auth.js"></script>
+</head><body class="bg-slate-950 text-slate-100 min-h-screen p-6 font-sans flex flex-col"><header class="max-w-4xl mx-auto w-full mb-6 border-b border-slate-800 pb-4 flex justify-between items-center"><div><h1 class="text-xl font-bold text-white">Regex Architect & Pattern Tester</h1><p class="text-xs text-slate-400">Instant in-browser regex tester & validator</p></div></header><main class="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow"><div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col"><label class="text-xs font-semibold mb-1">Regex Pattern & Flags:</label><input id="reg" class="bg-slate-950 border border-slate-700 p-2 text-xs font-mono rounded text-slate-200 mb-2" value="[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+" placeholder="e.g. ^\d{3}-\d{4}$"/><textarea id="test" class="flex-grow bg-slate-950 border border-slate-700 p-2 rounded text-xs font-mono text-slate-200 resize-none h-48" placeholder="Sample test text containing emails or target matches...&#10;alice@company.org&#10;invalid-email"></textarea><button onclick="testReg()" class="mt-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-2 rounded">Test Matches</button></div><div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col"><span class="text-xs font-semibold text-emerald-400 mb-1">Matched Captures:</span><pre id="mout" class="flex-grow bg-slate-950 border border-slate-800 p-3 rounded text-xs font-mono text-emerald-400 overflow-auto whitespace-pre-wrap">// Matches appear here</pre><button onclick="navigator.clipboard.writeText(document.getElementById('mout').textContent)" class="mt-2 bg-slate-800 text-slate-300 text-xs py-2 rounded">Copy Matches</button></div></main><script>function testReg(){try{const r=new RegExp(document.getElementById('reg').value,'g');const t=document.getElementById('test').value;const m=t.match(r)||[];document.getElementById('mout').textContent=`Found ${m.length} match(es):
+
+`+m.join('
+');}catch(e){document.getElementById('mout').textContent='// Invalid Regex: '+e.message;}}</script>
+        <div class="mt-12 p-6 bg-slate-900 border border-slate-800 rounded-xl text-center max-w-md mx-auto text-xs font-sans">
+            <p class="text-slate-400 mb-2">Powered by Agent RegexArchitect (Zero-Cost Sovereign Agent)</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=upi%3A//pay%3Fpa%3Dkeshavthakur07%40ptyes%26pn%3DKeshav%26cu%3DINR" alt="UPI QR" class="mx-auto rounded border border-slate-700 p-1 bg-white mb-2"/>
+            <a href="upi://pay?pa=keshavthakur07@ptyes&pn=Keshav&cu=INR" class="inline-block bg-emerald-600 text-white px-4 py-1.5 rounded font-semibold">Tip via UPI (keshavthakur07@ptyes)</a>
+        </div>
+        </body></html>
