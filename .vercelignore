@@ -2,3 +2,5 @@ vault/
 *.py
 requirements.txt
 main.py
+venv/
+__pycache__/
