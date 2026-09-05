@@ -8,6 +8,7 @@ on:
 jobs:
   run-swarm:
     runs-on: ubuntu-latest
+    timeout-minutes: 7
     permissions:
       contents: write
 
@@ -103,3 +104,10 @@ jobs:
           git add public/ db/ vault/
           git diff-index --quiet HEAD || git commit -m "chore(sentinel): 24/7 self-healing and asset verification cycle [skip ci]"
           git push origin main
+
+      - name: Send Instant Non-Blocking Telegram Release Alert
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python genesis_telegram_notifier.py "Autonomous Swarm Cycle Completed" "public/index.html" "Conglomerate Core"

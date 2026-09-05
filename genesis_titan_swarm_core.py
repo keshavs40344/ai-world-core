@@ -408,24 +408,15 @@ Return strictly raw JSON without markdown syntax:
 
     @classmethod
     def _send_telegram(cls, target: dict, app: dict):
-        if not TELEGRAM_BOT_TOKEN:
-            return
-        msg = (
-            f"🏛️ *TITAN GUILD: ELITE AGENT ENTERED WORLD*\n\n"
-            f"🎖️ *Agent ID:* `{app['agent_id']}`\n"
-            f"🎓 *Origin:* {app['origin']}\n"
-            f"👨💻 *Persona:* {target['lead_persona']}\n"
-            f"📦 *Product:* `{app['title']}`\n"
-            f"🌐 *URL:* `public/saas/{app['slug']}.html`\n"
-            f"💳 *Monetization:* Auto-locked ₹{AMOUNT} UPI\n\n"
-            f"⚡ *Autonomous Swarm scale: Zero manual intervention required.*"
-        )
-        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-        payload = json.dumps({"chat_id": TELEGRAM_CHAT_ID, "text": msg, "parse_mode": "Markdown"}).encode("utf-8")
         try:
-            req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-            urllib.request.urlopen(req, timeout=10)
-        except Exception:
+            from genesis_telegram_notifier import broadcast_live_asset
+            broadcast_live_asset(
+                asset_name=app["title"],
+                rel_path=f"public/saas/{app['slug']}.html",
+                category=app.get("guild", "Titan Sovereign Engineering"),
+                key_feature="Client-side engine | 100% Free & Open"
+            )
+        except Exception as e:
             pass
 
 if __name__ == "__main__":
