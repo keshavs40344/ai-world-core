@@ -19,7 +19,8 @@
         defaultGrant: "250.00",
         solanaWallet: "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
         ethWallet: "0x71C839556cb32691B72140633005D5514Fe16381",
-        githubUrl: "https://github.com/keshavs40344/ai-world-core"
+        githubUrl: "https://github.com/keshavs40344/ai-world-core",
+        sponsorsUrl: "https://github.com/sponsors/keshavs40344"
     };
 
     // ==========================================
@@ -601,9 +602,19 @@
                             <p class="text-slate-300 text-[10px] break-all select-all">${CONFIG.ethWallet}</p>
                         </div>
 
-                        <!-- GitHub Sponsors Link -->
-                        <a href="${CONFIG.githubUrl}" target="_blank" class="w-full py-3 rounded-xl border border-slate-700 hover:border-slate-500 bg-slate-800/80 hover:bg-slate-800 text-white font-mono text-xs font-bold block text-center transition flex items-center justify-center gap-2">
-                            <span>⭐ Star &amp; Sponsor on GitHub</span>
+                        <!-- Official GitHub Sponsors Button & Link -->
+                        <div class="p-3.5 bg-slate-950 border border-slate-800 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3">
+                            <div class="space-y-0.5 text-left">
+                                <div class="text-xs font-mono font-bold text-white flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 fill-pink-500" viewBox="0 0 16 16"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.75 1a4.912 4.912 0 0 1 3.25 1.258A4.912 4.912 0 0 1 11.25 1C13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.434 2.414 7.152 7.152 0 0 1-.31.17l-.018.01-.008.004Zm.006-1.503.018-.01.066-.037c.307-.173.856-.492 1.543-.967C11.17 10.63 14.5 7.97 14.5 5.5 14.5 3.69 13.06 2.5 11.25 2.5a3.42 3.42 0 0 0-2.457 1.054l-.793.812-.793-.812A3.42 3.42 0 0 0 4.75 2.5C2.94 2.5 1.5 3.69 1.5 5.5c0 2.47 3.33 5.13 4.867 6.233.687.475 1.236.794 1.543.967l.066.037.018.01.006.003Z"/></svg>
+                                    <span>GitHub Sponsors</span>
+                                </div>
+                                <p class="text-[10px] font-mono text-slate-400">Direct global sponsor for @keshavs40344</p>
+                            </div>
+                            <iframe src="https://github.com/sponsors/keshavs40344/button" title="Sponsor keshavs40344" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
+                        </div>
+                        <a href="https://github.com/sponsors/keshavs40344" target="_blank" class="w-full py-2.5 rounded-xl border border-pink-500/30 hover:border-pink-500/60 bg-pink-500/10 hover:bg-pink-500/20 text-pink-300 font-mono text-xs font-bold block text-center transition flex items-center justify-center gap-2">
+                            <span>💖 Sponsor @keshavs40344 on GitHub Sponsors</span>
                         </a>
                     </div>
 
