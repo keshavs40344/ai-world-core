@@ -271,9 +271,9 @@ ALL INTELLECTUAL PROPERTY, CLIENT-SIDE HEURISTICS, AND UI DESIGNS ARE PROPRIETAR
                 <a href="{RAPIDAPI_URL}" target="_blank" class="hidden sm:inline-flex items-center text-xs font-semibold text-slate-300 hover:text-white px-3 py-1.5 rounded-lg border border-slate-800 hover:bg-slate-900 transition">
                     ⚡ API Engine ($9.99/mo)
                 </a>
-                <button onclick="GenesisSupport.open()" class="text-xs font-bold text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 px-4 py-2 rounded-xl transition shadow-sm flex items-center gap-1.5">
-                    <span>☕</span>
-                    <span>Support Developer</span>
+                <button onclick="GenesisDonation.open()" class="text-xs font-bold text-rose-300 bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 px-4 py-2 rounded-xl transition shadow-sm flex items-center gap-1.5">
+                    <span>❤️</span>
+                    <span>Donate</span>
                 </button>
             </div>
         </div>
