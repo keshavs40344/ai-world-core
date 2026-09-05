@@ -60,6 +60,19 @@ jobs:
         run: |
           python sentinel_self_healing_watchdog.py
 
+      # Ultra Artisanal SaaS Builder & Programmatic SEO Subpage Indexer
+      - name: Synthesize Ultra-Tier Artisanal SaaS Units
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python genesis_ultra_architect.py
+
+      - name: Index Subpages for Googlebot & Rebuild Sitemaps
+        run: |
+          python seo_subpage_indexer.py
+
       - name: Inject SEO & OpenGraph Social Meta Tags
         run: |
           python seo_metatag_engine.py

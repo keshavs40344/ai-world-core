@@ -1,0 +1,12 @@
+================================================================================
+GENESIS SOVEREIGN COMMERCIAL SOFTWARE LICENSE (ALL RIGHTS RESERVED)
+COPYRIGHT (C) 2026 KESHAV (CHAIRMAN, GENESIS CONGLOMERATE).
+ALL INTELLECTUAL PROPERTY, CLIENT-SIDE HEURISTICS, AND UI DESIGNS ARE PROPRIETARY.
+================================================================================
+1. PROPRIETARY OWNERSHIP: This software, its compilation, algorithms, and 
+   user interface architecture are the sole proprietary property of Keshav.
+2. ZERO REVERSE-ENGINEERING: Unauthorized reproduction, decompilation, scraping, 
+   resale, or redistribution of this software or its sub-modules is strictly prohibited.
+3. COMMERCIAL USAGE: Access to commercial features requires a verified NPCI UPI 
+   or RapidAPI settlement issued directly by the copyright holder.
+================================================================================
