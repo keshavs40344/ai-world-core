@@ -1,6 +1,6 @@
 {
   "protocol": "GLOBAL_ACADEMIC_SENATE_2026",
-  "decree_id": "SENATE_DECREE_1788621826_F6_FUSION_SOLAR_GRID_ARCHITECT",
+  "decree_id": "SENATE_DECREE_1788622697_F6_FUSION_SOLAR_GRID_ARCHITECT",
   "faculty_id": 6,
   "faculty": "Scientific Discovery & Deep Exploration Labs",
   "dean": "Chancellor Yuki Tanaka",
@@ -14,6 +14,6 @@
     "Stratospheric carbon sequestration rate modeling per deployment scenario"
   ],
   "status": "RATIFIED_GLOBAL_PRODUCTION",
-  "zk_proof": "2ebdf3278d6b4b90516fe48927870eea05c4f08ecb9f6e3c7801d9eeca4c7d88",
-  "timestamp_utc": "2026-09-05T15:23:46.916645+00:00"
+  "zk_proof": "d7c3990f0f994a1bb5ad56c0fbcb47a8ca37e73f0f8d2da5599dd048d9afd22a",
+  "timestamp_utc": "2026-09-05T15:38:19.245387+00:00"
 }

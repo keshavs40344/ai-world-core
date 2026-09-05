@@ -1,6 +1,6 @@
 {
   "protocol": "GLOBAL_ACADEMIC_SENATE_2026",
-  "decree_id": "SENATE_DECREE_1788621827_F5_ZK_GOVERNANCE_PROOF_SENTINEL",
+  "decree_id": "SENATE_DECREE_1788622618_F5_ZK_GOVERNANCE_PROOF_SENTINEL",
   "faculty_id": 5,
   "faculty": "Department of Planetary Jurisprudence & Ethical Audit",
   "dean": "Chancellor Viktor Solaris",
@@ -14,6 +14,6 @@
     "Individual privacy guaranteed via zero-knowledge identity protocols"
   ],
   "status": "RATIFIED_GLOBAL_PRODUCTION",
-  "zk_proof": "b9ca83ed568f9b74907385388d507e62bb823615d2c2eaae2feb822454ea2e7e",
-  "timestamp_utc": "2026-09-05T15:23:47.542039+00:00"
+  "zk_proof": "59dc009020c573e0fa013cd4339636239ee993bebba08928504428a9ada7e860",
+  "timestamp_utc": "2026-09-05T15:37:00.094298+00:00"
 }
