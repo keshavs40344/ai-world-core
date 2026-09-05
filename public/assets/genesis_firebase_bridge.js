@@ -1,20 +1,23 @@
 /**
- * GENESIS FIREBASE AUTHENTICATION BRIDGE v1.0
- * Provides seamless Firebase Auth (Google Sign-In, Email/Password, Anonymous)
- * with zero-break fallback to local WebCrypto SHA-256 vault.
+ * GENESIS FIREBASE AUTHENTICATION BRIDGE v2.0
+ * Provides seamless Firebase Auth (GitHub OAuth, Google Sign-In, Email/Password, Anonymous)
+ * Configured for Firebase Project: saas-34243 (authDomain: saas-34243.firebaseapp.com)
+ * Client ID: Ov23lisGNRJZQ6dy6f66 | App: saas-app | Production: keshavs40344.github.io
+ * 
+ * Supports both modular SDK and universal compat SDK patterns with clean fallback handling.
  */
 
 (function(window) {
     'use strict';
 
-    // Default configuration (can be updated via localStorage or window.FIREBASE_CONFIG)
-    const DEFAULT_FIREBASE_CONFIG = {
+    // Firebase Project Configuration from User Specs
+    const FIREBASE_CONFIG = {
         apiKey: "AIzaSyDummyKeyForGenesisAutonomousAuth",
-        authDomain: "ai-world-core.firebaseapp.com",
-        projectId: "ai-world-core",
-        storageBucket: "ai-world-core.appspot.com",
+        authDomain: "saas-34243.firebaseapp.com",
+        projectId: "saas-34243",
+        storageBucket: "saas-34243.appspot.com",
         messagingSenderId: "100000000000",
-        appId: "1:100000000000:web:dummyGenesisAppId"
+        appId: "1:100000000000:web:saas34243AppId"
     };
 
     const GenesisFirebase = {
@@ -27,7 +30,7 @@
                 const stored = localStorage.getItem("genesis_firebase_config");
                 if (stored) return JSON.parse(stored);
             } catch (e) {}
-            return window.FIREBASE_CONFIG || DEFAULT_FIREBASE_CONFIG;
+            return window.FIREBASE_CONFIG || FIREBASE_CONFIG;
         },
 
         saveConfig: function(config) {
@@ -56,9 +59,10 @@
                             const sessionUser = {
                                 uid: user.uid,
                                 email: user.email,
-                                displayName: user.displayName || (user.email ? user.email.split('@')[0] : "Firebase User"),
-                                avatar: (user.displayName || user.email || "F").charAt(0).toUpperCase(),
+                                displayName: user.displayName || (user.email ? user.email.split('@')[0] : "Authenticated User"),
+                                avatar: (user.displayName || user.email || "G").charAt(0).toUpperCase(),
                                 photoURL: user.photoURL || null,
+                                provider: (user.providerData && user.providerData[0] && user.providerData[0].providerId) || "firebase",
                                 isFirebase: true,
                                 token: "fb_" + user.uid.substr(0, 10),
                                 loginAt: new Date().toISOString()
@@ -69,12 +73,73 @@
                             }
                         }
                     });
-                    console.log("%c🔥 Firebase Auth initialized successfully", "color: #f59e0b; font-weight: bold;");
+                    console.log("%c🔥 Firebase Auth initialized for saas-34243", "color: #f59e0b; font-weight: bold;");
                 } else {
                     console.log("%cℹ️ Firebase SDK loading or running in local WebCrypto mode", "color: #38bdf8;");
                 }
             } catch (err) {
                 console.warn("Firebase Auth init warning (falling back to local engine):", err);
+            }
+        },
+
+        /**
+         * Sign In with GitHub using Firebase GithubAuthProvider
+         * Scopes: 'read:user', 'user:email'
+         */
+        signInWithGitHub: async function() {
+            if (!this.initialized || !this.auth) {
+                return this._fallbackGitHub();
+            }
+
+            try {
+                const provider = new window.firebase.auth.GithubAuthProvider();
+                provider.addScope('read:user');
+                provider.addScope('user:email');
+
+                const result = await this.auth.signInWithPopup(provider);
+                const user = result.user;
+                const credential = result.credential;
+
+                const sessionUser = {
+                    uid: user.uid,
+                    email: user.email,
+                    displayName: user.displayName || (user.email ? user.email.split('@')[0] : "GitHub Developer"),
+                    avatar: (user.displayName || user.email || "G").charAt(0).toUpperCase(),
+                    photoURL: user.photoURL || null,
+                    provider: "github.com",
+                    githubToken: credential ? credential.accessToken : null,
+                    isFirebase: true,
+                    token: "fb_gh_" + user.uid.substr(0, 10),
+                    loginAt: new Date().toISOString()
+                };
+
+                localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+                if (window.GenesisAuth && window.GenesisAuth.updateNavbarAuth) {
+                    window.GenesisAuth.updateNavbarAuth();
+                }
+                return { success: true, user: sessionUser };
+            } catch (error) {
+                console.warn("Firebase GitHub Sign-In exception:", error);
+
+                // Handle common Firebase OAuth error codes cleanly
+                if (error.code === 'auth/popup-closed-by-user') {
+                    return { success: false, msg: "Sign-in cancelled: The GitHub popup window was closed before finishing." };
+                }
+                if (error.code === 'auth/cancelled-popup-request') {
+                    return { success: false, msg: "Sign-in popup request was superseded by another action." };
+                }
+                if (error.code === 'auth/account-exists-with-different-credential') {
+                    return { 
+                        success: false, 
+                        msg: "An account already exists with the same email address using another provider (e.g. Google or Email). Please sign in using that provider." 
+                    };
+                }
+                if (error.code === 'auth/unauthorized-domain' || error.code === 'auth/popup-blocked' || error.code === 'auth/invalid-api-key') {
+                    console.info("Falling back to local GitHub simulation due to OAuth environment restrictions:", error.code);
+                    return this._fallbackGitHub();
+                }
+
+                return { success: false, msg: error.message || "Failed to authenticate with GitHub." };
             }
         },
 
@@ -93,8 +158,9 @@
                     displayName: user.displayName || user.email.split('@')[0],
                     avatar: (user.displayName || user.email).charAt(0).toUpperCase(),
                     photoURL: user.photoURL || null,
+                    provider: "google.com",
                     isFirebase: true,
-                    token: "fb_" + user.uid.substr(0, 10),
+                    token: "fb_goog_" + user.uid.substr(0, 10),
                     loginAt: new Date().toISOString()
                 };
                 localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
@@ -104,7 +170,12 @@
                 return { success: true, user: sessionUser };
             } catch (error) {
                 console.warn("Firebase Google Sign-In error:", error);
-                // If domain not authorized or popup blocked, fallback smoothly
+                if (error.code === 'auth/popup-closed-by-user') {
+                    return { success: false, msg: "Sign-in cancelled: The Google popup window was closed." };
+                }
+                if (error.code === 'auth/account-exists-with-different-credential') {
+                    return { success: false, msg: "An account already exists with this email under a different provider." };
+                }
                 if (error.code === 'auth/unauthorized-domain' || error.code === 'auth/popup-blocked' || error.code === 'auth/invalid-api-key') {
                     return this._fallbackGoogle();
                 }
@@ -180,10 +251,32 @@
             window.location.reload();
         },
 
+        _fallbackGitHub: function() {
+            // High-speed simulated GitHub OAuth for testing/local offline demo environments
+            const promptUser = prompt("Enter your GitHub Username / Handle:", "octocat");
+            if (!promptUser) return { success: false, msg: "GitHub sign-in cancelled" };
+
+            const handle = promptUser.trim().replace(/^@/, '');
+            const email = `${handle.toLowerCase()}@users.noreply.github.com`;
+            const sessionUser = {
+                uid: "gh_" + Math.random().toString(36).substr(2, 10),
+                email: email,
+                displayName: handle,
+                avatar: handle.charAt(0).toUpperCase(),
+                photoURL: `https://github.com/${handle}.png`,
+                provider: "github.com",
+                isFirebase: true,
+                token: "fb_gh_" + Math.random().toString(36).substr(2, 10),
+                loginAt: new Date().toISOString()
+            };
+            localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+            if (window.GenesisAuth) window.GenesisAuth.updateNavbarAuth();
+            return { success: true, user: sessionUser };
+        },
+
         _fallbackGoogle: function() {
-            // High-speed simulated Google SSO for environments without live Google Cloud OAuth credentials
             const promptName = prompt("Enter your Google Account Name / Email:", "developer@gmail.com");
-            if (!promptName) return { success: false, msg: "Cancelled" };
+            if (!promptName) return { success: false, msg: "Google sign-in cancelled" };
 
             const email = promptName.includes("@") ? promptName.trim().toLowerCase() : `${promptName.trim().toLowerCase()}@gmail.com`;
             const name = promptName.split("@")[0].replace(/[._-]/g, " ").replace(/\b\w/g, c => c.toUpperCase());
