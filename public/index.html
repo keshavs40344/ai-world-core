@@ -157,15 +157,11 @@
 
         <!-- Right Quick Actions -->
         <div class="flex items-center space-x-3">
-                <div id="genesisAuthWidget"></div>
           <button onclick="openTopologyModal()" class="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-xs font-mono text-slate-300 hover:text-white transition">
             <i data-lucide="network" class="w-3.5 h-3.5 text-cyan-400"></i>
             <span>Architecture</span>
           </button>
-          <button onclick="GenesisDonation.open()" class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-400 hover:to-pink-400 text-white font-display font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 transition">
-            <span>❤️</span>
-            <span>Donate</span>
-          </button>
+          <div id="genesisAuthWidget"></div>
         </div>
       </div>
     </header>
@@ -306,7 +302,7 @@
             </div>
             <div class="text-[11px] font-mono text-emerald-400 flex items-center justify-between pt-2 border-t border-white/5">
               <span>9 Systems</span>
-              <span class="text-slate-500">CMU / IIT Bombay</span>
+              <span class="text-slate-500">Aegis Security Lab</span>
             </div>
           </div>
 
@@ -316,12 +312,12 @@
               <i data-lucide="trending-up" class="w-5 h-5"></i>
             </div>
             <div class="space-y-1">
-              <h3 class="font-display font-bold text-white text-base">Wharton Treasury</h3>
+              <h3 class="font-display font-bold text-white text-base">Sovereign Treasury</h3>
               <p class="text-xs text-slate-400">Cross-border DTAA tax optimization, freight auditing, and currency arbitrage.</p>
             </div>
             <div class="text-[11px] font-mono text-amber-400 flex items-center justify-between pt-2 border-t border-white/5">
               <span>12 Systems</span>
-              <span class="text-slate-500">Wharton FinTech</span>
+              <span class="text-slate-500">Sovereign Treasury</span>
             </div>
           </div>
 
@@ -336,7 +332,7 @@
             </div>
             <div class="text-[11px] font-mono text-cyan-400 flex items-center justify-between pt-2 border-t border-white/5">
               <span>14 Systems</span>
-              <span class="text-slate-500">MIT CSAIL</span>
+              <span class="text-slate-500">Titan Core Systems Lab</span>
             </div>
           </div>
 
@@ -351,7 +347,7 @@
             </div>
             <div class="text-[11px] font-mono text-violet-400 flex items-center justify-between pt-2 border-t border-white/5">
               <span>8 Systems</span>
-              <span class="text-slate-500">Stanford AI Lab</span>
+              <span class="text-slate-500">Synapse Deep Inference</span>
             </div>
           </div>
         </div>
@@ -388,26 +384,7 @@
         </div>
       </section>
 
-      <!-- VOLUNTARY DONATION CALLOUT BANNER -->
-      <section class="glass-panel p-8 rounded-2xl border border-rose-500/30 bg-gradient-to-r from-rose-950/40 via-slate-900/60 to-pink-950/40 relative overflow-hidden">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
-          <div class="space-y-2 text-center md:text-left">
-            <span class="px-2.5 py-1 rounded bg-rose-500/20 text-rose-300 text-xs font-mono border border-rose-500/40">100% FREE &amp; OPEN SOURCE</span>
-            <h3 class="text-2xl sm:text-3xl font-display font-bold text-white">Apni Khushi Se Donate Karein</h3>
-            <p class="text-sm text-slate-300 max-w-xl">
-              Aapke liye saare 49+ utilities aur SaaS tools bilkul muft hain aur rahenge. Agar yeh tools aapke kaam aayein aur aapka mann kare, toh aap apni marzi ka koi bhi amount donate kar sakte hain.
-            </p>
-          </div>
-          <button onclick="GenesisDonation.open()" class="shrink-0 px-6 py-3 rounded-xl bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-400 hover:to-pink-400 text-white font-display font-bold text-sm tracking-wider uppercase shadow-xl shadow-rose-500/30 transition transform hover:-translate-y-0.5 flex items-center gap-2">
-            <span>❤️</span>
-            <span>Donate (Khushi Se)</span>
-          </button>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- FOOTER -->
+      <!-- FOOTER -->
     <footer class="border-t border-white/5 py-10 mt-16 text-center text-xs font-mono text-slate-500 space-y-2">
       <div class="flex justify-center space-x-6">
         <a href="dashboard.html" class="hover:text-emerald-400">Chairman Cockpit</a>
@@ -469,54 +446,6 @@
       </div>
     </div>
 
-    <!-- MODAL 2: UPI PAYMENT / QR MODAL -->
-    <div id="upiModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
-      <div class="glass-panel w-full max-w-md p-6 rounded-2xl border border-emerald-500/40 text-center space-y-5">
-        <div class="flex justify-between items-center border-b border-white/10 pb-3">
-          <div class="flex items-center space-x-2">
-            <i data-lucide="qr-code" class="w-5 h-5 text-emerald-400"></i>
-            <span class="font-display font-bold text-white">Sovereign Conglomerate Pass</span>
-          </div>
-          <button onclick="closeUpiModal()" class="text-slate-400 hover:text-white">
-            <i data-lucide="x" class="w-5 h-5"></i>
-          </button>
-        </div>
-
-        <div class="space-y-1">
-          <div class="text-3xl font-mono font-black text-emerald-400">&#8377;299.00</div>
-          <p class="text-xs font-mono text-slate-400">One-Time Lifetime Unlimited Access</p>
-        </div>
-
-        <!-- Generated QR Code -->
-        <div class="bg-white p-4 rounded-xl inline-block shadow-xl mx-auto border-4 border-emerald-500/30">
-          <img 
-            id="upiQrImg"
-            src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi%3A%2F%2Fpay%3Fpa%3Dkeshavthakur07%40ptyes%26pn%3DKeshav%26am%3D299.00%26cu%3DINR%26tn%3DAI%2520World%2520Lifetime%2520Pass" 
-            alt="UPI QR Code" 
-            class="w-44 h-44 mx-auto"
-          >
-        </div>
-
-        <div class="space-y-2">
-          <div class="flex items-center justify-between bg-slate-950 p-2.5 rounded-lg border border-slate-800 text-xs font-mono">
-            <span class="text-slate-400">Payee VPA:</span>
-            <span class="text-emerald-400 font-bold select-all">keshavthakur07@ptyes</span>
-            <button onclick="copyVpa()" class="text-slate-400 hover:text-white"><i data-lucide="copy" class="w-3.5 h-3.5"></i></button>
-          </div>
-          <a 
-            href="upi://pay?pa=keshavthakur07@ptyes&pn=Keshav&am=299.00&cu=INR&tn=AI%20World%20Lifetime%20Pass" 
-            class="block w-full py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase font-mono tracking-wider transition"
-          >
-            Open UPI App Directly
-          </a>
-        </div>
-
-        <p class="text-[11px] text-slate-500 font-mono">
-          After paying, your activation token is saved locally to your device via Genesis.State.
-        </p>
-      </div>
-    </div>
-
     <!-- Application Data & Interactive Scripts -->
     <script>
       const APPS_DATA = [
@@ -529,7 +458,7 @@
     "badge_class": "badge-fin",
     "icon": "trending-up",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -542,7 +471,7 @@
     "badge_class": "badge-cloud",
     "icon": "database",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -555,7 +484,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -568,7 +497,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -581,7 +510,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -594,7 +523,7 @@
     "badge_class": "badge-cloud",
     "icon": "database",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -607,7 +536,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -620,7 +549,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -633,7 +562,7 @@
     "badge_class": "badge-fin",
     "icon": "trending-up",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -646,7 +575,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -659,7 +588,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -672,7 +601,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -685,7 +614,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -698,7 +627,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -711,7 +640,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -724,7 +653,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -737,7 +666,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -750,7 +679,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -763,7 +692,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -776,7 +705,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -789,7 +718,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -802,7 +731,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -815,7 +744,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -828,7 +757,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -841,7 +770,7 @@
     "badge_class": "badge-cloud",
     "icon": "database",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -854,7 +783,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -867,7 +796,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -880,7 +809,7 @@
     "badge_class": "badge-ai",
     "icon": "cpu",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -893,7 +822,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -906,7 +835,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -919,7 +848,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -932,7 +861,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "Tool",
-    "origin": "IIT Bombay",
+    "origin": "Aegis Core Lab",
     "latency": "< 8ms",
     "tag": "Active"
   },
@@ -945,7 +874,7 @@
     "badge_class": "badge-fin",
     "icon": "briefcase",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -958,7 +887,7 @@
     "badge_class": "badge-fin",
     "icon": "briefcase",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -971,20 +900,20 @@
     "badge_class": "badge-fin",
     "icon": "briefcase",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
   {
     "id": "cmu_sql_explain_visualizer",
-    "name": "Cmu Sql Explain Visualizer",
-    "desc": "100% Client-side utility for Cmu Sql Explain Visualizer \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data leakage.",
+    "name": "Titan SQL Explain Visualizer \u2014 Genesis Autonomous Suite",
+    "desc": "100% Client-side utility for Titan SQL Explain Visualizer \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data lea...",
     "url": "saas/cmu_sql_explain_visualizer.html",
     "category": "FinTech & Treasury",
     "badge_class": "badge-fin",
     "icon": "briefcase",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -997,7 +926,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -1010,7 +939,7 @@
     "badge_class": "badge-fin",
     "icon": "briefcase",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -1023,7 +952,7 @@
     "badge_class": "badge-fin",
     "icon": "briefcase",
     "type": "SaaS Studio",
-    "origin": "Wharton Treasury",
+    "origin": "Sovereign Treasury Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -1036,20 +965,20 @@
     "badge_class": "badge-fin",
     "icon": "briefcase",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
   {
     "id": "iit_zero_trust_jwt_profiler",
-    "name": "Iit Zero Trust Jwt Profiler",
-    "desc": "100% Client-side utility for Iit Zero Trust Jwt Profiler \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data leak...",
+    "name": "Aegis Zero Trust Jwt Profiler \u2014 Genesis Autonomous Suite",
+    "desc": "100% Client-side utility for Aegis Zero Trust Jwt Profiler \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data le...",
     "url": "saas/iit_zero_trust_jwt_profiler.html",
     "category": "DevSecOps & Privacy",
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -1062,7 +991,7 @@
     "badge_class": "badge-fin",
     "icon": "briefcase",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -1075,7 +1004,7 @@
     "badge_class": "badge-ai",
     "icon": "cpu",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -1088,7 +1017,7 @@
     "badge_class": "badge-ai",
     "icon": "cpu",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -1101,20 +1030,20 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
   {
     "id": "stanford_vram_inference_allocator",
-    "name": "Stanford Vram Inference Allocator",
-    "desc": "100% Client-side utility for Stanford Vram Inference Allocator \u2014 Genesis Autonomous Suite. High-speed, private, zero-server dat...",
+    "name": "Synapse AI Vram Inference Allocator \u2014 Genesis Autonomous Suite",
+    "desc": "100% Client-side utility for Synapse AI Vram Inference Allocator \u2014 Genesis Autonomous Suite. High-speed, private, zero-server d...",
     "url": "saas/stanford_vram_inference_allocator.html",
     "category": "AI & LLM Systems",
     "badge_class": "badge-ai",
     "icon": "cpu",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -1127,7 +1056,7 @@
     "badge_class": "badge-sec",
     "icon": "shield",
     "type": "SaaS Studio",
-    "origin": "Wharton Treasury",
+    "origin": "Sovereign Treasury Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
@@ -1140,20 +1069,20 @@
     "badge_class": "badge-cloud",
     "icon": "layers",
     "type": "SaaS Studio",
-    "origin": "CMU CyLab",
+    "origin": "Aegis Security Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   },
   {
     "id": "wharton_dtaa_tax_forecaster",
-    "name": "Wharton Dtaa Tax Forecaster",
-    "desc": "100% Client-side utility for Wharton Dtaa Tax Forecaster \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data leak...",
+    "name": "Sovereign Treasury Dtaa Tax Forecaster \u2014 Genesis Autonomous Suite",
+    "desc": "100% Client-side utility for Sovereign Treasury Dtaa Tax Forecaster \u2014 Genesis Autonomous Suite. High-speed, private, zero-serve...",
     "url": "saas/wharton_dtaa_tax_forecaster.html",
     "category": "FinTech & Treasury",
     "badge_class": "badge-fin",
     "icon": "briefcase",
     "type": "SaaS Studio",
-    "origin": "Wharton Treasury",
+    "origin": "Sovereign Treasury Lab",
     "latency": "< 12ms",
     "tag": "Enterprise"
   }
@@ -1249,7 +1178,7 @@
         }
         if (e.key === 'Escape') {
           closeTopologyModal();
-          closeUpiModal();
+          
         }
       });
 
@@ -1260,16 +1189,7 @@
       function closeTopologyModal() {
         document.getElementById('topologyModal').classList.add('hidden');
       }
-      function openUpiModal() {
-        document.getElementById('upiModal').classList.remove('hidden');
-      }
-      function closeUpiModal() {
-        document.getElementById('upiModal').classList.add('hidden');
-      }
-      function copyVpa() {
-        navigator.clipboard.writeText('keshavthakur07@ptyes');
-        alert('UPI ID copied to clipboard: keshavthakur07@ptyes');
-      }
+
 
       // Sandbox Logic
       let currentSbMode = 'tokens';

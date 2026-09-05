@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 GENESIS TITAN SWARM CORE: ELITE GLOBAL ENGINEERING CONGLOMERATE
-Orchestrates autonomous Tier-1 AI Engineers (MIT, Stanford, IIT, CMU)
+Orchestrates autonomous Tier-1 AI Engineers (Elite Autonomous Infrastructure)
 building mission-critical, zero-server-leak client-side software utilities.
 """
 
@@ -63,8 +63,8 @@ ELITE_GUILDS = [
     {
         "guild": "Systems & Distributed Infrastructure",
         "category": "data-cloudops",
-        "origin": "MIT CSAIL / CMU Systems Labs",
-        "lead_persona": "Staff Distributed Systems Architect (ex-Google L7, MIT)",
+        "origin": "Titan Core Systems Lab",
+        "lead_persona": "Principal Distributed Systems Architect",
         "mission": "Wasm-driven In-Memory SQL Query Plan Visualizer & EXPLAIN Analyzer",
         "slug": "cmu_sql_explain_visualizer",
         "friction": "Engineers commit unindexed PostgreSQL/MySQL queries causing DB bottlenecks. Existing SaaS charges $50/mo and stores query schemas on cloud servers."
@@ -72,8 +72,8 @@ ELITE_GUILDS = [
     {
         "guild": "CyberSecurity & Zero-Knowledge Cryptography",
         "category": "devsecops-privacy",
-        "origin": "IIT Bombay TrustLab / Stanford Crypto",
-        "lead_persona": "Principal Zero-Trust Cryptographer (IITB & Stanford InfoLab)",
+        "origin": "Aegis Cryptographic Research",
+        "lead_persona": "Principal Zero-Trust Cryptographer",
         "mission": "Zero-Trust JWT/JWE Key Vault & Cryptographic Entropy Profiler",
         "slug": "iit_zero_trust_jwt_profiler",
         "friction": "Developers debug JWTs on jwt.io which leaks enterprise secrets and bearer tokens over unencrypted third-party CDNs."
@@ -81,8 +81,8 @@ ELITE_GUILDS = [
     {
         "guild": "FinTech Treasury & Algorithmic Compliance",
         "category": "fintech-tax",
-        "origin": "Wharton FinTech / London School of Economics",
-        "lead_persona": "Lead Quantitative Tax Strategist (IIT Delhi & Wharton)",
+        "origin": "Sovereign Quantitative Treasury",
+        "lead_persona": "Lead Quantitative Tax & Compliance Strategist",
         "mission": "Freelance Double Taxation Avoidance (DTAA) & Foreign Tax Credit Forecaster",
         "slug": "wharton_dtaa_tax_forecaster",
         "friction": "Cross-border engineers struggle to reconcile IRS Form W-8BEN, Form 67 foreign tax credits, and Indian Section 90/91 deductions."
@@ -90,8 +90,8 @@ ELITE_GUILDS = [
     {
         "guild": "AI Infrastructure & Latency Optimization",
         "category": "ai-llm-infra",
-        "origin": "Stanford AI Lab / Berkeley RISELab",
-        "lead_persona": "Principal Inference Engineer (Berkeley RISELab & Stanford)",
+        "origin": "Synapse Deep Inference Group",
+        "lead_persona": "Principal Inference & Hardware Systems Engineer",
         "mission": "Autonomous LLM KV-Cache & GPU Memory VRAM Allocation Forecaster",
         "slug": "stanford_vram_inference_allocator",
         "friction": "Developers run out of GPU VRAM (OOM) when deploying 70B/405B models without knowing exact context window memory overheads."
