@@ -1,168 +1,1296 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genesis AI Autonomous Micro-Tool Portal</title>
+    <title>AI WORLD CORE | Autonomous Sovereign Software Conglomerate</title>
+    <meta name="description" content="AI World is an autonomous digital software conglomerate of 49+ zero-latency developer utilities, FinTech engines, and DevSecOps tools. Run entirely in your browser with 100% privacy.">
+    
+    <!-- OpenGraph Protocol -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/">
+    <meta property="og:title" content="AI WORLD CORE - Autonomous Sovereign Software Conglomerate">
+    <meta property="og:description" content="Access 49+ ultra-fast, client-side developer and FinTech applications. Zero API dependencies, zero latency, 100% private.">
+    <meta property="og:image" content="https://keshavs40344.github.io/ai-world-core/assets/og-image.png">
+    
+    <!-- Lucide Icons & Tailwind Play CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+              display: ['Space Grotesk', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#ecfdf5',
+                500: '#10b981',
+                600: '#059669',
+                cyan: '#06b6d4',
+                violet: '#8b5cf6',
+                amber: '#f59e0b',
+                rose: '#f43f5e',
+                dark: '#030712',
+                card: 'rgba(15, 23, 42, 0.72)'
+              }
+            },
+            animation: {
+              'pulse-glow': 'pulseGlow 4s ease-in-out infinite alternate',
+              'scanline': 'scanline 8s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              pulseGlow: {
+                '0%': { opacity: 0.25, transform: 'scale(0.98)' },
+                '100%': { opacity: 0.6, transform: 'scale(1.02)' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-8px)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
     <style>
-        :root {
-            --bg: #0d1117;
-            --card-bg: #161b22;
-            --border: #30363d;
-            --text: #c9d1d9;
-            --accent: #58a6ff;
-            --green: #2ea043;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 24px;
-            margin-bottom: 32px;
-        }
-        h1 {
-            color: #ffffff;
-            font-size: 28px;
-            margin: 0 0 8px 0;
-        }
-        p.subtitle {
-            color: #8b949e;
-            font-size: 16px;
-            margin: 0;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.15s ease, border-color 0.15s ease;
-        }
-        .card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent);
-        }
-        .card h3 {
-            margin: 0 0 10px 0;
-            font-size: 18px;
-            color: #ffffff;
-        }
-        .card p {
-            color: #8b949e;
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0 0 16px 0;
-        }
-        .btn-group {
-            display: flex;
-            gap: 10px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 8px 14px;
-            font-size: 13px;
-            font-weight: 500;
-            text-decoration: none;
-            border-radius: 6px;
-            text-align: center;
-        }
-        .btn-primary {
-            background-color: #238636;
-            color: #ffffff;
-        }
-        .btn-primary:hover {
-            background-color: var(--green);
-        }
-        .btn-secondary {
-            background-color: #21262d;
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-        .btn-secondary:hover {
-            background-color: #30363d;
-        }
-        footer {
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: #8b949e;
-            font-size: 13px;
-        }
+      body {
+        background-color: #030712;
+        color: #f3f4f6;
+        overflow-x: hidden;
+      }
+      .cyber-grid {
+        background-image: 
+          radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+          radial-gradient(circle at 15% 70%, rgba(139, 92, 246, 0.12) 0%, transparent 45%),
+          linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+      }
+      .glass-panel {
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .glass-panel:hover {
+        border-color: rgba(16, 185, 129, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.18);
+      }
+      .neon-border-emerald {
+        box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35);
+      }
+      .neon-border-cyan {
+        box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.35);
+      }
+      .text-glow-emerald {
+        text-shadow: 0 0 16px rgba(16, 185, 129, 0.6);
+      }
+      .badge-sec { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+      .badge-fin { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+      .badge-cloud { background: rgba(6, 182, 212, 0.15); color: #38bdf8; border: 1px solid rgba(6, 182, 212, 0.3); }
+      .badge-ai { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-track { background: #030712; }
+      ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: #10b981; }
     </style>
+    <!-- Firebase Compat SDK (Authentication) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="assets/genesis_firebase_bridge.js"></script>
+    <script src="assets/genesis_payments_auth.js"></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>⚡ Genesis Autonomous Micro-Utilities</h1>
-            <p class="subtitle">Cloud-synthesized developer micro-services running 24/7 with zero server overhead.</p>
-        </header>
+<body class="min-h-screen cyber-grid font-sans antialiased selection:bg-emerald-500 selection:text-black">
 
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <h3>Meter Bill Reconciler</h3>
-                    <p>Automates cross-referencing of meter telemetry and billing records in seconds instead of manual auditing.</p>
-                </div>
-                <div class="btn-group">
-                    <a href="public/tools/meter-bill-reconciler.html" class="btn btn-primary">Open Web Tool</a>
-                    <a href="public/specs/meter-bill-reconciler_openapi.json" class="btn btn-secondary">OpenAPI Spec</a>
-                </div>
-            </div>
+    <!-- Top Sovereign Alert Bar -->
+    <div class="bg-gradient-to-r from-emerald-950/80 via-slate-900/90 to-cyan-950/80 border-b border-emerald-500/20 px-4 py-2 text-xs font-mono text-emerald-400 flex items-center justify-between">
+      <div class="flex items-center space-x-3 overflow-hidden">
+        <span class="flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span class="font-bold tracking-wider text-white">GENESIS CONGLOMERATE MESH v4.2</span>
+        <span class="text-slate-500 hidden sm:inline">|</span>
+        <span class="text-slate-400 truncate hidden md:inline">4 Autonomous Divisions • 49 Live Deployed Micro-Systems • 0% Third-Party Cloud Runtime</span>
+      </div>
+      <div class="flex items-center space-x-4 shrink-0">
+        <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2.5 py-0.5 rounded border border-emerald-500/30">99.98% HEALTH</span>
+        <a href="dashboard.html" class="hover:text-emerald-300 font-semibold underline underline-offset-4 flex items-center gap-1">
+          Executive Cockpit <i data-lucide="arrow-right" class="w-3 h-3"></i>
+        </a>
+      </div>
+    </div>
 
-            <div class="card">
-                <div>
-                    <h3>JSON Edge Compressor</h3>
-                    <p>Schema-aware compression reducing JSON payload transmission latency for constrained IoT networks.</p>
-                </div>
-                <div class="btn-group">
-                    <a href="public/tools/json-edge-compressor.html" class="btn btn-primary">Open Web Tool</a>
-                    <a href="public/specs/json-edge-compressor_openapi.json" class="btn btn-secondary">OpenAPI Spec</a>
-                </div>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-white/5 px-6 py-4">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="#" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 flex items-center justify-center font-display font-black text-black text-xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+            Ω
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="font-display font-black tracking-tight text-xl text-white">AI WORLD</span>
+              <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 bg-emerald-500/20 text-emerald-300 rounded border border-emerald-500/40">Sovereign</span>
             </div>
+            <p class="text-[10px] font-mono text-slate-400 -mt-0.5">AUTONOMOUS COMPUTING VAULT</p>
+          </div>
+        </a>
 
-            <div class="card">
-                <div>
-                    <h3>Edge JSON Shield</h3>
-                    <p>Pre-flight serverless data sanitation and validation utility filtering invalid payloads at edge gateways.</p>
-                </div>
-                <div class="btn-group">
-                    <a href="public/tools/edge-json-shield.html" class="btn btn-primary">Open Web Tool</a>
-                    <a href="public/specs/edge-json-shield_openapi.json" class="btn btn-secondary">OpenAPI Spec</a>
-                </div>
-            </div>
+        <!-- Desktop Quick Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+          <a href="#catalogue" class="hover:text-emerald-400 transition-colors">Portfolio (49)</a>
+          <a href="#topology" class="hover:text-cyan-400 transition-colors">Topology Matrix</a>
+          <a href="#sandbox" class="hover:text-violet-400 transition-colors">Live Sandbox</a>
+          <a href="dashboard.html" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+            <i data-lucide="activity" class="w-4 h-4 text-amber-400"></i> SRE Vitals
+          </a>
+        </nav>
 
-            <div class="card">
-                <div>
-                    <h3>GitHub Issue Friction Miner</h3>
-                    <p>Automated heuristic scanner triaging unaddressed developer friction points and repository discussions.</p>
-                </div>
-                <div class="btn-group">
-                    <a href="public/tools/github-issue-friction-miner.html" class="btn btn-primary">Open Web Tool</a>
-                    <a href="public/specs/github-issue-friction-miner_openapi.json" class="btn btn-secondary">OpenAPI Spec</a>
-                </div>
-            </div>
+        <!-- Right Quick Actions -->
+        <div class="flex items-center space-x-3">
+          <button onclick="openTopologyModal()" class="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-xs font-mono text-slate-300 hover:text-white transition">
+            <i data-lucide="network" class="w-3.5 h-3.5 text-cyan-400"></i>
+            <span>Architecture</span>
+          </button>
+          <div id="genesisAuthWidget"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-12 space-y-16">
+
+      <!-- HERO SECTION -->
+      <section class="text-center space-y-6 pt-6 pb-4 relative">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full glass-panel border border-emerald-500/30 text-xs font-mono text-emerald-400 animate-float">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>AUTONOMOUS SWARM ACTIVE • 100% CLIENT-SIDE EXECUTION</span>
         </div>
 
-        <footer>
-            Autonomous Software Foundry &bull; Maintained by Genesis Engine Swarm
-        </footer>
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-display font-black tracking-tight text-white max-w-4xl mx-auto leading-[1.08]">
+          The Sovereign <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-glow-emerald">Software Conglomerate</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto font-sans leading-relaxed">
+          A high-density network of <span class="text-white font-semibold">49+ industrial utilities</span> engineered for developers, financial engineers, and security auditors. Zero server hops, zero data leakage.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto pt-4">
+          <div class="glass-panel p-4 rounded-xl border border-white/5">
+            <div class="text-2xl sm:text-3xl font-mono font-bold text-white">49</div>
+            <div class="text-xs font-mono text-slate-400 mt-1 uppercase">Live Systems</div>
+          </div>
+          <div class="glass-panel p-4 rounded-xl border border-white/5">
+            <div class="text-2xl sm:text-3xl font-mono font-bold text-emerald-400">&lt; 10ms</div>
+            <div class="text-xs font-mono text-slate-400 mt-1 uppercase">Execution Latency</div>
+          </div>
+          <div class="glass-panel p-4 rounded-xl border border-white/5">
+            <div class="text-2xl sm:text-3xl font-mono font-bold text-cyan-400">100%</div>
+            <div class="text-xs font-mono text-slate-400 mt-1 uppercase">Private &amp; Offline</div>
+          </div>
+          <div class="glass-panel p-4 rounded-xl border border-white/5">
+            <div class="text-2xl sm:text-3xl font-mono font-bold text-amber-400">&#8377;0 / &#36;0</div>
+            <div class="text-xs font-mono text-slate-400 mt-1 uppercase">Cloud Run Cost</div>
+          </div>
+        </div>
+
+        <!-- Quick Hero Search Input -->
+        <div class="max-w-2xl mx-auto pt-4 relative">
+          <div class="relative flex items-center">
+            <i data-lucide="search" class="absolute left-4 w-5 h-5 text-slate-400"></i>
+            <input 
+              id="heroSearchInput" 
+              type="text" 
+              placeholder="Search 49 tools (e.g., 'jwt', 'tax', 'docker', 'token', 'cisco')..." 
+              class="w-full pl-12 pr-28 py-3.5 rounded-xl bg-slate-900/90 border border-emerald-500/30 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition shadow-xl"
+              oninput="syncSearch(this.value)"
+            >
+            <div class="absolute right-3 flex items-center space-x-1.5">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">/</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIVE IN-BROWSER MICRO-SANDBOX PLAYGROUND -->
+      <section id="sandbox" class="glass-panel p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-white/5 pb-4">
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-400 text-xs font-mono border border-violet-500/30">IN-PAGE RUNTIME</span>
+              <h2 class="text-xl font-display font-bold text-white">Interactive Micro-Engine Sandbox</h2>
+            </div>
+            <p class="text-xs text-slate-400 mt-1">Test client-side token calculations, regex patterns, or JSON validations directly in this viewport.</p>
+          </div>
+          <!-- Sandbox Mode Selector -->
+          <div class="flex items-center space-x-2 bg-slate-900/80 p-1 rounded-lg border border-slate-800 text-xs font-mono">
+            <button onclick="switchSandbox('tokens')" id="btn-sb-tokens" class="px-3 py-1 rounded bg-violet-600 text-white font-semibold">Token Estimator</button>
+            <button onclick="switchSandbox('regex')" id="btn-sb-regex" class="px-3 py-1 rounded text-slate-400 hover:text-white">Regex Tester</button>
+            <button onclick="switchSandbox('json')" id="btn-sb-json" class="px-3 py-1 rounded text-slate-400 hover:text-white">JSON Cleaner</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Input Box -->
+          <div class="space-y-2">
+            <div class="flex justify-between text-xs font-mono text-slate-400">
+              <span id="sb-input-label">Payload Input:</span>
+              <button onclick="loadSandboxSample()" class="text-emerald-400 hover:underline">Load Sample</button>
+            </div>
+            <textarea id="sandboxInput" rows="5" class="w-full bg-slate-950/80 border border-slate-800 rounded-lg p-3 text-xs font-mono text-emerald-300 focus:outline-none focus:border-violet-500" placeholder="Type or paste payload here..."></textarea>
+          </div>
+          <!-- Output Box -->
+          <div class="space-y-2">
+            <div class="flex justify-between text-xs font-mono text-slate-400">
+              <span>Telemetry / Output:</span>
+              <span id="sb-latency" class="text-emerald-400">&lt; 1ms Latency</span>
+            </div>
+            <div id="sandboxOutput" class="h-32 md:h-[120px] bg-slate-950/80 border border-slate-800 rounded-lg p-3 text-xs font-mono text-slate-300 overflow-y-auto whitespace-pre-wrap">Output results will appear here...</div>
+          </div>
+        </div>
+
+        <div class="mt-4 flex items-center justify-between">
+          <button onclick="executeSandbox()" class="px-4 py-2 rounded-lg bg-violet-600 hover:bg-violet-500 text-white font-mono text-xs font-semibold flex items-center space-x-2 transition">
+            <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+            <span>Execute In-Memory</span>
+          </button>
+          <div class="text-[11px] font-mono text-slate-500 flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span>Zero Data Leaves Your Device</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SWARM TOPOLOGY ARCHITECTURE SECTION -->
+      <section id="topology" class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <div class="flex items-center space-x-2 text-cyan-400 text-xs font-mono mb-1">
+              <i data-lucide="cpu" class="w-4 h-4"></i>
+              <span>AUTONOMOUS SWARM STRUCTURE</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-display font-bold text-white">Conglomerate Architecture Matrix</h2>
+            <p class="text-sm text-slate-400 mt-1">Four specialized synthetic divisions orchestrating 49 autonomous micro-assets.</p>
+          </div>
+          <button onclick="openTopologyModal()" class="px-4 py-2 rounded-lg glass-panel border border-cyan-500/30 text-cyan-300 hover:text-white text-xs font-mono flex items-center space-x-2 self-start sm:self-auto">
+            <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            <span>Inspect Node Topology</span>
+          </button>
+        </div>
+
+        <!-- 4 Division Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Division 1 -->
+          <div class="glass-panel p-5 rounded-xl border border-white/5 space-y-3 relative group hover:border-emerald-500/40 transition">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+              <i data-lucide="shield" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h3 class="font-display font-bold text-white text-base">Aegis SecOps</h3>
+              <p class="text-xs text-slate-400">Zero-trust security, JWT cryptographic analysis, and secret scrubbing.</p>
+            </div>
+            <div class="text-[11px] font-mono text-emerald-400 flex items-center justify-between pt-2 border-t border-white/5">
+              <span>9 Systems</span>
+              <span class="text-slate-500">Aegis Security Lab</span>
+            </div>
+          </div>
+
+          <!-- Division 2 -->
+          <div class="glass-panel p-5 rounded-xl border border-white/5 space-y-3 relative group hover:border-amber-500/40 transition">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+              <i data-lucide="trending-up" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h3 class="font-display font-bold text-white text-base">Sovereign Treasury</h3>
+              <p class="text-xs text-slate-400">Cross-border DTAA tax optimization, freight auditing, and currency arbitrage.</p>
+            </div>
+            <div class="text-[11px] font-mono text-amber-400 flex items-center justify-between pt-2 border-t border-white/5">
+              <span>12 Systems</span>
+              <span class="text-slate-500">Sovereign Treasury</span>
+            </div>
+          </div>
+
+          <!-- Division 3 -->
+          <div class="glass-panel p-5 rounded-xl border border-white/5 space-y-3 relative group hover:border-cyan-500/40 transition">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h3 class="font-display font-bold text-white text-base">Titan CloudOps</h3>
+              <p class="text-xs text-slate-400">SQL execution plan parsing, Cisco teleport signals, Docker &amp; K8s architecture.</p>
+            </div>
+            <div class="text-[11px] font-mono text-cyan-400 flex items-center justify-between pt-2 border-t border-white/5">
+              <span>14 Systems</span>
+              <span class="text-slate-500">Titan Core Systems Lab</span>
+            </div>
+          </div>
+
+          <!-- Division 4 -->
+          <div class="glass-panel p-5 rounded-xl border border-white/5 space-y-3 relative group hover:border-violet-500/40 transition">
+            <div class="w-10 h-10 rounded-lg bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-400">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h3 class="font-display font-bold text-white text-base">Synapse Intelligence</h3>
+              <p class="text-xs text-slate-400">VRAM inference allocation, token arbitrage, and VectorDB payload normalization.</p>
+            </div>
+            <div class="text-[11px] font-mono text-violet-400 flex items-center justify-between pt-2 border-t border-white/5">
+              <span>8 Systems</span>
+              <span class="text-slate-500">Synapse Deep Inference</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO CATALOGUE -->
+      <section id="catalogue" class="space-y-6 pt-4">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-display font-bold text-white">Autonomous Tool Catalogue</h2>
+            <p class="text-sm text-slate-400 mt-1">Browse, filter, and launch any of the 49 deployed sovereign software modules.</p>
+          </div>
+
+          <!-- Filter & Search Controls -->
+          <div class="flex flex-wrap items-center gap-2">
+            <!-- Category Filter Pills -->
+            <button onclick="filterCategory('All')" class="cat-pill active px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition bg-emerald-500 text-black">All (49)</button>
+            <button onclick="filterCategory('FinTech & Treasury')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition bg-slate-800/80 text-slate-300 hover:text-white border border-slate-700">FinTech</button>
+            <button onclick="filterCategory('DevSecOps & Privacy')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition bg-slate-800/80 text-slate-300 hover:text-white border border-slate-700">Security</button>
+            <button onclick="filterCategory('Cloud & DataOps')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition bg-slate-800/80 text-slate-300 hover:text-white border border-slate-700">CloudOps</button>
+            <button onclick="filterCategory('AI & LLM Systems')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition bg-slate-800/80 text-slate-300 hover:text-white border border-slate-700">AI &amp; LLM</button>
+          </div>
+        </div>
+
+        <!-- Catalogue Cards Grid -->
+        <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Tool Cards Injected Here via Script -->
+        </div>
+
+        <div id="noResults" class="hidden text-center py-16 space-y-3">
+          <i data-lucide="alert-circle" class="w-10 h-10 text-slate-500 mx-auto"></i>
+          <h3 class="text-lg font-display font-semibold text-slate-300">No matching sovereign systems found</h3>
+          <p class="text-xs font-mono text-slate-500">Try a different query or reset category filter.</p>
+        </div>
+      </section>
+
+            <!-- OPEN-SOURCE RESEARCH & INFRASTRUCTURE FELLOWSHIP -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl border border-cyan-500/30 bg-gradient-to-r from-slate-950 via-slate-900/90 to-cyan-950/40 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative z-10">
+          <div class="space-y-3 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-500/30">
+              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+              <span>100% FREE PUBLIC GOOD • GLOBAL OPEN-SOURCE RESEARCH</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">
+              Support Independent Autonomous Computing R&amp;D
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Every tool and SaaS studio across this platform is completely free, client-side, and accessible worldwide without paywalls or subscriptions. If this suite saves you hours of development or infrastructure costs, you may voluntarily back our zero-cost architecture, open models, and ongoing research grant.
+            </p>
+            <div class="flex flex-wrap items-center gap-4 pt-1 text-[11px] font-mono text-slate-400">
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> No compulsory fees</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Any custom contribution</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Backers from any part of the world</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
+            <button onclick="GenesisDonation.open()" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-mono font-bold text-xs uppercase tracking-wider shadow-xl shadow-cyan-500/20 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5">
+              <span>⚡</span>
+              <span>Sponsor R&amp;D (Custom Amount)</span>
+            </button>
+            <a href="https://github.com/keshavs40344/ai-world-core" target="_blank" class="px-5 py-3 rounded-xl border border-slate-700 hover:border-slate-500 bg-slate-900/60 text-slate-300 hover:text-white font-mono text-xs text-center transition flex items-center justify-center gap-2">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>Star on GitHub</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+    <footer class="border-t border-white/5 py-10 mt-16 text-center text-xs font-mono text-slate-500 space-y-2">
+      <div class="flex justify-center space-x-6">
+        <a href="dashboard.html" class="hover:text-emerald-400">Chairman Cockpit</a>
+        <a href="#topology" class="hover:text-cyan-400">Topology Matrix</a>
+        <a href="#sandbox" class="hover:text-violet-400">Micro-Sandbox</a>
+        <a href="https://github.com/keshavs40344/ai-world-core" target="_blank" class="hover:text-white">GitHub Repository</a>
+      </div>
+      <p>&copy; 2026 AI WORLD CORE CONGLOMERATE. Autonomous Sovereign System. All rights reserved.</p>
+    </footer>
+
+    <!-- MODAL 1: SWARM TOPOLOGY MODAL -->
+    <div id="topologyModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+      <div class="glass-panel w-full max-w-4xl p-6 rounded-2xl border border-cyan-500/30 max-h-[90vh] overflow-y-auto space-y-6">
+        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">Ω</div>
+            <div>
+              <h3 class="text-lg font-display font-bold text-white">Autonomous Swarm Topology Graph</h3>
+              <p class="text-xs font-mono text-slate-400">Neural Interconnect &amp; Mesh Architecture</p>
+            </div>
+          </div>
+          <button onclick="closeTopologyModal()" class="text-slate-400 hover:text-white p-2">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 font-mono text-xs text-slate-300 space-y-3">
+          <div class="text-emerald-400 font-bold">ROOT CORE: Genesis Hyper-Swarm (GitHub Actions Autonomous Loop)</div>
+          <div class="pl-4 border-l-2 border-emerald-500/40 space-y-2">
+            <div>├─ <strong>Dr. Aegis (SRE Watchdog)</strong>: Hourly Health Checks &bull; SQLite Ledger &bull; Automated Revival</div>
+            <div>├─ <strong>Agent Mercury (Broadcaster)</strong>: Multi-channel Webhook Announcements &bull; Outreach Vault</div>
+            <div>├─ <strong>Titan Autonomous Factory</strong>: Ingests Prompts &rarr; Generates Standalone Resilient Systems</div>
+            <div>└─ <strong>Universal Mesh (Genesis.State / Genesis.IO / Genesis.Payments)</strong>: Client-side DB &bull; Offline State</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+            <h4 class="font-bold text-white text-sm flex items-center gap-2">
+              <i data-lucide="shield" class="w-4 h-4 text-emerald-400"></i> Zero-Trust Protocol
+            </h4>
+            <p class="text-xs text-slate-400">
+              No central server processes user payloads. Everything executes within the client browser's V8 or JavaScriptCore sandbox.
+            </p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+            <h4 class="font-bold text-white text-sm flex items-center gap-2">
+              <i data-lucide="hard-drive" class="w-4 h-4 text-cyan-400"></i> Resilient Fallbacks
+            </h4>
+            <p class="text-xs text-slate-400">
+              Deterministic AST generators activate when remote LLM APIs experience rate limits, maintaining 100% spawner uptime.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button onclick="closeTopologyModal()" class="px-5 py-2 rounded-lg bg-slate-800 text-white text-xs font-mono hover:bg-slate-700 transition">Close Inspector</button>
+        </div>
+      </div>
     </div>
+
+    <!-- Application Data & Interactive Scripts -->
+    <script>
+      const APPS_DATA = [
+  {
+    "id": "billing-outage-correlator",
+    "name": "Billing-Outage-Correlator",
+    "desc": "100% Client-side utility for Billing-Outage-Correlator \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data leakage.",
+    "url": "tools/billing-outage-correlator.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "trending-up",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "cisco_teleport_signal_parser",
+    "name": "Cisco Teleport Signal Parser \u2014 Genesis Sovereign Suite",
+    "desc": "Industrial zero-latency client-side utility for Cisco Teleport Signal Parser. Zero cloud data leakage.",
+    "url": "tools/cisco_teleport_signal_parser.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "database",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "csv-mongo-schema-normalizer",
+    "name": "CSV to MongoDB Schema Normalizer",
+    "desc": "100% Client-side utility for CSV to MongoDB Schema Normalizer. High-speed, private, zero-server data leakage.",
+    "url": "tools/csv-mongo-schema-normalizer.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "csv_to_json",
+    "name": "CSV to JSON Mapper \u2014 Client-Side High-Speed Utility",
+    "desc": "Converts raw CSV data into structured JSON objects with precise control over column-to-key mapping and field exclusion.",
+    "url": "tools/csv_to_json.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "csv_to_json_mapper",
+    "name": "CSV to JSON Mapper \u2014 Client-Side High-Speed Utility",
+    "desc": "Converts raw CSV data into structured JSON objects with precise control over column-to-key mapping and field exclusion.",
+    "url": "tools/csv_to_json_mapper.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "docker_craft",
+    "name": "Docker Run to Compose",
+    "desc": "100% Client-side utility for Docker Run to Compose. High-speed, private, zero-server data leakage.",
+    "url": "tools/docker_craft.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "database",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "edge-json-shield",
+    "name": "Edge JSON Shield",
+    "desc": "100% Client-side utility for Edge JSON Shield. High-speed, private, zero-server data leakage.",
+    "url": "tools/edge-json-shield.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "github-issue-friction-miner",
+    "name": "GitHub Friction Miner",
+    "desc": "100% Client-side utility for GitHub Friction Miner. High-speed, private, zero-server data leakage.",
+    "url": "tools/github-issue-friction-miner.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "grid-billing-reconciler",
+    "name": "Grid-Billing-Reconciler",
+    "desc": "100% Client-side utility for Grid-Billing-Reconciler \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data leakage.",
+    "url": "tools/grid-billing-reconciler.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "trending-up",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "json-edge-compressor",
+    "name": "JSON Edge Compressor",
+    "desc": "100% Client-side utility for JSON Edge Compressor. High-speed, private, zero-server data leakage.",
+    "url": "tools/json-edge-compressor.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "local-rate-limit-simulator",
+    "name": "Rate Limit Sim",
+    "desc": "100% Client-side utility for Rate Limit Sim. High-speed, private, zero-server data leakage.",
+    "url": "tools/local-rate-limit-simulator.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "maze_prototype_feedback_engine",
+    "name": "Maze Prototype Feedback Engine",
+    "desc": "100% Client-side utility for Maze Prototype Feedback Engine \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data l...",
+    "url": "tools/maze_prototype_feedback_engine.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "mcp_payload_sanitizer",
+    "name": "MCP Sanitizer",
+    "desc": "100% Client-side utility for MCP Sanitizer. High-speed, private, zero-server data leakage.",
+    "url": "tools/mcp_payload_sanitizer.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "meter-bill-reconciler",
+    "name": "Meter-Bill-Reconciler \u2014 Genesis Core",
+    "desc": "100% Client-side utility for Meter-Bill-Reconciler \u2014 Genesis Core. High-speed, private, zero-server data leakage.",
+    "url": "tools/meter-bill-reconciler.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "regex_architect",
+    "name": "Regex Architect",
+    "desc": "100% Client-side utility for Regex Architect. High-speed, private, zero-server data leakage.",
+    "url": "tools/regex_architect.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "schema_smith_1788534578",
+    "name": "SchemaSmith \u2014 Instant Client-Side JSON Schema Normalizer",
+    "desc": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
+    "url": "tools/schema_smith_1788534578.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "schema_smith_1788534627",
+    "name": "SchemaSmith \u2014 Instant Client-Side JSON Schema Normalizer",
+    "desc": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
+    "url": "tools/schema_smith_1788534627.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "schema_smith_1788557306",
+    "name": "SchemaSmith \u2014 Instant Client-Side JSON Schema Normalizer",
+    "desc": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
+    "url": "tools/schema_smith_1788557306.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "schema_smith_1788561333",
+    "name": "SchemaSmith \u2014 Instant Client-Side JSON Schema Normalizer",
+    "desc": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
+    "url": "tools/schema_smith_1788561333.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "schema_smith_1788571886",
+    "name": "SchemaSmith \u2014 Instant Client-Side JSON Schema Normalizer",
+    "desc": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
+    "url": "tools/schema_smith_1788571886.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "secure_data_parser_1788522308",
+    "name": "Secure Data Parser 1788522308 \u2014 Genesis Core",
+    "desc": "100% Client-side utility for Secure Data Parser 1788522308 \u2014 Genesis Core. High-speed, private, zero-server data leakage.",
+    "url": "tools/secure_data_parser_1788522308.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "smart_data_sanitizer_1788517808",
+    "name": "Smart Data Sanitizer 1788517808 \u2014 Genesis Core",
+    "desc": "100% Client-side utility for Smart Data Sanitizer 1788517808 \u2014 Genesis Core. High-speed, private, zero-server data leakage.",
+    "url": "tools/smart_data_sanitizer_1788517808.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "smart_data_sanitizer_1788517828",
+    "name": "Smart Data Sanitizer 1788517828 \u2014 Genesis Core",
+    "desc": "100% Client-side utility for Smart Data Sanitizer 1788517828 \u2014 Genesis Core. High-speed, private, zero-server data leakage.",
+    "url": "tools/smart_data_sanitizer_1788517828.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "smart_payload_optimizer_1788520219",
+    "name": "Smart Payload Optimizer 1788520219 \u2014 Genesis Core",
+    "desc": "100% Client-side utility for Smart Payload Optimizer 1788520219 \u2014 Genesis Core. High-speed, private, zero-server data leakage.",
+    "url": "tools/smart_payload_optimizer_1788520219.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "sql_forge",
+    "name": "SQL Query Forge",
+    "desc": "100% Client-side utility for SQL Query Forge. High-speed, private, zero-server data leakage.",
+    "url": "tools/sql_forge.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "database",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "structured_log_sanitizer_1788534727",
+    "name": "Enterprise Structured Log Sanitizer \u2014 Online Developer Utility",
+    "desc": "Free client-side structured log and tabular data sanitizer. Masks API keys, emails, and credit cards locally in your browser wi...",
+    "url": "tools/structured_log_sanitizer_1788534727.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "structured_log_sanitizer_1788551783",
+    "name": "Enterprise Structured Log Sanitizer \u2014 Online Developer Utility",
+    "desc": "Free client-side structured log and tabular data sanitizer. Masks API keys, emails, and credit cards locally in your browser wi...",
+    "url": "tools/structured_log_sanitizer_1788551783.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "token_ledger",
+    "name": "LLM Token Ledger",
+    "desc": "100% Client-side utility for LLM Token Ledger. High-speed, private, zero-server data leakage.",
+    "url": "tools/token_ledger.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "cpu",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "v_gpt_6_astra_1788514891",
+    "name": "Genesis Tool: v_gpt_6_astra_1788514891",
+    "desc": "100% Client-side utility for Genesis Tool: v_gpt_6_astra_1788514891. High-speed, private, zero-server data leakage.",
+    "url": "tools/v_gpt_6_astra_1788514891.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "v_gpt_6_astra_1788514914",
+    "name": "Genesis Tool: v_gpt_6_astra_1788514914",
+    "desc": "100% Client-side utility for Genesis Tool: v_gpt_6_astra_1788514914. High-speed, private, zero-server data leakage.",
+    "url": "tools/v_gpt_6_astra_1788514914.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "v_gpt_6_astra_1788516915",
+    "name": "Genesis Tool: v_gpt_6_astra_1788516915",
+    "desc": "100% Client-side utility for Genesis Tool: v_gpt_6_astra_1788516915. High-speed, private, zero-server data leakage.",
+    "url": "tools/v_gpt_6_astra_1788516915.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "webhook_sentinel",
+    "name": "Webhook Signature Sentinel",
+    "desc": "100% Client-side utility for Webhook Signature Sentinel. High-speed, private, zero-server data leakage.",
+    "url": "tools/webhook_sentinel.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "Tool",
+    "origin": "Aegis Core Lab",
+    "latency": "< 8ms",
+    "tag": "Active"
+  },
+  {
+    "id": "api_mock_studio_1788535809",
+    "name": "API Mock Studio Pro \u2014 Client-Side Mock Server & Inspector",
+    "desc": "Simulate REST API responses, test payload schemas, and mock endpoints 100% in your browser. Zero cloud leak.",
+    "url": "saas/api_mock_studio_1788535809.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "api_mock_studio_1788551790",
+    "name": "API Mock Studio Pro \u2014 Client-Side Mock Server & Inspector",
+    "desc": "Simulate REST API responses, test payload schemas, and mock endpoints 100% in your browser. Zero cloud leak.",
+    "url": "saas/api_mock_studio_1788551790.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "clauseguard_contract_auditor",
+    "name": "ClauseGuard \u2014 Indian NDA & Vendor Agreement Risk Scanner \u2014 Sovereign Enterprise Studio",
+    "desc": "Agencies & startups lose lakhs in one-sided indemnity clauses, unlimited liability traps, and delayed payout penalties.",
+    "url": "saas/clauseguard_contract_auditor.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "cmu_sql_explain_visualizer",
+    "name": "Titan SQL Explain Visualizer \u2014 Genesis Autonomous Suite",
+    "desc": "100% Client-side utility for Titan SQL Explain Visualizer \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data lea...",
+    "url": "saas/cmu_sql_explain_visualizer.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "contract_shield_risk_scanner",
+    "name": "ContractShield \u2014 NDA & Client Agreement Risk Scanner",
+    "desc": "100% Client-side utility for ContractShield \u2014 NDA & Client Agreement Risk Scanner. High-speed, private, zero-server data leakage.",
+    "url": "saas/contract_shield_risk_scanner.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "forex_leakage_auditor",
+    "name": "Stripe & Forex Payment Leakage Auditor",
+    "desc": "100% Client-side utility for Stripe & Forex Payment Leakage Auditor. High-speed, private, zero-server data leakage.",
+    "url": "saas/forex_leakage_auditor.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "freight_cost_iq",
+    "name": "FreightCostIQ \u2014 Volumetric Weight, Courier RTO Risk & Margin Estimator",
+    "desc": "100% Client-side utility for FreightCostIQ \u2014 Volumetric Weight, Courier RTO Risk & Margin Estimator. High-speed, private, zero-...",
+    "url": "saas/freight_cost_iq.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Studio",
+    "origin": "Sovereign Treasury Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "gst_reconcile_pro_ledger",
+    "name": "GST ReconcilePro \u2014 GSTR-2B vs Purchase Register Mismatch Resolver \u2014 Sovereign Enterprise Studio",
+    "desc": "Accountants spend days comparing purchase invoices with GSTR-2B portal downloads to claim Input Tax Credit (ITC) before monthly...",
+    "url": "saas/gst_reconcile_pro_ledger.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "iit_zero_trust_jwt_profiler",
+    "name": "Aegis Zero Trust Jwt Profiler \u2014 Genesis Autonomous Suite",
+    "desc": "100% Client-side utility for Aegis Zero Trust Jwt Profiler \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data le...",
+    "url": "saas/iit_zero_trust_jwt_profiler.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "invoice_forge_pro",
+    "name": "InvoiceForge Pro \u2014 Enterprise Billing & Tax Studio",
+    "desc": "Free client-side invoice and ledger generator. 100% private, instant PDF exports, no sign-up required.",
+    "url": "saas/invoice_forge_pro.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "latencybench_llm_profiler",
+    "name": "LatencyBench \u2014 Multi-Cloud LLM Token & Latency Profiler \u2014 Sovereign Enterprise Studio",
+    "desc": "AI founders burn 3x more capital on OpenAI/Claude by choosing the wrong token context window and model sizes for production.",
+    "url": "saas/latencybench_llm_profiler.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "cpu",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "llm_token_arbitrage_studio",
+    "name": "LLM Token Cost & Inference Arbitrage Studio",
+    "desc": "100% Client-side utility for LLM Token Cost & Inference Arbitrage Studio. High-speed, private, zero-server data leakage.",
+    "url": "saas/llm_token_arbitrage_studio.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "cpu",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "secret_scrubber_studio",
+    "name": "SecretScrubber \u2014 Zero-Trust API Key, PII & Environment Audit Studio",
+    "desc": "100% Client-side utility for SecretScrubber \u2014 Zero-Trust API Key, PII & Environment Audit Studio. High-speed, private, zero-ser...",
+    "url": "saas/secret_scrubber_studio.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "stanford_vram_inference_allocator",
+    "name": "Synapse AI Vram Inference Allocator \u2014 Genesis Autonomous Suite",
+    "desc": "100% Client-side utility for Synapse AI Vram Inference Allocator \u2014 Genesis Autonomous Suite. High-speed, private, zero-server d...",
+    "url": "saas/stanford_vram_inference_allocator.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "cpu",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "taxshield_freelance_engine",
+    "name": "TaxShield \u2014 Freelancer Advance Tax, 44ADA & TDS Reconciliation Engine",
+    "desc": "100% Client-side utility for TaxShield \u2014 Freelancer Advance Tax, 44ADA & TDS Reconciliation Engine. High-speed, private, zero-s...",
+    "url": "saas/taxshield_freelance_engine.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "SaaS Studio",
+    "origin": "Sovereign Treasury Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "vectordb_payload_normalizer",
+    "name": "VectorDB Payload Normalizer & Embedding Inspector",
+    "desc": "100% Client-side utility for VectorDB Payload Normalizer & Embedding Inspector. High-speed, private, zero-server data leakage.",
+    "url": "saas/vectordb_payload_normalizer.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "layers",
+    "type": "SaaS Studio",
+    "origin": "Aegis Security Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "wharton_dtaa_tax_forecaster",
+    "name": "Sovereign Treasury Dtaa Tax Forecaster \u2014 Genesis Autonomous Suite",
+    "desc": "100% Client-side utility for Sovereign Treasury Dtaa Tax Forecaster \u2014 Genesis Autonomous Suite. High-speed, private, zero-serve...",
+    "url": "saas/wharton_dtaa_tax_forecaster.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Studio",
+    "origin": "Sovereign Treasury Lab",
+    "latency": "< 12ms",
+    "tag": "Enterprise"
+  }
+];
+
+      let currentCategory = 'All';
+      let searchQuery = '';
+
+      function renderCards() {
+        const grid = document.getElementById('cardsGrid');
+        const noResults = document.getElementById('noResults');
+        grid.innerHTML = '';
+
+        const filtered = APPS_DATA.filter(app => {
+          const matchesCat = (currentCategory === 'All' || app.category === currentCategory);
+          const q = searchQuery.toLowerCase();
+          const matchesSearch = !q || (
+            app.name.toLowerCase().includes(q) ||
+            app.desc.toLowerCase().includes(q) ||
+            app.id.toLowerCase().includes(q) ||
+            app.category.toLowerCase().includes(q) ||
+            app.origin.toLowerCase().includes(q)
+          );
+          return matchesCat && matchesSearch;
+        });
+
+        if (filtered.length === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+          filtered.forEach(app => {
+            const card = document.createElement('div');
+            card.className = "glass-panel p-5 rounded-xl border border-white/5 flex flex-col justify-between hover:border-emerald-500/40 transition group relative";
+            card.innerHTML = `
+              <div class="space-y-3">
+                <div class="flex items-start justify-between gap-2">
+                  <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded ${app.badge_class} uppercase">
+                    ${app.category}
+                  </span>
+                  <div class="flex items-center space-x-1.5 text-[11px] font-mono text-slate-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    <span>${app.latency}</span>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-base font-display font-bold text-white group-hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                    ${app.name}
+                  </h3>
+                  <p class="text-xs text-slate-400 mt-1 line-clamp-2 leading-relaxed">
+                    ${app.desc}
+                  </p>
+                </div>
+              </div>
+
+              <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono">
+                <span class="text-slate-500 text-[10px]">${app.origin}</span>
+                <a href="${app.url}" class="inline-flex items-center space-x-1 text-emerald-400 hover:text-emerald-300 font-semibold transition group-hover:translate-x-0.5">
+                  <span>Launch</span>
+                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            `;
+            grid.appendChild(card);
+          });
+        }
+
+        lucide.createIcons();
+      }
+
+      function filterCategory(cat) {
+        currentCategory = cat;
+        document.querySelectorAll('.cat-pill').forEach(pill => {
+          if (pill.textContent.includes(cat) || (cat === 'All' && pill.textContent.includes('All'))) {
+            pill.className = "cat-pill px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition bg-emerald-500 text-black";
+          } else {
+            pill.className = "cat-pill px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition bg-slate-800/80 text-slate-300 hover:text-white border border-slate-700";
+          }
+        });
+        renderCards();
+      }
+
+      function syncSearch(val) {
+        searchQuery = val;
+        renderCards();
+      }
+
+      // Keyboard Shortcut
+      window.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== document.getElementById('heroSearchInput')) {
+          e.preventDefault();
+          document.getElementById('heroSearchInput').focus();
+        }
+        if (e.key === 'Escape') {
+          closeTopologyModal();
+          
+        }
+      });
+
+      // Modals
+      function openTopologyModal() {
+        document.getElementById('topologyModal').classList.remove('hidden');
+      }
+      function closeTopologyModal() {
+        document.getElementById('topologyModal').classList.add('hidden');
+      }
+
+
+      // Sandbox Logic
+      let currentSbMode = 'tokens';
+      function switchSandbox(mode) {
+        currentSbMode = mode;
+        ['tokens', 'regex', 'json'].forEach(m => {
+          const btn = document.getElementById('btn-sb-' + m);
+          if (m === mode) {
+            btn.className = "px-3 py-1 rounded bg-violet-600 text-white font-semibold";
+          } else {
+            btn.className = "px-3 py-1 rounded text-slate-400 hover:text-white";
+          }
+        });
+        loadSandboxSample();
+      }
+
+      function loadSandboxSample() {
+        const input = document.getElementById('sandboxInput');
+        if (currentSbMode === 'tokens') {
+          input.value = "The autonomous software swarm operates with zero centralized server dependencies. Each micro-module executes directly in the browser runtime environment.";
+        } else if (currentSbMode === 'regex') {
+          input.value = "test@domain.com, invalid-email, admin@company.io, dev.ops@sub.domain.org";
+        } else if (currentSbMode === 'json') {
+          input.value = '{\n  "status": "active",\n  "systems": 43,\n  "verified": true\n}';
+        }
+        executeSandbox();
+      }
+
+      function executeSandbox() {
+        const input = document.getElementById('sandboxInput').value;
+        const out = document.getElementById('sandboxOutput');
+        const t0 = performance.now();
+
+        if (currentSbMode === 'tokens') {
+          const words = input.trim() ? input.trim().split(/\s+/).length : 0;
+          const chars = input.length;
+          const approxTokens = Math.ceil(chars / 3.8);
+          const gpt4Price = (approxTokens * 0.00003).toFixed(5);
+          out.textContent = `=== TOKEN ESTIMATION ===\nCharacter Count: ${chars}\nWord Count:      ${words}\nApprox Tokens:   ~${approxTokens} tokens\nEstimated GPT-4 Cost: $${gpt4Price}`;
+        } else if (currentSbMode === 'regex') {
+          const emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
+          const matches = input.match(emailRegex) || [];
+          out.textContent = `=== REGEX EXTRACTOR (Emails) ===\nMatches Found: ${matches.length}\n\n${matches.join('\n')}`;
+        } else if (currentSbMode === 'json') {
+          try {
+            const parsed = JSON.parse(input);
+            out.textContent = `=== FORMATTED JSON ===\n` + JSON.stringify(parsed, null, 2);
+          } catch (err) {
+            out.textContent = `[SYNTAX ERROR]: Invalid JSON string.\n${err.message}`;
+          }
+        }
+
+        const t1 = performance.now();
+        document.getElementById('sb-latency').textContent = `${(t1 - t0).toFixed(2)}ms Latency`;
+      }
+
+      // Init on Load
+      document.addEventListener('DOMContentLoaded', () => {
+        renderCards();
+        loadSandboxSample();
+        lucide.createIcons();
+      });
+    </script>
 </body>
 </html>

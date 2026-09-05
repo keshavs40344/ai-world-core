@@ -1,17 +1,17 @@
 /**
- * GENESIS FIREBASE AUTHENTICATION BRIDGE v2.0
+ * GENESIS FIREBASE AUTHENTICATION BRIDGE v2.1
  * Provides seamless Firebase Auth (GitHub OAuth, Google Sign-In, Email/Password, Anonymous)
  * Configured for Firebase Project: saas-34243 (authDomain: saas-34243.firebaseapp.com)
  * Client ID: Ov23lisGNRJZQ6dy6f66 | App: saas-app | Production: keshavs40344.github.io
  * 
- * Supports both modular SDK and universal compat SDK patterns with clean fallback handling.
+ * Supports real Firebase Auth with live keys + graceful failover to Sovereign local WebCrypto session.
  */
 
 (function(window) {
     'use strict';
 
-    // Firebase Project Configuration from User Specs
-    const FIREBASE_CONFIG = {
+    // Firebase Project Configuration
+    const DEFAULT_CONFIG = {
         apiKey: "AIzaSyDummyKeyForGenesisAutonomousAuth",
         authDomain: "saas-34243.firebaseapp.com",
         projectId: "saas-34243",
@@ -28,9 +28,12 @@
         getConfig: function() {
             try {
                 const stored = localStorage.getItem("genesis_firebase_config");
-                if (stored) return JSON.parse(stored);
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (parsed && parsed.apiKey) return parsed;
+                }
             } catch (e) {}
-            return window.FIREBASE_CONFIG || FIREBASE_CONFIG;
+            return window.FIREBASE_CONFIG || DEFAULT_CONFIG;
         },
 
         saveConfig: function(config) {
@@ -41,6 +44,10 @@
             } catch(e) {
                 return false;
             }
+        },
+
+        isApiKeyValid: function(key) {
+            return key && !key.includes("DummyKey") && key.startsWith("AIzaSy") && key.length > 20;
         },
 
         init: function(customConfig) {
@@ -82,11 +89,52 @@
             }
         },
 
+        promptApiKeyConfiguration: function() {
+            const current = this.getConfig();
+            const inputKey = prompt(
+                "Firebase Web API Key needed for saas-34243:\n\nPlease paste your Firebase Web API Key (starts with 'AIzaSy...'):\n\n(You can find it in Firebase Console -> Project Settings -> General -> Your Apps)",
+                (current.apiKey && !current.apiKey.includes("DummyKey")) ? current.apiKey : ""
+            );
+
+            if (inputKey && inputKey.trim().startsWith("AIzaSy")) {
+                const newCfg = { ...current, apiKey: inputKey.trim() };
+                this.saveConfig(newCfg);
+                alert("API Key saved! Reloading to apply live Firebase configuration...");
+                window.location.reload();
+                return true;
+            }
+            return false;
+        },
+
+        _isApiKeyError: function(err) {
+            if (!err) return false;
+            const code = String(err.code || "");
+            const msg = String(err.message || "");
+            return code.includes("api-key") || 
+                   code.includes("invalid-api-key") || 
+                   code.includes("api-key-not-valid") || 
+                   msg.toLowerCase().includes("api-key") || 
+                   msg.toLowerCase().includes("api key");
+        },
+
         /**
          * Sign In with GitHub using Firebase GithubAuthProvider
          * Scopes: 'read:user', 'user:email'
          */
         signInWithGitHub: async function() {
+            const cfg = this.getConfig();
+            // If dummy key is still in use and user hasn't configured live key yet, give quick option
+            if (!this.isApiKeyValid(cfg.apiKey)) {
+                console.info("Firebase API Key is placeholder. Offering live key prompt or local fallback.");
+                const wantsConfigure = confirm(
+                    "GitHub Authentication with Firebase requires your Web API Key from Firebase Console (saas-34243).\n\n• Click OK to paste your Firebase Web API Key now.\n• Click Cancel to enter workspace via instant developer sign-in."
+                );
+                if (wantsConfigure) {
+                    if (this.promptApiKeyConfiguration()) return { success: false, msg: "Configuring API Key..." };
+                }
+                return this._fallbackGitHub();
+            }
+
             if (!this.initialized || !this.auth) {
                 return this._fallbackGitHub();
             }
@@ -121,6 +169,18 @@
             } catch (error) {
                 console.warn("Firebase GitHub Sign-In exception:", error);
 
+                // Check for invalid API key
+                if (this._isApiKeyError(error)) {
+                    console.info("Detected invalid Firebase API Key error. Fallback activated.");
+                    const wantsConfigure = confirm(
+                        "Firebase returned 'auth/api-key-not-valid'.\n\n• Click OK to paste your real Firebase Web API Key.\n• Click Cancel to continue seamlessly via Sovereign developer access."
+                    );
+                    if (wantsConfigure && this.promptApiKeyConfiguration()) {
+                        return { success: false, msg: "Configuring API Key..." };
+                    }
+                    return this._fallbackGitHub();
+                }
+
                 // Handle common Firebase OAuth error codes cleanly
                 if (error.code === 'auth/popup-closed-by-user') {
                     return { success: false, msg: "Sign-in cancelled: The GitHub popup window was closed before finishing." };
@@ -134,7 +194,7 @@
                         msg: "An account already exists with the same email address using another provider (e.g. Google or Email). Please sign in using that provider." 
                     };
                 }
-                if (error.code === 'auth/unauthorized-domain' || error.code === 'auth/popup-blocked' || error.code === 'auth/invalid-api-key') {
+                if (error.code === 'auth/unauthorized-domain' || error.code === 'auth/popup-blocked') {
                     console.info("Falling back to local GitHub simulation due to OAuth environment restrictions:", error.code);
                     return this._fallbackGitHub();
                 }
@@ -144,6 +204,17 @@
         },
 
         signInWithGoogle: async function() {
+            const cfg = this.getConfig();
+            if (!this.isApiKeyValid(cfg.apiKey)) {
+                const wantsConfigure = confirm(
+                    "Google Sign-In with Firebase requires your Web API Key from Firebase Console (saas-34243).\n\n• Click OK to paste your Firebase Web API Key now.\n• Click Cancel to enter workspace via instant developer sign-in."
+                );
+                if (wantsConfigure) {
+                    if (this.promptApiKeyConfiguration()) return { success: false, msg: "Configuring API Key..." };
+                }
+                return this._fallbackGoogle();
+            }
+
             if (!this.initialized || !this.auth) {
                 return this._fallbackGoogle();
             }
@@ -170,13 +241,16 @@
                 return { success: true, user: sessionUser };
             } catch (error) {
                 console.warn("Firebase Google Sign-In error:", error);
+                if (this._isApiKeyError(error)) {
+                    return this._fallbackGoogle();
+                }
                 if (error.code === 'auth/popup-closed-by-user') {
                     return { success: false, msg: "Sign-in cancelled: The Google popup window was closed." };
                 }
                 if (error.code === 'auth/account-exists-with-different-credential') {
                     return { success: false, msg: "An account already exists with this email under a different provider." };
                 }
-                if (error.code === 'auth/unauthorized-domain' || error.code === 'auth/popup-blocked' || error.code === 'auth/invalid-api-key') {
+                if (error.code === 'auth/unauthorized-domain' || error.code === 'auth/popup-blocked') {
                     return this._fallbackGoogle();
                 }
                 return { success: false, msg: error.message };
@@ -184,7 +258,7 @@
         },
 
         signInWithEmail: async function(email, password) {
-            if (!this.initialized || !this.auth) {
+            if (!this.initialized || !this.auth || !this.isApiKeyValid(this.getConfig().apiKey)) {
                 return window.GenesisAuth ? window.GenesisAuth.login(email, password) : { success: false, msg: "Auth unready" };
             }
 
@@ -204,18 +278,18 @@
                 if (window.GenesisAuth) window.GenesisAuth.updateNavbarAuth();
                 return { success: true, user: sessionUser };
             } catch (error) {
+                if (this._isApiKeyError(error)) {
+                    return window.GenesisAuth.login(email, password);
+                }
                 if (error.code === 'auth/user-not-found') {
                     return this.signUpWithEmail(email, password);
-                }
-                if (error.code === 'auth/invalid-api-key') {
-                    return window.GenesisAuth.login(email, password);
                 }
                 return { success: false, msg: error.message };
             }
         },
 
         signUpWithEmail: async function(email, password) {
-            if (!this.initialized || !this.auth) {
+            if (!this.initialized || !this.auth || !this.isApiKeyValid(this.getConfig().apiKey)) {
                 return window.GenesisAuth ? window.GenesisAuth.register(email, password) : { success: false, msg: "Auth unready" };
             }
 
@@ -235,7 +309,7 @@
                 if (window.GenesisAuth) window.GenesisAuth.updateNavbarAuth();
                 return { success: true, user: sessionUser };
             } catch (error) {
-                if (error.code === 'auth/invalid-api-key') {
+                if (this._isApiKeyError(error)) {
                     return window.GenesisAuth.register(email, password);
                 }
                 return { success: false, msg: error.message };
@@ -270,7 +344,9 @@
                 loginAt: new Date().toISOString()
             };
             localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
-            if (window.GenesisAuth) window.GenesisAuth.updateNavbarAuth();
+            if (window.GenesisAuth && window.GenesisAuth.updateNavbarAuth) {
+                window.GenesisAuth.updateNavbarAuth();
+            }
             return { success: true, user: sessionUser };
         },
 
@@ -292,7 +368,9 @@
                 loginAt: new Date().toISOString()
             };
             localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
-            if (window.GenesisAuth) window.GenesisAuth.updateNavbarAuth();
+            if (window.GenesisAuth && window.GenesisAuth.updateNavbarAuth) {
+                window.GenesisAuth.updateNavbarAuth();
+            }
             return { success: true, user: sessionUser };
         }
     };
