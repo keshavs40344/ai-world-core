@@ -1,337 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive Cockpit — Genesis Sovereign Swarm</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Genesis GEN-10 Headless Cloud Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        body { background: #030712; color: #f9fafb; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 2rem; margin: 0; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2937; padding-bottom: 1rem; margin-bottom: 2rem; }
+        .badge { background: #059669; color: #ecfdf5; padding: 0.35rem 0.8rem; border-radius: 9999px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .card { background: #111827; border: 1px solid #374151; border-radius: 10px; padding: 1.5rem; }
+        .card h3 { margin-top: 0; color: #60a5fa; font-size: 1.1rem; border-bottom: 1px solid #374151; padding-bottom: 0.5rem; }
+        .val { font-size: 1.25rem; font-weight: bold; color: #f3f4f6; margin: 0.5rem 0; }
+        .sub { font-size: 0.85rem; color: #9ca3af; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen p-6 sm:p-10 antialiased selection:bg-indigo-500 selection:text-white">
-
-    <!-- Top Command Header -->
-    <header class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-800 pb-6 mb-8 gap-4">
+<body>
+    <div class="header">
         <div>
-            <div class="flex items-center gap-3">
-                <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">Conglomerate Command Matrix</span>
-            </div>
-            <h1 class="text-3xl font-black text-white mt-1">Chairman Operations Console</h1>
-            <p class="text-xs text-slate-400 mt-0.5">Autonomous Multi-Agent Conglomerate | Zero-Cost Infrastructure</p>
+            <h1 style="margin: 0; font-size: 1.75rem;">☁️ GENESIS-PRIME: HEADLESS CLOUD SWARM (GEN-10)</h1>
+            <p style="margin: 0.35rem 0 0 0; color: #9ca3af;">100% Zero Local Compute | GitHub Actions Headless Runner</p>
         </div>
-        <div class="flex items-center gap-3">
-            <a href="index.html" class="text-xs font-bold text-slate-300 bg-slate-900 border border-slate-800 hover:bg-slate-800 px-4 py-2 rounded-xl transition">
-                View Public Hub
-            </a>
-            <button onclick="location.reload()" class="text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-xl transition">
-                ↻ Refresh Telemetry
-            </button>
+        <span class="badge">Cloud Operational</span>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Radar Workers (Scout)</h3>
+            <div class="val">Actively exploited sandbox RCE in all Chromium versions</div>
+            <div class="sub">Source: https://news.ycombinator.com/rss | Jitter: 0.638s</div>
         </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto space-y-8">
-        
-        <!-- Key Metrics Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div class="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-5 backdrop-blur-md">
-                <span class="text-xs text-slate-400 font-medium">Total Autonomous Assets</span>
-                <div class="text-3xl font-black text-white mt-2 font-mono">50</div>
-                <span class="text-[11px] text-emerald-400 mt-1 block">Active across /saas and /tools</span>
-            </div>
-
-            <div class="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-5 backdrop-blur-md">
-                <span class="text-xs text-slate-400 font-medium">Dr. Aegis Pulse</span>
-                <div class="text-xl font-bold text-emerald-400 mt-3 font-mono truncate">OPTIMAL_HEALTH (99.9%)</div>
-                <span class="text-[11px] text-slate-500 mt-1 block font-mono">2026-09-05 07:08:10 UTC</span>
-            </div>
-
-            <div class="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-5 backdrop-blur-md">
-                <span class="text-xs text-slate-400 font-medium">Monetization Lock</span>
-                <div class="text-3xl font-black text-white mt-2 font-mono">₹299<span class="text-xs text-slate-500 font-normal"> / life</span></div>
-                <span class="text-[11px] text-indigo-400 mt-1 block font-mono">keshavthakur07@ptyes</span>
-            </div>
-
-            <div class="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-5 backdrop-blur-md">
-                <span class="text-xs text-slate-400 font-medium">Cloud Operating Cost</span>
-                <div class="text-3xl font-black text-emerald-400 mt-2 font-mono">$0.00</div>
-                <span class="text-[11px] text-slate-500 mt-1 block">100% In-Browser Execution</span>
-            </div>
+        <div class="card">
+            <h3>Builder Workers (Micro-API)</h3>
+            <div class="val">cloud_actively_exploited_sandb_1788592544</div>
+            <div class="sub">Staged in: vault/proposals/</div>
         </div>
-
-        <!-- Real-Time Asset Ledger -->
-        <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl overflow-hidden shadow-2xl">
-            <div class="p-5 border-b border-slate-800/80 flex justify-between items-center">
-                <div>
-                    <h2 class="text-base font-bold text-white">Live Software Portfolio</h2>
-                    <p class="text-xs text-slate-400 mt-0.5">Top autonomous units running in production</p>
-                </div>
-                <span class="text-xs font-mono bg-indigo-950 text-indigo-300 border border-indigo-800 px-2.5 py-1 rounded-full">Automated Ledger</span>
-            </div>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="border-b border-slate-800 bg-slate-950/60 text-slate-400 uppercase text-[10px] font-mono tracking-wider">
-                            <th class="py-3 px-4">Asset Name</th>
-                            <th class="py-3 px-4">Tier</th>
-                            <th class="py-3 px-4">Runtime Health</th>
-                            <th class="py-3 px-4">UPI Settlement</th>
-                            <th class="py-3 px-4 text-right">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-800/40">
-                        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Webhook Sentinel</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/webhook_sentinel.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">V Gpt 6 Astra 1788516915</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/v_gpt_6_astra_1788516915.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">V Gpt 6 Astra 1788514914</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/v_gpt_6_astra_1788514914.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">V Gpt 6 Astra 1788514891</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/v_gpt_6_astra_1788514891.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Token Ledger</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/token_ledger.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Structured Log Sanitizer 1788551783</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/structured_log_sanitizer_1788551783.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Structured Log Sanitizer 1788534727</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/structured_log_sanitizer_1788534727.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Sql Forge</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/sql_forge.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Smart Payload Optimizer 1788520219</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/smart_payload_optimizer_1788520219.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Smart Data Sanitizer 1788517828</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/smart_data_sanitizer_1788517828.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Smart Data Sanitizer 1788517808</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/smart_data_sanitizer_1788517808.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Secure Data Parser 1788522308</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/secure_data_parser_1788522308.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Schema Smith 1788592087</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/schema_smith_1788592087.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Schema Smith 1788571886</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/schema_smith_1788571886.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Schema Smith 1788561333</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/schema_smith_1788561333.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Schema Smith 1788557306</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/schema_smith_1788557306.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Schema Smith 1788534627</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/schema_smith_1788534627.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Schema Smith 1788534578</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/schema_smith_1788534578.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Regex Architect</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/regex_architect.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-        <tr class="border-b border-slate-800/80 hover:bg-slate-900/50 transition font-mono text-xs">
-            <td class="py-3 px-4 text-white font-sans font-medium">Meter-Bill-Reconciler</td>
-            <td class="py-3 px-4">
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Core Utility</span>
-            </td>
-            <td class="py-3 px-4 text-emerald-400">● 100% Operational</td>
-            <td class="py-3 px-4 text-slate-400">₹299.00 Pre-Locked</td>
-            <td class="py-3 px-4 text-right">
-                <a href="tools/meter-bill-reconciler.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-sans font-semibold">Launch ↗</a>
-            </td>
-        </tr>
-        
-                    </tbody>
-                </table>
-            </div>
+        <div class="card">
+            <h3>Security Workers (AST SAST)</h3>
+            <div class="val" style="color: #34d399;">APPROVED</div>
+            <div class="sub">CWE & OWASP Clean | Zero Secrets Leaked</div>
         </div>
-    </main>
+        <div class="card">
+            <h3>Pytest Isolated QA</h3>
+            <div class="val" style="color: #60a5fa;">PASSED (Exit Code 0)</div>
+            <div class="sub">Sandboxed Subprocess Verified</div>
+        </div>
+    </div>
 
-    <footer class="max-w-7xl mx-auto border-t border-slate-800/80 pt-6 mt-12 text-center text-xs text-slate-600">
-        Genesis Autonomous Core. Non-custodial operations architecture.
-    </footer>
+    <div class="card">
+        <h3>Operator Milestone Gatekeeper Desk</h3>
+        <p><strong>Artifact Staged:</strong> <code>vault/proposals/cloud_actively_exploited_sandb_1788592544/micro_service.py</code></p>
+        <p><strong>Authority Mode:</strong> [APPROVE & MERGE] or [REJECT & PURGE]</p>
+        <p><strong>Last Sync:</strong> 2026-09-05T07:15:44.644556+00:00 UTC</p>
+    </div>
 </body>
 </html>
