@@ -34,6 +34,20 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+from http.server import BaseHTTPRequestHandler
+
+# ── Vercel Python Runtime Entrypoint (Top-Level Export) ───────────
+class handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/plain')
+        self.end_headers()
+        self.wfile.write(b'OK')
+
+app = handler
+application = handler
+
+
 # Ensure UTF-8 output on Windows
 if sys.platform == "win32":
     import io
