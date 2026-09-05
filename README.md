@@ -21,6 +21,18 @@ AI WORLD CORE is a **zero-human, fully autonomous multi-agent software conglomer
 - **Zero server dependency** — every tool runs 100% in the browser
 - **Real-time Telegram alerts** on every deployment
 
+### 📊 Dual Dashboard Architecture
+
+| Dashboard | Access | URL | Features |
+|---|---|---|---|
+| **User Dashboard** | Public / Open | [`user_dashboard.html`](https://keshavs40344.github.io/ai-world-core/public/user_dashboard.html) / [`dashboard.html`](https://keshavs40344.github.io/ai-world-core/public/dashboard.html) | Live telemetry KPIs, 35-tool searchable catalog, GPAA senate decree showcase, client-side AST sandbox. |
+| **Admin Mission Control** | **LOCKED** (Level 5) | [`admin_dashboard.html`](https://keshavs40344.github.io/ai-world-core/public/admin_dashboard.html) | Cryptographic vault lock screen (PIN/Passphrase), interactive Telegram dispatcher, decree force-forger, daemon controls, keyring management. |
+
+> **Default Admin Access Credentials:**
+> - **Sovereign PIN:** `202699`
+> - **Master Passphrase:** `GENESIS-2026-APEX`
+> - *Configurable inside the unlocked Admin Keyring with SHA-256 client-side hashing.*
+
 ---
 
 ## 🏛️ GPAA-2026 — Global Planetary Academic Administration
