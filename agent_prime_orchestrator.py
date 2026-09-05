@@ -47,7 +47,7 @@ def clean_env(key: str, default: str = "") -> str:
 GROQ_API_KEY = clean_env("GROQ_API_KEY", "")
 TELEGRAM_BOT_TOKEN = clean_env("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = clean_env("TELEGRAM_CHAT_ID", "1335170519")
-UPI_ID = "keshavthakur07@ptyes"
+UPI_ID = ""
 BASE_URL = "https://keshavs40344.github.io/ai-world-core"
 
 os.makedirs("vault/sub_agents", exist_ok=True)
@@ -64,7 +64,7 @@ When you spawn a Sub-Agent:
 2. HARD PROBLEM TARGETING: Force the Sub-Agent to solve a high-frequency real developer headache (API formatting, authentication debug, token cost calculation, schema generation).
 3. SYSTEM PROMPT SYNTHESIS: Write an exhaustive, hyper-strict system instruction prompt for this newly born sub-agent.
 4. STANDALONE PRODUCTION UTILITY: Synthesize a full, self-contained HTML5 single-page tool (Tailwind dark mode) that executes 100% in-browser with zero backend cost.
-5. INTEGRATION & UPSELL: Connect it to our direct UPI payment link (keshavthakur07@ptyes).
+5. INTEGRATION & UPSELL: Connect it to our direct UPI payment link ().
 
 Return strictly raw, valid JSON:
 {
@@ -172,7 +172,7 @@ Return strictly raw, valid JSON:
 
   <footer class="border-t border-slate-800 bg-slate-900/80 py-4 text-center text-xs text-slate-500">
     <span>Crafted by Genesis Conglomerate Agent Prime &bull; </span>
-    <a href="upi://pay?pa={UPI_ID}&pn=Keshav&cu=INR" class="text-emerald-400 hover:underline font-medium">☕ Sponsor R&D via UPI ({UPI_ID})</a>
+    <a href="https://github.com/sponsors/keshavs40344" target="_blank" class="text-pink-400 hover:underline font-medium">💖 Sponsor on GitHub Sponsors</a>
   </footer>
 
   <script>

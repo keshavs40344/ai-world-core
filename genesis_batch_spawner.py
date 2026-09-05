@@ -47,7 +47,7 @@ def clean_env(key: str, default: str = "") -> str:
 GROQ_API_KEY = clean_env("GROQ_API_KEY", "")
 TELEGRAM_BOT_TOKEN = clean_env("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = clean_env("TELEGRAM_CHAT_ID", "1335170519")
-UPI_ID = "keshavthakur07@ptyes"
+UPI_ID = ""
 BASE_URL = "https://keshavs40344.github.io/ai-world-core"
 
 # Ensure complete infrastructure
@@ -160,8 +160,8 @@ Generate strictly valid raw JSON:
         slug = agent_data["slug"]
 
         # 1. Monetization injection
-        upi_link = f"upi://pay?pa={cls.UPI_ID}&pn=Keshav&cu=INR"
-        qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=120x120&data={urllib.parse.quote(upi_link)}"
+        upi_link = "https://github.com/sponsors/keshavs40344"
+        qr_url = ""
         
         banner = f"""
         <nav class="border-b border-slate-800 bg-slate-900/80 p-4 mb-6 flex justify-between items-center text-xs font-sans">

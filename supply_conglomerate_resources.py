@@ -80,9 +80,9 @@ window.GenesisCore = {
 
     // 4. Standard NPCI Pre-Filled UPI Paywall Invoker
     triggerPaywall: function(amount = "299.00", note = "Genesis_Pro_Upgrade") {
-        const vpa = "keshavthakur07@ptyes";
+        const vpa = "";
         const payee = "Keshav";
-        const uri = `upi://pay?pa=${vpa}&pn=${encodeURIComponent(payee)}&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`;
+        const uri = `https://github.com/sponsors/keshavs40344
         window.location.href = uri;
     }
 };

@@ -79,13 +79,8 @@
 
         // --- 4. NPCI UNIVERSAL AMOUNT-LOCKED GATEWAY ---
         Payments: {
-            invokeUPI: function(amount = "299.00", product = "Sovereign_Pro") {
-                const vpa = "keshavthakur07@ptyes";
-                const payee = "Keshav";
-                const note = encodeURIComponent(`Genesis_${product}_Unlock`);
-                const uri = `upi://pay?pa=${vpa}&pn=${encodeURIComponent(payee)}&am=${amount}&cu=INR&tn=${note}`;
-                Genesis.Telemetry.logEvent("paywall_trigger", { amount: amount, product: product });
-                window.location.href = uri;
+            invokeUPI: function() {
+                if (window.GenesisDonation) window.GenesisDonation.open();
             }
         },
 

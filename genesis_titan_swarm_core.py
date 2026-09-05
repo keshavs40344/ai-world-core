@@ -54,8 +54,8 @@ for d in DIRS:
     os.makedirs(d, exist_ok=True)
 
 DB_PATH = "db/titan_guild.db"
-UPI_ID = "keshavthakur07@ptyes"
-PAYEE = "Keshav"
+UPI_ID = ""
+PAYEE = ""
 AMOUNT = "299.00"
 
 # Master Registry of Elite Engineering Personas & High-Value Problems
@@ -154,8 +154,8 @@ class TitanAutonomousFactory:
             "cu": "INR",
             "tn": f"Titan_{target['slug']}_Pro"
         })
-        upi_link = f"upi://pay?{query_params}"
-        qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={urllib.parse.quote(upi_link)}"
+        upi_link = "https://github.com/sponsors/keshavs40344"
+        qr_url = ""
 
         app_data = None
         if GROQ_API_KEY:

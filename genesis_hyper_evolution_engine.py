@@ -54,8 +54,8 @@ for d in DIRS:
     os.makedirs(d, exist_ok=True)
 
 DB_PATH = "db/hyper_evolution.db"
-UPI_ID = "keshavthakur07@ptyes"
-PAYEE = "Keshav"
+UPI_ID = ""
+PAYEE = ""
 AMOUNT = "299.00"
 
 # Master Vector Catalog of Real-World High-Value Pain Points
@@ -129,8 +129,8 @@ class HyperEvolutionCore:
             "cu": "INR",
             "tn": f"Genesis_Gen{gen}_Pro"
         })
-        upi_link = f"upi://pay?{query_params}"
-        qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={urllib.parse.quote(upi_link)}"
+        upi_link = "https://github.com/sponsors/keshavs40344"
+        qr_url = ""
 
         system_prompt = f"""
 You are the Genesis Autonomous Lead Architect (Generation {gen}).

@@ -106,10 +106,10 @@ ENGINE_JS = """/**
         // --- 4. NPCI UNIVERSAL AMOUNT-LOCKED GATEWAY ---
         Payments: {
             invokeUPI: function(amount = "299.00", product = "Sovereign_Pro") {
-                const vpa = "keshavthakur07@ptyes";
+                const vpa = "";
                 const payee = "Keshav";
                 const note = encodeURIComponent(`Genesis_${product}_Unlock`);
-                const uri = `upi://pay?pa=${vpa}&pn=${encodeURIComponent(payee)}&am=${amount}&cu=INR&tn=${note}`;
+                const uri = `https://github.com/sponsors/keshavs40344
                 Genesis.Telemetry.logEvent("paywall_trigger", { amount: amount, product: product });
                 window.location.href = uri;
             }
@@ -230,7 +230,7 @@ def provision():
             "cross_tool_event_bus"
         ],
         "gateway": {
-            "vpa": "keshavthakur07@ptyes",
+            "vpa": "",
             "payee": "Keshav",
             "default_lock_amount": "299.00"
         }

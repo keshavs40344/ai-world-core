@@ -73,7 +73,7 @@ def run():
     targets = sorted(glob.glob("public/**/*.html", recursive=True))
     for t in targets:
         patch_page(t)
-    print("✅ All assets now locked directly to keshavthakur07@ptyes with multi-app payment and auth.")
+    print("✅ All assets now locked directly to  with multi-app payment and auth.")
 
 if __name__ == "__main__":
     run()

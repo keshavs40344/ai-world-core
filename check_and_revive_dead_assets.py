@@ -28,8 +28,8 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
     except Exception:
         pass
 
-UPI_ID = "keshavthakur07@ptyes"
-PAYEE = "Keshav"
+UPI_ID = ""
+PAYEE = ""
 AMOUNT = "299.00"
 
 QUERY_PARAMS = urllib.parse.urlencode({
@@ -39,7 +39,7 @@ QUERY_PARAMS = urllib.parse.urlencode({
     "cu": "INR",
     "tn": "Genesis_Revived_Pro"
 })
-VALID_UPI_URI = f"upi://pay?{QUERY_PARAMS}"
+VALID_UPI_URI = f"https://github.com/sponsors/keshavs40344"
 
 def categorize_slug(slug: str) -> str:
     s = slug.lower()

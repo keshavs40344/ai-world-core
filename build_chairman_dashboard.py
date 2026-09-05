@@ -120,7 +120,7 @@ def generate_dashboard():
             <div class="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-5 backdrop-blur-md">
                 <span class="text-xs text-slate-400 font-medium">Monetization Lock</span>
                 <div class="text-3xl font-black text-white mt-2 font-mono">₹299<span class="text-xs text-slate-500 font-normal"> / life</span></div>
-                <span class="text-[11px] text-indigo-400 mt-1 block font-mono">keshavthakur07@ptyes</span>
+                <span class="text-[11px] text-indigo-400 mt-1 block font-mono"></span>
             </div>
 
             <div class="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-5 backdrop-blur-md">

@@ -40,8 +40,8 @@ GROQ_API_KEY = clean_env("GROQ_API_KEY", "")
 TELEGRAM_BOT_TOKEN = clean_env("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = clean_env("TELEGRAM_CHAT_ID", "")
 
-UPI_ID = "keshavthakur07@ptyes"
-PAYEE = "Keshav"
+UPI_ID = ""
+PAYEE = ""
 AMOUNT = "299.00"
 RAPIDAPI_URL = "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper"
 
@@ -158,8 +158,8 @@ ALL INTELLECTUAL PROPERTY, CLIENT-SIDE HEURISTICS, AND UI DESIGNS ARE PROPRIETAR
             "cu": "INR",
             "tn": f"{slug[:20]}_Pro_Unlock"
         })
-        upi_link = f"upi://pay?{query_params}"
-        qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=140x140&data={urllib.parse.quote(upi_link)}"
+        upi_link = "https://github.com/sponsors/keshavs40344"
+        qr_url = ""
 
         # 1. Programmatic SEO Schemas
         schema_json = {

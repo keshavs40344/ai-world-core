@@ -55,8 +55,8 @@ for d in DIRS:
     os.makedirs(d, exist_ok=True)
 
 DB_PATH = "db/evolution_engine.db"
-UPI_ID = "keshavthakur07@ptyes"
-PAYEE = "Keshav"
+UPI_ID = ""
+PAYEE = ""
 AMOUNT = "299.00"
 
 # ============================================================
@@ -148,8 +148,8 @@ class AutonomousEvolver:
             "cu": "INR",
             "tn": f"Genesis_Gen{next_gen}_Pro"
         })
-        upi_link = f"upi://pay?{query_params}"
-        qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={urllib.parse.quote(upi_link)}"
+        upi_link = "https://github.com/sponsors/keshavs40344"
+        qr_url = ""
 
         system_instruction = f"""
 You are the Genesis Autonomous Genetic Engineering Engine (Generation {next_gen}).

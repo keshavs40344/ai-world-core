@@ -5,7 +5,7 @@ A fully functional, standalone, client-side Enterprise B2B SaaS Application:
 - Real-time calculations (Taxes, Discounts, Itemized tables)
 - Client & Business Profile persistence via localStorage
 - Print / Export to PDF Engine (native print stylesheet)
-- Usage Counter & Hard Paywall Modal (UPI: keshavthakur07@ptyes)
+- Usage Counter & Hard Paywall Modal (UPI: )
 - Direct Client-Side Pro Utility
 """
 
@@ -29,8 +29,8 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
 os.makedirs("public/saas", exist_ok=True)
 os.makedirs("public/specs", exist_ok=True)
 
-UPI_ID = "keshavthakur07@ptyes"
-PAYEE = "Keshav"
+UPI_ID = ""
+PAYEE = ""
 AMOUNT = "299.00"
 NOTE = "InvoiceForge_Pro_Lifetime"
 
@@ -41,8 +41,8 @@ query_params = urllib.parse.urlencode({
     "cu": "INR",
     "tn": NOTE,
 })
-upi_link = f"upi://pay?{query_params}"
-qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={urllib.parse.quote(upi_link)}"
+upi_link = "https://github.com/sponsors/keshavs40344"
+qr_url = ""
 
 SAAS_HTML = f"""<!DOCTYPE html>
 <html lang="en">

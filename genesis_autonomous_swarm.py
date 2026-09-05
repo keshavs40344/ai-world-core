@@ -52,7 +52,7 @@ GROQ_API_KEY = get_env_clean("GROQ_API_KEY", "")
 TAVILY_API_KEY = get_env_clean("TAVILY_API_KEY", "")
 TELEGRAM_BOT_TOKEN = get_env_clean("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = get_env_clean("TELEGRAM_CHAT_ID", "1335170519")
-UPI_PAYMENT_ID = "keshavthakur07@ptyes"
+UPI_PAYMENT_ID = ""
 
 for folder in ["vault/autonomous_assets", "public/tools", "public/specs", "public/storefront", "vault/treasury", "db"]:
     os.makedirs(folder, exist_ok=True)

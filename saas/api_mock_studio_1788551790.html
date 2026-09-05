@@ -123,21 +123,7 @@
     </div>
   </main>
 
-  <div id="paywallModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-2xl p-6 shadow-2xl text-center">
-      <div class="w-12 h-12 rounded-full bg-emerald-950 border border-emerald-800 text-emerald-400 mx-auto flex items-center justify-center text-xl mb-3">👑</div>
-      <h3 class="text-base font-bold text-white">Upgrade to API Mock Studio Pro</h3>
-      <p class="text-xs text-slate-400 mt-2 leading-relaxed">You have reached the 3 free mock executions limit on the public sandbox tier. Unlock unlimited endpoint simulations, persistent mock collections, and zero rate-limiting.</p>
-      <div class="my-4 p-4 bg-slate-950 border border-slate-800 rounded-xl">
-        <p class="text-[11px] text-slate-400 mb-2">Scan & Pay ₹299 (Lifetime Access) via UPI:</p>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=upi%3A//pay%3Fpa%3Dkeshavthakur07%40ptyes%26pn%3DKeshav%26cu%3DINR" alt="UPI QR" class="mx-auto rounded border border-slate-700 bg-white p-1 mb-2"/>
-        <p class="text-xs font-mono text-emerald-400 font-bold">keshavthakur07@ptyes</p>
-      </div>
-      <div class="flex flex-col gap-2">
-        <a href="upi://pay?pa=keshavthakur07@ptyes&pn=Keshav&cu=INR" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 rounded-lg transition">⚡ Pay via UPI App (₹299)</a>
-        <button onclick="closePaywall()" class="text-xs text-slate-500 hover:text-slate-400 py-1">Continue sandbox preview</button>
-      </div>
-    </div>
+  
   </div>
 
   <script>
@@ -156,7 +142,7 @@
     }
     function simulateRequest() {
       let count = parseInt(localStorage.getItem('apimock_runs') || '0');
-      if (count >= 3) { triggerPaywall(); return; }
+      // 100% free and unmetered
       localStorage.setItem('apimock_runs', count + 1);
 
       const delay = parseInt(document.getElementById('delay').value) || 50;
@@ -169,7 +155,7 @@
         document.getElementById('responseView').textContent = document.getElementById('mockBody').value || '// Empty Response (204)';
       }, delay);
     }
-    function triggerPaywall() { document.getElementById('paywallModal').classList.remove('hidden'); }
+    function triggerPaywall() { if (window.GenesisDonation) window.GenesisDonation.open(); }
     function closePaywall() { document.getElementById('paywallModal').classList.add('hidden'); }
     function copyOutput() { navigator.clipboard.writeText(document.getElementById('responseView').textContent); alert('Copied to clipboard!'); }
     function downloadJson() {

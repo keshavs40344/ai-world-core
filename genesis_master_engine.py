@@ -6,7 +6,7 @@ PROJECT GENESIS — UNIFIED MULTI-AGENT AUTONOMOUS VALUE ENGINE
 - Dynamic Specialist Sub-Agent Spawner
 - 100% Client-Side Web Tool Generator (Tailwind CSS)
 - Subprocess QA Sentinel with Self-Healing
-- Integrated UPI Gateway & Dynamic QR (keshavthakur07@ptyes)
+- Integrated UPI Gateway & Dynamic QR ()
 - Chairman Native 1-Tap Telegram Approval Desk
 """
 
@@ -371,16 +371,16 @@ if __name__ == "__main__":
 # 5. COMMERCIAL PACKAGING & TELEGRAM (Agent Epsilon)
 # ============================================================
 class DeliveryOfficer:
-    UPI_ID = "keshavthakur07@ptyes"
-    PAYEE_NAME = "Keshav"
+    UPI_ID = ""
+    PAYEE_NAME = ""
 
     @classmethod
     def publish_and_notify(cls, blueprint: dict):
         slug = blueprint["slug"]
 
         # 1. Dynamic UPI Widget & Deep Link  Enterprise Anchor
-        upi_link = f"upi://pay?pa={cls.UPI_ID}&pn={urllib.parse.quote(cls.PAYEE_NAME)}&cu=INR"
-        qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=120x120&data={urllib.parse.quote(upi_link)}"
+        upi_link = "https://github.com/sponsors/keshavs40344"
+        qr_url = ""
         
 
         monetization_card = f"""

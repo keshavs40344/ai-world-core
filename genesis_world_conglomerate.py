@@ -49,7 +49,7 @@ GROQ_API_KEY = get_clean_env("GROQ_API_KEY", "")
 TAVILY_API_KEY = get_clean_env("TAVILY_API_KEY", "")
 TELEGRAM_BOT_TOKEN = get_clean_env("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = get_clean_env("TELEGRAM_CHAT_ID", "1335170519")
-UPI_PAYMENT_ID = "keshavthakur07@ptyes"
+UPI_PAYMENT_ID = ""
 
 # Directory Architecture
 BASE_DIRS = [
@@ -263,8 +263,8 @@ class CommercialDistribution:
         slug = blueprint["slug"]
         
         # 1. Attach Non-Custodial Monetization Widget
-        upi_link = f"upi://pay?pa={cls.UPI_ID}&pn=Keshav&cu=INR"
-        qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=130x130&data={urllib.parse.quote(upi_link)}"
+        upi_link = "https://github.com/sponsors/keshavs40344"
+        qr_url = ""
         
         footer_widget = f"""
         <div style="margin-top:40px; padding:20px; background:#0f172a; border:1px solid #1e293b; border-radius:12px; text-align:center; font-family:sans-serif;">

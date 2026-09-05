@@ -57,10 +57,7 @@ window.GenesisCore = {
     },
 
     // 4. Standard NPCI Pre-Filled UPI Paywall Invoker
-    triggerPaywall: function(amount = "299.00", note = "Genesis_Pro_Upgrade") {
-        const vpa = "keshavthakur07@ptyes";
-        const payee = "Keshav";
-        const uri = `upi://pay?pa=${vpa}&pn=${encodeURIComponent(payee)}&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`;
-        window.location.href = uri;
+    triggerPaywall: function() {
+        if (window.GenesisDonation) window.GenesisDonation.open();
     }
 };

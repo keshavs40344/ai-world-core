@@ -6,7 +6,7 @@
     "description": "Prevents inconsistent field types in MongoDB collections by automatically inferring and normalizing CSV data into strict JSON schemas before ingestion. Includes 50 free monthly tier with hard lock for B2B paywall."
   },
   "x-monetization": {
-    "direct_upi_settlement": "keshavthakur07@ptyes",
+    "direct_upi_settlement": "",
     "Direct API_subscription_tiers": {
       "Basic": {
         "monthly_quota": 50,

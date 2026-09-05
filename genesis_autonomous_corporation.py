@@ -55,8 +55,8 @@ def clean_env(key: str, default: str = "") -> str:
 GROQ_API_KEY = clean_env("GROQ_API_KEY", "")
 TELEGRAM_BOT_TOKEN = clean_env("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = clean_env("TELEGRAM_CHAT_ID", "1335170519")
-UPI_ID = "keshavthakur07@ptyes"
-PAYEE_NAME = "Keshav"
+UPI_ID = ""
+PAYEE_NAME = ""
 AMOUNT = "299.00"
 NOTE = "Genesis_SaaS_Pro_Lifetime"
 BASE_URL = "https://keshavs40344.github.io/ai-world-core"
@@ -216,7 +216,7 @@ class AgentGammaEngineer:
             "1. Standalone HTML5 document with Tailwind CSS CDN dark mode (slate-950 bg, slate-900 panels, slate-800 borders).\n"
             "2. Split layout: Input/Editor on left/top, Live Output/Preview on right/bottom.\n"
             "3. Action utilities: 'Copy to Clipboard', 'Clear Input', 'Load Demo Data', 'Export / Download Result'.\n"
-            "4. Built-in hard paywall modal triggered after 3 uses or on 'Upgrade Pro' button with exact standard UPI deep link: upi://pay?pa=keshavthakur07@ptyes&pn=Keshav&am=299.00&cu=INR&tn=SaaS_Pro_Lifetime and QR code.\n\n"
+            "4. Built-in hard paywall modal triggered after 3 uses or on 'Upgrade Pro' button with exact standard UPI deep link: https://github.com/sponsors/keshavs40344 and QR code.\n\n"
             "Output strictly valid JSON without markdown wrapping:\n"
             "{\n"
             "  \"slug\": \"lowercase_snake_case_name\",\n"
@@ -267,8 +267,8 @@ class AgentGammaEngineer:
             "cu": "INR",
             "tn": NOTE,
         })
-        upi_link = f"upi://pay?{query_params}"
-        qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={urllib.parse.quote(upi_link)}"
+        upi_link = "https://github.com/sponsors/keshavs40344"
+        qr_url = ""
 
         fallback_html = f"""<!DOCTYPE html>
 <html lang="en" class="dark">
