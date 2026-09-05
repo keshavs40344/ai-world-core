@@ -103,14 +103,6 @@
     </script>
     <!-- /SEO BLOCK -->
     
-    <!-- Microsoft Clarity Live Recording -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "ydiazy740a");
-    </script>
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
 
@@ -226,7 +218,7 @@
             </div>
             <div class="p-4 rounded-xl border border-slate-800/80 bg-slate-900/30">
                 <h3 class="font-bold text-slate-200 mb-1">How does the commercial license work?</h3>
-                <p>You can run unlimited analyses with zero restrictions. All features are 100% free, client-side, and unlimited for all developers worldwide.</p>
+                <p>You can run 3 full analyses on the free tier. Upgrading via the one-time ₹299 UPI payment grants unlimited lifetime client-side usage.</p>
             </div>
             <div class="p-4 rounded-xl border border-slate-800/80 bg-slate-900/30">
                 <h3 class="font-bold text-slate-200 mb-1">Can this output be legally cited?</h3>
@@ -242,7 +234,28 @@
     </footer>
 
     <!-- Universal Paywall Modal (UPI am=299.00 Pre-Locked) -->
-    
+    <div id="payModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="custom-card max-w-md w-full rounded-2xl p-6 text-center border relative">
+            <button onclick="closePaywallModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">✕</button>
+            <div class="w-12 h-12 rounded-full mx-auto flex items-center justify-center text-xl mb-3" style="background: rgba(99,102,241,0.15); color: var(--accent-light);">👑</div>
+            <h4 class="text-xl font-black text-white">Unlock Lifetime Pro Studio</h4>
+            <p class="text-xs text-slate-400 mt-1">Unlimited analyses, custom PDF watermarks, and continuous zero-latency updates.</p>
+            
+            <div class="my-5 p-4 bg-black/50 border rounded-xl" style="border-color: var(--border-color);">
+                <span class="text-xs text-slate-400">Scan via PhonePe, GPay, Paytm (Auto-Locked ₹299.00):</span>
+                <img src="" alt="UPI QR" class="mx-auto my-3 p-2 bg-white rounded-lg w-36 h-36"/>
+                <p class="text-xs font-mono text-emerald-400 font-bold"></p>
+            </div>
+
+            <div class="space-y-2">
+                <a href="https://github.com/sponsors/keshavs40344" class="w-full text-white font-bold text-xs py-3 rounded-xl block transition" style="background: var(--accent);">
+                    ⚡ Pay Directly in UPI App (₹299.00)
+                </a>
+                <button onclick="Genesis.IO.copy('', this)" class="w-full border text-slate-300 text-xs py-2 rounded-xl" style="border-color: var(--border-color);">
+                    Copy UPI ID
+                </button>
+            </div>
+        </div>
     </div>
 
     
@@ -331,9 +344,13 @@
             Genesis.IO.download(SLUG + '_audit_report.txt', out);
         }
 
-        
+        function triggerPaywallModal() {
+            document.getElementById('payModal').classList.remove('hidden');
+        }
 
-        
+        function closePaywallModal() {
+            document.getElementById('payModal').classList.add('hidden');
+        }
     </script>
 </body>
 </html>
