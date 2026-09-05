@@ -383,7 +383,18 @@
       "source": "hourly_agent_crucible",
       "status": "ACTIVE_DEPLOYED",
       "created_at": "2026-09-05T14:45:48.558476+00:00"
+    },
+    {
+      "agent_id": "agent_db_deadlock_sentinel_v2",
+      "designation": "Distributed DB Lock Contention & Transaction Deadlock Sentinel",
+      "category": "DATABASE_SYSTEMS",
+      "worker_file": "genesis/agents/agent_db_deadlock_sentinel_v2.py",
+      "saas_root": "saas/db_lock_deadlock_sentinel.html",
+      "saas_public": "public/saas/db_lock_deadlock_sentinel.html",
+      "source": "genesis_hyper_orchestrator_apex",
+      "status": "ACTIVE_DEPLOYED",
+      "created_at": "2026-09-05T14:48:59.700627+00:00"
     }
   ],
-  "last_updated": "2026-09-05T14:45:48.558491+00:00"
+  "last_updated": "2026-09-05T14:48:59.700639+00:00"
 }

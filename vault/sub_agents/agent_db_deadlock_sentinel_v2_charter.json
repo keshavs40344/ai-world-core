@@ -1,0 +1,9 @@
+{
+  "sub_agent_id": "agent_db_deadlock_sentinel_v2",
+  "role_designation": "Distributed DB Lock Contention & Transaction Deadlock Sentinel",
+  "domain": "Enterprise Database Engineering & High-Throughput Cloud OLTP",
+  "monetization": "$89/mo",
+  "calc_logic": "DFS Cycle Traversal + Tarjan SCC Lock Wait Graph",
+  "created_at": "2026-09-05T14:48:59.690985+00:00",
+  "status": "ACTIVE_DEPLOYED"
+}
