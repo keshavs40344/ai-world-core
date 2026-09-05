@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<html><body>
+<input id='url' placeholder='API URL'>
+<button onclick="fetch('/api/guard',{method:'POST',body:document.getElementById('url').value}).then(r=>r.json()).then(d=>alert(d.status))">Guard</button>
+</body></html>
