@@ -412,5 +412,166 @@
             if (syncEl) syncEl.innerText = new Date().toISOString().replace('T', ' ').substr(0, 19) + " UTC";
         });
     </script>
+
+    <!-- ===== Firebase Modular SDK — Auth + Firestore Live Integration ===== -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+      import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider,
+               createUserWithEmailAndPassword, signInWithEmailAndPassword }
+        from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+      import { getFirestore, doc, setDoc, serverTimestamp }
+        from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDpSwbMUHP1L7hSK_o-3Kg4uW8pKaZfyR4",
+        authDomain: "saas-34243.firebaseapp.com",
+        projectId: "saas-34243",
+        storageBucket: "saas-34243.firebasestorage.app",
+        messagingSenderId: "964647710435",
+        appId: "1:964647710435:web:368c5e868e434ed61f9fd6",
+        measurementId: "G-P8XJF24WHD"
+      };
+
+      let _fbApp;
+      try {
+        const { getApps, getApp } = await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js");
+        _fbApp = getApps().length ? getApp() : initializeApp(firebaseConfig);
+      } catch(e) {
+        _fbApp = initializeApp(firebaseConfig, "genesis-modular");
+      }
+
+      const auth = getAuth(_fbApp);
+      const db   = getFirestore(_fbApp);
+
+      async function getPublicIP() {
+        try {
+          const ctrl = new AbortController();
+          setTimeout(() => ctrl.abort(), 3500);
+          const res = await fetch("https://api.ipify.org?format=json", { signal: ctrl.signal, cache: "no-store" });
+          const data = await res.json();
+          return data.ip || "unavailable";
+        } catch (e) { return "unavailable"; }
+      }
+
+      async function saveUserTelemetry(user, extraGithub = {}) {
+        if (!user || !user.uid) return;
+        try {
+          const publicIP = await getPublicIP();
+          const payload = {
+            uid: user.uid,
+            fullName: user.displayName || null,
+            email: user.email || null,
+            photoURL: user.photoURL || null,
+            providerId: (user.providerData && user.providerData[0]?.providerId) || "unknown",
+            github: {
+              username:    extraGithub.username    || null,
+              bio:         extraGithub.bio         || null,
+              publicRepos: extraGithub.publicRepos ?? null,
+              profileUrl:  extraGithub.profileUrl  || null
+            },
+            network: {
+              publicIP,
+              timeZone: (Intl && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().timeZone : "unknown",
+              language: navigator.language || "unknown"
+            },
+            device: {
+              platform:         (navigator.userAgentData?.platform) || navigator.platform || "unknown",
+              browserUserAgent: navigator.userAgent || "unknown",
+              screenResolution: `${window.screen.width}x${window.screen.height}`,
+              viewportSize:     `${window.innerWidth}x${window.innerHeight}`,
+              devicePixelRatio: window.devicePixelRatio || 1
+            },
+            lastLoginClientTime: new Date().toISOString(),
+            updatedAt: serverTimestamp()
+          };
+          await setDoc(doc(db, "users", user.uid), payload, { merge: true });
+          console.log(`%c✅ Firestore /users/${user.uid} synced`, "color:#10b981;font-weight:bold;");
+        } catch (err) { console.warn("saveUserTelemetry note:", err); }
+      }
+
+      window.handleGithubLogin = async function() {
+        const provider = new GithubAuthProvider();
+        provider.addScope("read:user"); provider.addScope("user:email");
+        try {
+          const result = await signInWithPopup(auth, provider);
+          const user = result.user;
+          let extraGithub = {};
+          try {
+            const token = GithubAuthProvider.credentialFromResult(result)?.accessToken;
+            if (token) {
+              const ghRes = await fetch("https://api.github.com/user", { headers: { Authorization: `token ${token}`, Accept: "application/vnd.github.v3+json" } });
+              if (ghRes.ok) {
+                const g = await ghRes.json();
+                extraGithub = { username: g.login, bio: g.bio, publicRepos: g.public_repos, profileUrl: g.html_url, followers: g.followers, location: g.location };
+              }
+            }
+          } catch(e) {}
+          saveUserTelemetry(user, extraGithub).catch(() => {});
+          const sessionUser = { uid: user.uid, email: user.email, displayName: user.displayName || extraGithub.username || "GitHub User", avatar: (user.displayName || user.email || "G").charAt(0).toUpperCase(), photoURL: user.photoURL || null, provider: "github.com", isFirebase: true, token: "fb_gh_" + user.uid.substring(0, 10), loginAt: new Date().toISOString() };
+          localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+          if (window.GenesisAuth) { window.GenesisAuth.updateNavbarAuth(); window.GenesisAuth.closeModal && window.GenesisAuth.closeModal(); }
+          if (typeof window.syncUserDisplay === "function") window.syncUserDisplay();
+          window.location.href = "dashboard.html";
+        } catch (error) {
+          if (error.code === "auth/popup-closed-by-user") return;
+          alert("GitHub Sign-In Error: " + error.message);
+        }
+      };
+      window.handleFirebaseGitHubSignIn = window.handleGithubLogin;
+
+      window.handleGoogleLogin = async function() {
+        const provider = new GoogleAuthProvider();
+        provider.addScope("profile"); provider.addScope("email");
+        try {
+          const result = await signInWithPopup(auth, provider);
+          const user = result.user;
+          saveUserTelemetry(user).catch(() => {});
+          const sessionUser = { uid: user.uid, email: user.email, displayName: user.displayName || user.email?.split("@")[0] || "Google User", avatar: (user.displayName || user.email || "G").charAt(0).toUpperCase(), photoURL: user.photoURL || null, provider: "google.com", isFirebase: true, token: "fb_goog_" + user.uid.substring(0, 10), loginAt: new Date().toISOString() };
+          localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+          if (window.GenesisAuth) { window.GenesisAuth.updateNavbarAuth(); window.GenesisAuth.closeModal && window.GenesisAuth.closeModal(); }
+          if (typeof window.syncUserDisplay === "function") window.syncUserDisplay();
+          window.location.href = "dashboard.html";
+        } catch (error) {
+          if (error.code === "auth/popup-closed-by-user") return;
+          alert("Google Sign-In Error: " + error.message);
+        }
+      };
+      window.handleFirebaseGoogleSignIn = window.handleGoogleLogin;
+
+      window.handleModularEmailSignIn = async function(email, pass) {
+        try {
+          let result;
+          try { result = await signInWithEmailAndPassword(auth, email, pass); }
+          catch (e) {
+            if (e.code === "auth/user-not-found" || e.code === "auth/invalid-credential") { result = await createUserWithEmailAndPassword(auth, email, pass); }
+            else throw e;
+          }
+          const user = result.user;
+          saveUserTelemetry(user).catch(() => {});
+          const sessionUser = { uid: user.uid, email: user.email, displayName: user.displayName || user.email?.split("@")[0] || "User", avatar: (user.email || "U").charAt(0).toUpperCase(), isFirebase: true, token: "fb_" + user.uid.substring(0, 10), loginAt: new Date().toISOString() };
+          localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+          if (window.GenesisAuth) { window.GenesisAuth.updateNavbarAuth(); window.GenesisAuth.closeModal && window.GenesisAuth.closeModal(); }
+          if (typeof window.syncUserDisplay === "function") window.syncUserDisplay();
+          return { success: true, user: sessionUser };
+        } catch (err) { return { success: false, msg: err.message }; }
+      };
+
+      window.handleModularEmailRegister = async function(email, pass) {
+        try {
+          const result = await createUserWithEmailAndPassword(auth, email, pass);
+          const user = result.user;
+          saveUserTelemetry(user).catch(() => {});
+          const sessionUser = { uid: user.uid, email: user.email, displayName: user.email?.split("@")[0] || "New User", avatar: (user.email || "U").charAt(0).toUpperCase(), isFirebase: true, token: "fb_" + user.uid.substring(0, 10), loginAt: new Date().toISOString() };
+          localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+          if (window.GenesisAuth) { window.GenesisAuth.updateNavbarAuth(); window.GenesisAuth.closeModal && window.GenesisAuth.closeModal(); }
+          if (typeof window.syncUserDisplay === "function") window.syncUserDisplay();
+          return { success: true, user: sessionUser };
+        } catch (err) { return { success: false, msg: err.message }; }
+      };
+
+      console.log("%c🔥 Firebase Modular SDK ready (Auth + Firestore)", "color:#10b981;font-weight:bold;");
+    </script>
+    <!-- ===== End Firebase Modular SDK ===== -->
+
 </body>
 </html>

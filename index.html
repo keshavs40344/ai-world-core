@@ -1312,5 +1312,261 @@
         lucide.createIcons();
       });
     </script>
+
+    <!-- ===== Firebase Modular SDK — Auth + Firestore Live Integration ===== -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+      import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider,
+               createUserWithEmailAndPassword, signInWithEmailAndPassword }
+        from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+      import { getFirestore, doc, setDoc, serverTimestamp }
+        from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+      // 1. Live Firebase Configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDpSwbMUHP1L7hSK_o-3Kg4uW8pKaZfyR4",
+        authDomain: "saas-34243.firebaseapp.com",
+        projectId: "saas-34243",
+        storageBucket: "saas-34243.firebasestorage.app",
+        messagingSenderId: "964647710435",
+        appId: "1:964647710435:web:368c5e868e434ed61f9fd6",
+        measurementId: "G-P8XJF24WHD"
+      };
+
+      // Reuse existing app if already initialized (compat SDK may have done it)
+      let _fbApp;
+      try {
+        const { getApps, getApp } = await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js");
+        _fbApp = getApps().length ? getApp() : initializeApp(firebaseConfig);
+      } catch(e) {
+        _fbApp = initializeApp(firebaseConfig, "genesis-modular");
+      }
+
+      const auth = getAuth(_fbApp);
+      const db   = getFirestore(_fbApp);
+
+      // 2. Public IP Fetcher (non-blocking, 3.5s timeout)
+      async function getPublicIP() {
+        try {
+          const ctrl = new AbortController();
+          setTimeout(() => ctrl.abort(), 3500);
+          const res = await fetch("https://api.ipify.org?format=json", { signal: ctrl.signal, cache: "no-store" });
+          const data = await res.json();
+          return data.ip || "unavailable";
+        } catch (e) { return "unavailable"; }
+      }
+
+      // 3. Central Telemetry + Firestore Collector
+      async function saveUserTelemetry(user, extraGithub = {}) {
+        if (!user || !user.uid) return;
+        try {
+          const publicIP = await getPublicIP();
+
+          const payload = {
+            uid: user.uid,
+            fullName: user.displayName || null,
+            email: user.email || null,
+            photoURL: user.photoURL || null,
+            providerId: (user.providerData && user.providerData[0]?.providerId) || "unknown",
+
+            github: {
+              username:    extraGithub.username    || null,
+              bio:         extraGithub.bio         || null,
+              publicRepos: extraGithub.publicRepos ?? null,
+              profileUrl:  extraGithub.profileUrl  || null
+            },
+
+            network: {
+              publicIP: publicIP,
+              timeZone: (Intl && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().timeZone : "unknown",
+              language: navigator.language || "unknown"
+            },
+
+            device: {
+              platform:          (navigator.userAgentData?.platform) || navigator.platform || "unknown",
+              browserUserAgent:  navigator.userAgent || "unknown",
+              screenResolution:  `${window.screen.width}x${window.screen.height}`,
+              viewportSize:      `${window.innerWidth}x${window.innerHeight}`,
+              devicePixelRatio:  window.devicePixelRatio || 1
+            },
+
+            lastLoginClientTime: new Date().toISOString(),
+            updatedAt:           serverTimestamp()
+          };
+
+          const userRef = doc(db, "users", user.uid);
+          await setDoc(userRef, payload, { merge: true });
+          console.log(`%c✅ Firestore /users/${user.uid} synced`, "color:#10b981;font-weight:bold;");
+        } catch (err) {
+          console.warn("saveUserTelemetry non-blocking error:", err);
+        }
+      }
+
+      // 4. GitHub Sign-In
+      window.handleGithubLogin = async function() {
+        const provider = new GithubAuthProvider();
+        provider.addScope("read:user");
+        provider.addScope("user:email");
+        try {
+          const result = await signInWithPopup(auth, provider);
+          const user = result.user;
+
+          // Fetch extra GitHub profile
+          let extraGithub = {};
+          try {
+            const credential = GithubAuthProvider.credentialFromResult(result);
+            const token = credential?.accessToken;
+            if (token) {
+              const ghRes = await fetch("https://api.github.com/user", {
+                headers: { Authorization: `token ${token}`, Accept: "application/vnd.github.v3+json" }
+              });
+              if (ghRes.ok) {
+                const ghData = await ghRes.json();
+                extraGithub = {
+                  username:    ghData.login        || null,
+                  bio:         ghData.bio           || null,
+                  publicRepos: ghData.public_repos  ?? null,
+                  profileUrl:  ghData.html_url      || null,
+                  followers:   ghData.followers     || 0,
+                  location:    ghData.location      || null
+                };
+              }
+            }
+          } catch (ghErr) {
+            console.warn("GitHub profile fetch note:", ghErr);
+          }
+
+          saveUserTelemetry(user, extraGithub).catch(() => {});
+
+          // Update local session
+          const sessionUser = {
+            uid: user.uid, email: user.email,
+            displayName: user.displayName || extraGithub.username || "GitHub User",
+            avatar: (user.displayName || user.email || "G").charAt(0).toUpperCase(),
+            photoURL: user.photoURL || null,
+            provider: "github.com",
+            isFirebase: true,
+            token: "fb_gh_" + user.uid.substring(0, 10),
+            loginAt: new Date().toISOString()
+          };
+          localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+          if (window.GenesisAuth) window.GenesisAuth.updateNavbarAuth();
+          if (window.GenesisAuth) window.GenesisAuth.closeModal();
+          if (typeof window.syncUserDisplay === "function") window.syncUserDisplay();
+
+          if (window.location.pathname.endsWith("login.html")) {
+            window.location.href = "dashboard.html";
+          }
+        } catch (error) {
+          if (error.code === "auth/popup-closed-by-user") return;
+          console.error("GitHub Login Error:", error.code, error.message);
+          alert("GitHub Sign-In Error: " + error.message);
+        }
+      };
+
+      // Also expose under legacy name used by modal
+      window.handleFirebaseGitHubSignIn = window.handleGithubLogin;
+
+      // 5. Google Sign-In
+      window.handleGoogleLogin = async function() {
+        const provider = new GoogleAuthProvider();
+        provider.addScope("profile");
+        provider.addScope("email");
+        try {
+          const result = await signInWithPopup(auth, provider);
+          const user = result.user;
+
+          saveUserTelemetry(user).catch(() => {});
+
+          const sessionUser = {
+            uid: user.uid, email: user.email,
+            displayName: user.displayName || user.email?.split("@")[0] || "Google User",
+            avatar: (user.displayName || user.email || "G").charAt(0).toUpperCase(),
+            photoURL: user.photoURL || null,
+            provider: "google.com",
+            isFirebase: true,
+            token: "fb_goog_" + user.uid.substring(0, 10),
+            loginAt: new Date().toISOString()
+          };
+          localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+          if (window.GenesisAuth) window.GenesisAuth.updateNavbarAuth();
+          if (window.GenesisAuth) window.GenesisAuth.closeModal();
+          if (typeof window.syncUserDisplay === "function") window.syncUserDisplay();
+
+          if (window.location.pathname.endsWith("login.html")) {
+            window.location.href = "dashboard.html";
+          }
+        } catch (error) {
+          if (error.code === "auth/popup-closed-by-user") return;
+          console.error("Google Login Error:", error.code, error.message);
+          alert("Google Sign-In Error: " + error.message);
+        }
+      };
+
+      // Also expose under legacy name used by modal
+      window.handleFirebaseGoogleSignIn = window.handleGoogleLogin;
+
+      // 6. Email Sign-In / Register (used by modal form handleSovereignAuth)
+      window.handleModularEmailSignIn = async function(email, pass) {
+        try {
+          let result;
+          try {
+            result = await signInWithEmailAndPassword(auth, email, pass);
+          } catch (signInErr) {
+            if (signInErr.code === "auth/user-not-found" || signInErr.code === "auth/invalid-credential") {
+              result = await createUserWithEmailAndPassword(auth, email, pass);
+            } else { throw signInErr; }
+          }
+          const user = result.user;
+          saveUserTelemetry(user).catch(() => {});
+
+          const sessionUser = {
+            uid: user.uid, email: user.email,
+            displayName: user.displayName || user.email?.split("@")[0] || "Authenticated User",
+            avatar: (user.displayName || user.email || "U").charAt(0).toUpperCase(),
+            isFirebase: true,
+            token: "fb_" + user.uid.substring(0, 10),
+            loginAt: new Date().toISOString()
+          };
+          localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+          if (window.GenesisAuth) window.GenesisAuth.updateNavbarAuth();
+          if (window.GenesisAuth) window.GenesisAuth.closeModal();
+          if (typeof window.syncUserDisplay === "function") window.syncUserDisplay();
+          return { success: true, user: sessionUser };
+        } catch (err) {
+          console.error("Email Auth Error:", err.code, err.message);
+          return { success: false, msg: err.message };
+        }
+      };
+
+      window.handleModularEmailRegister = async function(email, pass) {
+        try {
+          const result = await createUserWithEmailAndPassword(auth, email, pass);
+          const user = result.user;
+          saveUserTelemetry(user).catch(() => {});
+
+          const sessionUser = {
+            uid: user.uid, email: user.email,
+            displayName: user.email?.split("@")[0] || "New User",
+            avatar: (user.email || "U").charAt(0).toUpperCase(),
+            isFirebase: true,
+            token: "fb_" + user.uid.substring(0, 10),
+            loginAt: new Date().toISOString()
+          };
+          localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+          if (window.GenesisAuth) window.GenesisAuth.updateNavbarAuth();
+          if (window.GenesisAuth) window.GenesisAuth.closeModal();
+          if (typeof window.syncUserDisplay === "function") window.syncUserDisplay();
+          return { success: true, user: sessionUser };
+        } catch (err) {
+          console.error("Registration Error:", err.code, err.message);
+          return { success: false, msg: err.message };
+        }
+      };
+
+      console.log("%c🔥 Firebase Modular SDK ready (Auth + Firestore)", "color:#10b981;font-weight:bold;");
+    </script>
+    <!-- ===== End Firebase Modular SDK ===== -->
+
 </body>
 </html>
