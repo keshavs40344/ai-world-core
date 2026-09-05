@@ -402,32 +402,15 @@ class AgentGammaEngineer:
             return
 
         slug = blueprint["slug"]
-        msg = (
-            f"👑 *GENESIS AUTONOMOUS CORP: NEW SAAS DISRUPTOR DEPLOYED*\n\n"
-            f"🏢 *Target Disrupted:* `{intel.get('target_saas', 'Cloud SaaS')}`\n"
-            f"📦 *Product:* `{blueprint['name']}`\n"
-            f"🎯 *Disruption Angle:* {intel.get('pain_point', 'Zero cloud leak & zero monthly fee')}\n"
-            f"🌐 *Live Standalone App:* `{BASE_URL}/public/saas/{slug}.html`\n"
-            f"📑 *OpenAPI Spec:* `public/specs/{slug}_openapi.json`\n"
-            f"💳 *Monetization:* Hard Paywall (3 uses) + UPI ({UPI_ID}) \n"
-            f"⚙️ *QA Sentinel:* 100% Subprocess Verified (Exit Code 0)\n\n"
-            f"⚡ *Autonomous Swarm running at $0 capital burn.*"
-        )
-        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-        payload = json.dumps({
-            "chat_id": TELEGRAM_CHAT_ID,
-            "text": msg,
-            "parse_mode": "Markdown",
-            "reply_markup": {
-                "inline_keyboard": [
-                    [{"text": "🚀 Open Standalone SaaS", "url": f"{BASE_URL}/public/saas/{slug}.html"}],
-                ]
-            }
-        }).encode("utf-8")
         try:
-            req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-            with urllib.request.urlopen(req, timeout=10) as r:
-                print("📲 [AGENT EPSILON] Corporate audit report dispatched to Chairman's Telegram.")
+            from genesis_telegram_notifier import broadcast_live_asset
+            broadcast_live_asset(
+                asset_name=blueprint["name"],
+                rel_path=f"public/saas/{slug}.html",
+                category=intel.get("target_saas", "Autonomous SaaS Disruptor"),
+                key_feature=intel.get("pain_point", "Zero cloud leak & 100% Free Client-Side")
+            )
+            print("📲 [AGENT EPSILON] Corporate audit report dispatched to Chairman's Telegram.")
         except Exception as e:
             print(f"[-] Telegram dispatch error: {e}")
 
