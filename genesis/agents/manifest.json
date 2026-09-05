@@ -296,7 +296,72 @@
       "source": "AUTONOMOUS RECURSIVE META-FACTORY",
       "created_at": "2026-09-05T14:17:09.702250+00:00",
       "status": "ACTIVE"
+    },
+    {
+      "agent_id": "fin_forex_hedger",
+      "name": "Global Forex Hedging Cost Arbitrageur",
+      "domain": "FinTech & Cross-Border Treasury",
+      "tool_slug": "forex_leakage_pro",
+      "worker_file": "genesis\\agents\\agent_fin_forex_hedger_20260905_201137.py",
+      "charter": "vault\\sub_agents\\fin_forex_hedger_charter.json",
+      "saas_root": "saas\\forex_leakage_pro.html",
+      "saas_public": "public\\saas\\forex_leakage_pro.html",
+      "source": "mass_subagent_spawner",
+      "status": "ACTIVE_DEPLOYED",
+      "registered_at": "2026-09-05T14:41:37.168555+00:00"
+    },
+    {
+      "agent_id": "jwt_zerotrust_sentinel",
+      "name": "Zero-Trust Cryptographic Token Sentinel",
+      "domain": "Application Security & Auth",
+      "tool_slug": "jwt_sentinel_guard",
+      "worker_file": "genesis\\agents\\agent_jwt_zerotrust_sentinel_20260905_201137.py",
+      "charter": "vault\\sub_agents\\jwt_zerotrust_sentinel_charter.json",
+      "saas_root": "saas\\jwt_sentinel_guard.html",
+      "saas_public": "public\\saas\\jwt_sentinel_guard.html",
+      "source": "mass_subagent_spawner",
+      "status": "ACTIVE_DEPLOYED",
+      "registered_at": "2026-09-05T14:41:37.183440+00:00"
+    },
+    {
+      "agent_id": "llm_vram_cost_optimizer",
+      "name": "GPU Cluster VRAM Inference Scaler",
+      "domain": "AI Infrastructure & Compute Optimization",
+      "tool_slug": "vram_inference_allocator",
+      "worker_file": "genesis\\agents\\agent_llm_vram_cost_optimizer_20260905_201137.py",
+      "charter": "vault\\sub_agents\\llm_vram_cost_optimizer_charter.json",
+      "saas_root": "saas\\vram_inference_allocator.html",
+      "saas_public": "public\\saas\\vram_inference_allocator.html",
+      "source": "mass_subagent_spawner",
+      "status": "ACTIVE_DEPLOYED",
+      "registered_at": "2026-09-05T14:41:37.193997+00:00"
+    },
+    {
+      "agent_id": "sql_explain_cost_miner",
+      "name": "Distributed DB Query Latency Miner",
+      "domain": "Database Engineering & DevTools",
+      "tool_slug": "sql_latency_optimizer",
+      "worker_file": "genesis\\agents\\agent_sql_explain_cost_miner_20260905_201137.py",
+      "charter": "vault\\sub_agents\\sql_explain_cost_miner_charter.json",
+      "saas_root": "saas\\sql_latency_optimizer.html",
+      "saas_public": "public\\saas\\sql_latency_optimizer.html",
+      "source": "mass_subagent_spawner",
+      "status": "ACTIVE_DEPLOYED",
+      "registered_at": "2026-09-05T14:41:37.204189+00:00"
+    },
+    {
+      "agent_id": "legal_contract_risk_shield",
+      "name": "Commercial Indemnity & Liability Risk Scanner",
+      "domain": "LegalTech & Enterprise Procurement",
+      "tool_slug": "contract_indemnity_shield",
+      "worker_file": "genesis\\agents\\agent_legal_contract_risk_shield_20260905_201137.py",
+      "charter": "vault\\sub_agents\\legal_contract_risk_shield_charter.json",
+      "saas_root": "saas\\contract_indemnity_shield.html",
+      "saas_public": "public\\saas\\contract_indemnity_shield.html",
+      "source": "mass_subagent_spawner",
+      "status": "ACTIVE_DEPLOYED",
+      "registered_at": "2026-09-05T14:41:37.216846+00:00"
     }
   ],
-  "last_updated": "2026-09-05T14:17:09.930114+00:00"
+  "last_updated": "2026-09-05T14:41:37.217333+00:00"
 }

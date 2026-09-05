@@ -1,0 +1,12 @@
+{
+  "sub_agent_id": "fin_forex_hedger",
+  "role_designation": "Global Forex Hedging Cost Arbitrageur",
+  "domain": "FinTech & Cross-Border Treasury",
+  "monetization": "$49/mo",
+  "calc_logic": "Currency FX Slippage Risk Index",
+  "pricing_hook": "Prevent multi-currency cross-border slippage leaks in real time.",
+  "code_slug": "forex_leakage_pro",
+  "created_at": "2026-09-05T14:41:37.156815+00:00",
+  "status": "ACTIVE_DEPLOYED",
+  "source": "mass_subagent_spawner"
+}

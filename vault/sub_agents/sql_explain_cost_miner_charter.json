@@ -1,0 +1,12 @@
+{
+  "sub_agent_id": "sql_explain_cost_miner",
+  "role_designation": "Distributed DB Query Latency Miner",
+  "domain": "Database Engineering & DevTools",
+  "monetization": "$39/mo",
+  "calc_logic": "Query Tree Cost & Index Selectivity Analyzer",
+  "pricing_hook": "Locate sequential scan bottlenecks before they crash production.",
+  "code_slug": "sql_latency_optimizer",
+  "created_at": "2026-09-05T14:41:37.194671+00:00",
+  "status": "ACTIVE_DEPLOYED",
+  "source": "mass_subagent_spawner"
+}

@@ -1,0 +1,12 @@
+{
+  "sub_agent_id": "llm_vram_cost_optimizer",
+  "role_designation": "GPU Cluster VRAM Inference Scaler",
+  "domain": "AI Infrastructure & Compute Optimization",
+  "monetization": "$79/mo",
+  "calc_logic": "KV-Cache Memory Footprint vs Context Window",
+  "pricing_hook": "Cut inference cloud compute spend by up to 40%.",
+  "code_slug": "vram_inference_allocator",
+  "created_at": "2026-09-05T14:41:37.184103+00:00",
+  "status": "ACTIVE_DEPLOYED",
+  "source": "mass_subagent_spawner"
+}

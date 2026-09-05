@@ -1,0 +1,12 @@
+{
+  "sub_agent_id": "jwt_zerotrust_sentinel",
+  "role_designation": "Zero-Trust Cryptographic Token Sentinel",
+  "domain": "Application Security & Auth",
+  "monetization": "$29/mo",
+  "calc_logic": "JWT Cryptographic Robustness & Expiry Drift",
+  "pricing_hook": "Instant cryptographic entropy check and header validation.",
+  "code_slug": "jwt_sentinel_guard",
+  "created_at": "2026-09-05T14:41:37.169967+00:00",
+  "status": "ACTIVE_DEPLOYED",
+  "source": "mass_subagent_spawner"
+}
