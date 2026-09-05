@@ -1,7 +1,2 @@
-/*
-!public
-!vercel.json
-vault/
-*.py
-requirements.txt
 main.py
+requirements.txt

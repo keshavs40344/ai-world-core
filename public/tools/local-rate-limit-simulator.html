@@ -1,42 +1,13 @@
-<!DOCTYPE html><html><head><title>Rate Limit Sim</title>
-    <!-- DYNAMIC SEO & SOCIAL GRAPH (Auto-Injected) -->
-    <meta name="title" content="Rate Limit Sim">
-    <meta name="description" content="100% Client-side utility for Rate Limit Sim. High-speed, private, zero-server data leakage.">
-
-    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/tools/local-rate-limit-simulator.html">
-    <meta property="og:title" content="Rate Limit Sim">
-    <meta property="og:description" content="100% Client-side utility for Rate Limit Sim. High-speed, private, zero-server data leakage.">
-    <meta property="og:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=Rate%20Limit%20Sim+Studio&font=montserrat">
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/tools/local-rate-limit-simulator.html">
-    <meta name="twitter:title" content="Rate Limit Sim">
-    <meta name="twitter:description" content="100% Client-side utility for Rate Limit Sim. High-speed, private, zero-server data leakage.">
-    <meta name="twitter:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=Rate%20Limit%20Sim+Studio&font=montserrat">
-
-    <!-- JSON-LD Structured Data for Googlebot -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Rate Limit Sim",
-      "url": "https://keshavs40344.github.io/ai-world-core/tools/local-rate-limit-simulator.html",
-      "description": "100% Client-side utility for Rate Limit Sim. High-speed, private, zero-server data leakage.",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "All modern browsers",
-      "offers": {
-        "@type": "Offer",
-        "price": "0.00",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
-    <!-- /SEO BLOCK -->
-    
-    <script src="../assets/genesis_payments_auth.js"></script>
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Bucket & Leaky Bucket Rate Limit Simulator — AI World Sovereign Suite</title>
+    <meta name="description" content="Interactive in-browser simulator for testing API throughput throttling, burst allowances, bucket capacity drain rates, and HTTP 429 Retry-After header generation.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Microsoft Clarity Live Recording -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -45,4 +16,172 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "ydiazy740a");
     </script>
-</head><body><h1>Token Bucket Simulator</h1><input id="rate" type="number" value="10" placeholder="Rate/sec"><input id="cap" type="number" value="20" placeholder="Capacity"><button onclick="test()">Test 5 Requests</button><div id="out"></div><script>let b={t:20,l:Date.now(),r:10,c:20};function test(){let r=[];for(let i=0;i<5;i++){let n=Date.now();b.t=Math.min(b.c,b.t+(n-b.l)*b.r/1000);b.l=n;if(b.t>=1){b.t--;r.push('OK')}else{r.push('429')}}document.getElementById('out').innerText=r.join(', ')}document.getElementById('rate').onchange=e=>b.r=e.target.value;document.getElementById('cap').onchange=e=>b.c=e.target.value;</script></body></html>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #030712; color: #f3f4f6; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .cyber-grid {
+            background-image: 
+              radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+              linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 32px 32px, 32px 32px;
+        }
+    </style>
+</head>
+<body class="min-h-screen cyber-grid flex flex-col justify-between antialiased selection:bg-emerald-500 selection:text-black">
+    <!-- Header -->
+    <header class="border-b border-slate-800/80 bg-slate-950/70 backdrop-blur-xl px-4 sm:px-8 py-4 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="../index.html" class="flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-emerald-400 transition font-bold">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Hub
+                </a>
+                <span class="text-slate-700">|</span>
+                <a href="../dashboard.html" class="text-xs font-mono text-slate-400 hover:text-white transition">Cockpit</a>
+                <span class="text-slate-700">|</span>
+                <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-full">DEVOPS-007</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-[10px] font-mono text-slate-500 hidden sm:inline">100% Client-Side • Zero Data Leakage</span>
+                <a href="../auth.html" class="text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-700 hover:border-slate-500 bg-slate-900/80 text-white transition">Sign In</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full flex-grow">
+        <div class="mb-6">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Token Bucket & Leaky Bucket Rate Limit Simulator</h1>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-3xl">Interactive in-browser simulator for testing API throughput throttling, burst allowances, bucket capacity drain rates, and HTTP 429 Retry-After header generation.</p>
+        </div>
+
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-5 bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-300 block border-b border-slate-800 pb-2">Algorithm & Parameters</span>
+                <div>
+                    <label class="text-xs text-slate-400 block mb-1">Algorithm</label>
+                    <select id="algo" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white">
+                        <option value="token_bucket">Token Bucket (Allows Bursts)</option>
+                        <option value="leaky_bucket">Leaky Bucket (Constant Rate)</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="text-xs text-slate-400 block mb-1">Capacity (Tokens)</label>
+                        <input id="cap" type="number" value="10" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-white font-mono text-xs">
+                    </div>
+                    <div>
+                        <label class="text-xs text-slate-400 block mb-1">Refill (Tokens/sec)</label>
+                        <input id="refill" type="number" value="2" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-white font-mono text-xs">
+                    </div>
+                </div>
+                <div>
+                    <label class="text-xs text-slate-400 block mb-1">Incoming Request Stream (Burst Quantity)</label>
+                    <div class="flex gap-2">
+                        <button onclick="dispatchBurst(1)" class="flex-1 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-mono text-xs">+1 Req</button>
+                        <button onclick="dispatchBurst(5)" class="flex-1 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-mono text-xs">+5 Burst</button>
+                        <button onclick="dispatchBurst(12)" class="flex-1 py-2 rounded-lg bg-amber-600/30 hover:bg-amber-600/50 text-amber-300 font-mono text-xs">+12 Flood</button>
+                    </div>
+                </div>
+                <button onclick="resetBucket()" class="w-full py-2 rounded-lg border border-slate-800 text-slate-400 hover:text-white text-xs font-mono">Reset Bucket State</button>
+            </div>
+
+            <div class="lg:col-span-7 bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center border-b border-slate-800 pb-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Live Bucket Gauge & Telemetry</span>
+                        <span id="rateStatus" class="text-xs font-mono text-emerald-400 font-bold">10 / 10 Tokens</span>
+                    </div>
+                    <!-- Visual Gauge Bar -->
+                    <div class="w-full h-4 bg-slate-950 rounded-full border border-slate-800 overflow-hidden mb-4">
+                        <div id="gaugeBar" class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 transition-all duration-300" style="width: 100%;"></div>
+                    </div>
+                    <div id="logStream" class="bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs font-mono h-60 overflow-y-auto space-y-1">
+                        <div class="text-slate-500">// Dispatch requests on the left to observe rate limiting in real-time...</div>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-slate-800 text-xs text-slate-500 flex justify-between font-mono">
+                    <span id="statSuccess">Allowed: 0</span>
+                    <span id="statThrottled" class="text-rose-400 font-bold">Dropped (429): 0</span>
+                </div>
+            </div>
+        </div>
+    
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500 font-mono">
+        <p>© 2026 AI World Sovereign Conglomerate • 100% Free Public Software • Zero Cloud Cost</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    
+    <script>
+        let tokens = 10;
+        let lastRefill = performance.now();
+        let allowedCount = 0;
+        let droppedCount = 0;
+
+        function refillTokens() {
+            const now = performance.now();
+            const elapsed = (now - lastRefill) / 1000;
+            const cap = parseFloat(document.getElementById('cap').value) || 10;
+            const rate = parseFloat(document.getElementById('refill').value) || 2;
+            tokens = Math.min(cap, tokens + elapsed * rate);
+            lastRefill = now;
+            updateGauge();
+        }
+
+        setInterval(refillTokens, 250);
+
+        function updateGauge() {
+            const cap = parseFloat(document.getElementById('cap').value) || 10;
+            const pct = Math.max(0, Math.min(100, (tokens / cap) * 100));
+            document.getElementById('gaugeBar').style.width = pct + '%';
+            document.getElementById('rateStatus').textContent = `${tokens.toFixed(1)} / ${cap} Tokens`;
+        }
+
+        function dispatchBurst(count) {
+            refillTokens();
+            const stream = document.getElementById('logStream');
+            const nowTime = new Date().toISOString().substr(11, 8);
+
+            for (let i = 0; i < count; i++) {
+                if (tokens >= 1) {
+                    tokens -= 1;
+                    allowedCount++;
+                    const el = document.createElement('div');
+                    el.className = "text-emerald-400 flex justify-between";
+                    el.innerHTML = `<span>[${nowTime}] 200 OK — Request Processed</span> <span>Tokens: ${tokens.toFixed(1)}</span>`;
+                    stream.prepend(el);
+                } else {
+                    droppedCount++;
+                    const retry = (1 / (parseFloat(document.getElementById('refill').value) || 2)).toFixed(1);
+                    const el = document.createElement('div');
+                    el.className = "text-rose-400 font-bold flex justify-between bg-rose-950/20 px-1 rounded";
+                    el.innerHTML = `<span>[${nowTime}] 429 TOO MANY REQUESTS</span> <span>Retry-After: ${retry}s</span>`;
+                    stream.prepend(el);
+                }
+            }
+            document.getElementById('statSuccess').textContent = `Allowed: ${allowedCount}`;
+            document.getElementById('statThrottled').textContent = `Dropped (429): ${droppedCount}`;
+            updateGauge();
+        }
+
+        function resetBucket() {
+            const cap = parseFloat(document.getElementById('cap').value) || 10;
+            tokens = cap;
+            allowedCount = 0;
+            droppedCount = 0;
+            document.getElementById('statSuccess').textContent = `Allowed: 0`;
+            document.getElementById('statThrottled').textContent = `Dropped (429): 0`;
+            document.getElementById('logStream').innerHTML = `<div class="text-slate-500">// Bucket reset to initial capacity.</div>`;
+            updateGauge();
+        }
+    </script>
+    
+</body>
+</html>

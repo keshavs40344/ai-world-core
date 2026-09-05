@@ -2,7 +2,7 @@
 import sys
 import os
 
-sys.path.insert(0, "C:\Users\HP\Desktop\VASTUDA\vault\proposals\swarm_task_gpt_6_astra_1788512866")
+sys.path.insert(0, r"C:\Users\HP\Desktop\VASTUDA\vault\proposals\swarm_task_gpt_6_astra_1788512866")
 from defensive_guard import DefensiveDataGuard
 
 guard = DefensiveDataGuard()

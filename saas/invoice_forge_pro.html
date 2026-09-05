@@ -76,9 +76,7 @@
                 </div>
             </div>
             <div class="flex items-center space-x-3">
-                <button onclick="triggerPaywall()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-lg transition shadow-md shadow-emerald-900/30">
-                    Upgrade Pro (₹299)
-                </button>
+                
             </div>
         </div>
     </header>
@@ -278,15 +276,12 @@
         // Usage Metering & Paywall Logic
         function executeExportPDF() {
             let uses = parseInt(localStorage.getItem('invoiceforge_exports') || '0');
-            if (uses >= 3) {
-                triggerPaywall();
-                return;
-            }
+            
             localStorage.setItem('invoiceforge_exports', uses + 1);
             window.print();
         }
 
-        function triggerPaywall() { if (window.GenesisDonation) window.GenesisDonation.open(); }
+        function triggerPaywall() {}
 
         function closePaywall() {
             document.getElementById('paywallModal').classList.add('hidden');

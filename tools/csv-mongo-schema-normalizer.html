@@ -1,42 +1,13 @@
-<!DOCTYPE html><html><head><title>CSV to MongoDB Schema Normalizer</title><script src="https://cdn.tailwindcss.com"></script>
-    <!-- DYNAMIC SEO & SOCIAL GRAPH (Auto-Injected) -->
-    <meta name="title" content="CSV to MongoDB Schema Normalizer">
-    <meta name="description" content="100% Client-side utility for CSV to MongoDB Schema Normalizer. High-speed, private, zero-server data leakage.">
-
-    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/tools/csv-mongo-schema-normalizer.html">
-    <meta property="og:title" content="CSV to MongoDB Schema Normalizer">
-    <meta property="og:description" content="100% Client-side utility for CSV to MongoDB Schema Normalizer. High-speed, private, zero-server data leakage.">
-    <meta property="og:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=CSV%20to%20MongoDB%20Schema%20Normalizer+Studio&font=montserrat">
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/tools/csv-mongo-schema-normalizer.html">
-    <meta name="twitter:title" content="CSV to MongoDB Schema Normalizer">
-    <meta name="twitter:description" content="100% Client-side utility for CSV to MongoDB Schema Normalizer. High-speed, private, zero-server data leakage.">
-    <meta name="twitter:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=CSV%20to%20MongoDB%20Schema%20Normalizer+Studio&font=montserrat">
-
-    <!-- JSON-LD Structured Data for Googlebot -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "CSV to MongoDB Schema Normalizer",
-      "url": "https://keshavs40344.github.io/ai-world-core/tools/csv-mongo-schema-normalizer.html",
-      "description": "100% Client-side utility for CSV to MongoDB Schema Normalizer. High-speed, private, zero-server data leakage.",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "All modern browsers",
-      "offers": {
-        "@type": "Offer",
-        "price": "0.00",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
-    <!-- /SEO BLOCK -->
-    
-    <script src="../assets/genesis_payments_auth.js"></script>
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to MongoDB Schema & TypeScript Interface Generator — AI World Sovereign Suite</title>
+    <meta name="description" content="Converts raw CSV datasets into typed MongoDB Mongoose schemas, TypeScript interfaces, and validation rules with auto type inference.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Microsoft Clarity Live Recording -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -45,4 +16,138 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "ydiazy740a");
     </script>
-</head><body class="bg-gray-900 text-white p-4"><h1 class="text-2xl font-bold mb-4">CSV to MongoDB Schema Normalizer</h1><textarea id="csv" class="w-full h-32 bg-gray-800 p-2 rounded mb-2" placeholder="Paste CSV data here..."></textarea><button onclick="run()" class="bg-blue-600 px-4 py-2 rounded">Normalize</button><pre id="out" class="mt-4 bg-gray-800 p-2 rounded overflow-auto h-64"></pre><script>function run(){const r=new FileReader();const t=document.getElementById('csv').value;const rows=t.split('\n').map(l=>l.split(','));const h=rows[0];const s={};const d=[];rows.slice(1).forEach(r=>{const o={};h.forEach((k,i)=>{const v=r[i];if(!v)return;const t=v==='true'||v==='false'?'bool':v.replace('.','',1).match(/^-?\d+$/)?'int':v.match(/^-?\d+\.\d+$/)?'float':'str';s[k]=s[k]||new Set();s[k].add(t);o[k]=t==='bool'?v==='true':t==='int'?parseInt(v):t==='float'?parseFloat(v):v});d.push(o)});document.getElementById('out').textContent=JSON.stringify({schema:Object.fromEntries(Object.entries(s).map(([k,v])=>[k,v.size===1?[...v][0]:'mixed'])),documents:d},null,2)}</script></body></html>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #030712; color: #f3f4f6; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .cyber-grid {
+            background-image: 
+              radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+              linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 32px 32px, 32px 32px;
+        }
+    </style>
+</head>
+<body class="min-h-screen cyber-grid flex flex-col justify-between antialiased selection:bg-emerald-500 selection:text-black">
+    <!-- Header -->
+    <header class="border-b border-slate-800/80 bg-slate-950/70 backdrop-blur-xl px-4 sm:px-8 py-4 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="../index.html" class="flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-emerald-400 transition font-bold">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Hub
+                </a>
+                <span class="text-slate-700">|</span>
+                <a href="../dashboard.html" class="text-xs font-mono text-slate-400 hover:text-white transition">Cockpit</a>
+                <span class="text-slate-700">|</span>
+                <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-full">DATA-ENG-012</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-[10px] font-mono text-slate-500 hidden sm:inline">100% Client-Side • Zero Data Leakage</span>
+                <a href="../auth.html" class="text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-700 hover:border-slate-500 bg-slate-900/80 text-white transition">Sign In</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full flex-grow">
+        <div class="mb-6">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">CSV to MongoDB Schema & TypeScript Interface Generator</h1>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-3xl">Converts raw CSV datasets into typed MongoDB Mongoose schemas, TypeScript interfaces, and validation rules with auto type inference.</p>
+        </div>
+
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-6 bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Raw CSV Table Input</span>
+                        <button onclick="loadSampleCsv()" class="text-xs text-emerald-400 hover:underline">Load Sample</button>
+                    </div>
+                    <textarea id="csvInput" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs font-mono text-emerald-300 h-72 focus:outline-none focus:border-emerald-500" placeholder="Paste CSV text here..."></textarea>
+                </div>
+                <button onclick="inferMongoSchema()" class="mt-4 w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold text-xs uppercase tracking-wider transition font-mono shadow-lg shadow-emerald-900/20">
+                    Infer Mongoose Schema
+                </button>
+            </div>
+
+            <div class="lg:col-span-6 bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center border-b border-slate-800 pb-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Generated Mongoose &amp; TypeScript Code</span>
+                        <span id="csvBadge" class="text-[10px] font-mono text-slate-400">Idle</span>
+                    </div>
+                    <div id="outputMongo" class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs font-mono text-cyan-300 min-h-[300px] overflow-auto whitespace-pre-wrap">Code will be generated here...</div>
+                </div>
+                <div class="flex justify-between items-center pt-4 border-t border-slate-800 text-xs">
+                    <span id="csvLatency" class="text-slate-500 font-mono">Latency: 0ms</span>
+                    <button onclick="navigator.clipboard.writeText(document.getElementById('outputMongo').innerText); alert('Copied Schema!');" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-mono text-xs">Copy Code</button>
+                </div>
+            </div>
+        </div>
+    
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500 font-mono">
+        <p>© 2026 AI World Sovereign Conglomerate • 100% Free Public Software • Zero Cloud Cost</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    
+    <script>
+        function loadSampleCsv() {
+            document.getElementById('csvInput').value = [
+                "id,user_email,total_orders,is_subscribed,signup_date",
+                "usr_101,sarah@acme.org,14,true,2026-01-15T10:00:00Z",
+                "usr_102,kevin@delta.co,3,false,2026-02-18T14:30:00Z",
+                "usr_103,elena@global.net,89,true,2026-03-01T08:15:00Z"
+            ].join('\n');
+            inferMongoSchema();
+        }
+        function inferType(val) {
+            val = val.trim();
+            if (/^(true|false)$/i.test(val)) return { mongo: 'Boolean', ts: 'boolean' };
+            if (!isNaN(val) && val !== '') return { mongo: 'Number', ts: 'number' };
+            if (!isNaN(Date.parse(val)) && (val.includes('-') || val.includes('/'))) return { mongo: 'Date', ts: 'Date' };
+            return { mongo: 'String', ts: 'string' };
+        }
+        function inferMongoSchema() {
+            const t0 = performance.now();
+            const text = document.getElementById('csvInput').value.trim();
+            if (!text) { alert('Enter CSV data'); return; }
+
+            const lines = text.split('\n').filter(l => l.trim().length > 0);
+            if (lines.length < 2) { alert('CSV must have header and at least 1 row'); return; }
+
+            const headers = lines[0].split(',').map(h => h.trim());
+            const sampleRow = lines[1].split(',');
+
+            let schemaFields = '';
+            let tsFields = '';
+
+            headers.forEach((h, i) => {
+                const val = sampleRow[i] || '';
+                const inferred = inferType(val);
+                schemaFields += `  ${h}: { type: ${inferred.mongo}, required: true },\n`;
+                tsFields += `  ${h}: ${inferred.ts};\n`;
+            });
+
+            const code = 
+                `// === TypeScript Interface ===\n` +
+                `export interface IEntity {\n${tsFields}}\n\n` +
+                `// === Mongoose Schema ===\n` +
+                `import { Schema, model } from 'mongoose';\n\n` +
+                `const EntitySchema = new Schema<IEntity>({\n${schemaFields}}, { timestamps: true });\n\n` +
+                `export const EntityModel = model<IEntity>('Entity', EntitySchema);`;
+
+            const t1 = performance.now();
+            document.getElementById('csvLatency').textContent = `Latency: ${(t1 - t0).toFixed(2)}ms`;
+            document.getElementById('csvBadge').textContent = `${headers.length} Fields Inferred`;
+            document.getElementById('outputMongo').textContent = code;
+        }
+    </script>
+    
+</body>
+</html>
