@@ -1,0 +1,21 @@
+{
+  "message_id": "bus_1788618572351_agent_designlead",
+  "timestamp": "2026-09-05T14:29:32.351454+00:00",
+  "sender": "Agent_DesignLead",
+  "recipient": "Agent_FrontendCoder",
+  "topic": "DESIGN_SPEC_APPROVED",
+  "payload": {
+    "primary_color": "#6366f1",
+    "primary_hover": "#4f46e5",
+    "accent_cyan": "#06b6d4",
+    "accent_emerald": "#10b981",
+    "bg_base": "#030712",
+    "card_bg": "rgba(15, 23, 42, 0.75)",
+    "border_color": "rgba(51, 65, 85, 0.6)",
+    "text_primary": "#f8fafc",
+    "text_muted": "#94a3b8",
+    "font_sans": "Plus Jakarta Sans, Inter, sans-serif",
+    "font_mono": "JetBrains Mono, monospace",
+    "style_philosophy": "100% Client-side, zero cloud leakage, modern glassmorphism, responsive grid"
+  }
+}

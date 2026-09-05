@@ -1,0 +1,10 @@
+{
+  "message_id": "bus_1788618572353_agent_apismith",
+  "timestamp": "2026-09-05T14:29:32.353557+00:00",
+  "sender": "Agent_APISmith",
+  "recipient": "Agent_FrontendCoder",
+  "topic": "API_LOGIC_COMPILED",
+  "payload": {
+    "has_script": true
+  }
+}

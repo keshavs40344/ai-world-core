@@ -1,0 +1,13 @@
+{
+  "message_id": "bus_1788618572682_agent_masterassembler",
+  "timestamp": "2026-09-05T14:29:32.682245+00:00",
+  "sender": "Agent_MasterAssembler",
+  "recipient": "ALL",
+  "topic": "SITE_DEPLOYED",
+  "payload": {
+    "project_name": "developer_api_infrastructure",
+    "root_path": "C:\\Users\\HP\\Desktop\\VASTUDA\\saas\\developer_api_infrastructure.html",
+    "public_path": "C:\\Users\\HP\\Desktop\\VASTUDA\\public\\saas\\developer_api_infrastructure.html",
+    "timestamp": "2026-09-05T14:29:32.682226+00:00"
+  }
+}
