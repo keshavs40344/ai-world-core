@@ -1,2 +1,4 @@
-main.py
+vault/
+*.py
 requirements.txt
+main.py
