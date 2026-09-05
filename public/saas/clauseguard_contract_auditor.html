@@ -65,7 +65,44 @@
             box-shadow: 0 0 25px -5px var(--accent);
         }
     </style>
-    <script src="../assets/genesis_payments_auth.js"></script>
+
+    <!-- DYNAMIC SEO & SOCIAL GRAPH (Auto-Injected) -->
+    <meta name="title" content="ClauseGuard — Indian NDA & Vendor Agreement Risk Scanner — Sovereign Enterprise Studio">
+    <meta name="description" content="Agencies & startups lose lakhs in one-sided indemnity clauses, unlimited liability traps, and delayed payout penalties.">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/saas/clauseguard_contract_auditor.html">
+    <meta property="og:title" content="ClauseGuard — Indian NDA & Vendor Agreement Risk Scanner — Sovereign Enterprise Studio">
+    <meta property="og:description" content="Agencies & startups lose lakhs in one-sided indemnity clauses, unlimited liability traps, and delayed payout penalties.">
+    <meta property="og:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=ClauseGuard%20%E2%80%94%20Indian%20NDA%20%26%20Vendor%20Agreem+Studio&font=montserrat">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/saas/clauseguard_contract_auditor.html">
+    <meta name="twitter:title" content="ClauseGuard — Indian NDA & Vendor Agreement Risk Scanner — Sovereign Enterprise Studio">
+    <meta name="twitter:description" content="Agencies & startups lose lakhs in one-sided indemnity clauses, unlimited liability traps, and delayed payout penalties.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=ClauseGuard%20%E2%80%94%20Indian%20NDA%20%26%20Vendor%20Agreem+Studio&font=montserrat">
+
+    <!-- JSON-LD Structured Data for Googlebot -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ClauseGuard — Indian NDA & Vendor Agreement Risk Scanner — Sovereign Enterprise Studio",
+      "url": "https://keshavs40344.github.io/ai-world-core/saas/clauseguard_contract_auditor.html",
+      "description": "Agencies & startups lose lakhs in one-sided indemnity clauses, unlimited liability traps, and delayed payout penalties.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <!-- /SEO BLOCK -->
+    
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
 
@@ -73,7 +110,6 @@
     <header class="border-b sticky top-0 z-40 backdrop-blur-xl bg-opacity-80" style="border-color: var(--border-color); background-color: var(--bg-color);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div id="genesisAuthWidget"></div>
                 <a href="../index.html" class="flex items-center gap-2.5 group">
                     <div class="w-8 h-8 rounded-xl flex items-center justify-center font-black text-white text-sm" style="background: var(--accent);">
                         Ω
@@ -91,7 +127,10 @@
                 <a href="https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper" target="_blank" class="hidden sm:inline-flex items-center text-xs font-semibold text-slate-300 hover:text-white px-3 py-1.5 rounded-lg border border-slate-800 hover:bg-slate-900 transition">
                     ⚡ API Engine ($9.99/mo)
                 </a>
-                
+                <button onclick="GenesisDonation.open()" class="text-xs font-bold text-rose-300 bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 px-4 py-2 rounded-xl transition shadow-sm flex items-center gap-1.5">
+                    <span>❤️</span>
+                    <span>Donate</span>
+                </button>
             </div>
         </div>
     </header>
@@ -305,7 +344,7 @@
             Genesis.IO.download(SLUG + '_audit_report.txt', out);
         }
 
-        function GenesisCheckout.open({ amount: '299.00' }) {
+        function triggerPaywallModal() {
             document.getElementById('payModal').classList.remove('hidden');
         }
 
