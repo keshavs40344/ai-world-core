@@ -78,8 +78,8 @@
 
     <script>
         let runs = parseInt(localStorage.getItem('vectordb_payload_normalizer_runs') || '0');
-        function triggerPaywall() {}
-        function closePaywall() { document.getElementById('paywallModal').classList.add('hidden'); }
+        function  {}
+        
         function saveLocal() {
             localStorage.setItem('vectordb_payload_normalizer_cache', document.getElementById('mainInput').value);
             alert('Workspace saved locally.');
@@ -91,10 +91,7 @@
             alert('Copied output to clipboard!');
         }
         function runAnalysis() {
-            if(runs >= 3) {
-                triggerPaywall();
-                return;
-            }
+            
             runs++;
             localStorage.setItem('vectordb_payload_normalizer_runs', runs);
             const val = document.getElementById('mainInput').value.trim();
@@ -106,7 +103,7 @@
                 'Evaluated Buffer: ' + val.length + ' bytes\n' +
                 'Token Load Estimate: ~' + tokenEstimate + ' tokens\n' +
                 'Estimated Savings Arbitrage: ~64.2% vs standard cloud APIs\n' +
-                'Action Quota Used: ' + runs + '/3 (Sandbox Tier)';
+                'Action Tier: 100% Free Sovereign Lifetime Access';
         }
         const cached = localStorage.getItem('vectordb_payload_normalizer_cache');
         if(cached) document.getElementById('mainInput').value = cached;

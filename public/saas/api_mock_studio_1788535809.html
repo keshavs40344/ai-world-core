@@ -160,8 +160,8 @@
         document.getElementById('responseView').textContent = document.getElementById('mockBody').value || '// Empty Response (204)';
       }, delay);
     }
-    function triggerPaywall() {}
-    function closePaywall() { document.getElementById('paywallModal').classList.add('hidden'); }
+    function  {}
+    
     function copyOutput() { navigator.clipboard.writeText(document.getElementById('responseView').textContent); alert('Copied to clipboard!'); }
     function downloadJson() {
       const blob = new Blob([document.getElementById('responseView').textContent], { type: 'application/json' });
