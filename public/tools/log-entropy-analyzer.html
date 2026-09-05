@@ -1,0 +1,1 @@
+<html><body><textarea id='t' rows='5' cols='50'>log1\nlog1\nlog2</textarea><button onclick='run()'>Analyze</button><div id='r'></div><script>function run(){fetch('/api/engine',{method:'POST',body:document.getElementById('t').value}).then(r=>r.json()).then(d=>document.getElementById('r').innerText=JSON.stringify(d))}</script></body></html>

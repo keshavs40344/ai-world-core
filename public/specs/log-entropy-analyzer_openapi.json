@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "log-entropy-analyzer",
+    "version": "1.0.0",
+    "description": "Developers struggle to identify noisy vs. critical logs in high-volume streams, leading to missed incidents."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
