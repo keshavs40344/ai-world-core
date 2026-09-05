@@ -1,30 +1,50 @@
 /**
- * GENESIS FIREBASE AUTHENTICATION & SOVEREIGN VAULT BRIDGE v3.0
+ * GENESIS FIREBASE AUTHENTICATION & SOVEREIGN VAULT BRIDGE v4.0
  * Configured for Firebase Project: saas-34243 (authDomain: saas-34243.firebaseapp.com)
  * Client ID: Ov23lisGNRJZQ6dy6f66 | App: saas-app | Production: keshavs40344.github.io
  * 
- * Flow:
- * 1. Attempts live Firebase Auth (GitHub OAuth / Google Sign-In / Email Auth).
- * 2. If API Key is unconfigured, missing, or throws auth/api-key-not-valid, it provides an
- *    instant, zero-delay developer fallback session so the user is NEVER blocked.
- * 3. Includes an elegant inline modal for users who want to configure their Google Cloud API Key.
+ * Features:
+ * 1. Live Firebase Auth with verified keys (GitHub OAuth / Google Sign-In / Email Auth).
+ * 2. Firestore integration (/users/{uid}) storing user telemetry (IP, OS, screen/window resolution,
+ *    browser language, timezone, and GitHub public metadata).
+ * 3. Failsafe zero-latency fallback so authentication & UI never block on network or adblockers.
  */
 
 (function(window) {
     'use strict';
 
     const DEFAULT_CONFIG = {
-        apiKey: "AIzaSyDummyKeyForGenesisAutonomousAuth",
+        apiKey: "AIzaSyDpSwbMUHP1L7hSK_o-3Kg4uW8pKaZfyR4",
         authDomain: "saas-34243.firebaseapp.com",
         projectId: "saas-34243",
-        storageBucket: "saas-34243.appspot.com",
-        messagingSenderId: "100000000000",
-        appId: "1:100000000000:web:saas34243AppId"
+        storageBucket: "saas-34243.firebasestorage.app",
+        messagingSenderId: "964647710435",
+        appId: "1:964647710435:web:368c5e868e434ed61f9fd6",
+        measurementId: "G-P8XJF24WHD"
+    };
+
+    // Expose modular-style helper functions for Firestore compatibility if accessed directly
+    window.getFirestore = function(app) {
+        return (window.firebase && window.firebase.firestore) ? window.firebase.firestore(app) : null;
+    };
+    window.doc = function(db, collectionPath, docId) {
+        if (!db && window.firebase && window.firebase.firestore) db = window.firebase.firestore();
+        return db ? db.collection(collectionPath).doc(docId) : null;
+    };
+    window.setDoc = function(docRef, data, options) {
+        if (!docRef) return Promise.resolve();
+        return docRef.set(data, options || {});
+    };
+    window.serverTimestamp = function() {
+        return (window.firebase && window.firebase.firestore && window.firebase.firestore.FieldValue)
+            ? window.firebase.firestore.FieldValue.serverTimestamp()
+            : new Date().toISOString();
     };
 
     const GenesisFirebase = {
         initialized: false,
         auth: null,
+        db: null,
         user: null,
 
         getConfig: function() {
@@ -32,7 +52,7 @@
                 const stored = localStorage.getItem("genesis_firebase_config");
                 if (stored) {
                     const parsed = JSON.parse(stored);
-                    if (parsed && parsed.apiKey) return parsed;
+                    if (parsed && parsed.apiKey && !parsed.apiKey.includes("DummyKey")) return parsed;
                 }
             } catch (e) {}
             return window.FIREBASE_CONFIG || DEFAULT_CONFIG;
@@ -55,40 +75,151 @@
         init: function(customConfig) {
             const cfg = customConfig || this.getConfig();
             try {
-                if (typeof window.firebase !== 'undefined' && window.firebase.auth) {
+                if (typeof window.firebase !== 'undefined') {
                     if (!window.firebase.apps.length) {
                         window.firebase.initializeApp(cfg);
                     }
-                    this.auth = window.firebase.auth();
+                    if (window.firebase.auth) {
+                        this.auth = window.firebase.auth();
+                    }
+                    if (window.firebase.firestore) {
+                        this.db = window.firebase.firestore();
+                    }
                     this.initialized = true;
 
-                    this.auth.onAuthStateChanged((user) => {
-                        this.user = user;
-                        if (user) {
-                            const sessionUser = {
-                                uid: user.uid,
-                                email: user.email,
-                                displayName: user.displayName || (user.email ? user.email.split('@')[0] : "Authenticated User"),
-                                avatar: (user.displayName || user.email || "G").charAt(0).toUpperCase(),
-                                photoURL: user.photoURL || null,
-                                provider: (user.providerData && user.providerData[0] && user.providerData[0].providerId) || "firebase",
-                                isFirebase: true,
-                                token: "fb_" + user.uid.substr(0, 10),
-                                loginAt: new Date().toISOString()
-                            };
-                            localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
-                            if (window.GenesisAuth && window.GenesisAuth.updateNavbarAuth) {
-                                window.GenesisAuth.updateNavbarAuth();
+                    if (this.auth) {
+                        this.auth.onAuthStateChanged((user) => {
+                            this.user = user;
+                            if (user) {
+                                const providerId = (user.providerData && user.providerData[0] && user.providerData[0].providerId) || "firebase";
+                                const sessionUser = {
+                                    uid: user.uid,
+                                    email: user.email,
+                                    displayName: user.displayName || (user.email ? user.email.split('@')[0] : "Authenticated User"),
+                                    avatar: (user.displayName || user.email || "G").charAt(0).toUpperCase(),
+                                    photoURL: user.photoURL || null,
+                                    provider: providerId,
+                                    isFirebase: true,
+                                    token: "fb_" + user.uid.substr(0, 10),
+                                    loginAt: new Date().toISOString()
+                                };
+                                localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+                                if (window.GenesisAuth && window.GenesisAuth.updateNavbarAuth) {
+                                    window.GenesisAuth.updateNavbarAuth();
+                                }
+                                if (typeof window.syncUserDisplay === 'function') {
+                                    window.syncUserDisplay();
+                                }
+                                // Silent non-blocking telemetry sync
+                                this.collectAndStoreUserTelemetry(user, null, providerId).catch(() => {});
                             }
-                            if (typeof window.syncUserDisplay === 'function') {
-                                window.syncUserDisplay();
-                            }
-                        }
-                    });
-                    console.log("%c🔥 Firebase Auth initialized for saas-34243", "color: #10b981; font-weight: bold;");
+                        });
+                    }
+                    console.log("%c🔥 Firebase Auth & Firestore live for saas-34243", "color: #10b981; font-weight: bold;");
                 }
             } catch (err) {
                 console.warn("Firebase Auth init note (using seamless Sovereign engine):", err);
+            }
+        },
+
+        /**
+         * Telemetry collector: gathers client IP, device specs, OS, screen/window dimensions,
+         * timezone, and GitHub profile details (if signed in via GitHub), then merges to /users/{uid}.
+         */
+        collectAndStoreUserTelemetry: async function(user, credential, providerId) {
+            if (!user || !user.uid) return;
+            try {
+                // 1. Visitor Public IP (non-blocking with timeout)
+                let ip = "unknown";
+                try {
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 3500);
+                    const ipRes = await fetch("https://api.ipify.org?format=json", {
+                        signal: controller.signal,
+                        cache: "no-store"
+                    });
+                    clearTimeout(timeoutId);
+                    if (ipRes.ok) {
+                        const ipData = await ipRes.json();
+                        ip = ipData.ip || "unknown";
+                    }
+                } catch (e) {
+                    // Fail gracefully on network or adblocker
+                }
+
+                // 2. Device & System details
+                const deviceData = {
+                    platform: (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "unknown",
+                    userAgent: navigator.userAgent || "unknown",
+                    language: navigator.language || (navigator.languages && navigator.languages[0]) || "unknown",
+                    timezone: (Intl && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().timeZone : "unknown",
+                    screenWidth: window.screen ? window.screen.width : 0,
+                    screenHeight: window.screen ? window.screen.height : 0,
+                    windowWidth: window.innerWidth || 0,
+                    windowHeight: window.innerHeight || 0,
+                    devicePixelRatio: window.devicePixelRatio || 1
+                };
+
+                // 3. For GitHub logins: query GitHub API if token available
+                let githubProfile = null;
+                const ghToken = (credential && credential.accessToken) || (user && user.githubToken) || null;
+                if ((providerId === "github.com" || (user.providerData && user.providerData.some(p => p.providerId === "github.com"))) && ghToken) {
+                    try {
+                        const controller = new AbortController();
+                        const timeoutId = setTimeout(() => controller.abort(), 4000);
+                        const ghRes = await fetch("https://api.github.com/user", {
+                            signal: controller.signal,
+                            headers: {
+                                "Authorization": "Bearer " + ghToken,
+                                "Accept": "application/vnd.github.v3+json"
+                            }
+                        });
+                        clearTimeout(timeoutId);
+                        if (ghRes.ok) {
+                            const ghData = await ghRes.json();
+                            githubProfile = {
+                                login: ghData.login || null,
+                                bio: ghData.bio || null,
+                                public_repos: typeof ghData.public_repos === "number" ? ghData.public_repos : 0,
+                                followers: ghData.followers || 0,
+                                following: ghData.following || 0,
+                                location: ghData.location || null,
+                                html_url: ghData.html_url || null
+                            };
+                        }
+                    } catch (e) {
+                        // Fail gracefully
+                    }
+                }
+
+                // 4. Document Payload
+                const payload = {
+                    uid: user.uid,
+                    email: user.email || null,
+                    displayName: user.displayName || null,
+                    photoURL: user.photoURL || null,
+                    providerId: providerId || "unknown",
+                    ip: ip,
+                    device: deviceData,
+                    lastLoginAt: new Date().toISOString(),
+                    updatedAt: (window.firebase && window.firebase.firestore && window.firebase.firestore.FieldValue)
+                        ? window.firebase.firestore.FieldValue.serverTimestamp()
+                        : new Date().toISOString()
+                };
+
+                if (githubProfile) {
+                    payload.github = githubProfile;
+                }
+
+                // 5. Store to Firestore /users/{uid} using setDoc / docRef.set({ merge: true })
+                if (window.firebase && window.firebase.firestore) {
+                    const db = this.db || window.firebase.firestore();
+                    await db.collection("users").doc(user.uid).set(payload, { merge: true });
+                    console.log(`%c📊 Telemetry syncd to Firestore /users/${user.uid}`, "color: #06b6d4;");
+                }
+            } catch (err) {
+                // Completely non-blocking: never interrupt user authentication
+                console.warn("Telemetry note (non-blocking):", err);
             }
         },
 
@@ -106,7 +237,7 @@
         signInWithGitHub: async function() {
             const cfg = this.getConfig();
 
-            // If real valid key exists and initialized, try live Firebase first
+            // If real valid key exists and initialized, execute live Firebase OAuth
             if (this.isApiKeyValid(cfg.apiKey) && this.initialized && this.auth) {
                 try {
                     const provider = new window.firebase.auth.GithubAuthProvider();
@@ -137,6 +268,10 @@
                     if (typeof window.syncUserDisplay === 'function') {
                         window.syncUserDisplay();
                     }
+
+                    // Record Telemetry
+                    this.collectAndStoreUserTelemetry(user, credential, "github.com").catch(() => {});
+
                     return { success: true, user: sessionUser };
                 } catch (error) {
                     console.warn("Firebase GitHub Sign-In note:", error);
@@ -144,12 +279,11 @@
                     if (error.code === 'auth/popup-closed-by-user') {
                         return { success: false, msg: "Sign-in cancelled: GitHub popup was closed." };
                     }
-                    // For API key mismatch or network/unauthorized domain, seamlessly fallback
+                    // For API key mismatch or network/unauthorized domain, gracefully provide instant session
                     return this._instantGitHubLogin();
                 }
             }
 
-            // Otherwise, instant smooth developer sign in
             return this._instantGitHubLogin();
         },
 
@@ -161,6 +295,8 @@
                     const provider = new window.firebase.auth.GoogleAuthProvider();
                     const result = await this.auth.signInWithPopup(provider);
                     const user = result.user;
+                    const credential = result.credential;
+
                     const sessionUser = {
                         uid: user.uid,
                         email: user.email,
@@ -179,6 +315,10 @@
                     if (typeof window.syncUserDisplay === 'function') {
                         window.syncUserDisplay();
                     }
+
+                    // Record Telemetry
+                    this.collectAndStoreUserTelemetry(user, credential, "google.com").catch(() => {});
+
                     return { success: true, user: sessionUser };
                 } catch (error) {
                     console.warn("Firebase Google Sign-In note:", error);
@@ -209,6 +349,8 @@
                     localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
                     if (window.GenesisAuth) window.GenesisAuth.updateNavbarAuth();
                     if (typeof window.syncUserDisplay === 'function') window.syncUserDisplay();
+                    
+                    this.collectAndStoreUserTelemetry(user, null, "password").catch(() => {});
                     return { success: true, user: sessionUser };
                 } catch (error) {
                     if (this._isApiKeyError(error)) {
@@ -240,6 +382,8 @@
                     localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
                     if (window.GenesisAuth) window.GenesisAuth.updateNavbarAuth();
                     if (typeof window.syncUserDisplay === 'function') window.syncUserDisplay();
+
+                    this.collectAndStoreUserTelemetry(user, null, "password").catch(() => {});
                     return { success: true, user: sessionUser };
                 } catch (error) {
                     if (this._isApiKeyError(error)) {
