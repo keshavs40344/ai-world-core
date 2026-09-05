@@ -1,4 +1,10 @@
 {
   "outputDirectory": "public",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
+    }
+  ]
 }

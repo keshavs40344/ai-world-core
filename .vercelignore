@@ -1,9 +1,2 @@
-# Ignore heavy local data/AI directories for Vercel
-.venv/
-venv/
-vault/
-db/
-foundry/
-release_gate/
-*.pyc
-__pycache__/
+main.py
+requirements.txt
