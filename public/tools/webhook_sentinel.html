@@ -42,6 +42,14 @@
     <!-- /SEO BLOCK -->
     
     <script src="../assets/genesis_payments_auth.js"></script>
+    <!-- Microsoft Clarity Live Recording -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "ydiazy740a");
+    </script>
 </head><body class="bg-slate-950 text-slate-100 min-h-screen p-6 font-sans flex flex-col"><header class="max-w-4xl mx-auto w-full mb-6 border-b border-slate-800 pb-4 flex justify-between items-center"><div><h1 class="text-xl font-bold text-white">Webhook Signature Sentinel</h1><p class="text-xs text-slate-400">100% Client-Side HMAC SHA256 Validation</p></div></header><main class="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow"><div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col"><label class="text-xs font-semibold mb-1">Secret Key & Payload:</label><input id="secret" type="password" class="w-full bg-slate-950 border border-slate-700 p-2 rounded text-xs mb-2 text-slate-200" placeholder="Webhook Signing Secret"/><textarea id="payload" class="flex-grow bg-slate-950 border border-slate-700 p-2 rounded text-xs font-mono text-slate-200 resize-none h-48" placeholder="Paste raw webhook body here..."></textarea><button onclick="calcHash()" class="mt-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-2 rounded">Compute HMAC-SHA256</button></div><div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col"><span class="text-xs font-semibold text-emerald-400 mb-1">Generated Signature & Status:</span><pre id="result" class="flex-grow bg-slate-950 border border-slate-800 p-3 rounded text-xs font-mono text-emerald-400 overflow-auto whitespace-pre-wrap">// Result hash appears here</pre><button onclick="navigator.clipboard.writeText(document.getElementById('result').textContent)" class="mt-2 bg-slate-800 text-slate-300 text-xs py-2 rounded">Copy Hash</button></div></main><script>async function calcHash(){const s=document.getElementById('secret').value;const p=document.getElementById('payload').value;if(!s||!p){document.getElementById('result').textContent='// Provide both secret and payload.';return;}const enc=new TextEncoder();const key=await crypto.subtle.importKey('raw',enc.encode(s),{name:'HMAC',hash:'SHA-256'},false,['sign']);const sig=await crypto.subtle.sign('HMAC',key,enc.encode(p));const hex=Array.from(new Uint8Array(sig)).map(b=>b.toString(16).padStart(2,'0')).join('');document.getElementById('result').textContent='sha256='+hex+'
 
 Header: X-Hub-Signature-256: sha256='+hex;}</script>

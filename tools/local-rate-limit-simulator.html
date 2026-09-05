@@ -37,4 +37,12 @@
     <!-- /SEO BLOCK -->
     
     <script src="../assets/genesis_payments_auth.js"></script>
+    <!-- Microsoft Clarity Live Recording -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "ydiazy740a");
+    </script>
 </head><body><h1>Token Bucket Simulator</h1><input id="rate" type="number" value="10" placeholder="Rate/sec"><input id="cap" type="number" value="20" placeholder="Capacity"><button onclick="test()">Test 5 Requests</button><div id="out"></div><script>let b={t:20,l:Date.now(),r:10,c:20};function test(){let r=[];for(let i=0;i<5;i++){let n=Date.now();b.t=Math.min(b.c,b.t+(n-b.l)*b.r/1000);b.l=n;if(b.t>=1){b.t--;r.push('OK')}else{r.push('429')}}document.getElementById('out').innerText=r.join(', ')}document.getElementById('rate').onchange=e=>b.r=e.target.value;document.getElementById('cap').onchange=e=>b.c=e.target.value;</script></body></html>

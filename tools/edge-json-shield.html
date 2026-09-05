@@ -37,4 +37,12 @@
     <!-- /SEO BLOCK -->
     
     <script src="../assets/genesis_payments_auth.js"></script>
+    <!-- Microsoft Clarity Live Recording -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "ydiazy740a");
+    </script>
 </head><body><h2>Edge JSON Shield</h2><p>Validate and sanitize JSON payloads for lightweight microservices.</p><textarea id="input" rows="10" cols="50">{"user": "test", "meta": null}</textarea><button onclick="test()">Execute</button><pre id="output"></pre><script>function test(){fetch('https://api..com/edge-json-shield', {method:'POST', body: document.getElementById('input').value}).then(r=>r.json()).then(d=>document.getElementById('output').innerText=JSON.stringify(d,null,2));}</script></body></html>

@@ -37,6 +37,14 @@
     <!-- /SEO BLOCK -->
     
     <script src="../assets/genesis_payments_auth.js"></script>
+    <!-- Microsoft Clarity Live Recording -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "ydiazy740a");
+    </script>
 </head><body class="bg-gray-900 text-gray-100 p-6"><div class="max-w-2xl mx-auto"><h1 class="text-2xl font-bold mb-4">MCP Payload Sanitizer</h1><textarea id="input" class="w-full h-32 bg-gray-800 border border-gray-700 rounded p-2 mb-2" placeholder='{"method": "tools/list", "params": {}}'></textarea><button onclick="run()" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded mb-4">Sanitize</button><pre id="output" class="bg-gray-800 border border-gray-700 rounded p-2 h-32 overflow-auto"></pre><button onclick="copy()" class="mt-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded">Copy Result</button></div><script>function run(){try{const d=JSON.parse(document.getElementById('input').value);if(!d.method)throw new Error('No method');document.getElementById('output').textContent=JSON.stringify({valid:true,method:d.method,params:d.params||{}},null,2)}catch(e){document.getElementById('output').textContent=JSON.stringify({valid:false,error:e.message},null,2)}}function copy(){navigator.clipboard.writeText(document.getElementById('output').textContent)}</script>
         <div style="margin-top:40px; padding:20px; background:#0f172a; border:1px solid #1e293b; border-radius:10px; text-align:center; font-family:sans-serif;">
             <p style="color:#94a3b8; font-size:13px; margin-bottom:10px;">⚡ High-performance client-side utility. Support independent zero-cost development:</p>
