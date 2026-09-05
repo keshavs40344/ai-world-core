@@ -1,0 +1,13 @@
+{
+  "message_id": "bus_1788617956147_agent_masterassembler",
+  "timestamp": "2026-09-05T14:19:16.147768+00:00",
+  "sender": "Agent_MasterAssembler",
+  "recipient": "ALL",
+  "topic": "SITE_DEPLOYED",
+  "payload": {
+    "project_name": "hyper_matrix_cloud",
+    "root_path": "C:\\Users\\HP\\Desktop\\VASTUDA\\saas\\hyper_matrix_cloud.html",
+    "public_path": "C:\\Users\\HP\\Desktop\\VASTUDA\\public\\saas\\hyper_matrix_cloud.html",
+    "timestamp": "2026-09-05T14:19:16.147728+00:00"
+  }
+}
