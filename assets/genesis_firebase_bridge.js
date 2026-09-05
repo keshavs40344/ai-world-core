@@ -110,6 +110,16 @@
                                 if (typeof window.syncUserDisplay === 'function') {
                                     window.syncUserDisplay();
                                 }
+                                // Microsoft Clarity User Identification Hook
+                                if (typeof window.clarity === "function") {
+                                    window.clarity("identify", user.uid, {
+                                        email: user.email || "Unknown",
+                                        name: user.displayName || "Anonymous User",
+                                        provider: providerId || "password"
+                                    });
+                                    window.clarity("set", "auth_status", "logged_in");
+                                    window.clarity("set", "email_verified", user.emailVerified ? "true" : "false");
+                                }
                                 // Silent non-blocking telemetry sync
                                 this.collectAndStoreUserTelemetry(user, null, providerId).catch(() => {});
                             }
@@ -197,6 +207,12 @@
                     uid: user.uid,
                     email: user.email || null,
                     displayName: user.displayName || null,
+                    phoneNumber: user.phoneNumber || null,
+                    company: null,
+                    role: "user",
+                    clientIP: ip,
+                    userAgent: navigator.userAgent || "unknown",
+                    emailVerified: user.emailVerified || false,
                     photoURL: user.photoURL || null,
                     providerId: providerId || "unknown",
                     ip: ip,

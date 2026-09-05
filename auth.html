@@ -257,6 +257,14 @@
     .back-link:hover{color:#94a3b8}
     .sep{margin:6px 0;height:1px;background:var(--border)}
   </style>
+    <!-- Microsoft Clarity Live Recording -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "ydiazy740a");
+    </script>
 </head>
 <body>
 
@@ -273,7 +281,7 @@
     <div class="field" style="margin-bottom:16px">
       <label class="field-label" for="fw-email">Email Address</label>
       <div class="input-wrap">
-        <input type="email" id="fw-email" placeholder="you@domain.com" autocomplete="email"/>
+        <input type="email" id="fw-email" placeholder="you@domain.com" data-clarity-mask="true" autocomplete="email"/>
       </div>
       <span id="fw-err" class="field-msg err">Please enter a valid email address.</span>
     </div>
@@ -352,7 +360,7 @@
       <div class="field">
         <label class="field-label" for="in-pw">Password</label>
         <div class="input-wrap">
-          <input type="password" id="in-pw" class="has-icon" placeholder="Minimum 8 characters" autocomplete="current-password" required/>
+          <input type="password" id="in-pw" class="has-icon" data-clarity-mask="true" placeholder="Minimum 8 characters" autocomplete="current-password" required/>
           <button type="button" class="eye-btn" id="eye-pw" aria-label="Toggle password visibility">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </button>
@@ -369,7 +377,7 @@
       <div class="field hidden" id="f-confirm">
         <label class="field-label" for="in-confirm">Confirm Password</label>
         <div class="input-wrap">
-          <input type="password" id="in-confirm" class="has-icon" placeholder="Repeat password" autocomplete="new-password"/>
+          <input type="password" id="in-confirm" class="has-icon" data-clarity-mask="true" placeholder="Repeat password" autocomplete="new-password"/>
           <button type="button" class="eye-btn" id="eye-confirm" aria-label="Toggle confirm password visibility">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </button>
@@ -614,6 +622,13 @@ async function syncFirestore(user, ghExtra) {
       uid:           user.uid,
       email:         user.email         || null,
       displayName:   user.displayName   || null,
+      phoneNumber:   user.phoneNumber   || null,
+      company:       null,
+      role:          "user",
+      clientIP:      ip,
+      userAgent:     navigator.userAgent,
+      lastLoginAt:   serverTimestamp(),
+      emailVerified: user.emailVerified  || false,
       photoURL:      user.photoURL      || "https://ui-avatars.com/api/?name=" + encodeURIComponent(user.email || "U") + "&background=6366f1&color=fff",
       providerId:    pid,
       emailVerified: user.emailVerified  || false,
@@ -714,12 +729,32 @@ function renderDash(user) {
 }
 
 /* ── SESSION LISTENER ─────────────────────────────────────────────── */
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
   if (user) {
+    // ── Microsoft Clarity Identity Mapping & Session Tagging ──
+    try {
+      if (typeof window.clarity === "function") {
+        window.clarity("identify", user.uid, {
+          email: user.email || "Unknown",
+          name: user.displayName || "Anonymous User",
+          provider: (user.providerData && user.providerData[0] && user.providerData[0].providerId) || "password"
+        });
+        window.clarity("set", "auth_status", "logged_in");
+        window.clarity("set", "email_verified", user.emailVerified ? "true" : "false");
+      }
+    } catch (cErr) {
+      console.warn("Clarity identify hook note:", cErr);
+    }
+
     renderDash(user);
     // Background Firestore sync
     syncFirestore(user).catch(() => {});
   } else {
+    try {
+      if (typeof window.clarity === "function") {
+        window.clarity("set", "auth_status", "logged_out");
+      }
+    } catch (cErr) {}
     document.getElementById("auth-card").classList.remove("hidden");
     document.getElementById("dash-card").classList.remove("show");
   }
