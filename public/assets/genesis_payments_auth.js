@@ -337,7 +337,7 @@
                 if (window.GenesisAuth) window.GenesisAuth.closeModal();
                 alert(`Welcome @${res.user.displayName}! Successfully authenticated with GitHub via Firebase.`);
                 if (window.location.pathname.endsWith("login.html")) {
-                    window.location.href = "index.html";
+                    window.location.href = "dashboard.html";
                 }
             } else if (res.msg) {
                 alert(res.msg);
@@ -353,6 +353,9 @@
             if (res.success) {
                 if (window.GenesisAuth) window.GenesisAuth.closeModal();
                 alert(`Welcome ${res.user.displayName}! Signed in securely with Google Firebase.`);
+                if (window.location.pathname.endsWith("login.html")) {
+                    window.location.href = "dashboard.html";
+                }
             } else if (res.msg) {
                 alert(res.msg);
             }
