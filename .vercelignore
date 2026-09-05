@@ -1,5 +1,6 @@
 vault/
 *.py
+**/*.py
 requirements.txt
 main.py
 venv/
