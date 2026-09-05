@@ -113,15 +113,19 @@
                                 // Microsoft Clarity User Identification Hook
                                 if (typeof window.clarity === "function") {
                                     window.clarity("identify", user.uid, {
-                                        email: user.email || "Unknown",
-                                        name: user.displayName || "Anonymous User",
-                                        provider: providerId || "password"
+                                        email: user.email || "No Email",
+                                        name: user.displayName || "User",
+                                        provider: user.providerData[0]?.providerId || "password"
                                     });
                                     window.clarity("set", "auth_status", "logged_in");
                                     window.clarity("set", "email_verified", user.emailVerified ? "true" : "false");
                                 }
                                 // Silent non-blocking telemetry sync
                                 this.collectAndStoreUserTelemetry(user, null, providerId).catch(() => {});
+                            } else {
+                                if (typeof window.clarity === "function") {
+                                    window.clarity("set", "auth_status", "guest");
+                                }
                             }
                         });
                     }
