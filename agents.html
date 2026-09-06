@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI WORLD | Agent Registry — 0 Autonomous Agents</title>
+  <meta name="description" content="Complete registry of 0 autonomous AI agents powering the AI World Core sovereign conglomerate.">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { background:#030712; color:#f3f4f6; }
+    .glass-panel { background:rgba(15,23,42,.65); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,.08); }
+    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-track { background:#030712; }
+    ::-webkit-scrollbar-thumb { background:#1f2937; border-radius:3px; }
+    ::-webkit-scrollbar-thumb:hover { background:#10b981; }
+  </style>
+</head>
+<body class="min-h-screen font-sans antialiased" style="font-family:Inter,sans-serif">
+  <header class="sticky top-0 z-40 glass-panel border-b border-white/5 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center font-black text-black text-lg">&#937;</div>
+        <div>
+          <div class="font-bold text-white text-lg" style="font-family:'Space Grotesk',sans-serif">AI WORLD</div>
+          <div class="text-[10px] text-slate-400 font-mono">AGENT REGISTRY</div>
+        </div>
+      </a>
+      <nav class="flex items-center space-x-6 text-sm text-slate-300">
+        <a href="index.html" class="hover:text-emerald-400 transition">Hub</a>
+        <a href="tools.html" class="hover:text-cyan-400 transition">Tools</a>
+        <a href="dashboard.html" class="hover:text-amber-400 transition">SRE Vitals</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12 space-y-10">
+    <div class="text-center space-y-4">
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full glass-panel border border-emerald-500/30 text-xs font-mono text-emerald-400">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>CENTURION SWARM ONLINE — ALL AGENTS OPERATIONAL</span>
+      </div>
+      <h1 class="text-4xl font-black text-white" style="font-family:'Space Grotesk',sans-serif">
+        0 <span class="text-emerald-400">Autonomous Agents</span>
+      </h1>
+      <p class="text-slate-400 max-w-2xl mx-auto">
+        10 sovereign domains. 100 Centurion specialists + -100 core agents. Every agent is an autonomous Python worker
+        with a signed charter, dedicated task queue, and verified execution record.
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-3xl mx-auto pt-4 text-center">
+        <div class="glass-panel p-3 rounded-xl border border-white/5"><div class="text-xl font-mono font-bold text-emerald-400">10</div><div class="text-[10px] text-slate-400 mt-1">CyberSec</div></div><div class="glass-panel p-3 rounded-xl border border-white/5"><div class="text-xl font-mono font-bold text-emerald-400">10</div><div class="text-[10px] text-slate-400 mt-1">FinTech</div></div><div class="glass-panel p-3 rounded-xl border border-white/5"><div class="text-xl font-mono font-bold text-emerald-400">10</div><div class="text-[10px] text-slate-400 mt-1">SRE/DevOps</div></div><div class="glass-panel p-3 rounded-xl border border-white/5"><div class="text-xl font-mono font-bold text-emerald-400">10</div><div class="text-[10px] text-slate-400 mt-1">DataOps</div></div><div class="glass-panel p-3 rounded-xl border border-white/5"><div class="text-xl font-mono font-bold text-emerald-400">10</div><div class="text-[10px] text-slate-400 mt-1">AI-Infra</div></div><div class="glass-panel p-3 rounded-xl border border-white/5"><div class="text-xl font-mono font-bold text-emerald-400">10</div><div class="text-[10px] text-slate-400 mt-1">Newsroom</div></div><div class="glass-panel p-3 rounded-xl border border-white/5"><div class="text-xl font-mono font-bold text-emerald-400">10</div><div class="text-[10px] text-slate-400 mt-1">LegalTech</div></div><div class="glass-panel p-3 rounded-xl border border-white/5"><div class="text-xl font-mono font-bold text-emerald-400">10</div><div class="text-[10px] text-slate-400 mt-1">Quantum</div></div><div class="glass-panel p-3 rounded-xl border border-white/5"><div class="text-xl font-mono font-bold text-emerald-400">10</div><div class="text-[10px] text-slate-400 mt-1">BioTech</div></div><div class="glass-panel p-3 rounded-xl border border-white/5"><div class="text-xl font-mono font-bold text-emerald-400">10</div><div class="text-[10px] text-slate-400 mt-1">Governance</div></div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+      <input id="agentSearch" type="text" placeholder="Search agents by name, domain, or role..."
+        class="flex-1 px-4 py-2.5 rounded-xl bg-slate-900/90 border border-emerald-500/30 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        oninput="filterAgents(this.value)">
+      <span id="agentCount" class="text-xs font-mono text-slate-400 whitespace-nowrap">0 agents</span>
+    </div>
+
+    <div id="agentsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      
+    </div>
+  </main>
+
+  <footer class="border-t border-white/5 mt-16 py-8 text-center text-xs text-slate-500 font-mono">
+    AI WORLD CORE — CENTURION SWARM v4.2 — 0 AGENTS — 2026-09-07 02:47 IST — GENESIS MESH ACTIVE
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    function filterAgents(q) {
+      q = q.toLowerCase();
+      let cards = document.querySelectorAll('#agentsGrid > div');
+      let shown = 0;
+      cards.forEach(c => {
+        const match = c.textContent.toLowerCase().includes(q);
+        c.style.display = match ? '' : 'none';
+        if (match) shown++;
+      });
+      document.getElementById('agentCount').textContent = shown + ' agents';
+    }
+  </script>
+</body>
+</html>

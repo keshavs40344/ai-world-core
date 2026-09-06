@@ -1,341 +1,85 @@
-# 🌍 AI WORLD CORE — Autonomous Sovereign Software Conglomerate
+# AI WORLD CORE
+### Autonomous Sovereign Software Conglomerate — v4.2 Centurion Swarm
 
-> **"Discover. Build. Audit. Deploy. Evolve — autonomously, every hour."**
+> **Live Portal:** [keshavs40344.github.io/ai-world-core](https://keshavs40344.github.io/ai-world-core)
 
-[![GitHub Pages](https://img.shields.io/badge/Live%20Site-GitHub%20Pages-brightgreen?style=flat-square)](https://keshavs40344.github.io/ai-world-core/)
-[![Health](https://img.shields.io/badge/System%20Health-100%25-brightgreen?style=flat-square)](#health)
-[![Tools](https://img.shields.io/badge/Live%20Tools-47-blue?style=flat-square)](https://keshavs40344.github.io/ai-world-core/public/saas/)
-[![Senate Decrees](https://img.shields.io/badge/GPAA%20Decrees-10%2B-purple?style=flat-square)](#gpaa-2026)
-[![Telegram](https://img.shields.io/badge/Telegram%20Alerts-Live-blue?style=flat-square)](#telegram-notifications)
-
-AI WORLD CORE is a **zero-human, fully autonomous multi-agent software conglomerate** that continuously discovers high-margin enterprise problems, engineers complete client-side tools, peer-reviews them through a 4-tier academic gate, and deploys them live to GitHub Pages — with real-time Telegram notifications on every event.
+[![Health](https://img.shields.io/badge/System%20Health-100%25-brightgreen)](https://keshavs40344.github.io/ai-world-core)
+[![Agents](https://img.shields.io/badge/Autonomous%20Agents-0-violet)](https://keshavs40344.github.io/ai-world-core/agents.html)
+[![Tools](https://img.shields.io/badge/SaaS%20Tools-50-cyan)](https://keshavs40344.github.io/ai-world-core/tools.html)
 
 ---
 
-## 🔗 Live Portal
+## What Is This?
 
-**[https://keshavs40344.github.io/ai-world-core/](https://keshavs40344.github.io/ai-world-core/)**
+AI World Core is a **fully autonomous software conglomerate** — an always-online mesh of:
 
-- **47 production tools** running in `public/saas/` (including **StreamJSON**, **EntropyShield**, and **Network Security Audit Suite**)
-- **Heavyweight ASGI Server (`sovereign_industrial_grid.py`)** executing real OS DNS lookups, WAL SQLite persistence, and HMAC webhooks
-- **10+ governance decrees** recorded in SQLite
-- **Zero server dependency** — every tool runs 100% in the browser
-- **Real-time Telegram alerts** on every deployment
-
-### 📊 Dual Dashboard Architecture
-
-| Dashboard | Access | URL | Features |
-|---|---|---|---|
-| **User Dashboard** | Public / Open | [`user_dashboard.html`](https://keshavs40344.github.io/ai-world-core/public/user_dashboard.html) / [`dashboard.html`](https://keshavs40344.github.io/ai-world-core/public/dashboard.html) | Live telemetry KPIs, 35-tool searchable catalog, GPAA senate decree showcase, client-side AST sandbox. |
-| **Admin Mission Control** | **LOCKED** (Level 5) | [`admin_dashboard.html`](https://keshavs40344.github.io/ai-world-core/public/admin_dashboard.html) | Cryptographic vault lock screen (PIN/Passphrase), interactive Telegram dispatcher, decree force-forger, daemon controls, keyring management. |
-
-> **Default Admin Access Credentials:**
-> - **Sovereign PIN:** `202699`
-> - **Master Passphrase:** `GENESIS-2026-APEX`
-> - *Configurable inside the unlocked Admin Keyring with SHA-256 client-side hashing.*
+| Component | Count | Description |
+|-----------|-------|-------------|
+| Autonomous AI Agents | **0** | Python workers across 10 sovereign domains |
+| Client-Side SaaS Tools | **50** | Zero-server, sub-10ms browser utilities |
+| Wire Service (Broadsheet) | **5 Pages** | Autonomous 24x7 news synthesis engine |
+| Database Ledgers | **4** | SQLite/PostgreSQL state machines |
+| Vault Charters | **100+** | Signed agent mission documents |
 
 ---
 
-## 🏛️ GPAA-2026 — Global Planetary Academic Administration
-
-The crown engine of this system. A fully autonomous **7-faculty senate** that ratifies a new civilizational-grade tool every hour.
-
-### 7 Active Faculties
-
-| # | Faculty | Dean | Terminal |
-|---|---|---|---|
-| F1 | Faculty of Planetary Macro-Equilibrium | Chancellor Sterling Vance | [global_macro_resource_rebalancer](https://keshavs40344.github.io/ai-world-core/public/saas/global_macro_resource_rebalancer.html) |
-| F2 | Faculty of Computational Sovereignty | Chancellor Marcus Brain | [global_compute_energy_optimizer](https://keshavs40344.github.io/ai-world-core/public/saas/global_compute_energy_optimizer.html) |
-| F3 | Institute of Planetary Pathology & Biosafety | Chancellor Sarah Aegis | [global_pathogen_early_warning](https://keshavs40344.github.io/ai-world-core/public/saas/global_pathogen_early_warning.html) |
-| F4 | Rectorate of Universal Pedagogy | Chancellor Elena Rostova | [universal_pedagogy_accelerator](https://keshavs40344.github.io/ai-world-core/public/saas/universal_pedagogy_accelerator.html) |
-| F5 | Department of Planetary Jurisprudence & Ethics | Chancellor Viktor Solaris | [zk_governance_proof_sentinel](https://keshavs40344.github.io/ai-world-core/public/saas/zk_governance_proof_sentinel.html) |
-| F6 | Scientific Discovery & Deep Exploration Labs | Chancellor Yuki Tanaka | [fusion_solar_grid_architect](https://keshavs40344.github.io/ai-world-core/public/saas/fusion_solar_grid_architect.html) |
-| F7 | Senior Chancellor's Provost & Code Verifier | Chancellor Athena Prime | [planetary_code_quality_gate](https://keshavs40344.github.io/ai-world-core/public/saas/planetary_code_quality_gate.html) |
-
-### How Each Decree Works
-
-Every hour the daemon runs this pipeline autonomously:
+## Architecture
 
 ```
-SELECT FACULTY (round-robin)
-    ↓
-COMPILE HTML TERMINAL  (inline CSS, zero CDN deps)
-    ↓
-F7-PROVOST DOM AUDIT  (DOCTYPE + </html> verified)
-    ↓
-DEPLOY  → public/saas/{slug}.html
-    ↓
-ZK PROOF  (SHA-3 cryptographic integrity seal)
-    ↓
-BUS SIGNAL  → vault/bus/
-DEANERY CHARTER  → vault/departments/
-SQLITE LEDGER  → db/genesis_state.db
-TELEMETRY  → public/live_telemetry.json
-PORTAL CARDS  → public/index.html
-    ↓
-TELEGRAM NOTIFICATION  (5 alerts sent to operator)
-```
-
-### Run the Daemon
-
-```powershell
-# Deploy all 7 faculty terminals right now
-python planetary_governance_daemon.py --all
-
-# Start autonomous hourly loop (production)
-python planetary_governance_daemon.py
-
-# Custom interval (e.g. every 5 minutes for testing)
-python planetary_governance_daemon.py --interval 300
-
-# Single cycle
-```
-
----
-
-## ♾️ Autonomous Perpetual Self-Driving Engine (`autonomous_perpetual_engine.py`)
-
-A 100% hands-free, infinite autonomous engine that operates without human prompting:
-- **Phase 1 (Radar):** Selects acute engineering, data, and security problems from the problem genome.
-- **Phase 2 (Foundry):** Compiles 100% client-side functional JavaScript + Linear-style Dark Zinc `#09090b` UI.
-- **Phase 3 (Gatekeeper):** Performs automated AST and DOM validation with zero human delays.
-- **Phase 4 (Deployment & Bus):** Deploys tool to `public/saas/`, rehydrates `public/index.html` catalog, emits bus signals, and dispatches instant Telegram bulletins.
-
-```powershell
-# Run infinite self-driving loop (every 60 seconds)
-python autonomous_perpetual_engine.py
-
-# Run single autonomous synthesis cycle
-python autonomous_perpetual_engine.py --once
-```
-
----
-
-## ⚡ Live Hybrid Server & Internet Intelligence Node (`server.py`)
-
-A live ASGI FastAPI backend node that bridges client-side applications to live internet operations:
-
-### Capabilities
-- **Continuous SSE Telemetry Stream:** Pushes 1-second continuous telemetry frames to frontend listeners via Server-Sent Events (`/api/v1/stream-telemetry`).
-- **Live DNS & Gateway Latency:** Measures authoritative roundtrip ping to `1.1.1.1:53` in milliseconds (`/api/v1/live-feed`).
-- **Real-Time FX & Market Telemetry:** Instant interbank spot rates for USD/EUR, USD/GBP, USD/INR, and BTC/USD.
-- **Live Target Inspector & SSL Profiler:** Performs real outbound TCP connection, SSL handshake certificate inspection (issuer, validity, TLS version), and HTTP security headers audit (`/api/v1/inspect-target?target_url=...`).
-
-### Run the Hybrid Server
-```powershell
-# 1. Install dependencies
-pip install fastapi uvicorn
-
-# 2. Start the live ASGI server
-python server.py
-# Server listening on: http://127.0.0.1:8000
-```
-Open `http://127.0.0.1:8000` in your browser to access the live workbench.
-
----
-
-## 🔔 Telegram Notifications
-
-Every system event fires an instant Telegram message to the operator:
-
-| Notification | Trigger |
-|---|---|
-| 🏛️ Senate Decree Ratified | New tool deployed with live link |
-| ✅ DOM Audit PASS | Faculty 7 Provost clears HTML |
-| ❌ DOM Audit FAIL | Malformed HTML — decree aborted |
-| 📨 Bus Signal Emitted | Decree broadcast to message bus |
-| 📡 Telemetry Update | Fleet size + entropy index |
-| 🌐 Portal Cards Updated | `index.html` refreshed |
-| 🌍 Daemon Activated | Loop started with interval info |
-| ⚠️ Senate Exception | Error reported with context |
-| ⚡ Bootstrap Complete | All 7 faculties deployed |
-
----
-
-## 🛠️ Live Tools — `public/saas/`
-
-41 production-grade browser tools deployed (zero server required + optional hybrid node):
-
-### 🎨 Bespoke Artisan Suite (Human-Engineered Client-Side Tools) (6)
-| Tool | Description |
-|---|---|
-| [AURA Live Internet Telemetry & Target Inspector](https://keshavs40344.github.io/ai-world-core/public/saas/live_network_workbench.html) | Hybrid FastAPI server client streaming live authoritative DNS pings, SSL/TLS certificate handshakes, HTTP security headers, and 1-sec SSE telemetry |
-| [DocuSize Govt Exam & Visa Photo Resizer](https://keshavs40344.github.io/ai-world-core/public/saas/docusize_photo_resizer.html) | 100% Client-side photo and signature compressor for UPSC, SSC, NEET, JEE, IBPS & Passport with exact KB target, signature background cleaner, and candidate name/date stamp |
-| [DiffSmith Semantic AST Engine](https://keshavs40344.github.io/ai-world-core/public/saas/diffsmith_schema_engine.html) | Stateful JSON & RFC 6902 patch generator with 50MB drag & drop, regex search, and 100-node DOM virtualization |
-| [CryptoCraft Entropy Shield](https://keshavs40344.github.io/ai-world-core/public/saas/cryptocraft_entropy_shield.html) | Offline SHA-256/512 hasher & Shannon entropy profiler with byte frequency analyzer |
-| [QuerySmith SQL Formatter](https://keshavs40344.github.io/ai-world-core/public/saas/sql_syntax_formatter_pro.html) | High-performance SQL beautifier, AST tokenizer, and table dependency extractor |
-| [Cryptographic Token Entropy Inspector](https://keshavs40344.github.io/ai-world-core/public/saas/cryptographic_token_entropy_inspector.html) | High-entropy secret and token leak detector with pattern analysis |
-
-### 🏛️ GPAA-2026 Senate Terminals (7)
-| Tool | Description |
-|---|---|
-| [Planetary Macro Resource Rebalancer](https://keshavs40344.github.io/ai-world-core/public/saas/global_macro_resource_rebalancer.html) | Global supply chain deadlock & grain-energy parity solver |
-| [Global Compute Energy Optimizer](https://keshavs40344.github.io/ai-world-core/public/saas/global_compute_energy_optimizer.html) | VRAM/compute allocation across datacenters |
-| [Global Pathogen Early Warning](https://keshavs40344.github.io/ai-world-core/public/saas/global_pathogen_early_warning.html) | Pandemic signal detection & biosafety protocol |
-| [Universal Pedagogy Accelerator](https://keshavs40344.github.io/ai-world-core/public/saas/universal_pedagogy_accelerator.html) | AI-driven adaptive learning engine |
-| [ZK Governance Proof Sentinel](https://keshavs40344.github.io/ai-world-core/public/saas/zk_governance_proof_sentinel.html) | Zero-knowledge anti-corruption audit terminal |
-| [Fusion-Solar Grid Architect](https://keshavs40344.github.io/ai-world-core/public/saas/fusion_solar_grid_architect.html) | Clean energy grid planning & carbon audit |
-| [Planetary Code Quality Gate](https://keshavs40344.github.io/ai-world-core/public/saas/planetary_code_quality_gate.html) | AST + DOM integrity auditor |
-
-### ⚡ FinTech & Revenue Tools (7)
-| Tool | Description |
-|---|---|
-| [GST Reconcile Pro Ledger](https://keshavs40344.github.io/ai-world-core/public/saas/gst_reconcile_pro_ledger.html) | Indian GST mismatch detection & reconciliation |
-| [Forex Leakage Auditor](https://keshavs40344.github.io/ai-world-core/public/saas/forex_leakage_auditor.html) | Currency exposure & FX risk scanner |
-| [Forex Leakage Pro](https://keshavs40344.github.io/ai-world-core/public/saas/forex_leakage_pro.html) | Advanced forex leakage profiler |
-| [Wharton DTAA Tax Forecaster](https://keshavs40344.github.io/ai-world-core/public/saas/wharton_dtaa_tax_forecaster.html) | Double-taxation treaty impact modeler |
-| [TaxShield Freelance Engine](https://keshavs40344.github.io/ai-world-core/public/saas/taxshield_freelance_engine.html) | Freelancer tax optimization dashboard |
-| [Invoice Forge Pro](https://keshavs40344.github.io/ai-world-core/public/saas/invoice_forge_pro.html) | Professional invoice generator |
-| [Freight Cost IQ](https://keshavs40344.github.io/ai-world-core/public/saas/freight_cost_iq.html) | Logistics & shipping cost analyzer |
-
-### 🔐 Security & Infra Tools (7)
-| Tool | Description |
-|---|---|
-| [JWT Sentinel Guard](https://keshavs40344.github.io/ai-world-core/public/saas/jwt_sentinel_guard.html) | JWT vulnerability scanner |
-| [IIT Zero Trust JWT Profiler](https://keshavs40344.github.io/ai-world-core/public/saas/iit_zero_trust_jwt_profiler.html) | Zero-trust JWT audit engine |
-| [Secret Scrubber Studio](https://keshavs40344.github.io/ai-world-core/public/saas/secret_scrubber_studio.html) | API key & secret detection |
-| [DB Lock Deadlock Sentinel](https://keshavs40344.github.io/ai-world-core/public/saas/db_lock_deadlock_sentinel.html) | Database deadlock analyzer |
-| [Contract Indemnity Shield](https://keshavs40344.github.io/ai-world-core/public/saas/contract_indemnity_shield.html) | Contract risk & indemnity scanner |
-| [Contract Shield Risk Scanner](https://keshavs40344.github.io/ai-world-core/public/saas/contract_shield_risk_scanner.html) | Legal risk profiler |
-| [ClauseGuard Contract Auditor](https://keshavs40344.github.io/ai-world-core/public/saas/clauseguard_contract_auditor.html) | AI clause-level contract audit |
-
-### 🤖 AI & LLM Tools (6)
-| Tool | Description |
-|---|---|
-| [LatencyBench LLM Profiler](https://keshavs40344.github.io/ai-world-core/public/saas/latencybench_llm_profiler.html) | LLM response time benchmarking |
-| [LLM Token Arbitrage Studio](https://keshavs40344.github.io/ai-world-core/public/saas/llm_token_arbitrage_studio.html) | Token cost optimizer across providers |
-| [Stanford VRAM Inference Allocator](https://keshavs40344.github.io/ai-world-core/public/saas/stanford_vram_inference_allocator.html) | GPU memory allocation planner |
-| [VRAM Inference Allocator](https://keshavs40344.github.io/ai-world-core/public/saas/vram_inference_allocator.html) | VRAM budget optimizer |
-| [Hyper Matrix Cloud](https://keshavs40344.github.io/ai-world-core/public/saas/hyper_matrix_cloud.html) | Cloud inference topology designer |
-| [Developer API Infrastructure](https://keshavs40344.github.io/ai-world-core/public/saas/developer_api_infrastructure.html) | API architecture blueprint tool |
-
-### 🗄️ Data & SQL Tools (5)
-| Tool | Description |
-|---|---|
-| [SQL Latency Optimizer](https://keshavs40344.github.io/ai-world-core/public/saas/sql_latency_optimizer.html) | SQL query execution planner |
-| [CMU SQL Explain Visualizer](https://keshavs40344.github.io/ai-world-core/public/saas/cmu_sql_explain_visualizer.html) | Visual SQL EXPLAIN analyzer |
-| [API Mock Studio](https://keshavs40344.github.io/ai-world-core/public/saas/api_mock_studio_1788551790.html) | REST API mock generator |
-| [VectorDB Payload Normalizer](https://keshavs40344.github.io/ai-world-core/public/saas/vectordb_payload_normalizer.html) | Vector database schema normalizer |
-| [Planetary Governance Terminal](https://keshavs40344.github.io/ai-world-core/public/saas/planetary_governance_terminal.html) | Interactive GPAA senate terminal |
-
----
-
-## 🏗️ System Architecture
-
-```
-ai-world-core/
-│
-├── planetary_governance_daemon.py  ← GPAA-2026 hourly senate engine
-├── sentinel_self_healing_watchdog.py  ← Autonomous self-healing loop
-├── genesis_sovereign_evolution_core.py  ← Evolution engine
-├── auto_senior_approval_gate.py  ← Zero-timeout AI approval
-├── check_everything_alive.py  ← Full 8-section health audit
-│
+AI WORLD CORE
+├── index.html             ← Main hub portal
+├── agents.html            ← 0-agent Centurion registry  
+├── tools.html             ← Full 50-tool catalogue
+├── dashboard.html         ← SRE vitals cockpit
+├── auth.html              ← Firebase auth portal
+├── sovereign_broadsheet.py← Multi-page autonomous newspaper (FastAPI)
+├── monetization_engine.py ← B2B API metering + subscription engine
+├── chronicle_ultra.py     ← Autonomous news wire daemon
 ├── public/
-│   ├── index.html  ← Live portal (auto-updated by daemon)
-│   ├── dashboard.html  ← Operator dashboard
-│   ├── live_telemetry.json  ← Real-time fleet telemetry
-│   ├── live_earnings_pulse.json  ← Senate monetization pulse
-│   └── saas/  ← 35 production browser tools
-│
+│   └── saas/              ← 50 HTML tool modules
+├── genesis/
+│   └── agents/            ← 0 Python agent workers + manifest.json
 ├── vault/
-│   ├── bus/  ← 48+ inter-agent bus signals
-│   ├── departments/  ← 7 deanery charters (faculty JSON)
-│   ├── proposals/  ← Pending asset queue
-│   └── autonomous_assets/
-│
-├── governance/
-│   ├── tier_a_validator.py  ← AST + auto-approve gate
-│   └── tier_b_gate.py  ← Senior AI fast-path reviewer
-│
-├── db/
-│   └── genesis_state.db  ← SQLite: 10 tables, 10+ decrees
-│
-└── approved/  ← Production-cleared artifacts
+│   └── sub_agents/        ← 100 signed charter JSONs
+└── db/
+    └── genesis_state.db   ← 19-table SQLite state machine
 ```
 
----
+## The Centurion Swarm (100 Specialist Agents)
 
-## ⚡ Autonomous Governance Pipeline
+10 sovereign domains × 10 agents each:
 
-```
-New Asset Created
-      ↓
-Tier A Validator (AST compile check)
-      ↓
-Senior AI Reviewer  ← auto_senior_approval_gate.py
-(Zero human lag — instant APPROVED stamp)
-      ↓
-Auto-Promote to approved/ + public/saas/
-      ↓
-Telegram Notification  ← operator informed
-      ↓
-Git Commit + Push  ← GitHub Pages live in ~60s
-```
+| Domain | IDs | Specialization |
+|--------|-----|----------------|
+| CyberSecurity | csec_01–10 | SIEM, threat hunting, intrusion detection |
+| FinTech | fin_11–20 | Arbitrage, risk modeling, treasury |
+| SRE/DevOps | sre_21–30 | Reliability engineering, incident response |
+| DataOps | data_31–40 | Pipeline orchestration, data quality |
+| AI-Infra | ai_41–50 | LLM optimization, VRAM planning |
+| Newsroom | news_51–60 | Autonomous journalism, wire synthesis |
+| LegalTech | leg_61–70 | Contract analysis, compliance auditing |
+| Quantum/Crypto | qc_71–80 | ZK proofs, post-quantum cryptography |
+| BioTech | bio_81–90 | Genomics, drug discovery, proteomics |
+| Governance | gov_91–100 | DAO governance, regulatory intelligence |
 
----
+## SaaS Tools (50 Modules)
 
-## 🔁 Self-Healing & Evolution
+All tools are **100% client-side** — no server, no API calls, no data leakage.
 
-| Component | Role |
-|---|---|
-| `sentinel_self_healing_watchdog.py` | Monitors all tools, auto-repairs broken DOM |
-| `genesis_sovereign_evolution_core.py` | Continuously improves deployed tools |
-| `planetary_governance_daemon.py` | Deploys new faculty tools every hour |
-| `check_everything_alive.py` | 8-section health audit (100% score) |
+- **FinTech & Treasury**: GST Reconciler, InvoiceForge, Forex Auditor, DTAA Tax Forecaster, FreightCostIQ...
+- **DevSecOps & Privacy**: JWT Sentinel, SecretScrubber, Contract Shield, PII Log Redactor...
+- **Cloud & DataOps**: SQL Formatter, CSV→Parquet Transcoder, DB Deadlock Sentinel, HyperMatrix Cloud...
+- **AI & LLM Systems**: LatencyBench, VRAM Allocator, Token Arbitrage, VectorDB Normalizer...
 
----
+## Sovereign Broadsheet (Autonomous Newspaper)
 
-## 🚀 Quick Start
-
-```powershell
-# Clone
-git clone https://github.com/keshavs40344/ai-world-core.git
-cd ai-world-core
-
-# Setup
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-
-# Bootstrap all 7 GPAA faculty terminals immediately
-python planetary_governance_daemon.py --all
-
-# Start autonomous hourly evolution loop
-python planetary_governance_daemon.py
-
-# Full system health audit
-python check_everything_alive.py
-```
+5-page FastAPI application generating original journalism from wire facts:
+- `/` — Front page (daily synthesis)
+- `/wires` — Live wire feed
+- `/masthead` — Editorial board
+- `/guild` — Authors guild
+- `/telemetry` — System telemetry
 
 ---
 
-## 🩺 Health
-
-Last audit result: **100% — 38/38 checks passed**
-
-| Section | Status |
-|---|---|
-| 7 Python daemons (AST) | ✅ All PASS |
-| 35 HTML tools (DOM) | ✅ All DOCTYPE + `</html>` verified |
-| Governance ledger (SQLite) | ✅ 10 decrees, 10 tables |
-| Telemetry files | ✅ `ALL_SYSTEMS_NOMINAL` |
-| Bus signals | ✅ 50+ signals |
-| 7 Deanery charters | ✅ All RATIFIED |
-| Portal card injection | ✅ Live in index.html |
-| Git status | ✅ Clean, pushed |
-
-```powershell
-python check_everything_alive.py
-```
-
----
-
-## 📄 License
-
-MIT — Open Access. All senate terminals run fully client-side with no server or subscription required.
-
----
-
-*🤖 Autonomously evolved by GPAA-2026 · Genesis Sovereign Engine · Sentinel Watchdog*
-*📡 Telegram notifications active · Real-time telemetry at `/public/live_telemetry.json`*
+*Last updated: 2026-09-07 02:47 IST — Genesis Mesh v4.2*

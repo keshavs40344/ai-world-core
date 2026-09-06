@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI WORLD | Tool Catalogue — 50 Sovereign Systems</title>
+  <meta name="description" content="50 autonomous developer and FinTech tools. 100% client-side, zero server leakage, sub-10ms execution.">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=JetBrains+Mono:wght@400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { background:#030712; color:#f3f4f6; font-family:Inter,sans-serif; }
+    .glass-panel { background:rgba(15,23,42,.65); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,.08); }
+    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-thumb { background:#1f2937; border-radius:3px; }
+    ::-webkit-scrollbar-thumb:hover { background:#10b981; }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+  <header class="sticky top-0 z-40 glass-panel border-b border-white/5 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center font-black text-black text-lg">&#937;</div>
+        <div>
+          <div class="font-bold text-white text-lg" style="font-family:'Space Grotesk',sans-serif">AI WORLD</div>
+          <div class="text-[10px] text-slate-400 font-mono">TOOL CATALOGUE</div>
+        </div>
+      </a>
+      <nav class="flex items-center space-x-6 text-sm text-slate-300">
+        <a href="index.html" class="hover:text-emerald-400 transition">Hub</a>
+        <a href="agents.html" class="hover:text-violet-400 transition">Agents</a>
+        <a href="dashboard.html" class="hover:text-amber-400 transition">SRE Vitals</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12 space-y-10">
+    <div class="text-center space-y-4">
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full glass-panel border border-cyan-500/30 text-xs font-mono text-cyan-400">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span>50 TOOLS DEPLOYED — 100% CLIENT-SIDE — ZERO SERVER HOPS</span>
+      </div>
+      <h1 class="text-4xl font-black text-white" style="font-family:'Space Grotesk',sans-serif">
+        Sovereign <span class="text-cyan-400">Tool Catalogue</span>
+      </h1>
+      <p class="text-slate-400 max-w-2xl mx-auto">
+        50 industrial-grade developer utilities across Security, FinTech, Cloud, and AI/LLM domains.
+        All run entirely in your browser — zero data leaves your device.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-3">
+      <input id="toolSearch" type="text" placeholder="Search tools..."
+        class="flex-1 min-w-[200px] px-4 py-2.5 rounded-xl bg-slate-900/90 border border-cyan-500/30 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+        oninput="filterTools(this.value, currentCat)">
+      <div class="flex flex-wrap gap-2" id="catPills">
+        <button onclick="filterTools(document.getElementById('toolSearch').value, 'All')" class="cat-pill active px-3 py-1.5 rounded-lg text-xs font-mono bg-emerald-500 text-black">All (50)</button>
+        <button onclick="filterTools(document.getElementById('toolSearch').value, 'FinTech')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">FinTech</button>
+        <button onclick="filterTools(document.getElementById('toolSearch').value, 'DevSecOps')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Security</button>
+        <button onclick="filterTools(document.getElementById('toolSearch').value, 'Cloud')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">CloudOps</button>
+        <button onclick="filterTools(document.getElementById('toolSearch').value, 'AI')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">AI &amp; LLM</button>
+      </div>
+      <span id="toolCount" class="text-xs font-mono text-slate-400">50 tools</span>
+    </div>
+
+    <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">API Mock Studio Pro</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Generate and mock REST API endpoints instantly. Zero server dependency.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/api_mock_studio_1788535809.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">API Mock Studio Elite</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Advanced API simulation with schema validation and latency injection.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/api_mock_studio_1788551790.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#f59e0b]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#f59e0b;border-color:#f59e0b40;background:#f59e0b15">FinTech & Treasury</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">ClauseGuard — Contract Auditor</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Agencies &amp; startups protected from one-sided indemnity clauses and unlimited liability traps.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/clauseguard_contract_auditor.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Titan SQL Explain Visualizer</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">100% client-side SQL execution plan visualizer and index advisor.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/cmu_sql_explain_visualizer.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#f59e0b]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#f59e0b;border-color:#f59e0b40;background:#f59e0b15">FinTech & Treasury</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Contract Indemnity Shield</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Identify hidden liability and indemnity traps in vendor agreements.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/contract_indemnity_shield.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#ef4444]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#ef4444;border-color:#ef444440;background:#ef444415">DevSecOps & Privacy</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">ContractShield — Risk Scanner</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">NDA and client agreement risk scanner. 100% private, zero server leakage.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/contract_shield_risk_scanner.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#ef4444]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#ef4444;border-color:#ef444440;background:#ef444415">DevSecOps & Privacy</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">CryptoCraft Entropy Shield</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Cryptographic entropy analyzer and key quality assessor.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/cryptocraft_entropy_shield.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#ef4444]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#ef4444;border-color:#ef444440;background:#ef444415">DevSecOps & Privacy</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Cryptographic Key Entropy Suite</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Full cryptographic key lifecycle: entropy scoring, rotation auditing, and weakness detection.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/cryptographic_key_entropy_suite.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#ef4444]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#ef4444;border-color:#ef444440;background:#ef444415">DevSecOps & Privacy</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Token Entropy Inspector</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Deep cryptographic token inspection: JWT, API keys, session tokens.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/cryptographic_token_entropy_inspector.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">CSV→Parquet Transcoder &amp; Profiler</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Client-side CSV to Parquet transcoder with statistical profiling.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/csv_parquet_transcoder_profiler.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">CSV→JSON Normalizer</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Instant client-side CSV to JSON converter with schema inference.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/csv_to_json_normalizer_953.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">DB Lock &amp; Deadlock Sentinel</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Database deadlock simulation, detection, and resolution advisor.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/db_lock_deadlock_sentinel.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Developer API Infrastructure Studio</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Build, mock, and document developer APIs with rate-limit simulator.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/developer_api_infrastructure.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#ef4444]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#ef4444;border-color:#ef444440;background:#ef444415">DevSecOps & Privacy</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">DevOps PII Log Redactor</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Zero-trust PII and secret redaction for production log files.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/devops_pii_log_redactor.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">DiffSmith Schema Engine</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Visual schema diff and migration path generator for SQL and NoSQL.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/diffsmith_schema_engine.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">DocuSize Photo Resizer</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Client-side document photo resizer for passports, visas, and ID cards.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/docusize_photo_resizer.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#f59e0b]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#f59e0b;border-color:#f59e0b40;background:#f59e0b15">FinTech & Treasury</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Forex Payment Leakage Auditor</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Stripe and cross-border forex leakage quantifier with currency arbitrage scanner.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Sovereign Treasury</span>
+        <a href="public/saas/forex_leakage_auditor.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#f59e0b]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#f59e0b;border-color:#f59e0b40;background:#f59e0b15">FinTech & Treasury</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Forex Leakage Pro</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Advanced multi-currency FX leakage analysis for enterprise treasury teams.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Sovereign Treasury</span>
+        <a href="public/saas/forex_leakage_pro.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#f59e0b]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#f59e0b;border-color:#f59e0b40;background:#f59e0b15">FinTech & Treasury</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">FreightCostIQ</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Volumetric weight, courier RTO risk, and margin estimator for e-commerce.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Sovereign Treasury</span>
+        <a href="public/saas/freight_cost_iq.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Fusion Solar Grid Architect</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Solar farm capacity planner with grid integration and ROI modeling.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/fusion_solar_grid_architect.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#8b5cf6]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#8b5cf6;border-color:#8b5cf640;background:#8b5cf615">AI & LLM Systems</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Global Compute Energy Optimizer</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Multi-cloud infrastructure energy usage optimizer and carbon footprint calculator.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/global_compute_energy_optimizer.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#f59e0b]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#f59e0b;border-color:#f59e0b40;background:#f59e0b15">FinTech & Treasury</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Global Macro Resource Rebalancer</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Multi-asset macro portfolio rebalancing engine with geopolitical risk overlays.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Sovereign Treasury</span>
+        <a href="public/saas/global_macro_resource_rebalancer.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#8b5cf6]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#8b5cf6;border-color:#8b5cf640;background:#8b5cf615">AI & LLM Systems</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Global Pathogen Early Warning</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Epidemiological signal detection and outbreak early-warning scoring system.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/global_pathogen_early_warning.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#f59e0b]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#f59e0b;border-color:#f59e0b40;background:#f59e0b15">FinTech & Treasury</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">GST ReconcilePro Ledger</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">GSTR-2B vs purchase register mismatch resolver with ITC claim optimizer.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Sovereign Treasury</span>
+        <a href="public/saas/gst_reconcile_pro_ledger.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">High-Throughput JSON Streamer</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Browser-native streaming JSON parser for large datasets without memory overflow.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/high_throughput_json_streamer.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">HyperMatrix Cloud Simulator</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Multi-cloud cost and latency matrix simulator for architecture decisions.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/hyper_matrix_cloud.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#ef4444]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#ef4444;border-color:#ef444440;background:#ef444415">DevSecOps & Privacy</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Zero Trust JWT Profiler</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Enterprise JWT validation, claim auditing, and algorithm weakness detection.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/iit_zero_trust_jwt_profiler.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#f59e0b]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#f59e0b;border-color:#f59e0b40;background:#f59e0b15">FinTech & Treasury</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">InvoiceForge Pro</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Free private invoice and ledger generator. Instant PDF export, zero sign-up.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Sovereign Treasury</span>
+        <a href="public/saas/invoice_forge_pro.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#ef4444]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#ef4444;border-color:#ef444440;background:#ef444415">DevSecOps & Privacy</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">JWT Claims Decoder</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Rapid JWT decoder with claims inspector and expiry analyzer.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/jwt_claims_decoder_160.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#ef4444]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#ef4444;border-color:#ef444440;background:#ef444415">DevSecOps & Privacy</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">JWT Claims Tamper Sentinel</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Advanced JWT tamper detection and signature forgery prevention auditor.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/jwt_claims_tamper_sentinel.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#ef4444]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#ef4444;border-color:#ef444440;background:#ef444415">DevSecOps & Privacy</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">JWT Sentinel Guard</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Real-time JWT guard with algorithm confusion attack prevention.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/jwt_sentinel_guard.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#8b5cf6]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#8b5cf6;border-color:#8b5cf640;background:#8b5cf615">AI & LLM Systems</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">LatencyBench LLM Profiler</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Multi-cloud LLM token and latency profiler. Reduce AI inference costs by 3x.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/latencybench_llm_profiler.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Live Network Workbench</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Browser-based network topology visualizer and latency heatmap generator.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/live_network_workbench.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#8b5cf6]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#8b5cf6;border-color:#8b5cf640;background:#8b5cf615">AI & LLM Systems</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">LLM Token Arbitrage Studio</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Multi-model token cost arbitrage calculator for GPT-4, Claude, Gemini, and Llama.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/llm_token_arbitrage_studio.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#ef4444]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#ef4444;border-color:#ef444440;background:#ef444415">DevSecOps & Privacy</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Network Security Audit Suite</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Full network perimeter audit: open ports, cipher suites, TLS grade.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/network_security_audit_suite.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Planetary Code Quality Gate</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Enterprise code quality gate with cyclomatic complexity and debt scoring.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/planetary_code_quality_gate.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#8b5cf6]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#8b5cf6;border-color:#8b5cf640;background:#8b5cf615">AI & LLM Systems</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Planetary Governance Terminal</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Decentralized governance simulator and DAO proposal scoring engine.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/planetary_governance_terminal.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#ef4444]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#ef4444;border-color:#ef444440;background:#ef444415">DevSecOps & Privacy</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">SecretScrubber Studio</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Zero-trust API key, PII, and environment variable audit studio.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Aegis Lab</span>
+        <a href="public/saas/secret_scrubber_studio.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">SQL AST Formatter &amp; Table Extractor</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">SQL AST parser, formatter, and table dependency extractor.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/sql_ast_formatter_table_extractor.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">SQL Latency Optimizer</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Query latency profiler and index recommendation engine.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/sql_latency_optimizer.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">SQL Syntax Formatter Pro</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Professional SQL formatter with dialect detection and style enforcement.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/sql_syntax_formatter_pro.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#8b5cf6]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#8b5cf6;border-color:#8b5cf640;background:#8b5cf615">AI & LLM Systems</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">VRAM Inference Allocator</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">GPU VRAM allocation planner for optimal LLM inference throughput.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/stanford_vram_inference_allocator.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#f59e0b]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#f59e0b;border-color:#f59e0b40;background:#f59e0b15">FinTech & Treasury</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">TaxShield Freelance Engine</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Freelancer and indie-dev tax optimization engine for Indian tax regime.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Sovereign Treasury</span>
+        <a href="public/saas/taxshield_freelance_engine.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#8b5cf6]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#8b5cf6;border-color:#8b5cf640;background:#8b5cf615">AI & LLM Systems</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Universal Pedagogy Accelerator</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">AI-powered curriculum builder and learning path optimizer.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/universal_pedagogy_accelerator.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">URL Query Extractor</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Client-side URL parser, query string decoder, and redirect chain tracer.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/url_query_extractor_930.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#8b5cf6]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#8b5cf6;border-color:#8b5cf640;background:#8b5cf615">AI & LLM Systems</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">VectorDB Payload Normalizer</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Normalize and validate embedding payloads for Pinecone, Weaviate, and ChromaDB.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/vectordb_payload_normalizer.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#8b5cf6]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#8b5cf6;border-color:#8b5cf640;background:#8b5cf615">AI & LLM Systems</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">VRAM Cost Estimator</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Quick GPU VRAM cost and inference throughput estimator for popular models.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/vram_inference_allocator.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#f59e0b]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#f59e0b;border-color:#f59e0b40;background:#f59e0b15">FinTech & Treasury</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">Wharton DTAA Tax Forecaster</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Cross-border double-taxation treaty optimizer for Indian freelancers and NRIs.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Sovereign Treasury</span>
+        <a href="public/saas/wharton_dtaa_tax_forecaster.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#06b6d4]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#06b6d4;border-color:#06b6d440;background:#06b6d415">Cloud & DataOps</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">YouTube Speed Engine</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">YouTube video speed optimization and chapter navigator tool.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Titan Core</span>
+        <a href="public/saas/youtube_speed_engine.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    <div class="glass-panel p-5 rounded-xl border border-white/5 hover:border-[#8b5cf6]/40 transition group flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#8b5cf6;border-color:#8b5cf640;background:#8b5cf615">AI & LLM Systems</span>
+        <span class="text-[10px] font-mono text-slate-500">< 10ms</span>
+      </div>
+      <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">ZK Governance Proof Sentinel</h3>
+      <p class="text-xs text-slate-400 leading-relaxed mb-4">Zero-knowledge proof verifier for decentralized governance proposals.</p>
+      <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+        <span class="text-slate-500">Synapse Lab</span>
+        <a href="public/saas/zk_governance_proof_sentinel.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">Launch <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/5 mt-16 py-8 text-center text-xs text-slate-500 font-mono">
+    AI WORLD CORE — 50 SOVEREIGN TOOLS — 2026-09-07 02:47 IST — GENESIS MESH ACTIVE
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    let currentCat = 'All';
+    function filterTools(q, cat) {
+      if (cat !== undefined) {
+        currentCat = cat;
+        document.querySelectorAll('.cat-pill').forEach(p => {
+          if (p.textContent.toLowerCase().includes(cat.toLowerCase()) || (cat === 'All' && p.textContent.includes('All'))) {
+            p.className = 'cat-pill active px-3 py-1.5 rounded-lg text-xs font-mono bg-emerald-500 text-black';
+          } else {
+            p.className = 'cat-pill px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700';
+          }
+        });
+      }
+      q = (q || '').toLowerCase();
+      let cards = document.querySelectorAll('#toolsGrid > div');
+      let shown = 0;
+      cards.forEach(c => {
+        const text = c.textContent.toLowerCase();
+        const catMatch = currentCat === 'All' || text.includes(currentCat.toLowerCase());
+        const qMatch = !q || text.includes(q);
+        const show = catMatch && qMatch;
+        c.style.display = show ? '' : 'none';
+        if (show) shown++;
+      });
+      document.getElementById('toolCount').textContent = shown + ' tools';
+    }
+  </script>
+</body>
+</html>
