@@ -82,7 +82,48 @@
         "priceCurrency": "USD"
       }
     }
-    </script>
+    
+        // Font Size Adjuster
+        let curFontSize = 1.15;
+        function changeFontSize(delta) {
+            curFontSize = Math.max(0.9, Math.min(1.5, curFontSize + (delta * 0.1)));
+            document.querySelectorAll('.editorial-body').forEach(el => {
+                el.style.fontSize = curFontSize + 'rem';
+            });
+        }
+        function resetFontSize() {
+            curFontSize = 1.15;
+            document.querySelectorAll('.editorial-body').forEach(el => {
+                el.style.fontSize = '1.15rem';
+            });
+        }
+
+        // Bookmark in LocalStorage
+        function toggleBookmark(btn) {
+            const path = window.location.pathname;
+            let bookmarks = JSON.parse(localStorage.getItem('apex_news_bookmarks') || '[]');
+            if (bookmarks.includes(path)) {
+                bookmarks = bookmarks.filter(p => p !== path);
+                document.getElementById('bookmarkText').innerText = 'Save';
+                btn.classList.remove('bg-rose-900/60', 'text-rose-300');
+            } else {
+                bookmarks.push(path);
+                document.getElementById('bookmarkText').innerText = 'Saved';
+                btn.classList.add('bg-rose-900/60', 'text-rose-300');
+            }
+            localStorage.setItem('apex_news_bookmarks', JSON.stringify(bookmarks));
+        }
+
+        // Copy Citation
+        function copyCitation() {
+            const title = document.getElementById('article-headline')?.innerText || document.title;
+            const citation = `Sovereign Apex News Wire. (2026). "${title}". Retrieved from ${window.location.href}`;
+            navigator.clipboard.writeText(citation).then(() => {
+                alert("Citation copied to clipboard:\n\n" + citation);
+            });
+        }
+    
+</script>
     <!-- /SEO BLOCK -->
     
 </head>
@@ -165,7 +206,70 @@
                 Original Official Release ↗
             </a>
         </div>
-    </main>
+    
+        <!-- Sovereign Editorial Charter & Verification Badge -->
+        <div class="p-5 rounded-2xl bg-zinc-950 border border-zinc-800 text-xs font-mono text-zinc-400 space-y-2">
+            <div class="flex items-center justify-between text-[11px] text-zinc-300 font-bold">
+                <span class="flex items-center gap-1.5 text-rose-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                    SOVEREIGN PRESS CHARTER & ACCREDITATION
+                </span>
+                <span>GLOBAL BUREAU CODE</span>
+            </div>
+            <p class="text-[11px] leading-relaxed text-zinc-400">
+                Sovereign Apex News Wire adheres to unyielding fact-verification, independent editorial accountability, and zero commercial native advertising. Every dispatch is corroborated against official primary records, legislative filings, and peer-reviewed scientific telemetry.
+            </p>
+        </div>
+    
+
+        <!-- Related In-Depth Investigations -->
+        <section class="space-y-4 pt-6 border-t border-zinc-800">
+            <div class="flex items-center justify-between">
+                <h3 class="text-sm font-mono font-bold uppercase tracking-wider text-zinc-300 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                    Related Sovereign Investigations
+                </h3>
+                <a href="../news_wire.html" class="text-xs font-mono text-rose-400 hover:underline">View All 20 Stories →</a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                
+        <a href="isro-gaganyaan-orbital-flight-simulation-human-rating-milestone.html" class="p-4 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 transition flex flex-col justify-between group">
+            <div class="space-y-2">
+                <span class="text-[10px] font-mono text-rose-400 font-bold">Space & Science</span>
+                <h4 class="text-sm font-bold text-white group-hover:text-rose-400 transition line-clamp-2 leading-snug">
+                    ISRO Gaganyaan: Final Uncrewed Orbital Flight Simulation Achieves 100% Human-Rating Validation
+                </h4>
+                <p class="text-xs text-zinc-400 line-clamp-2">L110 core liquid stage, CE-20 cryogenic engine, and crew module emergency environmental controls clear all critical qualification hurdles.</p>
+            </div>
+            <span class="text-[11px] font-mono text-rose-400 font-bold mt-3 inline-flex items-center gap-1">Read Full Story →</span>
+        </a>
+        
+        <a href="supreme-court-landmark-constitution-bench-ai-surveillance-privacy.html" class="p-4 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 transition flex flex-col justify-between group">
+            <div class="space-y-2">
+                <span class="text-[10px] font-mono text-rose-400 font-bold">National & Judiciary</span>
+                <h4 class="text-sm font-bold text-white group-hover:text-rose-400 transition line-clamp-2 leading-snug">
+                    Supreme Court Constitution Bench Issues Historic Doctrine on AI Surveillance and Algorithmic Privacy
+                </h4>
+                <p class="text-xs text-zinc-400 line-clamp-2">A unanimous 5-judge bench establishes strict constitutional limits on predictive policing, facial recognition deployment, and automated administrative scoring.</p>
+            </div>
+            <span class="text-[11px] font-mono text-rose-400 font-bold mt-3 inline-flex items-center gap-1">Read Full Story →</span>
+        </a>
+        
+        <a href="rbi-monetary-policy-committee-repo-rate-growth-resilience.html" class="p-4 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 transition flex flex-col justify-between group">
+            <div class="space-y-2">
+                <span class="text-[10px] font-mono text-rose-400 font-bold">Economy & Markets</span>
+                <h4 class="text-sm font-bold text-white group-hover:text-rose-400 transition line-clamp-2 leading-snug">
+                    RBI Monetary Policy Committee Maintains Repo Rate at 6.50% Citing Robust 7.4% GDP Trajectory
+                </h4>
+                <p class="text-xs text-zinc-400 line-clamp-2">Central bank emphasizes disinflation continuity while forecasting sustained industrial expansion and resilient corporate balance sheets.</p>
+            </div>
+            <span class="text-[11px] font-mono text-rose-400 font-bold mt-3 inline-flex items-center gap-1">Read Full Story →</span>
+        </a>
+        
+            </div>
+        </section>
+    
+</main>
 
     <!-- Footer -->
     <footer class="border-t border-zinc-800/80 py-8 text-center text-xs font-mono text-zinc-500">

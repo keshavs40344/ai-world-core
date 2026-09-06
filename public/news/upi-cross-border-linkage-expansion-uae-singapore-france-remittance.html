@@ -107,7 +107,32 @@
             </div>
         </div>
 
-        <!-- Headline Area -->
+        
+        <!-- Reader Utility Toolbar (Font Resizer, Print, Bookmark, Citation) -->
+        <div class="flex flex-wrap items-center justify-between gap-3 p-3 rounded-xl bg-zinc-900/60 border border-zinc-800 text-xs font-mono text-zinc-400">
+            <div class="flex items-center gap-2" id="fontSizeControls">
+                <span class="text-[10px] uppercase text-zinc-500">Text Size:</span>
+                <button onclick="changeFontSize(-1)" class="w-7 h-7 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold transition flex items-center justify-center text-[11px]" title="Smaller text">A-</button>
+                <button onclick="resetFontSize()" class="w-7 h-7 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold transition flex items-center justify-center text-xs" title="Default text">A</button>
+                <button onclick="changeFontSize(1)" class="w-7 h-7 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold transition flex items-center justify-center text-sm" title="Larger text">A+</button>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="window.print()" class="px-2.5 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition flex items-center gap-1 text-[11px]" title="Print this full investigative report">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+                    <span>Print Report</span>
+                </button>
+                <button onclick="toggleBookmark(this)" id="bookmarkBtn" class="px-2.5 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition flex items-center gap-1 text-[11px]" title="Bookmark for offline reading">
+                    <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
+                    <span id="bookmarkText">Save</span>
+                </button>
+                <button onclick="copyCitation()" class="px-2.5 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition flex items-center gap-1 text-[11px]" title="Copy Academic / Journalistic Citation">
+                    <i data-lucide="quote" class="w-3.5 h-3.5"></i>
+                    <span>Cite</span>
+                </button>
+            </div>
+        </div>
+    
+<!-- Headline Area -->
         <div class="space-y-4">
             <h1 id="article-headline" class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
                 NPCI International Expands Real-Time UPI Cross-Border Linkages Across UAE, Singapore and Eurozone Partners
@@ -268,7 +293,70 @@
             </div>
         </section>
 
-    </main>
+    
+        <!-- Sovereign Editorial Charter & Verification Badge -->
+        <div class="p-5 rounded-2xl bg-zinc-950 border border-zinc-800 text-xs font-mono text-zinc-400 space-y-2">
+            <div class="flex items-center justify-between text-[11px] text-zinc-300 font-bold">
+                <span class="flex items-center gap-1.5 text-rose-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                    SOVEREIGN PRESS CHARTER & ACCREDITATION
+                </span>
+                <span>GLOBAL BUREAU CODE</span>
+            </div>
+            <p class="text-[11px] leading-relaxed text-zinc-400">
+                Sovereign Apex News Wire adheres to unyielding fact-verification, independent editorial accountability, and zero commercial native advertising. Every dispatch is corroborated against official primary records, legislative filings, and peer-reviewed scientific telemetry.
+            </p>
+        </div>
+    
+
+        <!-- Related In-Depth Investigations -->
+        <section class="space-y-4 pt-6 border-t border-zinc-800">
+            <div class="flex items-center justify-between">
+                <h3 class="text-sm font-mono font-bold uppercase tracking-wider text-zinc-300 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                    Related Sovereign Investigations
+                </h3>
+                <a href="../news_wire.html" class="text-xs font-mono text-rose-400 hover:underline">View All 20 Stories →</a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                
+        <a href="isro-gaganyaan-orbital-flight-simulation-human-rating-milestone.html" class="p-4 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 transition flex flex-col justify-between group">
+            <div class="space-y-2">
+                <span class="text-[10px] font-mono text-rose-400 font-bold">Space & Science</span>
+                <h4 class="text-sm font-bold text-white group-hover:text-rose-400 transition line-clamp-2 leading-snug">
+                    ISRO Gaganyaan: Final Uncrewed Orbital Flight Simulation Achieves 100% Human-Rating Validation
+                </h4>
+                <p class="text-xs text-zinc-400 line-clamp-2">L110 core liquid stage, CE-20 cryogenic engine, and crew module emergency environmental controls clear all critical qualification hurdles.</p>
+            </div>
+            <span class="text-[11px] font-mono text-rose-400 font-bold mt-3 inline-flex items-center gap-1">Read Full Story →</span>
+        </a>
+        
+        <a href="supreme-court-landmark-constitution-bench-ai-surveillance-privacy.html" class="p-4 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 transition flex flex-col justify-between group">
+            <div class="space-y-2">
+                <span class="text-[10px] font-mono text-rose-400 font-bold">National & Judiciary</span>
+                <h4 class="text-sm font-bold text-white group-hover:text-rose-400 transition line-clamp-2 leading-snug">
+                    Supreme Court Constitution Bench Issues Historic Doctrine on AI Surveillance and Algorithmic Privacy
+                </h4>
+                <p class="text-xs text-zinc-400 line-clamp-2">A unanimous 5-judge bench establishes strict constitutional limits on predictive policing, facial recognition deployment, and automated administrative scoring.</p>
+            </div>
+            <span class="text-[11px] font-mono text-rose-400 font-bold mt-3 inline-flex items-center gap-1">Read Full Story →</span>
+        </a>
+        
+        <a href="rbi-monetary-policy-committee-repo-rate-growth-resilience.html" class="p-4 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 transition flex flex-col justify-between group">
+            <div class="space-y-2">
+                <span class="text-[10px] font-mono text-rose-400 font-bold">Economy & Markets</span>
+                <h4 class="text-sm font-bold text-white group-hover:text-rose-400 transition line-clamp-2 leading-snug">
+                    RBI Monetary Policy Committee Maintains Repo Rate at 6.50% Citing Robust 7.4% GDP Trajectory
+                </h4>
+                <p class="text-xs text-zinc-400 line-clamp-2">Central bank emphasizes disinflation continuity while forecasting sustained industrial expansion and resilient corporate balance sheets.</p>
+            </div>
+            <span class="text-[11px] font-mono text-rose-400 font-bold mt-3 inline-flex items-center gap-1">Read Full Story →</span>
+        </a>
+        
+            </div>
+        </section>
+    
+</main>
 
     <!-- Master Footer -->
     <footer class="border-t border-zinc-800/80 py-8 text-center text-xs font-mono text-zinc-500 space-y-2 mt-12 bg-[#0c0f17]">
@@ -389,6 +477,47 @@
                 window.open("https://www.linkedin.com/sharing/share-offsite/?url=" + url, "_blank");
             }
         }
-    </script>
+    
+        // Font Size Adjuster
+        let curFontSize = 1.15;
+        function changeFontSize(delta) {
+            curFontSize = Math.max(0.9, Math.min(1.5, curFontSize + (delta * 0.1)));
+            document.querySelectorAll('.editorial-body').forEach(el => {
+                el.style.fontSize = curFontSize + 'rem';
+            });
+        }
+        function resetFontSize() {
+            curFontSize = 1.15;
+            document.querySelectorAll('.editorial-body').forEach(el => {
+                el.style.fontSize = '1.15rem';
+            });
+        }
+
+        // Bookmark in LocalStorage
+        function toggleBookmark(btn) {
+            const path = window.location.pathname;
+            let bookmarks = JSON.parse(localStorage.getItem('apex_news_bookmarks') || '[]');
+            if (bookmarks.includes(path)) {
+                bookmarks = bookmarks.filter(p => p !== path);
+                document.getElementById('bookmarkText').innerText = 'Save';
+                btn.classList.remove('bg-rose-900/60', 'text-rose-300');
+            } else {
+                bookmarks.push(path);
+                document.getElementById('bookmarkText').innerText = 'Saved';
+                btn.classList.add('bg-rose-900/60', 'text-rose-300');
+            }
+            localStorage.setItem('apex_news_bookmarks', JSON.stringify(bookmarks));
+        }
+
+        // Copy Citation
+        function copyCitation() {
+            const title = document.getElementById('article-headline')?.innerText || document.title;
+            const citation = `Sovereign Apex News Wire. (2026). "${title}". Retrieved from ${window.location.href}`;
+            navigator.clipboard.writeText(citation).then(() => {
+                alert("Citation copied to clipboard:\n\n" + citation);
+            });
+        }
+    
+</script>
 </body>
 </html>
