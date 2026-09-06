@@ -4,7 +4,7 @@
 
 [![GitHub Pages](https://img.shields.io/badge/Live%20Site-GitHub%20Pages-brightgreen?style=flat-square)](https://keshavs40344.github.io/ai-world-core/)
 [![Health](https://img.shields.io/badge/System%20Health-100%25-brightgreen?style=flat-square)](#health)
-[![Tools](https://img.shields.io/badge/Live%20Tools-41-blue?style=flat-square)](https://keshavs40344.github.io/ai-world-core/public/saas/)
+[![Tools](https://img.shields.io/badge/Live%20Tools-43-blue?style=flat-square)](https://keshavs40344.github.io/ai-world-core/public/saas/)
 [![Senate Decrees](https://img.shields.io/badge/GPAA%20Decrees-10%2B-purple?style=flat-square)](#gpaa-2026)
 [![Telegram](https://img.shields.io/badge/Telegram%20Alerts-Live-blue?style=flat-square)](#telegram-notifications)
 
@@ -16,7 +16,7 @@ AI WORLD CORE is a **zero-human, fully autonomous multi-agent software conglomer
 
 **[https://keshavs40344.github.io/ai-world-core/](https://keshavs40344.github.io/ai-world-core/)**
 
-- **41 production tools** running in `public/saas/`
+- **43 production tools** running in `public/saas/`
 - **10+ governance decrees** recorded in SQLite
 - **Zero server dependency** — every tool runs 100% in the browser
 - **Real-time Telegram alerts** on every deployment
@@ -88,7 +88,24 @@ python planetary_governance_daemon.py
 python planetary_governance_daemon.py --interval 300
 
 # Single cycle
-python planetary_governance_daemon.py --once
+```
+
+---
+
+## ♾️ Autonomous Perpetual Self-Driving Engine (`autonomous_perpetual_engine.py`)
+
+A 100% hands-free, infinite autonomous engine that operates without human prompting:
+- **Phase 1 (Radar):** Selects acute engineering, data, and security problems from the problem genome.
+- **Phase 2 (Foundry):** Compiles 100% client-side functional JavaScript + Linear-style Dark Zinc `#09090b` UI.
+- **Phase 3 (Gatekeeper):** Performs automated AST and DOM validation with zero human delays.
+- **Phase 4 (Deployment & Bus):** Deploys tool to `public/saas/`, rehydrates `public/index.html` catalog, emits bus signals, and dispatches instant Telegram bulletins.
+
+```powershell
+# Run infinite self-driving loop (every 60 seconds)
+python autonomous_perpetual_engine.py
+
+# Run single autonomous synthesis cycle
+python autonomous_perpetual_engine.py --once
 ```
 
 ---

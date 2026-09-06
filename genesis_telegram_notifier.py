@@ -36,26 +36,31 @@ def broadcast_live_asset(asset_name: str, rel_path: str, category: str = "Autono
         print("[!] Telegram credentials missing or skipped.")
         return
 
+    import html
     clean_path = rel_path.replace("\\", "/").lstrip("/")
     live_url = f"{BASE_URL}/{clean_path}"
 
+    safe_name = html.escape(asset_name)
+    safe_cat = html.escape(category)
+    safe_feat = html.escape(key_feature)
+
     message = (
-        f"⚡ *GENESIS AUTONOMOUS DISPATCH*\n"
+        f"⚡ <b>GENESIS AUTONOMOUS DISPATCH</b>\n"
         f"━━━━━━━━━━━━━━━━━━━━\n"
-        f"✅ *Status:* Deployed & 100% Working\n"
-        f"📦 *Application:* `{asset_name}`\n"
-        f"🏷️ *Category:* {category}\n"
-        f"🛡️ *Security:* {key_feature}\n\n"
-        f"🔗 *Live Working Link:*\n{live_url}\n"
+        f"✅ <b>Status:</b> Deployed &amp; 100% Working\n"
+        f"📦 <b>Application:</b> <code>{safe_name}</code>\n"
+        f"🏷️ <b>Category:</b> {safe_cat}\n"
+        f"🛡️ <b>Security:</b> {safe_feat}\n\n"
+        f"🔗 <b>Live Working Link:</b>\n{live_url}\n"
         f"━━━━━━━━━━━━━━━━━━━━\n"
-        f"🚀 _Auto-committed to main. Zero approval needed._"
+        f"🚀 <i>Auto-committed to main. Zero approval needed.</i>"
     )
 
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT_ID,
         "text": message,
-        "parse_mode": "Markdown",
+        "parse_mode": "HTML",
         "disable_web_page_preview": False
     }).encode("utf-8")
 

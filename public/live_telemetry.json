@@ -1,10 +1,9 @@
 {
   "status": "ALL_SYSTEMS_NOMINAL",
-  "epoch": 1788680824.9307337,
-  "timestamp_utc": "2026-09-06T07:47:04.946577",
-  "gateway_connectivity": "INTERNET_UPSTREAM_OPTIMAL",
-  "dns_benchmark_latency_ms": 122.29,
-  "active_fleet_size": 41,
-  "system_mesh_status": "ONLINE_HEALTHY",
-  "runtime_environment": "Python 3.11+ ASGI / V8 Sandbox"
+  "senate_status": "UNANIMOUS_RATIFICATION",
+  "epoch": 1788680953.4490376,
+  "timestamp_utc": "2026-09-06T07:49:13.450640",
+  "gateway_status": "ONLINE_LOW_LATENCY",
+  "latency_ms": 119.28,
+  "mesh_state": "AUTONOMOUS_PERPETUAL_LOOP"
 }
