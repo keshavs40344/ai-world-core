@@ -14,14 +14,14 @@
   "metrics": {
     "total_continents": 4,
     "total_companies": 4,
-    "total_agents": 7,
+    "total_agents": 8,
     "total_products": 8,
-    "total_valuation_usd": 8370000.0,
-    "total_monthly_revenue_usd": 52750.0,
+    "total_valuation_usd": 8870000.0,
+    "total_monthly_revenue_usd": 53200.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 7,
-    "last_updated_epoch": 1788718635.5538828
+    "last_tick": 8,
+    "last_updated_epoch": 1788722604.6218097
   },
   "continents": [
     {
@@ -73,9 +73,9 @@
       "slug": "apex_cloud_intel",
       "ticker": "ACIS",
       "industry": "Cloud Infrastructure & High-Speed Transcoding",
-      "valuation": 2500000.0,
+      "valuation": 3000000.0,
       "treasury_balance": 70000.0,
-      "monthly_revenue": 13650.0,
+      "monthly_revenue": 14100.0,
       "operating_cost": 450.0,
       "status": "ACTIVE",
       "mission_statement": "Building $O(1)$ client-side developer infrastructure, zero-server parsers, and multi-threaded compilation tools.",
@@ -225,6 +225,20 @@
       "skills_json": "[\"Gazette Analysis\", \"Disinformation Mitigation\", \"Cross-Wire Verification\"]",
       "system_prompt": "You are Chief Fact-Checking Bureau Investigator serving the sovereign civilization.",
       "created_at": "2026-09-06T18:17:03.670258+00:00"
+    },
+    {
+      "id": "AGENT-TRUTH-VERIF-4461",
+      "department_id": "DEPT-ENG-01",
+      "company_id": "COMP-01",
+      "designation": "Chief Fact-Checking Bureau Investigator",
+      "tier": "SPECIALIST",
+      "model_affinity": "groq/compound-mini",
+      "reputation_score": 99.8,
+      "compute_used_tokens": 1240,
+      "status": "ONLINE",
+      "skills_json": "[\"Gazette Analysis\", \"Disinformation Mitigation\", \"Cross-Wire Verification\"]",
+      "system_prompt": "You are Chief Fact-Checking Bureau Investigator serving the sovereign civilization.",
+      "created_at": "2026-09-06T19:23:24.617004+00:00"
     }
   ],
   "products": [
@@ -294,13 +308,13 @@
       "name": "KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter",
       "slug": "kubeguard_yaml_linter",
       "category": "High-Throughput Web Developer Tool",
-      "version": "v1.0.0",
+      "version": "v1.2.0",
       "problem_statement": "Engineers struggle to visual parse and validate Kubernetes YAML manifests offline before kubectl apply crashes clusters.",
       "prd_json": "{\"title\": \"KubeGuard \\u2014 Offline Kubernetes YAML AST & Security Linter\", \"target_persona\": \"Developers, Accountants, or Security Engineers\", \"core_algorithm\": \"The application loads the YAML manifest into memory, uses the js-yaml library to parse it into a JavaScript object (AST). A recursive traversal inspects security\\u2011relevant fields (e.g., privileged, hostPath, capabilities). Lint warnings are collected and displayed alongside a pretty\\u2011printed JSON representation of the AST. All processing occurs client\\u2011side, ensuring offline operation.\", \"monetization\": \"Open Sovereign Free Tier (Enterprise $29/mo API)\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/kubeguard_yaml_linter.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 0,
-      "health_score": 100.0,
+      "daily_active_users": 208,
+      "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     },
     {
@@ -350,6 +364,26 @@
     }
   ],
   "events": [
+    {
+      "id": 17,
+      "tick": 8,
+      "event_type": "WORKFORCE_EXPANSION",
+      "entity_id": "AGENT-TRUTH-VERIF-4461",
+      "summary": "Autonomous Agent Factory appointed 'Chief Fact-Checking Bureau Investigator' to expand research velocity.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788722604.6170025
+    },
+    {
+      "id": 16,
+      "tick": 8,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-01",
+      "summary": "Self-Evolution Engine upgraded 'KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter' to v1.2.0. User adoption grew to 208 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788722604.6170025
+    },
     {
       "id": 15,
       "tick": 7,
