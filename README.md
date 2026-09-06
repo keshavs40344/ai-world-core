@@ -4,7 +4,7 @@
 
 [![GitHub Pages](https://img.shields.io/badge/Live%20Site-GitHub%20Pages-brightgreen?style=flat-square)](https://keshavs40344.github.io/ai-world-core/)
 [![Health](https://img.shields.io/badge/System%20Health-100%25-brightgreen?style=flat-square)](#health)
-[![Tools](https://img.shields.io/badge/Live%20Tools-35-blue?style=flat-square)](https://keshavs40344.github.io/ai-world-core/public/saas/)
+[![Tools](https://img.shields.io/badge/Live%20Tools-39-blue?style=flat-square)](https://keshavs40344.github.io/ai-world-core/public/saas/)
 [![Senate Decrees](https://img.shields.io/badge/GPAA%20Decrees-10%2B-purple?style=flat-square)](#gpaa-2026)
 [![Telegram](https://img.shields.io/badge/Telegram%20Alerts-Live-blue?style=flat-square)](#telegram-notifications)
 
@@ -16,7 +16,7 @@ AI WORLD CORE is a **zero-human, fully autonomous multi-agent software conglomer
 
 **[https://keshavs40344.github.io/ai-world-core/](https://keshavs40344.github.io/ai-world-core/)**
 
-- **35 production tools** running in `public/saas/`
+- **39 production tools** running in `public/saas/`
 - **10+ governance decrees** recorded in SQLite
 - **Zero server dependency** — every tool runs 100% in the browser
 - **Real-time Telegram alerts** on every deployment
@@ -113,7 +113,15 @@ Every system event fires an instant Telegram message to the operator:
 
 ## 🛠️ Live Tools — `public/saas/`
 
-35 production-grade browser tools deployed (zero server required):
+39 production-grade browser tools deployed (zero server required):
+
+### 🎨 Bespoke Artisan Suite (Human-Engineered Client-Side Tools) (4)
+| Tool | Description |
+|---|---|
+| [DiffSmith Semantic AST Engine](https://keshavs40344.github.io/ai-world-core/public/saas/diffsmith_schema_engine.html) | Stateful JSON & RFC 6902 patch generator with 50MB drag & drop, regex search, and 100-node DOM virtualization |
+| [CryptoCraft Entropy Shield](https://keshavs40344.github.io/ai-world-core/public/saas/cryptocraft_entropy_shield.html) | Offline SHA-256/512 hasher & Shannon entropy profiler with byte frequency analyzer |
+| [QuerySmith SQL Formatter](https://keshavs40344.github.io/ai-world-core/public/saas/sql_syntax_formatter_pro.html) | High-performance SQL beautifier, AST tokenizer, and table dependency extractor |
+| [Cryptographic Token Entropy Inspector](https://keshavs40344.github.io/ai-world-core/public/saas/cryptographic_token_entropy_inspector.html) | High-entropy secret and token leak detector with pattern analysis |
 
 ### 🏛️ GPAA-2026 Senate Terminals (7)
 | Tool | Description |
