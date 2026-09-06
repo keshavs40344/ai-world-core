@@ -4,7 +4,7 @@ GENESIS ZERO-DOWNTIME SENTINEL & HEALING WATCHDOG
 Ensures 100% 24/7 availability across all conglomerate web assets:
 - Audits every HTML file in public/tools and public/saas for syntax integrity.
 - Detects blank, corrupt, or dead pages and automatically hot-patches them.
-- Validates that NPCI UPI parameters (am=299.00) are live and correctly formatted.
+- Validates that GitHub Sponsor link is live.
 - Rebuilds broken indexes and sitemaps deterministically while preserving categories.
 """
 
@@ -32,7 +32,7 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
 
 UPI_ID = ""
 PAYEE = ""
-AMOUNT = "299.00"
+AMOUNT = "0.00"
 
 QUERY_PARAMS = urllib.parse.urlencode({
     "pa": UPI_ID,
@@ -122,7 +122,7 @@ class ConglomerateSentinel:
                 <span class="text-xs font-mono text-emerald-400 bg-emerald-950 px-2.5 py-0.5 rounded border border-emerald-800">24/7 Self-Healed Asset</span>
                 <h1 class="text-2xl font-bold text-white mt-2">{clean_title}</h1>
             </div>
-            <a href="{VALID_UPI_URI}" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-4 py-2.5 rounded-lg transition">Upgrade Pro (₹{AMOUNT})</a>
+            <a href="https://github.com/sponsors/keshavs40344" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-pink-400 hover:text-pink-300 border border-pink-800/60 bg-pink-950/40 px-3 py-1.5 rounded-lg transition">♥ Sponsor on GitHub</a>
         </header>
         <div class="space-y-4">
             <label class="text-xs font-bold text-slate-400 uppercase">Input Payload</label>
@@ -182,7 +182,7 @@ class ConglomerateSentinel:
                     <div class="max-w-2xl">
                         <div class="flex items-center gap-2 mb-3">
                             <span class="text-[11px] font-bold uppercase tracking-wider bg-indigo-600 text-white px-2.5 py-0.5 rounded-full">Flagship Enterprise SaaS</span>
-                            <span class="text-[11px] text-emerald-400 font-semibold bg-emerald-950 border border-emerald-800 px-2.5 py-0.5 rounded-full">₹299.00 Lifetime Lock</span>
+                            <span class="text-[11px] text-emerald-400 font-semibold bg-emerald-950 border border-emerald-800 px-2.5 py-0.5 rounded-full">100% Free & Open-Source</span>
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">InvoiceForge Pro Studio</h3>
                         <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">

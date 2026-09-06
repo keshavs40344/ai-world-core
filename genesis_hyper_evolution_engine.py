@@ -3,7 +3,7 @@
 GENESIS HYPER-EVOLUTION ENGINE: AUTONOMOUS MULTI-SECTOR EXPANSION
 Autonomous cross-domain software builder that learns from previous generations
 and systematically builds mission-critical tools for FinTech, DevOps, AI-Infra, and LegalTech.
-100% RapidAPI-Free & Pre-filled NPCI UPI ₹299.00 Integration.
+100% RapidAPI-Free & Pre-filled NPCI UPI Free & Open Integration.
 """
 
 import os
@@ -56,7 +56,7 @@ for d in DIRS:
 DB_PATH = "db/hyper_evolution.db"
 UPI_ID = ""
 PAYEE = ""
-AMOUNT = "299.00"
+AMOUNT = "0.00"
 
 # Master Vector Catalog of Real-World High-Value Pain Points
 EXPANSION_SECTORS = [
@@ -121,7 +121,7 @@ class HyperEvolutionCore:
         gen, bp = cls.get_next_blueprint()
         print(f"🧬 [HYPER-EVOLUTION GEN {gen}] Spawning high-intent asset in sector: {bp['sector']}...")
 
-        # Standard NPCI Payment Link (Strict am=299.00 & tn params)
+        # Standard NPCI Payment Link (GitHub Sponsor link)
         query_params = urllib.parse.urlencode({
             "pa": UPI_ID,
             "pn": PAYEE,
@@ -222,7 +222,7 @@ Return strictly raw JSON with NO markdown blocks around the JSON object:
         </div>
     </div>
 
-    <!-- STANDARDIZED INR 299 PRO PAYMENT MODAL -->
+    <!-- STANDARDIZED GITHUB SPONSOR MODAL -->
     <div id="paywallModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 font-sans">
         <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-2xl p-6 shadow-2xl text-center relative">
             <button onclick="closePaywall()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-sm font-bold">✕</button>

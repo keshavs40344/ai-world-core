@@ -57,7 +57,7 @@ TELEGRAM_BOT_TOKEN = clean_env("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = clean_env("TELEGRAM_CHAT_ID", "1335170519")
 UPI_ID = ""
 PAYEE_NAME = ""
-AMOUNT = "299.00"
+AMOUNT = "0.00"
 NOTE = "Genesis_SaaS_Pro_Lifetime"
 BASE_URL = "https://keshavs40344.github.io/ai-world-core"
 DB_PATH = "db/genesis_master.db"
@@ -291,7 +291,7 @@ class AgentGammaEngineer:
     <div class="flex items-center space-x-3">
       
       <button onclick="triggerPaywall()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-lg transition shadow">
-        Upgrade Pro (₹299)
+        ♥ Sponsor on GitHub
       </button>
     </div>
   </header>
@@ -355,7 +355,7 @@ class AgentGammaEngineer:
     </div>
   </main>
 
-  <!-- STANDARDIZED INR 299 PRO PAYMENT MODAL -->
+  <!-- STANDARDIZED GITHUB SPONSOR MODAL -->
   <div id="paywallModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 font-sans">
     <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-2xl p-6 shadow-2xl text-center relative">
       <button onclick="closePaywall()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-sm font-bold">✕</button>
@@ -365,17 +365,17 @@ class AgentGammaEngineer:
       <div class="my-5 p-4 bg-slate-950 border border-slate-800 rounded-xl">
         <div class="flex justify-between items-center mb-3 text-xs border-b border-slate-800 pb-2">
           <span class="text-slate-400">Total Settlement:</span>
-          <span class="text-emerald-400 font-mono font-bold text-sm">₹299.00 INR</span>
+          <span class="text-emerald-400 font-mono font-bold text-sm">Free & Open</span>
         </div>
         <div class="bg-white p-2.5 rounded-lg inline-block shadow-inner mb-3">
-          <img src="{qr_url}" alt="Scan to Pay 299" class="w-36 h-36 mx-auto block" />
+          <img src="{qr_url}" alt="Sponsor on GitHub" class="w-36 h-36 mx-auto block" />
         </div>
         <p class="text-[11px] text-slate-400">Scan via PhonePe, Google Pay, Paytm or BHIM</p>
         <p class="text-xs font-mono text-slate-200 mt-1 font-semibold select-all">{UPI_ID}</p>
       </div>
       <div class="space-y-2">
         <a href="{upi_link}" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30">
-          <span>⚡ Pay ₹299.00 (Open Any UPI App)</span>
+          <span>⚡ Pay Free & Open (Open Any UPI App)</span>
         </a>
         <button onclick="navigator.clipboard.writeText('{UPI_ID}'); alert('UPI ID copied: {UPI_ID}');" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-2 rounded-xl transition font-medium">
           📋 Copy UPI ID to Clipboard

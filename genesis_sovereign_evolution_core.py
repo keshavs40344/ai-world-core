@@ -4,7 +4,7 @@ GENESIS SOVEREIGN EVOLUTION CORE (ZERO-APPROVAL SELF-EVOLVING SYSTEM)
 - Scans existing tools to extract lessons & flaws (Epigenetic Learning).
 - Builds high-complexity, real-world utility software (No generic toy tools).
 - Autonomous Self-Testing & Self-Deploy without human intervention.
-- Pre-filled NPCI UPI (am=299.00) integration (No RapidAPI).
+- GitHub Sponsors integration.
 """
 
 import os
@@ -57,7 +57,7 @@ for d in DIRS:
 DB_PATH = "db/evolution_engine.db"
 UPI_ID = ""
 PAYEE = ""
-AMOUNT = "299.00"
+AMOUNT = "0.00"
 
 # ============================================================
 # 1. EVOLUTIONARY MEMORY & DNA (Learning from past agents)
@@ -247,7 +247,7 @@ Return strictly raw JSON (no conversational text, no markdown wrappers):
             </div>
         </div>
     </div>
-    <!-- STANDARDIZED INR 299 PRO PAYMENT MODAL -->
+    <!-- STANDARDIZED GITHUB SPONSOR MODAL -->
     <div id="paywallModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 font-sans">
         <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-2xl p-6 shadow-2xl text-center relative">
             <button onclick="document.getElementById('paywallModal').classList.add('hidden')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-sm font-bold">✕</button>

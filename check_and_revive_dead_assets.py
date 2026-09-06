@@ -30,7 +30,7 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
 
 UPI_ID = ""
 PAYEE = ""
-AMOUNT = "299.00"
+AMOUNT = "0.00"
 
 QUERY_PARAMS = urllib.parse.urlencode({
     "pa": UPI_ID,

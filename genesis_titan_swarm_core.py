@@ -56,7 +56,7 @@ for d in DIRS:
 DB_PATH = "db/titan_guild.db"
 UPI_ID = ""
 PAYEE = ""
-AMOUNT = "299.00"
+AMOUNT = "0.00"
 
 # Master Registry of Elite Engineering Personas & High-Value Problems
 ELITE_GUILDS = [

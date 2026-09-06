@@ -31,7 +31,7 @@ os.makedirs("public/specs", exist_ok=True)
 
 UPI_ID = ""
 PAYEE = ""
-AMOUNT = "299.00"
+AMOUNT = "0.00"
 NOTE = "InvoiceForge_Pro_Lifetime"
 
 query_params = urllib.parse.urlencode({
@@ -75,7 +75,7 @@ SAAS_HTML = f"""<!DOCTYPE html>
             </div>
             <div class="flex items-center space-x-3">
                 <button onclick="triggerPaywall()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-lg transition shadow-md shadow-emerald-900/30">
-                    Upgrade Pro (₹299)
+                    ♥ Sponsor on GitHub
                 </button>
             </div>
         </div>
@@ -196,7 +196,7 @@ SAAS_HTML = f"""<!DOCTYPE html>
         </div>
     </main>
 
-    <!-- STANDARDIZED INR 299 PRO PAYMENT MODAL -->
+    <!-- STANDARDIZED GITHUB SPONSOR MODAL -->
     <div id="paywallModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 font-sans">
         <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-2xl p-6 shadow-2xl text-center relative">
             <button onclick="closePaywall()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-sm font-bold">✕</button>
@@ -207,18 +207,18 @@ SAAS_HTML = f"""<!DOCTYPE html>
                 Free sandbox quota exhausted. Unlock unlimited PDF downloads and remove watermarks.
             </p>
 
-            <!-- Payment Box with Exact 299 Lock -->
+            <!-- GitHub Sponsor Box -->
             <div class="my-5 p-4 bg-slate-950 border border-slate-800 rounded-xl">
                 <div class="flex justify-between items-center mb-3 text-xs border-b border-slate-800 pb-2">
                     <span class="text-slate-400">Total Settlement:</span>
-                    <span class="text-emerald-400 font-mono font-bold text-sm">₹299.00 INR</span>
+                    <span class="text-emerald-400 font-mono font-bold text-sm">Free & Open</span>
                 </div>
 
                 <!-- Dynamic QR with Exact Amount Parameter -->
                 <div class="bg-white p-2.5 rounded-lg inline-block shadow-inner mb-3">
                     <img id="upiQrImage" 
                          src="{qr_url}" 
-                         alt="Scan to Pay 299" 
+                         alt="Sponsor on GitHub" 
                          class="w-36 h-36 mx-auto block" />
                 </div>
                 <p class="text-[11px] text-slate-400">Scan via PhonePe, Google Pay, Paytm or BHIM</p>
@@ -229,7 +229,7 @@ SAAS_HTML = f"""<!DOCTYPE html>
             <div class="space-y-2">
                 <a href="{upi_link}" 
                    class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30">
-                    <span>⚡ Pay ₹299.00 (Open Any UPI App)</span>
+                    <span>⚡ Pay Free & Open (Open Any UPI App)</span>
                 </a>
                 
                 <button onclick="navigator.clipboard.writeText('{UPI_ID}'); alert('UPI ID copied: {UPI_ID}');" 

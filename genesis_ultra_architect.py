@@ -42,7 +42,7 @@ TELEGRAM_CHAT_ID = clean_env("TELEGRAM_CHAT_ID", "")
 
 UPI_ID = ""
 PAYEE = ""
-AMOUNT = "299.00"
+AMOUNT = "0.00"
 RAPIDAPI_URL = "https://rapidapi.com/keshavkumarthakur00007/api/csv-to-json-high-speed-mapper"
 
 DIRS = ["public/saas", "public/assets", "vault/licenses", "db"]
@@ -362,7 +362,7 @@ ALL INTELLECTUAL PROPERTY, CLIENT-SIDE HEURISTICS, AND UI DESIGNS ARE PROPRIETAR
             </div>
             <div class="p-4 rounded-xl border border-slate-800/80 bg-slate-900/30">
                 <h3 class="font-bold text-slate-200 mb-1">How does the commercial license work?</h3>
-                <p>You can run 3 full analyses on the free tier. Upgrading via the one-time ₹299 UPI payment grants unlimited lifetime client-side usage.</p>
+                <p>All analyses are completely free and unlimited. Support our work via GitHub Sponsors.</p>
             </div>
             <div class="p-4 rounded-xl border border-slate-800/80 bg-slate-900/30">
                 <h3 class="font-bold text-slate-200 mb-1">Can this output be legally cited?</h3>
@@ -377,7 +377,7 @@ ALL INTELLECTUAL PROPERTY, CLIENT-SIDE HEURISTICS, AND UI DESIGNS ARE PROPRIETAR
         <p class="text-[11px] text-slate-600 mt-1">Protected by Indian Copyright Act & Global Digital IP Laws. Zero unauthorized distribution permitted.</p>
     </footer>
 
-    <!-- Universal Paywall Modal (UPI am=299.00 Pre-Locked) -->
+    <!-- GitHub Sponsors Modal -->
     <div id="payModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
         <div class="custom-card max-w-md w-full rounded-2xl p-6 text-center border relative">
             <button onclick="closePaywallModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">✕</button>

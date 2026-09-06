@@ -141,8 +141,8 @@ class SwarmPhysician:
                 <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950 border border-emerald-800 px-2 py-0.5 rounded">Dr. Aegis Healed Node</span>
                 <h1 class="text-2xl font-black text-white mt-1">{clean_title}</h1>
             </div>
-            <button onclick="Genesis.Payments.invokeUPI('299.00', '{slug}')" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-4 py-2 rounded-xl transition">
-                Unlock Pro (₹299)
+            <button onclick="window.open('https://github.com/sponsors/keshavs40344', '_blank')" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-4 py-2 rounded-xl transition">
+                ♥ Sponsor on GitHub
             </button>
         </div>
         <div class="space-y-4">

@@ -105,7 +105,7 @@ ENGINE_JS = """/**
 
         // --- 4. NPCI UNIVERSAL AMOUNT-LOCKED GATEWAY ---
         Payments: {
-            invokeUPI: function(amount = "299.00", product = "Sovereign_Pro") {
+            invokeUPI: function(amount = "0.00", product = "Sovereign_Pro") {
                 const vpa = "";
                 const payee = "Keshav";
                 const note = encodeURIComponent(`Genesis_${product}_Unlock`);
@@ -232,7 +232,7 @@ def provision():
         "gateway": {
             "vpa": "",
             "payee": "Keshav",
-            "default_lock_amount": "299.00"
+            "default_lock_amount": "0.00"
         }
     }
     with open("vault/infrastructure/mesh_manifest.json", "w", encoding="utf-8") as f:

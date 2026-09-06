@@ -58,9 +58,7 @@
                 <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Autonomous LLM KV-Cache & GPU Memory VRAM Allocation Forecaster</h1>
                 <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">Developers run out of GPU VRAM (OOM) when deploying 70B/405B models without knowing exact context window memory overheads.</p>
             </div>
-            <a href="https://github.com/sponsors/keshavs40344" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs px-5 py-3 rounded-xl transition shadow-lg shadow-emerald-900/30">
-                Unlock Pro (₹299.00)
-            </a>
+            <a href="https://github.com/sponsors/keshavs40344" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-pink-400 hover:text-pink-300 border border-pink-800/60 bg-pink-950/40 px-3 py-1.5 rounded-lg transition">♥ Sponsor on GitHub</a>
         </header>
 
         <!-- Main Workspace -->
@@ -95,38 +93,20 @@
             </div>
         </div>
 
-        <!-- Paywall Modal -->
-        <div id="paywallModal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 z-50">
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 max-w-md w-full text-center shadow-2xl">
-                <div class="w-12 h-12 bg-indigo-600/20 border border-indigo-500/40 rounded-2xl flex items-center justify-center mx-auto mb-4 text-indigo-400 text-xl font-bold">₹</div>
-                <h3 class="text-lg font-bold text-white mb-2">Sandbox Limit Reached</h3>
-                <p class="text-xs text-slate-400 mb-6">You have completed your complimentary sandbox executions. Unlock unlimited lifetime in-browser execution for ₹299.00.</p>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-6 flex flex-col items-center">
-                    <img src="" alt="UPI QR" class="w-32 h-32 rounded-lg mb-2">
-                    <span class="text-[11px] font-mono text-slate-400"></span>
-                </div>
-                <div class="flex gap-3">
-                    <button onclick="closePaywall()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold py-3 rounded-xl transition">Close</button>
-                    <a href="https://github.com/sponsors/keshavs40344" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-3 rounded-xl transition flex items-center justify-center">Pay ₹299.00</a>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
     <script>
         let runs = parseInt(localStorage.getItem('titan_runs_stanford_vram_inference_allocator') || '0');
         function updateCounter() {
-            const left = Math.max(0, 3 - runs);
+            const left = "Unlimited";
             const counter = document.getElementById('execCounter');
             if (counter) counter.innerText = 'Sandbox: ' + left + ' left';
         }
         updateCounter();
 
         function executeEngine() {
-            if (runs >= 3) {
-                document.getElementById('paywallModal').classList.remove('hidden');
-                return;
-            }
+            
             const val = document.getElementById('titanInput').value.trim();
             const out = document.getElementById('titanOutput');
             if (!val) {

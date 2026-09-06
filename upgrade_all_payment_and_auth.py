@@ -59,8 +59,8 @@ def patch_page(file_path: str):
 
     # 3. Replace old triggerPaywallModal with GenesisCheckout.open()
     if "triggerPaywallModal" in content:
-        content = content.replace("triggerPaywallModal()", "GenesisCheckout.open({ amount: '299.00' })")
-        content = content.replace("onclick=\"triggerPaywallModal()\"", "onclick=\"GenesisCheckout.open({ amount: '299.00' })\"")
+        content = content.replace("triggerPaywallModal()", "GenesisCheckout.open({ sponsor: true })")
+        content = content.replace("onclick=\"triggerPaywallModal()\"", "onclick=\"GenesisCheckout.open({ sponsor: true })\"")
         modified = True
 
     if modified:

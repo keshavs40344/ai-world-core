@@ -113,17 +113,14 @@
     <script>
         let runs = parseInt(localStorage.getItem('titan_runs_Synapse AI_vram_inference_allocator') || '0');
         function updateCounter() {
-            const left = Math.max(0, 3 - runs);
+            const left = "Unlimited";
             const counter = document.getElementById('execCounter');
             if (counter) counter.innerText = 'Sandbox: ' + left + ' left';
         }
         updateCounter();
 
         function executeEngine() {
-            if (runs >= 3) {
-                document.getElementById('paywallModal').classList.remove('hidden');
-                return;
-            }
+            
             const val = document.getElementById('titanInput').value.trim();
             const out = document.getElementById('titanOutput');
             if (!val) {
