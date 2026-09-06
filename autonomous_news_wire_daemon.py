@@ -35,6 +35,7 @@ PUBLIC_NEWS_DIR = os.path.join(ROOT_DIR, "public", "news")
 PUBLIC_DIR = os.path.join(ROOT_DIR, "public")
 NEWS_INDEX_PATH = os.path.join(PUBLIC_DIR, "news_wire.html")
 NEWS_JSON_PATH = os.path.join(PUBLIC_DIR, "news_feed.json")
+SITEMAP_NEWS_PATH = os.path.join(PUBLIC_DIR, "sitemap_news.xml")
 DB_PATH = os.path.join(ROOT_DIR, "db", "genesis_state.db")
 
 os.makedirs(PUBLIC_NEWS_DIR, exist_ok=True)
@@ -535,5 +536,53 @@ def execute_news_cycle():
     update_news_portal(feed_data)
     print(f"\n📰 [WIRE UPDATE COMPLETE]: {new_articles} new articles synthesized. Portal & JSON updated.")
 
+def update_google_news_sitemap():
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cur = conn.cursor()
+        cur.execute("SELECT slug, title_en, published_iso FROM autonomous_news_wire ORDER BY created_epoch DESC LIMIT 40")
+        rows = cur.fetchall()
+        conn.close()
+
+        xml_entries = []
+        for r in rows:
+            slug, title, pub_iso = r
+            xml_entries.append(f'''  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/{slug}.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>{pub_iso}</news:publication_date>
+      <news:title>{title}</news:title>
+    </news:news>
+  </url>''')
+
+        xml_content = f'''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+{''.join(xml_entries)}
+</urlset>
+'''
+        with open(SITEMAP_NEWS_PATH, "w", encoding="utf-8") as f:
+            f.write(xml_content)
+        print("  ✔ Google News sitemap synchronized: public/sitemap_news.xml")
+    except Exception as e:
+        print(f"  Warning: sitemap update error: {e}")
+
 if __name__ == "__main__":
-    execute_news_cycle()
+    if "--loop" in sys.argv or "--daemon" in sys.argv:
+        print("⚡ APEX AUTONOMOUS NEWS WIRE: 5-MINUTE CONTINUOUS ENGINE ACTIVE")
+        print("⏱️ Interval: 300 seconds (5 minutes) per official ingestion pulse.")
+        while True:
+            try:
+                execute_news_cycle()
+                update_google_news_sitemap()
+            except Exception as e:
+                print(f"Cycle execution notice: {e}")
+            print("⏳ 5-Minute Ingestion Watchdog Active. Sleeping 300 seconds...")
+            time.sleep(300)
+    else:
+        execute_news_cycle()
+        update_google_news_sitemap()
