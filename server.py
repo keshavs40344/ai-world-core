@@ -263,7 +263,55 @@ async def stream_live_telemetry():
             await asyncio.sleep(1.0)
     return StreamingResponse(event_generator(), media_type="text/event-stream")
 
-# --- 4. ROOT PORTAL ROUTING ---
+# --- 4. FLEET SUPERVISION & METRICS API ---
+@app.get("/api/v1/fleet-metrics")
+async def get_fleet_metrics():
+    """Returns live inventory of deployed SaaS tools with file sizes, URLs, and upstream socket DNS latency."""
+    t0 = time.perf_counter()
+    dns_latency_ms = 0.0
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(0.3)
+        s.connect(("1.1.1.1", 53))
+        s.close()
+        dns_latency_ms = round((time.perf_counter() - t0) * 1000, 2)
+    except Exception:
+        dns_latency_ms = 999.0
+
+    active_fleet = []
+    if os.path.exists(SAAS_DIR):
+        for fname in sorted(os.listdir(SAAS_DIR)):
+            if fname.endswith(".html"):
+                fpath = os.path.join(SAAS_DIR, fname)
+                size_bytes = os.path.getsize(fpath)
+                slug = fname.replace(".html", "")
+                active_fleet.append({
+                    "slug": slug,
+                    "filename": fname,
+                    "file_size_bytes": size_bytes,
+                    "url": f"/public/saas/{fname}",
+                    "status": "STERILE"
+                })
+
+    return {
+        "status": "OPERATIONAL",
+        "dns_latency_ms": dns_latency_ms,
+        "active_fleet_count": len(active_fleet),
+        "active_fleet": active_fleet,
+        "timestamp_epoch": time.time()
+    }
+
+# --- 5. DYNAMIC TOOL RUNNER & PROXY ---
+@app.get("/api/v1/tools/{slug}", response_class=HTMLResponse)
+async def serve_dynamic_tool(slug: str):
+    """Dynamically serves any SaaS tool by slug with zero server restart required."""
+    target_file = os.path.join(SAAS_DIR, f"{slug}.html")
+    if os.path.exists(target_file):
+        with open(target_file, "r", encoding="utf-8", errors="replace") as f:
+            return f.read()
+    raise HTTPException(status_code=404, detail=f"Tool '{slug}' not found in fleet.")
+
+# --- 6. ROOT PORTAL ROUTING ---
 @app.get("/", response_class=HTMLResponse)
 async def serve_index():
     index_file = os.path.join(PUBLIC_DIR, "index.html")

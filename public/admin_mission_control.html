@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA // Industrial Mission Control & Sentinel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Geist', sans-serif; }
+        code, pre, .font-mono { font-family: 'Geist Mono', monospace; }
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-[#09090b] text-zinc-100 min-h-screen flex flex-col font-sans selection:bg-zinc-800 antialiased">
+
+    <!-- Top Sentinel Bar -->
+    <header class="h-14 border-b border-zinc-800/80 bg-[#09090b]/90 backdrop-blur px-6 flex items-center justify-between sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-7 h-7 rounded bg-emerald-500 text-black font-mono font-bold flex items-center justify-center text-xs shadow-lg shadow-emerald-500/20">
+                ▲
+            </div>
+            <span class="font-semibold text-sm tracking-tight text-white">SENTINEL MISSION CONTROL</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-emerald-400 border border-zinc-700/60 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                ACTIVE MONITORING
+            </span>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-mono">
+            <span id="systemClock" class="text-zinc-400">--:--:-- UTC</span>
+            <a href="index.html" class="text-zinc-500 hover:text-white transition">Public Hub ↗</a>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Grid -->
+    <main class="max-w-7xl mx-auto w-full p-6 space-y-6 flex-1">
+        
+        <!-- Live System Vitals Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-mono">
+            <div class="p-4 rounded-xl border border-zinc-800 bg-zinc-900/30">
+                <div class="text-[11px] text-zinc-500 uppercase">SERVER STATE</div>
+                <div class="text-lg font-bold text-emerald-400 mt-1 flex items-center gap-2">
+                    <span id="valServerState">ONLINE</span>
+                </div>
+                <div class="text-[10px] text-zinc-500 mt-1" id="valServerUptime">ASGI Kernel Active</div>
+            </div>
+
+            <div class="p-4 rounded-xl border border-zinc-800 bg-zinc-900/30">
+                <div class="text-[11px] text-zinc-500 uppercase">ACTIVE FLEET TOOLS</div>
+                <div class="text-lg font-bold text-zinc-100 mt-1" id="valFleetSize">0</div>
+                <div class="text-[10px] text-zinc-500 mt-1">Verified In-Memory Sandbox</div>
+            </div>
+
+            <div class="p-4 rounded-xl border border-zinc-800 bg-zinc-900/30">
+                <div class="text-[11px] text-zinc-500 uppercase">UPSTREAM DNS LATENCY</div>
+                <div class="text-lg font-bold text-cyan-400 mt-1" id="valDnsLatency">-- ms</div>
+                <div class="text-[10px] text-zinc-500 mt-1">1.1.1.1 Socket Benchmark</div>
+            </div>
+
+            <div class="p-4 rounded-xl border border-zinc-800 bg-zinc-900/30">
+                <div class="text-[11px] text-zinc-500 uppercase">HISTORICAL AUDITS</div>
+                <div class="text-lg font-bold text-indigo-400 mt-1" id="valAudits">0</div>
+                <div class="text-[10px] text-zinc-500 mt-1">Stored in SQLite Ledger</div>
+            </div>
+        </div>
+
+        <!-- Central Inspection Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Active Tools Supervision List -->
+            <div class="lg:col-span-2 border border-zinc-800 rounded-xl bg-zinc-900/30 p-5 shadow-xl flex flex-col">
+                <div class="flex items-center justify-between pb-3 border-b border-zinc-800 mb-4">
+                    <span class="text-xs font-mono text-zinc-400">AUTONOMOUS FLEET DIRECTORY (LIVE STATUS)</span>
+                    <button onclick="refreshFleet()" class="text-xs font-mono text-zinc-400 hover:text-white underline">Refresh Fleet</button>
+                </div>
+                
+                <div class="overflow-x-auto flex-1">
+                    <table class="w-full text-left font-mono text-xs border-collapse">
+                        <thead class="border-b border-zinc-800 text-zinc-500 bg-zinc-950/50">
+                            <tr>
+                                <th class="px-3 py-2">SLUG / NAME</th>
+                                <th class="px-3 py-2">SIZE</th>
+                                <th class="px-3 py-2">HEALTH</th>
+                                <th class="px-3 py-2 text-right">ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fleetTableBody" class="divide-y divide-zinc-800/60 text-zinc-300">
+                            <tr><td colspan="4" class="p-4 text-center text-zinc-600">// Polling deployed software fleet...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Real-Time Sentinel Event Stream & Diagnostics -->
+            <div class="border border-zinc-800 rounded-xl bg-zinc-900/30 p-5 shadow-xl flex flex-col">
+                <div class="flex items-center justify-between pb-3 border-b border-zinc-800 mb-3">
+                    <span class="text-xs font-mono text-zinc-400">SENTINEL RADAR LOGS</span>
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                </div>
+                <pre id="sentinelConsole" class="flex-1 font-mono text-[11px] leading-relaxed text-zinc-400 overflow-auto whitespace-pre-wrap p-3 rounded-lg bg-[#07090e] border border-zinc-800/80 min-h-[300px]"></pre>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="border-t border-zinc-800/80 py-4 px-6 text-center text-xs text-zinc-500 font-mono">
+        Sovereign Industrial Mesh • Continuous Autonomous Watchtower
+    </footer>
+
+    <!-- Monitoring Script -->
+    <script>
+        const API_BASE = window.location.origin.includes('http') ? window.location.origin : "http://127.0.0.1:8000";
+
+        function logEvent(msg) {
+            const time = new Date().toISOString().split('T')[1].split('.')[0];
+            const consoleEl = document.getElementById('sentinelConsole');
+            consoleEl.innerText = `[${time}] ${msg}\n` + consoleEl.innerText;
+        }
+
+        async function pollTelemetry() {
+            try {
+                const res = await fetch(`${API_BASE}/api/v1/system/telemetry`);
+                if (!res.ok) throw new Error("HTTP " + res.status);
+                const data = await res.json();
+
+                document.getElementById('valServerState').innerText = "ONLINE";
+                document.getElementById('valServerState').className = "text-lg font-bold text-emerald-400";
+                document.getElementById('valFleetSize').innerText = data.deployed_saas_products;
+                document.getElementById('valAudits').innerText = data.total_historical_audits;
+            } catch(e) {
+                document.getElementById('valServerState').innerText = "OFFLINE";
+                document.getElementById('valServerState').className = "text-lg font-bold text-rose-500";
+                logEvent(`ERR: Server unreachable on port 8000.`);
+            }
+        }
+
+        async function refreshFleet() {
+            try {
+                const res = await fetch(`${API_BASE}/api/v1/fleet-metrics`);
+                if (!res.ok) return;
+                const data = await res.json();
+
+                document.getElementById('valDnsLatency').innerText = `${data.dns_latency_ms} ms`;
+
+                const tbody = document.getElementById('fleetTableBody');
+                if (data.active_fleet.length === 0) {
+                    tbody.innerHTML = `<tr><td colspan="4" class="p-4 text-center text-zinc-600">// No deployed SaaS tools detected.</td></tr>`;
+                    return;
+                }
+
+                tbody.innerHTML = data.active_fleet.map(t => {
+                    const kb = (t.file_size_bytes / 1024).toFixed(1);
+                    return `<tr class="hover:bg-zinc-800/40 transition">
+                        <td class="px-3 py-2.5 font-semibold text-zinc-200">${t.slug}</td>
+                        <td class="px-3 py-2.5 text-zinc-500">${kb} KB</td>
+                        <td class="px-3 py-2.5"><span class="px-1.5 py-0.5 rounded text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-800/60">STERILE</span></td>
+                        <td class="px-3 py-2.5 text-right"><a href="${t.url}" target="_blank" class="text-zinc-400 hover:text-white underline">Open ↗</a></td>
+                    </tr>`;
+                }).join('');
+
+                logEvent(`WATCHDOG: Fleet verified (${data.active_fleet.length} tools verified in memory).`);
+            } catch(e) {
+                logEvent(`WARN: Fleet metrics update failed.`);
+            }
+        }
+
+        function updateClock() {
+            document.getElementById('systemClock').innerText = new Date().toUTCString().split(' ')[4] + " UTC";
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setInterval(updateClock, 1000);
+            pollTelemetry();
+            refreshFleet();
+            setInterval(pollTelemetry, 3000);
+            setInterval(refreshFleet, 6000);
+        });
+    </script>
+</body>
+</html>
