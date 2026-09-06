@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://keshavs40344.github.io/ai-world-core/public/sitemap.xml
+Sitemap: https://keshavs40344.github.io/ai-world-core/public/sitemap_news.xml
