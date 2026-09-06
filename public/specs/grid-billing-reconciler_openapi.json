@@ -3,7 +3,7 @@
   "info": {
     "title": "grid-billing-reconciler",
     "version": "1.0.0",
-    "description": "Eliminates 11-day billing dispute cycles by programmatically cross-referencing meter telemetry with billing records to auto-flag discrepancies."
+    "description": "Automates cross-referencing of meter telemetry and billing records to resolve disputes in seconds instead of days."
   },
   "paths": {
     "/process": {
