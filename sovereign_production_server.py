@@ -197,58 +197,6 @@ async def get_live_market_and_network_feed():
         }
     }
 
-@app.get("/api/v1/inspect-target")
-async def inspect_internet_target(target_url: str = Query(..., description="e.g. https://github.com")):
-    if not target_url.startswith("http"):
-        target_url = "https://" + target_url
-
-    t0 = time.perf_counter()
-    headers_dict = {}
-    status_code = 0
-    ssl_info = {}
-
-    try:
-        parsed_host = target_url.split("//")[-1].split("/")[0]
-        ctx = ssl.create_default_context()
-        with socket.create_connection((parsed_host, 443), timeout=1.5) as sock:
-            with ctx.wrap_socket(sock, server_hostname=parsed_host) as ssock:
-                cert = ssock.getpeercert()
-                ssl_info = {
-                    "issuer": dict(x[0] for x in cert.get("issuer", [])),
-                    "valid_until": cert.get("notAfter"),
-                    "version": ssock.version()
-                }
-    except Exception as e:
-        ssl_info = {"ssl_error": str(e)}
-
-    try:
-        req = urllib.request.Request(
-            target_url,
-            headers={'User-Agent': 'Mozilla/5.0 (SovereignMesh/2026; DiagnosticNode)'}
-        )
-        with urllib.request.urlopen(req, timeout=2.0) as response:
-            status_code = response.getcode()
-            headers_dict = dict(response.info().items())
-    except urllib.error.HTTPError as e:
-        status_code = e.code
-        headers_dict = dict(e.headers.items())
-    except Exception as e:
-        return {"error": f"Failed connecting to target: {str(e)}"}
-
-    total_latency = round((time.perf_counter() - t0) * 1000, 2)
-    return {
-        "target": target_url,
-        "status_code": status_code,
-        "response_latency_ms": total_latency,
-        "ssl_analysis": ssl_info,
-        "security_headers": {
-            "has_hsts": "Strict-Transport-Security" in headers_dict,
-            "has_csp": "Content-Security-Policy" in headers_dict,
-            "server_header": headers_dict.get("Server", "HIDDEN_OR_MASKED")
-        },
-        "raw_headers": headers_dict
-    }
-
 @app.get("/api/v1/stream-telemetry")
 async def stream_live_telemetry():
     async def event_generator():
@@ -275,4 +223,4 @@ async def serve_index():
 if __name__ == "__main__":
     import uvicorn
     print("🚀 [SERVER ONLINE]: Heavyweight Sovereign Server running on http://127.0.0.1:8000")
-    uvicorn.run("server:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("sovereign_production_server:app", host="127.0.0.1", port=8000, reload=True)

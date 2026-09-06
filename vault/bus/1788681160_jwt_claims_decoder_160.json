@@ -1,0 +1,11 @@
+{
+  "signal_id": "sig_1788681160_jwt_claims_decoder_160",
+  "source": "Autonomous Perpetual Engine",
+  "event": "TOOL_SELF_DISCOVERED_AND_DEPLOYED",
+  "timestamp_utc": "2026-09-06 07:52:40 UTC",
+  "payload": {
+    "slug": "jwt_claims_decoder_160",
+    "title": "Zero-Trust JWT Token & Header Inspector",
+    "category": "SECURITY & AUTH"
+  }
+}

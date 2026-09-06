@@ -1,9 +1,9 @@
 {
   "status": "ALL_SYSTEMS_NOMINAL",
   "senate_status": "UNANIMOUS_RATIFICATION",
-  "epoch": 1788680953.4490376,
-  "timestamp_utc": "2026-09-06T07:49:13.450640",
+  "epoch": 1788681160.166661,
+  "timestamp_utc": "2026-09-06T07:52:40.167889",
   "gateway_status": "ONLINE_LOW_LATENCY",
-  "latency_ms": 119.28,
+  "latency_ms": 113.9,
   "mesh_state": "AUTONOMOUS_PERPETUAL_LOOP"
 }
