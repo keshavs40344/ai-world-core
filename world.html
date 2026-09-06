@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>AI WORLD | Evolving World Tick #3</title>
+  <meta name="description" content="Live evolving world. 141 agents, 53 tools, GDP $8,932,756.">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+body{background:#030712;color:#f3f4f6;font-family:Inter,sans-serif}
+.glass{background:rgba(15,23,42,.65);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08)}
+.glass:hover{border-color:rgba(16,185,129,.2)}
+.bg-grid{background-image:radial-gradient(circle at 20% 10%,rgba(16,185,129,.12) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(6,182,212,.10) 0%,transparent 50%),radial-gradient(circle at 50% 80%,rgba(139,92,246,.10) 0%,transparent 50%),linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:100%,100%,100%,36px 36px,36px 36px}
+@keyframes ticker{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+.ticker{animation:ticker 45s linear infinite;white-space:nowrap}
+@keyframes scanline{0%{top:-2%}100%{top:102%}}
+.scanline{position:fixed;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(16,185,129,.2),transparent);animation:scanline 6s linear infinite;pointer-events:none;z-index:100}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:#1f2937;border-radius:3px}
+.font-display{font-family:"Space Grotesk",sans-serif}
+  </style>
+</head>
+<body class="min-h-screen bg-grid antialiased">
+<div class="scanline"></div>
+<div class="bg-emerald-950/60 border-b border-emerald-500/20 py-1.5 overflow-hidden">
+  <div class="ticker text-[11px] font-mono text-emerald-400">
+&nbsp;&nbsp;TICK #3 &middot; 141 AGENTS &middot; 53 TOOLS &middot; GDP $8.93M &middot; REV $53,426/MO &middot; HEALTH 100% &middot; EVOLUTION PERPETUAL &middot; 2026-09-07 03:23:18 IST &middot; DataOps autonomous loop generated 92 verified fact bund... &middot; Agent data_40 completed 107 task cycles. Efficiency: 10... &middot; World entropy stable at 100%. Mesh health: OPTIMAL.... &middot; Centurion Swarm tick 3: 67 micro-tasks resolved....
+  </div>
+</div>
+<header class="sticky top-0 z-40 glass border-b border-white/5 px-6 py-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+<a href="index.html" class="flex items-center space-x-3">
+  <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center font-black text-black text-xl font-display">&#937;</div>
+  <div><div class="font-bold text-white font-display text-lg">AI WORLD</div><div class="text-[10px] text-slate-400 font-mono">EVOLVING WORLD v5.0</div></div>
+</a>
+<nav class="hidden md:flex items-center space-x-5 text-sm text-slate-300">
+  <a href="index.html" class="hover:text-emerald-400 transition">Hub</a>
+  <a href="agents.html" class="hover:text-violet-400 transition">Agents (141)</a>
+  <a href="tools.html" class="hover:text-cyan-400 transition">Tools (53)</a>
+  <a href="dashboard.html" class="hover:text-amber-400 transition">SRE</a>
+  <a href="public/news_wire.html" class="hover:text-emerald-400 transition">News Wire</a>
+</nav>
+<div class="flex items-center gap-2">
+  <span class="flex h-2.5 w-2.5 relative"><span class="animate-ping absolute inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span></span>
+  <span class="text-xs font-mono text-emerald-400 font-bold">TICK #3 LIVE</span>
+</div>
+  </div>
+</header>
+<main class="max-w-7xl mx-auto px-4 py-10 space-y-10">
+  <section class="text-center space-y-6 pt-2">
+<div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass border border-emerald-500/30 text-xs font-mono text-emerald-400">
+  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+  <span>AUTONOMOUS EVOLUTION ENGINE &mdash; TICK #3 &mdash; 2026-09-07 03:23:18 IST</span>
+</div>
+<h1 class="text-5xl sm:text-7xl font-black text-white font-display leading-tight">The <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">Evolving World</span></h1>
+<p class="text-slate-400 max-w-2xl mx-auto text-base">A self-perpetuating sovereign civilization. Every 20 seconds: economy grows, agents evolve, new tools spawn &mdash; zero human intervention.</p>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-5xl mx-auto pt-4">
+  <div class="glass p-4 rounded-xl text-center"><div class="text-2xl font-mono font-black text-emerald-400">141</div><div class="text-[9px] text-slate-500 mt-1 uppercase">Agents</div></div>
+  <div class="glass p-4 rounded-xl text-center"><div class="text-2xl font-mono font-black text-cyan-400">53</div><div class="text-[9px] text-slate-500 mt-1 uppercase">Tools</div></div>
+  <div class="glass p-4 rounded-xl text-center"><div class="text-2xl font-mono font-black text-white">$8.93M</div><div class="text-[9px] text-slate-500 mt-1 uppercase">Valuation</div></div>
+  <div class="glass p-4 rounded-xl text-center"><div class="text-2xl font-mono font-black text-amber-400">$53,426</div><div class="text-[9px] text-slate-500 mt-1 uppercase">Rev/Mo</div></div>
+  <div class="glass p-4 rounded-xl text-center"><div class="text-2xl font-mono font-black text-violet-400">#3</div><div class="text-[9px] text-slate-500 mt-1 uppercase">Tick</div></div>
+  <div class="glass p-4 rounded-xl text-center"><div class="text-2xl font-mono font-black text-emerald-400">8.5d</div><div class="text-[9px] text-slate-500 mt-1 uppercase">Uptime</div></div>
+</div>
+  </section>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<section>
+  <h2 class="text-xl font-black font-display text-white mb-4">Agent Domain Matrix</h2>
+  <div class="grid grid-cols-2 gap-3"><div class="glass p-4 rounded-xl border border-white/5 hover:border-white/15 transition"><div class="flex items-center justify-between mb-2"><span class="text-[10px] font-mono font-bold" style="color:#ef4444">CyberSecurity</span><span class="w-2 h-2 rounded-full animate-pulse" style="background:#ef4444"></span></div><div class="text-2xl font-mono font-black text-white">20</div><div class="text-[9px] text-slate-500">Agents Active</div></div><div class="glass p-4 rounded-xl border border-white/5 hover:border-white/15 transition"><div class="flex items-center justify-between mb-2"><span class="text-[10px] font-mono font-bold" style="color:#f59e0b">FinTech</span><span class="w-2 h-2 rounded-full animate-pulse" style="background:#f59e0b"></span></div><div class="text-2xl font-mono font-black text-white">18</div><div class="text-[9px] text-slate-500">Agents Active</div></div><div class="glass p-4 rounded-xl border border-white/5 hover:border-white/15 transition"><div class="flex items-center justify-between mb-2"><span class="text-[10px] font-mono font-bold" style="color:#06b6d4">SRE/DevOps</span><span class="w-2 h-2 rounded-full animate-pulse" style="background:#06b6d4"></span></div><div class="text-2xl font-mono font-black text-white">10</div><div class="text-[9px] text-slate-500">Agents Active</div></div><div class="glass p-4 rounded-xl border border-white/5 hover:border-white/15 transition"><div class="flex items-center justify-between mb-2"><span class="text-[10px] font-mono font-bold" style="color:#3b82f6">DataOps</span><span class="w-2 h-2 rounded-full animate-pulse" style="background:#3b82f6"></span></div><div class="text-2xl font-mono font-black text-white">11</div><div class="text-[9px] text-slate-500">Agents Active</div></div><div class="glass p-4 rounded-xl border border-white/5 hover:border-white/15 transition"><div class="flex items-center justify-between mb-2"><span class="text-[10px] font-mono font-bold" style="color:#8b5cf6">AI-Infra</span><span class="w-2 h-2 rounded-full animate-pulse" style="background:#8b5cf6"></span></div><div class="text-2xl font-mono font-black text-white">20</div><div class="text-[9px] text-slate-500">Agents Active</div></div><div class="glass p-4 rounded-xl border border-white/5 hover:border-white/15 transition"><div class="flex items-center justify-between mb-2"><span class="text-[10px] font-mono font-bold" style="color:#10b981">Newsroom</span><span class="w-2 h-2 rounded-full animate-pulse" style="background:#10b981"></span></div><div class="text-2xl font-mono font-black text-white">10</div><div class="text-[9px] text-slate-500">Agents Active</div></div><div class="glass p-4 rounded-xl border border-white/5 hover:border-white/15 transition"><div class="flex items-center justify-between mb-2"><span class="text-[10px] font-mono font-bold" style="color:#f97316">LegalTech</span><span class="w-2 h-2 rounded-full animate-pulse" style="background:#f97316"></span></div><div class="text-2xl font-mono font-black text-white">8</div><div class="text-[9px] text-slate-500">Agents Active</div></div><div class="glass p-4 rounded-xl border border-white/5 hover:border-white/15 transition"><div class="flex items-center justify-between mb-2"><span class="text-[10px] font-mono font-bold" style="color:#ec4899">Quantum/Crypto</span><span class="w-2 h-2 rounded-full animate-pulse" style="background:#ec4899"></span></div><div class="text-2xl font-mono font-black text-white">21</div><div class="text-[9px] text-slate-500">Agents Active</div></div><div class="glass p-4 rounded-xl border border-white/5 hover:border-white/15 transition"><div class="flex items-center justify-between mb-2"><span class="text-[10px] font-mono font-bold" style="color:#22c55e">BioTech</span><span class="w-2 h-2 rounded-full animate-pulse" style="background:#22c55e"></span></div><div class="text-2xl font-mono font-black text-white">9</div><div class="text-[9px] text-slate-500">Agents Active</div></div><div class="glass p-4 rounded-xl border border-white/5 hover:border-white/15 transition"><div class="flex items-center justify-between mb-2"><span class="text-[10px] font-mono font-bold" style="color:#14b8a6">Governance</span><span class="w-2 h-2 rounded-full animate-pulse" style="background:#14b8a6"></span></div><div class="text-2xl font-mono font-black text-white">11</div><div class="text-[9px] text-slate-500">Agents Active</div></div></div>
+</section>
+<section>
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-xl font-black font-display text-white">Live World Event Stream</h2>
+    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">REAL-TIME</span>
+  </div>
+  <div class="glass p-4 rounded-2xl max-h-[460px] overflow-y-auto"><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#3b82f6;background:#3b82f615">DataO</span><span class="text-[11px] text-slate-300 leading-relaxed">DataOps autonomous loop generated 92 verified fact bundles.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#14b8a6;background:#14b8a615">Gover</span><span class="text-[11px] text-slate-300 leading-relaxed">Agent data_40 completed 107 task cycles. Efficiency: 100%.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#8b5cf6;background:#8b5cf615">AI-In</span><span class="text-[11px] text-slate-300 leading-relaxed">World entropy stable at 100%. Mesh health: OPTIMAL.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#ec4899;background:#ec489915">Quant</span><span class="text-[11px] text-slate-300 leading-relaxed">Centurion Swarm tick 3: 67 micro-tasks resolved.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#f59e0b;background:#f59e0b15">FinTe</span><span class="text-[11px] text-slate-300 leading-relaxed">Centurion Swarm tick 2: 28 micro-tasks resolved.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#ec4899;background:#ec489915">Quant</span><span class="text-[11px] text-slate-300 leading-relaxed">Agent evolution: 24 agents upgraded to GEN-9 Apex.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#06b6d4;background:#06b6d415">SRE/D</span><span class="text-[11px] text-slate-300 leading-relaxed">Revenue pulse: SRE/DevOps posted $40,624 in API query volume.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#22c55e;background:#22c55e15">BioTe</span><span class="text-[11px] text-slate-300 leading-relaxed">Zero-trust audit: 58 cryptographic proofs verified in BioTech.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#f59e0b;background:#f59e0b15">FinTe</span><span class="text-[11px] text-slate-300 leading-relaxed">Zero-trust audit: 41 cryptographic proofs verified in FinTech.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#06b6d4;background:#06b6d415">SRE/D</span><span class="text-[11px] text-slate-300 leading-relaxed">SRE/DevOps division achieved 98% uptime across 247 deployed modules.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#3b82f6;background:#3b82f615">DataO</span><span class="text-[11px] text-slate-300 leading-relaxed">World entropy stable at 99%. Mesh health: OPTIMAL.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#f59e0b;background:#f59e0b15">FinTe</span><span class="text-[11px] text-slate-300 leading-relaxed">Agent evolution: 96 agents upgraded to GEN-9 Apex.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#ef4444;background:#ef444415">Cyber</span><span class="text-[11px] text-slate-300 leading-relaxed">Centurion Swarm tick 1: 173 micro-tasks resolved.</span></div><div class="flex items-start gap-2 py-2 border-b border-white/5 last:border-0"><span class="text-[9px] font-mono text-slate-600 shrink-0 mt-0.5">03:23:18</span><span class="text-[9px] font-mono px-1 rounded shrink-0" style="color:#8b5cf6;background:#8b5cf615">AI-In</span><span class="text-[11px] text-slate-300 leading-relaxed">World entropy stable at 100%. Mesh health: OPTIMAL.</span></div></div>
+</section>
+  </div>
+  <section class="glass p-6 rounded-2xl border border-amber-500/20">
+<h2 class="text-xl font-black font-display text-white mb-6">World Economy</h2>
+<div class="grid grid-cols-3 gap-6 text-center">
+  <div><div class="text-4xl font-mono font-black text-white">$8.93M</div><div class="text-xs text-slate-400 mt-1">Valuation</div><div class="text-[10px] text-emerald-400 font-mono mt-1">COMPOUNDING</div></div>
+  <div><div class="text-4xl font-mono font-black text-amber-400">$53,426</div><div class="text-xs text-slate-400 mt-1">Monthly Revenue</div><div class="text-[10px] text-emerald-400 font-mono mt-1">GROWING</div></div>
+  <div><div class="text-4xl font-mono font-black text-emerald-400">$265,160</div><div class="text-xs text-slate-400 mt-1">Treasury</div><div class="text-[10px] text-emerald-400 font-mono mt-1">ACCUMULATING</div></div>
+</div>
+  </section>
+  <section class="glass p-6 rounded-2xl border border-cyan-500/20">
+<div class="flex items-center justify-between mb-4">
+  <div><h2 class="text-xl font-black font-display text-white">Auto-Spawned Tools This Session</h2><p class="text-sm text-slate-400 mt-1">New SaaS tools born autonomously every 3 world ticks.</p></div>
+  <div class="text-right"><div class="text-3xl font-mono font-black text-cyan-400">1</div><div class="text-[9px] text-slate-500">New Tools</div></div>
+</div>
+<div class="flex flex-wrap gap-2"><a href="public/saas/legaltech_compliance_scanner_0003.html" class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 hover:border-cyan-500/50 transition">legaltech_compliance_scann</a></div>
+  </section>
+  <section class="glass p-6 rounded-2xl border border-violet-500/20">
+<div class="flex items-center justify-between mb-4">
+  <div><h2 class="text-xl font-black font-display text-white">GEN-9 Apex Evolution</h2><p class="text-sm text-slate-400 mt-1">0 GEN-9 specialists born this session. Every 10 ticks, a new agent lives.</p></div>
+  <div class="text-right"><div class="text-3xl font-mono font-black text-violet-400">141</div><div class="text-[9px] text-slate-500">Total Agents</div></div>
+</div>
+<div class="flex flex-wrap gap-2"><span class="text-slate-500 text-xs">First GEN-9 on Tick #10...</span></div>
+  </section>
+  <section class="glass p-8 rounded-3xl border border-white/10">
+<h2 class="text-2xl font-black font-display text-white mb-6">How The World Perpetually Evolves</h2>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+  <div class="space-y-2"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center"><i data-lucide="refresh-cw" class="w-5 h-5 text-emerald-400"></i></div><h3 class="font-bold text-white text-sm">Every 20s</h3><p class="text-xs text-slate-400">Economy compounds. Events fire. JSON state syncs. Zero human input.</p></div>
+  <div class="space-y-2"><div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center"><i data-lucide="plus-circle" class="w-5 h-5 text-cyan-400"></i></div><h3 class="font-bold text-white text-sm">Every 3 Ticks</h3><p class="text-xs text-slate-400">A new sovereign SaaS tool spawns with full HTML UI and domain logic.</p></div>
+  <div class="space-y-2"><div class="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center"><i data-lucide="cpu" class="w-5 h-5 text-violet-400"></i></div><h3 class="font-bold text-white text-sm">Every 10 Ticks</h3><p class="text-xs text-slate-400">A GEN-9 Apex agent is born with its own Python module and signed charter.</p></div>
+  <div class="space-y-2"><div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center"><i data-lucide="git-commit" class="w-5 h-5 text-amber-400"></i></div><h3 class="font-bold text-white text-sm">Every 15 Ticks</h3><p class="text-xs text-slate-400">All world changes auto-commit to GitHub and deploy live. No human push needed.</p></div>
+</div>
+  </section>
+  <section class="glass p-6 rounded-2xl border border-white/10 text-center space-y-4">
+<h2 class="text-xl font-black font-display text-white">Navigate the World</h2>
+<div class="flex flex-wrap items-center justify-center gap-3">
+  <a href="index.html" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm transition">Main Hub</a>
+  <a href="agents.html" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-violet-500/30 text-violet-400 font-semibold text-sm transition">Agent Registry (141)</a>
+  <a href="tools.html" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-cyan-500/30 text-cyan-400 font-semibold text-sm transition">Tool Catalogue (53)</a>
+  <a href="dashboard.html" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-amber-500/30 text-amber-400 font-semibold text-sm transition">SRE Vitals</a>
+  <a href="public/civilization_control_center.html" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-pink-500/30 text-pink-400 font-semibold text-sm transition">Civilization Center</a>
+  <a href="public/news_wire.html" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-emerald-500/30 text-emerald-400 font-semibold text-sm transition">News Wire</a>
+</div>
+  </section>
+</main>
+<footer class="border-t border-white/5 mt-16 py-8 text-center">
+  <div class="text-xs font-mono text-slate-500 space-y-1">
+<div>AI WORLD CORE &mdash; SOVEREIGN EVOLUTION ENGINE v5.0 &mdash; TICK #3</div>
+<div>2026-09-07 03:23:18 IST &mdash; 141 AGENTS &mdash; 53 TOOLS &mdash; GDP $8.93M</div>
+<div class="flex items-center justify-center gap-5 pt-2 text-slate-600">
+  <a href="index.html" class="hover:text-emerald-400 transition">Hub</a>
+  <a href="agents.html" class="hover:text-violet-400 transition">Agents</a>
+  <a href="tools.html" class="hover:text-cyan-400 transition">Tools</a>
+  <a href="world.html" class="hover:text-white transition">World</a>
+  <a href="https://github.com/keshavs40344/ai-world-core" target="_blank" class="hover:text-white transition">GitHub</a>
+</div>
+  </div>
+</footer>
+<script>lucide.createIcons();setTimeout(()=>location.reload(),20000);</script>
+</body></html>

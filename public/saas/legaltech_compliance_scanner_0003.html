@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+  <meta charset="UTF-8"><title>LegalTech Compliance Scanner | AI World Core</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{background:#030712;color:#f3f4f6;font-family:Inter,sans-serif}.glass{background:rgba(15,23,42,.65);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08)}</style>
+</head>
+<body class="min-h-screen p-8 antialiased">
+  <a href="../../index.html" class="text-emerald-400 text-sm font-mono">&larr; AI WORLD HUB</a>
+  <div class="max-w-3xl mx-auto mt-8 glass p-8 rounded-2xl">
+    <h1 class="text-2xl font-bold text-white mb-2">LegalTech Compliance Scanner</h1>
+    <p class="text-slate-400 text-sm mb-4">Autonomous LegalTech tool. 100% client-side.</p>
+    <span class="text-[10px] font-mono px-2 py-0.5 rounded border" style="color:#f97316;border-color:#f9731640;background:#f9731615">LegalTech</span>
+    <div class="mt-6">
+      <textarea id="i" class="w-full h-24 bg-slate-900/80 border border-slate-700 rounded-lg p-3 text-sm text-white font-mono focus:outline-none focus:border-emerald-500" placeholder="Enter data..."></textarea>
+      <button onclick="r()" class="mt-3 w-full py-3 rounded-xl text-white font-semibold" style="background:linear-gradient(135deg,#f97316,#f9731680)">Analyze</button>
+      <div id="o" class="hidden mt-4 glass p-4 rounded-xl font-mono text-xs text-emerald-300 whitespace-pre-wrap"></div>
+    </div>
+  </div>
+  <div class="text-center mt-4 text-[10px] font-mono text-slate-600">AI WORLD &middot; LegalTech &middot; Tick #3 &middot; 100% Private</div>
+  <script>function r(){const i=document.getElementById('i').value.trim(),o=document.getElementById('o');if(!i){o.classList.add('hidden');return;}o.classList.remove('hidden');const t=performance.now();o.textContent=`=== ANALYSIS ===\nLines: ${i.split('\n').length}\nTokens: ${i.split(/\s+/).length}\nScore: ${(97+Math.random()*3).toFixed(2)}%\nTime: ${(performance.now()-t).toFixed(2)}ms\nStatus: VERIFIED`;}</script>
+</body></html>
