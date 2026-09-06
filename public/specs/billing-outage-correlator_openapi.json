@@ -3,7 +3,7 @@
   "info": {
     "title": "billing-outage-correlator",
     "version": "1.0.0",
-    "description": "Reduces billing dispute resolution time by 90% and eliminates outage restoration guesswork by automatically correlating real-time meter telemetry with billing records and outage tickets."
+    "description": "Reduces billing dispute resolution time by automatically correlating meter data with outage records to flag discrepancies."
   },
   "paths": {
     "/process": {

@@ -1,13 +1,13 @@
 # 🏛️ EXECUTIVE ASSET DOSSIER: billing-outage-correlator
-**Sub-Agent Type:** Utility_Ops_Automation
-**Generated At:** 2026-09-05T03:08:07.345029+00:00
-**Monetization Vector:** SaaS subscription for mid-sized utility providers ($500-$2k/mo) based on number of active meters monitored.
+**Sub-Agent Type:** utility_engineer
+**Generated At:** 2026-09-06T17:35:43.653573+00:00
+**Monetization Vector:** SaaS per-utility-seat license with API usage tiers.
 
 ## Commercial Intent
-Reduces billing dispute resolution time by 90% and eliminates outage restoration guesswork by automatically correlating real-time meter telemetry with billing records and outage tickets.
+Reduces billing dispute resolution time by automatically correlating meter data with outage records to flag discrepancies.
 
 ## Self-Evolved Operational Learning
-Real-time correlation between disparate utility systems (metering vs billing) is the highest-ROI automation for reducing operational overhead and customer churn.
+Automated cross-system correlation eliminates manual cross-referencing bottlenecks in utility billing.
 
 ## Production Artifacts
 - Service Module: `vault/world_assets/billing-outage-correlator/service.py`
