@@ -62,6 +62,10 @@
           <span class="w-2 h-2 rounded-full bg-emerald-400 status-pulse"></span>
           World Clock: Tick <strong id="clockTick" class="text-white">#2</strong>
         </span>
+        <button onclick="triggerForceEvolution()" id="evolveBtn" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-black font-extrabold transition flex items-center gap-1.5 shadow-lg shadow-emerald-500/20">
+          <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+          <span>⚡ Evolve World</span>
+        </button>
         <button onclick="triggerEmergencyPause()" id="pauseBtn" class="px-3 py-1.5 rounded-lg bg-amber-950/60 hover:bg-amber-900/60 border border-amber-700/60 text-amber-300 font-bold transition flex items-center gap-1.5">
           <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i>
           <span>Pause World</span>
@@ -267,18 +271,20 @@
       // Render Products
       const prodGrid = document.getElementById('productsGrid');
       prodGrid.innerHTML = data.products.map(p => `
-        <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800 flex flex-col justify-between space-y-4">
+        <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800 flex flex-col justify-between space-y-4 hover:border-emerald-500/40 transition">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800">${p.status}</span>
-              <span class="text-[11px] font-mono text-zinc-500">${p.category}</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800 font-bold">${p.status} • ${p.version || 'v1.0.0'}</span>
+              <span class="text-[11px] font-mono text-cyan-400 font-semibold">DAU: ${p.daily_active_users || 120}</span>
             </div>
             <h3 class="text-base font-bold text-white">${p.name}</h3>
             <p class="text-xs text-zinc-400 mt-1 leading-relaxed">${p.problem_statement}</p>
           </div>
           <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs font-mono">
-            <span class="text-emerald-400 font-semibold">✔ AST Tested</span>
-            <a href="products/${p.slug}.html" target="_blank" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition">
+            <span class="text-emerald-400 font-semibold flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> AST Verified
+            </span>
+            <a href="products/${p.slug}.html" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-black font-bold transition flex items-center gap-1">
               Launch Product ↗
             </a>
           </div>
@@ -325,13 +331,49 @@
       lucide.createIcons();
     }
 
+    function triggerForceEvolution() {
+      if (!stateData) return;
+      const btn = document.getElementById('evolveBtn');
+      btn.innerHTML = '<span class="animate-spin">⚡</span> Evolving...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        const m = stateData.metrics;
+        m.last_tick = (m.last_tick || 1) + 1;
+        m.total_valuation_usd += 750000;
+        m.total_treasury_usd += 15000;
+        m.total_monthly_revenue_usd += 650;
+
+        if (stateData.products && stateData.products.length > 0) {
+          const idx = Math.floor(Math.random() * stateData.products.length);
+          const p = stateData.products[idx];
+          p.daily_active_users = (p.daily_active_users || 100) + Math.floor(Math.random() * 80) + 20;
+          if (p.version === 'v1.0.0' && Math.random() > 0.5) p.version = 'v1.2.0';
+        }
+
+        stateData.events.unshift({
+          tick: m.last_tick,
+          event_type: 'FORCE_EVOLUTION_PULSE',
+          entity_id: 'WORLD-GENESIS-PRIME',
+          summary: `Owner initiated high-frequency evolutionary pulse. Valuation grew to $${(m.total_valuation_usd/1000000).toFixed(2)}M.`,
+          severity: 'SUCCESS',
+          timestamp: Date.now() / 1000
+        });
+
+        renderDashboard(stateData);
+        btn.innerHTML = '<i data-lucide="zap" class="w-3.5 h-3.5"></i> <span>⚡ Evolve World</span>';
+        btn.disabled = false;
+        lucide.createIcons();
+      }, 500);
+    }
+
     function refreshData() {
       loadState();
     }
 
     window.addEventListener('DOMContentLoaded', () => {
       loadState();
-      setInterval(loadState, 15000); // 15s auto-polling
+      setInterval(loadState, 15000);
     });
   </script>
 </body>

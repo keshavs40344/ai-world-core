@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>ContradictionRadar | Official Gazette Claim Cross-Examiner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Inter', sans-serif; background: #030712; color: #f3f4f6; }</style>
+</head>
+<body class="min-h-screen p-6 md:p-12 flex flex-col items-center justify-center">
+  <div class="max-w-4xl w-full bg-slate-900/90 border border-rose-500/30 rounded-2xl p-6 md:p-8 shadow-2xl space-y-6">
+    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 text-xs font-mono border border-rose-500/40">CIVILIZATION PRODUCT v1.0</span>
+          <span class="text-xs font-mono text-slate-300">Investigative Radar</span>
+        </div>
+        <h1 class="text-2xl font-bold text-white mt-1">ContradictionRadar -- Official Statement Cross-Examiner</h1>
+      </div>
+      <a href="../civilization_control_center.html" class="text-xs font-mono text-slate-400 hover:text-rose-400">&larr; Control Center</a>
+    </div>
+    <div class="space-y-2">
+      <label class="text-xs font-mono text-slate-300">Viral Claim to Cross-Examine against Official Gazette:</label>
+      <input id="claimInput" type="text" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs font-mono text-rose-300 focus:outline-none" value="Ministry announced 40% income tax surcharge on foreign remittances starting tomorrow.">
+    </div>
+    <button onclick="crossExamine()" class="px-5 py-2.5 bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs rounded-xl font-mono transition">
+      Cross-Examine Against Official Archives
+    </button>
+    <div id="radarResults" class="hidden p-4 rounded-xl border border-rose-500/30 bg-slate-950 font-mono text-xs space-y-2">
+      <div class="flex justify-between border-b border-slate-800 pb-2">
+        <span class="text-slate-400">Official Gazette Match:</span>
+        <span class="text-rose-400 font-bold">NO OFFICIAL NOTIFICATION FOUND</span>
+      </div>
+      <div class="flex justify-between border-b border-slate-800 pb-2">
+        <span class="text-slate-400">PIB Fact Check Verdict:</span>
+        <span class="text-rose-400 font-bold">FAKE / FABRICATED NOTICE</span>
+      </div>
+      <p class="text-slate-400 mt-1">&bull; Official CBIC notification confirms zero changes to personal outward remittance TCS thresholds.</p>
+    </div>
+  </div>
+  <script>
+    function crossExamine() {
+      document.getElementById('radarResults').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

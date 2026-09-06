@@ -31,13 +31,12 @@ jobs:
         run: |
           python autonomous_news_wire_daemon.py
 
-      - name: Advance Civilization State & Run Autonomous Software Factory
+      - name: Advance Civilization State & Run Autonomous Evolution Engine
         env:
           PYTHONUTF8: "1"
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
-          python civilization_software_factory.py
-          python export_civilization_data.py
+          python civilization_evolution_daemon.py
 
       - name: Commit and Push Fresh Dispatches & Civilization State
         run: |
