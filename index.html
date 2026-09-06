@@ -316,7 +316,7 @@
 
           <a href="#catalogue" class="hover:text-emerald-400 transition-colors">Tools (50)</a>
 
-          <a href="agents.html" class="hover:text-violet-400 transition-colors flex items-center gap-1"><i data-lucide="cpu" class="w-4 h-4 text-violet-400"></i> Agents (0)</a>
+          <a href="agents.html" class="hover:text-violet-400 transition-colors flex items-center gap-1"><i data-lucide="cpu" class="w-4 h-4 text-violet-400"></i> Agents (141)</a>
 
           <a href="tools.html" class="hover:text-cyan-400 transition-colors">Full Catalogue</a>
 
@@ -1001,1307 +1001,656 @@
     <script>
 
       const APPS_DATA = [
-
   {
-
-    "id": "billing-outage-correlator",
-
-    "name": "Billing-Outage-Correlator",
-
-    "desc": "100% Client-side utility for Billing-Outage-Correlator \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/billing-outage-correlator.html",
-
-    "category": "FinTech & Treasury",
-
-    "badge_class": "badge-fin",
-
-    "icon": "trending-up",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "cisco_teleport_signal_parser",
-
-    "name": "Cisco Teleport Signal Parser \u2014 Genesis Sovereign Suite",
-
-    "desc": "Industrial zero-latency client-side utility for Cisco Teleport Signal Parser. Zero cloud data leakage.",
-
-    "url": "tools/cisco_teleport_signal_parser.html",
-
-    "category": "Cloud & DataOps",
-
-    "badge_class": "badge-cloud",
-
-    "icon": "database",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "csv-mongo-schema-normalizer",
-
-    "name": "CSV to MongoDB Schema Normalizer",
-
-    "desc": "100% Client-side utility for CSV to MongoDB Schema Normalizer. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/csv-mongo-schema-normalizer.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "csv_to_json",
-
-    "name": "CSV to JSON Mapper \u2014 Client-Side High-Speed Utility",
-
-    "desc": "Converts raw CSV data into structured JSON objects with precise control over column-to-key mapping and field exclusion.",
-
-    "url": "tools/csv_to_json.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "csv_to_json_mapper",
-
-    "name": "CSV to JSON Mapper \u2014 Client-Side High-Speed Utility",
-
-    "desc": "Converts raw CSV data into structured JSON objects with precise control over column-to-key mapping and field exclusion.",
-
-    "url": "tools/csv_to_json_mapper.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "docker_craft",
-
-    "name": "Docker Run to Compose",
-
-    "desc": "100% Client-side utility for Docker Run to Compose. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/docker_craft.html",
-
-    "category": "Cloud & DataOps",
-
-    "badge_class": "badge-cloud",
-
-    "icon": "database",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "edge-json-shield",
-
-    "name": "Edge JSON Shield",
-
-    "desc": "100% Client-side utility for Edge JSON Shield. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/edge-json-shield.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "github-issue-friction-miner",
-
-    "name": "GitHub Friction Miner",
-
-    "desc": "100% Client-side utility for GitHub Friction Miner. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/github-issue-friction-miner.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "grid-billing-reconciler",
-
-    "name": "Grid-Billing-Reconciler",
-
-    "desc": "100% Client-side utility for Grid-Billing-Reconciler \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/grid-billing-reconciler.html",
-
-    "category": "FinTech & Treasury",
-
-    "badge_class": "badge-fin",
-
-    "icon": "trending-up",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "json-edge-compressor",
-
-    "name": "JSON Edge Compressor",
-
-    "desc": "100% Client-side utility for JSON Edge Compressor. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/json-edge-compressor.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "local-rate-limit-simulator",
-
-    "name": "Rate Limit Sim",
-
-    "desc": "100% Client-side utility for Rate Limit Sim. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/local-rate-limit-simulator.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "maze_prototype_feedback_engine",
-
-    "name": "Maze Prototype Feedback Engine",
-
-    "desc": "100% Client-side utility for Maze Prototype Feedback Engine \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data l...",
-
-    "url": "tools/maze_prototype_feedback_engine.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "mcp_payload_sanitizer",
-
-    "name": "MCP Sanitizer",
-
-    "desc": "100% Client-side utility for MCP Sanitizer. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/mcp_payload_sanitizer.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "meter-bill-reconciler",
-
-    "name": "Meter-Bill-Reconciler \u2014 Genesis Core",
-
-    "desc": "100% Client-side utility for Meter-Bill-Reconciler \u2014 Genesis Core. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/meter-bill-reconciler.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "regex_architect",
-
-    "name": "Regex Architect",
-
-    "desc": "100% Client-side utility for Regex Architect. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/regex_architect.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "schema_smith_1788534578",
-
-    "name": "SchemaSmith \u2014 Instant Client-Side JSON Schema Normalizer",
-
-    "desc": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
-
-    "url": "tools/schema_smith_1788534578.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "schema_smith_1788534627",
-
-    "name": "SchemaSmith \u2014 Instant Client-Side JSON Schema Normalizer",
-
-    "desc": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
-
-    "url": "tools/schema_smith_1788534627.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "schema_smith_1788557306",
-
-    "name": "SchemaSmith \u2014 Instant Client-Side JSON Schema Normalizer",
-
-    "desc": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
-
-    "url": "tools/schema_smith_1788557306.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "schema_smith_1788561333",
-
-    "name": "SchemaSmith \u2014 Instant Client-Side JSON Schema Normalizer",
-
-    "desc": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
-
-    "url": "tools/schema_smith_1788561333.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "schema_smith_1788571886",
-
-    "name": "SchemaSmith \u2014 Instant Client-Side JSON Schema Normalizer",
-
-    "desc": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
-
-    "url": "tools/schema_smith_1788571886.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "schema_smith_1788592087",
-
-    "name": "SchemaSmith \u2014 Instant Client-Side JSON Schema Normalizer",
-
-    "desc": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
-
-    "url": "tools/schema_smith_1788592087.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "secure_data_parser_1788522308",
-
-    "name": "Secure Data Parser 1788522308 \u2014 Genesis Core",
-
-    "desc": "100% Client-side utility for Secure Data Parser 1788522308 \u2014 Genesis Core. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/secure_data_parser_1788522308.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "smart_data_sanitizer_1788517808",
-
-    "name": "Smart Data Sanitizer 1788517808 \u2014 Genesis Core",
-
-    "desc": "100% Client-side utility for Smart Data Sanitizer 1788517808 \u2014 Genesis Core. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/smart_data_sanitizer_1788517808.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "smart_data_sanitizer_1788517828",
-
-    "name": "Smart Data Sanitizer 1788517828 \u2014 Genesis Core",
-
-    "desc": "100% Client-side utility for Smart Data Sanitizer 1788517828 \u2014 Genesis Core. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/smart_data_sanitizer_1788517828.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "smart_payload_optimizer_1788520219",
-
-    "name": "Smart Payload Optimizer 1788520219 \u2014 Genesis Core",
-
-    "desc": "100% Client-side utility for Smart Payload Optimizer 1788520219 \u2014 Genesis Core. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/smart_payload_optimizer_1788520219.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "sql_forge",
-
-    "name": "SQL Query Forge",
-
-    "desc": "100% Client-side utility for SQL Query Forge. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/sql_forge.html",
-
-    "category": "Cloud & DataOps",
-
-    "badge_class": "badge-cloud",
-
-    "icon": "database",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "structured_log_sanitizer_1788534727",
-
-    "name": "Enterprise Structured Log Sanitizer \u2014 Online Developer Utility",
-
-    "desc": "Free client-side structured log and tabular data sanitizer. Masks API keys, emails, and credit cards locally in your browser wi...",
-
-    "url": "tools/structured_log_sanitizer_1788534727.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "structured_log_sanitizer_1788551783",
-
-    "name": "Enterprise Structured Log Sanitizer \u2014 Online Developer Utility",
-
-    "desc": "Free client-side structured log and tabular data sanitizer. Masks API keys, emails, and credit cards locally in your browser wi...",
-
-    "url": "tools/structured_log_sanitizer_1788551783.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "token_ledger",
-
-    "name": "LLM Token Ledger",
-
-    "desc": "100% Client-side utility for LLM Token Ledger. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/token_ledger.html",
-
-    "category": "AI & LLM Systems",
-
-    "badge_class": "badge-ai",
-
-    "icon": "cpu",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "v_gpt_6_astra_1788514891",
-
-    "name": "Genesis Tool: v_gpt_6_astra_1788514891",
-
-    "desc": "100% Client-side utility for Genesis Tool: v_gpt_6_astra_1788514891. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/v_gpt_6_astra_1788514891.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "v_gpt_6_astra_1788514914",
-
-    "name": "Genesis Tool: v_gpt_6_astra_1788514914",
-
-    "desc": "100% Client-side utility for Genesis Tool: v_gpt_6_astra_1788514914. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/v_gpt_6_astra_1788514914.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "v_gpt_6_astra_1788516915",
-
-    "name": "Genesis Tool: v_gpt_6_astra_1788516915",
-
-    "desc": "100% Client-side utility for Genesis Tool: v_gpt_6_astra_1788516915. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/v_gpt_6_astra_1788516915.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
-    "id": "webhook_sentinel",
-
-    "name": "Webhook Signature Sentinel",
-
-    "desc": "100% Client-side utility for Webhook Signature Sentinel. High-speed, private, zero-server data leakage.",
-
-    "url": "tools/webhook_sentinel.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "Tool",
-
-    "origin": "Aegis Core Lab",
-
-    "latency": "< 8ms",
-
-    "tag": "Active"
-
-  },
-
-  {
-
     "id": "api_mock_studio_1788535809",
-
-    "name": "API Mock Studio Pro \u2014 Client-Side Mock Server & Inspector",
-
-    "desc": "Simulate REST API responses, test payload schemas, and mock endpoints 100% in your browser. Zero cloud leak.",
-
-    "url": "saas/api_mock_studio_1788535809.html",
-
-    "category": "FinTech & Treasury",
-
-    "badge_class": "badge-fin",
-
-    "icon": "briefcase",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "api_mock_studio_1788551790",
-
-    "name": "API Mock Studio Pro \u2014 Client-Side Mock Server & Inspector",
-
-    "desc": "Simulate REST API responses, test payload schemas, and mock endpoints 100% in your browser. Zero cloud leak.",
-
-    "url": "saas/api_mock_studio_1788551790.html",
-
-    "category": "FinTech & Treasury",
-
-    "badge_class": "badge-fin",
-
-    "icon": "briefcase",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "clauseguard_contract_auditor",
-
-    "name": "ClauseGuard \u2014 Indian NDA & Vendor Agreement Risk Scanner \u2014 Sovereign Enterprise Studio",
-
-    "desc": "Agencies & startups lose lakhs in one-sided indemnity clauses, unlimited liability traps, and delayed payout penalties.",
-
-    "url": "saas/clauseguard_contract_auditor.html",
-
-    "category": "FinTech & Treasury",
-
-    "badge_class": "badge-fin",
-
-    "icon": "briefcase",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "cmu_sql_explain_visualizer",
-
-    "name": "Titan SQL Explain Visualizer \u2014 Genesis Autonomous Suite",
-
-    "desc": "100% Client-side utility for Titan SQL Explain Visualizer \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data lea...",
-
-    "url": "saas/cmu_sql_explain_visualizer.html",
-
-    "category": "FinTech & Treasury",
-
-    "badge_class": "badge-fin",
-
-    "icon": "briefcase",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "contract_shield_risk_scanner",
-
-    "name": "ContractShield \u2014 NDA & Client Agreement Risk Scanner",
-
-    "desc": "100% Client-side utility for ContractShield \u2014 NDA & Client Agreement Risk Scanner. High-speed, private, zero-server data leakage.",
-
-    "url": "saas/contract_shield_risk_scanner.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "forex_leakage_auditor",
-
-    "name": "Stripe & Forex Payment Leakage Auditor",
-
-    "desc": "100% Client-side utility for Stripe & Forex Payment Leakage Auditor. High-speed, private, zero-server data leakage.",
-
-    "url": "saas/forex_leakage_auditor.html",
-
-    "category": "FinTech & Treasury",
-
-    "badge_class": "badge-fin",
-
-    "icon": "briefcase",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "freight_cost_iq",
-
-    "name": "FreightCostIQ \u2014 Volumetric Weight, Courier RTO Risk & Margin Estimator",
-
-    "desc": "100% Client-side utility for FreightCostIQ \u2014 Volumetric Weight, Courier RTO Risk & Margin Estimator. High-speed, private, zero-...",
-
-    "url": "saas/freight_cost_iq.html",
-
-    "category": "FinTech & Treasury",
-
-    "badge_class": "badge-fin",
-
-    "icon": "briefcase",
-
-    "type": "SaaS Studio",
-
-    "origin": "Sovereign Treasury Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "gst_reconcile_pro_ledger",
-
-    "name": "GST ReconcilePro \u2014 GSTR-2B vs Purchase Register Mismatch Resolver \u2014 Sovereign Enterprise Studio",
-
-    "desc": "Accountants spend days comparing purchase invoices with GSTR-2B portal downloads to claim Input Tax Credit (ITC) before monthly...",
-
-    "url": "saas/gst_reconcile_pro_ledger.html",
-
-    "category": "FinTech & Treasury",
-
-    "badge_class": "badge-fin",
-
-    "icon": "briefcase",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "iit_zero_trust_jwt_profiler",
-
-    "name": "Aegis Zero Trust Jwt Profiler \u2014 Genesis Autonomous Suite",
-
-    "desc": "100% Client-side utility for Aegis Zero Trust Jwt Profiler \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data le...",
-
-    "url": "saas/iit_zero_trust_jwt_profiler.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "invoice_forge_pro",
-
-    "name": "InvoiceForge Pro \u2014 Enterprise Billing & Tax Studio",
-
-    "desc": "Free client-side invoice and ledger generator. 100% private, instant PDF exports, no sign-up required.",
-
-    "url": "saas/invoice_forge_pro.html",
-
-    "category": "FinTech & Treasury",
-
-    "badge_class": "badge-fin",
-
-    "icon": "briefcase",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "latencybench_llm_profiler",
-
-    "name": "LatencyBench \u2014 Multi-Cloud LLM Token & Latency Profiler \u2014 Sovereign Enterprise Studio",
-
-    "desc": "AI founders burn 3x more capital on OpenAI/Claude by choosing the wrong token context window and model sizes for production.",
-
-    "url": "saas/latencybench_llm_profiler.html",
-
-    "category": "AI & LLM Systems",
-
-    "badge_class": "badge-ai",
-
-    "icon": "cpu",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "llm_token_arbitrage_studio",
-
-    "name": "LLM Token Cost & Inference Arbitrage Studio",
-
-    "desc": "100% Client-side utility for LLM Token Cost & Inference Arbitrage Studio. High-speed, private, zero-server data leakage.",
-
-    "url": "saas/llm_token_arbitrage_studio.html",
-
-    "category": "AI & LLM Systems",
-
-    "badge_class": "badge-ai",
-
-    "icon": "cpu",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "secret_scrubber_studio",
-
-    "name": "SecretScrubber \u2014 Zero-Trust API Key, PII & Environment Audit Studio",
-
-    "desc": "100% Client-side utility for SecretScrubber \u2014 Zero-Trust API Key, PII & Environment Audit Studio. High-speed, private, zero-ser...",
-
-    "url": "saas/secret_scrubber_studio.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "stanford_vram_inference_allocator",
-
-    "name": "Synapse AI Vram Inference Allocator \u2014 Genesis Autonomous Suite",
-
-    "desc": "100% Client-side utility for Synapse AI Vram Inference Allocator \u2014 Genesis Autonomous Suite. High-speed, private, zero-server d...",
-
-    "url": "saas/stanford_vram_inference_allocator.html",
-
-    "category": "AI & LLM Systems",
-
-    "badge_class": "badge-ai",
-
-    "icon": "cpu",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "taxshield_freelance_engine",
-
-    "name": "TaxShield \u2014 Freelancer Advance Tax, 44ADA & TDS Reconciliation Engine",
-
-    "desc": "100% Client-side utility for TaxShield \u2014 Freelancer Advance Tax, 44ADA & TDS Reconciliation Engine. High-speed, private, zero-s...",
-
-    "url": "saas/taxshield_freelance_engine.html",
-
-    "category": "DevSecOps & Privacy",
-
-    "badge_class": "badge-sec",
-
-    "icon": "shield",
-
-    "type": "SaaS Studio",
-
-    "origin": "Sovereign Treasury Lab",
-
-    "latency": "< 12ms",
-
-    "tag": "Enterprise"
-
-  },
-
-  {
-
-    "id": "vectordb_payload_normalizer",
-
-    "name": "VectorDB Payload Normalizer & Embedding Inspector",
-
-    "desc": "100% Client-side utility for VectorDB Payload Normalizer & Embedding Inspector. High-speed, private, zero-server data leakage.",
-
-    "url": "saas/vectordb_payload_normalizer.html",
-
+    "name": "API Mock Studio Pro",
+    "desc": "Generate and mock REST API endpoints instantly. Zero server dependency.",
+    "url": "public/saas/api_mock_studio_1788535809.html",
     "category": "Cloud & DataOps",
-
     "badge_class": "badge-cloud",
-
-    "icon": "layers",
-
-    "type": "SaaS Studio",
-
-    "origin": "Aegis Security Lab",
-
-    "latency": "< 12ms",
-
+    "icon": "database",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
     "tag": "Enterprise"
-
   },
-
   {
-
-    "id": "wharton_dtaa_tax_forecaster",
-
-    "name": "Wharton Dtaa Tax Forecaster",
-
-    "desc": "100% Client-side utility for Wharton Dtaa Tax Forecaster \u2014 Genesis Autonomous Suite. High-speed, private, zero-server data leak...",
-
-    "url": "saas/wharton_dtaa_tax_forecaster.html",
-
-    "category": "FinTech & Treasury",
-
-    "badge_class": "badge-fin",
-
-    "icon": "briefcase",
-
-    "type": "SaaS Studio",
-
-    "origin": "Sovereign Treasury Lab",
-
-    "latency": "< 12ms",
-
+    "id": "api_mock_studio_1788551790",
+    "name": "API Mock Studio Elite",
+    "desc": "Advanced API simulation with schema validation and latency injection.",
+    "url": "public/saas/api_mock_studio_1788551790.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "database",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
     "tag": "Enterprise"
-
+  },
+  {
+    "id": "clauseguard_contract_auditor",
+    "name": "ClauseGuard — Contract Auditor",
+    "desc": "Protect against one-sided indemnity clauses, unlimited liability traps, and delayed payout penalties.",
+    "url": "public/saas/clauseguard_contract_auditor.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "cmu_sql_explain_visualizer",
+    "name": "Titan SQL Explain Visualizer",
+    "desc": "100% client-side SQL execution plan visualizer and index advisor.",
+    "url": "public/saas/cmu_sql_explain_visualizer.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "database",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "contract_indemnity_shield",
+    "name": "Contract Indemnity Shield",
+    "desc": "Identify hidden liability and indemnity traps in vendor agreements.",
+    "url": "public/saas/contract_indemnity_shield.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "shield",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "contract_shield_risk_scanner",
+    "name": "ContractShield — Risk Scanner",
+    "desc": "NDA and client agreement risk scanner. 100% private, zero server leakage.",
+    "url": "public/saas/contract_shield_risk_scanner.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "cryptocraft_entropy_shield",
+    "name": "CryptoCraft Entropy Shield",
+    "desc": "Cryptographic entropy analyzer and key quality assessor.",
+    "url": "public/saas/cryptocraft_entropy_shield.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "lock",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "cryptographic_key_entropy_suite",
+    "name": "Cryptographic Key Entropy Suite",
+    "desc": "Full cryptographic key lifecycle: entropy scoring, rotation auditing, and weakness detection.",
+    "url": "public/saas/cryptographic_key_entropy_suite.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "lock",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "cryptographic_token_entropy_inspector",
+    "name": "Token Entropy Inspector",
+    "desc": "Deep cryptographic token inspection: JWT, API keys, session tokens.",
+    "url": "public/saas/cryptographic_token_entropy_inspector.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "lock",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "csv_parquet_transcoder_profiler",
+    "name": "CSV to Parquet Transcoder & Profiler",
+    "desc": "Client-side CSV to Parquet transcoder with statistical profiling.",
+    "url": "public/saas/csv_parquet_transcoder_profiler.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "database",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "csv_to_json_normalizer_953",
+    "name": "CSV to JSON Normalizer",
+    "desc": "Instant client-side CSV to JSON converter with schema inference.",
+    "url": "public/saas/csv_to_json_normalizer_953.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "database",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "db_lock_deadlock_sentinel",
+    "name": "DB Lock & Deadlock Sentinel",
+    "desc": "Database deadlock simulation, detection, and resolution advisor.",
+    "url": "public/saas/db_lock_deadlock_sentinel.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "database",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "developer_api_infrastructure",
+    "name": "Developer API Infrastructure Studio",
+    "desc": "Build, mock, and document developer APIs with rate-limit simulator.",
+    "url": "public/saas/developer_api_infrastructure.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "code",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "devops_pii_log_redactor",
+    "name": "DevOps PII Log Redactor",
+    "desc": "Zero-trust PII and secret redaction engine for production log files.",
+    "url": "public/saas/devops_pii_log_redactor.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "diffsmith_schema_engine",
+    "name": "DiffSmith Schema Engine",
+    "desc": "Visual schema diff and migration path generator for SQL and NoSQL.",
+    "url": "public/saas/diffsmith_schema_engine.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "database",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "docusize_photo_resizer",
+    "name": "DocuSize Photo Resizer",
+    "desc": "Client-side document photo resizer for passports, visas, and ID cards.",
+    "url": "public/saas/docusize_photo_resizer.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "image",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "forex_leakage_auditor",
+    "name": "Forex Payment Leakage Auditor",
+    "desc": "Stripe and cross-border forex leakage quantifier with currency arbitrage scanner.",
+    "url": "public/saas/forex_leakage_auditor.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "trending-up",
+    "type": "SaaS Tool",
+    "origin": "Sovereign Treasury",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "forex_leakage_pro",
+    "name": "Forex Leakage Pro",
+    "desc": "Advanced multi-currency FX leakage analysis for enterprise treasury teams.",
+    "url": "public/saas/forex_leakage_pro.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "trending-up",
+    "type": "SaaS Tool",
+    "origin": "Sovereign Treasury",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "freight_cost_iq",
+    "name": "FreightCostIQ",
+    "desc": "Volumetric weight, courier RTO risk, and margin estimator for e-commerce.",
+    "url": "public/saas/freight_cost_iq.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "package",
+    "type": "SaaS Tool",
+    "origin": "Sovereign Treasury",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "fusion_solar_grid_architect",
+    "name": "Fusion Solar Grid Architect",
+    "desc": "Solar farm capacity planner with grid integration and ROI modeling.",
+    "url": "public/saas/fusion_solar_grid_architect.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "sun",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "global_compute_energy_optimizer",
+    "name": "Global Compute Energy Optimizer",
+    "desc": "Multi-cloud infrastructure energy usage optimizer and carbon footprint calculator.",
+    "url": "public/saas/global_compute_energy_optimizer.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "cpu",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "global_macro_resource_rebalancer",
+    "name": "Global Macro Resource Rebalancer",
+    "desc": "Multi-asset macro portfolio rebalancing engine with geopolitical risk overlays.",
+    "url": "public/saas/global_macro_resource_rebalancer.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "bar-chart",
+    "type": "SaaS Tool",
+    "origin": "Sovereign Treasury",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "global_pathogen_early_warning",
+    "name": "Global Pathogen Early Warning",
+    "desc": "Epidemiological signal detection and outbreak early-warning scoring system.",
+    "url": "public/saas/global_pathogen_early_warning.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "activity",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "gst_reconcile_pro_ledger",
+    "name": "GST ReconcilePro Ledger",
+    "desc": "GSTR-2B vs purchase register mismatch resolver with ITC claim optimizer.",
+    "url": "public/saas/gst_reconcile_pro_ledger.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Tool",
+    "origin": "Sovereign Treasury",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "high_throughput_json_streamer",
+    "name": "High-Throughput JSON Streamer",
+    "desc": "Browser-native streaming JSON parser for large datasets without memory overflow.",
+    "url": "public/saas/high_throughput_json_streamer.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "zap",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "hyper_matrix_cloud",
+    "name": "HyperMatrix Cloud Simulator",
+    "desc": "Multi-cloud cost and latency matrix simulator for architecture decisions.",
+    "url": "public/saas/hyper_matrix_cloud.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "grid",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "iit_zero_trust_jwt_profiler",
+    "name": "Zero Trust JWT Profiler",
+    "desc": "Enterprise JWT validation, claim auditing, and algorithm weakness detection.",
+    "url": "public/saas/iit_zero_trust_jwt_profiler.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "invoice_forge_pro",
+    "name": "InvoiceForge Pro",
+    "desc": "Free private invoice and ledger generator. Instant PDF export, zero sign-up.",
+    "url": "public/saas/invoice_forge_pro.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "file-text",
+    "type": "SaaS Tool",
+    "origin": "Sovereign Treasury",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "jwt_claims_decoder_160",
+    "name": "JWT Claims Decoder",
+    "desc": "Rapid JWT decoder with claims inspector and expiry analyzer.",
+    "url": "public/saas/jwt_claims_decoder_160.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "key",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "jwt_claims_tamper_sentinel",
+    "name": "JWT Claims Tamper Sentinel",
+    "desc": "Advanced JWT tamper detection and signature forgery prevention auditor.",
+    "url": "public/saas/jwt_claims_tamper_sentinel.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "jwt_sentinel_guard",
+    "name": "JWT Sentinel Guard",
+    "desc": "Real-time JWT guard with algorithm confusion attack prevention.",
+    "url": "public/saas/jwt_sentinel_guard.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "latencybench_llm_profiler",
+    "name": "LatencyBench LLM Profiler",
+    "desc": "Multi-cloud LLM token and latency profiler. Reduce AI inference costs by 3x.",
+    "url": "public/saas/latencybench_llm_profiler.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "cpu",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "live_network_workbench",
+    "name": "Live Network Workbench",
+    "desc": "Browser-based network topology visualizer and latency heatmap generator.",
+    "url": "public/saas/live_network_workbench.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "network",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "llm_token_arbitrage_studio",
+    "name": "LLM Token Arbitrage Studio",
+    "desc": "Multi-model token cost arbitrage calculator for GPT-4, Claude, Gemini, and Llama.",
+    "url": "public/saas/llm_token_arbitrage_studio.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "cpu",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "network_security_audit_suite",
+    "name": "Network Security Audit Suite",
+    "desc": "Full network perimeter audit: open ports, cipher suites, TLS grade.",
+    "url": "public/saas/network_security_audit_suite.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "planetary_code_quality_gate",
+    "name": "Planetary Code Quality Gate",
+    "desc": "Enterprise code quality gate with cyclomatic complexity and debt scoring.",
+    "url": "public/saas/planetary_code_quality_gate.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "code",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "planetary_governance_terminal",
+    "name": "Planetary Governance Terminal",
+    "desc": "Decentralized governance simulator and DAO proposal scoring engine.",
+    "url": "public/saas/planetary_governance_terminal.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "globe",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "secret_scrubber_studio",
+    "name": "SecretScrubber Studio",
+    "desc": "Zero-trust API key, PII, and environment variable audit studio.",
+    "url": "public/saas/secret_scrubber_studio.html",
+    "category": "DevSecOps & Privacy",
+    "badge_class": "badge-sec",
+    "icon": "shield",
+    "type": "SaaS Tool",
+    "origin": "Aegis Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "sql_ast_formatter_table_extractor",
+    "name": "SQL AST Formatter & Table Extractor",
+    "desc": "SQL AST parser, formatter, and table dependency extractor.",
+    "url": "public/saas/sql_ast_formatter_table_extractor.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "database",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "sql_latency_optimizer",
+    "name": "SQL Latency Optimizer",
+    "desc": "Query latency profiler and index recommendation engine.",
+    "url": "public/saas/sql_latency_optimizer.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "zap",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "sql_syntax_formatter_pro",
+    "name": "SQL Syntax Formatter Pro",
+    "desc": "Professional SQL formatter with dialect detection and style enforcement.",
+    "url": "public/saas/sql_syntax_formatter_pro.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "database",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "stanford_vram_inference_allocator",
+    "name": "Stanford VRAM Inference Allocator",
+    "desc": "GPU VRAM allocation planner for optimal LLM inference throughput.",
+    "url": "public/saas/stanford_vram_inference_allocator.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "cpu",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "taxshield_freelance_engine",
+    "name": "TaxShield Freelance Engine",
+    "desc": "Freelancer and indie-dev tax optimization engine for Indian tax regime.",
+    "url": "public/saas/taxshield_freelance_engine.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "briefcase",
+    "type": "SaaS Tool",
+    "origin": "Sovereign Treasury",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "universal_pedagogy_accelerator",
+    "name": "Universal Pedagogy Accelerator",
+    "desc": "AI-powered curriculum builder and learning path optimizer.",
+    "url": "public/saas/universal_pedagogy_accelerator.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "book-open",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "url_query_extractor_930",
+    "name": "URL Query Extractor",
+    "desc": "Client-side URL parser, query string decoder, and redirect chain tracer.",
+    "url": "public/saas/url_query_extractor_930.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "link",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "vectordb_payload_normalizer",
+    "name": "VectorDB Payload Normalizer",
+    "desc": "Normalize and validate embedding payloads for Pinecone, Weaviate, and ChromaDB.",
+    "url": "public/saas/vectordb_payload_normalizer.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "cpu",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "vram_inference_allocator",
+    "name": "VRAM Cost Estimator",
+    "desc": "Quick GPU VRAM cost and inference throughput estimator for popular models.",
+    "url": "public/saas/vram_inference_allocator.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "cpu",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "wharton_dtaa_tax_forecaster",
+    "name": "Wharton DTAA Tax Forecaster",
+    "desc": "Cross-border double-taxation treaty optimizer for Indian freelancers and NRIs.",
+    "url": "public/saas/wharton_dtaa_tax_forecaster.html",
+    "category": "FinTech & Treasury",
+    "badge_class": "badge-fin",
+    "icon": "globe",
+    "type": "SaaS Tool",
+    "origin": "Sovereign Treasury",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "youtube_speed_engine",
+    "name": "YouTube Speed Engine",
+    "desc": "YouTube video speed optimization and chapter navigator tool.",
+    "url": "public/saas/youtube_speed_engine.html",
+    "category": "Cloud & DataOps",
+    "badge_class": "badge-cloud",
+    "icon": "play",
+    "type": "SaaS Tool",
+    "origin": "Titan Core",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
+  },
+  {
+    "id": "zk_governance_proof_sentinel",
+    "name": "ZK Governance Proof Sentinel",
+    "desc": "Zero-knowledge proof verifier for decentralized governance proposals.",
+    "url": "public/saas/zk_governance_proof_sentinel.html",
+    "category": "AI & LLM Systems",
+    "badge_class": "badge-ai",
+    "icon": "lock",
+    "type": "SaaS Tool",
+    "origin": "Synapse Lab",
+    "latency": "< 10ms",
+    "tag": "Enterprise"
   }
-
 ];
 
 
