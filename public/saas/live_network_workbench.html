@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA // Live Internet Telemetry & Target Inspector</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Geist', sans-serif; }
@@ -128,7 +129,7 @@
 
     <!-- Client-Side Server Connection Engine -->
     <script>
-        const API_BASE = "http://127.0.0.1:8000";
+        const API_BASE = window.SOVEREIGN_API_BASE || (window.location.origin.includes('http') ? window.location.origin : "https://ai-world-core.onrender.com");
 
         // 1. Establish Server-Sent Events (SSE) Live Stream
         function connectLiveSSE() {
@@ -172,7 +173,7 @@
                 document.getElementById('execLatency').innerText = `Completed in ${result.response_latency_ms || 0} ms`;
                 document.getElementById('terminalOutput').innerText = JSON.stringify(result, null, 2);
             } catch(err) {
-                document.getElementById('terminalOutput').innerText = `// Connection Error: Ensure server.py is running on http://127.0.0.1:8000\n// ${err.message}`;
+                document.getElementById('terminalOutput').innerText = `// Connection Error: Ensure server is running on ${API_BASE}\n// ${err.message}`;
             }
         }
 
