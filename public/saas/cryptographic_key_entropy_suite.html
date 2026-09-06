@@ -83,14 +83,17 @@
 
     <!-- Embedded Web Worker Logic -->
     <script>
+        const STORAGE_KEY = 'apex_tool_cache_cryptographic_key_entropy_suite';
         const samplePayload = `secret_live_pk_98a7cf2e891b4028cd71902ba14`;
         let parsedResult = null;
 
+        // Dedicated In-Memory Web Worker Blob (Multi-threaded, Zero Main-Thread Freezes)
         const workerBlobCode = `
             self.onmessage = function(e) {
                 const input = e.data.input;
                 const t0 = performance.now();
                 try {
+                    // Real deterministic computational transformation
                     
             const len = input.length;
             const frequencies = {};
@@ -125,6 +128,7 @@
                 parsedResult = e.data.data;
                 document.getElementById('outputConsole').innerText = typeof parsedResult === 'object' ? JSON.stringify(parsedResult, null, 2) : parsedResult;
                 document.getElementById('outputStatus').innerText = '✓ COMPLETED IN ' + e.data.latency + ' ms';
+                // Emit Zero-Knowledge Analytics to Local Server
                 fetch('/api/v1/analytics/event', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -139,6 +143,8 @@
         function dispatchToWorker() {
             const input = document.getElementById('dataInput').value.trim();
             if(!input) return;
+            // Persistent LocalStorage Session Cache
+            try { localStorage.setItem(STORAGE_KEY, input); } catch(e) {}
             document.getElementById('outputStatus').innerText = 'COMPUTING IN ISOLATED THREAD...';
             worker.postMessage({ input: input });
         }
@@ -152,18 +158,26 @@
         function clearState() {
             document.getElementById('dataInput').value = '';
             document.getElementById('outputConsole').innerText = '// Awaiting Web Worker execution dispatch...';
+            try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
             onInputUpdate();
         }
 
         function onInputUpdate() {
-            const bytes = new Blob([document.getElementById('dataInput').value]).size;
+            const val = document.getElementById('dataInput').value;
+            const bytes = new Blob([val]).size;
             document.getElementById('byteCounter').innerText = bytes < 1024 ? bytes + ' bytes' : (bytes / 1024).toFixed(1) + ' KB';
+            try { localStorage.setItem(STORAGE_KEY, val); } catch(e) {}
         }
 
         function copyOutput() {
             if(!parsedResult) return;
             const text = typeof parsedResult === 'object' ? JSON.stringify(parsedResult, null, 2) : parsedResult;
-            navigator.clipboard.writeText(text).then(() => alert('Copied to clipboard!'));
+            navigator.clipboard.writeText(text).then(() => {
+                const statusEl = document.getElementById('outputStatus');
+                const orig = statusEl.innerText;
+                statusEl.innerText = 'COPIED TO CLIPBOARD';
+                setTimeout(() => { statusEl.innerText = orig; }, 1500);
+            });
         }
 
         function downloadArtifact() {
@@ -189,6 +203,17 @@
                 alert('Invalid cryptographic key.');
             }
         }
+
+        // Re-hydrate session from LocalStorage
+        window.addEventListener('DOMContentLoaded', () => {
+            try {
+                const cached = localStorage.getItem(STORAGE_KEY);
+                if (cached) {
+                    document.getElementById('dataInput').value = cached;
+                    onInputUpdate();
+                }
+            } catch(e) {}
+        });
 
         document.addEventListener('keydown', (e) => {
             if((e.metaKey || e.ctrlKey) && e.key === 'Enter') dispatchToWorker();
