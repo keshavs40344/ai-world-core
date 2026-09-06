@@ -14,14 +14,14 @@
   "metrics": {
     "total_continents": 4,
     "total_companies": 4,
-    "total_agents": 141,
-    "total_products": 52,
-    "total_valuation_usd": 8932756.29,
-    "total_monthly_revenue_usd": 53425.62,
-    "total_treasury_usd": 265160.04,
+    "total_agents": 9,
+    "total_products": 8,
+    "total_valuation_usd": 9370000.0,
+    "total_monthly_revenue_usd": 53650.0,
+    "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 3,
-    "last_updated_epoch": 1788731598.6094627
+    "last_tick": 9,
+    "last_updated_epoch": 1788735473.3224523
   },
   "continents": [
     {
@@ -73,9 +73,9 @@
       "slug": "apex_cloud_intel",
       "ticker": "ACIS",
       "industry": "Cloud Infrastructure & High-Speed Transcoding",
-      "valuation": 3000000.0,
+      "valuation": 3500000.0,
       "treasury_balance": 70000.0,
-      "monthly_revenue": 14100.0,
+      "monthly_revenue": 14550.0,
       "operating_cost": 450.0,
       "status": "ACTIVE",
       "mission_statement": "Building $O(1)$ client-side developer infrastructure, zero-server parsers, and multi-threaded compilation tools.",
@@ -213,6 +213,20 @@
       "created_at": "2026-09-06T18:17:08.941762+00:00"
     },
     {
+      "id": "AGENT-SEC-OPS-91C1",
+      "department_id": "DEPT-ENG-01",
+      "company_id": "COMP-01",
+      "designation": "Senior RedOps Cryptographic Auditor",
+      "tier": "SPECIALIST",
+      "model_affinity": "groq/compound-mini",
+      "reputation_score": 99.8,
+      "compute_used_tokens": 1240,
+      "status": "ONLINE",
+      "skills_json": "[\"Zero-Trust Audit\", \"Header Sanitization\", \"Entropy Analysis\"]",
+      "system_prompt": "You are Senior RedOps Cryptographic Auditor serving the sovereign civilization.",
+      "created_at": "2026-09-06T22:57:53.317693+00:00"
+    },
+    {
       "id": "AGENT-TRUTH-VERIF-02DB",
       "department_id": "DEPT-ENG-01",
       "company_id": "COMP-01",
@@ -305,15 +319,15 @@
     {
       "id": "PROD-967296C7",
       "company_id": "COMP-01",
-      "name": "KubeGuard — Offline Kubernetes YAML AST & Security Linter",
+      "name": "KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter",
       "slug": "kubeguard_yaml_linter",
       "category": "High-Throughput Web Developer Tool",
-      "version": "v1.2.0",
+      "version": "v2.0.0",
       "problem_statement": "Engineers struggle to visual parse and validate Kubernetes YAML manifests offline before kubectl apply crashes clusters.",
       "prd_json": "{\"title\": \"KubeGuard \\u2014 Offline Kubernetes YAML AST & Security Linter\", \"target_persona\": \"Developers, Accountants, or Security Engineers\", \"core_algorithm\": \"The application loads the YAML manifest into memory, uses the js-yaml library to parse it into a JavaScript object (AST). A recursive traversal inspects security\\u2011relevant fields (e.g., privileged, hostPath, capabilities). Lint warnings are collected and displayed alongside a pretty\\u2011printed JSON representation of the AST. All processing occurs client\\u2011side, ensuring offline operation.\", \"monetization\": \"Open Sovereign Free Tier (Enterprise $29/mo API)\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/kubeguard_yaml_linter.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 208,
+      "daily_active_users": 300,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     },
@@ -335,7 +349,7 @@
     {
       "id": "PROD-F5F8EC61",
       "company_id": "COMP-03",
-      "name": "CookieShield — HTTP Header & Session PII Masker",
+      "name": "CookieShield \u2014 HTTP Header & Session PII Masker",
       "slug": "cookieshield_header_masker",
       "category": "Zero-Trust DevSecOps",
       "version": "v1.0.0",
@@ -350,7 +364,7 @@
     {
       "id": "PROD-4509F9F0",
       "company_id": "COMP-04",
-      "name": "GazetteVerifier — Indian Official Gazette Fact-Check Engine",
+      "name": "GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine",
       "slug": "gazetteverifier_official_factcheck",
       "category": "Autonomous Investigative Tech",
       "version": "v1.0.0",
@@ -365,116 +379,194 @@
   ],
   "events": [
     {
+      "id": 19,
+      "tick": 9,
+      "event_type": "WORKFORCE_EXPANSION",
+      "entity_id": "AGENT-SEC-OPS-91C1",
+      "summary": "Autonomous Agent Factory appointed 'Senior RedOps Cryptographic Auditor' to expand research velocity.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788735473.3176916
+    },
+    {
+      "id": 18,
+      "tick": 9,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-01",
+      "summary": "Self-Evolution Engine upgraded 'KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter' to v2.0.0. User adoption grew to 300 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788735473.3176916
+    },
+    {
+      "id": 17,
+      "tick": 8,
+      "event_type": "WORKFORCE_EXPANSION",
+      "entity_id": "AGENT-TRUTH-VERIF-4461",
+      "summary": "Autonomous Agent Factory appointed 'Chief Fact-Checking Bureau Investigator' to expand research velocity.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788722604.6170025
+    },
+    {
+      "id": 16,
+      "tick": 8,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-01",
+      "summary": "Self-Evolution Engine upgraded 'KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter' to v1.2.0. User adoption grew to 208 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788722604.6170025
+    },
+    {
+      "id": 15,
+      "tick": 7,
+      "event_type": "WORKFORCE_EXPANSION",
+      "entity_id": "AGENT-K8S-ARCH-D2B5",
+      "summary": "Autonomous Agent Factory appointed 'Principal Cloud Infrastructure SRE' to expand research velocity.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788718635.5171237
+    },
+    {
+      "id": 14,
+      "tick": 7,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-01",
+      "summary": "Self-Evolution Engine upgraded 'EdgeProfiler -- WebAssembly SQLite Memory & Query Benchmarker' to v1.2.0. User adoption grew to 497 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788718635.5171237
+    },
+    {
+      "id": 13,
+      "tick": 6,
+      "event_type": "WORKFORCE_EXPANSION",
+      "entity_id": "AGENT-QUANT-DEV-6B03",
+      "summary": "Autonomous Agent Factory appointed 'Lead Quantitative Ledger Architect' to expand research velocity.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788718632.2391872
+    },
+    {
+      "id": 12,
+      "tick": 6,
+      "event_type": "OPPORTUNITY_DISCOVERED",
+      "entity_id": "COMP-04",
+      "summary": "Autonomous News Wire Agency identified untapped niche in 'Autonomous Investigative Tech' and deployed 'ContradictionRadar -- Cross-Source Press Claim Discrepancy Engine' (QA verified in 32.01ms).",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788718632.2391872
+    },
+    {
+      "id": 11,
+      "tick": 5,
+      "event_type": "WORKFORCE_EXPANSION",
+      "entity_id": "AGENT-SEC-OPS-2BAB",
+      "summary": "Autonomous Agent Factory appointed 'Senior RedOps Cryptographic Auditor' to expand research velocity.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788718628.9417531
+    },
+    {
+      "id": 10,
+      "tick": 5,
+      "event_type": "OPPORTUNITY_DISCOVERED",
+      "entity_id": "COMP-02",
+      "summary": "Sovereign Ledger & Tax Corp identified untapped niche in 'FinTech & Quant Risk' and deployed 'ForexSpread -- Real-Time FX Triangle Arbitrage & Slippage Miner' (QA verified in 32.01ms).",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788718628.9417531
+    },
+    {
+      "id": 9,
+      "tick": 4,
+      "event_type": "WORKFORCE_EXPANSION",
+      "entity_id": "AGENT-TRUTH-VERIF-02DB",
+      "summary": "Autonomous Agent Factory appointed 'Chief Fact-Checking Bureau Investigator' to expand research velocity.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788718623.6702528
+    },
+    {
+      "id": 8,
+      "tick": 4,
+      "event_type": "OPPORTUNITY_DISCOVERED",
+      "entity_id": "COMP-01",
+      "summary": "Apex Cloud & Infra Systems identified untapped niche in 'Edge Computing & Cloud Architecture' and deployed 'EdgeProfiler -- WebAssembly SQLite Memory & Query Benchmarker' (QA verified in 32.01ms).",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788718623.6702528
+    },
+    {
+      "id": 7,
       "tick": 3,
-      "timestamp": "2026-09-07T03:23:18.609623",
-      "domain": "DataOps",
-      "event": "DataOps autonomous loop generated 92 verified fact bundles.",
+      "event_type": "WORKFORCE_EXPANSION",
+      "entity_id": "AGENT-K8S-ARCH-3DEB",
+      "summary": "Autonomous Agent Factory appointed 'Principal Cloud Infrastructure SRE' to expand research velocity.",
+      "causality_chain": null,
       "severity": "INFO",
-      "hash": "1fac09fa"
+      "timestamp": 1788718620.170239
     },
     {
+      "id": 6,
       "tick": 3,
-      "timestamp": "2026-09-07T03:23:18.609604",
-      "domain": "Governance",
-      "event": "Agent data_40 completed 107 task cycles. Efficiency: 100%.",
-      "severity": "INFO",
-      "hash": "9c96c648"
+      "event_type": "OPPORTUNITY_DISCOVERED",
+      "entity_id": "COMP-03",
+      "summary": "LockShield RedOps Bureau identified untapped niche in 'Zero-Trust DevSecOps' and deployed 'PromptShield -- LLM Prompt Injection & Jailbreak Firewall' (QA verified in 32.01ms).",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788718620.170239
     },
     {
-      "tick": 3,
-      "timestamp": "2026-09-07T03:23:18.609559",
-      "domain": "AI-Infra",
-      "event": "World entropy stable at 100%. Mesh health: OPTIMAL.",
-      "severity": "UPGRADE",
-      "hash": "4f3797af"
-    },
-    {
-      "tick": 3,
-      "timestamp": "2026-09-07T03:23:18.609505",
-      "domain": "Quantum/Crypto",
-      "event": "Centurion Swarm tick 3: 67 micro-tasks resolved.",
-      "severity": "INFO",
-      "hash": "60020c9d"
-    },
-    {
+      "id": 5,
       "tick": 2,
-      "timestamp": "2026-09-07T03:23:18.598519",
-      "domain": "FinTech",
-      "event": "Centurion Swarm tick 2: 28 micro-tasks resolved.",
-      "severity": "INFO",
-      "hash": "f43afb66"
+      "event_type": "PRODUCT_DEPLOYMENT",
+      "entity_id": "COMP-04",
+      "summary": "Apex Global News Wire Agency successfully synthesized and deployed 'GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine' to the live world.",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788717706.6660895
     },
     {
+      "id": 4,
       "tick": 2,
-      "timestamp": "2026-09-07T03:23:18.598501",
-      "domain": "Quantum/Crypto",
-      "event": "Agent evolution: 24 agents upgraded to GEN-9 Apex.",
-      "severity": "UPGRADE",
-      "hash": "6f9b318d"
+      "event_type": "PRODUCT_DEPLOYMENT",
+      "entity_id": "COMP-03",
+      "summary": "LogShield Security & PII Redaction Bureau successfully synthesized and deployed 'CookieShield \u2014 HTTP Header & Session PII Masker' to the live world.",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788717706.6660895
     },
     {
+      "id": 3,
       "tick": 2,
-      "timestamp": "2026-09-07T03:23:18.598484",
-      "domain": "SRE/DevOps",
-      "event": "Revenue pulse: SRE/DevOps posted $40,624 in API query volume.",
-      "severity": "INFO",
-      "hash": "23dea82d"
+      "event_type": "PRODUCT_DEPLOYMENT",
+      "entity_id": "COMP-02",
+      "summary": "Sovereign Ledger & Tax Shield Corp successfully synthesized and deployed 'TaxShield LUT & Zero-Rated GST Export Calculator' to the live world.",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788717706.6660895
     },
     {
+      "id": 2,
       "tick": 2,
-      "timestamp": "2026-09-07T03:23:18.598464",
-      "domain": "BioTech",
-      "event": "Zero-trust audit: 58 cryptographic proofs verified in BioTech.",
-      "severity": "INFO",
-      "hash": "a5ab4611"
+      "event_type": "PRODUCT_DEPLOYMENT",
+      "entity_id": "COMP-01",
+      "summary": "Apex Cloud Intelligence Systems successfully synthesized and deployed 'KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter' to the live world.",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788717706.6660895
     },
     {
-      "tick": 2,
-      "timestamp": "2026-09-07T03:23:18.598416",
-      "domain": "FinTech",
-      "event": "Zero-trust audit: 41 cryptographic proofs verified in FinTech.",
-      "severity": "UPGRADE",
-      "hash": "a1919190"
-    },
-    {
+      "id": 1,
       "tick": 1,
-      "timestamp": "2026-09-07T03:23:18.590177",
-      "domain": "SRE/DevOps",
-      "event": "SRE/DevOps division achieved 98% uptime across 247 deployed modules.",
-      "severity": "INFO",
-      "hash": "1b7d12c3"
-    },
-    {
-      "tick": 1,
-      "timestamp": "2026-09-07T03:23:18.590161",
-      "domain": "DataOps",
-      "event": "World entropy stable at 99%. Mesh health: OPTIMAL.",
-      "severity": "INFO",
-      "hash": "20a6b9d7"
-    },
-    {
-      "tick": 1,
-      "timestamp": "2026-09-07T03:23:18.590144",
-      "domain": "FinTech",
-      "event": "Agent evolution: 96 agents upgraded to GEN-9 Apex.",
-      "severity": "NOTICE",
-      "hash": "1543ac80"
-    },
-    {
-      "tick": 1,
-      "timestamp": "2026-09-07T03:23:18.590119",
-      "domain": "CyberSecurity",
-      "event": "Centurion Swarm tick 1: 173 micro-tasks resolved.",
-      "severity": "NOTICE",
-      "hash": "93c48e13"
-    },
-    {
-      "tick": 1,
-      "timestamp": "2026-09-07T03:23:18.590013",
-      "domain": "AI-Infra",
-      "event": "World entropy stable at 100%. Mesh health: OPTIMAL.",
-      "severity": "INFO",
-      "hash": "4f3797af"
+      "event_type": "CIVILIZATION_GENESIS",
+      "entity_id": "WORLD-GENESIS-PRIME",
+      "summary": "Master Blueprint Civilization Engine activated: 4 Continents, 4 Sovereign Companies, and Founding Leadership provisioned.",
+      "causality_chain": null,
+      "severity": "CRITICAL",
+      "timestamp": 1788717619.3661594
     }
   ],
   "transactions": [
@@ -497,7 +589,7 @@
       "dest_id": "COMP-04",
       "amount": 1500.0,
       "currency": "USD_VIRTUAL",
-      "memo": "R&D Grant allocated for GazetteVerifier — Indian Official Gazette Fact-Check Engine",
+      "memo": "R&D Grant allocated for GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine",
       "timestamp": 1788717706.6660895
     },
     {
@@ -508,7 +600,7 @@
       "dest_id": "COMP-03",
       "amount": 1500.0,
       "currency": "USD_VIRTUAL",
-      "memo": "R&D Grant allocated for CookieShield — HTTP Header & Session PII Masker",
+      "memo": "R&D Grant allocated for CookieShield \u2014 HTTP Header & Session PII Masker",
       "timestamp": 1788717706.6660895
     },
     {
@@ -530,7 +622,7 @@
       "dest_id": "COMP-01",
       "amount": 1500.0,
       "currency": "USD_VIRTUAL",
-      "memo": "R&D Grant allocated for KubeGuard — Offline Kubernetes YAML AST & Security Linter",
+      "memo": "R&D Grant allocated for KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter",
       "timestamp": 1788717706.6660895
     },
     {

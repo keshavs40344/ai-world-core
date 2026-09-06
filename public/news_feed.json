@@ -1,193 +1,75 @@
 [
   {
-    "title_en": "ISRO Gaganyaan: Final Uncrewed Orbital Flight Simulation Achieves 100% Human-Rating Validation",
-    "title_hi": "\u0907\u0938\u0930\u094b \u0917\u0917\u0928\u092f\u093e\u0928: \u0905\u0902\u0924\u093f\u092e \u092e\u093e\u0928\u0935\u0930\u0939\u093f\u0924 \u0915\u0915\u094d\u0937\u0940\u092f \u0909\u0921\u093c\u093e\u0928 \u0938\u093f\u092e\u0941\u0932\u0947\u0936\u0928 \u092e\u0947\u0902 \u092e\u093f\u0932\u093e 100% \u092e\u093e\u0928\u0935-\u0930\u0947\u091f\u093f\u0902\u0917 \u092a\u094d\u0930\u092e\u093e\u0923\u0940\u0915\u0930\u0923",
-    "category": "Space & Science",
-    "source": "ISRO Telemetry Tracking and Command Network (ISTRAC)",
-    "summary_en": "L110 core liquid stage, CE-20 cryogenic engine, and crew module emergency environmental controls clear all critical qualification hurdles.",
-    "slug": "isro-gaganyaan-orbital-flight-simulation-human-rating-milestone",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "6 min read"
+    "title_en": "Peace talks rich in symbolism but fundamental differences between Russia and Ukraine remain",
+    "title_hi": "Peace talks rich in symbolism but fundamental differences between Russia and Ukraine remain",
+    "category": "Global Geopolitics",
+    "source": "BBC World",
+    "summary_en": "Despite talks between US envoys and both Putin and Zelensky, the expectation in Kyiv is the fighting will continue, writes James Landale.",
+    "slug": "peace-talks-rich-in-symbolism-but-fundamental-differences-between-russia-an",
+    "published_time": "2026-09-06 22:57:45Z"
   },
   {
-    "title_en": "Supreme Court Constitution Bench Issues Historic Doctrine on AI Surveillance and Algorithmic Privacy",
-    "title_hi": "\u0938\u0941\u092a\u094d\u0930\u0940\u092e \u0915\u094b\u0930\u094d\u091f \u0915\u0940 \u0938\u0902\u0935\u093f\u0927\u093e\u0928 \u092a\u0940\u0920 \u0915\u093e \u0910\u0924\u093f\u0939\u093e\u0938\u093f\u0915 \u092b\u0948\u0938\u0932\u093e: \u090f\u0906\u0908 \u0938\u0930\u094d\u0935\u093f\u0932\u093e\u0902\u0938 \u0914\u0930 \u090f\u0932\u094d\u0917\u094b\u0930\u093f\u0926\u094d\u092e\u093f\u0915 \u0917\u094b\u092a\u0928\u0940\u092f\u0924\u093e \u092a\u0930 \u0928\u0908 \u0932\u0915\u094d\u0937\u094d\u092e\u0923 \u0930\u0947\u0916\u093e",
+    "title_en": "Germany's far-right AfD set for big win in eastern state, just short of majority",
+    "title_hi": "Germany's far-right AfD set for big win in eastern state, just short of majority",
+    "category": "Global Geopolitics",
+    "source": "BBC World",
+    "summary_en": "Germany's AfD has hailed a \"historic result\" and is projected to win 44% of the vote, far ahead of the conservatives on 17%.",
+    "slug": "germanys-far-right-afd-set-for-big-win-in-eastern-state-just-short-of-major",
+    "published_time": "2026-09-06 22:57:45Z"
+  },
+  {
+    "title_en": "5 Dead, Several Feared Trapped After Six-Storey Building Collapses In Delhi",
+    "title_hi": "5 Dead, Several Feared Trapped After Six-Storey Building Collapses In Delhi",
+    "category": "Economy & Markets",
+    "source": "NDTV Business & Tech",
+    "summary_en": "An eyewitness said at least 50 students were believed to be inside the building when the collapse occurred.",
+    "slug": "5-dead-several-feared-trapped-after-six-storey-building-collapses-in-delhi",
+    "published_time": "2026-09-06 22:57:45Z"
+  },
+  {
+    "title_en": "Ukraine Moves To Legalise Porn To Pay For 30,000 Drones: Report",
+    "title_hi": "Ukraine Moves To Legalise Porn To Pay For 30,000 Drones: Report",
+    "category": "Economy & Markets",
+    "source": "NDTV Business & Tech",
+    "summary_en": "A bill backed by Ukrainian lawmaker Yaroslav Zhelezniak argues that bringing the country's adult entertainment industry into the legal economy could generate as much as $25 million in tax revenue.",
+    "slug": "ukraine-moves-to-legalise-porn-to-pay-for-30000-drones-report",
+    "published_time": "2026-09-06 22:57:45Z"
+  },
+  {
+    "title_en": "1.7 Lakh Fliers Stuck After Indonesia Closes Airport Over Volcanic Eruption",
+    "title_hi": "1.7 Lakh Fliers Stuck After Indonesia Closes Airport Over Volcanic Eruption",
+    "category": "Economy & Markets",
+    "source": "NDTV Business & Tech",
+    "summary_en": "Mount Anak Krakatoa erupted on Saturday, producing a fountain of lava and booming sounds that could be heard up to a few hundred kilometres away, the geology agency said in a statement.",
+    "slug": "17-lakh-fliers-stuck-after-indonesia-closes-airport-over-volcanic-eruption",
+    "published_time": "2026-09-06 22:57:45Z"
+  },
+  {
+    "title_en": "Explained: The Warring Equation And Baghel Paradox In Punjab Congress",
+    "title_hi": "Explained: The Warring Equation And Baghel Paradox In Punjab Congress",
+    "category": "Economy & Markets",
+    "source": "NDTV Business & Tech",
+    "summary_en": "How did Baghel fall victim to Punjab Congress politics? Is it now the state president's turn after the in-charge?",
+    "slug": "explained-the-warring-equation-and-baghel-paradox-in-punjab-congress",
+    "published_time": "2026-09-06 22:57:45Z"
+  },
+  {
+    "title_en": "Delhi Building Collapse Raises Questions On Safety, Student Organisations Protest",
+    "title_hi": "Delhi Building Collapse Raises Questions On Safety, Student Organisations Protest",
+    "category": "Economy & Markets",
+    "source": "NDTV Business & Tech",
+    "summary_en": "The incident raised questions on how the building was allowed to be occupied again after being vacated and whether proper safety and structural checks were conducted before people were allowed to stay there.",
+    "slug": "delhi-building-collapse-raises-questions-on-safety-student-organisations-pr",
+    "published_time": "2026-09-06 22:57:45Z"
+  },
+  {
+    "title_en": "CJP demands accountability over South Delhi hostel collapse; Dipke questions PM",
+    "title_hi": "CJP demands accountability over South Delhi hostel collapse; Dipke questions PM",
     "category": "National & Judiciary",
-    "source": "Supreme Court Registry & Legal Wire",
-    "summary_en": "A unanimous 5-judge bench establishes strict constitutional limits on predictive policing, facial recognition deployment, and automated administrative scoring.",
-    "slug": "supreme-court-landmark-constitution-bench-ai-surveillance-privacy",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "7 min read"
-  },
-  {
-    "title_en": "RBI Monetary Policy Committee Maintains Repo Rate at 6.50% Citing Robust 7.4% GDP Trajectory",
-    "title_hi": "\u0906\u0930\u092c\u0940\u0906\u0908 \u092e\u094c\u0926\u094d\u0930\u093f\u0915 \u0928\u0940\u0924\u093f \u0938\u092e\u093f\u0924\u093f: \u0930\u0947\u092a\u094b \u0930\u0947\u091f 6.50% \u092a\u0930 \u0938\u094d\u0925\u093f\u0930, 7.4% \u0915\u0940 \u092e\u091c\u092c\u0942\u0924 \u091c\u0940\u0921\u0940\u092a\u0940 \u0935\u0943\u0926\u094d\u0927\u093f \u0926\u0930 \u0915\u093e \u092d\u0930\u094b\u0938\u093e",
-    "category": "Economy & Markets",
-    "source": "Reserve Bank of India & Financial Wire",
-    "summary_en": "Central bank emphasizes disinflation continuity while forecasting sustained industrial expansion and resilient corporate balance sheets.",
-    "slug": "rbi-monetary-policy-committee-repo-rate-growth-resilience",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "5 min read"
-  },
-  {
-    "title_en": "Quad Nations Formally Operationalize Integrated Indo-Pacific Maritime Domain Awareness (IPMDA) Radar Network",
-    "title_hi": "\u0915\u094d\u0935\u093e\u0921 \u0926\u0947\u0936\u094b\u0902 \u0928\u0947 \u0939\u093f\u0902\u0926-\u092a\u094d\u0930\u0936\u093e\u0902\u0924 \u0938\u092e\u0941\u0926\u094d\u0930\u0940 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u091c\u093e\u0917\u0930\u0942\u0915\u0924\u093e (IPMDA) \u0930\u0921\u093e\u0930 \u0928\u0947\u091f\u0935\u0930\u094d\u0915 \u0915\u094b \u0914\u092a\u091a\u093e\u0930\u093f\u0915 \u0930\u0942\u092a \u0938\u0947 \u0938\u0915\u094d\u0930\u093f\u092f \u0915\u093f\u092f\u093e",
-    "category": "Global Geopolitics",
-    "source": "Ministry of External Affairs & Quad Joint Naval Command",
-    "summary_en": "Real-time satellite AIS data integration links Indian Ocean Information Fusion Centre (IFC-IOR) with Hawaii, Canberra, and Tokyo naval hubs.",
-    "slug": "quad-maritime-domain-awareness-network-indo-pacific-security",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "6 min read"
-  },
-  {
-    "title_en": "National Green Hydrogen Mission Crosses 5 Million Tonne Electrolyser Tender Benchmark",
-    "title_hi": "\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u0939\u0930\u093f\u0924 \u0939\u093e\u0907\u0921\u094d\u0930\u094b\u091c\u0928 \u092e\u093f\u0936\u0928: 5 \u092e\u093f\u0932\u093f\u092f\u0928 \u091f\u0928 \u0907\u0932\u0947\u0915\u094d\u091f\u094d\u0930\u094b\u0932\u093e\u0907\u091c\u093c\u0930 \u091f\u0947\u0902\u0921\u0930 \u0915\u093e \u0910\u0924\u093f\u0939\u093e\u0938\u093f\u0915 \u0938\u094d\u0924\u0930 \u092a\u093e\u0930",
-    "category": "Energy & Environment",
-    "source": "Ministry of New and Renewable Energy (MNRE)",
-    "summary_en": "SECI concludes competitive bidding under SIGHT scheme, unlocking \u20b91.2 lakh crore in private capital for green ammonia and steel plants.",
-    "slug": "national-green-hydrogen-mission-5-million-tonne-tender-surge",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "5 min read"
-  },
-  {
-    "title_en": "India Semiconductor Mission Approves Phase-2 Commercial Silicon Carbide Fab and Advanced 3D Packaging Cluster",
-    "title_hi": "\u0907\u0902\u0921\u093f\u092f\u093e \u0938\u0947\u092e\u0940\u0915\u0902\u0921\u0915\u094d\u091f\u0930 \u092e\u093f\u0936\u0928: \u092b\u0947\u091c-2 \u092e\u0947\u0902 \u0915\u092e\u0930\u094d\u0936\u093f\u092f\u0932 \u0938\u093f\u0932\u093f\u0915\u0949\u0928 \u0915\u093e\u0930\u094d\u092c\u093e\u0907\u0921 \u092b\u0948\u092c \u0914\u0930 \u090f\u0921\u0935\u093e\u0902\u0938\u094d\u0921 3\u0921\u0940 \u092a\u0948\u0915\u0947\u091c\u093f\u0902\u0917 \u0915\u094d\u0932\u0938\u094d\u091f\u0930 \u0915\u094b \u092e\u0902\u091c\u0942\u0930\u0940",
-    "category": "Industry & Tech",
-    "source": "Ministry of Electronics & IT & India Semiconductor Mission (ISM)",
-    "summary_en": "Union Cabinet clears \u20b945,000 crore incentive envelope for power semiconductor fabs, compound semiconductor foundries, and chiplet assembly.",
-    "slug": "india-semiconductor-mission-approves-phase-2-commercial-silicon-carbide-fab",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "6 min read"
-  },
-  {
-    "title_en": "Defense Acquisition Council Clears Indigenous 110kN Engine Co-Development for AMCA Stealth Fighter",
-    "title_hi": "\u0930\u0915\u094d\u0937\u093e \u0905\u0927\u093f\u0917\u094d\u0930\u0939\u0923 \u092a\u0930\u093f\u0937\u0926: 5\u0935\u0940\u0902 \u092a\u0940\u0922\u093c\u0940 \u0915\u0947 \u090f\u090f\u092e\u0938\u0940\u090f \u0938\u094d\u091f\u0940\u0932\u094d\u0925 \u092b\u093e\u0907\u091f\u0930 \u0915\u0947 \u0932\u093f\u090f 110kN \u0938\u094d\u0935\u0926\u0947\u0936\u0940 \u0907\u0902\u091c\u0928 \u0935\u093f\u0915\u093e\u0938 \u0915\u094b \u092e\u0902\u091c\u0942\u0930\u0940",
-    "category": "Defense & Security",
-    "source": "Ministry of Defence & Defense Acquisition Council (DAC)",
-    "summary_en": "Cabinet Committee on Security sanctions full 100% intellectual property transfer and domestic metallurgical forging for next-gen turbofan.",
-    "slug": "defense-acquisition-council-amca-stealth-fighter-engine-clearance",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "6 min read"
-  },
-  {
-    "title_en": "Global Macro Markets: Brent Crude Stabilizes Near $76 as OPEC+ Moderates Voluntary Supply Quotas",
-    "title_hi": "\u0935\u0948\u0936\u094d\u0935\u093f\u0915 \u092c\u093e\u091c\u093e\u0930: \u0913\u092a\u0947\u0915+ \u0926\u094d\u0935\u093e\u0930\u093e \u0906\u092a\u0942\u0930\u094d\u0924\u093f \u0928\u093f\u092f\u0902\u0924\u094d\u0930\u0923 \u0915\u0947 \u092c\u093e\u0926 \u092c\u094d\u0930\u0947\u0902\u091f \u0915\u094d\u0930\u0942\u0921 76 \u0921\u0949\u0932\u0930 \u092a\u0930 \u0938\u094d\u0925\u093f\u0930, \u0924\u0947\u0932 \u0906\u092f\u093e\u0924 \u092c\u093f\u0932 \u0915\u094b \u0930\u093e\u0939\u0924",
-    "category": "Economy & Markets",
-    "source": "International Energy Agency (IEA) & Market Intelligence",
-    "summary_en": "Easing geopolitical risk premiums in the Middle East and steady non-OPEC production growth anchor refinery input costs across Asian import hubs.",
-    "slug": "global-macro-brent-crude-stabilizes-opec-supply-moderation",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "5 min read"
-  },
-  {
-    "title_en": "CERN LHC High-Luminosity Collision Trials Detect Statistically Significant Lepton Flavor Universality Anomalies",
-    "title_hi": "\u0938\u0930\u094d\u0928 \u090f\u0932\u090f\u091a\u0938\u0940: \u0939\u093e\u0908-\u0932\u094d\u092f\u0942\u092e\u093f\u0928\u094b\u0938\u093f\u091f\u0940 \u092a\u0930\u0940\u0915\u094d\u0937\u0923\u094b\u0902 \u092e\u0947\u0902 \u0932\u0947\u092a\u094d\u091f\u0949\u0928 \u092b\u094d\u0932\u0947\u0935\u0930 \u0938\u092e\u0930\u0942\u092a\u0924\u093e \u092e\u0947\u0902 \u0926\u0941\u0930\u094d\u0932\u092d \u0935\u093f\u0938\u0902\u0917\u0924\u093f \u0926\u0930\u094d\u091c, \u0928\u0908 \u092d\u094c\u0924\u093f\u0915\u0940 \u0915\u0947 \u0938\u0902\u0915\u0947\u0924",
-    "category": "Science & Physics",
-    "source": "European Organization for Nuclear Research (CERN) & TIFR",
-    "summary_en": "Combined data from ATLAS and CMS experiments crosses 4.1 sigma threshold in rare B-meson decays, hinting at undiscovered gauge bosons.",
-    "slug": "cern-lhc-subatomic-collision-trials-anomalous-lepton-symmetry",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "6 min read"
-  },
-  {
-    "title_en": "Ministry of Finance Reports 18.4% Surge in Advance Direct Tax Collections Signaling Corporate Expansion",
-    "title_hi": "\u0935\u093f\u0924\u094d\u0924 \u092e\u0902\u0924\u094d\u0930\u093e\u0932\u092f: \u090f\u0921\u0935\u093e\u0902\u0938 \u0921\u093e\u092f\u0930\u0947\u0915\u094d\u091f \u091f\u0948\u0915\u094d\u0938 \u0915\u0932\u0947\u0915\u094d\u0936\u0928 \u092e\u0947\u0902 18.4% \u0915\u093e \u0909\u091b\u093e\u0932, \u092e\u091c\u092c\u0942\u0924 \u0915\u0949\u0930\u094d\u092a\u094b\u0930\u0947\u091f \u092e\u0941\u0928\u093e\u092b\u0947 \u0915\u093e \u0938\u0902\u0915\u0947\u0924",
-    "category": "Economy & Markets",
-    "source": "Central Board of Direct Taxes (CBDT) & Ministry of Finance",
-    "summary_en": "Gross direct tax receipts breach \u20b914.8 lakh crore threshold driven by record corporate advance tax payments and widening individual taxpayer base.",
-    "slug": "ministry-of-finance-direct-tax-collections-advance-tax-surge",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "5 min read"
-  },
-  {
-    "title_en": "Ministry of Electronics and IT Formally Notifies DPDP Act Operating Rules and Establishes Digital Data Protection Board",
-    "title_hi": "\u0907\u0932\u0947\u0915\u094d\u091f\u094d\u0930\u0949\u0928\u093f\u0915\u094d\u0938 \u0914\u0930 \u0906\u0908\u091f\u0940 \u092e\u0902\u0924\u094d\u0930\u093e\u0932\u092f \u0928\u0947 \u0921\u0940\u092a\u0940\u0921\u0940\u092a\u0940 \u0905\u0927\u093f\u0928\u093f\u092f\u092e \u0915\u0947 \u0938\u0902\u091a\u093e\u0932\u0928 \u0928\u093f\u092f\u092e \u0905\u0927\u093f\u0938\u0942\u091a\u093f\u0924 \u0915\u093f\u090f, \u0921\u093f\u091c\u093f\u091f\u0932 \u0921\u0947\u091f\u093e \u0938\u0902\u0930\u0915\u094d\u0937\u0923 \u092c\u094b\u0930\u094d\u0921 \u0915\u0940 \u0938\u094d\u0925\u093e\u092a\u0928\u093e",
-    "category": "Governance & Policy",
-    "source": "Ministry of Electronics & IT (MeitY) Official Gazette",
-    "summary_en": "Comprehensive guidelines mandate verifiable parental consent mechanisms, 72-hour breach disclosure protocols, and stringent cross-border data transfer benchmarks.",
-    "slug": "digital-personal-data-protection-dpdp-rules-notified-data-protection-board",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "6 min read"
-  },
-  {
-    "title_en": "ISRO Aditya-L1 Solar Observatory Issues Real-Time X-Class Solar Flare Early Warning Telemetry from Sun-Earth L1 Point",
-    "title_hi": "\u0907\u0938\u0930\u094b \u0906\u0926\u093f\u0924\u094d\u092f-\u090f\u09321 \u0938\u094c\u0930 \u0935\u0947\u0927\u0936\u093e\u0932\u093e: \u0938\u0942\u0930\u094d\u092f-\u092a\u0943\u0925\u094d\u0935\u0940 \u090f\u09321 \u092c\u093f\u0902\u0926\u0941 \u0938\u0947 \u0936\u0915\u094d\u0924\u093f\u0936\u093e\u0932\u0940 \u090f\u0915\u094d\u0938-\u0915\u094d\u0932\u093e\u0938 \u0938\u094c\u0930 \u091c\u094d\u0935\u093e\u0932\u093e \u0915\u0940 \u092a\u0942\u0930\u094d\u0935 \u091a\u0947\u0924\u093e\u0935\u0928\u0940 \u091f\u0947\u0932\u0940\u092e\u0947\u091f\u094d\u0930\u0940 \u091c\u093e\u0930\u0940",
-    "category": "Space & Science",
-    "source": "ISRO Telemetry Tracking & Command Network (ISTRAC)",
-    "summary_en": "Primary coronagraph payload VELC and ASPEX instruments detect severe coronal mass ejection, providing 28-hour advance notice to global satellite operators.",
-    "slug": "isro-aditya-l1-solar-observatory-coronal-mass-ejection-early-warning",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "5 min read"
-  },
-  {
-    "title_en": "NPCI International Expands Real-Time UPI Cross-Border Linkages Across UAE, Singapore and Eurozone Partners",
-    "title_hi": "\u090f\u0928\u092a\u0940\u0938\u0940\u0906\u0908 \u0907\u0902\u091f\u0930\u0928\u0947\u0936\u0928\u0932 \u0915\u093e \u092c\u0921\u093c\u093e \u0935\u093f\u0938\u094d\u0924\u093e\u0930: \u0938\u0902\u092f\u0941\u0915\u094d\u0924 \u0905\u0930\u092c \u0905\u092e\u0940\u0930\u093e\u0924, \u0938\u093f\u0902\u0917\u093e\u092a\u0941\u0930 \u0914\u0930 \u092f\u0942\u0930\u094b\u091c\u093c\u094b\u0928 \u092e\u0947\u0902 \u092f\u0942\u092a\u0940\u0906\u0908 \u0930\u0940\u092f\u0932-\u091f\u093e\u0907\u092e \u0915\u094d\u0930\u0949\u0938-\u092c\u0949\u0930\u094d\u0921\u0930 \u0932\u093f\u0902\u0915\u0947\u091c \u0936\u0941\u0930\u0942",
-    "category": "Economy & Markets",
-    "source": "Reserve Bank of India & NPCI International (NIPL)",
-    "summary_en": "Direct inter-bank settlement reduces overseas remittance transfer costs from 6.2% to under 0.8%, accelerating bilateral commerce.",
-    "slug": "upi-cross-border-linkage-expansion-uae-singapore-france-remittance",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "5 min read"
-  },
-  {
-    "title_en": "Indian Railways Deploys Next-Gen Kavach 4.0 Automatic Train Protection Across 10,000 Route Kilometers",
-    "title_hi": "\u092d\u093e\u0930\u0924\u0940\u092f \u0930\u0947\u0932\u0935\u0947: 10,000 \u0930\u0942\u091f \u0915\u093f\u0932\u094b\u092e\u0940\u091f\u0930 \u092a\u0930 \u0905\u0917\u0932\u0940 \u092a\u0940\u0922\u093c\u0940 \u0915\u0947 '\u0915\u0935\u091a 4.0' \u0911\u091f\u094b\u092e\u0948\u091f\u093f\u0915 \u091f\u094d\u0930\u0947\u0928 \u092a\u094d\u0930\u094b\u091f\u0947\u0915\u094d\u0936\u0928 \u0938\u093f\u0938\u094d\u091f\u092e \u0915\u0940 \u0924\u0948\u0928\u093e\u0924\u0940",
-    "category": "Infrastructure & Safety",
-    "source": "Railway Board & Research Designs and Standards Organisation (RDSO)",
-    "summary_en": "SIL-4 certified indigenous anti-collision system prevents Signal Passing at Danger (SPAD) and enforces automated braking at 160 km/h.",
-    "slug": "indian-railways-kavach-4-automatic-train-protection-rollout",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "6 min read"
-  },
-  {
-    "title_en": "National Supercomputing Mission Unveils 100-Petaflop AIRAWAT-2 Indigenous AI Supercomputing Cluster",
-    "title_hi": "\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u0938\u0941\u092a\u0930\u0915\u0902\u092a\u094d\u092f\u0942\u091f\u093f\u0902\u0917 \u092e\u093f\u0936\u0928: 100-\u092a\u0947\u091f\u093e\u092b\u094d\u0932\u0949\u092a \u0915\u094d\u0937\u092e\u0924\u093e \u0935\u093e\u0932\u0947 '\u0910\u0930\u093e\u0935\u0924-2' \u0938\u094d\u0935\u0926\u0947\u0936\u0940 \u090f\u0906\u0908 \u0938\u0941\u092a\u0930\u0915\u0902\u092a\u094d\u092f\u0942\u091f\u0930 \u0915\u094d\u0932\u0938\u094d\u091f\u0930 \u0915\u093e \u0905\u0928\u093e\u0935\u0930\u0923",
-    "category": "Space & Science",
-    "source": "Centre for Development of Advanced Computing (C-DAC) & MeitY",
-    "summary_en": "Liquid-cooled high-performance architecture powered by indigenous Rudra servers provides sovereign compute for domestic foundational AI models.",
-    "slug": "national-supercomputing-mission-airawat-exascale-ai-cluster-unveiled",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "5 min read"
-  },
-  {
-    "title_en": "National Quantum Mission Achieves Milestone with India's First 128-Qubit Superconducting Quantum Processor",
-    "title_hi": "\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u0915\u094d\u0935\u093e\u0902\u091f\u092e \u092e\u093f\u0936\u0928: \u092d\u093e\u0930\u0924 \u0915\u0947 \u092a\u0939\u0932\u0947 128-\u0915\u094d\u092f\u0942\u092c\u093f\u091f \u0938\u0941\u092a\u0930\u0915\u0902\u0921\u0915\u094d\u091f\u093f\u0902\u0917 \u0915\u094d\u0935\u093e\u0902\u091f\u092e \u092a\u094d\u0930\u094b\u0938\u0947\u0938\u0930 \u0915\u0940 \u0938\u092b\u0932 \u092b\u0948\u092c\u094d\u0930\u093f\u0915\u0947\u0936\u0928",
-    "category": "Space & Science",
-    "source": "Department of Science and Technology (DST) & TIFR",
-    "summary_en": "Fabricated at Tata Institute of Fundamental Research (TIFR), the chip maintains coherence times exceeding 120 microseconds.",
-    "slug": "national-quantum-mission-128-qubit-superconducting-processor-breakthrough",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "6 min read"
-  },
-  {
-    "title_en": "Ministry of Earth Sciences Deep Ocean Mission Completes 6,000-Meter Pressure Hull Hull Trials for Matsya 6000 Submersible",
-    "title_hi": "\u092a\u0943\u0925\u094d\u0935\u0940 \u0935\u093f\u091c\u094d\u091e\u093e\u0928 \u092e\u0902\u0924\u094d\u0930\u093e\u0932\u092f: \u0938\u092e\u0941\u0926\u094d\u0930\u092f\u093e\u0928 '\u092e\u0924\u094d\u0938\u094d\u092f 6000' \u092e\u093e\u0928\u0935\u092f\u0941\u0915\u094d\u0924 \u092a\u0928\u0921\u0941\u092c\u094d\u092c\u0940 \u0915\u0947 6000 \u092e\u0940\u091f\u0930 \u0917\u0939\u0930\u0947 \u0926\u092c\u093e\u0935 \u092a\u0930\u0940\u0915\u094d\u0937\u0923 \u0938\u092b\u0932\u0924\u093e\u092a\u0942\u0930\u094d\u0935\u0915 \u0938\u0902\u092a\u0928\u094d\u0928",
-    "category": "Global Geopolitics",
-    "source": "National Institute of Ocean Technology (NIOT) & Ministry of Earth Sciences",
-    "summary_en": "Titanium alloy personnel sphere withstands 600 bar hydrostatic pressure, paving the way for 3-member manned descent into the Indian Ocean abyss.",
-    "slug": "deep-ocean-mission-samudrayaan-matsya-6000-deep-sea-manned-submersible",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "5 min read"
-  },
-  {
-    "title_en": "Geological Survey of India & Ministry of Mines Commission First Lithium Refining Pilot Facility in Reasi, J&K",
-    "title_hi": "\u092d\u093e\u0930\u0924\u0940\u092f \u092d\u0942\u0935\u0948\u091c\u094d\u091e\u093e\u0928\u093f\u0915 \u0938\u0930\u094d\u0935\u0947\u0915\u094d\u0937\u0923 \u0914\u0930 \u0916\u093e\u0928 \u092e\u0902\u0924\u094d\u0930\u093e\u0932\u092f: \u0930\u093f\u092f\u093e\u0938\u0940 (\u091c\u092e\u094d\u092e\u0942-\u0915\u0936\u094d\u092e\u0940\u0930) \u092e\u0947\u0902 \u092a\u0939\u0932\u093e \u0932\u093f\u0925\u093f\u092f\u092e \u0930\u093f\u092b\u093e\u0907\u0928\u093f\u0902\u0917 \u092a\u093e\u092f\u0932\u091f \u092a\u094d\u0932\u093e\u0902\u091f \u091a\u093e\u0932\u0942",
-    "category": "Economy & Markets",
-    "source": "Ministry of Mines & Geological Survey of India (GSI)",
-    "summary_en": "Indigenous hydrometallurgical processing plant achieves 99.5% battery-grade lithium carbonate purity, securing EV supply chains.",
-    "slug": "jammu-kashmir-reasi-lithium-refining-pilot-plant-commissioned",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "5 min read"
-  },
-  {
-    "title_en": "WHO Intergovernmental Negotiating Body Finalizes Consensus Draft on Sovereign Pathogen Access and Benefit Sharing",
-    "title_hi": "\u0935\u093f\u0936\u094d\u0935 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0938\u0902\u0917\u0920\u0928: \u0935\u0948\u0936\u094d\u0935\u093f\u0915 \u092e\u0939\u093e\u092e\u093e\u0930\u0940 \u0938\u092e\u091d\u094c\u0924\u0947 \u0915\u0947 \u092e\u0938\u094c\u0926\u0947 \u092a\u0930 \u0938\u0939\u092e\u0924\u093f, \u0930\u094b\u0917\u091c\u093c\u0928\u0915\u093c \u0938\u093e\u091d\u093e\u0915\u0930\u0923 \u0914\u0930 \u091f\u0940\u0915\u094b\u0902 \u0915\u0947 \u0938\u092e\u093e\u0928 \u0935\u093f\u0924\u0930\u0923 \u092a\u0930 \u0910\u0924\u093f\u0939\u093e\u0938\u093f\u0915 \u092b\u0948\u0938\u0932\u093e",
-    "category": "Global Geopolitics",
-    "source": "World Health Organization & Ministry of Health and Family Welfare",
-    "summary_en": "Historic multilateral agreement mandates 20% real-time allocation of diagnostics, therapeutics, and vaccines to developing nations during public health emergencies.",
-    "slug": "who-intergovernmental-negotiating-body-pandemic-accord-consensus",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "5 min read"
+    "source": "The Hindu",
+    "summary_en": "\u201cHow long must students be made to pay the price for failing infrastructure?\u201d Abhijeet Dipke asked, demanding safe classrooms, hostels, and basic dignity for students.",
+    "slug": "cjp-demands-accountability-over-south-delhi-hostel-collapse-dipke-questions",
+    "published_time": "2026-09-06 22:57:45Z"
   },
   {
     "title_en": "India and European Union Advance Dialogue on Reciprocal Carbon Accounting and CBAM Exemption Framework",
@@ -196,7 +78,375 @@
     "source": "Ministry of Commerce and Industry & European Commission DG Trade",
     "summary_en": "High-level bilateral negotiations explore mutual recognition of India's domestic carbon credit trading scheme to safeguard steel and aluminium exports.",
     "slug": "european-union-carbon-border-adjustment-mechanism-india-dialogue",
-    "published_time": "2026-09-06T22:54:59Z",
-    "read_time": "5 min read"
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "WHO Intergovernmental Negotiating Body Finalizes Consensus Draft on Sovereign Pathogen Access and Benefit Sharing",
+    "title_hi": "\u0935\u093f\u0936\u094d\u0935 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0938\u0902\u0917\u0920\u0928: \u0935\u0948\u0936\u094d\u0935\u093f\u0915 \u092e\u0939\u093e\u092e\u093e\u0930\u0940 \u0938\u092e\u091d\u094c\u0924\u0947 \u0915\u0947 \u092e\u0938\u094c\u0926\u0947 \u092a\u0930 \u0938\u0939\u092e\u0924\u093f, \u0930\u094b\u0917\u091c\u093c\u0928\u0915\u093c \u0938\u093e\u091d\u093e\u0915\u0930\u0923 \u0914\u0930 \u091f\u0940\u0915\u094b\u0902 \u0915\u0947 \u0938\u092e\u093e\u0928 \u0935\u093f\u0924\u0930\u0923 \u092a\u0930 \u0910\u0924\u093f\u0939\u093e\u0938\u093f\u0915 \u092b\u0948\u0938\u0932\u093e",
+    "category": "Global Geopolitics",
+    "source": "World Health Organization & Ministry of Health and Family Welfare",
+    "summary_en": "Historic multilateral agreement mandates 20% real-time allocation of diagnostics, therapeutics, and vaccines to developing nations during public health emergencies.",
+    "slug": "who-intergovernmental-negotiating-body-pandemic-accord-consensus",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "Geological Survey of India & Ministry of Mines Commission First Lithium Refining Pilot Facility in Reasi, J&K",
+    "title_hi": "\u092d\u093e\u0930\u0924\u0940\u092f \u092d\u0942\u0935\u0948\u091c\u094d\u091e\u093e\u0928\u093f\u0915 \u0938\u0930\u094d\u0935\u0947\u0915\u094d\u0937\u0923 \u0914\u0930 \u0916\u093e\u0928 \u092e\u0902\u0924\u094d\u0930\u093e\u0932\u092f: \u0930\u093f\u092f\u093e\u0938\u0940 (\u091c\u092e\u094d\u092e\u0942-\u0915\u0936\u094d\u092e\u0940\u0930) \u092e\u0947\u0902 \u092a\u0939\u0932\u093e \u0932\u093f\u0925\u093f\u092f\u092e \u0930\u093f\u092b\u093e\u0907\u0928\u093f\u0902\u0917 \u092a\u093e\u092f\u0932\u091f \u092a\u094d\u0932\u093e\u0902\u091f \u091a\u093e\u0932\u0942",
+    "category": "Economy & Markets",
+    "source": "Ministry of Mines & Geological Survey of India (GSI)",
+    "summary_en": "Indigenous hydrometallurgical processing plant achieves 99.5% battery-grade lithium carbonate purity, securing EV supply chains.",
+    "slug": "jammu-kashmir-reasi-lithium-refining-pilot-plant-commissioned",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "Ministry of Earth Sciences Deep Ocean Mission Completes 6,000-Meter Pressure Hull Hull Trials for Matsya 6000 Submersible",
+    "title_hi": "\u092a\u0943\u0925\u094d\u0935\u0940 \u0935\u093f\u091c\u094d\u091e\u093e\u0928 \u092e\u0902\u0924\u094d\u0930\u093e\u0932\u092f: \u0938\u092e\u0941\u0926\u094d\u0930\u092f\u093e\u0928 '\u092e\u0924\u094d\u0938\u094d\u092f 6000' \u092e\u093e\u0928\u0935\u092f\u0941\u0915\u094d\u0924 \u092a\u0928\u0921\u0941\u092c\u094d\u092c\u0940 \u0915\u0947 6000 \u092e\u0940\u091f\u0930 \u0917\u0939\u0930\u0947 \u0926\u092c\u093e\u0935 \u092a\u0930\u0940\u0915\u094d\u0937\u0923 \u0938\u092b\u0932\u0924\u093e\u092a\u0942\u0930\u094d\u0935\u0915 \u0938\u0902\u092a\u0928\u094d\u0928",
+    "category": "Global Geopolitics",
+    "source": "National Institute of Ocean Technology (NIOT) & Ministry of Earth Sciences",
+    "summary_en": "Titanium alloy personnel sphere withstands 600 bar hydrostatic pressure, paving the way for 3-member manned descent into the Indian Ocean abyss.",
+    "slug": "deep-ocean-mission-samudrayaan-matsya-6000-deep-sea-manned-submersible",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "National Quantum Mission Achieves Milestone with India's First 128-Qubit Superconducting Quantum Processor",
+    "title_hi": "\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u0915\u094d\u0935\u093e\u0902\u091f\u092e \u092e\u093f\u0936\u0928: \u092d\u093e\u0930\u0924 \u0915\u0947 \u092a\u0939\u0932\u0947 128-\u0915\u094d\u092f\u0942\u092c\u093f\u091f \u0938\u0941\u092a\u0930\u0915\u0902\u0921\u0915\u094d\u091f\u093f\u0902\u0917 \u0915\u094d\u0935\u093e\u0902\u091f\u092e \u092a\u094d\u0930\u094b\u0938\u0947\u0938\u0930 \u0915\u0940 \u0938\u092b\u0932 \u092b\u0948\u092c\u094d\u0930\u093f\u0915\u0947\u0936\u0928",
+    "category": "Space & Science",
+    "source": "Department of Science and Technology (DST) & TIFR",
+    "summary_en": "Fabricated at Tata Institute of Fundamental Research (TIFR), the chip maintains coherence times exceeding 120 microseconds.",
+    "slug": "national-quantum-mission-128-qubit-superconducting-processor-breakthrough",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "National Supercomputing Mission Unveils 100-Petaflop AIRAWAT-2 Indigenous AI Supercomputing Cluster",
+    "title_hi": "\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u0938\u0941\u092a\u0930\u0915\u0902\u092a\u094d\u092f\u0942\u091f\u093f\u0902\u0917 \u092e\u093f\u0936\u0928: 100-\u092a\u0947\u091f\u093e\u092b\u094d\u0932\u0949\u092a \u0915\u094d\u0937\u092e\u0924\u093e \u0935\u093e\u0932\u0947 '\u0910\u0930\u093e\u0935\u0924-2' \u0938\u094d\u0935\u0926\u0947\u0936\u0940 \u090f\u0906\u0908 \u0938\u0941\u092a\u0930\u0915\u0902\u092a\u094d\u092f\u0942\u091f\u0930 \u0915\u094d\u0932\u0938\u094d\u091f\u0930 \u0915\u093e \u0905\u0928\u093e\u0935\u0930\u0923",
+    "category": "Space & Science",
+    "source": "Centre for Development of Advanced Computing (C-DAC) & MeitY",
+    "summary_en": "Liquid-cooled high-performance architecture powered by indigenous Rudra servers provides sovereign compute for domestic foundational AI models.",
+    "slug": "national-supercomputing-mission-airawat-exascale-ai-cluster-unveiled",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "Indian Railways Deploys Next-Gen Kavach 4.0 Automatic Train Protection Across 10,000 Route Kilometers",
+    "title_hi": "\u092d\u093e\u0930\u0924\u0940\u092f \u0930\u0947\u0932\u0935\u0947: 10,000 \u0930\u0942\u091f \u0915\u093f\u0932\u094b\u092e\u0940\u091f\u0930 \u092a\u0930 \u0905\u0917\u0932\u0940 \u092a\u0940\u0922\u093c\u0940 \u0915\u0947 '\u0915\u0935\u091a 4.0' \u0911\u091f\u094b\u092e\u0948\u091f\u093f\u0915 \u091f\u094d\u0930\u0947\u0928 \u092a\u094d\u0930\u094b\u091f\u0947\u0915\u094d\u0936\u0928 \u0938\u093f\u0938\u094d\u091f\u092e \u0915\u0940 \u0924\u0948\u0928\u093e\u0924\u0940",
+    "category": "Infrastructure & Safety",
+    "source": "Railway Board & Research Designs and Standards Organisation (RDSO)",
+    "summary_en": "SIL-4 certified indigenous anti-collision system prevents Signal Passing at Danger (SPAD) and enforces automated braking at 160 km/h.",
+    "slug": "indian-railways-kavach-4-automatic-train-protection-rollout",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "NPCI International Expands Real-Time UPI Cross-Border Linkages Across UAE, Singapore and Eurozone Partners",
+    "title_hi": "\u090f\u0928\u092a\u0940\u0938\u0940\u0906\u0908 \u0907\u0902\u091f\u0930\u0928\u0947\u0936\u0928\u0932 \u0915\u093e \u092c\u0921\u093c\u093e \u0935\u093f\u0938\u094d\u0924\u093e\u0930: \u0938\u0902\u092f\u0941\u0915\u094d\u0924 \u0905\u0930\u092c \u0905\u092e\u0940\u0930\u093e\u0924, \u0938\u093f\u0902\u0917\u093e\u092a\u0941\u0930 \u0914\u0930 \u092f\u0942\u0930\u094b\u091c\u093c\u094b\u0928 \u092e\u0947\u0902 \u092f\u0942\u092a\u0940\u0906\u0908 \u0930\u0940\u092f\u0932-\u091f\u093e\u0907\u092e \u0915\u094d\u0930\u0949\u0938-\u092c\u0949\u0930\u094d\u0921\u0930 \u0932\u093f\u0902\u0915\u0947\u091c \u0936\u0941\u0930\u0942",
+    "category": "Economy & Markets",
+    "source": "Reserve Bank of India & NPCI International (NIPL)",
+    "summary_en": "Direct inter-bank settlement reduces overseas remittance transfer costs from 6.2% to under 0.8%, accelerating bilateral commerce.",
+    "slug": "upi-cross-border-linkage-expansion-uae-singapore-france-remittance",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "ISRO Aditya-L1 Solar Observatory Issues Real-Time X-Class Solar Flare Early Warning Telemetry from Sun-Earth L1 Point",
+    "title_hi": "\u0907\u0938\u0930\u094b \u0906\u0926\u093f\u0924\u094d\u092f-\u090f\u09321 \u0938\u094c\u0930 \u0935\u0947\u0927\u0936\u093e\u0932\u093e: \u0938\u0942\u0930\u094d\u092f-\u092a\u0943\u0925\u094d\u0935\u0940 \u090f\u09321 \u092c\u093f\u0902\u0926\u0941 \u0938\u0947 \u0936\u0915\u094d\u0924\u093f\u0936\u093e\u0932\u0940 \u090f\u0915\u094d\u0938-\u0915\u094d\u0932\u093e\u0938 \u0938\u094c\u0930 \u091c\u094d\u0935\u093e\u0932\u093e \u0915\u0940 \u092a\u0942\u0930\u094d\u0935 \u091a\u0947\u0924\u093e\u0935\u0928\u0940 \u091f\u0947\u0932\u0940\u092e\u0947\u091f\u094d\u0930\u0940 \u091c\u093e\u0930\u0940",
+    "category": "Space & Science",
+    "source": "ISRO Telemetry Tracking & Command Network (ISTRAC)",
+    "summary_en": "Primary coronagraph payload VELC and ASPEX instruments detect severe coronal mass ejection, providing 28-hour advance notice to global satellite operators.",
+    "slug": "isro-aditya-l1-solar-observatory-coronal-mass-ejection-early-warning",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "Ministry of Electronics and IT Formally Notifies DPDP Act Operating Rules and Establishes Digital Data Protection Board",
+    "title_hi": "\u0907\u0932\u0947\u0915\u094d\u091f\u094d\u0930\u0949\u0928\u093f\u0915\u094d\u0938 \u0914\u0930 \u0906\u0908\u091f\u0940 \u092e\u0902\u0924\u094d\u0930\u093e\u0932\u092f \u0928\u0947 \u0921\u0940\u092a\u0940\u0921\u0940\u092a\u0940 \u0905\u0927\u093f\u0928\u093f\u092f\u092e \u0915\u0947 \u0938\u0902\u091a\u093e\u0932\u0928 \u0928\u093f\u092f\u092e \u0905\u0927\u093f\u0938\u0942\u091a\u093f\u0924 \u0915\u093f\u090f, \u0921\u093f\u091c\u093f\u091f\u0932 \u0921\u0947\u091f\u093e \u0938\u0902\u0930\u0915\u094d\u0937\u0923 \u092c\u094b\u0930\u094d\u0921 \u0915\u0940 \u0938\u094d\u0925\u093e\u092a\u0928\u093e",
+    "category": "Governance & Policy",
+    "source": "Ministry of Electronics & IT (MeitY) Official Gazette",
+    "summary_en": "Comprehensive guidelines mandate verifiable parental consent mechanisms, 72-hour breach disclosure protocols, and stringent cross-border data transfer benchmarks.",
+    "slug": "digital-personal-data-protection-dpdp-rules-notified-data-protection-board",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "Ministry of Finance Reports 18.4% Surge in Advance Direct Tax Collections Signaling Corporate Expansion",
+    "title_hi": "\u0935\u093f\u0924\u094d\u0924 \u092e\u0902\u0924\u094d\u0930\u093e\u0932\u092f: \u090f\u0921\u0935\u093e\u0902\u0938 \u0921\u093e\u092f\u0930\u0947\u0915\u094d\u091f \u091f\u0948\u0915\u094d\u0938 \u0915\u0932\u0947\u0915\u094d\u0936\u0928 \u092e\u0947\u0902 18.4% \u0915\u093e \u0909\u091b\u093e\u0932, \u092e\u091c\u092c\u0942\u0924 \u0915\u0949\u0930\u094d\u092a\u094b\u0930\u0947\u091f \u092e\u0941\u0928\u093e\u092b\u0947 \u0915\u093e \u0938\u0902\u0915\u0947\u0924",
+    "category": "Economy & Markets",
+    "source": "Central Board of Direct Taxes (CBDT) & Ministry of Finance",
+    "summary_en": "Gross direct tax receipts breach \u20b914.8 lakh crore threshold driven by record corporate advance tax payments and widening individual taxpayer base.",
+    "slug": "ministry-of-finance-direct-tax-collections-advance-tax-surge",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "CERN LHC High-Luminosity Collision Trials Detect Statistically Significant Lepton Flavor Universality Anomalies",
+    "title_hi": "\u0938\u0930\u094d\u0928 \u090f\u0932\u090f\u091a\u0938\u0940: \u0939\u093e\u0908-\u0932\u094d\u092f\u0942\u092e\u093f\u0928\u094b\u0938\u093f\u091f\u0940 \u092a\u0930\u0940\u0915\u094d\u0937\u0923\u094b\u0902 \u092e\u0947\u0902 \u0932\u0947\u092a\u094d\u091f\u0949\u0928 \u092b\u094d\u0932\u0947\u0935\u0930 \u0938\u092e\u0930\u0942\u092a\u0924\u093e \u092e\u0947\u0902 \u0926\u0941\u0930\u094d\u0932\u092d \u0935\u093f\u0938\u0902\u0917\u0924\u093f \u0926\u0930\u094d\u091c, \u0928\u0908 \u092d\u094c\u0924\u093f\u0915\u0940 \u0915\u0947 \u0938\u0902\u0915\u0947\u0924",
+    "category": "Science & Physics",
+    "source": "European Organization for Nuclear Research (CERN) & TIFR",
+    "summary_en": "Combined data from ATLAS and CMS experiments crosses 4.1 sigma threshold in rare B-meson decays, hinting at undiscovered gauge bosons.",
+    "slug": "cern-lhc-subatomic-collision-trials-anomalous-lepton-symmetry",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "Global Macro Markets: Brent Crude Stabilizes Near $76 as OPEC+ Moderates Voluntary Supply Quotas",
+    "title_hi": "\u0935\u0948\u0936\u094d\u0935\u093f\u0915 \u092c\u093e\u091c\u093e\u0930: \u0913\u092a\u0947\u0915+ \u0926\u094d\u0935\u093e\u0930\u093e \u0906\u092a\u0942\u0930\u094d\u0924\u093f \u0928\u093f\u092f\u0902\u0924\u094d\u0930\u0923 \u0915\u0947 \u092c\u093e\u0926 \u092c\u094d\u0930\u0947\u0902\u091f \u0915\u094d\u0930\u0942\u0921 76 \u0921\u0949\u0932\u0930 \u092a\u0930 \u0938\u094d\u0925\u093f\u0930, \u0924\u0947\u0932 \u0906\u092f\u093e\u0924 \u092c\u093f\u0932 \u0915\u094b \u0930\u093e\u0939\u0924",
+    "category": "Economy & Markets",
+    "source": "International Energy Agency (IEA) & Market Intelligence",
+    "summary_en": "Easing geopolitical risk premiums in the Middle East and steady non-OPEC production growth anchor refinery input costs across Asian import hubs.",
+    "slug": "global-macro-brent-crude-stabilizes-opec-supply-moderation",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "Defense Acquisition Council Clears Indigenous 110kN Engine Co-Development for AMCA Stealth Fighter",
+    "title_hi": "\u0930\u0915\u094d\u0937\u093e \u0905\u0927\u093f\u0917\u094d\u0930\u0939\u0923 \u092a\u0930\u093f\u0937\u0926: 5\u0935\u0940\u0902 \u092a\u0940\u0922\u093c\u0940 \u0915\u0947 \u090f\u090f\u092e\u0938\u0940\u090f \u0938\u094d\u091f\u0940\u0932\u094d\u0925 \u092b\u093e\u0907\u091f\u0930 \u0915\u0947 \u0932\u093f\u090f 110kN \u0938\u094d\u0935\u0926\u0947\u0936\u0940 \u0907\u0902\u091c\u0928 \u0935\u093f\u0915\u093e\u0938 \u0915\u094b \u092e\u0902\u091c\u0942\u0930\u0940",
+    "category": "Defense & Security",
+    "source": "Ministry of Defence & Defense Acquisition Council (DAC)",
+    "summary_en": "Cabinet Committee on Security sanctions full 100% intellectual property transfer and domestic metallurgical forging for next-gen turbofan.",
+    "slug": "defense-acquisition-council-amca-stealth-fighter-engine-clearance",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "India Semiconductor Mission Approves Phase-2 Commercial Silicon Carbide Fab and Advanced 3D Packaging Cluster",
+    "title_hi": "\u0907\u0902\u0921\u093f\u092f\u093e \u0938\u0947\u092e\u0940\u0915\u0902\u0921\u0915\u094d\u091f\u0930 \u092e\u093f\u0936\u0928: \u092b\u0947\u091c-2 \u092e\u0947\u0902 \u0915\u092e\u0930\u094d\u0936\u093f\u092f\u0932 \u0938\u093f\u0932\u093f\u0915\u0949\u0928 \u0915\u093e\u0930\u094d\u092c\u093e\u0907\u0921 \u092b\u0948\u092c \u0914\u0930 \u090f\u0921\u0935\u093e\u0902\u0938\u094d\u0921 3\u0921\u0940 \u092a\u0948\u0915\u0947\u091c\u093f\u0902\u0917 \u0915\u094d\u0932\u0938\u094d\u091f\u0930 \u0915\u094b \u092e\u0902\u091c\u0942\u0930\u0940",
+    "category": "Industry & Tech",
+    "source": "Ministry of Electronics & IT & India Semiconductor Mission (ISM)",
+    "summary_en": "Union Cabinet clears \u20b945,000 crore incentive envelope for power semiconductor fabs, compound semiconductor foundries, and chiplet assembly.",
+    "slug": "india-semiconductor-mission-approves-phase-2-commercial-silicon-carbide-fab",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "National Green Hydrogen Mission Crosses 5 Million Tonne Electrolyser Tender Benchmark",
+    "title_hi": "\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u0939\u0930\u093f\u0924 \u0939\u093e\u0907\u0921\u094d\u0930\u094b\u091c\u0928 \u092e\u093f\u0936\u0928: 5 \u092e\u093f\u0932\u093f\u092f\u0928 \u091f\u0928 \u0907\u0932\u0947\u0915\u094d\u091f\u094d\u0930\u094b\u0932\u093e\u0907\u091c\u093c\u0930 \u091f\u0947\u0902\u0921\u0930 \u0915\u093e \u0910\u0924\u093f\u0939\u093e\u0938\u093f\u0915 \u0938\u094d\u0924\u0930 \u092a\u093e\u0930",
+    "category": "Energy & Environment",
+    "source": "Ministry of New and Renewable Energy (MNRE)",
+    "summary_en": "SECI concludes competitive bidding under SIGHT scheme, unlocking \u20b91.2 lakh crore in private capital for green ammonia and steel plants.",
+    "slug": "national-green-hydrogen-mission-5-million-tonne-tender-surge",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "Quad Nations Formally Operationalize Integrated Indo-Pacific Maritime Domain Awareness (IPMDA) Radar Network",
+    "title_hi": "\u0915\u094d\u0935\u093e\u0921 \u0926\u0947\u0936\u094b\u0902 \u0928\u0947 \u0939\u093f\u0902\u0926-\u092a\u094d\u0930\u0936\u093e\u0902\u0924 \u0938\u092e\u0941\u0926\u094d\u0930\u0940 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u091c\u093e\u0917\u0930\u0942\u0915\u0924\u093e (IPMDA) \u0930\u0921\u093e\u0930 \u0928\u0947\u091f\u0935\u0930\u094d\u0915 \u0915\u094b \u0914\u092a\u091a\u093e\u0930\u093f\u0915 \u0930\u0942\u092a \u0938\u0947 \u0938\u0915\u094d\u0930\u093f\u092f \u0915\u093f\u092f\u093e",
+    "category": "Global Geopolitics",
+    "source": "Ministry of External Affairs & Quad Joint Naval Command",
+    "summary_en": "Real-time satellite AIS data integration links Indian Ocean Information Fusion Centre (IFC-IOR) with Hawaii, Canberra, and Tokyo naval hubs.",
+    "slug": "quad-maritime-domain-awareness-network-indo-pacific-security",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "RBI Monetary Policy Committee Maintains Repo Rate at 6.50% Citing Robust 7.4% GDP Trajectory",
+    "title_hi": "\u0906\u0930\u092c\u0940\u0906\u0908 \u092e\u094c\u0926\u094d\u0930\u093f\u0915 \u0928\u0940\u0924\u093f \u0938\u092e\u093f\u0924\u093f: \u0930\u0947\u092a\u094b \u0930\u0947\u091f 6.50% \u092a\u0930 \u0938\u094d\u0925\u093f\u0930, 7.4% \u0915\u0940 \u092e\u091c\u092c\u0942\u0924 \u091c\u0940\u0921\u0940\u092a\u0940 \u0935\u0943\u0926\u094d\u0927\u093f \u0926\u0930 \u0915\u093e \u092d\u0930\u094b\u0938\u093e",
+    "category": "Economy & Markets",
+    "source": "Reserve Bank of India & Financial Wire",
+    "summary_en": "Central bank emphasizes disinflation continuity while forecasting sustained industrial expansion and resilient corporate balance sheets.",
+    "slug": "rbi-monetary-policy-committee-repo-rate-growth-resilience",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "Supreme Court Constitution Bench Issues Historic Doctrine on AI Surveillance and Algorithmic Privacy",
+    "title_hi": "\u0938\u0941\u092a\u094d\u0930\u0940\u092e \u0915\u094b\u0930\u094d\u091f \u0915\u0940 \u0938\u0902\u0935\u093f\u0927\u093e\u0928 \u092a\u0940\u0920 \u0915\u093e \u0910\u0924\u093f\u0939\u093e\u0938\u093f\u0915 \u092b\u0948\u0938\u0932\u093e: \u090f\u0906\u0908 \u0938\u0930\u094d\u0935\u093f\u0932\u093e\u0902\u0938 \u0914\u0930 \u090f\u0932\u094d\u0917\u094b\u0930\u093f\u0926\u094d\u092e\u093f\u0915 \u0917\u094b\u092a\u0928\u0940\u092f\u0924\u093e \u092a\u0930 \u0928\u0908 \u0932\u0915\u094d\u0937\u094d\u092e\u0923 \u0930\u0947\u0916\u093e",
+    "category": "National & Judiciary",
+    "source": "Supreme Court Registry & Legal Wire",
+    "summary_en": "A unanimous 5-judge bench establishes strict constitutional limits on predictive policing, facial recognition deployment, and automated administrative scoring.",
+    "slug": "supreme-court-landmark-constitution-bench-ai-surveillance-privacy",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "ISRO Gaganyaan: Final Uncrewed Orbital Flight Simulation Achieves 100% Human-Rating Validation",
+    "title_hi": "\u0907\u0938\u0930\u094b \u0917\u0917\u0928\u092f\u093e\u0928: \u0905\u0902\u0924\u093f\u092e \u092e\u093e\u0928\u0935\u0930\u0939\u093f\u0924 \u0915\u0915\u094d\u0937\u0940\u092f \u0909\u0921\u093c\u093e\u0928 \u0938\u093f\u092e\u0941\u0932\u0947\u0936\u0928 \u092e\u0947\u0902 \u092e\u093f\u0932\u093e 100% \u092e\u093e\u0928\u0935-\u0930\u0947\u091f\u093f\u0902\u0917 \u092a\u094d\u0930\u092e\u093e\u0923\u0940\u0915\u0930\u0923",
+    "category": "Space & Science",
+    "source": "ISRO Telemetry Tracking and Command Network (ISTRAC)",
+    "summary_en": "L110 core liquid stage, CE-20 cryogenic engine, and crew module emergency environmental controls clear all critical qualification hurdles.",
+    "slug": "isro-gaganyaan-orbital-flight-simulation-human-rating-milestone",
+    "published_time": "2026-09-06T22:54:59Z"
+  },
+  {
+    "title_en": "Maharashtra Sets Up High-Level Committee to Ensure Transparency in Recruitment Exams",
+    "title_hi": "\u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930 \u0928\u0947 \u092d\u0930\u094d\u0924\u0940 \u092a\u0930\u0940\u0915\u094d\u0937\u093e\u0913\u0902 \u092e\u0947\u0902 \u092a\u093e\u0930\u0926\u0930\u094d\u0936\u093f\u0924\u093e \u0915\u0947 \u0932\u093f\u090f \u0909\u091a\u094d\u091a \u0938\u094d\u0924\u0930\u0940\u092f \u0938\u092e\u093f\u0924\u093f \u0917\u0920\u093f\u0924 \u0915\u0940",
+    "category": "National & Judiciary",
+    "source": "The Hindu",
+    "summary_en": "The Maharashtra government has constituted a high-level committee tasked with overseeing the fairness of recruitment examinations. The committee will travel to every revenue division, engaging directly with students, aspirants, educational institution representatives, and other stakeholders to address concerns and improve the recruitment process.",
+    "slug": "maharashtra-sets-up-high-level-committee-to-ensure-transparency-in-recruitm",
+    "published_time": "2026-09-06 22:54:36Z"
+  },
+  {
+    "title_en": "MNS chief Raj Thackeray cautions against communal distractions amid economic challenges",
+    "title_hi": "\u090f\u092e\u090f\u0928\u090f\u0938 \u092a\u094d\u0930\u092e\u0941\u0916 \u0930\u093e\u091c \u0920\u093e\u0915\u0930\u0947 \u0928\u0947 \u0906\u0930\u094d\u0925\u093f\u0915 \u0938\u092e\u0938\u094d\u092f\u093e\u0913\u0902 \u0915\u0947 \u092c\u0940\u091a \u0938\u093e\u092e\u094d\u092a\u094d\u0930\u0926\u093e\u092f\u093f\u0915\u0924\u093e \u0915\u0947 \u092b\u0902\u0926\u0947 \u0938\u0947 \u0938\u0924\u0930\u094d\u0915 \u0930\u0939\u0928\u0947 \u0915\u0940 \u091a\u0947\u0924\u093e\u0935\u0928\u0940 \u0926\u0940",
+    "category": "National & Judiciary",
+    "source": "The Hindu",
+    "summary_en": "Speaking to Maharashtra Navnirman Sena office\u2011bearers in Thane, party leader Raj Thackeray warned that attempts to stoke religious conflict are being used to divert public attention from pressing socio\u2011economic issues such as unemployment, inflation and infrastructure deficits. He urged citizens to stay vigilant and reject any narrative that pits communities against each other for political gain.",
+    "slug": "mns-chief-raj-thackeray-cautions-against-communal-distractions-amid-economi",
+    "published_time": "2026-09-06 22:54:36Z"
+  },
+  {
+    "title_en": "Maharashtra Ministers Push for DJ-Free Festivals Over Health Risks",
+    "title_hi": "\u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930 \u0915\u0947 \u092e\u0902\u0924\u094d\u0930\u093f\u092f\u094b\u0902 \u0928\u0947 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091c\u094b\u0916\u093f\u092e\u094b\u0902 \u0915\u094b \u0932\u0947\u0915\u0930 \u0921\u0940\u091c\u0947\u2011\u092e\u0941\u0915\u094d\u0924 \u0924\u094d\u092f\u094b\u0939\u093e\u0930\u094b\u0902 \u0915\u0940 \u092e\u093e\u0902\u0917 \u0915\u0940",
+    "category": "National & Judiciary",
+    "source": "The Hindu",
+    "summary_en": "State ministers in Maharashtra have urged that festivals be organized without DJs and high\u2011powered loudspeakers, citing documented health hazards linked to excessive noise. The call has gained traction as activist Vidyanand Bapat of Pune highlights the chronic noise\u2011pollution problem during celebrations. Officials are reviewing existing event\u2011permits to align with the proposed restrictions.",
+    "slug": "maharashtra-ministers-push-for-dj-free-festivals-over-health-risks",
+    "published_time": "2026-09-06 22:54:36Z"
+  },
+  {
+    "title_en": "Delhi building collapse kills at least five, FIR lodged against owner",
+    "title_hi": "\u0926\u093f\u0932\u094d\u0932\u0940 \u092e\u0947\u0902 \u0907\u092e\u093e\u0930\u0924 \u0922\u0939\u0928\u0947 \u0938\u0947 \u0915\u092e \u0938\u0947 \u0915\u092e \u092a\u093e\u0901\u091a \u092e\u094c\u0924\u0947\u0902, \u092e\u093e\u0932\u093f\u0915 \u092a\u0930 \u090f\u092b\u0906\u0908\u0906\u0930 \u0926\u0930\u094d\u091c",
+    "category": "National & Judiciary",
+    "source": "The Hindu",
+    "summary_en": "A multi\u2011storey building in Delhi collapsed, killing at least five people and injuring several others. Police have registered a First Information Report against the alleged owner, citing the structure\u2019s approximate 50\u2011year age and alleged safety violations. Rescue teams have rescued 11 occupants and continue search operations.",
+    "slug": "delhi-building-collapse-kills-at-least-five-fir-lodged-against-owner",
+    "published_time": "2026-09-06 22:54:36Z"
+  },
+  {
+    "title_en": "Direct Tax Net Collections Surge 18.2% to \u20b914.8 Lakh Crore Led by Advance Corporate Tax",
+    "title_hi": "\u092a\u094d\u0930\u0924\u094d\u092f\u0915\u094d\u0937 \u0915\u0930 \u0938\u0902\u0917\u094d\u0930\u0939 \u092e\u0947\u0902 18.2% \u0915\u093e \u092d\u093e\u0930\u0940 \u0909\u091b\u093e\u0932, \u20b914.8 \u0932\u093e\u0916 \u0915\u0930\u094b\u0921\u093c \u092a\u0930 \u092a\u0939\u0941\u0902\u091a\u093e \u0936\u0941\u0926\u094d\u0927 \u091f\u0948\u0915\u094d\u0938 \u0930\u093e\u091c\u0938\u094d\u0935",
+    "category": "Governance & Policy",
+    "source": "Central Board of Direct Taxes (CBDT)",
+    "summary_en": "Digital tax compliance, AI-driven evasion detection, and formalization of the enterprise economy boost fiscal deficit consolidation.",
+    "slug": "ministry-of-finance-direct-tax-collections-advance-tax-surge",
+    "published_time": "2026-09-06 22:48:35Z"
+  },
+  {
+    "title_en": "CERN Large Hadron Collider Collision Trials Reveal Anomalous Lepton Flavour Symmetry Signal",
+    "title_hi": "\u0938\u0930\u094d\u0928 (CERN): \u0932\u093e\u0930\u094d\u091c \u0939\u0948\u0921\u094d\u0930\u0949\u0928 \u0915\u094b\u0932\u093e\u0907\u0921\u0930 \u0915\u0947 \u0909\u092a-\u092a\u0930\u092e\u093e\u0923\u094d\u0935\u093f\u0915 \u091f\u0915\u0930\u093e\u0935 \u092e\u0947\u0902 \u0928\u0908 \u092d\u094c\u0924\u093f\u0915\u0940 \u0915\u0947 \u0915\u094d\u0930\u093e\u0902\u0924\u093f\u0915\u093e\u0930\u0940 \u0938\u0902\u0915\u0947\u0924",
+    "category": "Science & Space",
+    "source": "CERN European Organization for Nuclear Research",
+    "summary_en": "LHCb and CMS collaborative datasets indicate a 4.2-sigma departure from Standard Model predictions in bottom meson decays.",
+    "slug": "cern-lhc-subatomic-collision-trials-anomalous-lepton-symmetry",
+    "published_time": "2026-09-06 22:48:35Z"
+  },
+  {
+    "title_en": "Global Macro Watch: Brent Crude Stabilizes at $76 as Extended OPEC+ Discipline Offsets Volatility",
+    "title_hi": "\u0935\u0948\u0936\u094d\u0935\u093f\u0915 \u0905\u0930\u094d\u0925\u0935\u094d\u092f\u0935\u0938\u094d\u0925\u093e: \u092c\u094d\u0930\u0947\u0902\u091f \u0915\u094d\u0930\u0942\u0921 $76 \u092a\u0930 \u0938\u094d\u0925\u093f\u0930, \u0913\u092a\u0947\u0915+ \u0915\u0947 \u0938\u0902\u092f\u092e \u0938\u0947 \u0915\u091a\u094d\u091a\u0947 \u0924\u0947\u0932 \u0915\u0940 \u0915\u0940\u092e\u0924\u094b\u0902 \u092e\u0947\u0902 \u0928\u0930\u092e\u0940",
+    "category": "Economy & Markets",
+    "source": "International Energy Agency & Global Financial Wire",
+    "summary_en": "Stable energy benchmark provides disinflationary relief for import-dependent Asian economies while international trade balances remain steady.",
+    "slug": "global-macro-brent-crude-stabilizes-opec-supply-moderation",
+    "published_time": "2026-09-06 22:48:35Z"
+  },
+  {
+    "title_en": "Defense Acquisition Council Accords \u20b965,000 Crore Acceptance of Necessity for Advanced Medium Combat Aircraft (AMCA)",
+    "title_hi": "\u0930\u0915\u094d\u0937\u093e \u0905\u0927\u093f\u0917\u094d\u0930\u0939\u0923 \u092a\u0930\u093f\u0937\u0926: \u0938\u094d\u0935\u0926\u0947\u0936\u0940 5\u0935\u0940\u0902 \u092a\u0940\u0922\u093c\u0940 \u0915\u0947 \u0938\u094d\u091f\u0940\u0932\u094d\u0925 \u092b\u093e\u0907\u091f\u0930 'AMCA' \u0915\u0947 \u0932\u093f\u090f \u20b965,000 \u0915\u0930\u094b\u0921\u093c \u0915\u0940 \u092e\u0902\u091c\u0942\u0930\u0940",
+    "category": "Defense & Strategic",
+    "source": "Ministry of Defence & Press Information Bureau",
+    "summary_en": "Cabinet Committee on Security paves path for five prototypes of fifth-generation twin-engine stealth fighter with internal weapons bays and supercruise capability.",
+    "slug": "defense-acquisition-council-amca-stealth-fighter-engine-clearance",
+    "published_time": "2026-09-06 22:48:35Z"
+  },
+  {
+    "title_en": "India Semiconductor Mission Clears \u20b938,000 Crore Phase-2 Commercial Silicon Carbide (SiC) Power Fab",
+    "title_hi": "\u0907\u0902\u0921\u093f\u092f\u093e \u0938\u0947\u092e\u0940\u0915\u0902\u0921\u0915\u094d\u091f\u0930 \u092e\u093f\u0936\u0928: \u20b938,000 \u0915\u0930\u094b\u0921\u093c \u0915\u093e \u0926\u0942\u0938\u0930\u093e \u091a\u0930\u0923 \u0938\u094d\u0935\u0940\u0915\u0943\u0924, \u0938\u093f\u0932\u093f\u0915\u0949\u0928 \u0915\u093e\u0930\u094d\u092c\u093e\u0907\u0921 \u092a\u093e\u0935\u0930 \u092b\u0948\u092c \u0915\u094b \u0939\u0930\u0940 \u091d\u0902\u0921\u0940",
+    "category": "Tech & AI",
+    "source": "Ministry of Electronics & IT (MeitY)",
+    "summary_en": "Compound semiconductor facility to produce next-generation power chips for electric vehicles, solar inverters, and high-speed rail networks.",
+    "slug": "india-semiconductor-mission-approves-phase-2-commercial-silicon-carbide-fab",
+    "published_time": "2026-09-06 22:48:35Z"
+  },
+  {
+    "title_en": "National Green Hydrogen Mission Crosses 5 Million Tonne Electrolyser Tender Benchmark",
+    "title_hi": "\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u0939\u0930\u093f\u0924 \u0939\u093e\u0907\u0921\u094d\u0930\u094b\u091c\u0928 \u092e\u093f\u0936\u0928: 50 \u0932\u093e\u0916 \u091f\u0928 \u0907\u0932\u0947\u0915\u094d\u091f\u094d\u0930\u094b\u0932\u093e\u0907\u091c\u093c\u0930 \u0915\u094d\u0937\u092e\u0924\u093e \u091f\u0947\u0902\u0921\u0930 \u0915\u093e \u0928\u092f\u093e \u0930\u093f\u0915\u0949\u0930\u094d\u0921",
+    "category": "Governance & Policy",
+    "source": "Ministry of New and Renewable Energy (MNRE)",
+    "summary_en": "Massive capital allocation and production-linked incentives position India as the lowest-cost green ammonia exporter to Europe and East Asia.",
+    "slug": "national-green-hydrogen-mission-5-million-tonne-tender-surge",
+    "published_time": "2026-09-06 22:48:35Z"
+  },
+  {
+    "title_en": "Quad Nations Formally Operationalize Integrated Indo-Pacific Maritime Domain Awareness (IPMDA) Radar Network",
+    "title_hi": "\u0915\u094d\u0935\u093e\u0921 \u0926\u0947\u0936\u094b\u0902 \u0928\u0947 \u0939\u093f\u0902\u0926-\u092a\u094d\u0930\u0936\u093e\u0902\u0924 \u0938\u092e\u0941\u0926\u094d\u0930\u0940 \u0928\u093f\u0917\u0930\u093e\u0928\u0940 \u0928\u0947\u091f\u0935\u0930\u094d\u0915 (IPMDA) \u0915\u093f\u092f\u093e \u0938\u0915\u094d\u0930\u093f\u092f, \u0938\u0941\u0930\u0915\u094d\u0937\u093e \u0930\u0921\u093e\u0930 \u0924\u0948\u0928\u093e\u0924",
+    "category": "Global Geopolitics",
+    "source": "Ministry of External Affairs & Quad Secretariats",
+    "summary_en": "India, the United States, Japan, and Australia interconnect naval satellite telemetry to counter illegal fishing, piracy, and gray-zone territorial encroachment.",
+    "slug": "quad-maritime-domain-awareness-network-indo-pacific-security",
+    "published_time": "2026-09-06 22:48:35Z"
+  },
+  {
+    "title_en": "RBI Monetary Policy Committee Maintains Repo Rate at 6.50% Citing Robust 7.4% GDP Trajectory",
+    "title_hi": "\u0906\u0930\u092c\u0940\u0906\u0908 \u092e\u094c\u0926\u094d\u0930\u093f\u0915 \u0928\u0940\u0924\u093f \u0938\u092e\u093f\u0924\u093f: \u0930\u0947\u092a\u094b \u0930\u0947\u091f 6.50% \u092a\u0930 \u0938\u094d\u0925\u093f\u0930, 7.4% \u0915\u0940 \u092e\u091c\u092c\u0942\u0924 \u091c\u0940\u0921\u0940\u092a\u0940 \u0935\u0943\u0926\u094d\u0927\u093f \u0926\u0930 \u0915\u093e \u092d\u0930\u094b\u0938\u093e",
+    "category": "Economy & Markets",
+    "source": "Reserve Bank of India & Financial Wire",
+    "summary_en": "Central bank emphasizes disinflation continuity while forecasting sustained industrial expansion and resilient corporate balance sheets.",
+    "slug": "rbi-monetary-policy-committee-repo-rate-growth-resilience",
+    "published_time": "2026-09-06 22:48:35Z"
+  },
+  {
+    "title_en": "Supreme Court Constitution Bench Issues Historic Doctrine on AI Surveillance and Algorithmic Privacy",
+    "title_hi": "\u0938\u0941\u092a\u094d\u0930\u0940\u092e \u0915\u094b\u0930\u094d\u091f \u0915\u0940 \u0938\u0902\u0935\u093f\u0927\u093e\u0928 \u092a\u0940\u0920 \u0915\u093e \u0910\u0924\u093f\u0939\u093e\u0938\u093f\u0915 \u092b\u0948\u0938\u0932\u093e: \u090f\u0906\u0908 \u0938\u0930\u094d\u0935\u093f\u0932\u093e\u0902\u0938 \u0914\u0930 \u090f\u0932\u094d\u0917\u094b\u0930\u093f\u0926\u094d\u092e\u093f\u0915 \u0917\u094b\u092a\u0928\u0940\u092f\u0924\u093e \u092a\u0930 \u0928\u0908 \u0932\u0915\u094d\u0937\u094d\u092e\u0923 \u0930\u0947\u0916\u093e",
+    "category": "National & Judiciary",
+    "source": "Supreme Court Registry & Legal Wire",
+    "summary_en": "A unanimous 5-judge bench establishes strict constitutional limits on predictive policing, facial recognition deployment, and automated administrative scoring.",
+    "slug": "supreme-court-landmark-constitution-bench-ai-surveillance-privacy",
+    "published_time": "2026-09-06 22:48:35Z"
+  },
+  {
+    "title_en": "ISRO Gaganyaan: Final Uncrewed Orbital Flight Simulation Achieves 100% Human-Rating Validation",
+    "title_hi": "\u0907\u0938\u0930\u094b \u0917\u0917\u0928\u092f\u093e\u0928: \u0905\u0902\u0924\u093f\u092e \u092e\u093e\u0928\u0935\u0930\u0939\u093f\u0924 \u0915\u0915\u094d\u0937\u0940\u092f \u0909\u0921\u093c\u093e\u0928 \u0938\u093f\u092e\u0941\u0932\u0947\u0936\u0928 \u0938\u092b\u0932, \u092e\u093e\u0928\u0935-\u0930\u0947\u091f\u093f\u0902\u0917 \u092a\u0930\u0940\u0915\u094d\u0937\u0923\u094b\u0902 \u092e\u0947\u0902 \u0936\u0924-\u092a\u094d\u0930\u0924\u093f\u0936\u0924 \u0938\u092b\u0932\u0924\u093e",
+    "category": "Science & Space",
+    "source": "ISRO & PIB Official Wire",
+    "summary_en": "Indian Space Research Organisation successfully concludes the integrated high-altitude abort and atmospheric re-entry trials ahead of scheduled crewed spaceflight.",
+    "slug": "isro-gaganyaan-orbital-flight-simulation-human-rating-milestone",
+    "published_time": "2026-09-06 22:48:35Z"
+  },
+  {
+    "title_en": "German far-right set for big win in eastern state, projections show",
+    "title_hi": "German far-right set for big win in eastern state, projections show",
+    "category": "Global Geopolitics",
+    "source": "BBC World",
+    "summary_en": "Germany's AfD has hailed a \"historic result\" and is projected to win more than 44% of the vote, far ahead of the conservative CDU on 18.4%.",
+    "slug": "german-far-right-set-for-big-win-in-eastern-state-projections-show",
+    "published_time": "2026-09-06 19:23:17Z"
+  },
+  {
+    "title_en": "Zelensky says he expects war to continue into winter after talks with US envoys",
+    "title_hi": "Zelensky says he expects war to continue into winter after talks with US envoys",
+    "category": "Global Geopolitics",
+    "source": "BBC World",
+    "summary_en": "Talks finished without an announcement of a major breakthrough, after Steve Witkoff and Jared Kushner travelled to Kyiv.",
+    "slug": "zelensky-says-he-expects-war-to-continue-into-winter-after-talks-with-us-en",
+    "published_time": "2026-09-06 19:23:17Z"
+  },
+  {
+    "title_en": "Safety violations put NH 66 users at risk in Kozhikode",
+    "title_hi": "Safety violations put NH 66 users at risk in Kozhikode",
+    "category": "National & Judiciary",
+    "source": "The Hindu",
+    "summary_en": "Illegal parking and private buses entering the banned stretch raise safety concerns; sudden lane changes and speed-limit violations pose risks to road users; MVD to intensify action.",
+    "slug": "safety-violations-put-nh-66-users-at-risk-in-kozhikode",
+    "published_time": "2026-09-06 19:23:17Z"
+  },
+  {
+    "title_en": "Spate of thefts triggers security concerns in Ernakulam district",
+    "title_hi": "Spate of thefts triggers security concerns in Ernakulam district",
+    "category": "National & Judiciary",
+    "source": "The Hindu",
+    "summary_en": "At least 10 theft cases reported across Ernakulam in recent months; chain-snatching bid leaves 62-year-old man with severe thumb injury; police step up patrols.",
+    "slug": "spate-of-thefts-triggers-security-concerns-in-ernakulam-district",
+    "published_time": "2026-09-06 19:23:17Z"
+  },
+  {
+    "title_en": "India-France relations have reached new heights: PM Modi",
+    "title_hi": "India-France relations have reached new heights: PM Modi",
+    "category": "National & Judiciary",
+    "source": "The Hindu",
+    "summary_en": "\u201cWe are also celebrating 2026 as the India-France Year of Innovation. This strategic partnership is particularly special because it rests on the solid foundation of our long-standing cultural and political ties,\u201d he said.",
+    "slug": "india-france-relations-have-reached-new-heights-pm-modi",
+    "published_time": "2026-09-06 19:23:17Z"
+  },
+  {
+    "title_en": "\u2018Need to provide holistic education\u2019",
+    "title_hi": "\u2018Need to provide holistic education\u2019",
+    "category": "National & Judiciary",
+    "source": "The Hindu",
+    "summary_en": "Verified report dispatched from official channels.",
+    "slug": "need-to-provide-holistic-education",
+    "published_time": "2026-09-06 19:23:17Z"
+  },
+  {
+    "title_en": "The political cost of unconditional cash transfers",
+    "title_hi": "The political cost of unconditional cash transfers",
+    "category": "National & Judiciary",
+    "source": "The Hindu",
+    "summary_en": "Linking benefits to socially desirable outcomes produces broader developmental gains",
+    "slug": "the-political-cost-of-unconditional-cash-transfers",
+    "published_time": "2026-09-06 19:23:17Z"
+  },
+  {
+    "title_en": "TV presenter among 12 sentenced to death in Egypt drugs case",
+    "title_hi": "TV presenter among 12 sentenced to death in Egypt drugs case",
+    "category": "Global Geopolitics",
+    "source": "BBC World",
+    "summary_en": "Sarah Khalifa is best known for her TV programme Mission Impossible which dealt with crime issues.",
+    "slug": "tv-presenter-among-12-sentenced-to-death-in-egypt-drugs-case",
+    "published_time": "2026-09-06 17:24:45Z"
   }
 ]
