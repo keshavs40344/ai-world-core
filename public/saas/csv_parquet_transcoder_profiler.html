@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON Stream Tokenizer & Schema Normalizer // Ultra-Fast In-Memory Tool</title>
-    <meta name="description" content="Ultra-fast in-memory JSON stream normalizer and schema extractor. Multi-threaded Web Worker architecture parses gigabyte payloads with zero UI latency.">
-    <link rel="canonical" href="https://keshavs40344.github.io/ai-world-core/public/saas/high_throughput_json_streamer.html">
+    <title>CSV Data Profiler & Column Statistics Miner // Ultra-Fast In-Memory Tool</title>
+    <meta name="description" content="High-speed in-browser CSV column profiler and statistical summary engine. Informs data types, null distributions, and memory footprint in a Web Worker.">
+    <link rel="canonical" href="https://keshavs40344.github.io/ai-world-core/public/saas/csv_parquet_transcoder_profiler.html">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/public/saas/high_throughput_json_streamer.html">
-    <meta property="og:title" content="JSON Stream Tokenizer & Schema Normalizer // Ultra-Fast In-Memory Tool">
-    <meta property="og:description" content="Ultra-fast in-memory JSON stream normalizer and schema extractor. Multi-threaded Web Worker architecture parses gigabyte payloads with zero UI latency.">
-    <meta property="og:image" content="https://placehold.co/1200x630/09090b/10b981/png?text=JSON%20Stream%20Tokenizer%20%26%20Schema%20Normalizer%20//%20Ultra-Fast%20In-Memory%20Tool&font=inter">
+    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/public/saas/csv_parquet_transcoder_profiler.html">
+    <meta property="og:title" content="CSV Data Profiler & Column Statistics Miner // Ultra-Fast In-Memory Tool">
+    <meta property="og:description" content="High-speed in-browser CSV column profiler and statistical summary engine. Informs data types, null distributions, and memory footprint in a Web Worker.">
+    <meta property="og:image" content="https://placehold.co/1200x630/09090b/10b981/png?text=CSV%20Data%20Profiler%20%26%20Column%20Statistics%20Miner%20//%20Ultra-Fast%20In-Memory%20Tool&font=inter">
 
     <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/public/saas/high_throughput_json_streamer.html">
-    <meta name="twitter:title" content="JSON Stream Tokenizer & Schema Normalizer // Ultra-Fast In-Memory Tool">
-    <meta name="twitter:description" content="Ultra-fast in-memory JSON stream normalizer and schema extractor. Multi-threaded Web Worker architecture parses gigabyte payloads with zero UI latency.">
-    <meta name="twitter:image" content="https://placehold.co/1200x630/09090b/10b981/png?text=JSON%20Stream%20Tokenizer%20%26%20Schema%20Normalizer%20//%20Ultra-Fast%20In-Memory%20Tool&font=inter">
+    <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/public/saas/csv_parquet_transcoder_profiler.html">
+    <meta name="twitter:title" content="CSV Data Profiler & Column Statistics Miner // Ultra-Fast In-Memory Tool">
+    <meta name="twitter:description" content="High-speed in-browser CSV column profiler and statistical summary engine. Informs data types, null distributions, and memory footprint in a Web Worker.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/09090b/10b981/png?text=CSV%20Data%20Profiler%20%26%20Column%20Statistics%20Miner%20//%20Ultra-Fast%20In-Memory%20Tool&font=inter">
 
     <!-- Schema.org WebApplication JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "JSON Stream Tokenizer & Schema Normalizer // Ultra-Fast In-Memory Tool",
+      "name": "CSV Data Profiler & Column Statistics Miner // Ultra-Fast In-Memory Tool",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "All",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -52,8 +52,8 @@
     <header class="h-14 border-b border-zinc-800/80 bg-[#09090b]/90 backdrop-blur px-6 flex items-center justify-between sticky top-0 z-50">
         <div class="flex items-center gap-3">
             <a href="../index.html" class="w-7 h-7 rounded bg-zinc-800 border border-zinc-700/60 flex items-center justify-center font-mono text-xs font-semibold text-white">//</a>
-            <span class="font-semibold text-sm tracking-tight text-white">JSON Stream Tokenizer & Schema Normalizer // Ultra-Fast In-Memory Tool</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60">DATA ENGINEERING</span>
+            <span class="font-semibold text-sm tracking-tight text-white">CSV Data Profiler & Column Statistics Miner // Ultra-Fast In-Memory Tool</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60">DATA ANALYTICS & ETL</span>
         </div>
         <div class="flex items-center gap-4 text-xs font-mono">
             <span id="workerThreadIndicator" class="text-zinc-500 flex items-center gap-1.5">
@@ -120,8 +120,8 @@
 
     <!-- Embedded Web Worker Logic -->
     <script>
-        const STORAGE_KEY = 'apex_tool_cache_high_throughput_json_streamer';
-        const samplePayload = `[\n  {"orderId": 8941, "amount": 1420.50, "currency": "USD", "items": ["SaaS-Node-1", "DB-Core"]},\n  {"orderId": 8942, "amount": 890.00, "currency": "EUR", "items": ["VRAM-Alloc"]}\n]`;
+        const STORAGE_KEY = 'apex_tool_cache_csv_parquet_transcoder_profiler';
+        const samplePayload = `transaction_id,timestamp,customer_id,region,amount,currency,fraud_score,status\ntx_1001,2026-09-01T10:00:00Z,cust_901,US-EAST,142.50,USD,0.02,APPROVED\ntx_1002,2026-09-01T10:01:15Z,cust_902,EU-WEST,890.00,EUR,0.11,APPROVED\ntx_1003,2026-09-01T10:02:40Z,cust_903,AP-SOUTH,5400.00,INR,0.01,APPROVED\ntx_1004,2026-09-01T10:05:00Z,cust_904,US-WEST,12.99,USD,0.85,FLAGGED\ntx_1005,2026-09-01T10:06:12Z,cust_905,EU-CENTRAL,340.20,EUR,0.05,APPROVED`;
         let parsedResult = null;
 
         // Dedicated In-Memory Web Worker Blob (Multi-threaded, Zero Main-Thread Freezes)
@@ -132,22 +132,63 @@
                 try {
                     // Real deterministic computational transformation
                     
-            const parsed = JSON.parse(input);
-            const list = Array.isArray(parsed) ? parsed : [parsed];
-            let totalVolume = 0;
-            const currencyBreakdown = {};
-            list.forEach(item => {
-                const amt = Number(item.amount) || 0;
-                totalVolume += amt;
-                const c = item.currency || 'UNKNOWN';
-                currencyBreakdown[c] = (currencyBreakdown[c] || 0) + amt;
+            const lines = input.trim().split('\n').map(l => l.trim()).filter(Boolean);
+            if(lines.length === 0) throw new Error("Empty CSV payload");
+            
+            // Detect delimiter
+            const firstLine = lines[0];
+            const delimiter = firstLine.includes('\t') ? '\t' : (firstLine.includes(';') ? ';' : ',');
+            const headers = firstLine.split(delimiter).map(h => h.replace(/^["']|["']$/g, '').trim());
+            
+            const rowCount = lines.length - 1;
+            const columns = {};
+            headers.forEach(h => {
+                columns[h] = { type: 'UNKNOWN', nonNull: 0, nulls: 0, distinct: new Set(), min: null, max: null };
             });
+
+            for(let i = 1; i < lines.length; i++) {
+                const parts = lines[i].split(delimiter);
+                headers.forEach((h, idx) => {
+                    const val = parts[idx] ? parts[idx].trim() : '';
+                    const col = columns[h];
+                    if(!val || val === 'null' || val === 'NULL') {
+                        col.nulls++;
+                    } else {
+                        col.nonNull++;
+                        col.distinct.add(val);
+                        const num = Number(val);
+                        if(!isNaN(num)) {
+                            if(col.min === null || num < col.min) col.min = num;
+                            if(col.max === null || num > col.max) col.max = num;
+                        }
+                    }
+                });
+            }
+
+            // Summarize types
+            const columnReport = {};
+            headers.forEach(h => {
+                const col = columns[h];
+                const sampleVals = Array.from(col.distinct).slice(0, 3);
+                let inferred = 'STRING';
+                if(col.min !== null && col.max !== null) inferred = col.min % 1 === 0 && col.max % 1 === 0 ? 'INTEGER' : 'FLOAT';
+                if(sampleVals.some(v => v.includes('T') && v.includes(':'))) inferred = 'TIMESTAMP_ISO8601';
+
+                columnReport[h] = {
+                    "INFERRED_TYPE": inferred,
+                    "POPULATED_ROWS": col.nonNull,
+                    "NULL_COUNT": col.nulls,
+                    "DISTINCT_VALUES": col.distinct.size,
+                    "RANGE": col.min !== null ? { min: col.min, max: col.max } : "N/A"
+                };
+            });
+
             const result = {
-                "RECORDS_NORMALIZED": list.length,
-                "AGGREGATE_TRANSACTION_VOLUME": totalVolume,
-                "CURRENCY_DISTRIBUTION": currencyBreakdown,
-                "PAYLOAD_SCHEMA_EXTRACTED": Object.keys(list[0] || {}),
-                "MEMORY_ESTIMATE_BYTES": new Blob([input]).size
+                "RECORD_COUNT": rowCount,
+                "COLUMN_COUNT": headers.length,
+                "DELIMITER_DETECTED": delimiter === '\t' ? "TAB" : delimiter,
+                "COLUMNS_PROFILED": columnReport,
+                "ESTIMATED_IN_MEMORY_KB": ((new Blob([input]).size) / 1024).toFixed(2)
             };
         
                     const elapsed = (performance.now() - t0).toFixed(2);
@@ -170,7 +211,7 @@
                 fetch(apiBase + '/api/v1/analytics/event', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ slug: 'high_throughput_json_streamer', action: 'STREAM_EXECUTE', latency_ms: parseFloat(e.data.latency) })
+                    body: JSON.stringify({ slug: 'csv_parquet_transcoder_profiler', action: 'STREAM_EXECUTE', latency_ms: parseFloat(e.data.latency) })
                 }).catch(() => {});
             } else {
                 document.getElementById('outputStatus').innerText = 'SYNTAX ERROR';
@@ -234,7 +275,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'high_throughput_json_streamer_export.' + ext;
+            a.download = 'csv_parquet_transcoder_profiler_export.' + ext;
             a.click();
             URL.revokeObjectURL(url);
         }

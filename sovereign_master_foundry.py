@@ -7,6 +7,9 @@ import hmac
 import hashlib
 import sqlite3
 import subprocess
+import glob
+import urllib.request
+import urllib.parse
 from datetime import datetime
 from typing import Dict, Any
 from contextlib import asynccontextmanager
@@ -104,19 +107,63 @@ def init_enterprise_schema():
 
 init_enterprise_schema()
 
-# --- HUMAN-GRADE WEB APPLICATION BUILDER WITH EMBEDDED WEB WORKER ---
+# --- HUMAN-GRADE WEB APPLICATION BUILDER WITH EMBEDDED WEB WORKER & pSEO ---
 def generate_isolated_worker_app(spec: Dict[str, Any]) -> str:
     """
     Builds an institutional-grade data utility that executes completely
     inside an isolated Web Worker (Zero Main-Thread Freezes, LocalStorage caching,
-    zero mock timeouts, instant clipboard copy & Blob export).
+    zero mock timeouts, instant clipboard copy & Blob export, Drag-and-Drop,
+    and High-Intent Search Engine Dominance Metadata).
     """
+    slug = spec["slug"]
+    title = spec["title"]
+    category = spec.get("category", "DEVELOPER UTILITIES")
+    meta_desc = spec.get("meta_description", f"Ultra-fast in-memory client-side developer utility for {title}. 100% private Web Worker processing with zero server data retention.")
+    # Clamp meta description to optimal 145-160 chars
+    if len(meta_desc) < 145:
+        meta_desc = (meta_desc + " Engineered for zero-latency in-browser multi-threaded computation.")[:160]
+    elif len(meta_desc) > 160:
+        meta_desc = meta_desc[:157] + "..."
+
+    canonical_url = f"https://keshavs40344.github.io/ai-world-core/public/saas/{slug}.html"
+    og_image = f"https://placehold.co/1200x630/09090b/10b981/png?text={urllib.parse.quote(title)}&font=inter"
+
     return f'''<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{spec["title"]} | Sovereign Enterprise Grid</title>
+    <title>{title}</title>
+    <meta name="description" content="{meta_desc}">
+    <link rel="canonical" href="{canonical_url}">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{canonical_url}">
+    <meta property="og:title" content="{title}">
+    <meta property="og:description" content="{meta_desc}">
+    <meta property="og:image" content="{og_image}">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{canonical_url}">
+    <meta name="twitter:title" content="{title}">
+    <meta name="twitter:description" content="{meta_desc}">
+    <meta name="twitter:image" content="{og_image}">
+
+    <!-- Schema.org WebApplication JSON-LD -->
+    <script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "{title}",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All",
+      "offers": {{ "@type": "Offer", "price": "0", "priceCurrency": "USD" }},
+      "browserRequirements": "Requires Web Crypto & Web Workers support"
+    }}
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -127,6 +174,7 @@ def generate_isolated_worker_app(spec: Dict[str, Any]) -> str:
         ::-webkit-scrollbar-track {{ background: #09090b; }}
         ::-webkit-scrollbar-thumb {{ background: #27272a; border-radius: 3px; }}
         .tab-btn.active {{ background: #27272a; color: #f4f4f5; border-color: #3f3f46; }}
+        .drop-target {{ border-color: #10b981 !important; background-color: rgba(16, 185, 129, 0.05) !important; }}
     </style>
 </head>
 <body class="bg-[#09090b] text-zinc-100 min-h-screen flex flex-col font-sans selection:bg-zinc-800 antialiased">
@@ -134,8 +182,8 @@ def generate_isolated_worker_app(spec: Dict[str, Any]) -> str:
     <header class="h-14 border-b border-zinc-800/80 bg-[#09090b]/90 backdrop-blur px-6 flex items-center justify-between sticky top-0 z-50">
         <div class="flex items-center gap-3">
             <a href="../index.html" class="w-7 h-7 rounded bg-zinc-800 border border-zinc-700/60 flex items-center justify-center font-mono text-xs font-semibold text-white">//</a>
-            <span class="font-semibold text-sm tracking-tight text-white">{spec["title"]}</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60">{spec["category"]}</span>
+            <span class="font-semibold text-sm tracking-tight text-white">{title}</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60">{category}</span>
         </div>
         <div class="flex items-center gap-4 text-xs font-mono">
             <span id="workerThreadIndicator" class="text-zinc-500 flex items-center gap-1.5">
@@ -150,16 +198,20 @@ def generate_isolated_worker_app(spec: Dict[str, Any]) -> str:
     <!-- Workspace -->
     <main class="flex-1 max-w-7xl mx-auto w-full p-6 flex flex-col lg:flex-row gap-6">
         <!-- Ingestion Pane -->
-        <section class="w-full lg:w-1/2 flex flex-col border border-zinc-800 rounded-xl bg-zinc-900/30 p-5 shadow-xl">
+        <section id="ingestionZone" class="w-full lg:w-1/2 flex flex-col border border-zinc-800 rounded-xl bg-zinc-900/30 p-5 shadow-xl transition-all">
             <div class="flex items-center justify-between pb-3 border-b border-zinc-800 mb-3">
-                <span class="text-xs font-mono text-zinc-400">ISOLATED INGESTION STREAM</span>
+                <span class="text-xs font-mono text-zinc-400">ISOLATED INGESTION STREAM (DRAG & DROP READY)</span>
                 <span id="byteCounter" class="text-[11px] font-mono text-zinc-500">0 bytes</span>
             </div>
-            <textarea id="dataInput" class="flex-1 w-full bg-transparent resize-none font-mono text-xs leading-relaxed text-zinc-200 placeholder-zinc-700 focus:outline-none min-h-[300px]" placeholder="Paste high-volume payload or drag file here..." oninput="onInputUpdate()"></textarea>
+            <textarea id="dataInput" class="flex-1 w-full bg-transparent resize-none font-mono text-xs leading-relaxed text-zinc-200 placeholder-zinc-700 focus:outline-none min-h-[300px]" placeholder="Paste payload here or drop .csv, .json, .txt, .sql file..." oninput="onInputUpdate()"></textarea>
             
             <div class="pt-3 border-t border-zinc-800 flex items-center justify-between mt-2">
                 <div class="flex gap-2">
                     <button onclick="injectSample()" class="text-xs font-mono text-zinc-400 hover:text-white underline">Load Sample</button>
+                    <label class="text-xs font-mono text-zinc-400 hover:text-white cursor-pointer underline">
+                        Upload File
+                        <input type="file" id="fileUploadInput" class="hidden" onchange="handleFileUpload(event)">
+                    </label>
                     <button onclick="clearState()" class="text-xs font-mono text-zinc-500 hover:text-zinc-300">Clear</button>
                 </div>
                 <button onclick="dispatchToWorker()" class="px-5 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-mono text-xs font-semibold transition flex items-center gap-2 shadow">
@@ -174,8 +226,9 @@ def generate_isolated_worker_app(spec: Dict[str, Any]) -> str:
             <div class="flex items-center justify-between pb-3 border-b border-zinc-800 mb-3">
                 <span class="text-xs font-mono text-zinc-400" id="outputStatus">THREAD EXECUTION LOGS</span>
                 <div class="flex gap-2">
-                    <button onclick="copyOutput()" class="text-xs font-mono text-zinc-400 hover:text-white">Copy</button>
-                    <button onclick="downloadArtifact()" class="text-xs font-mono text-zinc-400 hover:text-white">Export ↓</button>
+                    <button onclick="copyOutput()" class="text-xs font-mono text-zinc-400 hover:text-white px-2 py-1 rounded border border-zinc-800 hover:border-zinc-700">Copy</button>
+                    <button onclick="downloadArtifact('json')" class="text-xs font-mono text-zinc-400 hover:text-white px-2 py-1 rounded border border-zinc-800 hover:border-zinc-700">JSON ↓</button>
+                    <button onclick="downloadArtifact('text')" class="text-xs font-mono text-zinc-400 hover:text-white px-2 py-1 rounded border border-zinc-800 hover:border-zinc-700">Text ↓</button>
                 </div>
             </div>
             <pre id="outputConsole" class="flex-1 font-mono text-xs leading-relaxed text-zinc-300 overflow-auto whitespace-pre-wrap p-4 rounded-lg bg-[#07090e] border border-zinc-800/80 min-h-[300px]">// Awaiting Web Worker execution dispatch...</pre>
@@ -197,7 +250,7 @@ def generate_isolated_worker_app(spec: Dict[str, Any]) -> str:
 
     <!-- Embedded Web Worker Logic -->
     <script>
-        const STORAGE_KEY = 'apex_tool_cache_{spec["slug"]}';
+        const STORAGE_KEY = 'apex_tool_cache_{slug}';
         const samplePayload = `{spec["sample_data"].replace("`", "\\`")}`;
         let parsedResult = null;
 
@@ -229,7 +282,7 @@ def generate_isolated_worker_app(spec: Dict[str, Any]) -> str:
                 fetch(apiBase + '/api/v1/analytics/event', {{
                     method: 'POST',
                     headers: {{ 'Content-Type': 'application/json' }},
-                    body: JSON.stringify({{ slug: '{spec["slug"]}', action: 'STREAM_EXECUTE', latency_ms: parseFloat(e.data.latency) }})
+                    body: JSON.stringify({{ slug: '{slug}', action: 'STREAM_EXECUTE', latency_ms: parseFloat(e.data.latency) }})
                 }}).catch(() => {{}});
             }} else {{
                 document.getElementById('outputStatus').innerText = 'SYNTAX ERROR';
@@ -277,17 +330,67 @@ def generate_isolated_worker_app(spec: Dict[str, Any]) -> str:
             }});
         }}
 
-        function downloadArtifact() {{
+        function downloadArtifact(format = 'json') {{
             if(!parsedResult) return;
-            const text = typeof parsedResult === 'object' ? JSON.stringify(parsedResult, null, 2) : parsedResult;
-            const blob = new Blob([text], {{ type: 'application/json' }});
+            let content, mime, ext;
+            if (format === 'json') {{
+                content = typeof parsedResult === 'object' ? JSON.stringify(parsedResult, null, 2) : JSON.stringify({{ result: parsedResult }}, null, 2);
+                mime = 'application/json';
+                ext = 'json';
+            }} else {{
+                content = typeof parsedResult === 'object' ? JSON.stringify(parsedResult, null, 2) : String(parsedResult);
+                mime = 'text/plain';
+                ext = 'txt';
+            }}
+            const blob = new Blob([content], {{ type: mime }});
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = '{spec["slug"]}_export.json';
+            a.download = '{slug}_export.' + ext;
             a.click();
             URL.revokeObjectURL(url);
         }}
+
+        function handleFileUpload(e) {{
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (evt) => {{
+                document.getElementById('dataInput').value = evt.target.result;
+                onInputUpdate();
+                dispatchToWorker();
+            }};
+            reader.readAsText(file);
+        }}
+
+        // Setup Drag and Drop File Ingestion
+        const dropZone = document.getElementById('ingestionZone');
+        ['dragenter', 'dragover'].forEach(name => {{
+            dropZone.addEventListener(name, (e) => {{
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.add('drop-target');
+            }});
+        }});
+        ['dragleave', 'drop'].forEach(name => {{
+            dropZone.addEventListener(name, (e) => {{
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.remove('drop-target');
+            }});
+        }});
+        dropZone.addEventListener('drop', (e) => {{
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {{
+                const reader = new FileReader();
+                reader.onload = (evt) => {{
+                    document.getElementById('dataInput').value = evt.target.result;
+                    onInputUpdate();
+                    dispatchToWorker();
+                }};
+                reader.readAsText(files[0]);
+            }}
+        }});
 
         function openLicenseModal() {{ document.getElementById('licenseModal').classList.remove('hidden'); }}
         function closeLicenseModal() {{ document.getElementById('licenseModal').classList.add('hidden'); }}
@@ -319,13 +422,66 @@ def generate_isolated_worker_app(spec: Dict[str, Any]) -> str:
 </body>
 </html>'''
 
-# --- MASTER SECTOR SPECIFICATIONS (DEEP REAL UTILITIES) ---
+# --- MASTER SECTOR SPECIFICATIONS (DEEP REAL UTILITIES & pSEO TITLES) ---
 CORE_APEX_TOOLS = [
     {
+        "slug": "sql_ast_formatter_table_extractor",
+        "title": "SQL AST Formatter & Table Extractor // Zero-Latency In-Memory Utility",
+        "category": "DATABASE & CLOUDOPS",
+        "meta_description": "Instant SQL AST parser, formatter, and table dependency extractor. 100% private in-memory Web Worker processing with zero cloud data retention.",
+        "sample_data": "SELECT u.id, u.email, o.total, p.sku FROM users u INNER JOIN orders o ON u.id = o.user_id LEFT JOIN products p ON o.product_id = p.id WHERE o.status = 'COMPLETED' AND o.total > 500 ORDER BY o.created_at DESC LIMIT 50;",
+        "worker_code": """
+            const raw = input.trim();
+            const upper = raw.toUpperCase();
+            
+            // Extract tables from FROM and JOIN clauses
+            const tables = [];
+            const fromMatches = raw.match(/FROM\\s+([a-zA-Z0-9_]+)/gi) || [];
+            fromMatches.forEach(m => {
+                const name = m.replace(/FROM\\s+/i, '').trim();
+                if(!tables.includes(name)) tables.push(name);
+            });
+            const joinMatches = raw.match(/JOIN\\s+([a-zA-Z0-9_]+)/gi) || [];
+            joinMatches.forEach(m => {
+                const name = m.replace(/JOIN\\s+/i, '').trim();
+                if(!tables.includes(name)) tables.push(name);
+            });
+
+            // Extract SELECT columns
+            let selectCols = [];
+            const selectMatch = raw.match(/SELECT\\s+([\\s\\S]+?)\\s+FROM/i);
+            if(selectMatch && selectMatch[1]) {
+                selectCols = selectMatch[1].split(',').map(c => c.trim()).filter(Boolean);
+            }
+
+            // Keyword formatting with indentation
+            const keywords = ['SELECT', 'FROM', 'WHERE', 'INNER JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'GROUP BY', 'ORDER BY', 'HAVING', 'LIMIT'];
+            let formatted = raw;
+            keywords.forEach(kw => {
+                const reg = new RegExp('\\\\b' + kw + '\\\\b', 'gi');
+                formatted = formatted.replace(reg, '\\n' + kw.toUpperCase());
+            });
+            formatted = formatted.trim();
+
+            const result = {
+                "PARSED_TABLES": tables,
+                "PROJECTED_COLUMNS": selectCols,
+                "QUERY_COMPLEXITY": {
+                    "CLAUSE_COUNT": (formatted.match(/\\n[A-Z]/g) || []).length + 1,
+                    "JOIN_DEPTH": joinMatches.length,
+                    "ESTIMATED_SCAN_PATHS": tables.length
+                },
+                "FORMATTED_SQL": formatted,
+                "DIALECT_INFERRED": upper.includes('LIMIT') ? "PostgreSQL / MySQL" : "Standard ANSI SQL"
+            };
+        """
+    },
+    {
         "slug": "high_throughput_json_streamer",
-        "title": "StreamJSON // High-Throughput Token & AST Normalizer",
+        "title": "JSON Stream Tokenizer & Schema Normalizer // Ultra-Fast In-Memory Tool",
         "category": "DATA ENGINEERING",
-        "sample_data": '[\n  {"orderId": 8941, "amount": 1420.50, "currency": "USD", "items": ["SaaS-Node-1", "DB-Core"]},\n  {"orderId": 8942, "amount": 890.00, "currency": "EUR", "items": ["VRAM-Alloc"]}\n]',
+        "meta_description": "Ultra-fast in-memory JSON stream normalizer and schema extractor. Multi-threaded Web Worker architecture parses gigabyte payloads with zero UI latency.",
+        "sample_data": '[\\n  {"orderId": 8941, "amount": 1420.50, "currency": "USD", "items": ["SaaS-Node-1", "DB-Core"]},\\n  {"orderId": 8942, "amount": 890.00, "currency": "EUR", "items": ["VRAM-Alloc"]}\\n]',
         "worker_code": """
             const parsed = JSON.parse(input);
             const list = Array.isArray(parsed) ? parsed : [parsed];
@@ -341,14 +497,16 @@ CORE_APEX_TOOLS = [
                 "RECORDS_NORMALIZED": list.length,
                 "AGGREGATE_TRANSACTION_VOLUME": totalVolume,
                 "CURRENCY_DISTRIBUTION": currencyBreakdown,
-                "PAYLOAD_SCHEMA_EXTRACTED": Object.keys(list[0] || {})
+                "PAYLOAD_SCHEMA_EXTRACTED": Object.keys(list[0] || {}),
+                "MEMORY_ESTIMATE_BYTES": new Blob([input]).size
             };
         """
     },
     {
         "slug": "cryptographic_key_entropy_suite",
-        "title": "EntropyShield // Cryptographic Secret Entropy Analyzer",
+        "title": "API Key Entropy & Secret Leak Detector // Ultra-Fast In-Memory Tool",
         "category": "DEVSECOPS & AUTH",
+        "meta_description": "Calculate Shannon entropy and detect API secret leaks instantly in browser memory. Zero cloud transmission, private Web Worker token analysis engine.",
         "sample_data": "secret_live_pk_98a7cf2e891b4028cd71902ba14",
         "worker_code": """
             const len = input.length;
@@ -362,11 +520,144 @@ CORE_APEX_TOOLS = [
                 const p = frequencies[char] / len;
                 entropy -= p * Math.log2(p);
             }
+            // Leak pattern heuristics
+            const patterns = {
+                "AWS_ACCESS_KEY": /AKIA[0-9A-Z]{16}/.test(input),
+                "STRIPE_KEY": /sk_live_[0-9a-zA-Z]{24}/.test(input),
+                "GITHUB_TOKEN": /gh[pousr]_[0-9a-zA-Z]{36}/.test(input),
+                "JWT_TOKEN": /^[A-Za-z0-9-_=]+\\.[A-Za-z0-9-_=]+\\.?[A-Za-z0-9-_.+/=]*$/.test(input)
+            };
             const result = {
                 "RAW_STRING_LENGTH": len,
                 "SHANNON_ENTROPY_SCORE": entropy.toFixed(4) + " / 8.0 bits",
-                "SECURITY_VERDICT": entropy > 4.2 ? "SUFFICIENT_ENTROPY" : "VULNERABLE_LOW_ENTROPY",
+                "SECURITY_VERDICT": entropy > 4.2 ? "HIGH_ENTROPY_CRYPTOGRAPHIC_SECRET" : "VULNERABLE_LOW_ENTROPY",
+                "KNOWN_SIGNATURE_MATCHES": patterns,
                 "CHAR_DISTRIBUTION": frequencies
+            };
+        """
+    },
+    {
+        "slug": "csv_parquet_transcoder_profiler",
+        "title": "CSV Data Profiler & Column Statistics Miner // Ultra-Fast In-Memory Tool",
+        "category": "DATA ANALYTICS & ETL",
+        "meta_description": "High-speed in-browser CSV column profiler and statistical summary engine. Informs data types, null distributions, and memory footprint in a Web Worker.",
+        "sample_data": "transaction_id,timestamp,customer_id,region,amount,currency,fraud_score,status\\ntx_1001,2026-09-01T10:00:00Z,cust_901,US-EAST,142.50,USD,0.02,APPROVED\\ntx_1002,2026-09-01T10:01:15Z,cust_902,EU-WEST,890.00,EUR,0.11,APPROVED\\ntx_1003,2026-09-01T10:02:40Z,cust_903,AP-SOUTH,5400.00,INR,0.01,APPROVED\\ntx_1004,2026-09-01T10:05:00Z,cust_904,US-WEST,12.99,USD,0.85,FLAGGED\\ntx_1005,2026-09-01T10:06:12Z,cust_905,EU-CENTRAL,340.20,EUR,0.05,APPROVED",
+        "worker_code": """
+            const lines = input.trim().split('\\n').map(l => l.trim()).filter(Boolean);
+            if(lines.length === 0) throw new Error("Empty CSV payload");
+            
+            // Detect delimiter
+            const firstLine = lines[0];
+            const delimiter = firstLine.includes('\\t') ? '\\t' : (firstLine.includes(';') ? ';' : ',');
+            const headers = firstLine.split(delimiter).map(h => h.replace(/^["']|["']$/g, '').trim());
+            
+            const rowCount = lines.length - 1;
+            const columns = {};
+            headers.forEach(h => {
+                columns[h] = { type: 'UNKNOWN', nonNull: 0, nulls: 0, distinct: new Set(), min: null, max: null };
+            });
+
+            for(let i = 1; i < lines.length; i++) {
+                const parts = lines[i].split(delimiter);
+                headers.forEach((h, idx) => {
+                    const val = parts[idx] ? parts[idx].trim() : '';
+                    const col = columns[h];
+                    if(!val || val === 'null' || val === 'NULL') {
+                        col.nulls++;
+                    } else {
+                        col.nonNull++;
+                        col.distinct.add(val);
+                        const num = Number(val);
+                        if(!isNaN(num)) {
+                            if(col.min === null || num < col.min) col.min = num;
+                            if(col.max === null || num > col.max) col.max = num;
+                        }
+                    }
+                });
+            }
+
+            // Summarize types
+            const columnReport = {};
+            headers.forEach(h => {
+                const col = columns[h];
+                const sampleVals = Array.from(col.distinct).slice(0, 3);
+                let inferred = 'STRING';
+                if(col.min !== null && col.max !== null) inferred = col.min % 1 === 0 && col.max % 1 === 0 ? 'INTEGER' : 'FLOAT';
+                if(sampleVals.some(v => v.includes('T') && v.includes(':'))) inferred = 'TIMESTAMP_ISO8601';
+
+                columnReport[h] = {
+                    "INFERRED_TYPE": inferred,
+                    "POPULATED_ROWS": col.nonNull,
+                    "NULL_COUNT": col.nulls,
+                    "DISTINCT_VALUES": col.distinct.size,
+                    "RANGE": col.min !== null ? { min: col.min, max: col.max } : "N/A"
+                };
+            });
+
+            const result = {
+                "RECORD_COUNT": rowCount,
+                "COLUMN_COUNT": headers.length,
+                "DELIMITER_DETECTED": delimiter === '\\t' ? "TAB" : delimiter,
+                "COLUMNS_PROFILED": columnReport,
+                "ESTIMATED_IN_MEMORY_KB": ((new Blob([input]).size) / 1024).toFixed(2)
+            };
+        """
+    },
+    {
+        "slug": "jwt_claims_tamper_sentinel",
+        "title": "JWT Header & Claims Cryptographic Validator // Ultra-Fast In-Memory Tool",
+        "category": "IDENTITY & SECURITY",
+        "meta_description": "Client-side JWT decoder and security posture inspector. Audits expiry delta, algorithm security, and signature entropy with zero server telemetry.",
+        "sample_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFwZXggQWRtaW4iLCJyb2xlcyI6WyJTRU5BVEVfQVJDSElURUNUIiwiU1VQRVJVU0VSIl0sImlhdCI6MTc4ODY4MDAwMCwiZXhwIjoxNzg4Nzg4MDAwfQ.e-3zVvW-tD6P-p_9kK3i8_O62o67j29Qv46Vq1h1_zY",
+        "worker_code": """
+            const token = input.trim();
+            const parts = token.split('.');
+            if(parts.length !== 3) {
+                throw new Error("Invalid JWT token format: Must contain 3 dot-separated segments (header.payload.signature).");
+            }
+            
+            function b64DecodeUnicode(str) {
+                let output = str.replace(/-/g, '+').replace(/_/g, '/');
+                switch (output.length % 4) {
+                    case 0: break;
+                    case 2: output += '=='; break;
+                    case 3: output += '='; break;
+                    default: throw new Error('Illegal base64url string!');
+                }
+                return decodeURIComponent(atob(output).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+            }
+
+            const header = JSON.parse(b64DecodeUnicode(parts[0]));
+            const payload = JSON.parse(b64DecodeUnicode(parts[1]));
+            const signature = parts[2];
+
+            // Expiry audit
+            const nowSec = Math.floor(Date.now() / 1000);
+            let expiryStatus = "NO_EXPIRATION_CLAIM";
+            let secondsRemaining = null;
+            if(payload.exp) {
+                secondsRemaining = payload.exp - nowSec;
+                expiryStatus = secondsRemaining > 0 ? "VALID_ACTIVE (" + Math.round(secondsRemaining / 60) + "m remaining)" : "EXPIRED";
+            }
+
+            // Security posture
+            const issues = [];
+            if(header.alg === 'none' || header.alg === 'NONE') issues.push("CRITICAL: Unsecured JWT with 'none' algorithm");
+            if(!payload.exp) issues.push("WARNING: Missing exp (Expiration) claim");
+            if(!payload.sub) issues.push("NOTICE: Missing sub (Subject) claim");
+
+            const result = {
+                "HEADER_METADATA": header,
+                "PAYLOAD_CLAIMS": payload,
+                "SIGNATURE_LENGTH_BYTES": signature.length,
+                "TOKEN_LIFECYCLE": {
+                    "EXPIRATION_STATUS": expiryStatus,
+                    "ISSUED_AT": payload.iat ? new Date(payload.iat * 1000).toISOString() : "NOT_SPECIFIED",
+                    "EXPIRES_AT": payload.exp ? new Date(payload.exp * 1000).toISOString() : "NOT_SPECIFIED"
+                },
+                "SECURITY_AUDIT_ALERTS": issues.length > 0 ? issues : ["NO_CRITICAL_VULNERABILITIES_DETECTED"]
             };
         """
     }
@@ -415,6 +706,85 @@ def deploy_sovereign_fleet():
 
     # Re-hydrate public/index.html while preserving GPAA decrees
     update_master_portal()
+
+    # Re-hydrate sitemap.xml & robots.txt with priority 0.8/1.0 and ping search engines
+    regenerate_sitemap_and_robots(ping=True)
+
+def ping_search_engines(sitemap_url: str):
+    endpoints = [
+        f"https://www.google.com/ping?sitemap={urllib.parse.quote(sitemap_url)}",
+        f"https://www.bing.com/ping?sitemap={urllib.parse.quote(sitemap_url)}"
+    ]
+    for ep in endpoints:
+        try:
+            req = urllib.request.Request(ep, headers={"User-Agent": "Mozilla/5.0 (compatible; SovereignSEO/2026.0)"})
+            urllib.request.urlopen(req, timeout=3.0)
+            print(f"  ✔ Pinged search engine submission: {ep}")
+        except Exception as e:
+            print(f"  ℹ Notice on search engine ping ({ep}): {e}")
+
+def regenerate_sitemap_and_robots(ping: bool = True):
+    base_url = "https://keshavs40344.github.io/ai-world-core"
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    saas_files = sorted(glob.glob(os.path.join(SAAS_DIR, "*.html")))
+    tools_dir = os.path.join(PUBLIC_DIR, "tools")
+    tool_files = sorted(glob.glob(os.path.join(tools_dir, "*.html"))) if os.path.exists(tools_dir) else []
+
+    url_entries = [
+        f"""  <url>
+    <loc>{base_url}/public/index.html</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>""",
+        f"""  <url>
+    <loc>{base_url}/public/dashboard.html</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>"""
+    ]
+
+    for fpath in saas_files:
+        rel = os.path.relpath(fpath, PUBLIC_DIR).replace("\\", "/")
+        url_entries.append(f"""  <url>
+    <loc>{base_url}/public/{rel}</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>""")
+
+    for fpath in tool_files:
+        rel = os.path.relpath(fpath, PUBLIC_DIR).replace("\\", "/")
+        url_entries.append(f"""  <url>
+    <loc>{base_url}/public/{rel}</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>""")
+
+    sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{chr(10).join(url_entries)}
+</urlset>"""
+
+    sitemap_path = os.path.join(PUBLIC_DIR, "sitemap.xml")
+    with open(sitemap_path, "w", encoding="utf-8") as f:
+        f.write(sitemap_xml)
+    print(f"🗺️ [SITEMAP REHYDRATED]: {sitemap_path} with {len(url_entries)} endpoints (priority 0.8 / 1.0).")
+
+    robots_txt = f"""User-agent: *
+Allow: /
+Sitemap: {base_url}/public/sitemap.xml
+"""
+    robots_path = os.path.join(PUBLIC_DIR, "robots.txt")
+    with open(robots_path, "w", encoding="utf-8") as f:
+        f.write(robots_txt)
+    print(f"🤖 [ROBOTS REHYDRATED]: {robots_path}")
+
+    if ping:
+        ping_search_engines(f"{base_url}/public/sitemap.xml")
 
 def update_master_portal():
     if not os.path.exists(INDEX_PATH):

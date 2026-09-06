@@ -3,7 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EntropyShield // Cryptographic Secret Entropy Analyzer | Sovereign Enterprise Grid</title>
+    <title>API Key Entropy & Secret Leak Detector // Ultra-Fast In-Memory Tool</title>
+    <meta name="description" content="Calculate Shannon entropy and detect API secret leaks instantly in browser memory. Zero cloud transmission, private Web Worker token analysis engine.">
+    <link rel="canonical" href="https://keshavs40344.github.io/ai-world-core/public/saas/cryptographic_key_entropy_suite.html">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/public/saas/cryptographic_key_entropy_suite.html">
+    <meta property="og:title" content="API Key Entropy & Secret Leak Detector // Ultra-Fast In-Memory Tool">
+    <meta property="og:description" content="Calculate Shannon entropy and detect API secret leaks instantly in browser memory. Zero cloud transmission, private Web Worker token analysis engine.">
+    <meta property="og:image" content="https://placehold.co/1200x630/09090b/10b981/png?text=API%20Key%20Entropy%20%26%20Secret%20Leak%20Detector%20//%20Ultra-Fast%20In-Memory%20Tool&font=inter">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/public/saas/cryptographic_key_entropy_suite.html">
+    <meta name="twitter:title" content="API Key Entropy & Secret Leak Detector // Ultra-Fast In-Memory Tool">
+    <meta name="twitter:description" content="Calculate Shannon entropy and detect API secret leaks instantly in browser memory. Zero cloud transmission, private Web Worker token analysis engine.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/09090b/10b981/png?text=API%20Key%20Entropy%20%26%20Secret%20Leak%20Detector%20//%20Ultra-Fast%20In-Memory%20Tool&font=inter">
+
+    <!-- Schema.org WebApplication JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "API Key Entropy & Secret Leak Detector // Ultra-Fast In-Memory Tool",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "browserRequirements": "Requires Web Crypto & Web Workers support"
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,52 +44,15 @@
         ::-webkit-scrollbar-track { background: #09090b; }
         ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
         .tab-btn.active { background: #27272a; color: #f4f4f5; border-color: #3f3f46; }
+        .drop-target { border-color: #10b981 !important; background-color: rgba(16, 185, 129, 0.05) !important; }
     </style>
-
-    <!-- DYNAMIC SEO & SOCIAL GRAPH (Auto-Injected) -->
-    <meta name="title" content="EntropyShield // Cryptographic Secret Entropy Analyzer | Sovereign Enterprise Grid">
-    <meta name="description" content="100% Client-side utility for EntropyShield // Cryptographic Secret Entropy Analyzer | Sovereign Enterprise Grid. High-speed, private, zero-server data leakage.">
-
-    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/saas/cryptographic_key_entropy_suite.html">
-    <meta property="og:title" content="EntropyShield // Cryptographic Secret Entropy Analyzer | Sovereign Enterprise Grid">
-    <meta property="og:description" content="100% Client-side utility for EntropyShield // Cryptographic Secret Entropy Analyzer | Sovereign Enterprise Grid. High-speed, private, zero-server data leakage.">
-    <meta property="og:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=EntropyShield%20//%20Cryptographic%20Secret%20En+Studio&font=montserrat">
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/saas/cryptographic_key_entropy_suite.html">
-    <meta name="twitter:title" content="EntropyShield // Cryptographic Secret Entropy Analyzer | Sovereign Enterprise Grid">
-    <meta name="twitter:description" content="100% Client-side utility for EntropyShield // Cryptographic Secret Entropy Analyzer | Sovereign Enterprise Grid. High-speed, private, zero-server data leakage.">
-    <meta name="twitter:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=EntropyShield%20//%20Cryptographic%20Secret%20En+Studio&font=montserrat">
-
-    <!-- JSON-LD Structured Data for Googlebot -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "EntropyShield // Cryptographic Secret Entropy Analyzer | Sovereign Enterprise Grid",
-      "url": "https://keshavs40344.github.io/ai-world-core/saas/cryptographic_key_entropy_suite.html",
-      "description": "100% Client-side utility for EntropyShield // Cryptographic Secret Entropy Analyzer | Sovereign Enterprise Grid. High-speed, private, zero-server data leakage.",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "All modern browsers",
-      "offers": {
-        "@type": "Offer",
-        "price": "0.00",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
-    <!-- /SEO BLOCK -->
-    
 </head>
 <body class="bg-[#09090b] text-zinc-100 min-h-screen flex flex-col font-sans selection:bg-zinc-800 antialiased">
     <!-- Header -->
     <header class="h-14 border-b border-zinc-800/80 bg-[#09090b]/90 backdrop-blur px-6 flex items-center justify-between sticky top-0 z-50">
         <div class="flex items-center gap-3">
             <a href="../index.html" class="w-7 h-7 rounded bg-zinc-800 border border-zinc-700/60 flex items-center justify-center font-mono text-xs font-semibold text-white">//</a>
-            <span class="font-semibold text-sm tracking-tight text-white">EntropyShield // Cryptographic Secret Entropy Analyzer</span>
+            <span class="font-semibold text-sm tracking-tight text-white">API Key Entropy & Secret Leak Detector // Ultra-Fast In-Memory Tool</span>
             <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60">DEVSECOPS & AUTH</span>
         </div>
         <div class="flex items-center gap-4 text-xs font-mono">
@@ -75,16 +68,20 @@
     <!-- Workspace -->
     <main class="flex-1 max-w-7xl mx-auto w-full p-6 flex flex-col lg:flex-row gap-6">
         <!-- Ingestion Pane -->
-        <section class="w-full lg:w-1/2 flex flex-col border border-zinc-800 rounded-xl bg-zinc-900/30 p-5 shadow-xl">
+        <section id="ingestionZone" class="w-full lg:w-1/2 flex flex-col border border-zinc-800 rounded-xl bg-zinc-900/30 p-5 shadow-xl transition-all">
             <div class="flex items-center justify-between pb-3 border-b border-zinc-800 mb-3">
-                <span class="text-xs font-mono text-zinc-400">ISOLATED INGESTION STREAM</span>
+                <span class="text-xs font-mono text-zinc-400">ISOLATED INGESTION STREAM (DRAG & DROP READY)</span>
                 <span id="byteCounter" class="text-[11px] font-mono text-zinc-500">0 bytes</span>
             </div>
-            <textarea id="dataInput" class="flex-1 w-full bg-transparent resize-none font-mono text-xs leading-relaxed text-zinc-200 placeholder-zinc-700 focus:outline-none min-h-[300px]" placeholder="Paste high-volume payload or drag file here..." oninput="onInputUpdate()"></textarea>
+            <textarea id="dataInput" class="flex-1 w-full bg-transparent resize-none font-mono text-xs leading-relaxed text-zinc-200 placeholder-zinc-700 focus:outline-none min-h-[300px]" placeholder="Paste payload here or drop .csv, .json, .txt, .sql file..." oninput="onInputUpdate()"></textarea>
             
             <div class="pt-3 border-t border-zinc-800 flex items-center justify-between mt-2">
                 <div class="flex gap-2">
                     <button onclick="injectSample()" class="text-xs font-mono text-zinc-400 hover:text-white underline">Load Sample</button>
+                    <label class="text-xs font-mono text-zinc-400 hover:text-white cursor-pointer underline">
+                        Upload File
+                        <input type="file" id="fileUploadInput" class="hidden" onchange="handleFileUpload(event)">
+                    </label>
                     <button onclick="clearState()" class="text-xs font-mono text-zinc-500 hover:text-zinc-300">Clear</button>
                 </div>
                 <button onclick="dispatchToWorker()" class="px-5 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-mono text-xs font-semibold transition flex items-center gap-2 shadow">
@@ -99,8 +96,9 @@
             <div class="flex items-center justify-between pb-3 border-b border-zinc-800 mb-3">
                 <span class="text-xs font-mono text-zinc-400" id="outputStatus">THREAD EXECUTION LOGS</span>
                 <div class="flex gap-2">
-                    <button onclick="copyOutput()" class="text-xs font-mono text-zinc-400 hover:text-white">Copy</button>
-                    <button onclick="downloadArtifact()" class="text-xs font-mono text-zinc-400 hover:text-white">Export ↓</button>
+                    <button onclick="copyOutput()" class="text-xs font-mono text-zinc-400 hover:text-white px-2 py-1 rounded border border-zinc-800 hover:border-zinc-700">Copy</button>
+                    <button onclick="downloadArtifact('json')" class="text-xs font-mono text-zinc-400 hover:text-white px-2 py-1 rounded border border-zinc-800 hover:border-zinc-700">JSON ↓</button>
+                    <button onclick="downloadArtifact('text')" class="text-xs font-mono text-zinc-400 hover:text-white px-2 py-1 rounded border border-zinc-800 hover:border-zinc-700">Text ↓</button>
                 </div>
             </div>
             <pre id="outputConsole" class="flex-1 font-mono text-xs leading-relaxed text-zinc-300 overflow-auto whitespace-pre-wrap p-4 rounded-lg bg-[#07090e] border border-zinc-800/80 min-h-[300px]">// Awaiting Web Worker execution dispatch...</pre>
@@ -145,10 +143,18 @@
                 const p = frequencies[char] / len;
                 entropy -= p * Math.log2(p);
             }
+            // Leak pattern heuristics
+            const patterns = {
+                "AWS_ACCESS_KEY": /AKIA[0-9A-Z]{16}/.test(input),
+                "STRIPE_KEY": /sk_live_[0-9a-zA-Z]{24}/.test(input),
+                "GITHUB_TOKEN": /gh[pousr]_[0-9a-zA-Z]{36}/.test(input),
+                "JWT_TOKEN": /^[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.?[A-Za-z0-9-_.+/=]*$/.test(input)
+            };
             const result = {
                 "RAW_STRING_LENGTH": len,
                 "SHANNON_ENTROPY_SCORE": entropy.toFixed(4) + " / 8.0 bits",
-                "SECURITY_VERDICT": entropy > 4.2 ? "SUFFICIENT_ENTROPY" : "VULNERABLE_LOW_ENTROPY",
+                "SECURITY_VERDICT": entropy > 4.2 ? "HIGH_ENTROPY_CRYPTOGRAPHIC_SECRET" : "VULNERABLE_LOW_ENTROPY",
+                "KNOWN_SIGNATURE_MATCHES": patterns,
                 "CHAR_DISTRIBUTION": frequencies
             };
         
@@ -220,17 +226,67 @@
             });
         }
 
-        function downloadArtifact() {
+        function downloadArtifact(format = 'json') {
             if(!parsedResult) return;
-            const text = typeof parsedResult === 'object' ? JSON.stringify(parsedResult, null, 2) : parsedResult;
-            const blob = new Blob([text], { type: 'application/json' });
+            let content, mime, ext;
+            if (format === 'json') {
+                content = typeof parsedResult === 'object' ? JSON.stringify(parsedResult, null, 2) : JSON.stringify({ result: parsedResult }, null, 2);
+                mime = 'application/json';
+                ext = 'json';
+            } else {
+                content = typeof parsedResult === 'object' ? JSON.stringify(parsedResult, null, 2) : String(parsedResult);
+                mime = 'text/plain';
+                ext = 'txt';
+            }
+            const blob = new Blob([content], { type: mime });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'cryptographic_key_entropy_suite_export.json';
+            a.download = 'cryptographic_key_entropy_suite_export.' + ext;
             a.click();
             URL.revokeObjectURL(url);
         }
+
+        function handleFileUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (evt) => {
+                document.getElementById('dataInput').value = evt.target.result;
+                onInputUpdate();
+                dispatchToWorker();
+            };
+            reader.readAsText(file);
+        }
+
+        // Setup Drag and Drop File Ingestion
+        const dropZone = document.getElementById('ingestionZone');
+        ['dragenter', 'dragover'].forEach(name => {
+            dropZone.addEventListener(name, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.add('drop-target');
+            });
+        });
+        ['dragleave', 'drop'].forEach(name => {
+            dropZone.addEventListener(name, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.remove('drop-target');
+            });
+        });
+        dropZone.addEventListener('drop', (e) => {
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = (evt) => {
+                    document.getElementById('dataInput').value = evt.target.result;
+                    onInputUpdate();
+                    dispatchToWorker();
+                };
+                reader.readAsText(files[0]);
+            }
+        });
 
         function openLicenseModal() { document.getElementById('licenseModal').classList.remove('hidden'); }
         function closeLicenseModal() { document.getElementById('licenseModal').classList.add('hidden'); }
