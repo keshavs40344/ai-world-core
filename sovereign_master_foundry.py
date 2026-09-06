@@ -803,10 +803,10 @@ def update_master_portal():
         badge_class = "badge-cloud"
         icon = "terminal"
 
-        if "crypt" in slug or "entropy" in slug or "guard" in slug:
+        if "crypt" in slug or "entropy" in slug or "guard" in slug or "redact" in slug or "pii" in slug:
             badge_class = "badge-sec"
             icon = "shield-check"
-            category = "CyberSec & Identity"
+            category = "CyberSec & DevSecOps"
         elif "sql" in slug:
             badge_class = "badge-cloud"
             icon = "database"
