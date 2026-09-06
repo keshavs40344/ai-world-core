@@ -2,604 +2,729 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/nifty-50-crosses-26000-historic-milestone-dii-inflows-surge.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Nifty 50 Breaches Historic 26,000 Milestone as Domestic Institutional Inflows Outpace Global Volatility</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/sebi-implements-instant-t-plus-zero-settlement-fractional-shares.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>SEBI Formally Implements Instant T+0 Demat Trade Settlement and Authorizes Fractional Share Investing</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/rbi-digital-rupee-cbdc-wholesale-cross-border-settlement-expansion.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>RBI Digital Rupee (e₹) Wholesale Corridor Crosses $5 Billion Daily Interbank Treasury Volume</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-sovereign-green-bond-tranche-oversubscribed-global-pension-funds.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Government Sovereign Green Bond Auction Oversubscribed 4.5x by International Pension and ESG Funds</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-tech-ipo-boom-drhp-filings-deeptech-saas-startups.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>India Tech IPO Super-Cycle: 14 DeepTech and SaaS Startups File DRHPs for $12 Billion Public Listings</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-ai-mission-bharat-gpt-120b-multilingual-foundational-model.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>IndiaAI Mission Releases Bharat-GPT 120B: India's Sovereign Multilingual Foundational AI Model</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/autonomous-multi-agent-systems-rural-primary-health-centers-deployment.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Ministry of Health Deploys Autonomous Multi-Agent AI Triage Systems Across 5,000 Rural Primary Health Centers</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/neuromorphic-ai-processors-sub-watt-spiking-neural-networks-commercialized.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Indian Institute of Science and SCL Fabricate Sub-1-Watt Neuromorphic Spiking AI Processors</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/global-ai-governance-summit-sovereign-guardrail-treaty-adopted.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Global AI Governance Summit Adopts Binding Sovereign Guardrail Treaty on Agentic Sandboxing and Deepfake Watermarks</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/agentic-code-generation-enterprise-study-software-engineering-evolution.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>National IT Consortium Study Reveals 64% of Enterprise Software Code Synthesized by Autonomous AI Agents</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/nep-2026-global-universities-standalone-indian-campuses-operationalized.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>National Education Policy Renaissance: Premier Global Universities Operationalize Standalone Indian Campuses</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/ai-powered-personalized-pedagogy-diksha-reaches-40-million-students.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Ministry of Education AI Pedagogy Engine DIKSHA-3 Reaches 40 Million School Students Across 18 Languages</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/anusandhan-nrf-allocates-10000-crore-stem-grants-deeptech-research.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Anusandhan National Research Foundation (ANRF) Disburses ₹10,000 Crore STEM Grants for Frontier R&D</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/vocational-polytechnic-modernization-apprenticeship-embedded-degrees.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>All India Council for Technical Education (AICTE) Mandates Apprenticeship-Embedded Degrees Across 3,000 Polytechnics</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/one-nation-one-subscription-free-open-access-scientific-research.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Union Cabinet Clears 'One Nation, One Subscription' Scheme Ending Commercial Paywalls for Scientific Research</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/6g-terahertz-wireless-testbed-1-terabit-second-transmission-achieved.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Department of Telecommunications 6G Terahertz Testbed Achieves World-Record 1 Terabit/Second Wireless Data Transmission</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/risc-v-shakti-4-octa-core-microprocessor-commercial-tapeout.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>IIT Madras & SCL Announce Commercial Tape-Out of 64-Bit Octa-Core Shakti-4 Indigenous RISC-V Microprocessor</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/crispr-sickle-cell-indigenous-gene-therapy-cdsco-approval.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>CDSCO Grants Commercial Approval for India's First Indigenous CRISPR Gene Therapy for Sickle Cell Disease</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/solid-state-lithium-sulfur-battery-600whkg-electric-aviation-breakthrough.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>ARCI & CSIR Unveil 600 Wh/kg Solid-State Lithium-Sulfur Battery Enabling 1,200 km Electric Vehicle Range</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/national-cyber-threat-intelligence-grid-ai-zero-day-banking-defense.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>National Cyber Threat Intelligence Grid (Cyber-Suraksha) Neutralizes Zero-Day Distributed Financial Cyber Attack</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/peace-talks-rich-in-symbolism-but-fundamental-differences-between-russia-an.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Peace talks rich in symbolism but fundamental differences between Russia and Ukraine remain</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/germanys-far-right-afd-set-for-big-win-in-eastern-state-just-short-of-major.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Germany's far-right AfD set for big win in eastern state, just short of majority</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/5-dead-several-feared-trapped-after-six-storey-building-collapses-in-delhi.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>5 Dead, Several Feared Trapped After Six-Storey Building Collapses In Delhi</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/ukraine-moves-to-legalise-porn-to-pay-for-30000-drones-report.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Ukraine Moves To Legalise Porn To Pay For 30,000 Drones: Report</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/17-lakh-fliers-stuck-after-indonesia-closes-airport-over-volcanic-eruption.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>1.7 Lakh Fliers Stuck After Indonesia Closes Airport Over Volcanic Eruption</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/explained-the-warring-equation-and-baghel-paradox-in-punjab-congress.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Explained: The Warring Equation And Baghel Paradox In Punjab Congress</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/delhi-building-collapse-raises-questions-on-safety-student-organisations-pr.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Delhi Building Collapse Raises Questions On Safety, Student Organisations Protest</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/cjp-demands-accountability-over-south-delhi-hostel-collapse-dipke-questions.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>CJP demands accountability over South Delhi hostel collapse; Dipke questions PM</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/european-union-carbon-border-adjustment-mechanism-india-dialogue.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>India and European Union Advance Dialogue on Reciprocal Carbon Accounting and CBAM Exemption Framework</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/who-intergovernmental-negotiating-body-pandemic-accord-consensus.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>WHO Intergovernmental Negotiating Body Finalizes Consensus Draft on Sovereign Pathogen Access and Benefit Sharing</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/jammu-kashmir-reasi-lithium-refining-pilot-plant-commissioned.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Geological Survey of India & Ministry of Mines Commission First Lithium Refining Pilot Facility in Reasi, J&K</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/deep-ocean-mission-samudrayaan-matsya-6000-deep-sea-manned-submersible.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Ministry of Earth Sciences Deep Ocean Mission Completes 6,000-Meter Pressure Hull Hull Trials for Matsya 6000 Submersible</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/national-quantum-mission-128-qubit-superconducting-processor-breakthrough.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>National Quantum Mission Achieves Milestone with India's First 128-Qubit Superconducting Quantum Processor</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/national-supercomputing-mission-airawat-exascale-ai-cluster-unveiled.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>National Supercomputing Mission Unveils 100-Petaflop AIRAWAT-2 Indigenous AI Supercomputing Cluster</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/indian-railways-kavach-4-automatic-train-protection-rollout.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Indian Railways Deploys Next-Gen Kavach 4.0 Automatic Train Protection Across 10,000 Route Kilometers</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/upi-cross-border-linkage-expansion-uae-singapore-france-remittance.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>NPCI International Expands Real-Time UPI Cross-Border Linkages Across UAE, Singapore and Eurozone Partners</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/isro-aditya-l1-solar-observatory-coronal-mass-ejection-early-warning.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>ISRO Aditya-L1 Solar Observatory Issues Real-Time X-Class Solar Flare Early Warning Telemetry from Sun-Earth L1 Point</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/digital-personal-data-protection-dpdp-rules-notified-data-protection-board.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Ministry of Electronics and IT Formally Notifies DPDP Act Operating Rules and Establishes Digital Data Protection Board</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/ministry-of-finance-direct-tax-collections-advance-tax-surge.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Ministry of Finance Reports 18.4% Surge in Advance Direct Tax Collections Signaling Corporate Expansion</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/cern-lhc-subatomic-collision-trials-anomalous-lepton-symmetry.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>CERN LHC High-Luminosity Collision Trials Detect Statistically Significant Lepton Flavor Universality Anomalies</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/global-macro-brent-crude-stabilizes-opec-supply-moderation.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Global Macro Markets: Brent Crude Stabilizes Near $76 as OPEC+ Moderates Voluntary Supply Quotas</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/defense-acquisition-council-amca-stealth-fighter-engine-clearance.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Defense Acquisition Council Clears Indigenous 110kN Engine Co-Development for AMCA Stealth Fighter</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-semiconductor-mission-approves-phase-2-commercial-silicon-carbide-fab.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>India Semiconductor Mission Approves Phase-2 Commercial Silicon Carbide Fab and Advanced 3D Packaging Cluster</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/national-green-hydrogen-mission-5-million-tonne-tender-surge.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>National Green Hydrogen Mission Crosses 5 Million Tonne Electrolyser Tender Benchmark</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/quad-maritime-domain-awareness-network-indo-pacific-security.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Quad Nations Formally Operationalize Integrated Indo-Pacific Maritime Domain Awareness (IPMDA) Radar Network</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/rbi-monetary-policy-committee-repo-rate-growth-resilience.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>RBI Monetary Policy Committee Maintains Repo Rate at 6.50% Citing Robust 7.4% GDP Trajectory</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/supreme-court-landmark-constitution-bench-ai-surveillance-privacy.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Supreme Court Constitution Bench Issues Historic Doctrine on AI Surveillance and Algorithmic Privacy</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/isro-gaganyaan-orbital-flight-simulation-human-rating-milestone.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>ISRO Gaganyaan: Final Uncrewed Orbital Flight Simulation Achieves 100% Human-Rating Validation</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/maharashtra-sets-up-high-level-committee-to-ensure-transparency-in-recruitm.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Maharashtra Sets Up High-Level Committee to Ensure Transparency in Recruitment Exams</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/mns-chief-raj-thackeray-cautions-against-communal-distractions-amid-economi.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>MNS chief Raj Thackeray cautions against communal distractions amid economic challenges</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/maharashtra-ministers-push-for-dj-free-festivals-over-health-risks.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Maharashtra Ministers Push for DJ-Free Festivals Over Health Risks</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/delhi-building-collapse-kills-at-least-five-fir-lodged-against-owner.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Delhi building collapse kills at least five, FIR lodged against owner</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/german-far-right-set-for-big-win-in-eastern-state-projections-show.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>German far-right set for big win in eastern state, projections show</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/zelensky-says-he-expects-war-to-continue-into-winter-after-talks-with-us-en.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Zelensky says he expects war to continue into winter after talks with US envoys</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/safety-violations-put-nh-66-users-at-risk-in-kozhikode.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Safety violations put NH 66 users at risk in Kozhikode</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/spate-of-thefts-triggers-security-concerns-in-ernakulam-district.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>Spate of thefts triggers security concerns in Ernakulam district</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-france-relations-have-reached-new-heights-pm-modi.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>India-France relations have reached new heights: PM Modi</news:title>
-    </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/need-to-provide-holistic-education.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>‘Need to provide holistic education’</news:title>
-    </news:news>
-  </url>  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/news/the-political-cost-of-unconditional-cash-transfers.html</loc>
     <news:news>
       <news:publication>
         <news:name>Sovereign Apex News Wire</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>The political cost of unconditional cash transfers</news:title>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Fiscal Sustainability vs Rural Consumption: Macroeconomic Study on ₹3.8 Lakh Crore Direct Cash Transfer Allocations Across Indian State Budgets</news:title>
     </news:news>
-  </url>  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/tv-presenter-among-12-sentenced-to-death-in-egypt-drugs-case.html</loc>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/rbi-forex-reserves-cross-700-billion-historic-milestone.html</loc>
     <news:news>
       <news:publication>
         <news:name>Sovereign Apex News Wire</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-09-06T22:59:38Z</news:publication_date>
-      <news:title>TV presenter among 12 sentenced to death in Egypt drugs case</news:title>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Reserve Bank of India Foreign Exchange Reserves Cross Record $700 Billion Milestone: Macroeconomic Shield Against Currency Volatility</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-semiconductor-fabrication-facility-dholera-construction-milestone.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Tata-PSMC Semiconductor Fabrication Mega-Facility in Dholera Enters Cleanroom Installation Ahead of Schedule</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/national-digital-university-swayam-plus-industry-micro-credentials.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>National Digital University Launches SWAYAM-Plus: Industry-Recognized Micro-Credentials Across AI, Cloud Computing, and Robotics</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/need-to-provide-holistic-education.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>National Education Policy 2020: Autonomous Degree Colleges Transition to Multidisciplinary Research Universities with Unified Credit Bank</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/solid-state-lithium-sulfur-battery-600whkg-electric-aviation-breakthrough.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>ARCI &amp; CSIR Unveil 600 Wh/kg Solid-State Lithium-Sulfur Battery Enabling 1,200 km Electric Vehicle Range</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/vocational-polytechnic-modernization-apprenticeship-embedded-degrees.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>All India Council for Technical Education (AICTE) Mandates Apprenticeship-Embedded Degrees Across 3,000 Polytechnics</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/anusandhan-nrf-allocates-10000-crore-stem-grants-deeptech-research.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Anusandhan National Research Foundation (ANRF) Disburses ₹10,000 Crore STEM Grants for Frontier R&amp;D</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/crispr-sickle-cell-indigenous-gene-therapy-cdsco-approval.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>CDSCO Grants Commercial Approval for India's First Indigenous CRISPR Gene Therapy for Sickle Cell Disease</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/cern-lhc-subatomic-collision-trials-anomalous-lepton-symmetry.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>CERN LHC High-Luminosity Collision Trials Detect Statistically Significant Lepton Flavor Universality Anomalies</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/defense-acquisition-council-amca-stealth-fighter-engine-clearance.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Defense Acquisition Council Clears Indigenous 110kN Engine Co-Development for AMCA Stealth Fighter</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/6g-terahertz-wireless-testbed-1-terabit-second-transmission-achieved.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Department of Telecommunications 6G Terahertz Testbed Achieves World-Record 1 Terabit/Second Wireless Data Transmission</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/jammu-kashmir-reasi-lithium-refining-pilot-plant-commissioned.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Geological Survey of India &amp; Ministry of Mines Commission First Lithium Refining Pilot Facility in Reasi, J&amp;K</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/global-ai-governance-summit-sovereign-guardrail-treaty-adopted.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Global AI Governance Summit Adopts Binding Sovereign Guardrail Treaty on Agentic Sandboxing and Deepfake Watermarks</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/global-macro-brent-crude-stabilizes-opec-supply-moderation.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Global Macro Markets: Brent Crude Stabilizes Near $76 as OPEC+ Moderates Voluntary Supply Quotas</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-sovereign-green-bond-tranche-oversubscribed-global-pension-funds.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Government Sovereign Green Bond Auction Oversubscribed 4.5x by International Pension and ESG Funds</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/risc-v-shakti-4-octa-core-microprocessor-commercial-tapeout.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>IIT Madras &amp; SCL Announce Commercial Tape-Out of 64-Bit Octa-Core Shakti-4 Indigenous RISC-V Microprocessor</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/isro-aditya-l1-solar-observatory-coronal-mass-ejection-early-warning.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>ISRO Aditya-L1 Solar Observatory Issues Real-Time X-Class Solar Flare Early Warning Telemetry from Sun-Earth L1 Point</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/isro-gaganyaan-orbital-flight-simulation-human-rating-milestone.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>ISRO Gaganyaan: Final Uncrewed Orbital Flight Simulation Achieves 100% Human-Rating Validation</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/isro-semi-cryogenic-engine-sce-200-successful-hot-test-mahendragiri.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>ISRO Successfully Hot-Tests Indigenous SCE-200 Semi-Cryogenic Engine at Mahendragiri: Paving Path for Heavy-Lift Next-Gen Launch Vehicles</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-semiconductor-mission-approves-phase-2-commercial-silicon-carbide-fab.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>India Semiconductor Mission Approves Phase-2 Commercial Silicon Carbide Fab and Advanced 3D Packaging Cluster</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-tech-ipo-boom-drhp-filings-deeptech-saas-startups.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>India Tech IPO Super-Cycle: 14 DeepTech and SaaS Startups File DRHPs for $12 Billion Public Listings</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/european-union-carbon-border-adjustment-mechanism-india-dialogue.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>India and European Union Advance Dialogue on Reciprocal Carbon Accounting and CBAM Exemption Framework</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-france-relations-have-reached-new-heights-pm-modi.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>India-France Strategic Defense &amp; Aerospace Partnership: Horizon 2047 Roadmap Accelerates Rafale-M Procurement, Scorpene Submarines, and Joint Jet Engine Tech Transfer</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-ai-mission-bharat-gpt-120b-multilingual-foundational-model.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>IndiaAI Mission Releases Bharat-GPT 120B: India's Sovereign Multilingual Foundational AI Model</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/neuromorphic-ai-processors-sub-watt-spiking-neural-networks-commercialized.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Indian Institute of Science and SCL Fabricate Sub-1-Watt Neuromorphic Spiking AI Processors</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/indian-railways-kavach-4-automatic-train-protection-rollout.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Indian Railways Deploys Next-Gen Kavach 4.0 Automatic Train Protection Across 10,000 Route Kilometers</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/deep-ocean-mission-samudrayaan-matsya-6000-deep-sea-manned-submersible.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Ministry of Earth Sciences Deep Ocean Mission Completes 6,000-Meter Pressure Hull Hull Trials for Matsya 6000 Submersible</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/ai-powered-personalized-pedagogy-diksha-reaches-40-million-students.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Ministry of Education AI Pedagogy Engine DIKSHA-3 Reaches 40 Million School Students Across 18 Languages</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/digital-personal-data-protection-dpdp-rules-notified-data-protection-board.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Ministry of Electronics and IT Formally Notifies DPDP Act Operating Rules and Establishes Digital Data Protection Board</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/ministry-of-finance-direct-tax-collections-advance-tax-surge.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Ministry of Finance Reports 18.4% Surge in Advance Direct Tax Collections Signaling Corporate Expansion</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/autonomous-multi-agent-systems-rural-primary-health-centers-deployment.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Ministry of Health Deploys Autonomous Multi-Agent AI Triage Systems Across 5,000 Rural Primary Health Centers</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/17-lakh-fliers-stuck-after-indonesia-closes-airport-over-volcanic-eruption.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Mount Lewotobi Eruptive Volcanic Ash Plume Forces Mass Airport Closures Across Indonesia: Aviation Safety and Geohazard Protocols</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/upi-cross-border-linkage-expansion-uae-singapore-france-remittance.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>NPCI International Expands Real-Time UPI Cross-Border Linkages Across UAE, Singapore and Eurozone Partners</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/national-cyber-threat-intelligence-grid-ai-zero-day-banking-defense.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>National Cyber Threat Intelligence Grid (Cyber-Suraksha) Neutralizes Zero-Day Distributed Financial Cyber Attack</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/nep-2026-global-universities-standalone-indian-campuses-operationalized.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>National Education Policy Renaissance: Premier Global Universities Operationalize Standalone Indian Campuses</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/national-green-hydrogen-mission-5-million-tonne-tender-surge.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>National Green Hydrogen Mission Crosses 5 Million Tonne Electrolyser Tender Benchmark</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/agentic-code-generation-enterprise-study-software-engineering-evolution.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>National IT Consortium Study Reveals 64% of Enterprise Software Code Synthesized by Autonomous AI Agents</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/national-quantum-mission-128-qubit-superconducting-processor-breakthrough.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>National Quantum Mission Achieves Milestone with India's First 128-Qubit Superconducting Quantum Processor</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/national-supercomputing-mission-airawat-exascale-ai-cluster-unveiled.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>National Supercomputing Mission Unveils 100-Petaflop AIRAWAT-2 Indigenous AI Supercomputing Cluster</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/nifty-50-crosses-26000-historic-milestone-dii-inflows-surge.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Nifty 50 Breaches Historic 26,000 Milestone as Domestic Institutional Inflows Outpace Global Volatility</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/quad-maritime-domain-awareness-network-indo-pacific-security.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Quad Nations Formally Operationalize Integrated Indo-Pacific Maritime Domain Awareness (IPMDA) Radar Network</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/rbi-digital-rupee-cbdc-wholesale-cross-border-settlement-expansion.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>RBI Digital Rupee (e₹) Wholesale Corridor Crosses $5 Billion Daily Interbank Treasury Volume</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/rbi-monetary-policy-committee-repo-rate-growth-resilience.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>RBI Monetary Policy Committee Maintains Repo Rate at 6.50% Citing Robust 7.4% GDP Trajectory</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/sebi-implements-instant-t-plus-zero-settlement-fractional-shares.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>SEBI Formally Implements Instant T+0 Demat Trade Settlement and Authorizes Fractional Share Investing</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/supreme-court-landmark-constitution-bench-ai-surveillance-privacy.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Supreme Court Constitution Bench Issues Historic Doctrine on AI Surveillance and Algorithmic Privacy</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/one-nation-one-subscription-free-open-access-scientific-research.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Union Cabinet Clears 'One Nation, One Subscription' Scheme Ending Commercial Paywalls for Scientific Research</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/who-intergovernmental-negotiating-body-pandemic-accord-consensus.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>WHO Intergovernmental Negotiating Body Finalizes Consensus Draft on Sovereign Pathogen Access and Benefit Sharing</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/building-collapse-in-delhi-leaves-up-to-50-residents-missing.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Building Collapse in Delhi Leaves Up to 50 Residents Missing</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/peace-talks-rich-in-symbolism-but-fundamental-differences-between-russia-an.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Diplomatic Stalemate in Eastern Europe: Territorial Sovereignty, NATO Security Guarantees, and Winter Grid Resilience</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/zelensky-says-he-expects-war-to-continue-into-winter-after-talks-with-us-en.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Eastern European Winter Defense Infrastructure Assessment: Hardened Air Defense Interceptors, Energy Grids, and Diplomatic Envoys</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/german-far-right-set-for-big-win-in-eastern-state-projections-show.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>German Far-Right AfD Achieves Historic Plurality in Thuringia and Saxony State Elections: Coalition Deadlock and the Strained 'Brandmauer' Firewall</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/us-envoys-hold-substantive-talks-with-zelensky-in-kyiv-after-meeting-putin.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>US Envoys Hold Substantive Talks with Zelensky in Kyiv After Meeting Putin</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/29-contestants-finalized-for-bigg-boss-tamil-season-10-after-public-poll-tr.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>29 Contestants Finalized for Bigg Boss Tamil Season 10 After Public Poll Trims List to 19</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/delhi-auctions-2000-confiscated-vehicles-generates-rs-5-crore.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Delhi Auctions 2,000 Confiscated Vehicles, Generates Rs 5 Crore</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/delhi-building-collapse-claims-five-lives-eleven-rescued-fir-filed-against-.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Delhi Building Collapse Claims Five Lives, Eleven Rescued; FIR Filed Against Owner</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/delhi-building-collapse-kills-at-least-five-fir-lodged-against-owner.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Delhi building collapse kills at least five, FIR lodged against owner</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/four-kalady-police-officers-suspended-over-custodial-torture-allegations.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Four Kalady Police Officers Suspended Over Custodial Torture Allegations</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-and-china-conduct-first-corpscommander-dialogue-in-arunachal-pradesh.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>India and China Conduct First Corps‑Commander Dialogue in Arunachal Pradesh</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/israel-orders-evacuation-of-unauthorized-west-bank-settlements.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Israel Orders Evacuation of Unauthorized West Bank Settlements</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/mns-chief-raj-thackeray-cautions-against-communal-distractions-amid-economi.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>MNS chief Raj Thackeray cautions against communal distractions amid economic challenges</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/maharashtra-ministers-push-for-dj-free-festivals-over-health-risks.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Maharashtra Ministers Push for DJ-Free Festivals Over Health Risks</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/maharashtra-sets-up-high-level-committee-to-ensure-transparency-in-recruitm.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Maharashtra Sets Up High-Level Committee to Ensure Transparency in Recruitment Exams</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/renowned-carnatic-musician-sr-janakiraman-dies-at-98.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Renowned Carnatic Musician S.R. Janakiraman Dies at 98</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/russia-accuses-germany-of-renewed-war-intent-denies-involvement-in-leipzig-.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Russia Accuses Germany of Renewed War Intent, Denies Involvement in Leipzig Airport Attack</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/tamil-nadu-chief-minister-vijay-prioritizes-state-anthem-over-centres-vande.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Tamil Nadu Chief Minister Vijay Prioritizes State Anthem Over Centre’s Vande Mataram Push</news:title>
     </news:news>
   </url>
 </urlset>
