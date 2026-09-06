@@ -1,41 +1,123 @@
 version: "3.9"
 
-# ============================================================
-# Project Genesis — Docker Compose
-#
-# Services:
-#   chroma   : Persistent ChromaDB vector store (port 8000)
-#
-# Worker containers are spawned dynamically by the Python Docker
-# SDK and are NOT defined here — they share the genesis_net network.
-# ============================================================
-
 services:
-  chroma:
-    image: chromadb/chroma:latest
-    container_name: genesis-chroma
-    restart: unless-stopped
-    ports:
-      - "8000:8000"
-    volumes:
-      - chroma_data:/chroma/chroma
+  # ----------------------------------------------------------------------------
+  # 1. DISTRIBUTED POSTGRESQL PRIMARY
+  # ----------------------------------------------------------------------------
+  postgres:
+    image: postgres:16-alpine
+    container_name: chronicle_postgres
+    restart: always
     environment:
-      - IS_PERSISTENT=TRUE
-      - ANONYMIZED_TELEMETRY=FALSE
-    networks:
-      - genesis_net
+      POSTGRES_USER: chronicle_user
+      POSTGRES_PASSWORD: chronicle_secure_pass_2026
+      POSTGRES_DB: chronicle_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/heartbeat"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 10s
+      test: ["CMD-SHELL", "pg_isready -U chronicle_user -d chronicle_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ----------------------------------------------------------------------------
+  # 2. REDIS DISTRIBUTED CACHE & PUB/SUB BROKER
+  # ----------------------------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: chronicle_redis
+    restart: always
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "512mb", "--maxmemory-policy", "allkeys-lru"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # ----------------------------------------------------------------------------
+  # 3. STATELESS API GATEWAY REPLICAS (N=2)
+  # ----------------------------------------------------------------------------
+  api_gateway_1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chronicle_gateway_1
+    restart: always
+    command: ["python", "-m", "uvicorn", "cluster_gateway:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4"]
+    environment:
+      DATABASE_URL: postgresql://chronicle_user:chronicle_secure_pass_2026@postgres:5432/chronicle_db
+      REDIS_URL: redis://redis:6379/0
+      PORT: 8000
+    ports:
+      - "8001:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  api_gateway_2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chronicle_gateway_2
+    restart: always
+    command: ["python", "-m", "uvicorn", "cluster_gateway:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4"]
+    environment:
+      DATABASE_URL: postgresql://chronicle_user:chronicle_secure_pass_2026@postgres:5432/chronicle_db
+      REDIS_URL: redis://redis:6379/0
+      PORT: 8000
+    ports:
+      - "8002:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  # ----------------------------------------------------------------------------
+  # 4. DISTRIBUTED AGENT WORKER CLUSTER INSTANCES (N=2)
+  # ----------------------------------------------------------------------------
+  agent_worker_1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chronicle_worker_1
+    restart: always
+    command: ["python", "cluster_worker.py"]
+    environment:
+      DATABASE_URL: postgresql://chronicle_user:chronicle_secure_pass_2026@postgres:5432/chronicle_db
+      REDIS_URL: redis://redis:6379/0
+      WORKER_CADENCE_SECONDS: 15
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  agent_worker_2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chronicle_worker_2
+    restart: always
+    command: ["python", "cluster_worker.py"]
+    environment:
+      DATABASE_URL: postgresql://chronicle_user:chronicle_secure_pass_2026@postgres:5432/chronicle_db
+      REDIS_URL: redis://redis:6379/0
+      WORKER_CADENCE_SECONDS: 15
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
 
 volumes:
-  chroma_data:
-    driver: local
-
-networks:
-  genesis_net:
-    driver: bridge
-    name: genesis_net
+  pgdata:
+  redisdata:
