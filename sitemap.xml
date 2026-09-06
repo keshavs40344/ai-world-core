@@ -43,6 +43,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/ai_agent_function_call_orchestrator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/ai_agent_state_machine_graph_builder.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/ai_cost_calculator.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -109,7 +121,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/attention_head_qk_matrix_visualizer.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/audio_steganography_watermark_extractor.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/audio_transcription_whisper_prompt_optimizer.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -140,6 +164,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/bayes_theorem_posterior_updater.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/beam_search_decoding_simulator.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -224,6 +254,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/chmod_calculator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/classifier_confusion_matrix_f1_score.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -349,6 +385,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/cosine_similarity_matrix_pairwise_batch.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/crispr_sgrna_target_designer.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -356,6 +398,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/cron_expression_parser.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/cross_encoder_reranker_simulator.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -619,6 +667,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/embedding_dimension_pca_projector.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/embedding_similarity_calculator.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -662,6 +716,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/favicon_tag_generator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/few_shot_coreset_sampler_diversity.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -757,6 +817,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/gradient_accumulation_effective_batch_calc.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/graphql_schema_type_inspector.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -770,6 +836,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/gst_reconcile_pro_ledger.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/guardrails_output_moderation_regex_linter.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -865,6 +937,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/huggingface_model_card_generator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/hyper_matrix_cloud.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -914,6 +992,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/iso27001_soc2_control_evaluator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/jailbreak_red_teaming_mutator.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -991,6 +1075,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/kv_cache_memory_vram_estimator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/landlord_lease_predatory_clause_detector.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -1033,7 +1123,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/llm_benchmark_leaderboard_elo_calc.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/llm_cost_budget_quota_governor.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/llm_response_evaluator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/llm_router_classifier.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1057,6 +1165,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/lora_adapter_merge_weight_calc.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/lora_fine_tuning_vram_calculator.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -1064,6 +1178,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/lorem_ipsum_generator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/loss_function_cross_entropy_calc.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1123,7 +1243,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/model_card_carbon_emissions_mlco2.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/model_inference_throughput_benchmark_estimator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/monte_carlo_pi_simulator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/multimodal_vision_prompt_builder.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1142,6 +1280,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/network_security_audit_suite.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/neural_activation_function_visualizer.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1273,6 +1417,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/positional_encoding_rotary_rope_calc.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/prime_factorization_sieve.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -1298,6 +1448,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/prompt_optimizer.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/prompt_version_diff_regression_tester.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1333,6 +1489,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/rag_context_relevance_faithfulness_scorer.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/rag_retrieval_reciprocal_rank_fusion.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/redis_command_builder.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -1346,6 +1514,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/regex_tester.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/reinforcement_learning_dpo_loss_model.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1406,6 +1580,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/security_txt_policy_validator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/self_consistency_majority_vote_eval.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1651,6 +1831,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/speculative_decoding_speedup_model.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/speed_test_ping_estimator.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -1771,7 +1957,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/synthetic_cot_reasoning_synthesizer.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/synthetic_data_csv_generator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/synthetic_dialogue_multiturn_builder.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/synthetic_instruction_evol_instruct_mutator.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1849,6 +2053,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/token_healing_prefix_matcher.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/tokenizer_bpe_merges_simulator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/tree_of_thoughts_branch_evaluator.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/tsv_to_json_stream_normalizer.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -1886,6 +2108,18 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/saas/vector_cosine_math.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/vector_distance_metric_converter.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/saas/vector_quantization_product_quantizer.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
