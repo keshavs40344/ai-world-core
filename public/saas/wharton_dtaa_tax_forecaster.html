@@ -48,14 +48,6 @@
     </script>
     <!-- /SEO BLOCK -->
     
-    <!-- Microsoft Clarity Live Recording -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "ydiazy740a");
-    </script>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen p-4 sm:p-8 selection:bg-indigo-500 selection:text-white">
     <div class="max-w-5xl mx-auto">
@@ -64,12 +56,14 @@
             <div>
                 <div class="flex items-center gap-2 mb-2">
                     <span class="text-[11px] font-mono font-bold text-indigo-400 bg-indigo-950/80 border border-indigo-800/80 px-3 py-1 rounded-full">Sovereign Quantitative Treasury</span>
-                    <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-3 py-1 rounded-full">ENG-TITAN-0007</span>
+                    <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-3 py-1 rounded-full">ENG-TITAN-0011</span>
                 </div>
                 <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Freelance Double Taxation Avoidance (DTAA) & Foreign Tax Credit Forecaster</h1>
                 <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">Cross-border engineers struggle to reconcile IRS Form W-8BEN, Form 67 foreign tax credits, and Indian Section 90/91 deductions.</p>
             </div>
-            
+            <a href="https://github.com/sponsors/keshavs40344" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs px-5 py-3 rounded-xl transition shadow-lg shadow-emerald-900/30">
+                Unlock Pro (₹299.00)
+            </a>
         </header>
 
         <!-- Main Workspace -->
@@ -104,7 +98,21 @@
             </div>
         </div>
 
-        
+        <!-- Paywall Modal -->
+        <div id="paywallModal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 z-50">
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 max-w-md w-full text-center shadow-2xl">
+                <div class="w-12 h-12 bg-indigo-600/20 border border-indigo-500/40 rounded-2xl flex items-center justify-center mx-auto mb-4 text-indigo-400 text-xl font-bold">₹</div>
+                <h3 class="text-lg font-bold text-white mb-2">Sandbox Limit Reached</h3>
+                <p class="text-xs text-slate-400 mb-6">You have completed your complimentary sandbox executions. Unlock unlimited lifetime in-browser execution for ₹299.00.</p>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-6 flex flex-col items-center">
+                    <img src="" alt="UPI QR" class="w-32 h-32 rounded-lg mb-2">
+                    <span class="text-[11px] font-mono text-slate-400"></span>
+                </div>
+                <div class="flex gap-3">
+                    <button onclick="closePaywall()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold py-3 rounded-xl transition">Close</button>
+                    <a href="https://github.com/sponsors/keshavs40344" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-3 rounded-xl transition flex items-center justify-center">Pay ₹299.00</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -141,7 +149,9 @@
                 '</div></div>';
         }
 
-        
+        function closePaywall() {
+            document.getElementById('paywallModal').classList.add('hidden');
+        }
     </script>
 </body>
 </html>

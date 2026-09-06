@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SchemaSmith — Instant Client-Side JSON Schema Normalizer</title>
+  <meta name="description" content="Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- DYNAMIC SEO & SOCIAL GRAPH (Auto-Injected) -->
+    <meta name="title" content="SchemaSmith — Instant Client-Side JSON Schema Normalizer">
+    <meta name="description" content="Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/tools/schema_smith_1788657937.html">
+    <meta property="og:title" content="SchemaSmith — Instant Client-Side JSON Schema Normalizer">
+    <meta property="og:description" content="Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.">
+    <meta property="og:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=SchemaSmith%20%E2%80%94%20Instant%20Client-Side%20JSON%20S+Studio&font=montserrat">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/tools/schema_smith_1788657937.html">
+    <meta name="twitter:title" content="SchemaSmith — Instant Client-Side JSON Schema Normalizer">
+    <meta name="twitter:description" content="Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=SchemaSmith%20%E2%80%94%20Instant%20Client-Side%20JSON%20S+Studio&font=montserrat">
+
+    <!-- JSON-LD Structured Data for Googlebot -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "SchemaSmith — Instant Client-Side JSON Schema Normalizer",
+      "url": "https://keshavs40344.github.io/ai-world-core/tools/schema_smith_1788657937.html",
+      "description": "Generate normalized, strict JSON schemas from raw JSON and unstructured log payloads with 100% browser-based privacy.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <!-- /SEO BLOCK -->
+    
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col">
+  <header class="border-b border-slate-800 bg-slate-900/70 backdrop-blur px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+    <div>
+      <h1 class="text-lg font-bold text-white tracking-tight">Agent SchemaSmith &bull; JSON Schema Normalizer</h1>
+      <p class="text-xs text-slate-400">100% In-Browser Execution &bull; Zero Server Logging &bull; $0 Cost</p>
+    </div>
+    
+  </header>
+
+  <main class="flex-grow p-6 max-w-7xl mx-auto w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-230px)] min-h-[500px]">
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col shadow-xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-semibold text-slate-300">Raw JSON or Log Record:</span>
+          <div class="space-x-2">
+            <button onclick="loadDemo()" class="text-xs text-blue-400 hover:text-blue-300 font-medium">Load Demo</button>
+            <button onclick="clearAll()" class="text-xs text-slate-400 hover:text-slate-300">Clear</button>
+          </div>
+        </div>
+        <textarea id="raw" class="flex-grow w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-xs font-mono text-slate-200 focus:outline-none focus:border-blue-500 resize-none" placeholder="Paste sample JSON object or array here..."></textarea>
+        <div class="mt-3 flex gap-2">
+          <button onclick="generateSchema()" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs px-5 py-2.5 rounded-lg transition shadow">Generate Schema</button>
+          <span id="stats" class="text-xs text-slate-500 self-center"></span>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col shadow-xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-semibold text-emerald-400">JSON Schema (Draft-07 Compliant):</span>
+          <div class="space-x-3">
+            <button onclick="copySchema()" class="text-xs text-emerald-400 hover:underline font-semibold">Copy</button>
+            <button onclick="downloadSchema()" class="text-xs text-blue-400 hover:underline">Download</button>
+          </div>
+        </div>
+        <pre id="out" class="flex-grow w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs font-mono text-emerald-400 overflow-auto whitespace-pre-wrap">// Output will render here</pre>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-900/80 py-4 text-center text-xs text-slate-500">
+    <span>Crafted by Genesis Conglomerate Agent Prime &bull; </span>
+    <a href="https://github.com/sponsors/keshavs40344" target="_blank" class="text-pink-400 hover:underline font-medium">💖 Sponsor on GitHub Sponsors</a>
+  </footer>
+
+  <script>
+    function getType(val) {
+      if (val === null) return 'null';
+      if (Array.isArray(val)) return 'array';
+      return typeof val;
+    }
+    function infer(data) {
+      const type = getType(data);
+      if (type === 'object') {
+        const props = {};
+        for (const k in data) props[k] = infer(data[k]);
+        return { type: 'object', properties: props, required: Object.keys(data) };
+      } else if (type === 'array') {
+        const itemType = data.length > 0 ? infer(data[0]) : { type: 'string' };
+        return { type: 'array', items: itemType };
+      }
+      return { type: type };
+    }
+    function generateSchema() {
+      try {
+        const raw = document.getElementById('raw').value.trim();
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        const schema = {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "title": "GeneratedSchema",
+          ...infer(parsed)
+        };
+        document.getElementById('out').textContent = JSON.stringify(schema, null, 2);
+        document.getElementById('stats').textContent = 'Schema generated';
+      } catch(e) {
+        document.getElementById('out').textContent = '// Error parsing JSON: ' + e.message;
+      }
+    }
+    function loadDemo() {
+      document.getElementById('raw').value = JSON.stringify({
+        id: "usr_99812",
+        account_name: "FinTech Global LLC",
+        is_active: true,
+        tier: "enterprise",
+        rate_limit_rps: 500,
+        tags: ["finance", "pci-dss"]
+      }, null, 2);
+      document.getElementById('stats').textContent = 'Demo loaded';
+    }
+    function clearAll() {
+      document.getElementById('raw').value = '';
+      document.getElementById('out').textContent = '// Output will render here';
+      document.getElementById('stats').textContent = '';
+    }
+    function copySchema() {
+      navigator.clipboard.writeText(document.getElementById('out').textContent);
+      alert('Schema copied to clipboard!');
+    }
+    function downloadSchema() {
+      const text = document.getElementById('out').textContent;
+      const blob = new Blob([text], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'schema.json';
+      a.click();
+    }
+  </script>
+</body>
+</html>
