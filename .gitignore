@@ -74,3 +74,7 @@ vault/secrets/
 *.token
 *.credential
 
+# Autonomous Factory MVP Test Artifacts
+autonomous_factory_mvp/*.db
+autonomous_factory_mvp/test_sandbox/
+
