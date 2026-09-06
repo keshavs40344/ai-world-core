@@ -82,4 +82,5 @@ live_deployments/
 autonomous_world.db
 urls.db
 live_services/
+*.db
 
