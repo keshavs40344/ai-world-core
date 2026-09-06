@@ -4,7 +4,7 @@
 > **Live Portal:** [keshavs40344.github.io/ai-world-core](https://keshavs40344.github.io/ai-world-core)
 
 [![Health](https://img.shields.io/badge/System%20Health-100%25-brightgreen)](https://keshavs40344.github.io/ai-world-core)
-[![Agents](https://img.shields.io/badge/Autonomous%20Agents-0-violet)](https://keshavs40344.github.io/ai-world-core/agents.html)
+[![Agents](https://img.shields.io/badge/Autonomous%20Agents-141-violet)](https://keshavs40344.github.io/ai-world-core/agents.html)
 [![Tools](https://img.shields.io/badge/SaaS%20Tools-50-cyan)](https://keshavs40344.github.io/ai-world-core/tools.html)
 
 ---
@@ -15,7 +15,7 @@ AI World Core is a **fully autonomous software conglomerate** — an always-onli
 
 | Component | Count | Description |
 |-----------|-------|-------------|
-| Autonomous AI Agents | **0** | Python workers across 10 sovereign domains |
+| Autonomous AI Agents | **141** | Python workers across 10 sovereign domains |
 | Client-Side SaaS Tools | **50** | Zero-server, sub-10ms browser utilities |
 | Wire Service (Broadsheet) | **5 Pages** | Autonomous 24x7 news synthesis engine |
 | Database Ledgers | **4** | SQLite/PostgreSQL state machines |
@@ -28,7 +28,7 @@ AI World Core is a **fully autonomous software conglomerate** — an always-onli
 ```
 AI WORLD CORE
 ├── index.html             ← Main hub portal
-├── agents.html            ← 0-agent Centurion registry  
+├── agents.html            ← 141-agent Centurion registry  
 ├── tools.html             ← Full 50-tool catalogue
 ├── dashboard.html         ← SRE vitals cockpit
 ├── auth.html              ← Firebase auth portal
@@ -38,7 +38,7 @@ AI WORLD CORE
 ├── public/
 │   └── saas/              ← 50 HTML tool modules
 ├── genesis/
-│   └── agents/            ← 0 Python agent workers + manifest.json
+│   └── agents/            ← 141 Python agent workers + manifest.json
 ├── vault/
 │   └── sub_agents/        ← 100 signed charter JSONs
 └── db/
@@ -82,4 +82,4 @@ All tools are **100% client-side** — no server, no API calls, no data leakage.
 
 ---
 
-*Last updated: 2026-09-07 02:47 IST — Genesis Mesh v4.2*
+*Last updated: 2026-09-07 02:49 IST — Genesis Mesh v4.2*
