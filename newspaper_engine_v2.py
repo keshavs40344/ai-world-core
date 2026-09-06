@@ -913,6 +913,15 @@ async def autonomous_newsroom_cycle():
                     }
                 }
                 await ws_manager.broadcast(broadcast_payload)
+
+                # Trigger Autonomous Syndication, SEO & Social Distribution
+                try:
+                    import syndication_engine
+                    logger.info(f"Triggering Autonomous Syndication for article {db_article.id}...")
+                    asyncio.create_task(syndication_engine.process_article_syndication(db_article.id, db))
+                except Exception as syn_err:
+                    logger.warning(f"Syndication trigger error: {syn_err}")
+
                 break # Process 1 high-fidelity piece per cycle to maintain pacing
     except Exception as e:
         logger.error(f"Unexpected error during newsroom cycle: {e}", exc_info=True)
