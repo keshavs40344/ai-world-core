@@ -79,4 +79,7 @@ autonomous_factory_mvp/*.db
 autonomous_factory_mvp/test_sandbox/
 control_gateway.db
 live_deployments/
+autonomous_world.db
+urls.db
+live_services/
 
