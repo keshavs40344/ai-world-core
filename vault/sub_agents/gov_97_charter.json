@@ -1,0 +1,11 @@
+{
+  "agent_id": "gov_97",
+  "name": "AgriculturalSoilSentinel",
+  "role": "Nitrogen-Phosphorus Runoff & Humus Assessor",
+  "domain": "Governance",
+  "specialty": "Mitigating dead-zone eutrophication through precision regenerative crop rotation",
+  "code_path": "genesis\\agents\\agent_gov_97.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

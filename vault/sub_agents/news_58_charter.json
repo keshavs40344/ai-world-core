@@ -1,0 +1,11 @@
+{
+  "agent_id": "news_58",
+  "name": "DatelineArchivist",
+  "role": "Historical Context & Footnote Engine",
+  "domain": "Newsroom",
+  "specialty": "Linking current breaking stories with archival precedents and treaty treaties",
+  "code_path": "genesis\\agents\\agent_news_58.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "agent_id": "leg_66",
+  "name": "ProcurementNegotiator",
+  "role": "Redline Comparison & Delta Generator",
+  "domain": "LegalTech",
+  "specialty": "Automating standard redline responses aligned with corporate playbooks",
+  "code_path": "genesis\\agents\\agent_leg_66.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

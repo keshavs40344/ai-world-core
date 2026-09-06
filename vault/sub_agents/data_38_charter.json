@@ -1,0 +1,11 @@
+{
+  "agent_id": "data_38",
+  "name": "ClickHouseStream",
+  "role": "Real-Time Telemetry Rollup Engine",
+  "domain": "DataOps",
+  "specialty": "AggregatingMergeTree schema design and vectorized metric calculation",
+  "code_path": "genesis\\agents\\agent_data_38.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "agent_id": "csec_02",
+  "name": "AegisGuard",
+  "role": "WAF Rule Synthesizer",
+  "domain": "CyberSecurity",
+  "specialty": "Real-time OWASP ModSecurity rule synthesis against zero-day injection attacks",
+  "code_path": "genesis\\agents\\agent_csec_02.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

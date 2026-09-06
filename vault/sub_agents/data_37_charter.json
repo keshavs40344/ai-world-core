@@ -1,0 +1,11 @@
+{
+  "agent_id": "data_37",
+  "name": "CDCStreamer",
+  "role": "Postgres WAL Change-Data-Capture Link",
+  "domain": "DataOps",
+  "specialty": "Real-time logical replication decoding without locking master tables",
+  "code_path": "genesis\\agents\\agent_data_37.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

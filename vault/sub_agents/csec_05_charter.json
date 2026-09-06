@@ -1,0 +1,11 @@
+{
+  "agent_id": "csec_05",
+  "name": "PayloadDissector",
+  "role": "Malicious Payload Sanitizer",
+  "domain": "CyberSecurity",
+  "specialty": "Polyglot buffer overflow and serialization bomb neutralization",
+  "code_path": "genesis\\agents\\agent_csec_05.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

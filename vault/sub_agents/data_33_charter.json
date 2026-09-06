@@ -1,0 +1,11 @@
+{
+  "agent_id": "data_33",
+  "name": "SchemaEvolution",
+  "role": "Zero-Downtime Migration Verifier",
+  "domain": "DataOps",
+  "specialty": "Backward-compatible table alterations and non-locking lock acquisitions",
+  "code_path": "genesis\\agents\\agent_data_33.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

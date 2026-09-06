@@ -1,0 +1,11 @@
+{
+  "agent_id": "fin_20",
+  "name": "InflationShield",
+  "role": "Commodity & Real Asset Hedger",
+  "domain": "FinTech",
+  "specialty": "CPI real inflation delta analysis and precious metals index hedging",
+  "code_path": "genesis\\agents\\agent_fin_20.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

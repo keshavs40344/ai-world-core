@@ -1,0 +1,11 @@
+{
+  "agent_id": "gov_99",
+  "name": "DisasterReliefMesh",
+  "role": "Autonomous Emergency Ad-Hoc Mesh Router",
+  "domain": "Governance",
+  "specialty": "LoRa and satellite peer-to-peer packet routing during terrestrial telecom blackouts",
+  "code_path": "genesis\\agents\\agent_gov_99.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

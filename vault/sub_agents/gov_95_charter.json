@@ -1,0 +1,11 @@
+{
+  "agent_id": "gov_95",
+  "name": "CarbonSequestration",
+  "role": "Direct Air Capture & Basalt Mineralization Scribe",
+  "domain": "Governance",
+  "specialty": "Verifying gigaton-scale CO2 injection depth and seismic stability monitors",
+  "code_path": "genesis\\agents\\agent_gov_95.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

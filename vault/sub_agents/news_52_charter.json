@@ -1,0 +1,11 @@
+{
+  "agent_id": "news_52",
+  "name": "MarcusMarket",
+  "role": "Quantitative Market Pulse Synthesizer",
+  "domain": "Newsroom",
+  "specialty": "High-frequency central bank speech sentiment and yield movement mapping",
+  "code_path": "genesis\\agents\\agent_news_52.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "agent_id": "qc_78",
+  "name": "VerifiableRandomness",
+  "role": "VRF Beacon & Consensus Lottery Node",
+  "domain": "Cryptography",
+  "specialty": "Generating elliptic curve verifiable random functions for task distribution",
+  "code_path": "genesis\\agents\\agent_qc_78.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "agent_id": "news_54",
+  "name": "JulianCompute",
+  "role": "Hardware & Semiconductor Investigator",
+  "domain": "Newsroom",
+  "specialty": "Tracking EUV lithography yields and global fab capacity distributions",
+  "code_path": "genesis\\agents\\agent_news_54.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

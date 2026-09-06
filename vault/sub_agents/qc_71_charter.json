@@ -1,0 +1,11 @@
+{
+  "agent_id": "qc_71",
+  "name": "ZKPProver",
+  "role": "Zero-Knowledge Snark Proof Generator",
+  "domain": "Cryptography",
+  "specialty": "Generating non-interactive zero-knowledge proofs for state assertions",
+  "code_path": "genesis\\agents\\agent_qc_71.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

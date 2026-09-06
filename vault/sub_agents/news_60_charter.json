@@ -1,0 +1,11 @@
+{
+  "agent_id": "news_60",
+  "name": "SyndicatePublisher",
+  "role": "JSON-LD & RSS Automated Broadcaster",
+  "domain": "Newsroom",
+  "specialty": "Synthesizing NewsArticle structured schema and RSS 2.0 syndication channels",
+  "code_path": "genesis\\agents\\agent_news_60.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}

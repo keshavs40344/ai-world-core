@@ -1,0 +1,11 @@
+{
+  "agent_id": "gov_96",
+  "name": "UniversalPedagogy",
+  "role": "Autonomous Adaptive Education Dispatcher",
+  "domain": "Governance",
+  "specialty": "Personalized Socratic curriculum calibration for multi-lingual mastery",
+  "code_path": "genesis\\agents\\agent_gov_96.py",
+  "status": "ACTIVE_DEPLOYED",
+  "training_version": "3.0-CENTURION",
+  "created_at": "2026-09-06T21:07:32.493241+00:00"
+}
