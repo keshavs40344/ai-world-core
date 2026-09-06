@@ -1,0 +1,44 @@
+name: Apex Real-Time Autonomous News Wire
+
+on:
+  schedule:
+    # Runs continuously at high-frequency cadence to ingest official wires & rank on Google News
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ingest-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Ingest Official News & Publish Real-Time Articles
+        env:
+          PYTHONUTF8: "1"
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        run: |
+          python autonomous_news_wire_daemon.py
+
+      - name: Commit and Push Fresh News Dispatches
+        run: |
+          git config --global user.name "Apex Newsroom Bot"
+          git config --global user.email "bot@apex-news-wire.ai"
+          git add public/news/ public/news_wire.html public/news_feed.json db/genesis_state.db
+          if git diff --staged --quiet; then
+            echo "Zero new breaking releases in this cycle."
+          else
+            git commit -m "feat(wire): autonomous official news dispatch published [skip ci]"
+            git push
+          fi
