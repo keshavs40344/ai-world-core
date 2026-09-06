@@ -31,14 +31,22 @@ jobs:
         run: |
           python autonomous_news_wire_daemon.py
 
-      - name: Commit and Push Fresh News Dispatches
+      - name: Advance Civilization State & Run Autonomous Software Factory
+        env:
+          PYTHONUTF8: "1"
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          python civilization_software_factory.py
+          python export_civilization_data.py
+
+      - name: Commit and Push Fresh Dispatches & Civilization State
         run: |
           git config --global user.name "Apex Newsroom Bot"
           git config --global user.email "bot@apex-news-wire.ai"
-          git add public/news/ public/news_wire.html public/news_feed.json db/genesis_state.db
+          git add public/news/ public/news_wire.html public/news_feed.json db/genesis_state.db db/civilization_core.db public/civilization_state.json public/products/
           if git diff --staged --quiet; then
-            echo "Zero new breaking releases in this cycle."
+            echo "Zero new breaking releases or state changes in this cycle."
           else
-            git commit -m "feat(wire): autonomous official news dispatch published [skip ci]"
+            git commit -m "feat(civilization): autonomous news dispatch & software factory cycle [skip ci]"
             git push
           fi

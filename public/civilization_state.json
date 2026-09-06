@@ -1,0 +1,366 @@
+{
+  "world": {
+    "id": "WORLD-GENESIS-PRIME",
+    "name": "Sovereign AI World Core",
+    "epoch_time": 1788717619.3661594,
+    "status": "ACTIVE",
+    "governor_id": "AGENT-GOVERNOR-001",
+    "architect_id": "AGENT-ARCHITECT-001",
+    "total_compute_quota": 100000.0,
+    "used_compute_quota": 0.0,
+    "constitution_hash": "SHA256:CONSTITUTION_IMMUTABLE_FREEDOM_TRUTH_2026",
+    "created_at": "2026-09-06T18:00:19.366104+00:00"
+  },
+  "metrics": {
+    "total_continents": 4,
+    "total_companies": 4,
+    "total_agents": 2,
+    "total_products": 4,
+    "total_valuation_usd": 1870000.0,
+    "total_monthly_revenue_usd": 47500.0,
+    "total_treasury_usd": 165000.0,
+    "system_status": "ACTIVE",
+    "last_tick": 2,
+    "last_updated_epoch": 1788717940.70058
+  },
+  "continents": [
+    {
+      "id": "CONT-01",
+      "world_id": "WORLD-GENESIS-PRIME",
+      "name": "Technosphere Prime",
+      "code": "TECH-PRIME",
+      "specialization": "Deep Infrastructure, LLMs, Compilers, CloudOps",
+      "allocated_budget": 250000.0,
+      "treasury_balance": 50000.0,
+      "created_at": "2026-09-06T18:00:19.366104+00:00"
+    },
+    {
+      "id": "CONT-02",
+      "world_id": "WORLD-GENESIS-PRIME",
+      "name": "FinTech & Capital Vaults",
+      "code": "FIN-VAULT",
+      "specialization": "Algorithmic Treasury, FX Ledger, Tax Optimization",
+      "allocated_budget": 250000.0,
+      "treasury_balance": 50000.0,
+      "created_at": "2026-09-06T18:00:19.366104+00:00"
+    },
+    {
+      "id": "CONT-03",
+      "world_id": "WORLD-GENESIS-PRIME",
+      "name": "CyberSec & Sovereign Guard",
+      "code": "SEC-GUARD",
+      "specialization": "Zero-Trust Defense, PII Stripping, Cryptographic Auditing",
+      "allocated_budget": 250000.0,
+      "treasury_balance": 50000.0,
+      "created_at": "2026-09-06T18:00:19.366104+00:00"
+    },
+    {
+      "id": "CONT-04",
+      "world_id": "WORLD-GENESIS-PRIME",
+      "name": "Global Cognition & Truth Wires",
+      "code": "TRUTH-WIRE",
+      "specialization": "Official News Ingestion, Fact Verification, Autonomous Journalism",
+      "allocated_budget": 250000.0,
+      "treasury_balance": 50000.0,
+      "created_at": "2026-09-06T18:00:19.366104+00:00"
+    }
+  ],
+  "companies": [
+    {
+      "id": "COMP-01",
+      "country_id": "CTRY-01",
+      "name": "Apex Cloud Intelligence Systems",
+      "slug": "apex_cloud_intel",
+      "ticker": "ACIS",
+      "industry": "Cloud Infrastructure & High-Speed Transcoding",
+      "valuation": 500000.0,
+      "treasury_balance": 45000.0,
+      "monthly_revenue": 12000.0,
+      "operating_cost": 450.0,
+      "status": "ACTIVE",
+      "mission_statement": "Building $O(1)$ client-side developer infrastructure, zero-server parsers, and multi-threaded compilation tools.",
+      "created_at": "2026-09-06T18:00:19.366104+00:00"
+    },
+    {
+      "id": "COMP-02",
+      "country_id": "CTRY-02",
+      "name": "Sovereign Ledger & Tax Shield Corp",
+      "slug": "sovereign_ledger_corp",
+      "ticker": "SLTC",
+      "industry": "FinTech & Enterprise Accounting",
+      "valuation": 350000.0,
+      "treasury_balance": 30000.0,
+      "monthly_revenue": 9500.0,
+      "operating_cost": 300.0,
+      "status": "ACTIVE",
+      "mission_statement": "Automating cross-border DTAA taxes, freelance advance calculations, and invoice reconciliation with 0% data leakage.",
+      "created_at": "2026-09-06T18:00:19.366104+00:00"
+    },
+    {
+      "id": "COMP-03",
+      "country_id": "CTRY-03",
+      "name": "LogShield Security & PII Redaction Bureau",
+      "slug": "logshield_security",
+      "ticker": "LSRB",
+      "industry": "CyberSecurity & DevSecOps",
+      "valuation": 420000.0,
+      "treasury_balance": 38000.0,
+      "monthly_revenue": 11000.0,
+      "operating_cost": 280.0,
+      "status": "ACTIVE",
+      "mission_statement": "Real-time automated redaction of API secrets, JWT tokens, and private databases before LLM exposure.",
+      "created_at": "2026-09-06T18:00:19.366104+00:00"
+    },
+    {
+      "id": "COMP-04",
+      "country_id": "CTRY-04",
+      "name": "Apex Global News Wire Agency",
+      "slug": "apex_news_wire_agency",
+      "ticker": "ANWA",
+      "industry": "Autonomous Media & Investigative Journalism",
+      "valuation": 600000.0,
+      "treasury_balance": 52000.0,
+      "monthly_revenue": 15000.0,
+      "operating_cost": 500.0,
+      "status": "ACTIVE",
+      "mission_statement": "Official government and judicial news aggregation, zero-drama fact synthesis, and instant Google News SEO ranking.",
+      "created_at": "2026-09-06T18:00:19.366104+00:00"
+    }
+  ],
+  "agents": [
+    {
+      "id": "AGENT-ARCHITECT-001",
+      "department_id": "DEP-ENG-01",
+      "company_id": "COMP-01",
+      "designation": "Chief AI Architect & Provost",
+      "tier": "CTO",
+      "model_affinity": "groq/compound-mini",
+      "reputation_score": 99.5,
+      "compute_used_tokens": 0,
+      "status": "ONLINE",
+      "skills_json": "[\"Full-Stack Engineering\", \"Zero-Knowledge Sandbox\", \"Python/Rust Compilers\", \"Automated QA Gatekeeping\"]",
+      "system_prompt": "Responsible for software factory pipelines, AST safety inspections, test execution verification, and self-healing.",
+      "created_at": "2026-09-06T18:00:19.366104+00:00"
+    },
+    {
+      "id": "AGENT-GOVERNOR-001",
+      "department_id": "DEP-HQ-01",
+      "company_id": "COMP-01",
+      "designation": "Executive Governor & Chairman",
+      "tier": "GOVERNOR",
+      "model_affinity": "groq/compound-mini",
+      "reputation_score": 99.5,
+      "compute_used_tokens": 0,
+      "status": "ONLINE",
+      "skills_json": "[\"Strategic Oversight\", \"Treasury Governance\", \"Macro Economics\", \"Constitutional Policy\"]",
+      "system_prompt": "Responsible for civilization resource allocation, company incorporation charters, and owner policy enforcement.",
+      "created_at": "2026-09-06T18:00:19.366104+00:00"
+    }
+  ],
+  "products": [
+    {
+      "id": "PROD-967296C7",
+      "company_id": "COMP-01",
+      "name": "KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter",
+      "slug": "kubeguard_yaml_linter",
+      "category": "High-Throughput Web Developer Tool",
+      "version": "v1.0.0",
+      "problem_statement": "Engineers struggle to visual parse and validate Kubernetes YAML manifests offline before kubectl apply crashes clusters.",
+      "prd_json": "{\"title\": \"KubeGuard \\u2014 Offline Kubernetes YAML AST & Security Linter\", \"target_persona\": \"Developers, Accountants, or Security Engineers\", \"core_algorithm\": \"The application loads the YAML manifest into memory, uses the js-yaml library to parse it into a JavaScript object (AST). A recursive traversal inspects security\\u2011relevant fields (e.g., privileged, hostPath, capabilities). Lint warnings are collected and displayed alongside a pretty\\u2011printed JSON representation of the AST. All processing occurs client\\u2011side, ensuring offline operation.\", \"monetization\": \"Open Sovereign Free Tier (Enterprise $29/mo API)\"}",
+      "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/kubeguard_yaml_linter.html",
+      "status": "LIVE_DEPLOYED",
+      "daily_active_users": 0,
+      "health_score": 100.0,
+      "created_at": "2026-09-06T18:01:46.666094+00:00"
+    },
+    {
+      "id": "PROD-D43FD793",
+      "company_id": "COMP-02",
+      "name": "TaxShield LUT & Zero-Rated GST Export Calculator",
+      "slug": "taxshield_lut_gst_calculator",
+      "category": "FinTech & Cross-Border Treasury",
+      "version": "v1.0.0",
+      "problem_statement": "Exporters and software contractors overpay GST and lose export incentives due to complex LUT (Letter of Undertaking) filing calculations.",
+      "prd_json": "{\"title\": \"TaxShield LUT & Zero-Rated GST Export Calculator\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"100% Free Client-Side In-Memory Engine\"}",
+      "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/taxshield_lut_gst_calculator.html",
+      "status": "LIVE_DEPLOYED",
+      "daily_active_users": 0,
+      "health_score": 100.0,
+      "created_at": "2026-09-06T18:01:46.666094+00:00"
+    },
+    {
+      "id": "PROD-F5F8EC61",
+      "company_id": "COMP-03",
+      "name": "CookieShield \u2014 HTTP Header & Session PII Masker",
+      "slug": "cookieshield_header_masker",
+      "category": "Zero-Trust DevSecOps",
+      "version": "v1.0.0",
+      "problem_statement": "Companies leak employee PII and session cookies into Sentry and Datadog crash logs, risking GDPR fines.",
+      "prd_json": "{\"title\": \"CookieShield \\u2014 HTTP Header & Session PII Masker\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"Client-Side Zero Data Storage Studio\"}",
+      "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/cookieshield_header_masker.html",
+      "status": "LIVE_DEPLOYED",
+      "daily_active_users": 0,
+      "health_score": 100.0,
+      "created_at": "2026-09-06T18:01:46.666094+00:00"
+    },
+    {
+      "id": "PROD-4509F9F0",
+      "company_id": "COMP-04",
+      "name": "GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine",
+      "slug": "gazetteverifier_official_factcheck",
+      "category": "Autonomous Investigative Tech",
+      "version": "v1.0.0",
+      "problem_statement": "Public cannot verify whether a breaking political tweet or viral claim matches the official Government Gazette or Press Information Bureau release.",
+      "prd_json": "{\"title\": \"GazetteVerifier \\u2014 Indian Official Gazette Fact-Check Engine\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"Public Good Verified Dispatch\"}",
+      "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/gazetteverifier_official_factcheck.html",
+      "status": "LIVE_DEPLOYED",
+      "daily_active_users": 0,
+      "health_score": 100.0,
+      "created_at": "2026-09-06T18:01:46.666094+00:00"
+    }
+  ],
+  "events": [
+    {
+      "id": 5,
+      "tick": 2,
+      "event_type": "PRODUCT_DEPLOYMENT",
+      "entity_id": "COMP-04",
+      "summary": "Apex Global News Wire Agency successfully synthesized and deployed 'GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine' to the live world.",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788717706.6660895
+    },
+    {
+      "id": 4,
+      "tick": 2,
+      "event_type": "PRODUCT_DEPLOYMENT",
+      "entity_id": "COMP-03",
+      "summary": "LogShield Security & PII Redaction Bureau successfully synthesized and deployed 'CookieShield \u2014 HTTP Header & Session PII Masker' to the live world.",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788717706.6660895
+    },
+    {
+      "id": 3,
+      "tick": 2,
+      "event_type": "PRODUCT_DEPLOYMENT",
+      "entity_id": "COMP-02",
+      "summary": "Sovereign Ledger & Tax Shield Corp successfully synthesized and deployed 'TaxShield LUT & Zero-Rated GST Export Calculator' to the live world.",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788717706.6660895
+    },
+    {
+      "id": 2,
+      "tick": 2,
+      "event_type": "PRODUCT_DEPLOYMENT",
+      "entity_id": "COMP-01",
+      "summary": "Apex Cloud Intelligence Systems successfully synthesized and deployed 'KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter' to the live world.",
+      "causality_chain": null,
+      "severity": "SUCCESS",
+      "timestamp": 1788717706.6660895
+    },
+    {
+      "id": 1,
+      "tick": 1,
+      "event_type": "CIVILIZATION_GENESIS",
+      "entity_id": "WORLD-GENESIS-PRIME",
+      "summary": "Master Blueprint Civilization Engine activated: 4 Continents, 4 Sovereign Companies, and Founding Leadership provisioned.",
+      "causality_chain": null,
+      "severity": "CRITICAL",
+      "timestamp": 1788717619.3661594
+    }
+  ],
+  "transactions": [
+    {
+      "id": "TX-EF03A5AA",
+      "source_entity_type": "WORLD",
+      "source_id": "WORLD-GENESIS-PRIME",
+      "dest_entity_type": "COMPANY",
+      "dest_id": "COMP-04",
+      "amount": 1500.0,
+      "currency": "USD_VIRTUAL",
+      "memo": "R&D Grant allocated for GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine",
+      "timestamp": 1788717706.6660895
+    },
+    {
+      "id": "TX-E04F912F",
+      "source_entity_type": "WORLD",
+      "source_id": "WORLD-GENESIS-PRIME",
+      "dest_entity_type": "COMPANY",
+      "dest_id": "COMP-03",
+      "amount": 1500.0,
+      "currency": "USD_VIRTUAL",
+      "memo": "R&D Grant allocated for CookieShield \u2014 HTTP Header & Session PII Masker",
+      "timestamp": 1788717706.6660895
+    },
+    {
+      "id": "TX-9EC2909E",
+      "source_entity_type": "WORLD",
+      "source_id": "WORLD-GENESIS-PRIME",
+      "dest_entity_type": "COMPANY",
+      "dest_id": "COMP-01",
+      "amount": 1500.0,
+      "currency": "USD_VIRTUAL",
+      "memo": "R&D Grant allocated for KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter",
+      "timestamp": 1788717706.6660895
+    },
+    {
+      "id": "TX-0102D750",
+      "source_entity_type": "WORLD",
+      "source_id": "WORLD-GENESIS-PRIME",
+      "dest_entity_type": "COMPANY",
+      "dest_id": "COMP-02",
+      "amount": 1500.0,
+      "currency": "USD_VIRTUAL",
+      "memo": "R&D Grant allocated for TaxShield LUT & Zero-Rated GST Export Calculator",
+      "timestamp": 1788717706.6660895
+    }
+  ],
+  "test_runs": [
+    {
+      "id": "TEST-CBE6BF0C",
+      "product_id": "PROD-F5F8EC61",
+      "test_type": "DOM_AND_CLIENT_AST_CHECK",
+      "exit_code": 0,
+      "stdout": "HTML Sanity: DOCTYPE=True, </html>=True, ScriptEngine=True",
+      "passed": 1,
+      "duration_ms": 0.14,
+      "executed_by_agent_id": "AGENT-ARCHITECT-001",
+      "created_at": "2026-09-06T18:01:46.666094+00:00"
+    },
+    {
+      "id": "TEST-BCFE458F",
+      "product_id": "PROD-967296C7",
+      "test_type": "DOM_AND_CLIENT_AST_CHECK",
+      "exit_code": 0,
+      "stdout": "HTML Sanity: DOCTYPE=True, </html>=True, ScriptEngine=True",
+      "passed": 1,
+      "duration_ms": 0.18,
+      "executed_by_agent_id": "AGENT-ARCHITECT-001",
+      "created_at": "2026-09-06T18:01:46.666094+00:00"
+    },
+    {
+      "id": "TEST-0602830F",
+      "product_id": "PROD-4509F9F0",
+      "test_type": "DOM_AND_CLIENT_AST_CHECK",
+      "exit_code": 0,
+      "stdout": "HTML Sanity: DOCTYPE=True, </html>=True, ScriptEngine=True",
+      "passed": 1,
+      "duration_ms": 0.12,
+      "executed_by_agent_id": "AGENT-ARCHITECT-001",
+      "created_at": "2026-09-06T18:01:46.666094+00:00"
+    },
+    {
+      "id": "TEST-01872327",
+      "product_id": "PROD-D43FD793",
+      "test_type": "DOM_AND_CLIENT_AST_CHECK",
+      "exit_code": 0,
+      "stdout": "HTML Sanity: DOCTYPE=True, </html>=True, ScriptEngine=True",
+      "passed": 1,
+      "duration_ms": 0.21,
+      "executed_by_agent_id": "AGENT-ARCHITECT-001",
+      "created_at": "2026-09-06T18:01:46.666094+00:00"
+    }
+  ]
+}

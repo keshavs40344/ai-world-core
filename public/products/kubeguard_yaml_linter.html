@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang='en' class='dark'>
+<head>
+<meta charset='UTF-8'>
+<title>KubeGuard — Offline Kubernetes YAML AST & Security Linter</title>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<script src='https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js'></script>
+<script src='https://cdn.tailwindcss.com'></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          background: '#09090b',
+          text: '#f4f4f5',
+          accent: '#10b981'
+        }
+      }
+    }
+  }
+</script>
+<script type='application/ld+json'>
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "KubeGuard",
+  "description": "Offline Kubernetes YAML AST & Security Linter",
+  "url": "https://example.com/kubeguard",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<style>
+  body { background-color: #09090b; color: #f4f4f5; }
+  .accent { color: #10b981; }
+  .btn { @apply bg-emerald-500 text-white py-2 px-4 rounded hover:bg-emerald-600; }
+</style>
+</head>
+<body class='p-6'>
+<h1 class='text-2xl font-bold mb-4 accent'>KubeGuard — Offline Kubernetes YAML AST & Security Linter</h1>
+<div class='flex flex-col md:flex-row gap-4'>
+  <textarea id='yamlInput' class='flex-1 w-full h-64 p-2 bg-gray-800 text-zinc-100 rounded' placeholder='Paste your Kubernetes YAML manifest here...'></textarea>
+  <div class='flex flex-col gap-2'>
+    <button id='loadSample' class='btn'>Load Sample</button>
+    <button id='analyzeBtn' class='btn'>Analyze</button>
+    <button id='copyBtn' class='btn'>Copy Output</button>
+  </div>
+</div>
+<h2 class='mt-4 text-xl font-semibold accent'>Analysis Result</h2>
+<pre id='output' class='bg-gray-900 p-4 rounded overflow-auto h-64 text-zinc-100'></pre>
+
+<script>
+  const sampleYAML = `apiVersion: v1
+kind: Pod
+metadata:
+  name: insecure-pod
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      securityContext:
+        privileged: true
+  volumes:
+    - name: host-volume
+      hostPath:
+        path: /var/run/docker.sock`;
+
+  document.getElementById('loadSample').addEventListener('click', () => {
+    document.getElementById('yamlInput').value = sampleYAML;
+  });
+
+  function lintAST(ast) {
+    const warnings = [];
+    function traverse(node) {
+      if (Array.isArray(node)) {
+        node.forEach(traverse);
+      } else if (node && typeof node === 'object') {
+        if (node.privileged === true) {
+          warnings.push('Container runs as privileged.');
+        }
+        if (node.hostPath) {
+          warnings.push('Pod uses hostPath volume, which may be unsafe.');
+        }
+        Object.values(node).forEach(traverse);
+      }
+    }
+    traverse(ast);
+    return warnings;
+  }
+
+  document.getElementById('analyzeBtn').addEventListener('click', () => {
+    const yamlText = document.getElementById('yamlInput').value;
+    let result = '';
+    try {
+      const doc = jsyaml.load(yamlText);
+      const ast = JSON.stringify(doc, null, 2);
+      const warnings = lintAST(doc);
+      result += 'AST (JSON):\n' + ast + '\n\n';
+      if (warnings.length) {
+        result += '⚠️ Warnings:\n' + warnings.map(w => '- ' + w).join('\n');
+      } else {
+        result += '✅ No security warnings detected.';
+      }
+    } catch (e) {
+      result = 'Error parsing YAML: ' + e.message;
+    }
+    document.getElementById('output').textContent = result;
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', () => {
+    const output = document.getElementById('output').textContent;
+    navigator.clipboard.writeText(output).then(() => {
+      alert('Output copied to clipboard.');
+    });
+  });
+</script>
+</body>
+</html>

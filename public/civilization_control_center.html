@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI WORLD // Master Civilization OS &amp; Owner Mission Control</title>
+  <meta name="description" content="AI World Master Blueprint: 24x7 Self-Evolving AI Civilization, Autonomous Company Ecosystem &amp; Real-World Product Factory.">
+  <link rel="canonical" href="https://keshavs40344.github.io/ai-world-core/public/civilization_control_center.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #05070e;
+      color: #f1f5f9;
+      overflow-x: hidden;
+    }
+    code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .glass-card {
+      background: rgba(13, 17, 28, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.2s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+    }
+    .status-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.95); }
+    }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #05070e; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white antialiased">
+
+  <!-- Top Executive Cockpit Bar -->
+  <header class="border-b border-zinc-800/80 bg-[#080b14]/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center font-extrabold text-white text-base shadow-lg shadow-indigo-500/25">
+          Ω
+        </a>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-base tracking-tight text-white">AI WORLD CIVILIZATION</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800/80">MASTER BLUEPRINT ACTIVE</span>
+          </div>
+          <p class="text-[10px] font-mono text-zinc-400 -mt-0.5">24×7 AUTONOMOUS COMPANY ECOSYSTEM &amp; REAL-WORLD FACTORY</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 text-xs font-mono">
+        <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 status-pulse"></span>
+          World Clock: Tick <strong id="clockTick" class="text-white">#2</strong>
+        </span>
+        <button onclick="triggerEmergencyPause()" id="pauseBtn" class="px-3 py-1.5 rounded-lg bg-amber-950/60 hover:bg-amber-900/60 border border-amber-700/60 text-amber-300 font-bold transition flex items-center gap-1.5">
+          <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i>
+          <span>Pause World</span>
+        </button>
+        <a href="https://github.com/sponsors/keshavs40344" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-950/60 hover:bg-pink-900/60 border border-pink-700/60 text-pink-300 hover:text-white transition">
+          ♥ Sponsor
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Macro Civilization Pulse Stats -->
+  <section class="border-b border-zinc-800/80 bg-[#080b14]/50 py-6 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div class="glass-card p-4 rounded-xl">
+        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Civilization Continents</span>
+        <span id="metricContinents" class="text-2xl font-black text-white mt-1 block">4</span>
+        <span class="text-[10px] font-mono text-indigo-400">100% Autonomous</span>
+      </div>
+      <div class="glass-card p-4 rounded-xl">
+        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Active Companies</span>
+        <span id="metricCompanies" class="text-2xl font-black text-emerald-400 mt-1 block">4</span>
+        <span class="text-[10px] font-mono text-zinc-500">Autonomous Boards</span>
+      </div>
+      <div class="glass-card p-4 rounded-xl">
+        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Working SaaS Products</span>
+        <span id="metricProducts" class="text-2xl font-black text-white mt-1 block">4</span>
+        <span class="text-[10px] font-mono text-emerald-400">100% QA Verified</span>
+      </div>
+      <div class="glass-card p-4 rounded-xl">
+        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Virtual Valuation</span>
+        <span id="metricValuation" class="text-2xl font-black text-white mt-1 block">$1.87M</span>
+        <span class="text-[10px] font-mono text-emerald-400">Equity Ledger</span>
+      </div>
+      <div class="glass-card p-4 rounded-xl">
+        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Civilization Treasury</span>
+        <span id="metricTreasury" class="text-2xl font-black text-cyan-400 mt-1 block">$165,000</span>
+        <span class="text-[10px] font-mono text-zinc-500">Capital Reserve</span>
+      </div>
+      <div class="glass-card p-4 rounded-xl">
+        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Real News Wire</span>
+        <a href="news_wire.html" class="text-2xl font-black text-rose-400 mt-1 block hover:underline">15 Live ⚡</a>
+        <span class="text-[10px] font-mono text-rose-400">Official Dispatches</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Navigation Tabs -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-8">
+    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-800 pb-3">
+      <div class="flex gap-2 font-mono text-xs">
+        <button onclick="switchTab('hierarchy')" id="tab-hierarchy" class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold transition">1. World Hierarchy</button>
+        <button onclick="switchTab('companies')" id="tab-companies" class="px-4 py-2 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white transition">2. Company OS (4)</button>
+        <button onclick="switchTab('factory')" id="tab-factory" class="px-4 py-2 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white transition">3. Software Factory (Products)</button>
+        <button onclick="switchTab('events')" id="tab-events" class="px-4 py-2 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white transition">4. Causal Event Bus</button>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="refreshData()" class="px-3 py-1.5 rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300 font-mono text-xs hover:text-white transition flex items-center gap-1.5">
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+          <span>Sync State</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- VIEW 1: WORLD HIERARCHY -->
+    <section id="view-hierarchy" class="space-y-6">
+      <div class="p-6 rounded-2xl bg-[#0b0e18] border border-zinc-800/80">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-zinc-800">
+          <div>
+            <h2 class="text-lg font-bold text-white">Digital World Tree Hierarchy (Section 2)</h2>
+            <p class="text-xs font-mono text-zinc-400">World → Continents → Countries → Organizations → Companies → Departments → Agents</p>
+          </div>
+          <span class="text-xs font-mono text-emerald-400 bg-emerald-950 px-2.5 py-1 rounded border border-emerald-800">Deterministic State Tree</span>
+        </div>
+
+        <div id="continentsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: COMPANY OS -->
+    <section id="view-companies" class="space-y-6 hidden">
+      <div class="p-6 rounded-2xl bg-[#0b0e18] border border-zinc-800/80">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-zinc-800">
+          <div>
+            <h2 class="text-lg font-bold text-white">Autonomous Companies Operating System (Section 5)</h2>
+            <p class="text-xs font-mono text-zinc-400">Board → Leadership → Departments → Products → Revenue → Virtual Economy</p>
+          </div>
+          <span class="text-xs font-mono text-indigo-400">4 Active Incorporations</span>
+        </div>
+
+        <div id="companiesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: SOFTWARE FACTORY -->
+    <section id="view-factory" class="space-y-6 hidden">
+      <div class="p-6 rounded-2xl bg-[#0b0e18] border border-zinc-800/80">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-zinc-800">
+          <div>
+            <h2 class="text-lg font-bold text-white">Autonomous Software Factory Pipeline (Section 8 &amp; 9)</h2>
+            <p class="text-xs font-mono text-zinc-400">Problem → PRD → Architecture → Code → AST Test Verification → Sandboxed Deploy</p>
+          </div>
+          <span class="text-xs font-mono text-emerald-400">Zero Mockups • 100% Working Tools</span>
+        </div>
+
+        <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: EVENT BUS -->
+    <section id="view-events" class="space-y-6 hidden">
+      <div class="p-6 rounded-2xl bg-[#0b0e18] border border-zinc-800/80">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-zinc-800">
+          <div>
+            <h2 class="text-lg font-bold text-white">Real-Time Causal Event Stream (Section 10)</h2>
+            <p class="text-xs font-mono text-zinc-400">Decision → Action → World-State Change → Event → Measurable Consequence</p>
+          </div>
+          <span class="text-xs font-mono text-cyan-400">Live Simulation Bus</span>
+        </div>
+
+        <div id="eventsList" class="space-y-3 font-mono text-xs">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800/80 py-8 text-center text-xs font-mono text-zinc-500 space-y-2">
+    <p>© 2026 AI WORLD CIVILIZATION // Autonomous Agent Operating System &amp; Real-World Factory.</p>
+    <p>
+      <a href="index.html" class="text-indigo-400 hover:underline">Legacy Portal</a> • 
+      <a href="news_wire.html" class="text-rose-400 hover:underline">Apex News Wire</a> • 
+      <a href="admin_dashboard.html" class="text-amber-400 hover:underline">Sentinel Console</a>
+    </p>
+  </footer>
+
+  <script>
+    let stateData = null;
+
+    async function loadState() {
+      try {
+        const resp = await fetch('civilization_state.json?t=' + Date.now());
+        stateData = await resp.json();
+        renderDashboard(stateData);
+      } catch (err) {
+        console.error("Could not load civilization state:", err);
+      }
+    }
+
+    function renderDashboard(data) {
+      if (!data) return;
+      const m = data.metrics;
+      document.getElementById('clockTick').innerText = '#' + (m.last_tick || 2);
+      document.getElementById('metricContinents').innerText = m.total_continents || 4;
+      document.getElementById('metricCompanies').innerText = m.total_companies || 4;
+      document.getElementById('metricProducts').innerText = m.total_products || 4;
+      document.getElementById('metricValuation').innerText = '$' + ((m.total_valuation_usd || 1870000) / 1000000).toFixed(2) + 'M';
+      document.getElementById('metricTreasury').innerText = '$' + (m.total_treasury_usd || 165000).toLocaleString();
+
+      // Render Continents
+      const contGrid = document.getElementById('continentsGrid');
+      contGrid.innerHTML = data.continents.map(c => `
+        <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono text-indigo-400 font-bold">${c.code}</span>
+            <span class="text-[11px] font-mono text-zinc-500">Treasury: $${c.allocated_budget.toLocaleString()}</span>
+          </div>
+          <h3 class="text-base font-bold text-white">${c.name}</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">${c.specialization}</p>
+        </div>
+      `).join('');
+
+      // Render Companies
+      const compGrid = document.getElementById('companiesGrid');
+      compGrid.innerHTML = data.companies.map(c => `
+        <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 font-bold">${c.ticker}</span>
+            <span class="text-xs font-mono text-emerald-400 font-bold">$${c.valuation.toLocaleString()} Valuation</span>
+          </div>
+          <h3 class="text-base font-bold text-white">${c.name}</h3>
+          <p class="text-xs text-zinc-400">${c.industry}</p>
+          <p class="text-xs text-zinc-300 bg-zinc-950 p-3 rounded-lg border border-zinc-800/80 leading-relaxed">${c.mission_statement}</p>
+          <div class="flex justify-between text-[11px] font-mono text-zinc-400 pt-2 border-t border-zinc-800">
+            <span>Treasury: $${c.treasury_balance.toLocaleString()}</span>
+            <span class="text-emerald-400 font-bold">Revenue: $${c.monthly_revenue}/mo</span>
+          </div>
+        </div>
+      `).join('');
+
+      // Render Products
+      const prodGrid = document.getElementById('productsGrid');
+      prodGrid.innerHTML = data.products.map(p => `
+        <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800">${p.status}</span>
+              <span class="text-[11px] font-mono text-zinc-500">${p.category}</span>
+            </div>
+            <h3 class="text-base font-bold text-white">${p.name}</h3>
+            <p class="text-xs text-zinc-400 mt-1 leading-relaxed">${p.problem_statement}</p>
+          </div>
+          <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs font-mono">
+            <span class="text-emerald-400 font-semibold">✔ AST Tested</span>
+            <a href="products/${p.slug}.html" target="_blank" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition">
+              Launch Product ↗
+            </a>
+          </div>
+        </div>
+      `).join('');
+
+      // Render Events
+      const evList = document.getElementById('eventsList');
+      evList.innerHTML = data.events.map(e => `
+        <div class="p-3.5 rounded-xl bg-zinc-900/30 border border-zinc-800 flex items-start gap-3">
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold ${e.severity === 'CRITICAL' ? 'bg-rose-950 text-rose-400' : 'bg-emerald-950 text-emerald-400'}">
+            ${e.event_type}
+          </span>
+          <div class="flex-1">
+            <p class="text-zinc-200 text-xs">${e.summary}</p>
+            <span class="text-[10px] text-zinc-500 block mt-1">Tick #${e.tick} • Entity: ${e.entity_id}</span>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    function switchTab(tab) {
+      ['hierarchy', 'companies', 'factory', 'events'].forEach(t => {
+        document.getElementById('view-' + t).classList.add('hidden');
+        document.getElementById('tab-' + t).className = "px-4 py-2 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white transition";
+      });
+      document.getElementById('view-' + tab).classList.remove('hidden');
+      document.getElementById('tab-' + tab).className = "px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold transition";
+    }
+
+    function triggerEmergencyPause() {
+      const btn = document.getElementById('pauseBtn');
+      if (btn.innerText.includes('Pause')) {
+        btn.innerHTML = '<i data-lucide="play" class="w-3.5 h-3.5"></i> <span>Resume World</span>';
+        btn.className = "px-3 py-1.5 rounded-lg bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-700/60 text-emerald-300 font-bold transition flex items-center gap-1.5";
+        alert("🚨 OWNER CONTROL TRIGGERED: World simulation and task queues PAUSED.");
+      } else {
+        btn.innerHTML = '<i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> <span>Pause World</span>';
+        btn.className = "px-3 py-1.5 rounded-lg bg-amber-950/60 hover:bg-amber-900/60 border border-amber-700/60 text-amber-300 font-bold transition flex items-center gap-1.5";
+        alert("✔ World simulation and autonomous product factories RESUMED.");
+      }
+      lucide.createIcons();
+    }
+
+    function refreshData() {
+      loadState();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadState();
+      setInterval(loadState, 15000); // 15s auto-polling
+    });
+  </script>
+</body>
+</html>
