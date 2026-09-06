@@ -775,6 +775,13 @@ async def autonomous_newsroom_cycle():
         db.add(telem)
         db.commit()
 
+        # Record LLM Compute expense into Monetization Ledger
+        try:
+            from monetization_engine import log_compute_expense
+            log_compute_expense(simulated_tokens, "gpt-4o-mini", f"Autonomous Newsroom Cycle #{cycle_idx}")
+        except Exception:
+            pass
+
         # Update In-Memory State
         async with state.lock:
             state.total_articles += published_count
@@ -831,6 +838,13 @@ app = FastAPI(
     description="Ultra-Premium Autonomous 24x7 Broadsheet Newspaper & Wire Platform",
     version="2.0.0"
 )
+
+# Mount Monetization, API Metering & Ledger Engine
+try:
+    from monetization_engine import mount_monetization_engine, log_compute_expense
+    mount_monetization_engine(app)
+except Exception as e:
+    logger.warning(f"Could not mount monetization engine: {e}")
 
 @app.on_event("startup")
 async def on_startup():
@@ -1128,7 +1142,7 @@ ULTRA_BROADSHEET_HTML = '''<!DOCTYPE html>
         <button onclick="closeOwnerModal()" class="text-gray-400 hover:text-white text-lg">&times;</button>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+      <div class="grid grid-cols-2 sm:grid-cols-6 gap-3 mb-6">
         <div class="bg-gray-800 p-3 rounded">
           <div class="text-gray-400 text-[10px]">Newsroom State</div>
           <div id="modal-state" class="text-base font-bold text-emerald-400">ACTIVE</div>
@@ -1142,8 +1156,16 @@ ULTRA_BROADSHEET_HTML = '''<!DOCTYPE html>
           <div id="modal-quarantined" class="text-base font-bold text-amber-400">0</div>
         </div>
         <div class="bg-gray-800 p-3 rounded">
-          <div class="text-gray-400 text-[10px]">Simulated Spend</div>
-          <div id="modal-spend" class="text-base font-bold text-cyan-400">$0.00</div>
+          <div class="text-gray-400 text-[10px]">Compute Burn</div>
+          <div id="modal-spend" class="text-base font-bold text-rose-400">$0.00</div>
+        </div>
+        <div class="bg-gray-800 p-3 rounded">
+          <div class="text-gray-400 text-[10px]">Platform Revenue</div>
+          <div id="modal-revenue" class="text-base font-bold text-emerald-400">$0.00</div>
+        </div>
+        <div class="bg-gray-800 p-3 rounded">
+          <div class="text-gray-400 text-[10px]">Net Operating Profit</div>
+          <div id="modal-profit" class="text-base font-bold text-cyan-400">$0.00</div>
         </div>
       </div>
 
@@ -1383,19 +1405,33 @@ ULTRA_BROADSHEET_HTML = '''<!DOCTYPE html>
             </div>
           </div>
 
-          <div class="font-body text-base sm:text-lg leading-relaxed text-ink space-y-4">
+          <div id="article-body-wrapper" class="font-body text-base sm:text-lg leading-relaxed text-ink space-y-4">
             <p class="drop-cap">${art.lead_paragraph}</p>
-            <h3 class="font-masthead text-base font-bold uppercase text-ink pt-4 border-t border-bordercol">Historical & Technical Background</h3>
-            <p>${art.background_context}</p>
-            ${timelineHtml}
-            <h3 class="font-masthead text-base font-bold uppercase text-ink pt-4 border-t border-bordercol">Strategic Consequence & Market Assessment</h3>
-            <p>${art.impact_assessment}</p>
+            <div id="metered-deep-dive" class="space-y-4">
+              <h3 class="font-masthead text-base font-bold uppercase text-ink pt-4 border-t border-bordercol">Historical & Technical Background</h3>
+              <p>${art.background_context}</p>
+              ${timelineHtml}
+              <h3 class="font-masthead text-base font-bold uppercase text-ink pt-4 border-t border-bordercol">Strategic Consequence & Market Assessment</h3>
+              <p>${art.impact_assessment}</p>
+            </div>
+            <div id="meter-paywall-slot"></div>
           </div>
 
           ${sourcesHtml}
         </div>
       `;
       document.getElementById('article-detail-modal').classList.remove('hidden');
+
+      // Asynchronously evaluate reader soft paywall meter
+      fetch(`/api/v1/reader/meter-check?article_id=${encodeURIComponent(art.article_id)}`)
+        .then(r => r.json())
+        .then(meter => {
+          if (!meter.access_granted && meter.inline_card_html) {
+            document.getElementById('metered-deep-dive').classList.add('hidden');
+            document.getElementById('meter-paywall-slot').innerHTML = meter.inline_card_html;
+          }
+        })
+        .catch(err => console.debug('Meter check skipped:', err));
     }
 
     function closeArticleModal() {
@@ -1414,6 +1450,18 @@ ULTRA_BROADSHEET_HTML = '''<!DOCTYPE html>
           document.getElementById('modal-quarantined').textContent = t.total_quarantined;
           document.getElementById('modal-spend').textContent = `$${t.total_spend_usd.toFixed(4)}`;
           document.getElementById('pause-toggle-btn').textContent = t.is_paused ? 'RESUME NEWSROOM' : 'PAUSE NEWSROOM';
+        }
+
+        // Fetch Financials from Monetization Engine
+        const finRes = await fetch('/api/v1/owner/financials');
+        if (finRes.ok) {
+          const fin = await finRes.json();
+          if (document.getElementById('modal-revenue')) {
+            document.getElementById('modal-revenue').textContent = `$${fin.total_revenue_usd.toFixed(2)}`;
+          }
+          if (document.getElementById('modal-profit')) {
+            document.getElementById('modal-profit').textContent = `$${fin.net_operating_profit_usd.toFixed(2)} (${fin.operating_margin_pct}%)`;
+          }
         }
       } catch (err) {
         console.error('Failed to fetch telemetry:', err);
