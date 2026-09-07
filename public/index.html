@@ -417,8 +417,23 @@
 
 
         <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto font-sans leading-relaxed">
-          No sign-ups, no monthly fees, and zero cloud uploads. Your documents, photos, and code are processed directly inside your browser hardware using WebAssembly and modern Web APIs.
+          Sovereign developer utilities, FinTech engines, and DevSecOps tools. Process data directly inside your browser hardware with zero cloud tracking, or create a free account to sync your private workspaces across devices.
         </p>
+
+        <!-- Primary Action CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="GenesisAuth.openModal('register')" class="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-slate-950 font-bold text-sm shadow-lg shadow-emerald-500/25 transition inline-flex items-center gap-2 group cursor-pointer">
+            <span>Create Free Account</span>
+            <span class="group-hover:translate-x-0.5 transition-transform text-xs">→</span>
+          </button>
+          <a href="auth.html?mode=register" class="px-5 py-3 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-slate-500 text-slate-200 hover:text-white font-semibold text-sm transition inline-flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+            <span>Cloud Verified Auth</span>
+          </a>
+          <a href="#catalogue" class="px-5 py-3 rounded-xl bg-slate-900/40 hover:bg-slate-800/60 border border-white/5 hover:border-white/10 text-slate-400 hover:text-slate-200 font-medium text-sm transition">
+            Explore 50 Tools
+          </a>
+        </div>
 
 
 
@@ -2167,15 +2182,10 @@
     <script type="module">
 
       import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-
       import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, GithubAuthProvider,
-
-               createUserWithEmailAndPassword, signInWithEmailAndPassword }
-
+               createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile }
         from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
       import { getFirestore, doc, setDoc, serverTimestamp }
-
         from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 
@@ -2552,25 +2562,18 @@
 
 
       // 7. Email Registration
-
-      window.handleModularEmailRegister = async function(email, pass) {
-
+      window.handleModularEmailRegister = async function(email, pass, name) {
         try {
-
           var cred = await createUserWithEmailAndPassword(auth, email, pass);
-
+          if (name && cred.user) {
+            await updateProfile(cred.user, { displayName: name }).catch(function(){});
+          }
           captureAndSaveUserData(cred.user).catch(function(){});
-
           var s = _applySession(cred.user, "password");
-
           return { success: true, user: s };
-
         } catch (err) {
-
           return { success: false, msg: err.message };
-
         }
-
       };
 
 

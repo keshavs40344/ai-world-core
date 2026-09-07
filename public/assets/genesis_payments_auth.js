@@ -319,71 +319,42 @@
 
 
         updateNavbarAuth: function() {
-
             const authContainer = document.getElementById("genesisAuthWidget");
-
             if (!authContainer) return;
 
-
-
             const user = this.getCurrentUser();
-
             if (user) {
-
                 authContainer.innerHTML = `
-
                     <div class="flex items-center gap-2">
-
                         <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-mono">
-
                             <span class="w-5 h-5 rounded-full bg-emerald-500 text-slate-950 font-black flex items-center justify-center text-[10px]">
-
                                 ${user.avatar || 'Ω'}
-
                             </span>
-
                             <span class="text-white font-bold hidden sm:inline max-w-[120px] truncate">${user.displayName || user.email.split('@')[0]}</span>
-
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-
                             <button onclick="GenesisAuth.logout()" title="Logout" class="text-slate-500 hover:text-rose-400 text-xs ml-1 transition">✕</button>
-
                         </div>
-
                         <button onclick="GenesisDonation.open()" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-300 hover:text-white px-3 py-1.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 transition font-mono">
-
                             <span>⚡</span>
-
                             <span>Back R&amp;D</span>
-
                         </button>
-
                     </div>
-
                 `;
-
             } else {
-
                 authContainer.innerHTML = `
-
                     <div class="flex items-center gap-2">
-
-                        <a href="auth.html" class="text-xs font-semibold text-slate-200 hover:text-white px-3.5 py-1.5 rounded-xl border border-slate-700 hover:border-slate-500 bg-slate-900/80 transition font-sans inline-flex items-center">Sign In</a>
-
-                        <button onclick="GenesisDonation.open()" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-300 hover:text-white px-3 py-1.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 transition font-mono">
-
-                            <span>⚡</span>
-
-                            <span>Back R&amp;D</span>
-
+                        <button onclick="GenesisAuth.openModal('login')" class="text-xs font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-xl hover:bg-slate-800/80 transition font-sans inline-flex items-center">Log In</button>
+                        <button onclick="GenesisAuth.openModal('register')" class="text-xs font-bold text-slate-950 hover:text-black px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 shadow-md shadow-emerald-500/20 transition font-sans inline-flex items-center gap-1.5 group">
+                            <span>Sign Up Free</span>
+                            <span class="group-hover:translate-x-0.5 transition-transform text-[11px]">→</span>
                         </button>
-
+                        <button onclick="GenesisDonation.open()" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-300 hover:text-white px-3 py-1.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 transition font-mono">
+                            <span>⚡</span>
+                            <span>Back R&amp;D</span>
+                        </button>
                     </div>
-
                 `;
-
             }
-
         },
 
 
@@ -419,61 +390,38 @@
 
 
         switchModalTab: function(mode) {
-
             const isLogin = mode === 'login';
-
             const tabLogin = document.getElementById("authTabLogin");
-
             const tabRegister = document.getElementById("authTabRegister");
-
             const nameField = document.getElementById("authNameContainer");
-
+            const confirmField = document.getElementById("authConfirmPassContainer");
             const submitBtn = document.getElementById("authSubmitBtn");
-
             const modalTitle = document.getElementById("authModalTitle");
-
             const togglePrompt = document.getElementById("authTogglePrompt");
-
-
+            const errBox = document.getElementById("authModalError");
 
             if (!tabLogin) return;
-
-
+            if (errBox) { errBox.classList.add("hidden"); errBox.innerText = ""; }
 
             if (isLogin) {
-
                 tabLogin.className = "flex-1 py-2 text-xs font-bold text-white border-b-2 border-emerald-500 transition";
-
                 tabRegister.className = "flex-1 py-2 text-xs font-medium text-slate-400 hover:text-white transition";
-
-                nameField.classList.add("hidden");
-
-                submitBtn.innerText = "Sign In to Workspace";
-
-                modalTitle.innerText = "Welcome Back";
-
-                togglePrompt.innerHTML = `Don't have an account? <button onclick="GenesisAuth.switchModalTab('register')" class="text-emerald-400 hover:underline font-bold">Create one free</button>`;
-
+                if (nameField) nameField.classList.add("hidden");
+                if (confirmField) confirmField.classList.add("hidden");
+                if (submitBtn) submitBtn.innerText = "Sign In to Workspace";
+                if (modalTitle) modalTitle.innerText = "Welcome Back";
+                if (togglePrompt) togglePrompt.innerHTML = `Don't have an account? <button onclick="GenesisAuth.switchModalTab('register')" class="text-emerald-400 hover:underline font-bold">Create one free</button>`;
                 document.getElementById("authForm").setAttribute("data-mode", "login");
-
             } else {
-
                 tabLogin.className = "flex-1 py-2 text-xs font-medium text-slate-400 hover:text-white transition";
-
                 tabRegister.className = "flex-1 py-2 text-xs font-bold text-white border-b-2 border-emerald-500 transition";
-
-                nameField.classList.remove("hidden");
-
-                submitBtn.innerText = "Create Free Account";
-
-                modalTitle.innerText = "Create Sovereign Account";
-
-                togglePrompt.innerHTML = `Already have an account? <button onclick="GenesisAuth.switchModalTab('login')" class="text-emerald-400 hover:underline font-bold">Sign In</button>`;
-
+                if (nameField) nameField.classList.remove("hidden");
+                if (confirmField) confirmField.classList.remove("hidden");
+                if (submitBtn) submitBtn.innerText = "Create Free Account";
+                if (modalTitle) modalTitle.innerText = "Create Free Sovereign Account";
+                if (togglePrompt) togglePrompt.innerHTML = `Already have an account? <button onclick="GenesisAuth.switchModalTab('login')" class="text-emerald-400 hover:underline font-bold">Sign In</button>`;
                 document.getElementById("authForm").setAttribute("data-mode", "register");
-
             }
-
         },
 
 
@@ -576,40 +524,34 @@
 
 
 
+                    <!-- Error Alert Banner -->
+                    <div id="authModalError" class="hidden mb-3 p-3 rounded-xl bg-rose-950/80 border border-rose-800 text-rose-300 text-xs font-mono"></div>
+
                     <!-- Interactive Form -->
-
                     <form id="authForm" data-mode="login" onsubmit="event.preventDefault(); window.handleSovereignAuth();" class="space-y-3.5">
-
                         <div id="authNameContainer" class="hidden">
-
                             <label class="text-[11px] font-mono text-slate-400 uppercase">Your Name</label>
-
                             <input id="authNameInput" type="text" placeholder="e.g. Keshav Sharma" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-white mt-1 focus:outline-none focus:border-emerald-500 font-mono">
-
                         </div>
 
                         <div>
-
                             <label class="text-[11px] font-mono text-slate-400 uppercase">Email Address</label>
-
                             <input id="authEmailInput" type="email" required placeholder="you@domain.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-white mt-1 focus:outline-none focus:border-emerald-500 font-mono">
-
                         </div>
 
                         <div>
-
                             <label class="text-[11px] font-mono text-slate-400 uppercase">Password</label>
-
                             <input id="authPassInput" type="password" required placeholder="••••••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-white mt-1 focus:outline-none focus:border-emerald-500 font-mono">
-
                         </div>
 
-                        <button id="authSubmitBtn" type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-extrabold text-xs py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/25 mt-2">
+                        <div id="authConfirmPassContainer" class="hidden">
+                            <label class="text-[11px] font-mono text-slate-400 uppercase">Confirm Password</label>
+                            <input id="authConfirmPassInput" type="password" placeholder="Repeat your password" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-white mt-1 focus:outline-none focus:border-emerald-500 font-mono">
+                        </div>
 
-                            Sign In to Workspace
-
+                        <button id="authSubmitBtn" type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-extrabold text-xs py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/25 mt-2 flex items-center justify-center gap-2">
+                            <span>Sign In to Workspace</span>
                         </button>
-
                     </form>
 
 
@@ -727,83 +669,110 @@
 
 
     window.handleSovereignAuth = async function() {
+        const form = document.getElementById("authForm");
+        const mode = form ? form.getAttribute("data-mode") : "login";
+        const emailEl = document.getElementById("authEmailInput");
+        const passEl = document.getElementById("authPassInput");
+        const nameEl = document.getElementById("authNameInput");
+        const confirmEl = document.getElementById("authConfirmPassInput");
+        const errBox = document.getElementById("authModalError");
+        const submitBtn = document.getElementById("authSubmitBtn");
 
-        const mode = document.getElementById("authForm").getAttribute("data-mode");
-
-        const email = document.getElementById("authEmailInput").value.trim();
-
-        const pass = document.getElementById("authPassInput").value;
-
-        const name = document.getElementById("authNameInput") ? document.getElementById("authNameInput").value : "";
-
-
-
-        if (mode === "register") {
-
-            // Try Firebase modular first (writes to Firestore), then local fallback
-
-            if (typeof window.handleModularEmailRegister === "function") {
-
-                const res = await window.handleModularEmailRegister(email, pass);
-
-                if (res.success) {
-
-                    alert(`Account created! Welcome ${res.user.displayName}!`);
-
-                    return;
-
-                }
-
-            }
-
-            const res = await GenesisAuth.register(email, pass, name);
-
-            if (res.success) {
-
-                GenesisAuth.closeModal();
-
-                alert(`Account created successfully! Welcome, ${res.user.displayName}!`);
-
+        const showError = (msg) => {
+            if (errBox) {
+                errBox.innerText = msg;
+                errBox.classList.remove("hidden");
             } else {
-
-                alert(res.msg);
-
+                alert(msg);
             }
+        };
 
-        } else {
-
-            // Try Firebase modular first (writes to Firestore), then local fallback
-
-            if (typeof window.handleModularEmailSignIn === "function") {
-
-                const res = await window.handleModularEmailSignIn(email, pass);
-
-                if (res.success) {
-
-                    alert(`Welcome back, ${res.user.displayName}! Session synced to cloud.`);
-
-                    return;
-
-                }
-
-            }
-
-            const res = await GenesisAuth.login(email, pass);
-
-            if (res.success) {
-
-                GenesisAuth.closeModal();
-
-                alert(`Welcome back, ${res.user.displayName}! Workspace session restored.`);
-
-            } else {
-
-                alert(res.msg);
-
-            }
-
+        if (errBox) {
+            errBox.classList.add("hidden");
+            errBox.innerText = "";
         }
 
+        const email = emailEl ? emailEl.value.trim() : "";
+        const pass = passEl ? passEl.value : "";
+        const name = nameEl ? nameEl.value.trim() : "";
+        const confirmPass = confirmEl ? confirmEl.value : "";
+
+        if (!email || !email.includes("@")) {
+            showError("Please enter a valid email address.");
+            if (emailEl) emailEl.focus();
+            return;
+        }
+
+        if (!pass || pass.length < 6) {
+            showError("Password must be at least 6 characters long.");
+            if (passEl) passEl.focus();
+            return;
+        }
+
+        const origBtnHtml = submitBtn ? submitBtn.innerHTML : "";
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Processing...</span>`;
+        }
+
+        try {
+            if (mode === "register") {
+                if (!name) {
+                    showError("Please provide your full name.");
+                    if (nameEl) nameEl.focus();
+                    return;
+                }
+                if (confirmEl && pass !== confirmPass) {
+                    showError("Passwords do not match. Please re-enter.");
+                    if (confirmEl) confirmEl.focus();
+                    return;
+                }
+
+                // 1. Try Firebase modular registration first (writes to Firestore)
+                if (typeof window.handleModularEmailRegister === "function") {
+                    const res = await window.handleModularEmailRegister(email, pass, name);
+                    if (res && res.success) {
+                        GenesisAuth.closeModal();
+                        return;
+                    } else if (res && res.msg && res.msg.includes("email-already-in-use")) {
+                        showError("This email is already registered. Please sign in instead.");
+                        return;
+                    }
+                }
+
+                // 2. Sovereign Local Vault Fallback (100% offline private WebCrypto SHA-256)
+                const res = await GenesisAuth.register(email, pass, name);
+                if (res.success) {
+                    GenesisAuth.closeModal();
+                } else {
+                    showError(res.msg || "Registration failed. Please try again.");
+                }
+            } else {
+                // 1. Try Firebase modular login first
+                if (typeof window.handleModularEmailSignIn === "function") {
+                    const res = await window.handleModularEmailSignIn(email, pass);
+                    if (res && res.success) {
+                        GenesisAuth.closeModal();
+                        return;
+                    }
+                }
+
+                // 2. Sovereign Local Vault Fallback
+                const res = await GenesisAuth.login(email, pass);
+                if (res.success) {
+                    GenesisAuth.closeModal();
+                } else {
+                    showError(res.msg || "Incorrect email or password.");
+                }
+            }
+        } catch (e) {
+            showError(e.message || "Authentication error occurred.");
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = origBtnHtml;
+            }
+        }
     };
 
 

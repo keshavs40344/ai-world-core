@@ -788,6 +788,23 @@ onAuthStateChanged(auth, async (user) => {
     renderDash(user);
     // Background Firestore sync
     syncFirestore(user).catch(() => {});
+
+    // Sync session to localStorage for index.html & navbar
+    try {
+      const sessionUser = {
+        uid:         user.uid,
+        email:       user.email,
+        displayName: user.displayName || (user.email ? user.email.split("@")[0] : "User"),
+        avatar:      (user.displayName || user.email || "U").charAt(0).toUpperCase(),
+        photoURL:    user.photoURL || null,
+        provider:    (user.providerData && user.providerData[0] && user.providerData[0].providerId) || "password",
+        isFirebase:  true,
+        token:       "fb_" + user.uid.substring(0, 10),
+        loginAt:     new Date().toISOString()
+      };
+      localStorage.setItem("genesis_current_user", JSON.stringify(sessionUser));
+      if (window.GenesisAuth && window.GenesisAuth.updateNavbarAuth) window.GenesisAuth.updateNavbarAuth();
+    } catch (sErr) {}
   } else {
     try {
       if (typeof window.clarity === "function") {
@@ -831,6 +848,15 @@ function switchMode(mode) {
 document.getElementById("tab-signin").addEventListener("click", () => switchMode("signin"));
 document.getElementById("tab-register").addEventListener("click", () => switchMode("register"));
 document.getElementById("fp-switch").addEventListener("click", () => switchMode(MODE === "signin" ? "register" : "signin"));
+
+// Auto-activate registration tab if URL has ?mode=register or ?tab=register or ?signup=1
+try {
+  const urlParams = new URLSearchParams(window.location.search);
+  const qMode = urlParams.get("mode") || urlParams.get("tab");
+  if (qMode === "register" || qMode === "signup" || urlParams.has("signup")) {
+    switchMode("register");
+  }
+} catch (pErr) {}
 
 /* ── EYE TOGGLE ───────────────────────────────────────────────────── */
 function toggleEye(inputId, btnId) {
