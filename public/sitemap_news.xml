@@ -13,6 +13,17 @@
     </news:news>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/nifty-50-crosses-26000-historic-milestone-dii-inflows-surge.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>Nifty 50 Breaches Historic 26,000 Threshold as Domestic Institutional Liquidity Decouples Dalal Street from Global Capital Volatility</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/news/rbi-forex-reserves-cross-700-billion-historic-milestone.html</loc>
     <news:news>
       <news:publication>
@@ -20,7 +31,29 @@
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Reserve Bank of India Foreign Exchange Reserves Cross Record $700 Billion Milestone: Macroeconomic Shield Against Currency Volatility</news:title>
+      <news:title>Reserve Bank of India Foreign Exchange Reserves Cross Monumental $704.8 Billion Milestone: Building a Macroeconomic Shield Against Global Currency Shocks</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/sebi-implements-instant-t-plus-zero-settlement-fractional-shares.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>SEBI Formally Implements Instantaneous T+0 Demat Trade Settlement and Authorizes Fractional Share Investing for 110 Million Retail Demat Holders</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-ai-mission-bharat-gpt-120b-multilingual-foundational-model.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>IndiaAI Mission Unveils Bharat-GPT 120B: The Sovereign Multilingual Foundational Model Engineered for 22 Indic Languages and Vernacular Epistemology</news:title>
     </news:news>
   </url>
   <url>
@@ -53,7 +86,7 @@
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>National Education Policy 2020: Autonomous Degree Colleges Transition to Multidisciplinary Research Universities with Unified Credit Bank</news:title>
+      <news:title>National Education Policy 2020: Autonomous Degree Colleges Complete Structural Transformation into Multidisciplinary Research Universities with Unified Academic Credit Bank</news:title>
     </news:news>
   </url>
   <url>
@@ -130,7 +163,7 @@
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Department of Telecommunications 6G Terahertz Testbed Achieves World-Record 1 Terabit/Second Wireless Data Transmission</news:title>
+      <news:title>Department of Telecommunications and IIT Consortium Achieve World-Record 1.04 Terabit/Second Wireless Transmission on Indigenous 6G Terahertz Testbed</news:title>
     </news:news>
   </url>
   <url>
@@ -200,6 +233,17 @@
     </news:news>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/news/isro-semi-cryogenic-engine-sce-200-successful-hot-test-mahendragiri.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Sovereign Apex News Wire</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
+      <news:title>ISRO Executes Flawless Hot-Fire Test of SCE-200 Semi-Cryogenic Rocket Engine: Unlocking Heavy-Lift Autonomy for Gaganyaan and Lunar Landings</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/news/isro-gaganyaan-orbital-flight-simulation-human-rating-milestone.html</loc>
     <news:news>
       <news:publication>
@@ -208,17 +252,6 @@
       </news:publication>
       <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
       <news:title>ISRO Gaganyaan: Final Uncrewed Orbital Flight Simulation Achieves 100% Human-Rating Validation</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/isro-semi-cryogenic-engine-sce-200-successful-hot-test-mahendragiri.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>ISRO Successfully Hot-Tests Indigenous SCE-200 Semi-Cryogenic Engine at Mahendragiri: Paving Path for Heavy-Lift Next-Gen Launch Vehicles</news:title>
     </news:news>
   </url>
   <url>
@@ -263,17 +296,6 @@
       </news:publication>
       <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
       <news:title>India-France Strategic Defense &amp; Aerospace Partnership: Horizon 2047 Roadmap Accelerates Rafale-M Procurement, Scorpene Submarines, and Joint Jet Engine Tech Transfer</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-ai-mission-bharat-gpt-120b-multilingual-foundational-model.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>IndiaAI Mission Releases Bharat-GPT 120B: India's Sovereign Multilingual Foundational AI Model</news:title>
     </news:news>
   </url>
   <url>
@@ -442,17 +464,6 @@
     </news:news>
   </url>
   <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/nifty-50-crosses-26000-historic-milestone-dii-inflows-surge.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Nifty 50 Breaches Historic 26,000 Milestone as Domestic Institutional Inflows Outpace Global Volatility</news:title>
-    </news:news>
-  </url>
-  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/news/quad-maritime-domain-awareness-network-indo-pacific-security.html</loc>
     <news:news>
       <news:publication>
@@ -483,17 +494,6 @@
       </news:publication>
       <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
       <news:title>RBI Monetary Policy Committee Maintains Repo Rate at 6.50% Citing Robust 7.4% GDP Trajectory</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/sebi-implements-instant-t-plus-zero-settlement-fractional-shares.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>SEBI Formally Implements Instant T+0 Demat Trade Settlement and Authorizes Fractional Share Investing</news:title>
     </news:news>
   </url>
   <url>
@@ -530,17 +530,6 @@
     </news:news>
   </url>
   <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/building-collapse-in-delhi-leaves-up-to-50-residents-missing.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Building Collapse in Delhi Leaves Up to 50 Residents Missing</news:title>
-    </news:news>
-  </url>
-  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/news/peace-talks-rich-in-symbolism-but-fundamental-differences-between-russia-an.html</loc>
     <news:news>
       <news:publication>
@@ -570,161 +559,7 @@
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>German Far-Right AfD Achieves Historic Plurality in Thuringia and Saxony State Elections: Coalition Deadlock and the Strained 'Brandmauer' Firewall</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/us-envoys-hold-substantive-talks-with-zelensky-in-kyiv-after-meeting-putin.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>US Envoys Hold Substantive Talks with Zelensky in Kyiv After Meeting Putin</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/29-contestants-finalized-for-bigg-boss-tamil-season-10-after-public-poll-tr.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>29 Contestants Finalized for Bigg Boss Tamil Season 10 After Public Poll Trims List to 19</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/delhi-auctions-2000-confiscated-vehicles-generates-rs-5-crore.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Delhi Auctions 2,000 Confiscated Vehicles, Generates Rs 5 Crore</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/delhi-building-collapse-claims-five-lives-eleven-rescued-fir-filed-against-.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Delhi Building Collapse Claims Five Lives, Eleven Rescued; FIR Filed Against Owner</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/delhi-building-collapse-kills-at-least-five-fir-lodged-against-owner.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Delhi building collapse kills at least five, FIR lodged against owner</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/four-kalady-police-officers-suspended-over-custodial-torture-allegations.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Four Kalady Police Officers Suspended Over Custodial Torture Allegations</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/india-and-china-conduct-first-corpscommander-dialogue-in-arunachal-pradesh.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>India and China Conduct First Corps‑Commander Dialogue in Arunachal Pradesh</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/israel-orders-evacuation-of-unauthorized-west-bank-settlements.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Israel Orders Evacuation of Unauthorized West Bank Settlements</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/mns-chief-raj-thackeray-cautions-against-communal-distractions-amid-economi.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>MNS chief Raj Thackeray cautions against communal distractions amid economic challenges</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/maharashtra-ministers-push-for-dj-free-festivals-over-health-risks.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Maharashtra Ministers Push for DJ-Free Festivals Over Health Risks</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/maharashtra-sets-up-high-level-committee-to-ensure-transparency-in-recruitm.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Maharashtra Sets Up High-Level Committee to Ensure Transparency in Recruitment Exams</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/renowned-carnatic-musician-sr-janakiraman-dies-at-98.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Renowned Carnatic Musician S.R. Janakiraman Dies at 98</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/russia-accuses-germany-of-renewed-war-intent-denies-involvement-in-leipzig-.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Russia Accuses Germany of Renewed War Intent, Denies Involvement in Leipzig Airport Attack</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://keshavs40344.github.io/ai-world-core/public/news/tamil-nadu-chief-minister-vijay-prioritizes-state-anthem-over-centres-vande.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Sovereign Apex News Wire</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T04:00:00Z</news:publication_date>
-      <news:title>Tamil Nadu Chief Minister Vijay Prioritizes State Anthem Over Centre’s Vande Mataram Push</news:title>
+      <news:title>German Far-Right AfD Achieves Historic Victory in Thuringia and Saxony: The Crumbling 'Brandmauer' Firewall, Coalition Deadlock, and the Geopolitical Future of Europe</news:title>
     </news:news>
   </url>
 </urlset>
