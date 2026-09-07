@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 11370000.0,
-    "total_monthly_revenue_usd": 55450.0,
+    "total_valuation_usd": 11870000.0,
+    "total_monthly_revenue_usd": 55900.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 13,
-    "last_updated_epoch": 1788796294.5584166
+    "last_tick": 14,
+    "last_updated_epoch": 1788809157.8917904
   },
   "continents": [
     {
@@ -73,9 +73,9 @@
       "slug": "apex_cloud_intel",
       "ticker": "ACIS",
       "industry": "Cloud Infrastructure & High-Speed Transcoding",
-      "valuation": 4000000.0,
+      "valuation": 4500000.0,
       "treasury_balance": 70000.0,
-      "monthly_revenue": 15000.0,
+      "monthly_revenue": 15450.0,
       "operating_cost": 450.0,
       "status": "ACTIVE",
       "mission_statement": "Building $O(1)$ client-side developer infrastructure, zero-server parsers, and multi-threaded compilation tools.",
@@ -334,12 +334,12 @@
       "name": "EdgeProfiler -- WebAssembly SQLite Memory & Query Benchmarker",
       "slug": "wasm_sqlite_edge_query_profiler",
       "category": "Edge Computing & Cloud Architecture",
-      "version": "v1.2.0",
+      "version": "v2.0.0",
       "problem_statement": "Cloud serverless functions suffer from high cold-start latencies when querying relational edge replicas.",
       "prd_json": "{\"summary\": \"In-memory SQL query planner analyzing query execution, table scan costs, and index selectivity 100% client-side.\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/wasm_sqlite_edge_query_profiler.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 497,
+      "daily_active_users": 634,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:17:03.670258+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 27,
+      "tick": 14,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-01",
+      "summary": "Self-Evolution Engine upgraded 'EdgeProfiler -- WebAssembly SQLite Memory & Query Benchmarker' to v2.0.0. User adoption grew to 634 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788809157.8546207
+    },
     {
       "id": 26,
       "tick": 13,
@@ -656,16 +666,6 @@
       "event_type": "PRODUCT_DEPLOYMENT",
       "entity_id": "COMP-02",
       "summary": "Sovereign Ledger & Tax Shield Corp successfully synthesized and deployed 'TaxShield LUT & Zero-Rated GST Export Calculator' to the live world.",
-      "causality_chain": null,
-      "severity": "SUCCESS",
-      "timestamp": 1788717706.6660895
-    },
-    {
-      "id": 2,
-      "tick": 2,
-      "event_type": "PRODUCT_DEPLOYMENT",
-      "entity_id": "COMP-01",
-      "summary": "Apex Cloud Intelligence Systems successfully synthesized and deployed 'KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter' to the live world.",
       "causality_chain": null,
       "severity": "SUCCESS",
       "timestamp": 1788717706.6660895
