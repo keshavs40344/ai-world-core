@@ -1,5 +1,23 @@
 [
   {
+    "title": "InstantOnPage SEO & Tech Stack Auditor",
+    "category": "SEO & Growth Engineering",
+    "desc": "Disrupts Ahrefs & SEMrush ($129/mo). Live website audit, Core Web Vitals, Google SERP simulator, OpenGraph card preview, heading outline, and keyword density matrix. 100% free.",
+    "icon": "search-check",
+    "filename": "instantonpage-seo-auditor.html",
+    "url": "public/saas/instantonpage-seo-auditor.html",
+    "created_at": "2026-09-07T08:10:00Z"
+  },
+  {
+    "title": "CleanWrite Prose & Readability Sentinel",
+    "category": "Content & Airgapped Privacy",
+    "desc": "Disrupts Grammarly & Hemingway Pro ($30/mo). 100% in-browser airgapped security for sensitive documents. Flesch-Kincaid scoring, passive voice detector, sentence complexity highlights, and 1-click redundancy trimmer.",
+    "icon": "feather",
+    "filename": "cleanwrite-pro-editor.html",
+    "url": "public/saas/cleanwrite-pro-editor.html",
+    "created_at": "2026-09-07T08:10:00Z"
+  },
+  {
     "title": "VASTUDA Free DCF Visualizer",
     "category": "Visual Stock Health & DCF Intrinsic Valuation",
     "desc": "A 100% free, client\u2011side web app that delivers instant, unlimited DCF calculations, real\u2011time data, and fully interactive visualizations\u2014no subscription, no data lock\u2011in, and no monthly check limits.",

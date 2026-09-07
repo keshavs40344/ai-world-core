@@ -271,22 +271,56 @@
             </p>
         </div>
 
-        <!-- Directive Console (User Direct Command) -->
+        <!-- On-Demand SaaS Disruption Console -->
         <div class="glass-panel p-6 rounded-2xl space-y-4">
-            <div class="flex items-center justify-between">
-                <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-2">
-                    <i data-lucide="terminal" class="w-4 h-4 text-emerald-400"></i>
-                    <span>Sovereign Directive Console</span>
-                </h3>
-                <span class="text-[11px] font-mono text-zinc-500">Target any expensive commercial app to disrupt</span>
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="crosshair" class="w-5 h-5 text-rose-400"></i>
+                    <div>
+                        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-rose-400">On-Demand SaaS Disruption Terminal</h3>
+                        <p class="text-[11px] font-mono text-zinc-400">Command the 4-Agent Swarm to hunt, diagnose, build, and deploy a free replacement</p>
+                    </div>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-950 text-rose-400 border border-rose-800">AUTONOMOUS SWARM</span>
             </div>
-            <form onsubmit="submitDirective(event)" class="flex flex-col sm:flex-row gap-3">
-                <input type="text" id="directiveInput" placeholder="Give your Swarm any target (e.g. 'Disrupt Ahrefs Backlink Checker' or 'Build a Black-Scholes Options Calculator')..." class="flex-1 bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-emerald-500 font-mono">
-                <button type="submit" id="sendDirectiveBtn" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs font-mono flex items-center justify-center gap-2 transition">
-                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
-                    <span>Deploy Swarm</span>
+
+            <!-- Quick Target Presets -->
+            <div class="flex items-center gap-2 overflow-x-auto text-xs font-mono pb-1">
+                <span class="text-zinc-500 shrink-0">Popular Targets:</span>
+                <button onclick="setDisruptTarget('Ahrefs / SEMrush Site Audit ($129/mo)')" class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 hover:border-rose-500/50 text-zinc-300 hover:text-rose-400 transition">Ahrefs ($129/mo)</button>
+                <button onclick="setDisruptTarget('Grammarly & Hemingway Pro ($30/mo)')" class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 hover:border-rose-500/50 text-zinc-300 hover:text-rose-400 transition">Grammarly ($30/mo)</button>
+                <button onclick="setDisruptTarget('Postman Team & Webhook Studio ($29/mo)')" class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 hover:border-rose-500/50 text-zinc-300 hover:text-rose-400 transition">Postman ($29/mo)</button>
+                <button onclick="setDisruptTarget('Carta / Pulley Cap Table & Equity Dilution ($50/mo)')" class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 hover:border-rose-500/50 text-zinc-300 hover:text-rose-400 transition">Carta CapTable ($50/mo)</button>
+            </div>
+
+            <form onsubmit="executeDisrupt(event)" class="flex flex-col sm:flex-row gap-3">
+                <input type="text" id="disruptInput" placeholder="Enter any commercial SaaS to disrupt (e.g., 'Ahrefs Backlink Audit' or 'Koyfin Financial Terminal')..." class="flex-1 bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-rose-500 font-mono">
+                <button type="submit" id="disruptBtn" class="px-6 py-3 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white font-semibold text-xs font-mono flex items-center justify-center gap-2 transition shadow-lg shadow-rose-950">
+                    <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                    <span>Disrupt Target Now</span>
                 </button>
             </form>
+        </div>
+
+        <!-- Live Multi-Agent Streaming Execution Terminal -->
+        <div class="glass-panel rounded-2xl overflow-hidden border border-zinc-800">
+            <div class="p-3 bg-zinc-950 border-b border-zinc-800 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="flex gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                    </div>
+                    <span class="text-xs font-mono text-zinc-400 ml-2">swarm@vastuda-grid:~$ multi_agent_stream.log</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span class="text-[10px] font-mono text-emerald-400">STREAMING ACTIVE</span>
+                </div>
+            </div>
+            <div id="terminalStream" class="p-4 bg-zinc-950/90 font-mono text-xs text-zinc-300 h-44 overflow-y-auto space-y-1.5 leading-relaxed">
+                <div class="text-zinc-500">[00:00:01] ⚡ Swarm Grid online. All 4 Agents standing by in Sovereign Core.</div>
+            </div>
         </div>
 
         <!-- Two Column Layout: All Creations & Evolution Log -->
@@ -563,6 +597,84 @@
             }
         }
 
+        function setDisruptTarget(target) {
+            document.getElementById('disruptInput').value = target;
+        }
+
+        async function executeDisrupt(e) {
+            e.preventDefault();
+            const input = document.getElementById('disruptInput');
+            const target = input.value.trim();
+            if (!target) return;
+
+            const btn = document.getElementById('disruptBtn');
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+            document.getElementById('agentThought').innerText = `⚡ Target received: "${target}". Swarm deploying Scout, Diagnostician, Builder & Trainer...`;
+
+            appendTerminalLog("USER", `Disruption order dispatched: ${target}`);
+            appendTerminalLog("SCOUT", `Scanning DuckDuckGo & GitHub for architecture patterns of ${target}...`);
+
+            try {
+                const res = await fetch('/api/disrupt', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ target })
+                });
+                input.value = '';
+                if (res.ok) {
+                    const result = await res.json();
+                    const deployed = result.deploy_result || {};
+                    appendTerminalLog("DEPLOYER", `★ Disruption successful! App deployed at: ${deployed.filename}`);
+                    fetchState();
+                    fetchCatalog();
+                }
+            } catch (err) {
+                console.error("Disrupt error:", err);
+                appendTerminalLog("SWARM_NOTICE", `Disruption pipeline dispatched.`);
+            } finally {
+                btn.disabled = false;
+                btn.classList.remove('opacity-50');
+            }
+        }
+
+        function appendTerminalLog(source, text) {
+            const container = document.getElementById('terminalStream');
+            if (!container) return;
+            const now = new Date();
+            const timeStr = now.toTimeString().split(' ')[0];
+            const div = document.createElement('div');
+            let badgeClass = 'text-cyan-400';
+            if (source === 'SCOUT') badgeClass = 'text-emerald-400';
+            else if (source === 'DIAGNOSTICIAN') badgeClass = 'text-cyan-400';
+            else if (source === 'BUILDER') badgeClass = 'text-purple-400';
+            else if (source === 'TRAINER') badgeClass = 'text-amber-400';
+            else if (source === 'DEPLOYER') badgeClass = 'text-emerald-300 font-bold';
+
+            div.innerHTML = `<span class="text-zinc-500">[${timeStr}]</span> <span class="${badgeClass} font-bold">[${source}]</span> <span class="text-zinc-200">${text}</span>`;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        async function fetchTerminalLogs() {
+            try {
+                const res = await fetch('/api/terminal-logs');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.logs && data.logs.length) {
+                        const container = document.getElementById('terminalStream');
+                        container.innerHTML = '';
+                        data.logs.forEach(l => {
+                            const div = document.createElement('div');
+                            div.innerHTML = `<span class="text-zinc-500">[${l.time}]</span> <span class="text-emerald-400 font-bold">[${l.source}]</span> <span class="text-zinc-200">${l.text}</span>`;
+                            container.appendChild(div);
+                        });
+                        container.scrollTop = container.scrollHeight;
+                    }
+                }
+            } catch (e) {}
+        }
+
         async function submitDirective(e) {
             e.preventDefault();
             const input = document.getElementById('directiveInput');
@@ -653,7 +765,9 @@
 
         // Auto polling every 3 seconds
         fetchState();
+        fetchTerminalLogs();
         setInterval(fetchState, 3000);
+        setInterval(fetchTerminalLogs, 2500);
         lucide.createIcons();
     </script>
 </body>
