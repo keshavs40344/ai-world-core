@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI WORLD CORE // TACTICAL SRE MISSION CONTROL [LEVEL-5 ROOT]</title>
+  <title>Admin Dashboard // SRE Mission Control 🔒</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 
   <style>
     body {
-      display: none; /* Protected until Firestore admin verification succeeds */
+      display: none; /* Blocked until Firestore onAuthStateChanged verifies active admin */
       background-color: #06080d;
       color: #cbd5e1;
       font-family: 'JetBrains Mono', monospace;
@@ -70,13 +70,13 @@
       <span class="font-bold tracking-widest text-white font-hud">CHANCELLOR SRE NOC // ROOT CLEARANCE L5</span>
       <span class="text-slate-600 hidden md:inline">|</span>
       <span class="text-emerald-400 hidden md:inline flex items-center gap-1">
-        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> FIRESTORE AUTHENTICATED
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> FIRESTORE ACTIVE ADMIN
       </span>
     </div>
     <div class="flex items-center space-x-3 shrink-0">
-      <span class="text-[11px] text-slate-400 hidden sm:inline" id="userEmailBadge">Loading admin...</span>
-      <button id="logoutBtn" class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-red-950/60 hover:bg-red-900/60 text-red-300 border border-red-500/40 text-xs font-semibold transition">
-        <i data-lucide="log-out" class="w-3.5 h-3.5"></i> Sign Out
+      <span class="text-[11px] text-slate-400 hidden sm:inline" id="userEmail">Loading...</span>
+      <button id="logoutBtn" class="flex items-center gap-1.5 px-3 py-1 rounded bg-red-600 hover:bg-red-500 text-white font-semibold text-xs transition">
+        <i data-lucide="log-out" class="w-3.5 h-3.5"></i> Logout
       </button>
     </div>
   </div>
@@ -111,7 +111,7 @@
   <!-- Main Tactical Operations Stage -->
   <main class="max-w-7xl mx-auto p-4 sm:p-6 w-full space-y-6 flex-1">
 
-    <!-- Admin Identity Verified Notice Banner -->
+    <!-- Admin Verified Banner -->
     <div class="p-4 rounded-lg bg-emerald-950/20 border border-emerald-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono">
       <div class="flex items-center gap-3">
         <div class="p-2 rounded bg-emerald-500/10 text-emerald-400">
@@ -119,7 +119,7 @@
         </div>
         <div>
           <div class="font-bold text-white flex items-center gap-2">
-            <span>ADMINISTRATOR IDENTITY VERIFIED</span>
+            <span>ADMINISTRATOR IDENTITY CONFIRMED</span>
             <span class="text-[9px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded border border-emerald-500/30">ACTIVE ROOT</span>
           </div>
           <div class="text-slate-400 text-[11px] mt-0.5">
@@ -202,7 +202,7 @@
           <div class="flex items-center justify-between border-b border-red-500/20 pb-2.5">
             <h3 class="font-hud font-bold text-sm text-red-400 flex items-center gap-2">
               <i data-lucide="alert-octagon" class="w-4 h-4 text-red-500"></i>
-              <span>SECURE SIGN OUT</span>
+              <span>SECURE LOGOUT</span>
             </h3>
             <span class="text-[9px] bg-red-500/20 text-red-300 px-1.5 py-0.5 rounded border border-red-500/30">LEVEL 5</span>
           </div>
@@ -344,7 +344,7 @@
           window.location.replace("admin-login.html");
         } else {
           // Authorized Admin: Show Deck
-          document.getElementById("userEmailBadge").textContent = user.email;
+          document.getElementById("userEmail").textContent = user.email;
           document.getElementById("adminUid").textContent = user.uid;
           document.body.style.display = "flex";
           lucide.createIcons();
