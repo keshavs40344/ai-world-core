@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Zero‑Leakage CSV & JSON Matrix Transcoder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { @apply bg-gray-900 text-gray-100 font-sans; }
+    .tab-active { @apply border-b-2 border-indigo-500 text-indigo-300; }
+    .tab-inactive { @apply text-gray-400 hover:text-gray-200; }
+    .input { @apply bg-gray-800 border border-gray-700 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500; }
+    .btn { @apply bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded px-4 py-2 flex items-center space-x-1; }
+    .btn-outline { @apply bg-transparent border border-indigo-600 hover:bg-indigo-600 text-indigo-300 font-medium rounded px-4 py-2 flex items-center space-x-1; }
+    .error { @apply text-red-400 text-sm mt-1; }
+    .table-header { @apply cursor-pointer select-none; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="p-4 flex justify-between items-center border-b border-gray-800">
+    <h1 class="text-2xl font-bold text-indigo-300">Zero‑Leakage CSV & JSON Matrix Transcoder</h1>
+    <button id="themeToggle" class="btn-outline">
+      <i data-lucide="moon"></i><span>Dark</span>
+    </button>
+  </header>
+
+  <main class="flex-1 p-4 overflow-auto">
+    <!-- Tabs -->
+    <div class="flex mb-4 border-b border-gray-800">
+      <button id="tabCsvToJson" class="mr-4 pb-2 tab-active">CSV → JSON</button>
+      <button id="tabJsonToCsv" class="pb-2 tab-inactive">JSON → CSV</button>
+    </div>
+
+    <!-- CSV → JSON Panel -->
+    <section id="panelCsvToJson" class="space-y-4">
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block mb-1 font-medium">CSV Input</label>
+          <textarea id="csvInput" class="input w-full h-48 resize-none" placeholder="Paste CSV data here..."></textarea>
+          <div id="csvError" class="error hidden"></div>
+        </div>
+        <div>
+          <label class="block mb-1 font-medium">Options</label>
+          <div class="flex items-center space-x-2 mb-2">
+            <label class="flex items-center space-x-1">
+              <input type="checkbox" id="csvHeader" class="form-checkbox h-4 w-4 text-indigo-600" checked>
+              <span>First row is header</span>
+            </label>
+          </div>
+          <div class="flex items-center space-x-2 mb-2">
+            <label class="font-medium">Delimiter</label>
+            <input type="text" id="csvDelimiter" class="input w-12 text-center" value="," maxlength="1">
+          </div>
+          <div class="flex items-center space-x-2 mb-2">
+            <label class="font-medium">Trim whitespace</label>
+            <input type="checkbox" id="csvTrim" class="form-checkbox h-4 w-4 text-indigo-600" checked>
+          </div>
+          <button id="convertCsvToJson" class="btn mt-2">
+            <i data-lucide="arrow-right-circle"></i><span>Convert</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <label class="block font-medium">JSON Output</label>
+        <pre id="jsonOutput" class="bg-gray-800 p-3 rounded overflow-auto max-h-64 text-sm"></pre>
+        <div class="flex space-x-2">
+          <button id="copyJson" class="btn-outline">
+            <i data-lucide="copy"></i><span>Copy JSON</span>
+          </button>
+          <button id="downloadJson" class="btn-outline">
+            <i data-lucide="download"></i><span>Download JSON</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <label class="block font-medium">Data Table Preview</label>
+        <input type="text" id="tableSearchCsv" class="input w-full mb-2" placeholder="Search table...">
+        <div class="overflow-auto max-h-80">
+          <table id="csvTable" class="w-full table-auto text-sm border-collapse">
+            <thead class="bg-gray-800"></thead>
+            <tbody class="bg-gray-900"></tbody>
+          </table>
+        </div>
+        <button id="exportCsvFromTable" class="btn mt-2">
+          <i data-lucide="download"></i><span>Export CSV</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- JSON → CSV Panel -->
+    <section id="panelJsonToCsv" class="hidden space-y-4">
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block mb-1 font-medium">JSON Input</label>
+          <textarea id="jsonInput" class="input w-full h-48 resize-none" placeholder='Paste JSON array of objects here...'></textarea>
+          <div id="jsonError" class="error hidden"></div>
+        </div>
+        <div>
+          <label class="block mb-1 font-medium">Options</label>
+          <div class="flex items-center space-x-2 mb-2">
+            <label class="flex items-center space-x-1">
+              <input type="checkbox" id="jsonHeader" class="form-checkbox h-4 w-4 text-indigo-600" checked>
+              <span>Include header row</span>
+            </label>
+          </div>
+          <div class="flex items-center space-x-2 mb-2">
+            <label class="font-medium">Delimiter</label>
+            <input type="text" id="jsonDelimiter" class="input w-12 text-center" value="," maxlength="1">
+          </div>
+          <button id="convertJsonToCsv" class="btn mt-2">
+            <i data-lucide="arrow-left-circle"></i><span>Convert</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <label class="block font-medium">CSV Output</label>
+        <pre id="csvOutput" class="bg-gray-800 p-3 rounded overflow-auto max-h-64 text-sm"></pre>
+        <div class="flex space-x-2">
+          <button id="copyCsv" class="btn-outline">
+            <i data-lucide="copy"></i><span>Copy CSV</span>
+          </button>
+          <button id="downloadCsv" class="btn-outline">
+            <i data-lucide="download"></i><span>Download CSV</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <label class="block font-medium">Data Table Preview</label>
+        <input type="text" id="tableSearchJson" class="input w-full mb-2" placeholder="Search table...">
+        <div class="overflow-auto max-h-80">
+          <table id="jsonTable" class="w-full table-auto text-sm border-collapse">
+            <thead class="bg-gray-800"></thead>
+            <tbody class="bg-gray-900"></tbody>
+          </table>
+        </div>
+        <button id="exportCsvFromJsonTable" class="btn mt-2">
+          <i data-lucide="download"></i><span>Export CSV</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-4 text-center text-gray-500 text-sm border-t border-gray-800">
+    © 2026 Zero‑Leakage Tools – All processing stays in your browser.
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      themeToggle.innerHTML = isDark ? '<i data-lucide="moon"></i><span>Dark</span>' : '<i data-lucide="sun"></i><span>Light</span>';
+      lucide.createIcons();
+    });
+
+    // Tab handling
+    const tabCsvToJson = document.getElementById('tabCsvToJson');
+    const tabJsonToCsv = document.getElementById('tabJsonToCsv');
+    const panelCsvToJson = document.getElementById('panelCsvToJson');
+    const panelJsonToCsv = document.getElementById('panelJsonToCsv');
+
+    tabCsvToJson.addEventListener('click', () => {
+      tabCsvToJson.className = 'mr-4 pb-2 tab-active';
+      tabJsonToCsv.className = 'pb-2 tab-inactive';
+      panelCsvToJson.classList.remove('hidden');
+      panelJsonToCsv.classList.add('hidden');
+    });
+    tabJsonToCsv.addEventListener('click', () => {
+      tabJsonToCsv.className = 'mr-4 pb-2 tab-active';
+      tabCsvToJson.className = 'pb-2 tab-inactive';
+      panelJsonToCsv.classList.remove('hidden');
+      panelCsvToJson.classList.add('hidden');
+    });
+
+    // Utility: CSV parser (RFC 4180 compatible)
+    function parseCSV(text, delimiter = ',', hasHeader = true, trim = true) {
+      const rows = [];
+      let current = [];
+      let field = '';
+      let inQuotes = false;
+      const pushField = () => {
+        if (trim) field = field.trim();
+        current.push(field);
+        field = '';
+      };
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        if (inQuotes) {
+          if (ch === '"') {
+            if (text[i + 1] === '"') { // escaped quote
+              field += '"';
+              i++;
+            } else {
+              inQuotes = false;
+            }
+          } else {
+            field += ch;
+          }
+        } else {
+          if (ch === '"') {
+            inQuotes = true;
+          } else if (ch === delimiter) {
+            pushField();
+          } else if (ch === '\n' || ch === '\r') {
+            // handle CRLF
+            if (ch === '\r' && text[i + 1] === '\n') i++;
+            pushField();
+            rows.push(current);
+            current = [];
+          } else {
+            field += ch;
+          }
+        }
+      }
+      // push last line if any
+      if (field !== '' || inQuotes || current.length) {
+        pushField();
+        rows.push(current);
+      }
+      // Normalize row lengths
+      const maxLen = Math.max(...rows.map(r => r.length));
+      rows.forEach(r => {
+        while (r.length < maxLen) r.push('');
+      });
+      if (hasHeader) {
+        const header = rows.shift();
+        const data = rows.map(r => {
+          const obj = {};
+          header.forEach((h, i) => obj[h || `field${i+1}`] = r[i]);
+          return obj;
+        });
+        return { header, data };
+      } else {
+        return { header: null, data: rows };
+      }
+    }
+
+    // Utility: Convert array of objects to CSV
+    function objectsToCSV(arr, delimiter = ',', includeHeader = true) {
+      if (!Array.isArray(arr) || arr.length === 0) return '';
+      const keys = Object.keys(arr[0]);
+      const escape = (v) => {
+        if (v == null) return '';
+        const str = String(v);
+        if (str.includes(delimiter) || str.includes('"') || str.includes('\n')) {
+          return `"${str.replace(/"/g, '""')}"`;
+        }
+        return str;
+      };
+      const lines = [];
+      if (includeHeader) lines.push(keys.map(escape).join(delimiter));
+      arr.forEach(obj => {
+        lines.push(keys.map(k => escape(obj[k])).join(delimiter));
+      });
+      return lines.join('\n');
+    }
+
+    // CSV → JSON conversion
+    const csvInput = document.getElementById('csvInput');
+    const csvHeaderChk = document.getElementById('csvHeader');
+    const csvDelimiterInp = document.getElementById('csvDelimiter');
+    const csvTrimChk = document.getElementById('csvTrim');
+    const convertCsvBtn = document.getElementById('convertCsvToJson');
+    const jsonOutput = document.getElementById('jsonOutput');
+    const csvError = document.getElementById('csvError');
+    const csvTable = document.getElementById('csvTable');
+    const tableSearchCsv = document.getElementById('tableSearchCsv');
+
+    convertCsvBtn.addEventListener('click', () => {
+      const raw = csvInput.value;
+      const delimiter = csvDelimiterInp.value || ',';
+      const hasHeader = csvHeaderChk.checked;
+      const trim = csvTrimChk.checked;
+      try {
+        const { header, data } = parseCSV(raw, delimiter, hasHeader, trim);
+        const json = hasHeader ? data : data.map(row => Object.fromEntries(row.map((v, i) => [`field${i+1}`, v])));
+        jsonOutput.textContent = JSON.stringify(json, null, 2);
+        csvError.classList.add('hidden');
+        renderTable(csvTable, header, data);
+      } catch (e) {
+        csvError.textContent = 'Failed to parse CSV: ' + e.message;
+        csvError.classList.remove('hidden');
+        jsonOutput.textContent = '';
+        clearTable(csvTable);
+      }
+    });
+
+    // JSON → CSV conversion
+    const jsonInput = document.getElementById('jsonInput');
+    const jsonHeaderChk = document.getElementById('jsonHeader');
+    const jsonDelimiterInp = document.getElementById('jsonDelimiter');
+    const convertJsonBtn = document.getElementById('convertJsonToCsv');
+    const csvOutput = document.getElementById('csvOutput');
+    const jsonError = document.getElementById('jsonError');
+    const jsonTable = document.getElementById('jsonTable');
+    const tableSearchJson = document.getElementById('tableSearchJson');
+
+    convertJsonBtn.addEventListener('click', () => {
+      const raw = jsonInput.value.trim();
+      const

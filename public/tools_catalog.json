@@ -1,5 +1,32 @@
 [
   {
+    "title": "Zero-Leakage CSV & JSON Matrix Transcoder",
+    "category": "Data & File Utilities",
+    "desc": "Instant client-side converter between CSV and JSON with dynamic table search, column sorter, and CSV export. 100% private.",
+    "icon": "file-spreadsheet",
+    "filename": "csv_json_matrix_transcoder.html",
+    "url": "public/saas/csv_json_matrix_transcoder.html",
+    "created_at": "2026-09-07T07:13:15Z"
+  },
+  {
+    "title": "Cron Schedule Visualizer & Human Translator",
+    "category": "DevOps & Scheduling",
+    "desc": "Interactive cron expression builder with human-readable English breakdown, next 10 exact execution timestamps, and common presets for Linux & cloud schedulers.",
+    "icon": "calendar-clock",
+    "filename": "cron_expression_visualizer_engine.html",
+    "url": "public/saas/cron_expression_visualizer_engine.html",
+    "created_at": "2026-09-07T07:12:50Z"
+  },
+  {
+    "title": "Private JWT Token Inspector & Signature Auditor",
+    "category": "CyberSecurity & Privacy",
+    "desc": "100% client-side JWT token decoder and audit suite. Inspect headers, payload claims, expiration alerts without sending sensitive production secrets to external cloud servers.",
+    "icon": "shield-alert",
+    "filename": "jwt_token_inspector_sentinel.html",
+    "url": "public/saas/jwt_token_inspector_sentinel.html",
+    "created_at": "2026-09-07T07:12:32Z"
+  },
+  {
     "title": "Income Tax Regime Comparator (New vs Old)",
     "category": "FinTech & Taxation",
     "desc": "Penny-perfect deterministic comparison of Old vs New Tax Regimes with Standard Deduction, 80C, 80D, HRA, Section 87A rebate, and slab-by-slab breakdown. Zero LLM arithmetic hallucinations.",
