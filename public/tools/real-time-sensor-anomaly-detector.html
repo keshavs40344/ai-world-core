@@ -1,0 +1,1 @@
+<html><body><input id='data' placeholder='Enter JSON'><button onclick='fetch("/api/engine",{method:"POST",body:document.getElementById("data").value}).then(r=>r.json()).then(d=>alert(JSON.stringify(d)))'>Detect</button></body></html>
