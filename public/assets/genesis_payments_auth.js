@@ -397,6 +397,7 @@
             const confirmField = document.getElementById("authConfirmPassContainer");
             const submitBtn = document.getElementById("authSubmitBtn");
             const modalTitle = document.getElementById("authModalTitle");
+            const modalSubtitle = document.getElementById("authModalSubtitle");
             const togglePrompt = document.getElementById("authTogglePrompt");
             const errBox = document.getElementById("authModalError");
 
@@ -410,6 +411,7 @@
                 if (confirmField) confirmField.classList.add("hidden");
                 if (submitBtn) submitBtn.innerText = "Sign In to Workspace";
                 if (modalTitle) modalTitle.innerText = "Welcome Back";
+                if (modalSubtitle) modalSubtitle.innerText = "Cloud-Verified Sovereign Authentication (Firebase & Firestore)";
                 if (togglePrompt) togglePrompt.innerHTML = `Don't have an account? <button onclick="GenesisAuth.switchModalTab('register')" class="text-emerald-400 hover:underline font-bold">Create one free</button>`;
                 document.getElementById("authForm").setAttribute("data-mode", "login");
             } else {
@@ -417,8 +419,9 @@
                 tabRegister.className = "flex-1 py-2 text-xs font-bold text-white border-b-2 border-emerald-500 transition";
                 if (nameField) nameField.classList.remove("hidden");
                 if (confirmField) confirmField.classList.remove("hidden");
-                if (submitBtn) submitBtn.innerText = "Create Free Account";
-                if (modalTitle) modalTitle.innerText = "Create Free Sovereign Account";
+                if (submitBtn) submitBtn.innerText = "Create Cloud-Verified Account";
+                if (modalTitle) modalTitle.innerText = "Create Cloud Account";
+                if (modalSubtitle) modalSubtitle.innerText = "Direct Firebase Cloud Auth with Firestore telemetry sync";
                 if (togglePrompt) togglePrompt.innerHTML = `Already have an account? <button onclick="GenesisAuth.switchModalTab('login')" class="text-emerald-400 hover:underline font-bold">Sign In</button>`;
                 document.getElementById("authForm").setAttribute("data-mode", "register");
             }
@@ -452,7 +455,7 @@
 
                         <h3 id="authModalTitle" class="text-xl font-extrabold text-white">Welcome Back</h3>
 
-                        <p class="text-xs text-slate-400 mt-1">100% Private Client-Side Workspace Authentication</p>
+                        <p id="authModalSubtitle" class="text-xs text-slate-400 mt-1">Cloud-Verified Sovereign Authentication (Firebase &amp; Firestore)</p>
 
                     </div>
 
@@ -583,9 +586,7 @@
 
 
                     <p class="text-[10px] text-slate-500 text-center mt-3 font-mono">
-
-                        🔒 Zero-Server Auth. Passwords hashed locally via SHA-256 WebCrypto.
-
+                        ☁️ Firebase Cloud Auth &amp; Firestore Telemetry Sync • Sovereign Client Encryption
                     </p>
 
                 </div>
