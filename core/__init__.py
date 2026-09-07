@@ -1,0 +1,1 @@
+# VASTUDA Sovereign Core Package

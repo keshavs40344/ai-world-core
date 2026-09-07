@@ -83,4 +83,7 @@ autonomous_world.db
 urls.db
 live_services/
 *.db
+!db/sovereign_world.db
+!db/genesis_state.db
+!db/civilization_core.db
 
