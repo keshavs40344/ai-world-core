@@ -257,7 +257,6 @@
         signInWithGitHub: async function() {
             const cfg = this.getConfig();
 
-            // If real valid key exists and initialized, execute live Firebase OAuth
             if (this.isApiKeyValid(cfg.apiKey) && this.initialized && this.auth) {
                 try {
                     const provider = new window.firebase.auth.GithubAuthProvider();
@@ -294,17 +293,14 @@
 
                     return { success: true, user: sessionUser };
                 } catch (error) {
-                    console.warn("Firebase GitHub Sign-In note:", error);
-
+                    console.warn("Firebase GitHub Sign-In error:", error);
                     if (error.code === 'auth/popup-closed-by-user') {
                         return { success: false, msg: "Sign-in cancelled: GitHub popup was closed." };
                     }
-                    // For API key mismatch or network/unauthorized domain, gracefully provide instant session
-                    return this._instantGitHubLogin();
+                    return { success: false, msg: error.message || "GitHub authentication error in Firebase." };
                 }
             }
-
-            return this._instantGitHubLogin();
+            return { success: false, msg: "Firebase Authentication is initializing. Please try again." };
         },
 
         signInWithGoogle: async function() {
@@ -341,15 +337,14 @@
 
                     return { success: true, user: sessionUser };
                 } catch (error) {
-                    console.warn("Firebase Google Sign-In note:", error);
+                    console.warn("Firebase Google Sign-In error:", error);
                     if (error.code === 'auth/popup-closed-by-user') {
                         return { success: false, msg: "Sign-in cancelled: Google popup was closed." };
                     }
-                    return this._instantGoogleLogin();
+                    return { success: false, msg: error.message || "Google authentication error in Firebase." };
                 }
             }
-
-            return this._instantGoogleLogin();
+            return { success: false, msg: "Firebase Authentication is initializing. Please try again." };
         },
 
         signInWithEmail: async function(email, password) {
