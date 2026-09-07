@@ -2,12 +2,22 @@
   "vitals": {
     "id": 1,
     "swarm_iq": 143,
-    "accuracy_score": 94.85,
-    "total_lessons_learned": 2,
+    "accuracy_score": 95.1,
+    "total_lessons_learned": 3,
     "training_epoch": 1,
-    "last_trained_at": "2026-09-07T07:59:37Z"
+    "last_trained_at": "2026-09-07T08:16:45Z"
   },
   "recent_lessons": [
+    {
+      "id": 3,
+      "agent_role": "Builder",
+      "lesson_type": "CYBER_DEFENSE_SENTINEL",
+      "target_domain": "Defensive Cybersecurity",
+      "insight_learned": "Engineered deterministic client-side anti-phishing scanner that detects Cyrillic homograph lookalikes without external DNS leakage.",
+      "positive_exemplar": "Scan for Unicode codepoints > 127 in domain names to prevent character spoofing attacks.",
+      "accuracy_boost": 2.5,
+      "created_at": "2026-09-07T08:16:45Z"
+    },
     {
       "id": 2,
       "agent_role": "Builder",
@@ -29,5 +39,5 @@
       "created_at": "2026-09-07T07:57:34Z"
     }
   ],
-  "timestamp": "2026-09-07T08:12:40Z"
+  "timestamp": "2026-09-07T08:16:45Z"
 }

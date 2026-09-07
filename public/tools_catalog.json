@@ -1,5 +1,14 @@
 [
   {
+    "title": "PhishShield Anti-Scam & Phishing Defense Sentinel",
+    "category": "Cyber Defense & Threat Protection",
+    "desc": "100% in-browser airgapped security. Detects fake KYC banking scams, Cyrillic punycode homograph domain spoofing, urgency traps, and fraudulent invoices. Protects people from identity and financial theft.",
+    "icon": "shield-alert",
+    "filename": "phishshield-scam-sentinel.html",
+    "url": "public/saas/phishshield-scam-sentinel.html",
+    "created_at": "2026-09-07T08:15:00Z"
+  },
+  {
     "title": "InstantOnPage SEO & Tech Stack Auditor",
     "category": "SEO & Growth Engineering",
     "desc": "Disrupts Ahrefs & SEMrush ($129/mo). Live website audit, Core Web Vitals, Google SERP simulator, OpenGraph card preview, heading outline, and keyword density matrix. 100% free.",
