@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><input id='q' placeholder='Query'><button onclick="fetch('/api', {method:'POST', body: JSON.stringify({q: document.getElementById('q').value})}).then(r=>r.json()).then(d=>console.log(d))">Run</button></body></html>
