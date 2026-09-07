@@ -1,5 +1,23 @@
 [
   {
+    "title": "OmniConverter Pro (Media & Document Studio)",
+    "category": "Private Media & Document Transformation",
+    "desc": "100% In-Browser client-side processing. Multi-file PDF merger via pdf-lib, image compressor/WebP converter, photo EXIF GPS location wiper, and high-DPI SVG rasterizer. Zero cloud leakage.",
+    "icon": "repeat",
+    "filename": "omniconverter-pro.html",
+    "url": "public/saas/omniconverter-pro.html",
+    "created_at": "2026-09-07T14:20:00Z"
+  },
+  {
+    "title": "DevForge Swiss-Knife",
+    "category": "Developer & Data Utilities",
+    "desc": "Essential offline developer tools: JSON \u21c4 YAML \u21c4 CSV matrix transcoder, JWT token debugger, cryptographic SHA-256/512 hasher, live JavaScript regex engine, and Base64 encoder/decoder.",
+    "icon": "wrench",
+    "filename": "devforge-swissknife.html",
+    "url": "public/saas/devforge-swissknife.html",
+    "created_at": "2026-09-07T14:20:00Z"
+  },
+  {
     "title": "Audio Waveform & Podcast Chapter Studio",
     "category": "Audio & Podcast Engineering",
     "desc": "Disrupts Headliner & Descript (/mo). Web Audio API waveform renderer, drag-and-seek audio scrubber, timestamp chapter marker, and instant YouTube/Spotify cuesheet exporter.",

@@ -1,13 +1,43 @@
 {
   "vitals": {
     "id": 1,
-    "swarm_iq": 143,
-    "accuracy_score": 95.1,
-    "total_lessons_learned": 3,
+    "swarm_iq": 144,
+    "accuracy_score": 95.55,
+    "total_lessons_learned": 6,
     "training_epoch": 1,
-    "last_trained_at": "2026-09-07T08:16:45Z"
+    "last_trained_at": "2026-09-07T08:40:53Z"
   },
   "recent_lessons": [
+    {
+      "id": 6,
+      "agent_role": "Builder",
+      "lesson_type": "SAAS_DISRUPTION",
+      "target_domain": "High-Value Web Application",
+      "insight_learned": "Engineered complete client-side alternative to https://zapier.com/ ($49/mo) with zero paywalls.",
+      "positive_exemplar": "Integrated 8 interactive controls with instant DOM reactivity.",
+      "accuracy_boost": 2.0,
+      "created_at": "2026-09-07T08:40:53Z"
+    },
+    {
+      "id": 5,
+      "agent_role": "Builder",
+      "lesson_type": "BUILD_AUDIT_WARNING",
+      "target_domain": "High-Value Web Application",
+      "insight_learned": "Application 'zapier-clone.html' required tag auto-closure. Enforce strict token-conscious conciseness.",
+      "positive_exemplar": "Ensure all <script> blocks and HTML tags close cleanly before completion.",
+      "accuracy_boost": 0.5,
+      "created_at": "2026-09-07T08:40:53Z"
+    },
+    {
+      "id": 4,
+      "agent_role": "Builder",
+      "lesson_type": "SAAS_DISRUPTION",
+      "target_domain": "High-Value Web Application",
+      "insight_learned": "Engineered complete client-side alternative to https://www.salesforce.com/in/ ($49/mo) with zero paywalls.",
+      "positive_exemplar": "Integrated 8 interactive controls with instant DOM reactivity.",
+      "accuracy_boost": 2.0,
+      "created_at": "2026-09-07T08:38:33Z"
+    },
     {
       "id": 3,
       "agent_role": "Builder",
@@ -39,5 +69,5 @@
       "created_at": "2026-09-07T07:57:34Z"
     }
   ],
-  "timestamp": "2026-09-07T08:16:45Z"
+  "timestamp": "2026-09-07T08:50:14Z"
 }
