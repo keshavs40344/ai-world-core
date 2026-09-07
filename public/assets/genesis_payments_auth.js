@@ -326,14 +326,14 @@
             if (user) {
                 authContainer.innerHTML = `
                     <div class="flex items-center gap-2">
-                        <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-mono">
+                        <a href="user_dashboard.html" title="Open User Portal" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/40 text-xs font-mono transition group">
                             <span class="w-5 h-5 rounded-full bg-emerald-500 text-slate-950 font-black flex items-center justify-center text-[10px]">
                                 ${user.avatar || 'Ω'}
                             </span>
                             <span class="text-white font-bold hidden sm:inline max-w-[120px] truncate">${user.displayName || user.email.split('@')[0]}</span>
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                            <button onclick="GenesisAuth.logout()" title="Logout" class="text-slate-500 hover:text-rose-400 text-xs ml-1 transition">✕</button>
-                        </div>
+                        </a>
+                        <button onclick="GenesisAuth.logout()" title="Logout" class="px-2 py-1.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-rose-500/40 text-slate-400 hover:text-rose-400 text-xs transition">✕</button>
                         <button onclick="GenesisDonation.open()" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-300 hover:text-white px-3 py-1.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 transition font-mono">
                             <span>⚡</span>
                             <span>Back R&amp;D</span>

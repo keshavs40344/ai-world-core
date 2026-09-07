@@ -3,552 +3,1261 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI WORLD CORE | User & Researcher Dashboard</title>
+  <title>AI WORLD CORE | Personal Developer & Researcher Workspace</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Firebase SDKs for Auth & Cloud Profile Sync -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="config.js"></script>
+  <script src="assets/genesis_firebase_bridge.js"></script>
+  <script src="assets/genesis_payments_auth.js"></script>
+
   <style>
     body {
-      background-color: #030712;
-      color: #f3f4f6;
+      background-color: #0b0f19;
+      color: #f1f5f9;
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
     }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
-    .glass-card {
-      background: rgba(15, 23, 42, 0.7);
+    
+    /* Modern SaaS Glass Card */
+    .saas-card {
+      background: rgba(17, 24, 39, 0.7);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 1rem;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .glass-card:hover {
-      border-color: rgba(16, 185, 129, 0.3);
+    .saas-card:hover {
+      border-color: rgba(99, 102, 241, 0.35);
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.15);
+      box-shadow: 0 12px 28px -8px rgba(99, 102, 241, 0.15);
     }
-    .glow-dot {
-      box-shadow: 0 0 10px #10b981;
+    
+    /* Active Nav Item */
+    .nav-active {
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0.05) 100%);
+      color: #818cf8 !important;
+      border-left: 3px solid #6366f1;
+      font-weight: 600;
     }
-    .scrollbar-thin::-webkit-scrollbar { width: 5px; height: 5px; }
-    .scrollbar-thin::-webkit-scrollbar-track { background: #030712; }
-    .scrollbar-thin::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-    .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: #10b981; }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0b0f19; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
   </style>
 
-    <!-- DYNAMIC SEO & SOCIAL GRAPH (Auto-Injected) -->
-    <meta name="title" content="AI WORLD CORE | User & Researcher Dashboard">
-    <meta name="description" content="100% Client-side utility for AI WORLD CORE | User & Researcher Dashboard. High-speed, private, zero-server data leakage.">
-
-    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://keshavs40344.github.io/ai-world-core/user_dashboard.html">
-    <meta property="og:title" content="AI WORLD CORE | User & Researcher Dashboard">
-    <meta property="og:description" content="100% Client-side utility for AI WORLD CORE | User & Researcher Dashboard. High-speed, private, zero-server data leakage.">
-    <meta property="og:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=AI%20WORLD%20CORE%20%7C%20User%20%26%20Researcher%20Dashbo+Studio&font=montserrat">
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://keshavs40344.github.io/ai-world-core/user_dashboard.html">
-    <meta name="twitter:title" content="AI WORLD CORE | User & Researcher Dashboard">
-    <meta name="twitter:description" content="100% Client-side utility for AI WORLD CORE | User & Researcher Dashboard. High-speed, private, zero-server data leakage.">
-    <meta name="twitter:image" content="https://placehold.co/1200x630/020617/6366f1/png?text=AI%20WORLD%20CORE%20%7C%20User%20%26%20Researcher%20Dashbo+Studio&font=montserrat">
-
-    <!-- JSON-LD Structured Data for Googlebot -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "AI WORLD CORE | User & Researcher Dashboard",
-      "url": "https://keshavs40344.github.io/ai-world-core/user_dashboard.html",
-      "description": "100% Client-side utility for AI WORLD CORE | User & Researcher Dashboard. High-speed, private, zero-server data leakage.",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "All modern browsers",
-      "offers": {
-        "@type": "Offer",
-        "price": "0.00",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
-    <!-- /SEO BLOCK -->
-    
+  <!-- SEO & Open Graph Metadata -->
+  <meta name="title" content="AI WORLD CORE | Personal Developer Workspace">
+  <meta name="description" content="Sovereign, client-side personal workspace for developers, quants, and researchers. 100% private in-browser utilities, personal API tokens, and execution history.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI WORLD CORE | Personal Developer Workspace">
+  <meta property="og:description" content="Sovereign, client-side personal workspace with 47+ zero-latency tools, API tokens, and personal history.">
 </head>
-<body class="min-h-screen flex flex-col antialiased selection:bg-emerald-500/20 selection:text-emerald-400">
 
-  <!-- Top Announcement Bar -->
-  <div class="bg-gradient-to-r from-emerald-950/90 via-slate-900/90 to-cyan-950/90 border-b border-emerald-500/20 px-4 py-2 text-xs font-mono flex items-center justify-between text-slate-300">
-    <div class="flex items-center space-x-3">
-      <span class="flex h-2 w-2 relative">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 glow-dot"></span>
-      </span>
-      <span class="font-bold text-white tracking-wider">AI WORLD CORE :: USER PORTAL</span>
-      <span class="text-slate-600 hidden sm:inline">|</span>
-      <span class="text-emerald-400 hidden sm:inline">35 Sovereign Tools Active &middot; 100% Client-Side</span>
-    </div>
-    <div class="flex items-center space-x-4">
-      <span class="bg-emerald-500/10 text-emerald-400 px-2.5 py-0.5 rounded border border-emerald-500/30 text-[11px] font-semibold">ALL SYSTEMS NOMINAL</span>
-      <a href="admin_dashboard.html" class="flex items-center gap-1 text-amber-400 hover:text-amber-300 transition font-semibold text-xs border border-amber-500/30 px-2.5 py-0.5 rounded bg-amber-500/10">
-        <i data-lucide="lock" class="w-3 h-3"></i> Admin Console
-      </a>
-    </div>
-  </div>
+<body class="min-h-screen flex bg-[#0b0f19] text-slate-100 selection:bg-indigo-500/30 selection:text-indigo-200">
 
-  <!-- Main Navigation Header -->
-  <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-white/5 px-6 py-3.5">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="flex items-center space-x-4">
+  <!-- ========================================================================= -->
+  <!-- 1. LEFT SIDEBAR NAVIGATION (MODERN SAAS WORKSPACE)                        -->
+  <!-- ========================================================================= -->
+  <aside id="appSidebar" class="w-64 bg-[#0d1322] border-r border-slate-800/80 flex flex-col justify-between shrink-0 z-30 transition-all duration-300 md:translate-x-0 -translate-x-full fixed md:static inset-y-0 left-0">
+    
+    <!-- Top Brand & Workspace Selector -->
+    <div>
+      <div class="p-5 border-b border-slate-800/80 flex items-center justify-between">
         <a href="index.html" class="flex items-center space-x-3 group">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 flex items-center justify-center font-black text-black text-lg shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center font-black text-white text-sm shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
             Ω
           </div>
           <div>
-            <div class="flex items-center space-x-2">
-              <span class="font-bold text-lg text-white tracking-tight">AI WORLD</span>
-              <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 bg-emerald-500/20 text-emerald-300 rounded border border-emerald-500/30">User Portal</span>
+            <div class="flex items-center space-x-1.5">
+              <span class="font-bold text-sm text-white tracking-tight">AI WORLD</span>
+              <span class="text-[9px] font-mono px-1.5 py-0.2 bg-indigo-500/20 text-indigo-300 rounded border border-indigo-500/30">WORKSPACE</span>
             </div>
-            <p class="text-[10px] font-mono text-slate-400">SOVEREIGN WORKSPACE</p>
+            <p class="text-[10px] text-slate-400">Developer Suite v2.6</p>
           </div>
         </a>
+        <button onclick="toggleMobileSidebar()" class="md:hidden text-slate-400 hover:text-white p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
       </div>
 
-      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
-        <a href="index.html" class="hover:text-emerald-400 transition flex items-center gap-1.5"><i data-lucide="home" class="w-4 h-4"></i> Home</a>
-        <a href="#senate" class="hover:text-purple-400 transition flex items-center gap-1.5"><i data-lucide="landmark" class="w-4 h-4"></i> Senate Decrees</a>
-        <a href="#catalog" class="hover:text-cyan-400 transition flex items-center gap-1.5"><i data-lucide="grid" class="w-4 h-4"></i> Tools Fleet (35)</a>
-        <a href="#vitals" class="hover:text-emerald-400 transition flex items-center gap-1.5"><i data-lucide="activity" class="w-4 h-4"></i> Telemetry</a>
+      <!-- Workspace Switcher Pill -->
+      <div class="px-4 py-3 border-b border-slate-800/40">
+        <label class="block text-[10px] font-mono uppercase tracking-wider text-slate-500 mb-1">Active Space</label>
+        <button class="w-full flex items-center justify-between px-3 py-2 bg-slate-900/90 hover:bg-slate-800/90 rounded-lg border border-slate-700/60 text-xs font-medium text-slate-200 transition">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="truncate">Personal Workspace</span>
+          </div>
+          <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="p-3 space-y-1 text-xs">
+        <div class="px-3 pt-2 pb-1 text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">
+          Core Workspace
+        </div>
+        
+        <button onclick="switchView('overview')" id="nav-overview" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition nav-active text-left">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Overview</span>
+        </button>
+
+        <button onclick="switchView('launchpad')" id="nav-launchpad" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition text-left">
+          <div class="flex items-center gap-3">
+            <i data-lucide="grid" class="w-4 h-4 text-indigo-400"></i>
+            <span>App Launchpad</span>
+          </div>
+          <span class="text-[10px] font-mono bg-indigo-500/20 text-indigo-300 px-1.5 py-0.5 rounded" id="totalToolsBadge">47</span>
+        </button>
+
+        <button onclick="switchView('favorites')" id="nav-favorites" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition text-left">
+          <div class="flex items-center gap-3">
+            <i data-lucide="star" class="w-4 h-4 text-amber-400"></i>
+            <span>My Bookmarks</span>
+          </div>
+          <span class="text-[10px] font-mono bg-amber-500/20 text-amber-300 px-1.5 py-0.5 rounded" id="starredCountBadge">0</span>
+        </button>
+
+        <button onclick="switchView('activity')" id="nav-activity" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition text-left">
+          <div class="flex items-center gap-3">
+            <i data-lucide="history" class="w-4 h-4 text-cyan-400"></i>
+            <span>Recent Activity</span>
+          </div>
+          <span class="text-[10px] font-mono bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded" id="activityCountBadge">0</span>
+        </button>
+
+        <div class="px-3 pt-4 pb-1 text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">
+          Developer & Tokens
+        </div>
+
+        <button onclick="switchView('tokens')" id="nav-tokens" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition text-left">
+          <i data-lucide="key" class="w-4 h-4 text-emerald-400"></i>
+          <span>Personal API Tokens</span>
+        </button>
+
+        <button onclick="switchView('sandbox')" id="nav-sandbox" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition text-left">
+          <i data-lucide="terminal" class="w-4 h-4 text-purple-400"></i>
+          <span>Payload Sandbox</span>
+        </button>
+
+        <div class="px-3 pt-4 pb-1 text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">
+          Account & System
+        </div>
+
+        <button onclick="switchView('account')" id="nav-account" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition text-left">
+          <i data-lucide="user-check" class="w-4 h-4 text-sky-400"></i>
+          <span>Cloud Identity</span>
+        </button>
       </nav>
-
-      <div class="flex items-center space-x-3">
-        <a href="admin_dashboard.html" class="flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 border border-amber-500/40 text-xs font-mono text-amber-300 font-semibold shadow-sm transition">
-          <i data-lucide="shield-check" class="w-4 h-4 text-amber-400"></i>
-          <span>Admin Console 🔒</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Status & Telemetry Grid -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-8">
-    
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/5 pb-6">
-      <div>
-        <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
-          <span>Public Exploration & Research Dashboard</span>
-        </h1>
-        <p class="text-sm text-slate-400 mt-1">
-          Zero-latency client-side tool discovery, verified GPAA-2026 academic decrees, and real-time planetary health telemetry.
-        </p>
-      </div>
-      <div class="flex items-center gap-2">
-        <button onclick="refreshData()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-300 border border-slate-700 transition">
-          <i data-lucide="refresh-cw" class="w-3.5 h-3.5" id="refreshIcon"></i>
-          <span>Sync Telemetry</span>
-        </button>
-        <span class="text-xs font-mono text-slate-500" id="lastSyncTime">Syncing...</span>
-      </div>
     </div>
 
-    <!-- Live Telemetry KPI Cards -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="vitals">
-      <div class="glass-card rounded-xl p-5 border-emerald-500/20">
-        <div class="flex justify-between items-start">
-          <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Live Tools Fleet</span>
-          <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400"><i data-lucide="box" class="w-4 h-4"></i></span>
-        </div>
-        <div class="text-2xl sm:text-3xl font-black text-white mt-2" id="kpiFleet">35</div>
-        <div class="text-xs font-mono text-emerald-400 mt-1 flex items-center gap-1">
-          <span>● 100% Operational</span>
-        </div>
-      </div>
-
-      <div class="glass-card rounded-xl p-5 border-purple-500/20">
-        <div class="flex justify-between items-start">
-          <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Senate Decrees</span>
-          <span class="p-2 rounded-lg bg-purple-500/10 text-purple-400"><i data-lucide="award" class="w-4 h-4"></i></span>
-        </div>
-        <div class="text-2xl sm:text-3xl font-black text-white mt-2" id="kpiDecrees">10</div>
-        <div class="text-xs font-mono text-purple-400 mt-1">
-          <span>7 Faculties &middot; 99.95/100 Integrity</span>
-        </div>
-      </div>
-
-      <div class="glass-card rounded-xl p-5 border-cyan-500/20">
-        <div class="flex justify-between items-start">
-          <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">System Latency</span>
-          <span class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400"><i data-lucide="zap" class="w-4 h-4"></i></span>
-        </div>
-        <div class="text-2xl sm:text-3xl font-black text-white mt-2" id="kpiLatency">0.00 ms</div>
-        <div class="text-xs font-mono text-cyan-400 mt-1">
-          <span>Client-Side Local RAM (Zero Cloud)</span>
-        </div>
-      </div>
-
-      <div class="glass-card rounded-xl p-5 border-blue-500/20">
-        <div class="flex justify-between items-start">
-          <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Global Entropy Index</span>
-          <span class="p-2 rounded-lg bg-blue-500/10 text-blue-400"><i data-lucide="activity" class="w-4 h-4"></i></span>
-        </div>
-        <div class="text-2xl sm:text-3xl font-black text-white mt-2" id="kpiEntropy">0.8142</div>
-        <div class="text-xs font-mono text-blue-400 mt-1">
-          <span>Thermodynamic Equilibrium Optimal</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 1: GPAA-2026 Senate Decrees Showcase -->
-    <section id="senate" class="space-y-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
-          <h2 class="text-lg font-bold text-white tracking-tight">GPAA-2026 Planetary Senate Instruments</h2>
-          <span class="text-xs font-mono bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded border border-purple-500/30">Peer-Reviewed Sovereign Software</span>
-        </div>
-        <a href="saas/planetary_governance_terminal.html" target="_blank" class="text-xs font-mono text-purple-400 hover:underline flex items-center gap-1">
-          Open Senate Terminal <i data-lucide="external-link" class="w-3 h-3"></i>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <!-- Faculty 1 -->
-        <div class="glass-card rounded-xl p-5 border-purple-500/20 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-[11px] font-mono text-purple-400 mb-2">
-              <span>FACULTY 1 &middot; MACRO-EQUILIBRIUM</span>
-              <span class="bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/30">RATIFIED</span>
-            </div>
-            <h3 class="font-bold text-white text-base">Planetary Automated Logistics Rebalancer</h3>
-            <p class="text-xs text-slate-400 mt-1.5">Presiding Dean: Chancellor Sterling Vance (Economics & Applied Game Theory). Solves global supply chain deadlock.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-            <span class="text-[11px] font-mono text-slate-500">ZK: 71f0486578...</span>
-            <a href="saas/global_macro_resource_rebalancer.html" target="_blank" class="px-3 py-1 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/40 rounded text-xs font-mono text-purple-300 font-semibold transition flex items-center gap-1">
-              Launch Terminal <i data-lucide="arrow-right" class="w-3 h-3"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Faculty 2 -->
-        <div class="glass-card rounded-xl p-5 border-cyan-500/20 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-[11px] font-mono text-cyan-400 mb-2">
-              <span>FACULTY 2 &middot; COMPUTE SOVEREIGNTY</span>
-              <span class="bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">RATIFIED</span>
-            </div>
-            <h3 class="font-bold text-white text-base">Global Compute & Energy Grid Optimizer</h3>
-            <p class="text-xs text-slate-400 mt-1.5">Presiding Dean: Chancellor Marcus Brain (Distributed Systems & Thermodynamics). VRAM allocation balancer.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-            <span class="text-[11px] font-mono text-slate-500">ZK: c77e2ff8d4...</span>
-            <a href="saas/global_compute_energy_optimizer.html" target="_blank" class="px-3 py-1 bg-cyan-600/20 hover:bg-cyan-600/30 border border-cyan-500/40 rounded text-xs font-mono text-cyan-300 font-semibold transition flex items-center gap-1">
-              Launch Terminal <i data-lucide="arrow-right" class="w-3 h-3"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Faculty 3 -->
-        <div class="glass-card rounded-xl p-5 border-emerald-500/20 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-[11px] font-mono text-emerald-400 mb-2">
-              <span>FACULTY 3 &middot; PLANETARY PATHOLOGY</span>
-              <span class="bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">RATIFIED</span>
-            </div>
-            <h3 class="font-bold text-white text-base">Planetary Pathogen Early Warning Sentinel</h3>
-            <p class="text-xs text-slate-400 mt-1.5">Presiding Dean: Chancellor Sarah Aegis (Computational Epidemiology & Biosecurity). Outbreak defense array.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-            <span class="text-[11px] font-mono text-slate-500">ZK: 3b13180fa4...</span>
-            <a href="saas/global_pathogen_early_warning.html" target="_blank" class="px-3 py-1 bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 rounded text-xs font-mono text-emerald-300 font-semibold transition flex items-center gap-1">
-              Launch Terminal <i data-lucide="arrow-right" class="w-3 h-3"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Faculty 4 -->
-        <div class="glass-card rounded-xl p-5 border-amber-500/20 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-[11px] font-mono text-amber-400 mb-2">
-              <span>FACULTY 4 &middot; UNIVERSAL PEDAGOGY</span>
-              <span class="bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">RATIFIED</span>
-            </div>
-            <h3 class="font-bold text-white text-base">Universal Pedagogy & Logic Accelerator</h3>
-            <p class="text-xs text-slate-400 mt-1.5">Presiding Dean: Chancellor Elena Rostova (Cognitive Acceleration & AI Learning). Real-time curriculum generation.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-            <span class="text-[11px] font-mono text-slate-500">ZK: 59701cdff1...</span>
-            <a href="saas/universal_pedagogy_accelerator.html" target="_blank" class="px-3 py-1 bg-amber-600/20 hover:bg-amber-600/30 border border-amber-500/40 rounded text-xs font-mono text-amber-300 font-semibold transition flex items-center gap-1">
-              Launch Terminal <i data-lucide="arrow-right" class="w-3 h-3"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Faculty 5 -->
-        <div class="glass-card rounded-xl p-5 border-blue-500/20 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-[11px] font-mono text-blue-400 mb-2">
-              <span>FACULTY 5 &middot; JURISPRUDENCE & ETHICS</span>
-              <span class="bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/30">RATIFIED</span>
-            </div>
-            <h3 class="font-bold text-white text-base">Zero-Knowledge Governance Proof Sentinel</h3>
-            <p class="text-xs text-slate-400 mt-1.5">Presiding Dean: Chancellor Viktor Solaris (Cryptographic Law & ZK Governance). Anti-corruption integrity auditor.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-            <span class="text-[11px] font-mono text-slate-500">ZK: 59dc009020...</span>
-            <a href="saas/zk_governance_proof_sentinel.html" target="_blank" class="px-3 py-1 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 rounded text-xs font-mono text-blue-300 font-semibold transition flex items-center gap-1">
-              Launch Terminal <i data-lucide="arrow-right" class="w-3 h-3"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Faculty 6 -->
-        <div class="glass-card rounded-xl p-5 border-teal-500/20 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-[11px] font-mono text-teal-400 mb-2">
-              <span>FACULTY 6 &middot; DEEP EXPLORATION</span>
-              <span class="bg-teal-500/10 px-2 py-0.5 rounded border border-teal-500/30">RATIFIED</span>
-            </div>
-            <h3 class="font-bold text-white text-base">Fusion-Solar Planetary Grid Architect</h3>
-            <p class="text-xs text-slate-400 mt-1.5">Presiding Dean: Chancellor Yuki Tanaka (Clean Energy Scaling & Orbital Engineering). Grid carbon audit array.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-            <span class="text-[11px] font-mono text-slate-500">ZK: d7c3990f0f...</span>
-            <a href="saas/fusion_solar_grid_architect.html" target="_blank" class="px-3 py-1 bg-teal-600/20 hover:bg-teal-600/30 border border-teal-500/40 rounded text-xs font-mono text-teal-300 font-semibold transition flex items-center gap-1">
-              Launch Terminal <i data-lucide="arrow-right" class="w-3 h-3"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 2: Complete 35-Tool Software Fleet -->
-    <section id="catalog" class="space-y-4 pt-4 border-t border-white/5">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div>
-          <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-            <span>35-Tool Sovereign Software Suite</span>
-          </h2>
-          <p class="text-xs text-slate-400">100% private, client-side, zero server leakage.</p>
-        </div>
-
-        <!-- Filter & Search -->
-        <div class="flex items-center gap-2">
-          <div class="relative">
-            <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-2.5 text-slate-500"></i>
-            <input type="text" id="toolSearch" oninput="filterTools()" placeholder="Search 35 tools..." class="bg-slate-900 border border-slate-700 text-xs font-mono rounded-lg pl-8 pr-3 py-1.5 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 w-48 sm:w-64">
-          </div>
-          <select id="catFilter" onchange="filterTools()" class="bg-slate-900 border border-slate-700 text-xs font-mono rounded-lg px-2.5 py-1.5 text-slate-300 focus:outline-none focus:border-emerald-500">
-            <option value="ALL">All Categories</option>
-            <option value="SENATE">Senate Decrees (7)</option>
-            <option value="FINTECH">FinTech & Revenue (7)</option>
-            <option value="SECURITY">Security & Infra (7)</option>
-            <option value="AI">AI & LLM Tools (6)</option>
-            <option value="DATA">Data & SQL (5)</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Tools Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5" id="toolsContainer">
-        <!-- Javascript injected tool cards -->
-      </div>
-    </section>
-
-    <!-- Section 3: Client-Side Sandbox Utility -->
-    <section class="glass-card rounded-xl p-6 border-emerald-500/20 space-y-4">
-      <div class="flex items-center justify-between border-b border-white/5 pb-3">
-        <div class="flex items-center gap-2">
-          <span class="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-400"><i data-lucide="terminal" class="w-4 h-4"></i></span>
-          <h3 class="font-bold text-white text-base">In-Browser Private AST & Payload Inspector</h3>
-        </div>
-        <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">Client-Side Memory</span>
-      </div>
-      <p class="text-xs text-slate-400">Validate code snippets, JSON payloads, or parse JWT claims safely. No network requests are sent.</p>
+    <!-- Bottom Storage Quota & User Profile Dock -->
+    <div class="p-4 border-t border-slate-800/80 space-y-3">
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-xs font-mono text-slate-400 mb-1">Input Payload (JSON or Code)</label>
-          <textarea id="sandboxInput" rows="5" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs font-mono text-slate-200 focus:outline-none focus:border-emerald-500 scrollbar-thin" placeholder='{"status": "online", "client": "guest_user", "mode": "sovereign"}'></textarea>
+      <!-- Client Storage Quota Meter -->
+      <div class="bg-slate-900/80 rounded-lg p-3 border border-slate-800 text-xs">
+        <div class="flex items-center justify-between text-[11px] mb-1.5">
+          <span class="text-slate-400 font-mono">Local Storage</span>
+          <span class="text-emerald-400 font-mono font-semibold" id="storageQuotaText">Checking...</span>
         </div>
-        <div>
-          <label class="block text-xs font-mono text-slate-400 mb-1">Cryptographic Hash & Analysis</label>
-          <div id="sandboxOutput" class="w-full h-[120px] bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs font-mono text-emerald-400 overflow-y-auto scrollbar-thin">
-            Ready for client-side parsing.
+        <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+          <div id="storageBar" class="bg-emerald-500 h-full rounded-full transition-all duration-500" style="width: 8%;"></div>
+        </div>
+        <p class="text-[10px] text-slate-500 mt-1.5">100% Client-Side Private Storage</p>
+      </div>
+
+      <!-- User Profile Card -->
+      <div class="flex items-center justify-between bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
+        <div class="flex items-center gap-2.5 overflow-hidden">
+          <div id="userAvatarContainer" class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-xs text-white shrink-0 overflow-hidden">
+            U
+          </div>
+          <div class="truncate">
+            <div id="userDisplayName" class="text-xs font-semibold text-white truncate">Guest User</div>
+            <div id="userEmailBadge" class="text-[10px] text-slate-400 truncate">guest@local</div>
           </div>
         </div>
-      </div>
-
-      <div class="flex gap-2 justify-end pt-2">
-        <button onclick="runSandboxDigest()" class="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-black font-semibold text-xs font-mono rounded-lg transition shadow-sm">
-          Compute SHA-256 Digest
+        <button onclick="handleUserAuthAction()" id="btnAuthAction" title="Login / Logout" class="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition">
+          <i data-lucide="log-in" class="w-4 h-4"></i>
         </button>
       </div>
-    </section>
 
-  </main>
+    </div>
+  </aside>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/5 bg-slate-950/80 px-6 py-6 mt-12 text-xs font-mono text-slate-500">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+  <!-- Mobile Overlay -->
+  <div id="sidebarOverlay" onclick="toggleMobileSidebar()" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-20 hidden md:hidden"></div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. MAIN WORKSPACE CONTAINER & TOP APP HEADER                              -->
+  <!-- ========================================================================= -->
+  <div class="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto">
+    
+    <!-- Top SaaS App Header -->
+    <header class="sticky top-0 z-10 bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800/80 px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      
+      <div class="flex items-center gap-3">
+        <button onclick="toggleMobileSidebar()" class="md:hidden p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
+          <i data-lucide="menu" class="w-4 h-4"></i>
+        </button>
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+          <span class="hover:text-slate-200">Workspace</span>
+          <span>/</span>
+          <span id="breadcrumbCurrent" class="text-indigo-400 font-medium">Overview</span>
+        </div>
+      </div>
+
+      <!-- Right Header Actions -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Search trigger button -->
+        <button onclick="focusSearch()" class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-xs text-slate-400 hover:text-slate-200 hover:border-slate-700 transition">
+          <i data-lucide="search" class="w-3.5 h-3.5"></i>
+          <span>Search tools...</span>
+          <kbd class="text-[10px] font-mono bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700 text-slate-400">/</kbd>
+        </button>
+
+        <!-- Status Tag -->
+        <span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] font-mono text-emerald-400">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Zero-Cloud Leakage
+        </span>
+
+        <!-- Distinct Admin Console Link -->
+        <a href="admin_dashboard.html" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-semibold transition">
+          <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span class="hidden sm:inline">Admin Mission Control</span>
+          <span class="sm:hidden">Admin</span> 🔒
+        </a>
+
+        <!-- Home link -->
+        <a href="index.html" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition" title="Back to Homepage">
+          <i data-lucide="home" class="w-4 h-4"></i>
+        </a>
+
+      </div>
+    </header>
+
+    <!-- Content Workspace Views -->
+    <main class="p-4 sm:p-8 max-w-7xl mx-auto w-full space-y-8 flex-1">
+
+      <!-- ===================================================================== -->
+      <!-- VIEW 1: WORKSPACE OVERVIEW                                            -->
+      <!-- ===================================================================== -->
+      <section id="view-overview" class="space-y-8">
+        
+        <!-- Welcome Banner -->
+        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-900/40 via-purple-900/20 to-slate-900/40 border border-indigo-500/20 p-6 sm:p-8">
+          <div class="relative z-10 max-w-2xl space-y-2">
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-[11px] font-mono text-indigo-300">
+              <i data-lucide="sparkles" class="w-3 h-3"></i> Sovereign Developer Portal
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Welcome to your Workspace, <span id="heroUserName" class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Developer</span>
+            </h1>
+            <p class="text-sm text-slate-300">
+              Your personal, zero-latency in-browser studio. All tools run purely inside your browser memory with zero tracking, zero cloud file uploads, and complete cryptographic privacy.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-3">
+              <button onclick="switchView('launchpad')" class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs shadow-lg shadow-indigo-600/30 transition flex items-center gap-1.5">
+                <i data-lucide="grid" class="w-3.5 h-3.5"></i> Open App Launchpad
+              </button>
+              <button onclick="switchView('tokens')" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium text-xs transition flex items-center gap-1.5">
+                <i data-lucide="key" class="w-3.5 h-3.5"></i> Manage API Tokens
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Workspace Metrics -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="saas-card p-5">
+            <div class="flex items-center justify-between text-slate-400 text-xs">
+              <span class="font-medium">Total Sovereign Tools</span>
+              <span class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400"><i data-lucide="box" class="w-4 h-4"></i></span>
+            </div>
+            <div class="text-2xl font-black text-white mt-2">47</div>
+            <div class="text-[11px] text-emerald-400 font-mono mt-1">100% In-Browser Active</div>
+          </div>
+
+          <div class="saas-card p-5">
+            <div class="flex items-center justify-between text-slate-400 text-xs">
+              <span class="font-medium">My Bookmarked Tools</span>
+              <span class="p-2 rounded-lg bg-amber-500/10 text-amber-400"><i data-lucide="star" class="w-4 h-4"></i></span>
+            </div>
+            <div class="text-2xl font-black text-white mt-2" id="kpiStarred">0</div>
+            <div class="text-[11px] text-slate-400 font-mono mt-1">Saved to Local Vault</div>
+          </div>
+
+          <div class="saas-card p-5">
+            <div class="flex items-center justify-between text-slate-400 text-xs">
+              <span class="font-medium">Recent Executions</span>
+              <span class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400"><i data-lucide="play" class="w-4 h-4"></i></span>
+            </div>
+            <div class="text-2xl font-black text-white mt-2" id="kpiExecutions">0</div>
+            <div class="text-[11px] text-cyan-400 font-mono mt-1">Logged in Session</div>
+          </div>
+
+          <div class="saas-card p-5">
+            <div class="flex items-center justify-between text-slate-400 text-xs">
+              <span class="font-medium">Data Privacy Index</span>
+              <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400"><i data-lucide="shield-check" class="w-4 h-4"></i></span>
+            </div>
+            <div class="text-2xl font-black text-white mt-2">100%</div>
+            <div class="text-[11px] text-emerald-400 font-mono mt-1">Airgapped Local RAM</div>
+          </div>
+        </div>
+
+        <!-- Pinned Quick Launch Utilities -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-bold text-white flex items-center gap-2">
+              <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+              <span>Essential Quick-Launch Utilities</span>
+            </h2>
+            <button onclick="switchView('launchpad')" class="text-xs text-indigo-400 hover:text-indigo-300 flex items-center gap-1 font-medium">
+              View All 47 Tools <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="quickLaunchGrid">
+            <!-- Dynamic Quick Launch Cards -->
+          </div>
+        </div>
+
+        <!-- Recent Activity Feed Preview -->
+        <div class="saas-card p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <h3 class="font-bold text-sm text-white flex items-center gap-2">
+              <i data-lucide="history" class="w-4 h-4 text-cyan-400"></i>
+              <span>Recent Activity in this Workspace</span>
+            </h3>
+            <button onclick="switchView('activity')" class="text-xs text-slate-400 hover:text-white">View Full History</button>
+          </div>
+          <div id="overviewActivityList" class="space-y-2 text-xs">
+            <div class="text-slate-500 py-3 text-center">No recent tool executions yet. Launch a utility to record activity!</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- VIEW 2: APP LAUNCHPAD (ALL 47+ TOOLS)                                  -->
+      <!-- ===================================================================== -->
+      <section id="view-launchpad" class="space-y-6 hidden">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+          <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+              <span>Sovereign Application Launchpad</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">47 Tools</span>
+            </h1>
+            <p class="text-xs text-slate-400 mt-1">100% private, client-side, zero server tracking. Star any tool to pin to your personal bookmarks.</p>
+          </div>
+
+          <!-- Search & Filter Controls -->
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="relative">
+              <i data-lucide="search" class="w-4 h-4 absolute left-3 top-2.5 text-slate-500"></i>
+              <input type="text" id="toolsSearchInput" oninput="filterTools()" placeholder="Search utilities, keywords..." class="w-64 bg-slate-900 border border-slate-700/80 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500">
+            </div>
+            <button onclick="clearSearch()" class="text-xs text-slate-400 hover:text-white px-2 py-1">Clear</button>
+          </div>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="flex flex-wrap gap-2 text-xs font-medium" id="categoryPills">
+          <button onclick="selectCategory('ALL')" class="cat-pill px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-semibold shadow-sm transition" data-cat="ALL">All Utilities (47)</button>
+          <button onclick="selectCategory('DEV')" class="cat-pill px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition" data-cat="DEV">Developer & DevOps</button>
+          <button onclick="selectCategory('SECURITY')" class="cat-pill px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition" data-cat="SECURITY">Security & Privacy</button>
+          <button onclick="selectCategory('FINTECH')" class="cat-pill px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition" data-cat="FINTECH">FinTech & Venture</button>
+          <button onclick="selectCategory('AI')" class="cat-pill px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition" data-cat="AI">AI & Machine Learning</button>
+          <button onclick="selectCategory('MEDIA')" class="cat-pill px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition" data-cat="MEDIA">Media & Creative</button>
+          <button onclick="selectCategory('SCIENCE')" class="cat-pill px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition" data-cat="SCIENCE">Science & Academic</button>
+        </div>
+
+        <!-- Tool Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="toolsGrid">
+          <!-- Populated by JS -->
+        </div>
+
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- VIEW 3: MY SAVED TOOLS (BOOKMARKS)                                    -->
+      <!-- ===================================================================== -->
+      <section id="view-favorites" class="space-y-6 hidden">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-5">
+          <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+              <i data-lucide="star" class="w-5 h-5 text-amber-400"></i>
+              <span>My Bookmarked Utilities</span>
+            </h1>
+            <p class="text-xs text-slate-400 mt-1">Tools you have starred for instant access in this browser.</p>
+          </div>
+          <button onclick="clearAllFavorites()" class="text-xs text-red-400 hover:text-red-300 font-medium">Clear All Bookmarks</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="favoritesGrid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- VIEW 4: RECENT ACTIVITY & RUN HISTORY                                 -->
+      <!-- ===================================================================== -->
+      <section id="view-activity" class="space-y-6 hidden">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-5">
+          <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+              <i data-lucide="history" class="w-5 h-5 text-cyan-400"></i>
+              <span>Recent Executions & Activity History</span>
+            </h1>
+            <p class="text-xs text-slate-400 mt-1">Audit trail of tools launched in this workspace. Stored strictly in local browser memory.</p>
+          </div>
+          <button onclick="clearRunHistory()" class="text-xs text-red-400 hover:text-red-300 font-medium">Clear Run History</button>
+        </div>
+
+        <div class="saas-card p-6" id="historyContainer">
+          <div id="activityFullList" class="space-y-3">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- VIEW 5: PERSONAL API TOKENS                                           -->
+      <!-- ===================================================================== -->
+      <section id="view-tokens" class="space-y-6 hidden">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-5">
+          <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+              <i data-lucide="key" class="w-5 h-5 text-emerald-400"></i>
+              <span>Personal Client Access Tokens</span>
+            </h1>
+            <p class="text-xs text-slate-400 mt-1">Scoped bearer tokens to integrate client-side utilities with local scripts and developer pipelines.</p>
+          </div>
+          <button onclick="openCreateTokenModal()" class="px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-black font-semibold text-xs transition flex items-center gap-1.5 self-start">
+            <i data-lucide="plus" class="w-3.5 h-3.5"></i> Generate New Token
+          </button>
+        </div>
+
+        <!-- Token Generator Modal / Card -->
+        <div id="createTokenCard" class="saas-card p-6 border-emerald-500/30 space-y-4 hidden">
+          <h3 class="font-bold text-sm text-white flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-emerald-400"></i>
+            <span>Create New Access Token</span>
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-1">Token Label</label>
+              <input type="text" id="newTokenName" placeholder="e.g. Local VSCode Extension" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-1">Permission Scopes</label>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <label class="flex items-center gap-1.5 text-slate-300">
+                  <input type="checkbox" id="scopeExecute" checked class="rounded border-slate-700 text-emerald-500">
+                  <span>execute:tools</span>
+                </label>
+                <label class="flex items-center gap-1.5 text-slate-300">
+                  <input type="checkbox" id="scopeCatalog" checked class="rounded border-slate-700 text-emerald-500">
+                  <span>read:catalog</span>
+                </label>
+                <label class="flex items-center gap-1.5 text-slate-300">
+                  <input type="checkbox" id="scopeHistory" checked class="rounded border-slate-700 text-emerald-500">
+                  <span>store:history</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-end gap-2 pt-2">
+            <button onclick="closeCreateTokenModal()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 transition">Cancel</button>
+            <button onclick="generateTokenSubmit()" class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-black font-semibold text-xs transition">Create Token</button>
+          </div>
+        </div>
+
+        <!-- Active Tokens Table -->
+        <div class="saas-card overflow-hidden">
+          <div class="p-4 border-b border-slate-800 text-xs font-semibold text-slate-300">Active Personal Tokens</div>
+          <div class="divide-y divide-slate-800" id="tokensList">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- VIEW 6: IN-BROWSER PAYLOAD SANDBOX                                    -->
+      <!-- ===================================================================== -->
+      <section id="view-sandbox" class="space-y-6 hidden">
+        <div class="border-b border-slate-800 pb-5">
+          <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+            <i data-lucide="terminal" class="w-5 h-5 text-purple-400"></i>
+            <span>In-Browser Private Payload Sandbox</span>
+          </h1>
+          <p class="text-xs text-slate-400 mt-1">Compute SHA-256 digests, parse JSON trees, or decode JWT tokens in client memory without transmitting a single byte.</p>
+        </div>
+
+        <div class="saas-card p-6 space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-1">Input Data (JSON, Token, or Text)</label>
+              <textarea id="sandboxInput" rows="7" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs font-mono text-slate-200 focus:outline-none focus:border-indigo-500" placeholder='{"user": "researcher", "workspace": "alpha", "algorithm": "sha256"}'></textarea>
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-1">Computed Cryptographic Output</label>
+              <div id="sandboxOutput" class="w-full h-[160px] bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs font-mono text-emerald-400 overflow-y-auto">
+                Ready for client-side evaluation.
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-2 justify-end">
+            <button onclick="computeSandboxHash()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs rounded-lg transition">
+              Compute SHA-256 Digest
+            </button>
+            <button onclick="prettifySandboxJson()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs rounded-lg transition">
+              Format & Validate JSON
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- VIEW 7: CLOUD PROFILE & ACCOUNT IDENTITY                              -->
+      <!-- ===================================================================== -->
+      <section id="view-account" class="space-y-6 hidden">
+        <div class="border-b border-slate-800 pb-5">
+          <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+            <i data-lucide="user-check" class="w-5 h-5 text-sky-400"></i>
+            <span>Cloud Identity & Account Security</span>
+          </h1>
+          <p class="text-xs text-slate-400 mt-1">Manage your Firebase authenticated session, active provider links, and browser data retention.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Cloud Profile Details -->
+          <div class="saas-card p-6 space-y-4">
+            <h3 class="text-sm font-bold text-white">Firebase Session Overview</h3>
+            
+            <div class="flex items-center gap-4">
+              <div id="accAvatar" class="w-14 h-14 rounded-2xl bg-indigo-600 flex items-center justify-center font-bold text-xl text-white">
+                U
+              </div>
+              <div>
+                <div id="accName" class="font-bold text-base text-white">Guest User</div>
+                <div id="accEmail" class="text-xs text-slate-400">Unauthenticated Guest</div>
+                <div class="mt-1" id="accBadge">
+                  <span class="text-[10px] font-mono bg-slate-800 text-slate-400 px-2 py-0.5 rounded border border-slate-700">LOCAL GUEST</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2 text-xs font-mono bg-slate-950 p-4 rounded-xl border border-slate-900 text-slate-400">
+              <div class="flex justify-between">
+                <span>UID:</span>
+                <span id="accUid" class="text-slate-200">local_guest_session</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Auth Provider:</span>
+                <span id="accProvider" class="text-slate-200">Local Browser Memory</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Session Login:</span>
+                <span id="accLoginAt" class="text-slate-200">Current</span>
+              </div>
+            </div>
+
+            <div class="flex gap-2 pt-2">
+              <a href="auth.html" class="flex-1 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs text-center transition">
+                Sign In with Firebase Cloud
+              </a>
+              <button onclick="signOutUser()" class="px-4 py-2 rounded-lg bg-red-950/40 hover:bg-red-900/50 text-red-300 border border-red-900/40 text-xs font-medium transition">
+                Sign Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Privacy & Cache Maintenance -->
+          <div class="saas-card p-6 space-y-4">
+            <h3 class="text-sm font-bold text-white">Client-Side Privacy Controls</h3>
+            <p class="text-xs text-slate-400">All data generated in this portal (bookmarks, run logs, personal API keys) is stored locally on this machine. You have total control over wiping this data.</p>
+            
+            <div class="space-y-3 pt-2">
+              <div class="flex items-center justify-between p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs">
+                <div>
+                  <div class="font-semibold text-white">Wipe Bookmarks & History</div>
+                  <div class="text-[11px] text-slate-500">Removes starred utilities and recent executions</div>
+                </div>
+                <button onclick="clearAllUserData()" class="px-3 py-1.5 bg-red-900/20 hover:bg-red-900/30 text-red-400 border border-red-800/40 rounded text-xs transition">
+                  Wipe Data
+                </button>
+              </div>
+
+              <div class="flex items-center justify-between p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs">
+                <div>
+                  <div class="font-semibold text-white">Revoke All Personal Tokens</div>
+                  <div class="text-[11px] text-slate-500">Invalidates all created client API tokens</div>
+                </div>
+                <button onclick="revokeAllTokens()" class="px-3 py-1.5 bg-red-900/20 hover:bg-red-900/30 text-red-400 border border-red-800/40 rounded text-xs transition">
+                  Revoke All
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Workspace Footer -->
+    <footer class="border-t border-slate-800/80 bg-[#0d1322] px-6 py-4 text-xs font-mono text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-2">
       <div class="flex items-center space-x-2">
         <span>AI WORLD CORE &copy; 2026</span>
         <span>&middot;</span>
-        <span class="text-emerald-400">Autonomous Sovereign Fleet</span>
+        <span class="text-indigo-400">Personal Workspace Portal</span>
       </div>
       <div class="flex items-center space-x-4">
         <a href="index.html" class="hover:text-slate-300">Home Showcase</a>
-        <a href="admin_dashboard.html" class="hover:text-amber-400 font-semibold flex items-center gap-1"><i data-lucide="lock" class="w-3 h-3"></i> Admin Console</a>
-        <a href="https://github.com/keshavs40344/ai-world-core" target="_blank" class="hover:text-slate-300 flex items-center gap-1">
-          GitHub Repo <i data-lucide="external-link" class="w-3 h-3"></i>
-        </a>
+        <a href="admin_dashboard.html" class="hover:text-amber-400 flex items-center gap-1 font-semibold text-amber-400/80"><i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> Admin Mission Control 🔒</a>
       </div>
-    </div>
-  </footer>
+    </footer>
 
+  </div>
+
+  <!-- JavaScript Application Logic -->
   <script>
-    lucide.createIcons();
+    // Master tools database embedded
+    const MASTER_TOOLS = [{"id": "devforge-swissknife", "name": "DevForge Swiss-Knife", "cat": "DEV", "catName": "Developer & DevOps", "icon": "wrench", "desc": "Offline JSON, YAML, CSV matrix transcoder, JWT debugger, SHA-256/512 hasher, and Base64 studio.", "url": "saas/devforge-swissknife.html", "badge": "Popular"}, {"id": "sql-explainer-index-advisor", "name": "SQL Explain & Index Advisor", "cat": "DEV", "catName": "Developer & DevOps", "icon": "database", "desc": "In-browser SQL AST analyzer, anti-pattern detector, and automated B-Tree DDL index generator.", "url": "saas/sql-explainer-index-advisor.html", "badge": "Free"}, {"id": "webhook-json-transformer", "name": "Webhook JSON Transformer", "cat": "DEV", "catName": "Developer & DevOps", "icon": "workflow", "desc": "Visual JSON schema mapper, dot-notation extractor, data mutator, and Slack/Discord webhook formatter.", "url": "saas/webhook-json-transformer.html", "badge": "Core"}, {"id": "chmod_calculator", "name": "Chmod Permissions Calculator", "cat": "DEV", "catName": "Developer & DevOps", "icon": "terminal", "desc": "Interactive octal and symbolic Linux/UNIX file permissions calculator with command generator.", "url": "saas/chmod_calculator.html", "badge": "Utility"}, {"id": "clickhouse_ddl_generator", "name": "ClickHouse DDL Generator", "cat": "DEV", "catName": "Developer & DevOps", "icon": "server", "desc": "High-speed analytical schema generator for ClickHouse MergeTree tables and partitioning keys.", "url": "saas/clickhouse_ddl_generator.html", "badge": "Data"}, {"id": "cloudwatch_metric_filter_builder", "name": "CloudWatch Metric Filter Builder", "cat": "DEV", "catName": "Developer & DevOps", "icon": "activity", "desc": "Generate syntactically flawless AWS CloudWatch metric extraction patterns and regex filters.", "url": "saas/cloudwatch_metric_filter_builder.html", "badge": "Cloud"}, {"id": "cmu_sql_explain_visualizer", "name": "CMU SQL Explain Visualizer", "cat": "DEV", "catName": "Developer & DevOps", "icon": "git-branch", "desc": "Visual query execution plan tree viewer for PostgreSQL and MySQL query performance analysis.", "url": "saas/cmu_sql_explain_visualizer.html", "badge": "Perf"}, {"id": "ansible_playbook_validator", "name": "Ansible Playbook Validator", "cat": "DEV", "catName": "Developer & DevOps", "icon": "file-code", "desc": "YAML syntax linter and task execution order validator for infrastructure automation.", "url": "saas/ansible_playbook_validator.html", "badge": "DevOps"}, {"id": "api_payload_builder", "name": "API Payload Builder & Tester", "cat": "DEV", "catName": "Developer & DevOps", "icon": "send", "desc": "Interactive client-side HTTP request composer and JSON mock generator with curl export.", "url": "saas/api_payload_builder.html", "badge": "REST"}, {"id": "avro_schema_generator", "name": "Apache Avro Schema Generator", "cat": "DEV", "catName": "Developer & DevOps", "icon": "box", "desc": "Convert JSON samples to strict Apache Avro IDL schemas for Kafka streaming architectures.", "url": "saas/avro_schema_generator.html", "badge": "Kafka"}, {"id": "pdf-metadata-scrubber-redactor", "name": "Document Redactor & Privacy Scrubber", "cat": "SECURITY", "catName": "Security & Privacy", "icon": "shield-check", "desc": "Airgapped PII scrubbing for emails, phone numbers, credit cards, national IDs, and deal terms.", "url": "saas/pdf-metadata-scrubber-redactor.html", "badge": "Airgapped"}, {"id": "phishshield-scam-sentinel", "name": "PhishShield Anti-Scam & Phishing Sentinel", "cat": "SECURITY", "catName": "Security & Privacy", "icon": "shield-alert", "desc": "Detects fake KYC banking scams, Cyrillic homograph domain spoofing, and urgency traps.", "url": "saas/phishshield-scam-sentinel.html", "badge": "Security"}, {"id": "api_key_leak_git_history_sanitizer", "name": "API Key Git History Sanitizer", "cat": "SECURITY", "catName": "Security & Privacy", "icon": "key", "desc": "Locate and redact leaked secrets, tokens, AWS keys, and private certificates before commit.", "url": "saas/api_key_leak_git_history_sanitizer.html", "badge": "Crucial"}, {"id": "anti_money_laundering_pep_scanner", "name": "AML & PEP Screening Scanner", "cat": "SECURITY", "catName": "Security & Privacy", "icon": "user-x", "desc": "Client-side Politically Exposed Persons (PEP) and OFAC sanctions list screening simulator.", "url": "saas/anti_money_laundering_pep_scanner.html", "badge": "Compliance"}, {"id": "audit_trail_hash_chain_verifier", "name": "Audit Trail Hash-Chain Verifier", "cat": "SECURITY", "catName": "Security & Privacy", "icon": "link", "desc": "Tamper-evident cryptographic log verification using SHA-256 sequential merkle hash chaining.", "url": "saas/audit_trail_hash_chain_verifier.html", "badge": "Crypto"}, {"id": "browser_fingerprint_canvas_spoof_tester", "name": "Browser Fingerprint & Privacy Tester", "cat": "SECURITY", "catName": "Security & Privacy", "icon": "fingerprint", "desc": "Audit your device canvas entropy, audio buffer hashes, WebGL vendor strings, and tracking resistance.", "url": "saas/browser_fingerprint_canvas_spoof_tester.html", "badge": "Privacy"}, {"id": "burp_raw_http_repeater_parser", "name": "Burp Raw HTTP Repeater Parser", "cat": "SECURITY", "catName": "Security & Privacy", "icon": "radio", "desc": "Parse, reformat, and validate raw Burp Suite HTTP requests, cookies, and injection vectors.", "url": "saas/burp_raw_http_repeater_parser.html", "badge": "SecOps"}, {"id": "clauseguard_contract_auditor", "name": "ClauseGuard Contract Legal Auditor", "cat": "SECURITY", "catName": "Security & Privacy", "icon": "file-text", "desc": "Automated NDA and commercial contract liability risk scanner with redline suggestions.", "url": "saas/clauseguard_contract_auditor.html", "badge": "Legal"}, {"id": "startup-runway-unit-economics", "name": "Startup Runway & Unit Economics", "cat": "FINTECH", "catName": "FinTech & Venture", "icon": "trending-up", "desc": "Deterministic 24-month cash runway simulator, LTV/CAC payback calculator, and Default Alive metrics.", "url": "saas/startup-runway-unit-economics.html", "badge": "Finance"}, {"id": "captable-equity-dilution", "name": "CapTable Pro & Equity Dilution Simulator", "cat": "FINTECH", "catName": "FinTech & Venture", "icon": "pie-chart", "desc": "Interactive pre/post-money valuation, SAFE note conversion, and multi-round waterfall breakdown.", "url": "saas/captable-equity-dilution.html", "badge": "Startup"}, {"id": "invoice-contract-shield-pro", "name": "Invoice & Contract Shield Pro", "cat": "FINTECH", "catName": "FinTech & Venture", "icon": "receipt", "desc": "Tax-compliant GST/VAT invoicing, automatic protective legal IP clauses, and clean PDF export.", "url": "saas/invoice-contract-shield-pro.html", "badge": "Freelance"}, {"id": "black_scholes_option_pricing", "name": "Black-Scholes Options Pricing Calculator", "cat": "FINTECH", "catName": "FinTech & Venture", "icon": "bar-chart-2", "desc": "Calculate European Call & Put premiums, Implied Volatility, and Greeks (Delta, Gamma, Vega, Theta).", "url": "saas/black_scholes_option_pricing.html", "badge": "Quant"}, {"id": "bond_yield_to_maturity", "name": "Bond Yield to Maturity (YTM) Model", "cat": "FINTECH", "catName": "FinTech & Venture", "icon": "percent", "desc": "Calculate exact YTM, Macaulay Duration, and Convexity for fixed-income sovereign bonds.", "url": "saas/bond_yield_to_maturity.html", "badge": "Bonds"}, {"id": "burn_rate_runway_calculator", "name": "Burn Rate & Cash Buffer Calculator", "cat": "FINTECH", "catName": "FinTech & Venture", "icon": "flame", "desc": "Track monthly net burn, gross burn, headcount hiring cost buffers, and cash runway projections.", "url": "saas/burn_rate_runway_calculator.html", "badge": "Capital"}, {"id": "dcf-valuation-model", "name": "VASTUDA Free DCF Intrinsic Visualizer", "cat": "FINTECH", "catName": "FinTech & Venture", "icon": "dollar-sign", "desc": "Discounted Cash Flow intrinsic valuation model with WACC calculator and sensitivity matrix.", "url": "saas/dcf-valuation-model.html", "badge": "Valuation"}, {"id": "attention_head_qk_matrix_visualizer", "name": "Attention Head QK Matrix Visualizer", "cat": "AI", "catName": "AI & Machine Learning", "icon": "eye", "desc": "Visualize transformer multi-head scaled dot-product attention softmax distributions in real-time.", "url": "saas/attention_head_qk_matrix_visualizer.html", "badge": "DeepLearning"}, {"id": "beam_search_decoding_simulator", "name": "Beam Search Decoding Simulator", "cat": "AI", "catName": "AI & Machine Learning", "icon": "git-pull-request", "desc": "Interactive beam search vs greedy search token generation tree visualizer for LLM inference.", "url": "saas/beam_search_decoding_simulator.html", "badge": "NLP"}, {"id": "bleu_score_machine_translation", "name": "BLEU Score Translation Evaluator", "cat": "AI", "catName": "AI & Machine Learning", "icon": "check-circle-2", "desc": "Compute modified n-gram precision and brevity penalty for machine translation benchmarking.", "url": "saas/bleu_score_machine_translation.html", "badge": "Eval"}, {"id": "classifier_confusion_matrix_f1_score", "name": "Confusion Matrix & F1-Score Studio", "cat": "AI", "catName": "AI & Machine Learning", "icon": "grid", "desc": "Calculate Precision, Recall, Specificity, F1-Score, and ROC-AUC from custom classification matrices.", "url": "saas/classifier_confusion_matrix_f1_score.html", "badge": "MLOps"}, {"id": "ai_cost_calculator", "name": "LLM Token Cost & Inference Estimator", "cat": "AI", "catName": "AI & Machine Learning", "icon": "cpu", "desc": "Calculate prompt and completion token costs across GPT-4o, Claude 3.5 Sonnet, and Gemini 1.5 Flash.", "url": "saas/ai_cost_calculator.html", "badge": "Cost"}, {"id": "ai_agent_function_call_orchestrator", "name": "AI Agent Function Call Orchestrator", "cat": "AI", "catName": "AI & Machine Learning", "icon": "layers", "desc": "Test and validate JSON schema tool declarations, multi-turn tool calling, and dispatch loops.", "url": "saas/ai_agent_function_call_orchestrator.html", "badge": "Agents"}, {"id": "agent_memory_sliding_window_summarizer", "name": "Agent Memory Sliding Window Summarizer", "cat": "AI", "catName": "AI & Machine Learning", "icon": "message-square", "desc": "Simulate conversation context compaction, FIFO token pruning, and recursive conversational memory.", "url": "saas/agent_memory_sliding_window_summarizer.html", "badge": "Memory"}, {"id": "omniconverter-pro", "name": "OmniConverter Pro", "cat": "MEDIA", "catName": "Media & Creative", "icon": "repeat", "desc": "Multi-file PDF merger, WebP image compressor, photo EXIF GPS location wiper, and SVG rasterizer.", "url": "saas/omniconverter-pro.html", "badge": "Essential"}, {"id": "audio-waveform-chapter-studio", "name": "Audio Waveform & Podcast Chapter Studio", "cat": "MEDIA", "catName": "Media & Creative", "icon": "audio-lines", "desc": "Web Audio API waveform visualizer, drag-and-seek audio scrubber, and Spotify/YouTube chapter exporter.", "url": "saas/audio-waveform-chapter-studio.html", "badge": "Audio"}, {"id": "wcag-contrast-accessibility-suite", "name": "WCAG 2.2 Accessibility & Contrast Suite", "cat": "MEDIA", "catName": "Media & Creative", "icon": "contrast", "desc": "APCA & WCAG contrast calculation, colorblindness simulation (Protanopia, Deuteranopia), and UI audits.", "url": "saas/wcag-contrast-accessibility-suite.html", "badge": "Design"}, {"id": "vector-qr-studio-vcard", "name": "Vector QR Studio & Sovereign vCard Generator", "cat": "MEDIA", "catName": "Media & Creative", "icon": "qr-code", "desc": "High-resolution SVG and PNG exports up to 2048px, vCard contact cards, and WiFi QR codes.", "url": "saas/vector-qr-studio-vcard.html", "badge": "QR"}, {"id": "cleanwrite-pro-editor", "name": "CleanWrite Prose & Readability Sentinel", "cat": "MEDIA", "catName": "Media & Creative", "icon": "feather", "desc": "Airgapped document editor with Flesch-Kincaid scoring, passive voice detector, and sentence trimmer.", "url": "saas/cleanwrite-pro-editor.html", "badge": "Writing"}, {"id": "aspect_ratio_calculator", "name": "Aspect Ratio & Screen Resolution Studio", "cat": "MEDIA", "catName": "Media & Creative", "icon": "maximize-2", "desc": "Compute 16:9, 4:3, 21:9 ultra-wide scalings, pixel density (PPI), and video crop dimensions.", "url": "saas/aspect_ratio_calculator.html", "badge": "Display"}, {"id": "global_macro_resource_rebalancer", "name": "Planetary Macro Resource Rebalancer", "cat": "SCIENCE", "catName": "Science & Academic", "icon": "globe", "desc": "Supply chain deadlock & global grain-energy parity solver with ZK proof verification.", "url": "saas/global_macro_resource_rebalancer.html", "badge": "Faculty 1"}, {"id": "global_compute_energy_optimizer", "name": "Global Compute Energy Optimizer", "cat": "SCIENCE", "catName": "Science & Academic", "icon": "zap", "desc": "VRAM and compute allocator across planetary clusters with dynamic thermodynamics.", "url": "saas/global_compute_energy_optimizer.html", "badge": "Faculty 2"}, {"id": "global_pathogen_early_warning", "name": "Planetary Pathogen Early Warning", "cat": "SCIENCE", "catName": "Science & Academic", "icon": "shield-plus", "desc": "Biosafety protocols & pandemic signal detector with epidemiological reproduction (R0) modeling.", "url": "saas/global_pathogen_early_warning.html", "badge": "Faculty 3"}, {"id": "universal_pedagogy_accelerator", "name": "Universal Pedagogy Accelerator", "cat": "SCIENCE", "catName": "Science & Academic", "icon": "book-open", "desc": "AI-driven adaptive learning & Socratic logic curriculum synthesizer.", "url": "saas/universal_pedagogy_accelerator.html", "badge": "Faculty 4"}, {"id": "zk_governance_proof_sentinel", "name": "ZK Governance Proof Sentinel", "cat": "SCIENCE", "catName": "Science & Academic", "icon": "lock", "desc": "Zero-knowledge anti-corruption audit terminal for verifiable planetary governance.", "url": "saas/zk_governance_proof_sentinel.html", "badge": "Faculty 5"}, {"id": "fusion_solar_grid_architect", "name": "Fusion-Solar Grid Architect", "cat": "SCIENCE", "catName": "Science & Academic", "icon": "sun", "desc": "Clean energy microgrid planning, tokamak magnetic confinement, and carbon audit array.", "url": "saas/fusion_solar_grid_architect.html", "badge": "Faculty 6"}, {"id": "cell_doubling_time_growth_rate", "name": "Cell Doubling Time & Growth Rate Calculator", "cat": "SCIENCE", "catName": "Science & Academic", "icon": "dna", "desc": "Calculate cell proliferation growth rates, generation time, and log-phase kinetics for biology labs.", "url": "saas/cell_doubling_time_growth_rate.html", "badge": "BioLab"}, {"id": "centrifuge_rcf_rpm_converter", "name": "Centrifuge RCF & RPM Converter", "cat": "SCIENCE", "catName": "Science & Academic", "icon": "rotate-cw", "desc": "Convert Relative Centrifugal Force (g-force) to RPM based on rotor radius in millimeters.", "url": "saas/centrifuge_rcf_rpm_converter.html", "badge": "Physics"}, {"id": "bayes_theorem_posterior_updater", "name": "Bayesian Posterior Probability Studio", "cat": "SCIENCE", "catName": "Science & Academic", "icon": "binary", "desc": "Interactive prior odds and likelihood ratio updater for scientific hypothesis testing.", "url": "saas/bayes_theorem_posterior_updater.html", "badge": "Math"}];
 
-    const TOOLS_DATABASE = [
-      // SENATE
-      { name: "Planetary Macro Resource Rebalancer", slug: "global_macro_resource_rebalancer", cat: "SENATE", desc: "Supply chain deadlock & grain-energy parity solver.", color: "purple" },
-      { name: "Global Compute Energy Optimizer", slug: "global_compute_energy_optimizer", cat: "SENATE", desc: "VRAM and compute allocator across global clusters.", color: "cyan" },
-      { name: "Planetary Pathogen Early Warning", slug: "global_pathogen_early_warning", cat: "SENATE", desc: "Biosafety protocols & pandemic signal detector.", color: "emerald" },
-      { name: "Universal Pedagogy Accelerator", slug: "universal_pedagogy_accelerator", cat: "SENATE", desc: "AI-driven adaptive learning & logic studio.", color: "amber" },
-      { name: "ZK Governance Proof Sentinel", slug: "zk_governance_proof_sentinel", cat: "SENATE", desc: "Zero-knowledge anti-corruption audit terminal.", color: "blue" },
-      { name: "Fusion-Solar Grid Architect", slug: "fusion_solar_grid_architect", cat: "SENATE", desc: "Clean energy grid planning & carbon audit array.", color: "teal" },
-      { name: "Planetary Code Quality Gate", slug: "planetary_code_quality_gate", cat: "SENATE", desc: "Headless AST/DOM integrity auditor & sanitizer.", color: "emerald" },
-      { name: "Planetary Governance Terminal", slug: "planetary_governance_terminal", cat: "SENATE", desc: "Complete interactive Senate decree simulator.", color: "purple" },
+    // State
+    let currentCategory = "ALL";
+    let searchQuery = "";
 
-      // FINTECH
-      { name: "GST Reconcile Pro Ledger", slug: "gst_reconcile_pro_ledger", cat: "FINTECH", desc: "GST mismatch detection & automated input credit ledger.", color: "amber" },
-      { name: "Forex Leakage Auditor", slug: "forex_leakage_auditor", cat: "FINTECH", desc: "Currency volatility risk scanner & FX margin modeler.", color: "amber" },
-      { name: "Forex Leakage Pro", slug: "forex_leakage_pro", cat: "FINTECH", desc: "Advanced payment gateway & cross-border leakage profiler.", color: "amber" },
-      { name: "Wharton DTAA Tax Forecaster", slug: "wharton_dtaa_tax_forecaster", cat: "FINTECH", desc: "Cross-border tax treaty impact analysis engine.", color: "amber" },
-      { name: "TaxShield Freelance Engine", slug: "taxshield_freelance_engine", cat: "FINTECH", desc: "Freelancer advance tax & 44ADA reconciliation studio.", color: "amber" },
-      { name: "Invoice Forge Pro", slug: "invoice_forge_pro", cat: "FINTECH", desc: "Client-side private invoice & PDF generator.", color: "amber" },
-      { name: "Freight Cost IQ", slug: "freight_cost_iq", cat: "FINTECH", desc: "Volumetric weight & courier shipping margin estimator.", color: "amber" },
+    // Local Storage Keys
+    const KEY_FAVORITES = "genesis_user_favorites";
+    const KEY_HISTORY = "genesis_user_history";
+    const KEY_TOKENS = "genesis_user_tokens";
+    const KEY_USER = "genesis_current_user";
 
-      // SECURITY
-      { name: "JWT Sentinel Guard", slug: "jwt_sentinel_guard", cat: "SECURITY", desc: "Header injection & signature weakness scanner.", color: "red" },
-      { name: "IIT Zero Trust JWT Profiler", slug: "iit_zero_trust_jwt_profiler", cat: "SECURITY", desc: "Zero-trust cryptographic JWT claim verification.", color: "red" },
-      { name: "Secret Scrubber Studio", slug: "secret_scrubber_studio", cat: "SECURITY", desc: "API key, token, & private key leak prevention.", color: "red" },
-      { name: "DB Lock Deadlock Sentinel", slug: "db_lock_deadlock_sentinel", cat: "SECURITY", desc: "Transactional deadlock prediction for PostgreSQL/MySQL.", color: "red" },
-      { name: "Contract Indemnity Shield", slug: "contract_indemnity_shield", cat: "SECURITY", desc: "Contract liability risk & indemnity clause scanner.", color: "red" },
-      { name: "Contract Shield Risk Scanner", slug: "contract_shield_risk_scanner", cat: "SECURITY", desc: "Client agreement & NDA risk audit engine.", color: "red" },
-      { name: "ClauseGuard Contract Auditor", slug: "clauseguard_contract_auditor", cat: "SECURITY", desc: "AI contract audit with redline recommendations.", color: "red" },
-
-      // AI
-      { name: "LatencyBench LLM Profiler", slug: "latencybench_llm_profiler", cat: "AI", desc: "Response latency & token throughput benchmarking.", color: "indigo" },
-      { name: "LLM Token Arbitrage Studio", slug: "llm_token_arbitrage_studio", cat: "AI", desc: "Price comparison across OpenAI, Anthropic, Gemini.", color: "indigo" },
-      { name: "Stanford VRAM Inference Allocator", slug: "stanford_vram_inference_allocator", cat: "AI", desc: "Quantization VRAM footprint optimizer.", color: "indigo" },
-      { name: "VRAM Inference Allocator", slug: "vram_inference_allocator", cat: "AI", desc: "Multi-GPU inference budget allocation planner.", color: "indigo" },
-      { name: "Hyper Matrix Cloud", slug: "hyper_matrix_cloud", cat: "AI", desc: "Distributed AI inference topology architect.", color: "indigo" },
-      { name: "Developer API Infrastructure", slug: "developer_api_infrastructure", cat: "AI", desc: "Micro-API scaffold & gateway blueprint generator.", color: "indigo" },
-
-      // DATA
-      { name: "SQL Latency Optimizer", slug: "sql_latency_optimizer", cat: "DATA", desc: "Query execution plan visualizer & index advisor.", color: "cyan" },
-      { name: "CMU SQL Explain Visualizer", slug: "cmu_sql_explain_visualizer", cat: "DATA", desc: "Visual tree diagram for complex SQL execution plans.", color: "cyan" },
-      { name: "API Mock Studio (1788551790)", slug: "api_mock_studio_1788551790", cat: "DATA", desc: "Instant mock HTTP responses & schema testing.", color: "cyan" },
-      { name: "API Mock Studio (1788535809)", slug: "api_mock_studio_1788535809", cat: "DATA", desc: "Client-side mock REST API generator.", color: "cyan" },
-      { name: "VectorDB Payload Normalizer", slug: "vectordb_payload_normalizer", cat: "DATA", desc: "Embedding vector schema normalizer & inspector.", color: "cyan" }
-    ];
-
-    function renderTools(tools) {
-      const container = document.getElementById("toolsContainer");
-      container.innerHTML = "";
-
-      tools.forEach(tool => {
-        const badgeColors = {
-          SENATE: "bg-purple-500/10 text-purple-400 border-purple-500/30",
-          FINTECH: "bg-amber-500/10 text-amber-400 border-amber-500/30",
-          SECURITY: "bg-red-500/10 text-red-400 border-red-500/30",
-          AI: "bg-indigo-500/10 text-indigo-400 border-indigo-500/30",
-          DATA: "bg-cyan-500/10 text-cyan-400 border-cyan-500/30"
-        };
-
-        const card = document.createElement("div");
-        card.className = "glass-card rounded-xl p-4 flex flex-col justify-between";
-        card.innerHTML = `
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded border ${badgeColors[tool.cat] || ''}">${tool.cat}</span>
-              <span class="text-[10px] font-mono text-emerald-400">● LIVE</span>
-            </div>
-            <h4 class="font-bold text-white text-sm tracking-tight">${tool.name}</h4>
-            <p class="text-xs text-slate-400 mt-1 line-clamp-2">${tool.desc}</p>
-          </div>
-          <div class="mt-3 pt-2.5 border-t border-white/5 flex items-center justify-between">
-            <span class="text-[10px] font-mono text-slate-500">saas/${tool.slug}.html</span>
-            <a href="saas/${tool.slug}.html" target="_blank" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 rounded border border-slate-700 hover:border-emerald-500/50 transition flex items-center gap-1">
-              Launch <i data-lucide="external-link" class="w-3 h-3"></i>
-            </a>
-          </div>
-        `;
-        container.appendChild(card);
-      });
+    // Initialize on DOM ready
+    document.addEventListener("DOMContentLoaded", () => {
       lucide.createIcons();
-    }
+      initStorageEstimate();
+      syncUserProfile();
+      renderQuickLaunch();
+      renderTools();
+      renderFavorites();
+      renderHistory();
+      renderTokens();
+      updateBadges();
 
-    function filterTools() {
-      const q = document.getElementById("toolSearch").value.toLowerCase().trim();
-      const cat = document.getElementById("catFilter").value;
+      // Keyboard shortcuts
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "/" && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA") {
+          e.preventDefault();
+          focusSearch();
+        }
+      });
+    });
 
-      const filtered = TOOLS_DATABASE.filter(t => {
-        const matchesQuery = t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) || t.slug.toLowerCase().includes(q);
-        const matchesCat = cat === "ALL" || t.cat === cat;
-        return matchesQuery && matchesCat;
+    // Sidebar View Navigation
+    function switchView(viewName) {
+      const views = ["overview", "launchpad", "favorites", "activity", "tokens", "sandbox", "account"];
+      views.forEach(v => {
+        const el = document.getElementById("view-" + v);
+        const navEl = document.getElementById("nav-" + v);
+        if (el) el.classList.add("hidden");
+        if (navEl) navEl.classList.remove("nav-active");
       });
 
-      renderTools(filtered);
+      const targetEl = document.getElementById("view-" + viewName);
+      const targetNav = document.getElementById("nav-" + viewName);
+      if (targetEl) targetEl.classList.remove("hidden");
+      if (targetNav) targetNav.classList.add("nav-active");
+
+      // Update breadcrumb
+      const breadcrumb = document.getElementById("breadcrumbCurrent");
+      if (breadcrumb) {
+        breadcrumb.textContent = viewName.charAt(0).toUpperCase() + viewName.slice(1);
+      }
+
+      // Re-render specific views if needed
+      if (viewName === "favorites") renderFavorites();
+      if (viewName === "activity") renderHistory();
+      if (viewName === "tokens") renderTokens();
+
+      lucide.createIcons();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    async function refreshData() {
-      const icon = document.getElementById("refreshIcon");
-      icon.classList.add("animate-spin");
-      document.getElementById("lastSyncTime").textContent = "Fetching live pulse...";
-
-      try {
-        const res = await fetch("live_telemetry.json?t=" + Date.now());
-        if (res.ok) {
-          const data = await res.json();
-          if (data.fleet_size) document.getElementById("kpiFleet").textContent = data.fleet_size;
-          if (data.total_decrees_ratified) document.getElementById("kpiDecrees").textContent = data.total_decrees_ratified;
-          if (data.entropy_index) document.getElementById("kpiEntropy").textContent = data.entropy_index.toFixed(4);
-          if (data.system_latency_ms) document.getElementById("kpiLatency").textContent = data.system_latency_ms + " ms";
-        }
-      } catch (err) {
-        console.warn("Using offline telemetry cache:", err);
-      } finally {
-        setTimeout(() => {
-          icon.classList.remove("animate-spin");
-          document.getElementById("lastSyncTime").textContent = "Synced " + new Date().toLocaleTimeString();
-        }, 400);
+    function toggleMobileSidebar() {
+      const sb = document.getElementById("appSidebar");
+      const overlay = document.getElementById("sidebarOverlay");
+      if (sb.classList.contains("-translate-x-full")) {
+        sb.classList.remove("-translate-x-full");
+        overlay.classList.remove("hidden");
+      } else {
+        sb.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
       }
     }
 
-    async function runSandboxDigest() {
-      const input = document.getElementById("sandboxInput").value.trim() || '{"test": true}';
-      const output = document.getElementById("sandboxOutput");
-      
-      const encoder = new TextEncoder();
-      const data = encoder.encode(input);
-      const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    function focusSearch() {
+      switchView("launchpad");
+      setTimeout(() => {
+        const input = document.getElementById("toolsSearchInput");
+        if (input) {
+          input.focus();
+          input.select();
+        }
+      }, 100);
+    }
 
+    function clearSearch() {
+      const input = document.getElementById("toolsSearchInput");
+      if (input) {
+        input.value = "";
+        searchQuery = "";
+        renderTools();
+      }
+    }
+
+    // User Profile Sync (Firebase & Local)
+    function syncUserProfile() {
+      try {
+        const raw = localStorage.getItem(KEY_USER);
+        if (raw) {
+          const u = JSON.parse(raw);
+          const name = u.displayName || (u.email ? u.email.split('@')[0] : "Researcher");
+          const email = u.email || "cloud_user@vastuda.net";
+          const initial = name.charAt(0).toUpperCase();
+
+          document.getElementById("userDisplayName").textContent = name;
+          document.getElementById("userEmailBadge").textContent = email;
+          document.getElementById("heroUserName").textContent = name;
+          document.getElementById("accName").textContent = name;
+          document.getElementById("accEmail").textContent = email;
+          document.getElementById("accUid").textContent = u.uid || "cloud_uid_" + Math.floor(Math.random()*10000);
+          document.getElementById("accProvider").textContent = u.provider || "Firebase Cloud";
+          document.getElementById("accLoginAt").textContent = u.loginAt ? new Date(u.loginAt).toLocaleTimeString() : "Just now";
+
+          const avEl = document.getElementById("userAvatarContainer");
+          const accAvEl = document.getElementById("accAvatar");
+          if (u.photoURL) {
+            avEl.innerHTML = `<img src="${u.photoURL}" class="w-full h-full object-cover">`;
+            accAvEl.innerHTML = `<img src="${u.photoURL}" class="w-full h-full object-cover">`;
+          } else {
+            avEl.textContent = initial;
+            accAvEl.textContent = initial;
+          }
+
+          document.getElementById("accBadge").innerHTML = `<span class="text-[10px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">CLOUD VERIFIED</span>`;
+          document.getElementById("btnAuthAction").innerHTML = `<i data-lucide="log-out" class="w-4 h-4 text-red-400"></i>`;
+          document.getElementById("btnAuthAction").title = "Sign Out";
+        }
+      } catch (e) {
+        console.error("Profile sync error", e);
+      }
+      lucide.createIcons();
+    }
+
+    function handleUserAuthAction() {
+      const raw = localStorage.getItem(KEY_USER);
+      if (raw) {
+        signOutUser();
+      } else {
+        window.location.href = "auth.html";
+      }
+    }
+
+    function signOutUser() {
+      localStorage.removeItem(KEY_USER);
+      try {
+        if (window.firebase && window.firebase.auth) {
+          window.firebase.auth().signOut().catch(() => {});
+        }
+      } catch {}
+      window.location.reload();
+    }
+
+    // Favorites Logic
+    function getFavorites() {
+      try {
+        const raw = localStorage.getItem(KEY_FAVORITES);
+        return raw ? JSON.parse(raw) : [];
+      } catch { return []; }
+    }
+
+    function toggleFavorite(toolId, event) {
+      if (event) event.stopPropagation();
+      let favs = getFavorites();
+      if (favs.includes(toolId)) {
+        favs = favs.filter(id => id !== toolId);
+      } else {
+        favs.push(toolId);
+      }
+      localStorage.setItem(KEY_FAVORITES, JSON.stringify(favs));
+      updateBadges();
+      renderTools();
+      renderFavorites();
+      renderQuickLaunch();
+    }
+
+    function isFavorite(toolId) {
+      return getFavorites().includes(toolId);
+    }
+
+    function clearAllFavorites() {
+      if (confirm("Clear all your bookmarked tools?")) {
+        localStorage.removeItem(KEY_FAVORITES);
+        updateBadges();
+        renderFavorites();
+        renderTools();
+      }
+    }
+
+    // Run History Tracking
+    function getRunHistory() {
+      try {
+        const raw = localStorage.getItem(KEY_HISTORY);
+        return raw ? JSON.parse(raw) : [];
+      } catch { return []; }
+    }
+
+    function logToolExecution(toolId) {
+      const tool = MASTER_TOOLS.find(t => t.id === toolId);
+      if (!tool) return;
+      let history = getRunHistory();
+      // Unshift new execution
+      history.unshift({
+        id: tool.id,
+        name: tool.name,
+        url: tool.url,
+        icon: tool.icon,
+        time: new Date().toISOString()
+      });
+      // Keep last 30
+      if (history.length > 30) history = history.slice(0, 30);
+      localStorage.setItem(KEY_HISTORY, JSON.stringify(history));
+      updateBadges();
+      renderHistory();
+    }
+
+    function launchTool(toolId, url) {
+      logToolExecution(toolId);
+      window.open(url, "_blank");
+    }
+
+    function clearRunHistory() {
+      localStorage.removeItem(KEY_HISTORY);
+      updateBadges();
+      renderHistory();
+    }
+
+    // Filter and Render Tools
+    function selectCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll(".cat-pill").forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.className = "cat-pill px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-semibold shadow-sm transition";
+        } else {
+          btn.className = "cat-pill px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition";
+        }
+      });
+      renderTools();
+    }
+
+    function filterTools() {
+      const input = document.getElementById("toolsSearchInput");
+      searchQuery = input ? input.value.toLowerCase().trim() : "";
+      renderTools();
+    }
+
+    function renderTools() {
+      const grid = document.getElementById("toolsGrid");
+      if (!grid) return;
+
+      const filtered = MASTER_TOOLS.filter(t => {
+        const matchCat = (currentCategory === "ALL" || t.cat === currentCategory);
+        const matchSearch = (!searchQuery || 
+          t.name.toLowerCase().includes(searchQuery) || 
+          t.desc.toLowerCase().includes(searchQuery) ||
+          t.catName.toLowerCase().includes(searchQuery)
+        );
+        return matchCat && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-12 text-center text-slate-500">
+            <i data-lucide="search-x" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>
+            <p class="text-sm">No utilities match your search "${searchQuery}".</p>
+            <button onclick="clearSearch()" class="mt-2 text-xs text-indigo-400 hover:underline">Clear filter</button>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      grid.innerHTML = filtered.map(t => {
+        const fav = isFavorite(t.id);
+        const starClass = fav ? "text-amber-400 fill-amber-400" : "text-slate-500 hover:text-amber-400";
+        return `
+          <div class="saas-card p-5 flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 uppercase tracking-wider font-semibold">
+                  ${t.badge || t.cat}
+                </span>
+                <button onclick="toggleFavorite('${t.id}', event)" class="p-1.5 rounded-lg hover:bg-slate-800 transition" title="${fav ? 'Remove from bookmarks' : 'Add to bookmarks'}">
+                  <i data-lucide="star" class="w-4 h-4 ${starClass}"></i>
+                </button>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="p-2.5 rounded-xl bg-slate-800/80 text-indigo-400 border border-slate-700/60 group-hover:scale-105 transition-transform shrink-0">
+                  <i data-lucide="${t.icon || 'box'}" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-white group-hover:text-indigo-300 transition-colors">${t.name}</h3>
+                  <p class="text-xs text-slate-400 mt-1 line-clamp-2 leading-relaxed">${t.desc}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-slate-500">100% Client RAM</span>
+              <button onclick="launchTool('${t.id}', '${t.url}')" class="px-3 py-1.5 bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 rounded-lg text-xs font-semibold font-mono flex items-center gap-1.5 transition">
+                <span>Launch</span> <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      lucide.createIcons();
+    }
+
+    function renderFavorites() {
+      const grid = document.getElementById("favoritesGrid");
+      if (!grid) return;
+      const favIds = getFavorites();
+      const favTools = MASTER_TOOLS.filter(t => favIds.includes(t.id));
+
+      if (favTools.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-12 text-center text-slate-500 saas-card p-8">
+            <i data-lucide="star-off" class="w-8 h-8 mx-auto mb-2 opacity-50 text-amber-400"></i>
+            <p class="text-sm text-slate-300 font-medium">No bookmarked utilities yet</p>
+            <p class="text-xs text-slate-500 mt-1">Browse the App Launchpad and click the star icon on any tool to pin it here.</p>
+            <button onclick="switchView('launchpad')" class="mt-4 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition">
+              Explore 47 Tools
+            </button>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      grid.innerHTML = favTools.map(t => {
+        return `
+          <div class="saas-card p-5 flex flex-col justify-between border-amber-500/20">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30 uppercase tracking-wider font-semibold">
+                  BOOKMARKED
+                </span>
+                <button onclick="toggleFavorite('${t.id}', event)" class="p-1.5 rounded-lg hover:bg-slate-800 transition" title="Remove bookmark">
+                  <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                </button>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="p-2.5 rounded-xl bg-slate-800/80 text-amber-400 border border-slate-700/60 shrink-0">
+                  <i data-lucide="${t.icon || 'star'}" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-white">${t.name}</h3>
+                  <p class="text-xs text-slate-400 mt-1 line-clamp-2">${t.desc}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-slate-500">${t.catName}</span>
+              <button onclick="launchTool('${t.id}', '${t.url}')" class="px-3 py-1.5 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 rounded-lg text-xs font-semibold font-mono flex items-center gap-1.5 transition">
+                <span>Launch</span> <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      lucide.createIcons();
+    }
+
+    function renderQuickLaunch() {
+      const container = document.getElementById("quickLaunchGrid");
+      if (!container) return;
+
+      // Prefer favorited tools, otherwise pick popular tools
+      let favIds = getFavorites();
+      let picks = MASTER_TOOLS.filter(t => favIds.includes(t.id));
+      if (picks.length < 4) {
+        const defaults = ["devforge-swissknife", "omniconverter-pro", "sql-explainer-index-advisor", "startup-runway-unit-economics"];
+        defaults.forEach(id => {
+          if (!picks.some(p => p.id === id)) {
+            const found = MASTER_TOOLS.find(t => t.id === id);
+            if (found) picks.push(found);
+          }
+        });
+      }
+      picks = picks.slice(0, 4);
+
+      container.innerHTML = picks.map(t => `
+        <div onclick="launchTool('${t.id}', '${t.url}')" class="saas-card p-4 flex items-center gap-3 cursor-pointer group">
+          <div class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition shrink-0">
+            <i data-lucide="${t.icon || 'zap'}" class="w-4 h-4"></i>
+          </div>
+          <div class="truncate">
+            <div class="font-bold text-xs text-white group-hover:text-indigo-300 transition truncate">${t.name}</div>
+            <div class="text-[10px] text-slate-500 font-mono">${t.catName}</div>
+          </div>
+        </div>
+      `).join("");
+
+      lucide.createIcons();
+    }
+
+    function renderHistory() {
+      const listEl = document.getElementById("activityFullList");
+      const overviewListEl = document.getElementById("overviewActivityList");
+      const history = getRunHistory();
+
+      if (history.length === 0) {
+        if (listEl) listEl.innerHTML = `<div class="py-8 text-center text-slate-500 text-xs">No recorded tool runs yet.</div>`;
+        if (overviewListEl) overviewListEl.innerHTML = `<div class="py-3 text-center text-slate-500 text-xs">No recent tool executions yet. Launch a utility to record activity!</div>`;
+        return;
+      }
+
+      const renderItem = (item) => `
+        <div class="flex items-center justify-between p-3 rounded-lg bg-slate-950/70 border border-slate-800/80 text-xs">
+          <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+              <i data-lucide="${item.icon || 'play'}" class="w-3.5 h-3.5"></i>
+            </div>
+            <div>
+              <div class="font-semibold text-white">${item.name}</div>
+              <div class="text-[10px] font-mono text-slate-500">${new Date(item.time).toLocaleString()}</div>
+            </div>
+          </div>
+          <button onclick="launchTool('${item.id}', '${item.url}')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded text-[11px] font-mono flex items-center gap-1 transition">
+            Re-run <i data-lucide="external-link" class="w-3 h-3"></i>
+          </button>
+        </div>
+      `;
+
+      if (listEl) listEl.innerHTML = history.map(renderItem).join("");
+      if (overviewListEl) overviewListEl.innerHTML = history.slice(0, 4).map(renderItem).join("");
+      lucide.createIcons();
+    }
+
+    // Personal API Tokens Management
+    function getTokens() {
+      try {
+        const raw = localStorage.getItem(KEY_TOKENS);
+        return raw ? JSON.parse(raw) : [
+          { name: "Default Client Token", token: "pat_live_8f7b2c9a1e4d88e0", scopes: ["execute:tools", "read:catalog"], createdAt: new Date().toISOString() }
+        ];
+      } catch { return []; }
+    }
+
+    function renderTokens() {
+      const list = document.getElementById("tokensList");
+      if (!list) return;
+      const tokens = getTokens();
+
+      if (tokens.length === 0) {
+        list.innerHTML = `<div class="p-6 text-center text-xs text-slate-500">No active access tokens. Generate one to interact programmatically.</div>`;
+        return;
+      }
+
+      list.innerHTML = tokens.map((t, idx) => `
+        <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-xs text-white">${t.name}</span>
+              <span class="text-[10px] font-mono text-slate-500">Created ${new Date(t.createdAt).toLocaleDateString()}</span>
+            </div>
+            <div class="flex items-center gap-2 mt-1">
+              <code class="text-[11px] font-mono bg-slate-950 px-2 py-0.5 rounded border border-slate-800 text-emerald-400">${t.token.slice(0, 12)}••••••••${t.token.slice(-4)}</code>
+              <button onclick="copyToken('${t.token}')" class="text-xs text-slate-400 hover:text-white" title="Copy Token"><i data-lucide="copy" class="w-3.5 h-3.5"></i></button>
+            </div>
+            <div class="flex gap-1.5 mt-2">
+              ${(t.scopes || []).map(s => `<span class="text-[9px] font-mono bg-indigo-500/10 text-indigo-300 px-1.5 py-0.2 rounded border border-indigo-500/20">${s}</span>`).join("")}
+            </div>
+          </div>
+          <button onclick="revokeToken(${idx})" class="px-3 py-1 bg-red-950/40 hover:bg-red-900/50 text-red-300 border border-red-900/40 rounded text-xs transition self-start sm:self-center">
+            Revoke
+          </button>
+        </div>
+      `).join("");
+      lucide.createIcons();
+    }
+
+    function openCreateTokenModal() {
+      document.getElementById("createTokenCard").classList.remove("hidden");
+    }
+
+    function closeCreateTokenModal() {
+      document.getElementById("createTokenCard").classList.add("hidden");
+    }
+
+    function generateTokenSubmit() {
+      const nameInput = document.getElementById("newTokenName");
+      const name = nameInput.value.trim() || "My API Key";
+      const scopes = [];
+      if (document.getElementById("scopeExecute").checked) scopes.push("execute:tools");
+      if (document.getElementById("scopeCatalog").checked) scopes.push("read:catalog");
+      if (document.getElementById("scopeHistory").checked) scopes.push("store:history");
+
+      // Random hex token
+      const randomHex = Array.from(crypto.getRandomValues(new Uint8Array(16))).map(b => b.toString(16).padStart(2, '0')).join('');
+      const newToken = "pat_live_" + randomHex;
+
+      let tokens = getTokens();
+      tokens.unshift({
+        name,
+        token: newToken,
+        scopes,
+        createdAt: new Date().toISOString()
+      });
+      localStorage.setItem(KEY_TOKENS, JSON.stringify(tokens));
+      nameInput.value = "";
+      closeCreateTokenModal();
+      renderTokens();
+      alert("Token generated: " + newToken + "\n\nCopy it now! It will be masked in the dashboard.");
+    }
+
+    function copyToken(token) {
+      navigator.clipboard.writeText(token).then(() => {
+        alert("Token copied to clipboard!");
+      });
+    }
+
+    function revokeToken(idx) {
+      if (confirm("Are you sure you want to revoke this token?")) {
+        let tokens = getTokens();
+        tokens.splice(idx, 1);
+        localStorage.setItem(KEY_TOKENS, JSON.stringify(tokens));
+        renderTokens();
+      }
+    }
+
+    function revokeAllTokens() {
+      if (confirm("Revoke all active personal tokens?")) {
+        localStorage.removeItem(KEY_TOKENS);
+        renderTokens();
+      }
+    }
+
+    function clearAllUserData() {
+      if (confirm("Wipe all bookmarks, recent execution logs, and sandbox cache?")) {
+        localStorage.removeItem(KEY_FAVORITES);
+        localStorage.removeItem(KEY_HISTORY);
+        updateBadges();
+        renderFavorites();
+        renderHistory();
+        renderTools();
+        alert("Workspace data wiped successfully.");
+      }
+    }
+
+    // In-Browser Sandbox Logic
+    async function computeSandboxHash() {
+      const input = document.getElementById("sandboxInput").value;
+      const output = document.getElementById("sandboxOutput");
+      if (!input) {
+        output.textContent = "Error: Input is empty.";
+        return;
+      }
+      const enc = new TextEncoder();
+      const hashBuf = await crypto.subtle.digest("SHA-256", enc.encode(input));
+      const hashArray = Array.from(new Uint8Array(hashBuf));
+      const hex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
       output.innerHTML = `
-        <div class="text-slate-400">Byte Length: <span class="text-white">${data.length} bytes</span></div>
-        <div class="text-slate-400 mt-1">SHA-256 Integrity Hash:</div>
-        <div class="text-emerald-400 break-all select-all font-bold mt-0.5">${hashHex}</div>
-        <div class="text-slate-500 text-[10px] mt-2">✓ Verified in browser sandbox. Zero data leaked to external servers.</div>
+        <div class="text-indigo-300 font-bold mb-1">SHA-256 Digest (Client-Side):</div>
+        <div class="text-white select-all break-all">${hex}</div>
+        <div class="text-slate-500 text-[10px] mt-2">Payload length: ${input.length} bytes &middot; 0 Network Packets Sent</div>
       `;
     }
 
-    // Initial boot
-    renderTools(TOOLS_DATABASE);
-    refreshData();
+    function prettifySandboxJson() {
+      const input = document.getElementById("sandboxInput");
+      const output = document.getElementById("sandboxOutput");
+      try {
+        const obj = JSON.parse(input.value);
+        input.value = JSON.stringify(obj, null, 2);
+        output.innerHTML = `
+          <div class="text-emerald-400 font-bold mb-1">JSON Validated:</div>
+          <div class="text-slate-300 text-xs">Top-level keys: ${Object.keys(obj).join(", ")}</div>
+        `;
+      } catch (e) {
+        output.innerHTML = `<div class="text-red-400 font-bold">JSON Syntax Error: ${e.message}</div>`;
+      }
+    }
+
+    // Storage Quota Calculator
+    async function initStorageEstimate() {
+      const textEl = document.getElementById("storageQuotaText");
+      const barEl = document.getElementById("storageBar");
+      if (navigator.storage && navigator.storage.estimate) {
+        try {
+          const est = await navigator.storage.estimate();
+          const usedMB = (est.usage / (1024 * 1024)).toFixed(1);
+          const totalMB = (est.quota / (1024 * 1024)).toFixed(0);
+          const pct = Math.min(100, Math.max(5, ((est.usage / est.quota) * 100).toFixed(1)));
+          if (textEl) textEl.textContent = `${usedMB} MB used`;
+          if (barEl) barEl.style.width = `${pct}%`;
+        } catch {
+          if (textEl) textEl.textContent = "Private (Active)";
+        }
+      } else {
+        if (textEl) textEl.textContent = "Private (Active)";
+      }
+    }
+
+    // Badge Counters Update
+    function updateBadges() {
+      const favs = getFavorites();
+      const history = getRunHistory();
+
+      const starBadge = document.getElementById("starredCountBadge");
+      const actBadge = document.getElementById("activityCountBadge");
+      const kpiStar = document.getElementById("kpiStarred");
+      const kpiExec = document.getElementById("kpiExecutions");
+
+      if (starBadge) starBadge.textContent = favs.length;
+      if (actBadge) actBadge.textContent = history.length;
+      if (kpiStar) kpiStar.textContent = favs.length;
+      if (kpiExec) kpiExec.textContent = history.length;
+    }
   </script>
 </body>
 </html>
