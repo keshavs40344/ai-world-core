@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI WORLD CORE // Admin Portal Authentication 🔒</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background-color: #06080d;
+      font-family: 'JetBrains Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    .font-hud { font-family: 'Chakra Petch', sans-serif; }
+    
+    .tactical-grid {
+      background-image: 
+        radial-gradient(circle at 50% 20%, rgba(239, 68, 68, 0.08) 0%, transparent 60%),
+        linear-gradient(rgba(245, 158, 11, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 158, 11, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 32px 32px, 32px 32px;
+    }
+    
+    .card {
+      background: rgba(10, 14, 23, 0.9);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      border-radius: 12px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.8), 0 0 30px -10px rgba(239, 68, 68, 0.2);
+      position: relative;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 10px; height: 10px;
+      border-top: 2px solid #ef4444;
+      border-left: 2px solid #ef4444;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0; width: 10px; height: 10px;
+      border-bottom: 2px solid #ef4444;
+      border-right: 2px solid #ef4444;
+    }
+
+    input:focus {
+      border-color: #ef4444;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
+    }
+    .error {
+      color: #f87171;
+      font-size: 0.8rem;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid #ef4444;
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      display: none;
+      word-break: break-word;
+    }
+    .shake {
+      animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+    }
+    @keyframes shake {
+      10%, 90% { transform: translate3d(-1px, 0, 0); }
+      20%, 80% { transform: translate3d(2px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+      40%, 60% { transform: translate3d(4px, 0, 0); }
+    }
+  </style>
+</head>
+
+<body class="tactical-grid p-4">
+
+  <div class="card space-y-5" id="loginCard">
+    
+    <!-- Header -->
+    <div class="text-center space-y-2">
+      <div class="w-14 h-14 rounded-xl bg-red-950/40 border border-red-500/40 flex items-center justify-center text-red-400 mx-auto mb-1">
+        <i data-lucide="shield-alert" class="w-7 h-7"></i>
+      </div>
+      <div class="text-[10px] uppercase tracking-widest text-red-400 bg-red-500/10 px-2.5 py-0.5 rounded border border-red-500/20 inline-block font-mono">
+        RESTRICTED LEVEL-5 CLEARANCE
+      </div>
+      <h2 class="text-xl font-bold text-white font-hud tracking-wide">ADMIN AUTHENTICATION</h2>
+      <p class="text-xs text-slate-400">Authenticated Firestore <code>admins/</code> collection gate. Strict role enforcement enabled.</p>
+    </div>
+
+    <!-- Login Form -->
+    <form id="adminForm" class="space-y-4 text-left">
+      <div>
+        <label for="email" class="block text-xs font-mono text-slate-400 mb-1">Admin Email</label>
+        <div class="relative">
+          <input type="email" id="email" required autocomplete="username" placeholder="keshavkumarthakur00007@gmail.com" class="w-full bg-black border border-slate-700 rounded-lg py-2.5 px-3 text-xs font-mono text-white focus:outline-none placeholder-slate-600" />
+        </div>
+      </div>
+
+      <div>
+        <label for="password" class="block text-xs font-mono text-slate-400 mb-1">Password</label>
+        <input type="password" id="password" required autocomplete="current-password" placeholder="••••••••••••" class="w-full bg-black border border-slate-700 rounded-lg py-2.5 px-3 text-xs font-mono text-white focus:outline-none placeholder-slate-600" />
+      </div>
+
+      <button type="submit" id="submitBtn" class="w-full py-2.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs font-mono uppercase tracking-wider transition shadow-lg shadow-red-600/30 flex items-center justify-center gap-2">
+        <span>Sign In to Console</span> <i data-lucide="key" class="w-3.5 h-3.5"></i>
+      </button>
+
+      <div id="errorMsg" class="error"></div>
+    </form>
+
+    <!-- Bottom Actions -->
+    <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-500 font-mono">
+      <a href="user_dashboard.html" class="hover:text-indigo-400 transition flex items-center gap-1 text-slate-400">
+        <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> User Workspace
+      </a>
+      <a href="index.html" class="hover:text-slate-300">Home</a>
+    </div>
+
+  </div>
+
+  <script type="module">
+    import { auth, db } from "./admin-firebase.js";
+    import { signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    lucide.createIcons();
+
+    const form = document.getElementById("adminForm");
+    const errorMsg = document.getElementById("errorMsg");
+    const submitBtn = document.getElementById("submitBtn");
+    const loginCard = document.getElementById("loginCard");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorMsg.style.display = "none";
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Verifying Credentials & Role...</span>`;
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      try {
+        // 1. Sign in with Firebase Auth
+        const cred = await signInWithEmailAndPassword(auth, email, password);
+        
+        // 2. Query Firestore /admins/{uid}
+        const adminSnap = await getDoc(doc(db, "admins", cred.user.uid));
+
+        if (adminSnap.exists() && adminSnap.data().role === "admin" && adminSnap.data().isActive === true) {
+          // Success: Store verified admin session
+          sessionStorage.setItem("SOVEREIGN_ADMIN_UNLOCKED", "true");
+          sessionStorage.setItem("SOVEREIGN_UNLOCKED_AT", Date.now().toString());
+          sessionStorage.setItem("SOVEREIGN_ADMIN_EMAIL", cred.user.email);
+          sessionStorage.setItem("SOVEREIGN_ADMIN_UID", cred.user.uid);
+          
+          submitBtn.innerHTML = `<span>Access Granted! Redirecting...</span>`;
+          setTimeout(() => {
+            window.location.href = "admin-dashboard.html";
+          }, 400);
+        } else {
+          await signOut(auth);
+          showError("Access Denied: Account is not authorized as an administrator. (Requires active entry in Firestore admins collection)");
+        }
+      } catch (err) {
+        let cleanErr = err.message;
+        if (err.code === "auth/invalid-credential" || err.code === "auth/wrong-password") {
+          cleanErr = "Invalid email or password. Please verify your credentials.";
+        } else if (err.code === "auth/user-not-found") {
+          cleanErr = "No administrator account found with this email.";
+        }
+        showError(cleanErr);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<span>Sign In to Console</span> <i data-lucide="key" class="w-3.5 h-3.5"></i>`;
+        lucide.createIcons();
+      }
+    });
+
+    function showError(text) {
+      errorMsg.textContent = text;
+      errorMsg.style.display = "block";
+      loginCard.classList.add("shake");
+      setTimeout(() => loginCard.classList.remove("shake"), 450);
+    }
+  </script>
+</body>
+</html>
