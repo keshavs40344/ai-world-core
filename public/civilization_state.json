@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 10870000.0,
-    "total_monthly_revenue_usd": 55000.0,
+    "total_valuation_usd": 11370000.0,
+    "total_monthly_revenue_usd": 55450.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 12,
-    "last_updated_epoch": 1788776043.2417297
+    "last_tick": 13,
+    "last_updated_epoch": 1788796294.5584166
   },
   "continents": [
     {
@@ -103,9 +103,9 @@
       "slug": "logshield_security",
       "ticker": "LSRB",
       "industry": "CyberSecurity & DevSecOps",
-      "valuation": 2420000.0,
+      "valuation": 2920000.0,
       "treasury_balance": 63000.0,
-      "monthly_revenue": 12650.0,
+      "monthly_revenue": 13100.0,
       "operating_cost": 280.0,
       "status": "ACTIVE",
       "mission_statement": "Real-time automated redaction of API secrets, JWT tokens, and private databases before LLM exposure.",
@@ -349,12 +349,12 @@
       "name": "PromptShield -- LLM Prompt Injection & Jailbreak Firewall",
       "slug": "promptshield_injection_sentinel",
       "category": "Zero-Trust DevSecOps",
-      "version": "v1.2.0",
+      "version": "v2.0.0",
       "problem_statement": "Production AI agents leak system prompts and execute jailbreak instructions when processing untrusted user inputs.",
       "prd_json": "{\"summary\": \"Browser-native AST pattern matcher detecting prompt leaks, jailbreak vectors, and delimiter hijacking with zero API dependencies.\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/promptshield_injection_sentinel.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 544,
+      "daily_active_users": 713,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:17:00.170247+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 26,
+      "tick": 13,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-03",
+      "summary": "Self-Evolution Engine upgraded 'PromptShield -- LLM Prompt Injection & Jailbreak Firewall' to v2.0.0. User adoption grew to 713 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788796294.5522587
+    },
     {
       "id": 25,
       "tick": 12,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "SUCCESS",
       "timestamp": 1788717706.6660895
-    },
-    {
-      "id": 1,
-      "tick": 1,
-      "event_type": "CIVILIZATION_GENESIS",
-      "entity_id": "WORLD-GENESIS-PRIME",
-      "summary": "Master Blueprint Civilization Engine activated: 4 Continents, 4 Sovereign Companies, and Founding Leadership provisioned.",
-      "causality_chain": null,
-      "severity": "CRITICAL",
-      "timestamp": 1788717619.3661594
     }
   ],
   "transactions": [
