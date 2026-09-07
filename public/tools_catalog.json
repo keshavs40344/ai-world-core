@@ -1,5 +1,95 @@
 [
   {
+    "title": "Audio Waveform & Podcast Chapter Studio",
+    "category": "Audio & Podcast Engineering",
+    "desc": "Disrupts Headliner & Descript (/mo). Web Audio API waveform renderer, drag-and-seek audio scrubber, timestamp chapter marker, and instant YouTube/Spotify cuesheet exporter.",
+    "icon": "waveform",
+    "filename": "audio-waveform-chapter-studio.html",
+    "url": "public/saas/audio-waveform-chapter-studio.html",
+    "created_at": "2026-09-07T09:05:00Z"
+  },
+  {
+    "title": "WCAG 2.2 Accessibility & Contrast Suite",
+    "category": "Design & Accessibility Auditing",
+    "desc": "Disrupts Stark Pro & AccessiBe (\u2013/yr). Real-time APCA/WCAG contrast calculation, colorblindness simulation (Protanopia, Deuteranopia, Tritanopia), and interactive component testing.",
+    "icon": "eye",
+    "filename": "wcag-contrast-accessibility-suite.html",
+    "url": "public/saas/wcag-contrast-accessibility-suite.html",
+    "created_at": "2026-09-07T09:00:00Z"
+  },
+  {
+    "title": "SQL Performance Explainer & Index Advisor",
+    "category": "Database & Query Optimization",
+    "desc": "Disrupts EverSQL & DBVisualizer (/mo). In-browser SQL AST analyzer, anti-pattern detector (SELECT *, non-sargable functions, leading wildcards), and automated DDL B-Tree index generator.",
+    "icon": "database",
+    "filename": "sql-explainer-index-advisor.html",
+    "url": "public/saas/sql-explainer-index-advisor.html",
+    "created_at": "2026-09-07T08:55:00Z"
+  },
+  {
+    "title": "Startup Runway & Unit Economics Simulator",
+    "category": "Venture Finance & Unit Economics",
+    "desc": "Disrupts Baremetrics & Finmark (/mo). Deterministic 24-month cash runway simulator, LTV/CAC payback calculator, Default Alive diagnostics, and interactive Chart.js projection.",
+    "icon": "trending-up",
+    "filename": "startup-runway-unit-economics.html",
+    "url": "public/saas/startup-runway-unit-economics.html",
+    "created_at": "2026-09-07T08:50:00Z"
+  },
+  {
+    "title": "Vector QR Studio & Sovereign vCard Generator",
+    "category": "Design & Contact Utilities",
+    "desc": "Disrupts QR Code Generator Pro (/yr). High-resolution SVG and PNG exports up to 2048px, custom color palettes, vCard contact cards, and WiFi credentials with zero expiring links.",
+    "icon": "qr-code",
+    "filename": "vector-qr-studio-vcard.html",
+    "url": "public/saas/vector-qr-studio-vcard.html",
+    "created_at": "2026-09-07T08:45:00Z"
+  },
+  {
+    "title": "Webhook JSON Transformer & Visual Pipe",
+    "category": "Developer APIs & Integration",
+    "desc": "Disrupts Zapier & Make.com (\u2013/mo). Visual JSON schema mapper, dot-notation extractor, data type mutators, and instant Slack/Discord payload formatting with zero paywalls.",
+    "icon": "workflow",
+    "filename": "webhook-json-transformer.html",
+    "url": "public/saas/webhook-json-transformer.html",
+    "created_at": "2026-09-07T08:40:00Z"
+  },
+  {
+    "title": "Invoice & Contract Shield Pro",
+    "category": "Freelance Invoicing & Legal Shield",
+    "desc": "Disrupts FreshBooks & Bonsai (/mo). Tax-compliant GST/VAT invoicing, automatic protective legal IP retention clauses, live currency formatting, and clean 1-click print/PDF.",
+    "icon": "receipt",
+    "filename": "invoice-contract-shield-pro.html",
+    "url": "public/saas/invoice-contract-shield-pro.html",
+    "created_at": "2026-09-07T08:35:00Z"
+  },
+  {
+    "title": "Document Redactor & Privacy Scrubber",
+    "category": "Legal Privacy & Cybersecurity",
+    "desc": "Disrupts Adobe Acrobat Pro & Smallpdf (/yr). Airgapped PII scrubbing for emails, phone numbers, credit cards, national IDs, and deal terms. Zero server upload guarantee.",
+    "icon": "shield-alert",
+    "filename": "pdf-metadata-scrubber-redactor.html",
+    "url": "public/saas/pdf-metadata-scrubber-redactor.html",
+    "created_at": "2026-09-07T08:30:00Z"
+  },
+  {
+    "title": "ATS Resume Matcher & Optimization Studio",
+    "category": "Career & Jobscan Disruptor",
+    "desc": "Disrupts Jobscan & Teal (/qtr). 100% private in-browser ATS scoring, bi-gram keyword density matcher, missing hard tech gap detection, and quantifiable impact metric counter.",
+    "icon": "file-check",
+    "filename": "ats-resume-keyword-matcher.html",
+    "url": "public/saas/ats-resume-keyword-matcher.html",
+    "created_at": "2026-09-07T08:25:00Z"
+  },
+  {
+    "title": "CapTable Pro & Equity Dilution Simulator",
+    "category": "Startup Equity & Cap Table Management",
+    "desc": "Disrupts Carta & Pulley (\u2013/mo). Interactive pre/post-money valuation, SAFE note conversion, unallocated ESOP expansion, multi-round dilution waterfall, and dynamic Chart.js breakdown.",
+    "icon": "pie-chart",
+    "filename": "captable-equity-dilution.html",
+    "url": "public/saas/captable-equity-dilution.html",
+    "created_at": "2026-09-07T08:20:00Z"
+  },
+  {
     "title": "PhishShield Anti-Scam & Phishing Defense Sentinel",
     "category": "Cyber Defense & Threat Protection",
     "desc": "100% in-browser airgapped security. Detects fake KYC banking scams, Cyrillic punycode homograph domain spoofing, urgency traps, and fraudulent invoices. Protects people from identity and financial theft.",
