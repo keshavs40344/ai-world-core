@@ -25,7 +25,33 @@ os.makedirs(SAAS_DIR, exist_ok=True)
 INDEX_JSON = os.path.join(REPO_ROOT, "public", "tools_catalog.json")
 
 # Master Blueprint of Essential Categories & Ideas to cover everything
+# Master Blueprint of High-Utility Tools that ChatGPT/Gemini CANNOT replace:
+# 1. Private/Zero Data Leakage (Can't paste sensitive tokens/salaries into LLMs)
+# 2. Deterministic Precision Math (LLMs hallucinate arithmetic; tools give penny-perfect math)
+# 3. Interactive Visual Sliders & Live Canvas Graphs
+# 4. Instant In-Browser File & Data Transcoding
 BLUEPRINT_CATALOG = [
+    {
+        "category": "FinTech & Taxation",
+        "slug": "income_tax_regime_comparator_pro",
+        "title": "Income Tax Regime Comparator (New vs Old)",
+        "desc": "Penny-perfect deterministic comparison of Old vs New Tax Regimes with Standard Deduction, 80C, 80D, HRA, Section 87A rebate, and slab-by-slab breakdown. Zero LLM arithmetic hallucinations.",
+        "icon": "receipt"
+    },
+    {
+        "category": "CyberSecurity & Privacy",
+        "slug": "jwt_token_inspector_sentinel",
+        "title": "Private JWT Token Inspector & Signature Auditor",
+        "desc": "100% client-side JWT token decoder and audit suite. Inspect headers, payload claims, expiration alerts without sending sensitive production secrets to external cloud servers.",
+        "icon": "shield-alert"
+    },
+    {
+        "category": "DevOps & Scheduling",
+        "slug": "cron_expression_visualizer_engine",
+        "title": "Cron Schedule Visualizer & Human Translator",
+        "desc": "Interactive cron expression builder with human-readable English breakdown, next 10 exact execution timestamps, and common presets for Linux & cloud schedulers.",
+        "icon": "calendar-clock"
+    },
     {
         "category": "Developer Tools",
         "slug": "regex_live_evaluator_pro",
@@ -34,67 +60,32 @@ BLUEPRINT_CATALOG = [
         "icon": "code-2"
     },
     {
-        "category": "FinTech & Money",
+        "category": "FinTech & Wealth",
         "slug": "smart_sip_dca_compound_simulator",
         "title": "Smart SIP & DCA Compound Simulator",
         "desc": "Simulate Systematic Investment Plans (SIP) and Dollar-Cost Averaging with inflation adjustment and interactive growth charts.",
         "icon": "trending-up"
     },
     {
-        "category": "CyberSecurity",
-        "slug": "jwt_token_inspector_sentinel",
-        "title": "JWT Token Inspector & Sentinel",
-        "desc": "Decode, inspect header/payload, verify expiration timestamps, and audit signature formats of JSON Web Tokens.",
-        "icon": "shield-alert"
-    },
-    {
-        "category": "Data & Analytics",
+        "category": "Data & File Utilities",
         "slug": "csv_json_matrix_transcoder",
-        "title": "CSV & JSON Matrix Transcoder",
-        "desc": "Bi-directional instant converter between CSV and JSON with table preview, column filtering, and clean export.",
+        "title": "Zero-Leakage CSV & JSON Matrix Transcoder",
+        "desc": "Instant client-side converter between CSV and JSON with dynamic table search, column sorter, and CSV export. 100% private.",
         "icon": "file-spreadsheet"
     },
     {
-        "category": "AI & Prompt Systems",
-        "slug": "ai_prompt_enhancer_studio",
-        "title": "AI Prompt Enhancer & Token Meter",
-        "desc": "Optimize and structure raw prompts using Few-Shot and Chain-of-Thought frameworks with real-time token cost estimation.",
-        "icon": "sparkles"
-    },
-    {
-        "category": "Productivity & Focus",
-        "slug": "zenith_focus_pomodoro_soundscape",
-        "title": "Zenith Focus Pomodoro & Task Matrix",
-        "desc": "Science-backed 25/5 focus timer with audio chimes, priority Eisenhower task matrix, and local streak tracking.",
-        "icon": "clock"
-    },
-    {
-        "category": "Design & UI/UX",
+        "category": "UI/UX & Frontend",
         "slug": "glassmorphism_css_palette_generator",
         "title": "Glassmorphism CSS & Palette Generator",
         "desc": "Interactive visual slider studio to design backdrop-blur cards, modern gradients, and copy ready-to-use CSS.",
         "icon": "palette"
     },
     {
-        "category": "Math & Cryptography",
-        "slug": "hash_checksum_entropy_analyzer",
-        "title": "Multi-Hash Checksum & Entropy Analyzer",
-        "desc": "Calculate SHA-256, SHA-512, MD5, and Shannon entropy scores for text strings with password strength auditing.",
-        "icon": "binary"
-    },
-    {
-        "category": "Crypto & Web3",
+        "category": "Crypto & Trading",
         "slug": "crypto_profit_dca_exit_calculator",
         "title": "Crypto Profit & Staged Exit Planner",
         "desc": "Calculate entry average, target exit prices, fee deductions, and net returns for spot and futures positions.",
         "icon": "coins"
-    },
-    {
-        "category": "Health & Bio-Optimization",
-        "slug": "daily_macro_bmr_calorie_planner",
-        "title": "Daily Macro & BMR Calorie Planner",
-        "desc": "Calculate Basal Metabolic Rate (Mifflin-St Jeor), TDEE, and protein/carb/fat macro distributions tailored to fitness goals.",
-        "icon": "activity"
     }
 ]
 
@@ -115,18 +106,22 @@ class ToolForge:
             if bp["slug"] not in existing:
                 return bp
 
-        # If blueprint items are built, brainstorm a novel high-utility tool using LLM
+        # High-Standard LLM Ideation: The ChatGPT/Gemini Test
         prompt = f"""
-We have an autonomous tool factory. We have already built tools for: {list(existing)[:15]}.
-Propose a brand new, highly practical, 100% working interactive client-side browser utility tool that solves a real user need.
-Categories: Developer, Finance, Productivity, Security, Design, Crypto, Health, Data.
+We have an autonomous SaaS tool factory. Existing tools: {list(existing)[:15]}.
+CRITICAL RULE: DO NOT propose generic text-based tools that a user would just ask ChatGPT or Gemini for!
+Only propose tools where a dedicated client-side browser application is 100x better than ChatGPT:
+1. Zero Data Leakage / 100% Client-Side Privacy (users cannot paste private data into cloud LLMs).
+2. Deterministic Precision Math (exact financial, tax, or engineering formulas where LLMs hallucinate).
+3. Real-time visual manipulation (sliders, live charts, color pickers, sound timers).
+4. Direct client-side file/format transcoding.
 
 Respond strictly in JSON matching this schema:
 {{
   "category": "Category Name",
   "slug": "unique_tool_slug_in_snake_case",
-  "title": "Crisp Tool Title",
-  "desc": "Detailed 1-sentence description of what it calculates or solves",
+  "title": "Crisp High-Utility Tool Title",
+  "desc": "Detailed explanation of the exact calculations/interactivity it performs",
   "icon": "lucide-icon-name"
 }}
 """

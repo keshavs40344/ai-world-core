@@ -1,5 +1,14 @@
 [
   {
+    "title": "Income Tax Regime Comparator (New vs Old)",
+    "category": "FinTech & Taxation",
+    "desc": "Penny-perfect deterministic comparison of Old vs New Tax Regimes with Standard Deduction, 80C, 80D, HRA, Section 87A rebate, and slab-by-slab breakdown. Zero LLM arithmetic hallucinations.",
+    "icon": "receipt",
+    "filename": "income_tax_regime_comparator_pro.html",
+    "url": "public/saas/income_tax_regime_comparator_pro.html",
+    "created_at": "2026-09-07T07:11:18Z"
+  },
+  {
     "title": "Smart SIP & DCA Compound Simulator",
     "category": "FinTech & Money",
     "desc": "Simulate Systematic Investment Plans (SIP) and Dollar-Cost Averaging with inflation adjustment and interactive growth charts.",
