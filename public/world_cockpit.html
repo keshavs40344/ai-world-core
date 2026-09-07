@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VASTUDA // Sovereign Agent & Living World Cockpit</title>
+    <title>VASTUDA // Multi-Agent Swarm & Living World Cockpit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -19,8 +19,9 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .pulse-glow {
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        .agent-card-active {
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.12);
         }
     </style>
 
@@ -73,10 +74,10 @@
                 </div>
                 <div>
                     <h1 class="text-sm font-bold tracking-tight text-white flex items-center gap-2">
-                        <span>VASTUDA SOVEREIGN CORE</span>
+                        <span>VASTUDA SWARM COMMAND</span>
                         <span class="px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800/60 text-[10px] font-mono">100% FREE TIER</span>
                     </h1>
-                    <p class="text-[11px] font-mono text-zinc-400" id="worldEra">Genesis Dawn // Autonomous Agent Active</p>
+                    <p class="text-[11px] font-mono text-zinc-400" id="worldEra">Genesis Dawn // 4 Autonomous Agents Active</p>
                 </div>
             </div>
 
@@ -84,42 +85,111 @@
                 <div class="hidden sm:flex items-center gap-3 text-xs font-mono">
                     <div class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span class="text-zinc-300">Cost Spent:</span>
-                        <span class="text-emerald-400 font-bold">$0.00</span>
+                        <span class="text-zinc-400">Swarm IQ:</span>
+                        <span class="text-emerald-400 font-bold" id="swarmIQ">143</span>
                     </div>
                     <div class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center gap-2">
-                        <span class="text-zinc-300">Tokens:</span>
-                        <span class="text-cyan-400 font-bold" id="totalTokens">0</span>
+                        <span class="text-zinc-400">Accuracy:</span>
+                        <span class="text-cyan-400 font-bold" id="swarmAcc">94.85%</span>
+                    </div>
+                    <div class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center gap-2">
+                        <span class="text-zinc-400">Cost Spent:</span>
+                        <span class="text-emerald-400 font-bold">$0.00</span>
                     </div>
                 </div>
 
                 <button onclick="triggerAutonomousCycle()" id="runCycleBtn" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-2 transition shadow-lg shadow-emerald-950">
-                    <i data-lucide="play" class="w-3.5 h-3.5"></i>
-                    <span>Run Cycle</span>
+                    <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                    <span>Run Disruption Cycle</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Grid -->
+    <!-- Main Content Container -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-6">
 
-        <!-- World Evolution Banner -->
+        <!-- 4-Agent Swarm Radar Grid -->
+        <div>
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="radar" class="w-4 h-4 text-emerald-400"></i>
+                    <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-zinc-300">Active Multi-Agent Swarm Radar</h2>
+                </div>
+                <span class="text-[11px] font-mono text-zinc-500">Autonomous 24/7 Collaboration</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- Agent 1: Scout -->
+                <div class="glass-panel p-5 rounded-2xl agent-card-active relative overflow-hidden transition hover:border-emerald-500/60">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            <span class="text-xs font-mono font-bold text-emerald-400">SCOUT</span>
+                        </div>
+                        <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 text-[10px] font-mono border border-emerald-800/60">HUNTING</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-white">Market & SaaS Hunter</h3>
+                    <p class="text-[11px] text-zinc-400 mt-2 font-mono leading-relaxed">Scans DuckDuckGo, HackerNews, GitHub & Wikipedia for $20-$100/mo tools to disrupt.</p>
+                </div>
+
+                <!-- Agent 2: Diagnostician -->
+                <div class="glass-panel p-5 rounded-2xl relative overflow-hidden transition hover:border-cyan-500/60">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                            <span class="text-xs font-mono font-bold text-cyan-400">DIAGNOSTICIAN</span>
+                        </div>
+                        <span class="px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 text-[10px] font-mono border border-cyan-800/60">BLUEPRINT</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-white">Reverse-Engineer</h3>
+                    <p class="text-[11px] text-zinc-400 mt-2 font-mono leading-relaxed">Deconstructs commercial paywalls, UI specs, mathematical formulas, and feature sets.</p>
+                </div>
+
+                <!-- Agent 3: Builder -->
+                <div class="glass-panel p-5 rounded-2xl relative overflow-hidden transition hover:border-purple-500/60">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                            <span class="text-xs font-mono font-bold text-purple-400">BUILDER</span>
+                        </div>
+                        <span class="px-2 py-0.5 rounded bg-purple-950 text-purple-400 text-[10px] font-mono border border-purple-800/60">ENGINEERING</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-white">Full-Stack Engineer</h3>
+                    <p class="text-[11px] text-zinc-400 mt-2 font-mono leading-relaxed">Synthesizes complete 100% client-side HTML5/Tailwind/JS web apps with zero paywalls.</p>
+                </div>
+
+                <!-- Agent 4: Trainer -->
+                <div class="glass-panel p-5 rounded-2xl relative overflow-hidden transition hover:border-amber-500/60">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                            <span class="text-xs font-mono font-bold text-amber-400">QA TRAINER</span>
+                        </div>
+                        <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-400 text-[10px] font-mono border border-amber-800/60">SELF-TRAIN</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-white">Auditor & Self-Trainer</h3>
+                    <p class="text-[11px] text-zinc-400 mt-2 font-mono leading-relaxed">Audits builds, stores training lessons in SQLite, and fine-tunes system prompts daily.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- World Evolution & Telemetry Banner -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <!-- Level & Era -->
             <div class="glass-panel p-5 rounded-2xl relative overflow-hidden">
                 <div class="flex items-center justify-between mb-2">
                     <span class="text-xs font-mono text-zinc-400 uppercase">World Level</span>
-                    <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 text-[11px] font-mono font-bold" id="levelBadge">LVL 1</span>
+                    <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 text-[11px] font-mono font-bold" id="levelBadge">LVL 3</span>
                 </div>
-                <div class="text-3xl font-extrabold text-white" id="worldLevel">1</div>
+                <div class="text-3xl font-extrabold text-white" id="worldLevel">3</div>
                 <div class="mt-3">
                     <div class="flex justify-between text-[11px] font-mono text-zinc-400 mb-1">
                         <span>XP Progress</span>
-                        <span id="xpText">0 / 1000</span>
+                        <span id="xpText">1400 / 3000 XP</span>
                     </div>
                     <div class="w-full h-2 rounded-full bg-zinc-800 overflow-hidden">
-                        <div id="xpBar" class="h-full bg-gradient-to-r from-emerald-500 to-cyan-400 transition-all duration-500" style="width: 0%"></div>
+                        <div id="xpBar" class="h-full bg-gradient-to-r from-emerald-500 to-cyan-400 transition-all duration-500" style="width: 46%"></div>
                     </div>
                 </div>
             </div>
@@ -137,21 +207,53 @@
             <!-- Total Creations -->
             <div class="glass-panel p-5 rounded-2xl">
                 <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-mono text-zinc-400 uppercase">Innovations Forged</span>
+                    <span class="text-xs font-mono text-zinc-400 uppercase">Tools & Apps Forged</span>
                     <i data-lucide="sparkles" class="w-4 h-4 text-cyan-400"></i>
                 </div>
-                <div class="text-3xl font-extrabold text-white" id="totalCreations">0</div>
-                <p class="text-[11px] text-zinc-400 mt-3 font-mono">Tools & Deep Dispatches</p>
+                <div class="text-3xl font-extrabold text-white" id="totalCreations">7</div>
+                <p class="text-[11px] text-zinc-400 mt-3 font-mono">Zero-Cost Sovereign Apps</p>
             </div>
 
-            <!-- Active Memory Nodes -->
+            <!-- Daily Lessons Learned -->
             <div class="glass-panel p-5 rounded-2xl">
                 <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-mono text-zinc-400 uppercase">Memory Ledger</span>
-                    <i data-lucide="database" class="w-4 h-4 text-purple-400"></i>
+                    <span class="text-xs font-mono text-zinc-400 uppercase">Daily Training Lessons</span>
+                    <i data-lucide="book-open" class="w-4 h-4 text-purple-400"></i>
                 </div>
-                <div class="text-3xl font-extrabold text-white" id="totalMemories">0</div>
-                <p class="text-[11px] text-zinc-400 mt-3 font-mono">Persistent Knowledge Nodes</p>
+                <div class="text-3xl font-extrabold text-white" id="totalLessons">2</div>
+                <p class="text-[11px] text-zinc-400 mt-3 font-mono">SQLite Prompt Fine-Tunings</p>
+            </div>
+        </div>
+
+        <!-- Disruptive Sovereign SaaS Suite (Killer App Showcase) -->
+        <div class="glass-panel p-6 rounded-2xl space-y-4">
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="flame" class="w-5 h-5 text-rose-400"></i>
+                    <div>
+                        <h3 class="text-sm font-bold text-white">Disruptive Sovereign Apps Suite</h3>
+                        <p class="text-[11px] font-mono text-zinc-400">100% Free, Client-Side Replacements for Expensive $20–$100/mo Subscriptions</p>
+                    </div>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-rose-950 text-rose-400 text-xs font-mono font-bold border border-rose-800">ZERO PAYWALLS</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="disruptiveAppsGrid">
+                <!-- Populated dynamically from tools_catalog.json -->
+            </div>
+        </div>
+
+        <!-- Daily Agent Self-Training Feed (SQLite Live Ledger) -->
+        <div class="glass-panel p-6 rounded-2xl space-y-3">
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-400"></i>
+                    <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Daily Agent Self-Training Feed (Live SQLite Ledger)</h3>
+                </div>
+                <span class="text-[11px] font-mono text-zinc-500">Autonomous Prompt Fine-Tuning</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="trainingFeed">
+                <!-- Populated dynamically -->
             </div>
         </div>
 
@@ -165,7 +267,7 @@
                 <span class="text-[11px] font-mono text-zinc-500" id="lastUpdated">Streaming</span>
             </div>
             <p id="agentThought" class="text-sm sm:text-base text-zinc-200 font-mono leading-relaxed bg-zinc-950/60 p-4 rounded-xl border border-zinc-800">
-                Agent standing by in Sovereign Core...
+                Multi-Agent Swarm standing by. Scout hunting free web signals across DuckDuckGo, HackerNews & GitHub...
             </p>
         </div>
 
@@ -176,18 +278,18 @@
                     <i data-lucide="terminal" class="w-4 h-4 text-emerald-400"></i>
                     <span>Sovereign Directive Console</span>
                 </h3>
-                <span class="text-[11px] font-mono text-zinc-500">Autonomous override enabled</span>
+                <span class="text-[11px] font-mono text-zinc-500">Target any expensive commercial app to disrupt</span>
             </div>
             <form onsubmit="submitDirective(event)" class="flex flex-col sm:flex-row gap-3">
-                <input type="text" id="directiveInput" placeholder="Give your Agent any task (e.g., 'Build a JWT token decoder' or 'Research quantum cryptography')..." class="flex-1 bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-emerald-500 font-mono">
+                <input type="text" id="directiveInput" placeholder="Give your Swarm any target (e.g. 'Disrupt Ahrefs Backlink Checker' or 'Build a Black-Scholes Options Calculator')..." class="flex-1 bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-emerald-500 font-mono">
                 <button type="submit" id="sendDirectiveBtn" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs font-mono flex items-center justify-center gap-2 transition">
                     <i data-lucide="send" class="w-3.5 h-3.5"></i>
-                    <span>Execute Directive</span>
+                    <span>Deploy Swarm</span>
                 </button>
             </form>
         </div>
 
-        <!-- Two Column Layout: Creations & Evolution Log -->
+        <!-- Two Column Layout: All Creations & Evolution Log -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
             <!-- Creations & Artifacts Gallery -->
@@ -195,9 +297,9 @@
                 <div class="flex items-center justify-between border-b border-zinc-800/80 pb-3">
                     <h3 class="text-sm font-bold text-white flex items-center gap-2">
                         <i data-lucide="box" class="w-4 h-4 text-cyan-400"></i>
-                        <span>Autonomous Creations Forged</span>
+                        <span>All Sovereign Creations</span>
                     </h3>
-                    <span class="text-[11px] font-mono text-zinc-500">Real verified artifacts</span>
+                    <span class="text-[11px] font-mono text-zinc-500">Verified artifacts</span>
                 </div>
                 <div id="creationsList" class="space-y-3">
                     <!-- Dynamic Cards -->
@@ -211,7 +313,7 @@
                         <i data-lucide="activity" class="w-4 h-4 text-purple-400"></i>
                         <span>Evolution Log & Memory</span>
                     </h3>
-                    <span class="text-[11px] font-mono text-zinc-500">Self-evaluations</span>
+                    <span class="text-[11px] font-mono text-zinc-500">Autonomous decisions</span>
                 </div>
                 <div id="evolutionList" class="space-y-3">
                     <!-- Dynamic Logs -->
@@ -222,9 +324,9 @@
 
     </main>
 
-    <!-- Modal for Viewing Creations -->
-    <div id="creationModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+    <!-- Modal for Viewing Creations & Live Apps -->
+    <div id="creationModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl max-w-5xl w-full max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
             <div class="p-4 border-b border-zinc-800 flex items-center justify-between bg-zinc-900/50">
                 <div class="flex items-center gap-3">
                     <h4 id="modalTitle" class="text-sm font-bold text-white font-mono">Creation Artifact</h4>
@@ -233,7 +335,7 @@
                 <div class="flex items-center gap-2">
                     <a id="modalLaunchBtn" href="#" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-mono font-bold flex items-center gap-1.5 transition hidden">
                         <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                        <span>Launch App</span>
+                        <span>Open in New Tab</span>
                     </a>
                     <button onclick="closeModal()" class="text-zinc-400 hover:text-white p-1">
                         <i data-lucide="x" class="w-5 h-5"></i>
@@ -241,8 +343,8 @@
                 </div>
             </div>
             <!-- Interactive Iframe for HTML tools -->
-            <div id="modalIframeContainer" class="flex-1 w-full bg-zinc-900 min-h-[480px] hidden">
-                <iframe id="modalIframe" class="w-full h-full min-h-[500px] border-0" src="about:blank"></iframe>
+            <div id="modalIframeContainer" class="flex-1 w-full bg-zinc-900 min-h-[580px] hidden">
+                <iframe id="modalIframe" class="w-full h-full min-h-[600px] border-0" src="about:blank"></iframe>
             </div>
             <!-- Code/Text view for non-HTML tools & reports -->
             <div class="p-6 overflow-y-auto flex-1 font-mono text-xs text-zinc-300 leading-relaxed whitespace-pre-wrap" id="modalContent">
@@ -251,26 +353,26 @@
         </div>
     </div>
 
+    <footer class="border-t border-zinc-800/80 bg-zinc-950 py-4 text-center text-xs font-mono text-zinc-500">
+        VASTUDA Sovereign Core • 100% Free-Tier Architecture • Self-Evolving Swarm Intelligence
+    </footer>
+
     <script>
         window.cachedCreations = {};
 
         async function fetchState() {
             let data = null;
-            // 1. Try local server first
+            // 1. Try local server
             try {
                 const res = await fetch('/api/state');
-                if (res.ok) {
-                    data = await res.json();
-                }
+                if (res.ok) data = await res.json();
             } catch (e) {}
 
-            // 2. Fallback to static world_live.json (for GitHub Pages / static hosting)
+            // 2. Fallback to static world_live.json
             if (!data) {
                 try {
                     const res = await fetch('world_live.json?t=' + Date.now());
-                    if (res.ok) {
-                        data = await res.json();
-                    }
+                    if (res.ok) data = await res.json();
                 } catch (e) {}
             }
 
@@ -280,22 +382,112 @@
                 });
                 renderUI(data);
             }
+
+            // Also fetch tools catalog for disruptive apps grid
+            fetchCatalog();
+        }
+
+        async function fetchCatalog() {
+            try {
+                const res = await fetch('tools_catalog.json?t=' + Date.now());
+                if (res.ok) {
+                    const tools = await res.json();
+                    renderDisruptiveApps(tools);
+                }
+            } catch (e) {}
+        }
+
+        function renderDisruptiveApps(tools) {
+            const grid = document.getElementById('disruptiveAppsGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            tools.slice(0, 6).forEach(t => {
+                const div = document.createElement('div');
+                div.className = 'p-4 rounded-xl bg-zinc-950 border border-zinc-800/80 hover:border-emerald-500/50 transition flex flex-col justify-between space-y-3';
+                div.innerHTML = `
+                    <div class="space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-400 border border-emerald-800">${t.category || 'Disruptive App'}</span>
+                            <span class="text-[10px] font-mono text-emerald-400 font-bold">$0.00 FREE</span>
+                        </div>
+                        <h4 class="text-xs font-bold text-white font-mono">${t.title}</h4>
+                        <p class="text-[11px] text-zinc-400 line-clamp-2 leading-relaxed">${t.desc}</p>
+                    </div>
+                    <div class="flex items-center gap-2 pt-2 border-t border-zinc-900">
+                        <button onclick="launchAppDirect('${t.url || ('saas/' + t.filename)}', '${t.title}')" class="flex-1 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition">
+                            <i data-lucide="play" class="w-3 h-3"></i>
+                            <span>Launch Tool</span>
+                        </button>
+                        <a href="${t.url || ('saas/' + t.filename)}" target="_blank" class="p-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 transition">
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+            lucide.createIcons();
+        }
+
+        function launchAppDirect(url, title) {
+            let appUrl = url.replace('public/', '');
+            document.getElementById('modalTitle').innerText = title;
+            const iframeContainer = document.getElementById('modalIframeContainer');
+            const iframe = document.getElementById('modalIframe');
+            const modalContent = document.getElementById('modalContent');
+            const launchBtn = document.getElementById('modalLaunchBtn');
+
+            iframeContainer.classList.remove('hidden');
+            modalContent.classList.add('hidden');
+            launchBtn.href = appUrl;
+            launchBtn.classList.remove('hidden');
+            iframe.src = appUrl;
+
+            document.getElementById('creationModal').classList.remove('hidden');
+            lucide.createIcons();
         }
 
         function renderUI(data) {
             const w = data.world || {};
-            document.getElementById('worldEra').innerText = `${w.era || 'Genesis Dawn'} // Sovereign Agent Active`;
+            document.getElementById('worldEra').innerText = `${w.era || 'Genesis Dawn'} // 4 Autonomous Agents Active`;
             document.getElementById('worldLevel').innerText = w.level || 1;
             document.getElementById('levelBadge').innerText = `LVL ${w.level || 1}`;
             document.getElementById('xpText').innerText = `${w.xp || 0} / ${w.xp_for_next || 1000} XP`;
             document.getElementById('xpBar').style.width = `${w.progress_pct || 0}%`;
             document.getElementById('stabilityIndex').innerText = `${w.stability_index || 100.0}%`;
             document.getElementById('totalCreations').innerText = w.total_creations || 0;
-            document.getElementById('totalMemories').innerText = w.total_memories || 0;
-            document.getElementById('totalTokens').innerText = (data.tokens_used || 0).toLocaleString();
 
             if (data.agent_thought) {
                 document.getElementById('agentThought').innerText = data.agent_thought;
+            }
+
+            // Render Swarm Vitals
+            const training = data.swarm_training || {};
+            const vitals = training.vitals || {};
+            if (vitals.swarm_iq) document.getElementById('swarmIQ').innerText = vitals.swarm_iq;
+            if (vitals.accuracy_score) document.getElementById('swarmAcc').innerText = `${vitals.accuracy_score}%`;
+            if (vitals.total_lessons_learned !== undefined) document.getElementById('totalLessons').innerText = vitals.total_lessons_learned;
+
+            // Render Daily Training Lessons Feed
+            const feed = document.getElementById('trainingFeed');
+            feed.innerHTML = '';
+            const lessons = training.recent_lessons || [];
+            if (lessons.length === 0) {
+                feed.innerHTML = '<p class="text-xs font-mono text-zinc-500 italic col-span-2">No self-training lessons recorded yet.</p>';
+            } else {
+                lessons.forEach(l => {
+                    const div = document.createElement('div');
+                    div.className = 'p-3 rounded-xl bg-zinc-950 border border-zinc-800/80 space-y-1.5';
+                    div.innerHTML = `
+                        <div class="flex items-center justify-between text-[10px] font-mono">
+                            <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-400 border border-amber-800/60">${l.agent_role || 'Builder'} • ${l.lesson_type || 'FINE-TUNE'}</span>
+                            <span class="text-emerald-400 font-bold">+${l.accuracy_boost || 1.5}% Accuracy</span>
+                        </div>
+                        <p class="text-xs text-zinc-200 font-mono">${l.insight_learned}</p>
+                        ${l.positive_exemplar ? `<p class="text-[10px] text-zinc-400 font-mono italic">Rule: "${l.positive_exemplar}"</p>` : ''}
+                    `;
+                    feed.appendChild(div);
+                });
             }
 
             // Render Creations
@@ -306,7 +498,7 @@
                 cList.innerHTML = '<p class="text-xs font-mono text-zinc-500 italic">No creations forged yet. Trigger a cycle above.</p>';
             } else {
                 creations.forEach(c => {
-                    const isTool = c.type === 'TOOL';
+                    const isTool = c.type === 'TOOL' || c.type === 'APP';
                     const icon = isTool ? 'code-2' : 'file-text';
                     const badgeColor = isTool ? 'bg-cyan-950 text-cyan-400 border-cyan-800' : 'bg-rose-950 text-rose-400 border-rose-800';
                     const div = document.createElement('div');
@@ -354,7 +546,7 @@
             const btn = document.getElementById('runCycleBtn');
             btn.disabled = true;
             btn.classList.add('opacity-50');
-            document.getElementById('agentThought').innerText = "⚡ Autonomous Cycle launched! Agent observing world & deciding mission...";
+            document.getElementById('agentThought').innerText = "⚡ Swarm Disruption Cycle initiated! Scout identifying expensive commercial targets...";
 
             try {
                 const res = await fetch('/api/run-cycle', { method: 'POST' });
@@ -380,7 +572,7 @@
             const btn = document.getElementById('sendDirectiveBtn');
             btn.disabled = true;
             btn.classList.add('opacity-50');
-            document.getElementById('agentThought').innerText = `⚡ User Directive received: "${directive}". Agent formulating execution plan...`;
+            document.getElementById('agentThought').innerText = `⚡ Target received: "${directive}". Swarm deploying Scout & Diagnostician...`;
 
             try {
                 const res = await fetch('/api/directive', {

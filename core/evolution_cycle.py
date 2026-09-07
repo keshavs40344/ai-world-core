@@ -23,6 +23,7 @@ from core.agent_brain import AgentBrain, guardian
 from core.world_state import WorldState
 from core.toolbelt import Toolbelt
 from core.tool_forge import ToolForge
+from core.training_engine import SwarmTrainingEngine
 
 # UTF-8 stdout setup
 if hasattr(sys.stdout, "reconfigure"):
@@ -67,6 +68,7 @@ class EvolutionCycle:
             "recent_creations": recent_creations,
             "recent_logs": recent_logs,
             "recent_memories": recent_memories,
+            "swarm_training": SwarmTrainingEngine().get_training_summary(),
             "last_activity": extra_activity or {},
             "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
         }

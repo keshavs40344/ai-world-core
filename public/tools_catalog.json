@@ -1,5 +1,14 @@
 [
   {
+    "title": "VASTUDA Free DCF Visualizer",
+    "category": "Visual Stock Health & DCF Intrinsic Valuation",
+    "desc": "A 100% free, client\u2011side web app that delivers instant, unlimited DCF calculations, real\u2011time data, and fully interactive visualizations\u2014no subscription, no data lock\u2011in, and no monthly check limits.",
+    "icon": "zap",
+    "filename": "vastuda-free-dcf-visualizer.html",
+    "url": "public/saas/vastuda-free-dcf-visualizer.html",
+    "created_at": "2026-09-07T07:59:38Z"
+  },
+  {
     "title": "Zero-Leakage CSV & JSON Matrix Transcoder",
     "category": "Data & File Utilities",
     "desc": "Instant client-side converter between CSV and JSON with dynamic table search, column sorter, and CSV export. 100% private.",

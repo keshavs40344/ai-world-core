@@ -1,0 +1,33 @@
+{
+  "vitals": {
+    "id": 1,
+    "swarm_iq": 143,
+    "accuracy_score": 94.85,
+    "total_lessons_learned": 2,
+    "training_epoch": 1,
+    "last_trained_at": "2026-09-07T07:59:37Z"
+  },
+  "recent_lessons": [
+    {
+      "id": 2,
+      "agent_role": "Builder",
+      "lesson_type": "SAAS_DISRUPTION",
+      "target_domain": "Visual Stock Health & DCF Intrinsic Valuation",
+      "insight_learned": "Engineered complete client-side alternative to Simply Wall St / Koyfin Basic ($39/mo) with zero paywalls.",
+      "positive_exemplar": "Integrated 11 interactive controls with instant DOM reactivity.",
+      "accuracy_boost": 2.0,
+      "created_at": "2026-09-07T07:59:37Z"
+    },
+    {
+      "id": 1,
+      "agent_role": "Builder",
+      "lesson_type": "UI_ACCESSIBILITY",
+      "target_domain": "FinTech",
+      "insight_learned": "Users need immediate interactive currency toggles rather than static numbers.",
+      "positive_exemplar": "Include INR/USD radio toggle bound to input change event.",
+      "accuracy_boost": 1.5,
+      "created_at": "2026-09-07T07:57:34Z"
+    }
+  ],
+  "timestamp": "2026-09-07T08:04:45Z"
+}

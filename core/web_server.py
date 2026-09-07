@@ -20,6 +20,7 @@ if REPO_ROOT not in sys.path:
 from core.world_state import WorldState
 from core.evolution_cycle import EvolutionCycle
 from core.agent_brain import guardian
+from core.training_engine import SwarmTrainingEngine
 
 PORT = 8088
 PUBLIC_DIR = os.path.join(REPO_ROOT, "public")
@@ -61,7 +62,8 @@ class CockpitHandler(SimpleHTTPRequestHandler):
                 "cost_spent_usd": 0.0,
                 "recent_creations": creations,
                 "recent_logs": logs,
-                "recent_memories": memories
+                "recent_memories": memories,
+                "swarm_training": SwarmTrainingEngine().get_training_summary()
             }
             self.wfile.write(json.dumps(payload).encode("utf-8"))
             return
