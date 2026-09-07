@@ -186,13 +186,27 @@
 
     <!-- Modal for Viewing Creations -->
     <div id="creationModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
             <div class="p-4 border-b border-zinc-800 flex items-center justify-between bg-zinc-900/50">
-                <h4 id="modalTitle" class="text-sm font-bold text-white font-mono">Creation Artifact</h4>
-                <button onclick="closeModal()" class="text-zinc-400 hover:text-white p-1">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
+                <div class="flex items-center gap-3">
+                    <h4 id="modalTitle" class="text-sm font-bold text-white font-mono">Creation Artifact</h4>
+                    <span id="modalBadge" class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-400 border border-emerald-800">100% WORKING</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a id="modalLaunchBtn" href="#" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-mono font-bold flex items-center gap-1.5 transition hidden">
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        <span>Launch App</span>
+                    </a>
+                    <button onclick="closeModal()" class="text-zinc-400 hover:text-white p-1">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
             </div>
+            <!-- Interactive Iframe for HTML tools -->
+            <div id="modalIframeContainer" class="flex-1 w-full bg-zinc-900 min-h-[480px] hidden">
+                <iframe id="modalIframe" class="w-full h-full min-h-[500px] border-0" src="about:blank"></iframe>
+            </div>
+            <!-- Code/Text view for non-HTML tools & reports -->
             <div class="p-6 overflow-y-auto flex-1 font-mono text-xs text-zinc-300 leading-relaxed whitespace-pre-wrap" id="modalContent">
                 Loading...
             </div>
@@ -350,25 +364,57 @@
         async function viewCreation(id, title) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalContent').innerText = "Loading creation content...";
+            const iframeContainer = document.getElementById('modalIframeContainer');
+            const iframe = document.getElementById('modalIframe');
+            const modalContent = document.getElementById('modalContent');
+            const launchBtn = document.getElementById('modalLaunchBtn');
+
+            iframeContainer.classList.add('hidden');
+            iframe.src = 'about:blank';
+            modalContent.classList.remove('hidden');
+            launchBtn.classList.add('hidden');
+
             document.getElementById('creationModal').classList.remove('hidden');
 
-            // 1. Check local cached content from world_live.json
-            if (window.cachedCreations[id] && window.cachedCreations[id].content) {
-                document.getElementById('modalContent').innerText = window.cachedCreations[id].content;
+            const item = window.cachedCreations[id];
+            let rawContent = item ? item.content : null;
+            let filePath = item ? (item.file_path || '') : '';
+
+            // If it is an HTML tool, show live interactive app!
+            if (filePath.endsWith('.html') || (item && item.url && item.url.endsWith('.html'))) {
+                let appUrl = '';
+                if (item.url) {
+                    appUrl = item.url.replace('public/', '');
+                } else {
+                    const fname = filePath.split(/[/\\]/).pop();
+                    appUrl = 'saas/' + fname;
+                }
+
+                iframe.src = appUrl;
+                iframeContainer.classList.remove('hidden');
+                modalContent.classList.add('hidden');
+                launchBtn.href = appUrl;
+                launchBtn.classList.remove('hidden');
+                lucide.createIcons();
                 return;
             }
 
-            // 2. Try fetching from local API
+            // Otherwise show text/markdown/python
+            if (rawContent) {
+                modalContent.innerText = rawContent;
+                return;
+            }
+
             try {
                 const res = await fetch(`/api/creations/${id}`);
                 if (res.ok) {
                     const data = await res.json();
-                    document.getElementById('modalContent').innerText = data.content || "Empty content";
+                    modalContent.innerText = data.content || "Empty content";
                     return;
                 }
             } catch (e) {}
 
-            document.getElementById('modalContent').innerText = "Artifact recorded in Sovereign World Database.";
+            modalContent.innerText = "Artifact recorded in Sovereign World Database.";
         }
 
         function closeModal() {

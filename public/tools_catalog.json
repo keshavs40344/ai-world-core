@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Smart SIP & DCA Compound Simulator",
+    "category": "FinTech & Money",
+    "desc": "Simulate Systematic Investment Plans (SIP) and Dollar-Cost Averaging with inflation adjustment and interactive growth charts.",
+    "icon": "trending-up",
+    "filename": "smart_sip_dca_compound_simulator.html",
+    "url": "public/saas/smart_sip_dca_compound_simulator.html",
+    "created_at": "2026-09-07T07:09:56Z"
+  },
+  {
+    "title": "Regex Live Evaluator Pro",
+    "category": "Developer Tools",
+    "desc": "Real-time regular expression tester with syntax highlighting, flag toggles, and match capture tables.",
+    "icon": "code-2",
+    "filename": "regex_live_evaluator_pro.html",
+    "url": "public/saas/regex_live_evaluator_pro.html",
+    "created_at": "2026-09-07T07:08:30Z"
+  }
+]

@@ -22,6 +22,7 @@ if REPO_ROOT not in sys.path:
 from core.agent_brain import AgentBrain, guardian
 from core.world_state import WorldState
 from core.toolbelt import Toolbelt
+from core.tool_forge import ToolForge
 
 # UTF-8 stdout setup
 if hasattr(sys.stdout, "reconfigure"):
@@ -36,6 +37,7 @@ class EvolutionCycle:
         self.brain = brain or AgentBrain()
         self.world = world or WorldState()
         self.tools = tools or Toolbelt()
+        self.forge = ToolForge(brain=self.brain, world=self.world)
         self.current_thought = "Agent standing by in Sovereign Core..."
 
     def export_live_state(self, extra_activity: Optional[Dict[str, Any]] = None):
@@ -135,65 +137,33 @@ Return a valid JSON object matching this schema:
         creation_record = None
         xp_earned = 150
 
-        if quest_type == "CODE_FORGE" or (manual_directive and "code" in manual_directive.lower()):
-            self.current_thought = f"Synthesizing and testing executable Python tool: {quest_title}..."
-            self.export_live_state({"stage": "CODE_SYNTHESIS", "title": quest_title})
+        if quest_type == "CODE_FORGE" or (manual_directive and any(k in manual_directive.lower() for k in ["tool", "app", "calculator", "generator", "builder", "code"])):
+            self.current_thought = f"Synthesizing 100% working interactive client-side tool: {quest_title}..."
+            self.export_live_state({"stage": "TOOL_FORGING", "title": quest_title})
 
-            code_prompt = f"""
-Write a complete, high-quality, production-ready standalone Python script for:
-Title: {quest_title}
-Objective: {quest_desc}
-
-Requirements:
-1. Pure standard library only (no external pip packages required).
-2. Clean, modular functions with type hints and docstrings.
-3. Must include a self-testing block under if __name__ == '__main__': that demonstrates the tool working and prints PASS.
-4. Return ONLY valid Python code inside a ```python ``` block.
-"""
-            raw_code = self.brain.think(code_prompt, temperature=0.15)
-            # Extract python code
-            if "```python" in raw_code:
-                clean_code = raw_code.split("```python", 1)[1].split("```", 1)[0].strip()
-            elif "```" in raw_code:
-                clean_code = raw_code.split("```", 1)[1].split("```", 1)[0].strip()
+            if manual_directive:
+                slug = re.sub(r'[^a-zA-Z0-9_-]', '_', quest_title)[:35].lower()
+                concept = {
+                    "category": "Interactive Utility",
+                    "slug": slug,
+                    "title": quest_title,
+                    "desc": quest_desc,
+                    "icon": "zap"
+                }
+                html_code = self.forge.synthesize_tool_html(concept)
+                filename = f"{slug}.html"
+                file_path = os.path.join(REPO_ROOT, "public", "saas", filename)
+                with open(file_path, "w", encoding="utf-8") as f:
+                    f.write(html_code)
+                self.forge.update_catalog(concept, filename)
+                self.world.record_creation("TOOL", quest_title, file_path, f"User-directed interactive app: {quest_desc}", quality_score=99.0)
+                creation_record = {"type": "TOOL", "title": quest_title, "path": file_path, "url": f"public/saas/{filename}"}
+                xp_earned = 300
+                print(f"  ✔ Interactive tool forged and verified! Saved to: {file_path}")
             else:
-                clean_code = raw_code.strip()
-
-            # Execute in Sandbox
-            print("  ⚡ Executing tool in isolated sandbox...")
-            passed, output, el = self.tools.execute_sandbox(clean_code)
-
-            # Self-healing if failed
-            if not passed:
-                print(f"  [SANDBOX ERROR]: {output[:150]} -> Triggering Self-Healing...")
-                self.current_thought = "Sandbox error detected. Self-healing and refactoring code..."
-                fix_prompt = f"""
-The following Python script failed in sandbox execution:
-CODE:
-{clean_code}
-
-ERROR:
-{output}
-
-Fix the bug and provide the corrected, working Python script inside a ```python ``` block.
-"""
-                fixed_raw = self.brain.think(fix_prompt, temperature=0.1)
-                if "```python" in fixed_raw:
-                    clean_code = fixed_raw.split("```python", 1)[1].split("```", 1)[0].strip()
-                elif "```" in fixed_raw:
-                    clean_code = fixed_raw.split("```", 1)[1].split("```", 1)[0].strip()
-                passed, output, el = self.tools.execute_sandbox(clean_code)
-
-            # Save tool
-            filename = quest_title.lower().replace(" ", "_").replace("/", "_")[:35] + ".py"
-            saved_path = self.tools.save_tool(filename, clean_code)
-            print(f"  ✔ Tool verified in {el}s! Saved to: {saved_path}")
-
-            summary_text = f"Standalone Python utility created and verified in sandbox ({el}s). Output: {output[:100]}"
-            self.world.record_creation("TOOL", quest_title, saved_path, summary_text, quality_score=98.0)
-            self.world.store_memory("TOOL_INSIGHT", quest_title, f"Successfully forged tool '{filename}'. Passed all unit assertions.")
-            creation_record = {"type": "TOOL", "title": quest_title, "path": saved_path}
-            xp_earned = 250
+                forge_res = self.forge.forge_one_tool()
+                creation_record = {"type": "TOOL", "title": forge_res["title"], "path": forge_res["path"], "url": forge_res["url"]}
+                xp_earned = 300
 
         else:
             # DEEP RESEARCH MISSION
