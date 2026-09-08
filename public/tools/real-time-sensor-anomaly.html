@@ -1,0 +1,1 @@
+<input id='p' placeholder='JSON: {"threshold":100,"readings":[1,2,150]}'><button onclick='fetch("/api/engine",{method:"POST",body:document.getElementById("p").value}).then(r=>r.json()).then(d=>console.log(d))'>Run</button>
