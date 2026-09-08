@@ -2629,6 +2629,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/tools/schema_smith_1788890952.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/tools/secure_data_parser_1788522308.html</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -2666,6 +2672,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/tools/structured_log_sanitizer_1788551783.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/tools/swarm-energy-telemetry.html</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
