@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 12870000.0,
-    "total_monthly_revenue_usd": 56800.0,
+    "total_valuation_usd": 13370000.0,
+    "total_monthly_revenue_usd": 57250.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 16,
-    "last_updated_epoch": 1788826708.9379635
+    "last_tick": 17,
+    "last_updated_epoch": 1788842792.593299
   },
   "continents": [
     {
@@ -118,9 +118,9 @@
       "slug": "apex_news_wire_agency",
       "ticker": "ANWA",
       "industry": "Autonomous Media & Investigative Journalism",
-      "valuation": 2100000.0,
+      "valuation": 2600000.0,
       "treasury_balance": 77000.0,
-      "monthly_revenue": 16200.0,
+      "monthly_revenue": 16650.0,
       "operating_cost": 500.0,
       "status": "ACTIVE",
       "mission_statement": "Official government and judicial news aggregation, zero-drama fact synthesis, and instant Google News SEO ranking.",
@@ -409,17 +409,27 @@
       "name": "GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine",
       "slug": "gazetteverifier_official_factcheck",
       "category": "Autonomous Investigative Tech",
-      "version": "v1.0.0",
+      "version": "v1.2.0",
       "problem_statement": "Public cannot verify whether a breaking political tweet or viral claim matches the official Government Gazette or Press Information Bureau release.",
       "prd_json": "{\"title\": \"GazetteVerifier \\u2014 Indian Official Gazette Fact-Check Engine\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"Public Good Verified Dispatch\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/gazetteverifier_official_factcheck.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 0,
-      "health_score": 100.0,
+      "daily_active_users": 190,
+      "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     }
   ],
   "events": [
+    {
+      "id": 30,
+      "tick": 17,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-04",
+      "summary": "Self-Evolution Engine upgraded 'GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine' to v1.2.0. User adoption grew to 190 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788842792.588844
+    },
     {
       "id": 29,
       "tick": 16,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "SUCCESS",
       "timestamp": 1788718620.170239
-    },
-    {
-      "id": 5,
-      "tick": 2,
-      "event_type": "PRODUCT_DEPLOYMENT",
-      "entity_id": "COMP-04",
-      "summary": "Apex Global News Wire Agency successfully synthesized and deployed 'GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine' to the live world.",
-      "causality_chain": null,
-      "severity": "SUCCESS",
-      "timestamp": 1788717706.6660895
     }
   ],
   "transactions": [
