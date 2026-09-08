@@ -1,0 +1,1 @@
+<html><body><h3>Sensor Pulse</h3><input id='p' placeholder='JSON payload'><button onclick='run()'>Analyze</button><pre id='o'></pre><script>async function run(){const r=await fetch('/api/engine',{method:'POST',body:document.getElementById('p').value});document.getElementById('o').innerText=JSON.stringify(await r.json());}</script></body></html>
