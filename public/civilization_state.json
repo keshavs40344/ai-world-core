@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 15370000.0,
-    "total_monthly_revenue_usd": 59050.0,
+    "total_valuation_usd": 15870000.0,
+    "total_monthly_revenue_usd": 59500.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 21,
-    "last_updated_epoch": 1788897512.8738418
+    "last_tick": 22,
+    "last_updated_epoch": 1788906083.7023761
   },
   "continents": [
     {
@@ -118,9 +118,9 @@
       "slug": "apex_news_wire_agency",
       "ticker": "ANWA",
       "industry": "Autonomous Media & Investigative Journalism",
-      "valuation": 3100000.0,
+      "valuation": 3600000.0,
       "treasury_balance": 77000.0,
-      "monthly_revenue": 17100.0,
+      "monthly_revenue": 17550.0,
       "operating_cost": 500.0,
       "status": "ACTIVE",
       "mission_statement": "Official government and judicial news aggregation, zero-drama fact synthesis, and instant Google News SEO ranking.",
@@ -304,13 +304,13 @@
       "name": "ContradictionRadar -- Cross-Source Press Claim Discrepancy Engine",
       "slug": "deepfake_claim_contradiction_radar",
       "category": "Autonomous Investigative Tech",
-      "version": "v1.0.0",
+      "version": "v1.2.0",
       "problem_statement": "Conflicting news reports during breaking national incidents cause public confusion and viral misattribution.",
       "prd_json": "{\"summary\": \"Cross-examines headline statements across official gazettes, identifying timeline contradictions and unverified claims.\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/deepfake_claim_contradiction_radar.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 439,
-      "health_score": 100.0,
+      "daily_active_users": 631,
+      "health_score": 99.98,
       "created_at": "2026-09-06T18:17:12.239192+00:00"
     },
     {
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 35,
+      "tick": 22,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-04",
+      "summary": "Self-Evolution Engine upgraded 'ContradictionRadar -- Cross-Source Press Claim Discrepancy Engine' to v1.2.0. User adoption grew to 631 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788906083.6963437
+    },
     {
       "id": 34,
       "tick": 21,
@@ -658,16 +668,6 @@
       "summary": "Autonomous Agent Factory appointed 'Senior RedOps Cryptographic Auditor' to expand research velocity.",
       "causality_chain": null,
       "severity": "INFO",
-      "timestamp": 1788718628.9417531
-    },
-    {
-      "id": 10,
-      "tick": 5,
-      "event_type": "OPPORTUNITY_DISCOVERED",
-      "entity_id": "COMP-02",
-      "summary": "Sovereign Ledger & Tax Corp identified untapped niche in 'FinTech & Quant Risk' and deployed 'ForexSpread -- Real-Time FX Triangle Arbitrage & Slippage Miner' (QA verified in 32.01ms).",
-      "causality_chain": null,
-      "severity": "SUCCESS",
       "timestamp": 1788718628.9417531
     }
   ],
