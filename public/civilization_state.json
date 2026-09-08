@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 12370000.0,
-    "total_monthly_revenue_usd": 56350.0,
+    "total_valuation_usd": 12870000.0,
+    "total_monthly_revenue_usd": 56800.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 15,
-    "last_updated_epoch": 1788818906.9347243
+    "last_tick": 16,
+    "last_updated_epoch": 1788826708.9379635
   },
   "continents": [
     {
@@ -103,9 +103,9 @@
       "slug": "logshield_security",
       "ticker": "LSRB",
       "industry": "CyberSecurity & DevSecOps",
-      "valuation": 2920000.0,
+      "valuation": 3420000.0,
       "treasury_balance": 63000.0,
-      "monthly_revenue": 13100.0,
+      "monthly_revenue": 13550.0,
       "operating_cost": 280.0,
       "status": "ACTIVE",
       "mission_statement": "Real-time automated redaction of API secrets, JWT tokens, and private databases before LLM exposure.",
@@ -354,7 +354,7 @@
       "prd_json": "{\"summary\": \"Browser-native AST pattern matcher detecting prompt leaks, jailbreak vectors, and delimiter hijacking with zero API dependencies.\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/promptshield_injection_sentinel.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 713,
+      "daily_active_users": 871,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:17:00.170247+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 29,
+      "tick": 16,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-03",
+      "summary": "Self-Evolution Engine upgraded 'PromptShield -- LLM Prompt Injection & Jailbreak Firewall' to v2.0.0. User adoption grew to 871 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788826708.9326165
+    },
     {
       "id": 28,
       "tick": 15,
@@ -656,16 +666,6 @@
       "event_type": "PRODUCT_DEPLOYMENT",
       "entity_id": "COMP-04",
       "summary": "Apex Global News Wire Agency successfully synthesized and deployed 'GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine' to the live world.",
-      "causality_chain": null,
-      "severity": "SUCCESS",
-      "timestamp": 1788717706.6660895
-    },
-    {
-      "id": 4,
-      "tick": 2,
-      "event_type": "PRODUCT_DEPLOYMENT",
-      "entity_id": "COMP-03",
-      "summary": "LogShield Security & PII Redaction Bureau successfully synthesized and deployed 'CookieShield \u2014 HTTP Header & Session PII Masker' to the live world.",
       "causality_chain": null,
       "severity": "SUCCESS",
       "timestamp": 1788717706.6660895
