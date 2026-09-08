@@ -1,0 +1,1 @@
+<input id='csv' type='file' accept='.csv'><button onclick="fetch('/api/convert',{method:'POST',body:document.getElementById('csv').files[0]}).then(r=>r.json()).then(d=>console.log(d))">Convert</button><pre id='out'></pre>

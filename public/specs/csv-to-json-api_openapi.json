@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "csv-to-json-api",
+    "version": "1.0.0",
+    "description": "Developers frequently need to convert raw CSV data into structured JSON for API consumption, but existing tools are either heavy desktop apps or require manual copy-pasting. This utility provides a lightweight, instant conversion service."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
