@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><input id='in' placeholder='JSON'><button onclick="fetch('/api/engine',{method:'POST',body:document.getElementById('in').value}).then(r=>r.json()).then(d=>console.log(d))">Process</button><pre id='out'></pre></body></html>

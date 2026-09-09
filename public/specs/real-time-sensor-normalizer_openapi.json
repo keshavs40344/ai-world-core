@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "real-time-sensor-normalizer",
+    "version": "1.0.0",
+    "description": "Silos sensor data from multiple industrial historians into a unified, queryable JSON stream for real-time monitoring."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
