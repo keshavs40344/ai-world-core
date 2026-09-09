@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 19370000.0,
-    "total_monthly_revenue_usd": 62650.0,
+    "total_valuation_usd": 19870000.0,
+    "total_monthly_revenue_usd": 63100.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 29,
-    "last_updated_epoch": 1788991197.4495983
+    "last_tick": 30,
+    "last_updated_epoch": 1788997924.9312267
   },
   "continents": [
     {
@@ -103,9 +103,9 @@
       "slug": "logshield_security",
       "ticker": "LSRB",
       "industry": "CyberSecurity & DevSecOps",
-      "valuation": 3920000.0,
+      "valuation": 4420000.0,
       "treasury_balance": 63000.0,
-      "monthly_revenue": 14000.0,
+      "monthly_revenue": 14450.0,
       "operating_cost": 280.0,
       "status": "ACTIVE",
       "mission_statement": "Real-time automated redaction of API secrets, JWT tokens, and private databases before LLM exposure.",
@@ -394,12 +394,12 @@
       "name": "CookieShield \u2014 HTTP Header & Session PII Masker",
       "slug": "cookieshield_header_masker",
       "category": "Zero-Trust DevSecOps",
-      "version": "v1.2.0",
+      "version": "v2.0.0",
       "problem_statement": "Companies leak employee PII and session cookies into Sentry and Datadog crash logs, risking GDPR fines.",
       "prd_json": "{\"title\": \"CookieShield \\u2014 HTTP Header & Session PII Masker\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"Client-Side Zero Data Storage Studio\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/cookieshield_header_masker.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 191,
+      "daily_active_users": 291,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 43,
+      "tick": 30,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-03",
+      "summary": "Self-Evolution Engine upgraded 'CookieShield \u2014 HTTP Header & Session PII Masker' to v2.0.0. User adoption grew to 291 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788997924.926574
+    },
     {
       "id": 42,
       "tick": 29,
@@ -656,16 +666,6 @@
       "event_type": "WORKFORCE_EXPANSION",
       "entity_id": "AGENT-SEC-OPS-91C1",
       "summary": "Autonomous Agent Factory appointed 'Senior RedOps Cryptographic Auditor' to expand research velocity.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1788735473.3176916
-    },
-    {
-      "id": 18,
-      "tick": 9,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-01",
-      "summary": "Self-Evolution Engine upgraded 'KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter' to v2.0.0. User adoption grew to 300 daily active engineers.",
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1788735473.3176916
