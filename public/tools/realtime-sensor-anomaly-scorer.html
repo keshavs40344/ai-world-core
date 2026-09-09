@@ -1,0 +1,1 @@
+<input id='p' placeholder='{"value":10,"mean":5,"std":1}'><button onclick="fetch('/api/engine',{method:'POST',body:document.getElementById('p').value}).then(r=>r.json()).then(d=>alert(JSON.stringify(d)))">Score</button>
