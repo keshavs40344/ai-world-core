@@ -1,0 +1,6 @@
+<div id='out'>Loading...</div>
+<script>
+fetch('https://api.genesis-swarm.com/pulse', {method:'POST', body: '12,13,14,15,100'})
+.then(r=>r.json())
+.then(d=>document.getElementById('out').innerText=JSON.stringify(d));
+</script>
