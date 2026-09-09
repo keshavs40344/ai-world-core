@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "energy-signal-dedup",
+    "version": "1.0.0",
+    "description": "Reduces bandwidth usage by 40% by deduplicating redundant sensor readings before transmission to cloud historians."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
