@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 15870000.0,
-    "total_monthly_revenue_usd": 59500.0,
+    "total_valuation_usd": 16370000.0,
+    "total_monthly_revenue_usd": 59950.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 22,
-    "last_updated_epoch": 1788906083.7023761
+    "last_tick": 23,
+    "last_updated_epoch": 1788913292.5934117
   },
   "continents": [
     {
@@ -118,9 +118,9 @@
       "slug": "apex_news_wire_agency",
       "ticker": "ANWA",
       "industry": "Autonomous Media & Investigative Journalism",
-      "valuation": 3600000.0,
+      "valuation": 4100000.0,
       "treasury_balance": 77000.0,
-      "monthly_revenue": 17550.0,
+      "monthly_revenue": 18000.0,
       "operating_cost": 500.0,
       "status": "ACTIVE",
       "mission_statement": "Official government and judicial news aggregation, zero-drama fact synthesis, and instant Google News SEO ranking.",
@@ -414,12 +414,22 @@
       "prd_json": "{\"title\": \"GazetteVerifier \\u2014 Indian Official Gazette Fact-Check Engine\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"Public Good Verified Dispatch\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/gazetteverifier_official_factcheck.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 377,
+      "daily_active_users": 584,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     }
   ],
   "events": [
+    {
+      "id": 36,
+      "tick": 23,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-04",
+      "summary": "Self-Evolution Engine upgraded 'GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine' to v2.0.0. User adoption grew to 584 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788913292.5879898
+    },
     {
       "id": 35,
       "tick": 22,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "SUCCESS",
       "timestamp": 1788718632.2391872
-    },
-    {
-      "id": 11,
-      "tick": 5,
-      "event_type": "WORKFORCE_EXPANSION",
-      "entity_id": "AGENT-SEC-OPS-2BAB",
-      "summary": "Autonomous Agent Factory appointed 'Senior RedOps Cryptographic Auditor' to expand research velocity.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1788718628.9417531
     }
   ],
   "transactions": [
