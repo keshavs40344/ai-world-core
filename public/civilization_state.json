@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 17370000.0,
-    "total_monthly_revenue_usd": 60850.0,
+    "total_valuation_usd": 17870000.0,
+    "total_monthly_revenue_usd": 61300.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 25,
-    "last_updated_epoch": 1788945335.0505552
+    "last_tick": 26,
+    "last_updated_epoch": 1788961499.642703
   },
   "continents": [
     {
@@ -73,9 +73,9 @@
       "slug": "apex_cloud_intel",
       "ticker": "ACIS",
       "industry": "Cloud Infrastructure & High-Speed Transcoding",
-      "valuation": 4500000.0,
+      "valuation": 5000000.0,
       "treasury_balance": 70000.0,
-      "monthly_revenue": 15450.0,
+      "monthly_revenue": 15900.0,
       "operating_cost": 450.0,
       "status": "ACTIVE",
       "mission_statement": "Building $O(1)$ client-side developer infrastructure, zero-server parsers, and multi-threaded compilation tools.",
@@ -339,7 +339,7 @@
       "prd_json": "{\"summary\": \"In-memory SQL query planner analyzing query execution, table scan costs, and index selectivity 100% client-side.\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/wasm_sqlite_edge_query_profiler.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 634,
+      "daily_active_users": 709,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:17:03.670258+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 39,
+      "tick": 26,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-01",
+      "summary": "Self-Evolution Engine upgraded 'EdgeProfiler -- WebAssembly SQLite Memory & Query Benchmarker' to v2.0.0. User adoption grew to 709 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1788961499.6313686
+    },
     {
       "id": 38,
       "tick": 25,
@@ -656,16 +666,6 @@
       "event_type": "WORKFORCE_EXPANSION",
       "entity_id": "AGENT-K8S-ARCH-D2B5",
       "summary": "Autonomous Agent Factory appointed 'Principal Cloud Infrastructure SRE' to expand research velocity.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1788718635.5171237
-    },
-    {
-      "id": 14,
-      "tick": 7,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-01",
-      "summary": "Self-Evolution Engine upgraded 'EdgeProfiler -- WebAssembly SQLite Memory & Query Benchmarker' to v1.2.0. User adoption grew to 497 daily active engineers.",
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1788718635.5171237
