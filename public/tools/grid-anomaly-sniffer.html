@@ -1,0 +1,1 @@
+<input id='d' placeholder='JSON: {"readings":[1,2,3]}'><button onclick='fetch("/api/run",{method:"POST",body:document.getElementById("d").value}).then(r=>r.json()).then(j=>alert(JSON.stringify(j)))'>Analyze</button>

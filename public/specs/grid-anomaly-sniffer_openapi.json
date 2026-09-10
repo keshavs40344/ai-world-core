@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "grid-anomaly-sniffer",
+    "version": "1.0.0",
+    "description": "Real-time detection of sensor data anomalies in siloed energy historians to prevent asset downtime."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
