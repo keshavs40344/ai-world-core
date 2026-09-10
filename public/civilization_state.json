@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 19870000.0,
-    "total_monthly_revenue_usd": 63100.0,
+    "total_valuation_usd": 20370000.0,
+    "total_monthly_revenue_usd": 63550.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 30,
-    "last_updated_epoch": 1788997924.9312267
+    "last_tick": 31,
+    "last_updated_epoch": 1789003907.4524226
   },
   "continents": [
     {
@@ -73,9 +73,9 @@
       "slug": "apex_cloud_intel",
       "ticker": "ACIS",
       "industry": "Cloud Infrastructure & High-Speed Transcoding",
-      "valuation": 5500000.0,
+      "valuation": 6000000.0,
       "treasury_balance": 70000.0,
-      "monthly_revenue": 16350.0,
+      "monthly_revenue": 16800.0,
       "operating_cost": 450.0,
       "status": "ACTIVE",
       "mission_statement": "Building $O(1)$ client-side developer infrastructure, zero-server parsers, and multi-threaded compilation tools.",
@@ -369,7 +369,7 @@
       "prd_json": "{\"title\": \"KubeGuard \\u2014 Offline Kubernetes YAML AST & Security Linter\", \"target_persona\": \"Developers, Accountants, or Security Engineers\", \"core_algorithm\": \"The application loads the YAML manifest into memory, uses the js-yaml library to parse it into a JavaScript object (AST). A recursive traversal inspects security\\u2011relevant fields (e.g., privileged, hostPath, capabilities). Lint warnings are collected and displayed alongside a pretty\\u2011printed JSON representation of the AST. All processing occurs client\\u2011side, ensuring offline operation.\", \"monetization\": \"Open Sovereign Free Tier (Enterprise $29/mo API)\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/kubeguard_yaml_linter.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 440,
+      "daily_active_users": 636,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 44,
+      "tick": 31,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-01",
+      "summary": "Self-Evolution Engine upgraded 'KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter' to v2.0.0. User adoption grew to 636 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1789003907.446506
+    },
     {
       "id": 43,
       "tick": 30,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1788741534.0427983
-    },
-    {
-      "id": 19,
-      "tick": 9,
-      "event_type": "WORKFORCE_EXPANSION",
-      "entity_id": "AGENT-SEC-OPS-91C1",
-      "summary": "Autonomous Agent Factory appointed 'Senior RedOps Cryptographic Auditor' to expand research velocity.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1788735473.3176916
     }
   ],
   "transactions": [
