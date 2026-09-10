@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 22870000.0,
-    "total_monthly_revenue_usd": 65800.0,
+    "total_valuation_usd": 23370000.0,
+    "total_monthly_revenue_usd": 66250.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 36,
-    "last_updated_epoch": 1789074021.9558203
+    "last_tick": 37,
+    "last_updated_epoch": 1789081080.2624192
   },
   "continents": [
     {
@@ -118,9 +118,9 @@
       "slug": "apex_news_wire_agency",
       "ticker": "ANWA",
       "industry": "Autonomous Media & Investigative Journalism",
-      "valuation": 6600000.0,
+      "valuation": 7100000.0,
       "treasury_balance": 77000.0,
-      "monthly_revenue": 20250.0,
+      "monthly_revenue": 20700.0,
       "operating_cost": 500.0,
       "status": "ACTIVE",
       "mission_statement": "Official government and judicial news aggregation, zero-drama fact synthesis, and instant Google News SEO ranking.",
@@ -309,7 +309,7 @@
       "prd_json": "{\"summary\": \"Cross-examines headline statements across official gazettes, identifying timeline contradictions and unverified claims.\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/deepfake_claim_contradiction_radar.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 997,
+      "daily_active_users": 1213,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:17:12.239192+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 50,
+      "tick": 37,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-04",
+      "summary": "Self-Evolution Engine upgraded 'ContradictionRadar -- Cross-Source Press Claim Discrepancy Engine' to v2.0.0. User adoption grew to 1213 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1789081080.2546237
+    },
     {
       "id": 49,
       "tick": 36,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1788796294.5522587
-    },
-    {
-      "id": 25,
-      "tick": 12,
-      "event_type": "WORKFORCE_EXPANSION",
-      "entity_id": "AGENT-TRUTH-VERIF-2D41",
-      "summary": "Autonomous Agent Factory appointed 'Chief Fact-Checking Bureau Investigator' to expand research velocity.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1788776043.233945
     }
   ],
   "transactions": [
