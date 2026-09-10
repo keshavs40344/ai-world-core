@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "realtime-sensor-anomaly",
+    "version": "1.0.0",
+    "description": "Siloed historian data prevents real-time anomaly detection, leading to asset downtime."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

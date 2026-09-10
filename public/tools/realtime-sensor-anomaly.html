@@ -1,0 +1,1 @@
+<html><body><input id='p' type='text' placeholder='JSON payload'><button onclick='run()'>Analyze</button><div id='r'></div><script>async function run(){const res=await fetch('/api/execute',{method:'POST',body:document.getElementById('p').value});document.getElementById('r').innerText=JSON.stringify(await res.json());}</script></body></html>
