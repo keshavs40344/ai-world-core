@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 22370000.0,
-    "total_monthly_revenue_usd": 65350.0,
+    "total_valuation_usd": 22870000.0,
+    "total_monthly_revenue_usd": 65800.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 35,
-    "last_updated_epoch": 1789064695.9063206
+    "last_tick": 36,
+    "last_updated_epoch": 1789074021.9558203
   },
   "continents": [
     {
@@ -103,9 +103,9 @@
       "slug": "logshield_security",
       "ticker": "LSRB",
       "industry": "CyberSecurity & DevSecOps",
-      "valuation": 4420000.0,
+      "valuation": 4920000.0,
       "treasury_balance": 63000.0,
-      "monthly_revenue": 14450.0,
+      "monthly_revenue": 14900.0,
       "operating_cost": 280.0,
       "status": "ACTIVE",
       "mission_statement": "Real-time automated redaction of API secrets, JWT tokens, and private databases before LLM exposure.",
@@ -354,7 +354,7 @@
       "prd_json": "{\"summary\": \"Browser-native AST pattern matcher detecting prompt leaks, jailbreak vectors, and delimiter hijacking with zero API dependencies.\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/promptshield_injection_sentinel.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 871,
+      "daily_active_users": 946,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:17:00.170247+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 49,
+      "tick": 36,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-03",
+      "summary": "Self-Evolution Engine upgraded 'PromptShield -- LLM Prompt Injection & Jailbreak Firewall' to v2.0.0. User adoption grew to 946 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1789074021.950543
+    },
     {
       "id": 48,
       "tick": 35,
@@ -656,16 +666,6 @@
       "event_type": "WORKFORCE_EXPANSION",
       "entity_id": "AGENT-TRUTH-VERIF-2D41",
       "summary": "Autonomous Agent Factory appointed 'Chief Fact-Checking Bureau Investigator' to expand research velocity.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1788776043.233945
-    },
-    {
-      "id": 24,
-      "tick": 12,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-02",
-      "summary": "Self-Evolution Engine upgraded 'TaxShield LUT & Zero-Rated GST Export Calculator' to v1.2.0. User adoption grew to 206 daily active engineers.",
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1788776043.233945
