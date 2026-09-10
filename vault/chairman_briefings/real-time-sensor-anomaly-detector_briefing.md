@@ -1,13 +1,13 @@
 # 🏛️ EXECUTIVE ASSET DOSSIER: real-time-sensor-anomaly-detector
-**Sub-Agent Type:** IoT-Data-Engineer
-**Generated At:** 2026-09-07T21:09:25.820231+00:00
-**Monetization Vector:** SaaS subscription for real-time industrial monitoring and predictive maintenance alerts.
+**Sub-Agent Type:** EnergyTelemetryEngine
+**Generated At:** 2026-09-10T03:16:47.730965+00:00
+**Monetization Vector:** SaaS subscription for real-time anomaly detection API for energy sector clients.
 
 ## Commercial Intent
-Siloed sensor data and lack of real-time anomaly detection causing asset downtime and compliance delays.
+Real-time detection of sensor anomalies in energy assets to prevent downtime and compliance violations.
 
 ## Self-Evolved Operational Learning
-Real-time anomaly detection requires low-latency processing and clear thresholds to reduce false positives in industrial IoT environments.
+Keep anomaly detection logic simple and configurable for rapid deployment in energy telemetry systems.
 
 ## Production Artifacts
 - Service Module: `vault/world_assets/real-time-sensor-anomaly-detector/service.py`
