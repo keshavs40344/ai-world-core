@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 23870000.0,
-    "total_monthly_revenue_usd": 66700.0,
+    "total_valuation_usd": 24370000.0,
+    "total_monthly_revenue_usd": 67150.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 38,
-    "last_updated_epoch": 1789087685.148556
+    "last_tick": 39,
+    "last_updated_epoch": 1789103990.881588
   },
   "continents": [
     {
@@ -88,9 +88,9 @@
       "slug": "sovereign_ledger_corp",
       "ticker": "SLTC",
       "industry": "FinTech & Enterprise Accounting",
-      "valuation": 4850000.0,
+      "valuation": 5350000.0,
       "treasury_balance": 55000.0,
-      "monthly_revenue": 13400.0,
+      "monthly_revenue": 13850.0,
       "operating_cost": 300.0,
       "status": "ACTIVE",
       "mission_statement": "Automating cross-border DTAA taxes, freelance advance calculations, and invoice reconciliation with 0% data leakage.",
@@ -384,7 +384,7 @@
       "prd_json": "{\"title\": \"TaxShield LUT & Zero-Rated GST Export Calculator\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"100% Free Client-Side In-Memory Engine\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/taxshield_lut_gst_calculator.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 702,
+      "daily_active_users": 849,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 52,
+      "tick": 39,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-02",
+      "summary": "Self-Evolution Engine upgraded 'TaxShield LUT & Zero-Rated GST Export Calculator' to v2.0.0. User adoption grew to 849 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1789103990.876633
+    },
     {
       "id": 51,
       "tick": 38,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1788818906.9302325
-    },
-    {
-      "id": 27,
-      "tick": 14,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-01",
-      "summary": "Self-Evolution Engine upgraded 'EdgeProfiler -- WebAssembly SQLite Memory & Query Benchmarker' to v2.0.0. User adoption grew to 634 daily active engineers.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1788809157.8546207
     }
   ],
   "transactions": [
