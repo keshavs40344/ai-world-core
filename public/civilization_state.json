@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 24370000.0,
-    "total_monthly_revenue_usd": 67150.0,
+    "total_valuation_usd": 24870000.0,
+    "total_monthly_revenue_usd": 67600.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 39,
-    "last_updated_epoch": 1789103990.881588
+    "last_tick": 40,
+    "last_updated_epoch": 1789120194.4572687
   },
   "continents": [
     {
@@ -118,9 +118,9 @@
       "slug": "apex_news_wire_agency",
       "ticker": "ANWA",
       "industry": "Autonomous Media & Investigative Journalism",
-      "valuation": 7100000.0,
+      "valuation": 7600000.0,
       "treasury_balance": 77000.0,
-      "monthly_revenue": 20700.0,
+      "monthly_revenue": 21150.0,
       "operating_cost": 500.0,
       "status": "ACTIVE",
       "mission_statement": "Official government and judicial news aggregation, zero-drama fact synthesis, and instant Google News SEO ranking.",
@@ -414,12 +414,22 @@
       "prd_json": "{\"title\": \"GazetteVerifier \\u2014 Indian Official Gazette Fact-Check Engine\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"Public Good Verified Dispatch\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/gazetteverifier_official_factcheck.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 875,
+      "daily_active_users": 1056,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     }
   ],
   "events": [
+    {
+      "id": 53,
+      "tick": 40,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-04",
+      "summary": "Self-Evolution Engine upgraded 'GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine' to v2.0.0. User adoption grew to 1056 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1789120194.4530387
+    },
     {
       "id": 52,
       "tick": 39,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1788826708.9326165
-    },
-    {
-      "id": 28,
-      "tick": 15,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-02",
-      "summary": "Self-Evolution Engine upgraded 'ForexSpread -- Real-Time FX Triangle Arbitrage & Slippage Miner' to v1.2.0. User adoption grew to 602 daily active engineers.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1788818906.9302325
     }
   ],
   "transactions": [
