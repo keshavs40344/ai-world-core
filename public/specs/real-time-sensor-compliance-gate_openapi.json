@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "real-time-sensor-compliance-gate",
+    "version": "1.0.0",
+    "description": "Siloed sensor data causing compliance lag and asset downtime due to lack of real-time queryable validation."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
