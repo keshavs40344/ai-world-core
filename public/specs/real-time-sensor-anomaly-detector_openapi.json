@@ -3,7 +3,7 @@
   "info": {
     "title": "real-time-sensor-anomaly-detector",
     "version": "1.0.0",
-    "description": "Real-time detection of sensor anomalies in energy assets to prevent downtime and compliance violations."
+    "description": "Siloed sensor data prevents real-time anomaly detection, leading to asset downtime and compliance risks."
   },
   "paths": {
     "/process": {
