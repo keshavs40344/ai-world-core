@@ -1,0 +1,1 @@
+<input id='inp' placeholder='Paste JSON' style='width:100%;height:100px;'><button onclick='run()'>Convert</button><pre id='out'></pre><script>async function run(){const r=await fetch('/api/convert',{method:'POST',body:document.getElementById('inp').value});document.getElementById('out').textContent=(await r.json()).env_vars.join('\n');}</script>
