@@ -1,0 +1,1 @@
+<html><body><input id='p' placeholder='{"budget":1000000,"risk_factor":0.5,"load_curve":[1,2,3]}'><button onclick="fetch('/api/engine',{method:'POST',body:document.getElementById('p').value}).then(r=>r.json()).then(d=>alert(JSON.stringify(d)))">Run</button></body></html>
