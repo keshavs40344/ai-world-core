@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 26870000.0,
-    "total_monthly_revenue_usd": 69400.0,
+    "total_valuation_usd": 27370000.0,
+    "total_monthly_revenue_usd": 69850.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 44,
-    "last_updated_epoch": 1789164040.4741104
+    "last_tick": 45,
+    "last_updated_epoch": 1789171076.864822
   },
   "continents": [
     {
@@ -103,9 +103,9 @@
       "slug": "logshield_security",
       "ticker": "LSRB",
       "industry": "CyberSecurity & DevSecOps",
-      "valuation": 4920000.0,
+      "valuation": 5420000.0,
       "treasury_balance": 63000.0,
-      "monthly_revenue": 14900.0,
+      "monthly_revenue": 15350.0,
       "operating_cost": 280.0,
       "status": "ACTIVE",
       "mission_statement": "Real-time automated redaction of API secrets, JWT tokens, and private databases before LLM exposure.",
@@ -354,7 +354,7 @@
       "prd_json": "{\"summary\": \"Browser-native AST pattern matcher detecting prompt leaks, jailbreak vectors, and delimiter hijacking with zero API dependencies.\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/promptshield_injection_sentinel.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 946,
+      "daily_active_users": 1081,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:17:00.170247+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 58,
+      "tick": 45,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-03",
+      "summary": "Self-Evolution Engine upgraded 'PromptShield -- LLM Prompt Injection & Jailbreak Firewall' to v2.0.0. User adoption grew to 1081 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1789171076.8599458
+    },
     {
       "id": 57,
       "tick": 44,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1788897512.8692706
-    },
-    {
-      "id": 33,
-      "tick": 20,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-04",
-      "summary": "Self-Evolution Engine upgraded 'GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine' to v2.0.0. User adoption grew to 377 daily active engineers.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1788888214.7373407
     }
   ],
   "transactions": [
