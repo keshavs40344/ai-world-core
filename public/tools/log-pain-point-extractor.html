@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><textarea id='t' rows='4' cols='50'>Paste reviews here</textarea><button onclick='run()'>Analyze</button><pre id='o'></pre><script>async function run(){const r=await fetch('/api/analyze',{method:'POST',body:document.getElementById('t').value});document.getElementById('o').textContent=JSON.stringify(await r.json());}</script></body></html>

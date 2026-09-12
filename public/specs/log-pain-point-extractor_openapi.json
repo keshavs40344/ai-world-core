@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "log-pain-point-extractor",
+    "version": "1.0.0",
+    "description": "Solo devs waste hours manually scanning Capterra/Trustpilot reviews to find recurring user frustrations for niche validation."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
