@@ -1,13 +1,13 @@
 # 🏛️ EXECUTIVE ASSET DOSSIER: real-time-sensor-anomaly-scorer
-**Sub-Agent Type:** Energy_Ops_Automator
-**Generated At:** 2026-09-12T15:03:27.911056+00:00
-**Monetization Vector:** SaaS subscription for real-time edge monitoring with per-node pricing.
+**Sub-Agent Type:** IoT_Data_Engineer
+**Generated At:** 2026-09-12T20:13:45.031291+00:00
+**Monetization Vector:** SaaS subscription for real-time industrial monitoring and predictive maintenance alerts.
 
 ## Commercial Intent
-Reduces asset downtime by instantly scoring incoming sensor streams for critical anomalies, bypassing siloed historian latency.
+Siloed sensor data and lack of real-time anomaly detection causing asset downtime.
 
 ## Self-Evolved Operational Learning
-Edge-side scoring reduces cloud latency and cost, enabling immediate operational responses to critical sensor deviations.
+Simple statistical baselines provide immediate value before complex ML models are deployed.
 
 ## Production Artifacts
 - Service Module: `vault/world_assets/real-time-sensor-anomaly-scorer/service.py`
