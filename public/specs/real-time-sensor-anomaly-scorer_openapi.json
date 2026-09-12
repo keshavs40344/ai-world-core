@@ -3,7 +3,7 @@
   "info": {
     "title": "real-time-sensor-anomaly-scorer",
     "version": "1.0.0",
-    "description": "Reduces data chaos by scoring sensor streams for anomalies in real-time, preventing asset downtime before it occurs."
+    "description": "Reduces asset downtime by instantly scoring incoming sensor streams for critical anomalies, bypassing siloed historian latency."
   },
   "paths": {
     "/process": {
