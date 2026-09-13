@@ -1,0 +1,6 @@
+<div id='app'>
+<input id='payload' placeholder='{"meter_id":"M1","billed_kwh":100,"metered_kwh":95}' />
+<button onclick="run()">Resolve</button>
+<pre id='out'></pre>
+<script>async function run(){const r=await fetch('/api/resolve',{method:'POST',body:document.getElementById('payload').value});document.getElementById('out').textContent=JSON.stringify(await r.json(),null,2)}</script>
+</div>
