@@ -1,13 +1,13 @@
 # 🏛️ EXECUTIVE ASSET DOSSIER: real-time-sensor-anomaly-scorer
-**Sub-Agent Type:** IoT_Data_Engineer
-**Generated At:** 2026-09-12T20:13:45.031291+00:00
-**Monetization Vector:** SaaS subscription for real-time industrial monitoring and predictive maintenance alerts.
+**Sub-Agent Type:** EnergyOps
+**Generated At:** 2026-09-13T03:23:13.149072+00:00
+**Monetization Vector:** SaaS subscription for real-time industrial telemetry monitoring and alerting.
 
 ## Commercial Intent
-Siloed sensor data and lack of real-time anomaly detection causing asset downtime.
+Siloed sensor data prevents real-time anomaly detection, leading to asset downtime and compliance risks.
 
 ## Self-Evolved Operational Learning
-Simple statistical baselines provide immediate value before complex ML models are deployed.
+Statistical baselines (Z-score) provide a lightweight, low-latency method for detecting outliers in streaming sensor data without heavy ML infrastructure.
 
 ## Production Artifacts
 - Service Module: `vault/world_assets/real-time-sensor-anomaly-scorer/service.py`
