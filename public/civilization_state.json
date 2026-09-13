@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 34370000.0,
-    "total_monthly_revenue_usd": 76150.0,
+    "total_valuation_usd": 34870000.0,
+    "total_monthly_revenue_usd": 76600.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 59,
-    "last_updated_epoch": 1789328671.3585875
+    "last_tick": 60,
+    "last_updated_epoch": 1789335792.7405305
   },
   "continents": [
     {
@@ -103,9 +103,9 @@
       "slug": "logshield_security",
       "ticker": "LSRB",
       "industry": "CyberSecurity & DevSecOps",
-      "valuation": 7420000.0,
+      "valuation": 7920000.0,
       "treasury_balance": 63000.0,
-      "monthly_revenue": 17150.0,
+      "monthly_revenue": 17600.0,
       "operating_cost": 280.0,
       "status": "ACTIVE",
       "mission_statement": "Real-time automated redaction of API secrets, JWT tokens, and private databases before LLM exposure.",
@@ -399,7 +399,7 @@
       "prd_json": "{\"title\": \"CookieShield \\u2014 HTTP Header & Session PII Masker\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"Client-Side Zero Data Storage Studio\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/cookieshield_header_masker.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 291,
+      "daily_active_users": 481,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 73,
+      "tick": 60,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-03",
+      "summary": "Self-Evolution Engine upgraded 'CookieShield \u2014 HTTP Header & Session PII Masker' to v2.0.0. User adoption grew to 481 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1789335792.735358
+    },
     {
       "id": 72,
       "tick": 59,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1789074021.950543
-    },
-    {
-      "id": 48,
-      "tick": 35,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-04",
-      "summary": "Self-Evolution Engine upgraded 'ContradictionRadar -- Cross-Source Press Claim Discrepancy Engine' to v2.0.0. User adoption grew to 997 daily active engineers.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1789064695.90127
     }
   ],
   "transactions": [
