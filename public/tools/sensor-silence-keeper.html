@@ -1,0 +1,1 @@
+<html><body><textarea id='in'></textarea><button onclick='send()'>Compress</button><pre id='out'></pre><script>async function send(){const r=await fetch('/api/engine',{method:'POST',body:document.getElementById('in').value});document.getElementById('out').innerText=JSON.stringify(await r.json());}</script></body></html>
