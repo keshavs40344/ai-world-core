@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><input id='p' placeholder='JSON'><button onclick='fetch("/api",{method:"POST",body:document.getElementById("p").value}).then(r=>r.json()).then(d=>alert(JSON.stringify(d)))'>Send</button></body></html>
