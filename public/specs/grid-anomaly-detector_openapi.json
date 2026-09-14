@@ -3,7 +3,7 @@
   "info": {
     "title": "grid-anomaly-detector",
     "version": "1.0.0",
-    "description": "Real-time detection of voltage anomalies in smart grid telemetry streams to prevent outages."
+    "description": "Real-time detection of voltage anomalies in utility grid telemetry streams."
   },
   "paths": {
     "/process": {
