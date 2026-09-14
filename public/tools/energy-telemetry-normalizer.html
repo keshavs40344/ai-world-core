@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><textarea id="input" style="width:100%;height:100px;">{}</textarea><button onclick="fetch('/api/normalize', {method:'POST', body: document.getElementById('input').value}).then(r=>r.json()).then(d=>document.getElementById('output').innerText=JSON.stringify(d))">Process</button><pre id="output"></pre></body></html>
