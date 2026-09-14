@@ -3,7 +3,7 @@
   "info": {
     "title": "real-time-sensor-anomaly",
     "version": "1.0.0",
-    "description": "Silos prevent real-time querying of sensor data, leading to missed anomalies and asset downtime."
+    "description": "Real-time detection of sensor anomalies in siloed energy historians to prevent asset downtime."
   },
   "paths": {
     "/process": {

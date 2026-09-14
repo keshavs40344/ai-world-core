@@ -1,13 +1,13 @@
 # 🏛️ EXECUTIVE ASSET DOSSIER: real-time-sensor-anomaly
 **Sub-Agent Type:** EnergyOps
-**Generated At:** 2026-09-08T10:39:37.686504+00:00
-**Monetization Vector:** SaaS subscription for real-time industrial telemetry monitoring and alerting.
+**Generated At:** 2026-09-14T11:54:49.176801+00:00
+**Monetization Vector:** SaaS subscription for predictive maintenance alerts.
 
 ## Commercial Intent
-Silos prevent real-time querying of sensor data, leading to missed anomalies and asset downtime.
+Real-time detection of sensor anomalies in siloed energy historians to prevent asset downtime.
 
 ## Self-Evolved Operational Learning
-Simple threshold checks on raw telemetry provide immediate value before complex ML models are deployed.
+Z-score is effective for quick anomaly detection in streaming sensor data without complex ML models.
 
 ## Production Artifacts
 - Service Module: `vault/world_assets/real-time-sensor-anomaly/service.py`
