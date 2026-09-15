@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "grid-load-peak-shifter",
+    "version": "1.0.0",
+    "description": "Mitigates peak demand spikes in AI data centers by dynamically shifting non-critical workloads to off-peak hours based on real-time utility price signals."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

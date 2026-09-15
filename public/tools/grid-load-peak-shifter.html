@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><h1>Grid Load Shifter</h1><input id='p' placeholder='Price'><button onclick='fetch("/api/execute",{method:"POST",body:JSON.stringify({price:parseFloat(document.getElementById("p").value)})}).then(r=>r.json()).then(d=>alert(d.action))'>Check</button></body></html>
