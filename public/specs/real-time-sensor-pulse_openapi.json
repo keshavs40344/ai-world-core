@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "real-time-sensor-pulse",
+    "version": "1.0.0",
+    "description": "Siloed sensor data in energy historians preventing real-time queryability and rapid anomaly detection."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
