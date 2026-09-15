@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "env-var-sanitizer",
+    "version": "1.0.0",
+    "description": "Prevents accidental leakage of sensitive environment variables into logs or CI artifacts by masking values in real-time."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
