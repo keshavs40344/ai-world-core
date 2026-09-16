@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "energy-sensor-normalizer",
+    "version": "1.0.0",
+    "description": "Real-time normalization of heterogeneous energy sensor data streams to eliminate siloed historian latency."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
