@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 43870000.0,
-    "total_monthly_revenue_usd": 84700.0,
+    "total_valuation_usd": 44370000.0,
+    "total_monthly_revenue_usd": 85150.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 78,
-    "last_updated_epoch": 1789587720.6233923
+    "last_tick": 79,
+    "last_updated_epoch": 1789597147.6043766
   },
   "continents": [
     {
@@ -88,9 +88,9 @@
       "slug": "sovereign_ledger_corp",
       "ticker": "SLTC",
       "industry": "FinTech & Enterprise Accounting",
-      "valuation": 9850000.0,
+      "valuation": 10350000.0,
       "treasury_balance": 55000.0,
-      "monthly_revenue": 17900.0,
+      "monthly_revenue": 18350.0,
       "operating_cost": 300.0,
       "status": "ACTIVE",
       "mission_statement": "Automating cross-border DTAA taxes, freelance advance calculations, and invoice reconciliation with 0% data leakage.",
@@ -324,7 +324,7 @@
       "prd_json": "{\"summary\": \"Real-time multi-currency triangle arbitrage matrix calculating net real yield after swift transfer and interbank spreads.\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/forex_arbitrage_spread_sentinel.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 1156,
+      "daily_active_users": 1272,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:17:08.941762+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 92,
+      "tick": 79,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-02",
+      "summary": "Self-Evolution Engine upgraded 'ForexSpread -- Real-Time FX Triangle Arbitrage & Slippage Miner' to v2.0.0. User adoption grew to 1272 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1789597147.60003
+    },
     {
       "id": 91,
       "tick": 78,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1789277786.3199227
-    },
-    {
-      "id": 67,
-      "tick": 54,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-01",
-      "summary": "Self-Evolution Engine upgraded 'KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter' to v2.0.0. User adoption grew to 1186 daily active engineers.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1789261054.9746723
     }
   ],
   "transactions": [
