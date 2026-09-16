@@ -3,7 +3,7 @@
   "info": {
     "title": "real-time-sensor-pulse",
     "version": "1.0.0",
-    "description": "Siloed sensor data in energy historians preventing real-time queryability and rapid anomaly detection."
+    "description": "Siloed historian data prevents real-time asset health monitoring, leading to unexpected downtime."
   },
   "paths": {
     "/process": {
