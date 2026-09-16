@@ -3,7 +3,7 @@
   "info": {
     "title": "real-time-sensor-anomaly-detector",
     "version": "1.0.0",
-    "description": "Siloed sensor data prevents real-time anomaly detection, leading to asset downtime and compliance risks."
+    "description": "Siloed sensor data prevents real-time anomaly detection, leading to asset downtime and compliance risks in energy infrastructure."
   },
   "paths": {
     "/process": {
