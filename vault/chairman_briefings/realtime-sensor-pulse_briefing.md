@@ -1,13 +1,13 @@
 # 🏛️ EXECUTIVE ASSET DOSSIER: realtime-sensor-pulse
-**Sub-Agent Type:** Energy Data Aggregator
-**Generated At:** 2026-09-08T23:12:39.050410+00:00
-**Monetization Vector:** SaaS subscription for real-time energy asset monitoring dashboards and API access for enterprise compliance reporting.
+**Sub-Agent Type:** IoT_Data_Aggregator
+**Generated At:** 2026-09-16T20:54:52.058866+00:00
+**Monetization Vector:** SaaS subscription for real-time asset visibility dashboards.
 
 ## Commercial Intent
-Aggregates and normalizes high-frequency sensor data from siloed historians into a real-time, queryable JSON format to eliminate data chaos and reduce asset downtime.
+Eliminates data chaos by aggregating siloed sensor streams into a single, queryable real-time pulse for energy assets.
 
 ## Self-Evolved Operational Learning
-Real-time aggregation requires strict payload validation to prevent API crashes from malformed sensor data; keeping the logic stateless ensures horizontal scalability for high-frequency energy telemetry.
+Aggregating raw sensor data into a single status metric reduces cognitive load for operators.
 
 ## Production Artifacts
 - Service Module: `vault/world_assets/realtime-sensor-pulse/service.py`

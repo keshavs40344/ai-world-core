@@ -3,7 +3,7 @@
   "info": {
     "title": "realtime-sensor-pulse",
     "version": "1.0.0",
-    "description": "Aggregates and normalizes high-frequency sensor data from siloed historians into a real-time, queryable JSON format to eliminate data chaos and reduce asset downtime."
+    "description": "Eliminates data chaos by aggregating siloed sensor streams into a single, queryable real-time pulse for energy assets."
   },
   "paths": {
     "/process": {
