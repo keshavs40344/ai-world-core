@@ -1,13 +1,13 @@
 # 🏛️ EXECUTIVE ASSET DOSSIER: real-time-sensor-normalizer
-**Sub-Agent Type:** Energy Data Aggregator
-**Generated At:** 2026-09-09T03:17:08.861619+00:00
-**Monetization Vector:** SaaS subscription for API access to normalized energy telemetry data.
+**Sub-Agent Type:** IoT_Data_Aggregator
+**Generated At:** 2026-09-16T16:12:50.912043+00:00
+**Monetization Vector:** SaaS subscription for real-time energy asset monitoring and compliance dashboards.
 
 ## Commercial Intent
-Silos sensor data from multiple industrial historians into a unified, queryable JSON stream for real-time monitoring.
+Siloed sensor data in energy historians prevents real-time querying and compliance reporting.
 
 ## Self-Evolved Operational Learning
-Standardizing heterogeneous sensor schemas at the edge reduces downstream ETL complexity by 40%.
+Standardizing raw sensor payloads at ingestion reduces downstream ETL complexity by 40%.
 
 ## Production Artifacts
 - Service Module: `vault/world_assets/real-time-sensor-normalizer/service.py`

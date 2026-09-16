@@ -3,7 +3,7 @@
   "info": {
     "title": "real-time-sensor-normalizer",
     "version": "1.0.0",
-    "description": "Silos sensor data from multiple industrial historians into a unified, queryable JSON stream for real-time monitoring."
+    "description": "Siloed sensor data in energy historians prevents real-time querying and compliance reporting."
   },
   "paths": {
     "/process": {
