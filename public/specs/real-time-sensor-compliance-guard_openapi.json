@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "real-time-sensor-compliance-guard",
+    "version": "1.0.0",
+    "description": "Prevents non-compliant sensor data ingestion by validating payload structure and range in real-time, reducing historian silo chaos."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
