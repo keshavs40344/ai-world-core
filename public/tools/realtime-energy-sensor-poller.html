@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><head><title>Energy Poller</title></head><body><input id="p" type="text" placeholder="JSON payload"><button onclick="fetch('/api/execute',{method:'POST',body:document.getElementById('p').value}).then(r=>r.json()).then(d=>console.log(d))">Send</button></body></html>
