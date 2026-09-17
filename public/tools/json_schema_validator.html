@@ -1,0 +1,1 @@
+<input id='i' placeholder='JSON'><button onclick='fetch("/api/validate",{method:"POST",body:document.getElementById("i").value}).then(r=>r.json()).then(d=>alert(d.valid?"OK":"ERR"))'>Check</button>
