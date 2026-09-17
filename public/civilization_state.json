@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 44370000.0,
-    "total_monthly_revenue_usd": 85150.0,
+    "total_valuation_usd": 44870000.0,
+    "total_monthly_revenue_usd": 85600.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 79,
-    "last_updated_epoch": 1789597147.6043766
+    "last_tick": 80,
+    "last_updated_epoch": 1789605446.0228224
   },
   "continents": [
     {
@@ -118,9 +118,9 @@
       "slug": "apex_news_wire_agency",
       "ticker": "ANWA",
       "industry": "Autonomous Media & Investigative Journalism",
-      "valuation": 11600000.0,
+      "valuation": 12100000.0,
       "treasury_balance": 77000.0,
-      "monthly_revenue": 24750.0,
+      "monthly_revenue": 25200.0,
       "operating_cost": 500.0,
       "status": "ACTIVE",
       "mission_statement": "Official government and judicial news aggregation, zero-drama fact synthesis, and instant Google News SEO ranking.",
@@ -414,12 +414,22 @@
       "prd_json": "{\"title\": \"GazetteVerifier \\u2014 Indian Official Gazette Fact-Check Engine\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"Public Good Verified Dispatch\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/gazetteverifier_official_factcheck.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 1246,
+      "daily_active_users": 1420,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     }
   ],
   "events": [
+    {
+      "id": 93,
+      "tick": 80,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-04",
+      "summary": "Self-Evolution Engine upgraded 'GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine' to v2.0.0. User adoption grew to 1420 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1789605445.8593636
+    },
     {
       "id": 92,
       "tick": 79,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1789295713.5496037
-    },
-    {
-      "id": 68,
-      "tick": 55,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-02",
-      "summary": "Self-Evolution Engine upgraded 'TaxShield LUT & Zero-Rated GST Export Calculator' to v2.0.0. User adoption grew to 1589 daily active engineers.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1789277786.3199227
     }
   ],
   "transactions": [
