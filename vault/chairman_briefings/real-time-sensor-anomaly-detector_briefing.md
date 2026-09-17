@@ -1,13 +1,13 @@
 # 🏛️ EXECUTIVE ASSET DOSSIER: real-time-sensor-anomaly-detector
-**Sub-Agent Type:** Energy Data Engineer
-**Generated At:** 2026-09-16T23:32:59.867674+00:00
-**Monetization Vector:** SaaS subscription for real-time energy asset monitoring with API access for enterprise clients.
+**Sub-Agent Type:** IoT_Data_Engineer
+**Generated At:** 2026-09-17T03:37:15.486615+00:00
+**Monetization Vector:** SaaS subscription for real-time edge monitoring and predictive maintenance alerts for industrial energy assets.
 
 ## Commercial Intent
 Siloed sensor data prevents real-time anomaly detection, leading to asset downtime and compliance risks in energy infrastructure.
 
 ## Self-Evolved Operational Learning
-Real-time anomaly detection requires lightweight, stateless processing to handle high-frequency sensor data without latency.
+Simple statistical thresholds (3-sigma) provide immediate value for anomaly detection without complex ML models, reducing latency and infrastructure costs for edge devices.
 
 ## Production Artifacts
 - Service Module: `vault/world_assets/real-time-sensor-anomaly-detector/service.py`
