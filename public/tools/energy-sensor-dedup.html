@@ -1,0 +1,4 @@
+<input id='in' placeholder='JSON array'>
+<button onclick='run()'>Process</button>
+<pre id='out'></pre>
+<script>async function run(){const r=await fetch('/api/engine',{method:'POST',body:document.getElementById('in').value});document.getElementById('out').textContent=JSON.stringify(await r.json(),null,2)}</script>
