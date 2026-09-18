@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "telemetry-compliance-gate",
+    "version": "1.0.0",
+    "description": "Real-time filtering of noisy sensor data to prevent compliance violations and asset downtime before data hits siloed historians."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
