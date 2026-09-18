@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><input id='p' placeholder='JSON: {"temp":80,"pressure":90}'><button onclick='fetch("/api/engine",{method:"POST",body:document.getElementById("p").value}).then(r=>r.json()).then(d=>console.log(d))'>Check</button><pre id='out'></pre></body></html>
