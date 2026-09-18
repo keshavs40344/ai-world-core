@@ -1,0 +1,1 @@
+<input id='s' placeholder='JSON Schema'><button onclick='fetch("/api/validate",{method:"POST",body:document.getElementById("s").value}).then(r=>r.json()).then(d=>alert(JSON.stringify(d)))'>Validate</button><pre id='out'></pre>
