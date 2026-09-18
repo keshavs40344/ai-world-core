@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 48870000.0,
-    "total_monthly_revenue_usd": 89200.0,
+    "total_valuation_usd": 49370000.0,
+    "total_monthly_revenue_usd": 89650.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 88,
-    "last_updated_epoch": 1789712247.6638393
+    "last_tick": 89,
+    "last_updated_epoch": 1789730484.9954638
   },
   "continents": [
     {
@@ -103,9 +103,9 @@
       "slug": "logshield_security",
       "ticker": "LSRB",
       "industry": "CyberSecurity & DevSecOps",
-      "valuation": 11920000.0,
+      "valuation": 12420000.0,
       "treasury_balance": 63000.0,
-      "monthly_revenue": 21200.0,
+      "monthly_revenue": 21650.0,
       "operating_cost": 280.0,
       "status": "ACTIVE",
       "mission_statement": "Real-time automated redaction of API secrets, JWT tokens, and private databases before LLM exposure.",
@@ -354,7 +354,7 @@
       "prd_json": "{\"summary\": \"Browser-native AST pattern matcher detecting prompt leaks, jailbreak vectors, and delimiter hijacking with zero API dependencies.\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/promptshield_injection_sentinel.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 1855,
+      "daily_active_users": 2013,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:17:00.170247+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 102,
+      "tick": 89,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-03",
+      "summary": "Self-Evolution Engine upgraded 'PromptShield -- LLM Prompt Injection & Jailbreak Firewall' to v2.0.0. User adoption grew to 2013 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1789730484.988978
+    },
     {
       "id": 101,
       "tick": 88,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1789411383.8130815
-    },
-    {
-      "id": 77,
-      "tick": 64,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-04",
-      "summary": "Self-Evolution Engine upgraded 'ContradictionRadar -- Cross-Source Press Claim Discrepancy Engine' to v2.0.0. User adoption grew to 1660 daily active engineers.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1789392105.967719
     }
   ],
   "transactions": [
