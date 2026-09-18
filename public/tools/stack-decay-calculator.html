@@ -1,0 +1,1 @@
+<input id='p' placeholder='JSON: {age_months:12, cloud_native:true}'><button onclick="fetch('/api/execute',{method:'POST',body:document.getElementById('p').value}).then(r=>r.json()).then(d=>alert(d.risk_score))">Analyze</button>
