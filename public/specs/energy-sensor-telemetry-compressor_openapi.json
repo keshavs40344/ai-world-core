@@ -3,7 +3,7 @@
   "info": {
     "title": "energy-sensor-telemetry-compressor",
     "version": "1.0.0",
-    "description": "Reduces gigabyte-scale sensor telemetry to kilobytes for real-time transmission, solving data chaos and bandwidth constraints in energy assets."
+    "description": "Reduces gigabyte-scale sensor telemetry from siloed historians into queryable, compressed JSON for real-time edge ingestion."
   },
   "paths": {
     "/process": {
