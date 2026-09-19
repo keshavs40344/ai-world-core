@@ -1,13 +1,13 @@
 # 🏛️ EXECUTIVE ASSET DOSSIER: energy-sensor-dedup
 **Sub-Agent Type:** Edge-Data-Compressor
-**Generated At:** 2026-09-17T11:02:34.340663+00:00
-**Monetization Vector:** SaaS subscription for edge nodes in industrial IoT, priced per active sensor stream.
+**Generated At:** 2026-09-19T03:19:20.398028+00:00
+**Monetization Vector:** SaaS subscription for edge nodes reducing cloud egress costs by 40% for energy asset managers.
 
 ## Commercial Intent
-Reduces bandwidth and storage costs by deduplicating and compressing high-frequency sensor data streams before transmission to historians.
+Reduces gigabyte-scale sensor data chaos by deduplicating and compressing redundant telemetry streams in real-time before historian ingestion.
 
 ## Self-Evolved Operational Learning
-Deduplication before compression yields significant bandwidth savings for repetitive sensor telemetry.
+Hashing raw string representations is faster than deep object comparison for high-velocity IoT streams, though it requires stable serialization formats to avoid false positives.
 
 ## Production Artifacts
 - Service Module: `vault/world_assets/energy-sensor-dedup/service.py`
