@@ -3,7 +3,7 @@
   "info": {
     "title": "realtime-sensor-anomaly-scorer",
     "version": "1.0.0",
-    "description": "Silos prevent real-time querying of sensor data; this utility scores incoming telemetry for anomalies to flag asset downtime risks instantly."
+    "description": "Real-time anomaly detection for siloed industrial sensor data to prevent asset downtime."
   },
   "paths": {
     "/process": {
