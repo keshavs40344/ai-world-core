@@ -1,0 +1,1 @@
+<input id='in' type='text' placeholder='JSON Array'><button onclick='run()'>Convert</button><pre id='out'></pre><script>async function run(){let r=await fetch('/api/convert',{method:'POST',body:document.getElementById('in').value});document.getElementById('out').textContent=await r.text()}</script>
