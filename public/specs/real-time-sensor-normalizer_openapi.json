@@ -3,7 +3,7 @@
   "info": {
     "title": "real-time-sensor-normalizer",
     "version": "1.0.0",
-    "description": "Siloed sensor data in energy historians prevents real-time querying and compliance reporting."
+    "description": "Ingests raw, heterogeneous sensor JSON streams and normalizes them into a unified schema for real-time historian ingestion, eliminating data chaos."
   },
   "paths": {
     "/process": {
