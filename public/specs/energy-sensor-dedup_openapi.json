@@ -3,7 +3,7 @@
   "info": {
     "title": "energy-sensor-dedup",
     "version": "1.0.0",
-    "description": "Reduces gigabyte-scale sensor data chaos by deduplicating and compressing redundant telemetry streams in real-time before historian ingestion."
+    "description": "Reduces bandwidth and storage costs by deduplicating high-frequency sensor data at the edge before transmission to siloed historians."
   },
   "paths": {
     "/process": {
