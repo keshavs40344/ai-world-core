@@ -1,0 +1,1 @@
+<html><body><input id='p' value='{"vcpu":2,"mem_gb":8}'><button onclick='fetch("/api/engine",{method:"POST",body:document.getElementById("p").value}).then(r=>r.json()).then(d=>alert(d.estimated_hourly_cost))'>Estimate</button></body></html>
