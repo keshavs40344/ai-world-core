@@ -3199,6 +3199,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/tools/schema_smith_1789910080.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/tools/secure_data_parser_1788522308.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -3212,6 +3218,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/tools/sensor-silence-keeper.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/tools/sensor-silo-bridge.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
