@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "api-rate-transformer",
+    "version": "1.0.0",
+    "description": "Solves developer friction by providing a lightweight, in-memory rate limiter and payload transformer for API clients, reducing boilerplate code and handling 429 errors gracefully."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

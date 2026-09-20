@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><textarea id='p' placeholder='JSON'></textarea><button onclick='fetch("/api",{method:"POST",body:document.getElementById("p").value}).then(r=>r.json()).then(d=>alert(JSON.stringify(d)))'>Send</button><script>console.log('Ready')</script></body></html>
