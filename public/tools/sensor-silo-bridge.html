@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><textarea id='in' rows='4' cols='50'>Paste JSON</textarea><button onclick='run()'>Process</button><div id='out'></div><script>function run(){fetch('/api/engine',{method:'POST',body:document.getElementById('in').value}).then(r=>r.json()).then(d=>document.getElementById('out').innerText=JSON.stringify(d))}</script></body></html>
