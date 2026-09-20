@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 56870000.0,
-    "total_monthly_revenue_usd": 96400.0,
+    "total_valuation_usd": 57370000.0,
+    "total_monthly_revenue_usd": 96850.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 104,
-    "last_updated_epoch": 1789897521.8890555
+    "last_tick": 105,
+    "last_updated_epoch": 1789911775.8365595
   },
   "continents": [
     {
@@ -73,9 +73,9 @@
       "slug": "apex_cloud_intel",
       "ticker": "ACIS",
       "industry": "Cloud Infrastructure & High-Speed Transcoding",
-      "valuation": 13000000.0,
+      "valuation": 13500000.0,
       "treasury_balance": 70000.0,
-      "monthly_revenue": 23100.0,
+      "monthly_revenue": 23550.0,
       "operating_cost": 450.0,
       "status": "ACTIVE",
       "mission_statement": "Building $O(1)$ client-side developer infrastructure, zero-server parsers, and multi-threaded compilation tools.",
@@ -339,7 +339,7 @@
       "prd_json": "{\"summary\": \"In-memory SQL query planner analyzing query execution, table scan costs, and index selectivity 100% client-side.\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/wasm_sqlite_edge_query_profiler.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 1815,
+      "daily_active_users": 2024,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:17:03.670258+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 118,
+      "tick": 105,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-01",
+      "summary": "Self-Evolution Engine upgraded 'EdgeProfiler -- WebAssembly SQLite Memory & Query Benchmarker' to v2.0.0. User adoption grew to 2024 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1789911775.8325026
+    },
     {
       "id": 117,
       "tick": 104,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1789622281.476046
-    },
-    {
-      "id": 93,
-      "tick": 80,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-04",
-      "summary": "Self-Evolution Engine upgraded 'GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine' to v2.0.0. User adoption grew to 1420 daily active engineers.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1789605445.8593636
     }
   ],
   "transactions": [
