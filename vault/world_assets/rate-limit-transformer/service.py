@@ -1,20 +1,16 @@
-import time
-import json
+import time, json
 
 class EngineService:
     def __init__(self):
-        self.window = 60
-        self.limit = 100
-        self.requests = []
+        self.last_call = 0
+        self.min_interval = 1.0
 
     def execute(self, payload: str) -> dict:
-        now = time.time()
-        self.requests = [t for t in self.requests if now - t < self.window]
-        if len(self.requests) >= self.limit:
-            return {'status': 'rate_limited', 'retry_after': self.window - (now - self.requests[0])}
-        self.requests.append(now)
         try:
             data = json.loads(payload)
-            return {'status': 'success', 'transformed': {k: v.upper() if isinstance(v, str) else v for k, v in data.items()}}
-        except json.JSONDecodeError:
-            return {'status': 'error', 'message': 'Invalid JSON'}
+            wait = self.min_interval - (time.time() - self.last_call)
+            if wait > 0: time.sleep(wait)
+            self.last_call = time.time()
+            return {'status': 'ok', 'transformed': data, 'timestamp': time.time()}
+        except Exception as e:
+            return {'status': 'error', 'message': str(e)}

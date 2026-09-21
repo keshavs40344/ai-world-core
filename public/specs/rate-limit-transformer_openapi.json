@@ -3,7 +3,7 @@
   "info": {
     "title": "rate-limit-transformer",
     "version": "1.0.0",
-    "description": "Developers struggle to implement dynamic rate limiting and payload normalization for high-throughput API gateways without complex middleware."
+    "description": "Developers waste time manually handling API rate limits and transforming JSON payloads for different endpoints."
   },
   "paths": {
     "/process": {
