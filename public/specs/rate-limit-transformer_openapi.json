@@ -3,7 +3,7 @@
   "info": {
     "title": "rate-limit-transformer",
     "version": "1.0.0",
-    "description": "Solves developer friction by combining token-bucket rate limiting with automatic JSON payload schema normalization in a single lightweight utility."
+    "description": "Developers struggle to handle API rate limits and transform payloads dynamically without complex middleware."
   },
   "paths": {
     "/process": {
