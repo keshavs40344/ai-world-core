@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "adaptive-rate-limiter-transformer",
+    "version": "1.0.0",
+    "description": "Developers struggle to handle dynamic API rate limits and complex payload transformations in real-time without bloating their codebase with custom middleware."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
