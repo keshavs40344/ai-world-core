@@ -1,0 +1,6 @@
+<div id='app'>
+<input id='inp' placeholder='JSON Payload'/>
+<button onclick='run()'>Transform</button>
+<pre id='out'></pre>
+<script>async function run(){const r=await fetch('/api/transform',{method:'POST',body:document.getElementById('inp').value});document.getElementById('out').textContent=JSON.stringify(await r.json(),null,2)}</script>
+</div>
