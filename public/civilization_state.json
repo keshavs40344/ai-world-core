@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 64870000.0,
-    "total_monthly_revenue_usd": 103600.0,
+    "total_valuation_usd": 65370000.0,
+    "total_monthly_revenue_usd": 104050.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 120,
-    "last_updated_epoch": 1790112456.5512354
+    "last_tick": 121,
+    "last_updated_epoch": 1790120482.951877
   },
   "continents": [
     {
@@ -103,9 +103,9 @@
       "slug": "logshield_security",
       "ticker": "LSRB",
       "industry": "CyberSecurity & DevSecOps",
-      "valuation": 14920000.0,
+      "valuation": 15420000.0,
       "treasury_balance": 63000.0,
-      "monthly_revenue": 23900.0,
+      "monthly_revenue": 24350.0,
       "operating_cost": 280.0,
       "status": "ACTIVE",
       "mission_statement": "Real-time automated redaction of API secrets, JWT tokens, and private databases before LLM exposure.",
@@ -399,7 +399,7 @@
       "prd_json": "{\"title\": \"CookieShield \\u2014 HTTP Header & Session PII Masker\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"Client-Side Zero Data Storage Studio\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/cookieshield_header_masker.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 1847,
+      "daily_active_users": 1962,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 134,
+      "tick": 121,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-03",
+      "summary": "Self-Evolution Engine upgraded 'CookieShield \u2014 HTTP Header & Session PII Masker' to v2.0.0. User adoption grew to 1962 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1790120482.94744
+    },
     {
       "id": 133,
       "tick": 120,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1789823798.2276583
-    },
-    {
-      "id": 109,
-      "tick": 96,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-01",
-      "summary": "Self-Evolution Engine upgraded 'EdgeProfiler -- WebAssembly SQLite Memory & Query Benchmarker' to v2.0.0. User adoption grew to 1815 daily active engineers.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1789810109.0399475
     }
   ],
   "transactions": [
