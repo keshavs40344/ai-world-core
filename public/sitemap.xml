@@ -2593,6 +2593,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/tools/rate-limit-payload-transformer.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/tools/rate-limit-transformer.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -3284,6 +3290,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/tools/schema_smith_1790084552.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/tools/schema_smith_1790101339.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
