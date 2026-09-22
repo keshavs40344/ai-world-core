@@ -3,7 +3,7 @@
   "info": {
     "title": "rate-limit-transformer",
     "version": "1.0.0",
-    "description": "Solves developer friction in handling API rate limits and complex payload transformations by providing a unified, stateless utility that normalizes requests and injects retry metadata."
+    "description": "Developers struggle to handle API rate limits and complex payload transformations in a single, lightweight utility without heavy middleware."
   },
   "paths": {
     "/process": {
