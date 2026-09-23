@@ -3,7 +3,7 @@
   "info": {
     "title": "rate-limit-transformer",
     "version": "1.0.0",
-    "description": "Automates API payload sanitization and enforces client-side rate limiting to prevent 429 errors and data corruption."
+    "description": "Developers struggle with manual API rate-limiting logic and complex payload transformation pipelines, leading to inconsistent request handling and increased boilerplate code."
   },
   "paths": {
     "/process": {
