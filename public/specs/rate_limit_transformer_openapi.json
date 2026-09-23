@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "rate_limit_transformer",
+    "version": "1.0.0",
+    "description": "Developers struggle to implement consistent rate limiting and dynamic payload transformation for third-party APIs, leading to 429 errors and manual data mapping overhead."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
