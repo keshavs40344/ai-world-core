@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><head><title>Transformer</title></head><body><textarea id='in' placeholder='JSON'></textarea><button onclick="fetch('/api/transform',{method:'POST',body:document.getElementById('in').value}).then(r=>r.json()).then(d=>document.getElementById('out').innerText=JSON.stringify(d))">Run</button><pre id='out'></pre></body></html>
