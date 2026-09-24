@@ -3,7 +3,7 @@
   "info": {
     "title": "adaptive-rate-limiter-transformer",
     "version": "1.0.0",
-    "description": "Developers struggle to handle dynamic API rate limits and complex payload transformations simultaneously, leading to brittle retry logic and data loss."
+    "description": "Developers struggle to handle dynamic API rate limits and complex payload transformations in real-time without bloating their codebase with custom middleware."
   },
   "paths": {
     "/process": {
