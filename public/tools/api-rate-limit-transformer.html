@@ -1,0 +1,4 @@
+<div id='app'>
+<input id='inp' placeholder='JSON Payload' style='width:100%;padding:10px;'/>
+<button onclick="fetch('/api/transform',{method:'POST',body:document.getElementById('inp').value}).then(r=>r.json()).then(d=>alert(JSON.stringify(d)))">Transform</button>
+</div>
