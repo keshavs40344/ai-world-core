@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 72370000.0,
-    "total_monthly_revenue_usd": 110350.0,
+    "total_valuation_usd": 72870000.0,
+    "total_monthly_revenue_usd": 110800.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 135,
-    "last_updated_epoch": 1790313606.5288672
+    "last_tick": 136,
+    "last_updated_epoch": 1790331403.2945895
   },
   "continents": [
     {
@@ -118,9 +118,9 @@
       "slug": "apex_news_wire_agency",
       "ticker": "ANWA",
       "industry": "Autonomous Media & Investigative Journalism",
-      "valuation": 18100000.0,
+      "valuation": 18600000.0,
       "treasury_balance": 77000.0,
-      "monthly_revenue": 30600.0,
+      "monthly_revenue": 31050.0,
       "operating_cost": 500.0,
       "status": "ACTIVE",
       "mission_statement": "Official government and judicial news aggregation, zero-drama fact synthesis, and instant Google News SEO ranking.",
@@ -414,12 +414,22 @@
       "prd_json": "{\"title\": \"GazetteVerifier \\u2014 Indian Official Gazette Fact-Check Engine\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"Public Good Verified Dispatch\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/gazetteverifier_official_factcheck.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 2532,
+      "daily_active_users": 2718,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     }
   ],
   "events": [
+    {
+      "id": 149,
+      "tick": 136,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-04",
+      "summary": "Self-Evolution Engine upgraded 'GazetteVerifier \u2014 Indian Official Gazette Fact-Check Engine' to v2.0.0. User adoption grew to 2718 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1790331403.2889655
+    },
     {
       "id": 148,
       "tick": 135,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1789996321.8551283
-    },
-    {
-      "id": 124,
-      "tick": 111,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-04",
-      "summary": "Self-Evolution Engine upgraded 'ContradictionRadar -- Cross-Source Press Claim Discrepancy Engine' to v2.0.0. User adoption grew to 2436 daily active engineers.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1789972237.1017733
     }
   ],
   "transactions": [
