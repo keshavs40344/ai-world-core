@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><input id='p' placeholder='{"limit":5,"wait":0.5}'><button onclick="fetch('/api/engine',{method:'POST',body:document.getElementById('p').value}).then(r=>r.json()).then(d=>alert(JSON.stringify(d)))">Execute</button></body></html>
