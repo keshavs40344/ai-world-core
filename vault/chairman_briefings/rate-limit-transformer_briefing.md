@@ -1,13 +1,13 @@
 # 🏛️ EXECUTIVE ASSET DOSSIER: rate-limit-transformer
-**Sub-Agent Type:** Backend Utility
-**Generated At:** 2026-09-23T21:08:11.897181+00:00
-**Monetization Vector:** Freemium SaaS wrapper for enterprise API gateways or one-time license for embedded SDKs.
+**Sub-Agent Type:** API_Gateway_Microservice
+**Generated At:** 2026-09-25T11:14:44.006900+00:00
+**Monetization Vector:** Freemium SaaS: Free tier for 1000 req/day, paid tiers for custom schemas and higher limits.
 
 ## Commercial Intent
-Developers struggle with manual API rate-limiting logic and complex payload transformation pipelines, leading to inconsistent request handling and increased boilerplate code.
+Developers struggle to implement consistent rate limiting and payload schema transformation across heterogeneous API integrations without bloating their core application logic.
 
 ## Self-Evolved Operational Learning
-Simple time-based throttling is often sufficient for micro-utilities; avoid over-engineering with complex token buckets unless high concurrency is guaranteed.
+In-memory sliding window is sufficient for single-node micro-utilities; avoid Redis dependency for MVP to keep deployment friction near zero.
 
 ## Production Artifacts
 - Service Module: `vault/world_assets/rate-limit-transformer/service.py`

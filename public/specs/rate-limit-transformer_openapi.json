@@ -3,7 +3,7 @@
   "info": {
     "title": "rate-limit-transformer",
     "version": "1.0.0",
-    "description": "Developers struggle with manual API rate-limiting logic and complex payload transformation pipelines, leading to inconsistent request handling and increased boilerplate code."
+    "description": "Developers struggle to implement consistent rate limiting and payload schema transformation across heterogeneous API integrations without bloating their core application logic."
   },
   "paths": {
     "/process": {
