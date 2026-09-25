@@ -2359,6 +2359,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/tools/adaptive-rate-limiter.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/tools/adaptive-rate-payload-transformer.html</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -3416,6 +3422,12 @@
   </url>
   <url>
     <loc>https://keshavs40344.github.io/ai-world-core/public/tools/schema_smith_1790362714.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://keshavs40344.github.io/ai-world-core/public/tools/schema_smith_1790379569.html</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
