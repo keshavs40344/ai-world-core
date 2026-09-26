@@ -1,0 +1,1 @@
+<input id='i' placeholder='Input'><button onclick='fetch("/api",{method:"POST",body:JSON.stringify({input:document.getElementById("i").value})}).then(r=>r.json()).then(d=>alert(d.output))'>Transform</button>
