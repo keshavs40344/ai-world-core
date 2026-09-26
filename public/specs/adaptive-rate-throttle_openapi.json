@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "adaptive-rate-throttle",
+    "version": "1.0.0",
+    "description": "Developers struggle to implement dynamic, token-bucket rate limiting with automatic payload normalization for 2026 API standards."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
