@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "adaptive-rate-transformer",
+    "version": "1.0.0",
+    "description": "Developers struggle to dynamically adjust API payloads and handle 429 rate-limit responses without complex retry logic and manual JSON manipulation."
+  },
+  "paths": {
+    "/process": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
