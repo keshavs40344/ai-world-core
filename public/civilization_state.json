@@ -16,12 +16,12 @@
     "total_companies": 4,
     "total_agents": 12,
     "total_products": 8,
-    "total_valuation_usd": 74370000.0,
-    "total_monthly_revenue_usd": 112150.0,
+    "total_valuation_usd": 74870000.0,
+    "total_monthly_revenue_usd": 112600.0,
     "total_treasury_usd": 265000.0,
     "system_status": "ACTIVE",
-    "last_tick": 139,
-    "last_updated_epoch": 1790375138.2842906
+    "last_tick": 140,
+    "last_updated_epoch": 1790383399.1235442
   },
   "continents": [
     {
@@ -103,9 +103,9 @@
       "slug": "logshield_security",
       "ticker": "LSRB",
       "industry": "CyberSecurity & DevSecOps",
-      "valuation": 17920000.0,
+      "valuation": 18420000.0,
       "treasury_balance": 63000.0,
-      "monthly_revenue": 26600.0,
+      "monthly_revenue": 27050.0,
       "operating_cost": 280.0,
       "status": "ACTIVE",
       "mission_statement": "Real-time automated redaction of API secrets, JWT tokens, and private databases before LLM exposure.",
@@ -399,7 +399,7 @@
       "prd_json": "{\"title\": \"CookieShield \\u2014 HTTP Header & Session PII Masker\", \"target_persona\": \"Engineers & Auditors\", \"core_algorithm\": \"AST Regex & Heuristic Parser\", \"monetization\": \"Client-Side Zero Data Storage Studio\"}",
       "live_url": "https://keshavs40344.github.io/ai-world-core/public/products/cookieshield_header_masker.html",
       "status": "LIVE_DEPLOYED",
-      "daily_active_users": 2351,
+      "daily_active_users": 2472,
       "health_score": 99.98,
       "created_at": "2026-09-06T18:01:46.666094+00:00"
     },
@@ -420,6 +420,16 @@
     }
   ],
   "events": [
+    {
+      "id": 153,
+      "tick": 140,
+      "event_type": "PRODUCT_UPGRADE",
+      "entity_id": "COMP-03",
+      "summary": "Self-Evolution Engine upgraded 'CookieShield \u2014 HTTP Header & Session PII Masker' to v2.0.0. User adoption grew to 2472 daily active engineers.",
+      "causality_chain": null,
+      "severity": "INFO",
+      "timestamp": 1790383399.119443
+    },
     {
       "id": 152,
       "tick": 139,
@@ -659,16 +669,6 @@
       "causality_chain": null,
       "severity": "INFO",
       "timestamp": 1790054889.8164666
-    },
-    {
-      "id": 128,
-      "tick": 115,
-      "event_type": "PRODUCT_UPGRADE",
-      "entity_id": "COMP-01",
-      "summary": "Self-Evolution Engine upgraded 'KubeGuard \u2014 Offline Kubernetes YAML AST & Security Linter' to v2.0.0. User adoption grew to 2140 daily active engineers.",
-      "causality_chain": null,
-      "severity": "INFO",
-      "timestamp": 1790038135.9083114
     }
   ],
   "transactions": [
